@@ -1,0 +1,681 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Material design - components</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="4d954913-2e6d-4c31-bdc7-2e7e26b6992a" class="page sans"><header><h1 class="page-title">Material design - components</h1><table class="properties"><tbody><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>관련 링크</th><td><a href="https://m3.material.io/components" class="url-value">https://m3.material.io/components</a></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>Type</th><td></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Due Date</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-pink">UX design</span></td></tr><tr class="property-row property-row-status"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesStatus"><path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path></svg></span>상태</th><td><span class="status-value select-value-color-blue"><div class="status-dot status-dot-color-blue"></div>In progress</span></td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>작성 일자</th><td><time>@2022년 10월 31일 오후 2:46</time></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Date</th><td></td></tr><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>Participants</th><td></td></tr></tbody></table></header><div class="page-body"><h1 id="84ed5c83-e507-4dc3-9cc2-d3d798aa997a" class="">Material design - components</h1><p id="e405bd4f-b217-4bfc-9422-e361d5565ce4" class="">Components are interactive building blocks for creating a user interface. They can be organized into five categories based on their purpose: Action, containment, navigation, selection, and text input.</p><p id="8e7f7f6a-ad27-487d-966d-14f891dd12a5" class="">
+</p><h1 id="50faccd8-41ad-475f-adde-e8ab38eb348a" class=""><details open=""><summary>Action</summary></details></h1><div class="indented"><h2 id="95bb6de4-95cb-4276-8ba8-2a344562fded" class=""><details open=""><summary>Buttons</summary></details></h2><div class="indented"><div id="d4ac2ebf-dcdc-4936-8b54-a854500ca7cb" class="column-list"><div id="44d9da90-d1ac-4722-a3aa-f03cd71d4272" style="width:68.75%" class="column"><figure id="e836c130-dcf7-41ab-9b62-cb3a36c438ef" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled.png"><img style="width:2048px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled.png"/></a><figcaption>There are five button styles in material 3</figcaption></figure></div><div id="b44eb11e-6174-43c7-a19a-1133a7640b70" style="width:31.25%" class="column"><figure id="7780011c-14f1-4984-b010-b8f495f060f3" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%201.png"><img style="width:1004px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%201.png"/></a></figure></div></div><ul id="d609bee4-2cab-4d51-afb6-f7d9af11d155" class="bulleted-list"><li style="list-style-type:disc">All buttons have fully rounded corners</li></ul><ul id="8068bde5-fe21-4a3a-8ba9-c126c388cb14" class="bulleted-list"><li style="list-style-type:disc">Icons and labels now share the same color.</li></ul><ul id="10e20b50-4e77-44df-aec5-fe1dca6852f7" class="bulleted-list"><li style="list-style-type:disc">Button text is in sentence case, no ALL CAPS</li></ul><ul id="a4392819-a6b8-4774-b8d8-2d60f3c29d90" class="bulleted-list"><li style="list-style-type:disc">Capitalize the first letter of the first word and proper nouns in button label text</li></ul><ul id="0e4a8a5c-b596-4d26-981f-3d208ceffb43" class="bulleted-list"><li style="list-style-type:disc">Don’t use two icons in the same button.<figure id="14421ee7-8a48-4977-9587-d5d799b46f83" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-10-31_at_15.39.25.png"><img style="width:283px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-10-31_at_15.39.25.png"/></a></figure></li></ul><p id="24dab636-5f22-4143-bbe2-dcc27c367410" class="">
+</p></div><h2 id="79bf44da-254f-4344-8cb6-a5698a6006ee" class=""><details open=""><summary>Floating Action Buttons</summary></details></h2><div class="indented"><ul id="d613fd9c-66f0-4f53-bc69-44966e53b183" class="bulleted-list"><li style="list-style-type:disc">Use a FAB for <span style="border-bottom:0.05em solid">the most common or important action on a screen</span><figure id="a60c4137-ef05-4021-a961-a350a934cd32" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/unnamed.png"><img style="width:2048px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/unnamed.png"/></a><figcaption>There are three sizes of floating action buttons: FAB, small FAB, and large FAB.</figcaption></figure></li></ul><ul id="924c8171-c6fa-4456-8315-ab582c651153" class="bulleted-list"><li style="list-style-type:disc">The FAB appears in front of all other content on screen</li></ul><ul id="b8a1e3f6-3d4f-4fde-9507-39f7f1017859" class="bulleted-list"><li style="list-style-type:disc">The FAB should persist on the screen when content is scrolling</li></ul><ul id="2039dff2-e94d-4f7f-9dc2-088f1fe6aac7" class="bulleted-list"><li style="list-style-type:disc">Icons in a FAB must be clear and understandable since these buttons do not have a text label</li></ul><div id="fd437f4b-60b6-4518-9f9e-8cee6516844d" class="column-list"><div id="8fdfa85b-86b7-4014-acfd-b8cb117f75de" style="width:62.5%" class="column"><figure id="924316fa-c06c-44bc-941d-5507b39959e9" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-01_at_14.22.56.png"><img style="width:336px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-01_at_14.22.56.png"/></a></figure><p id="c94e93d8-6c37-4b12-ab9b-fdc8d3d2eded" class="">
+</p></div><div id="3455146f-d21f-48cf-a285-ac650ff952c1" style="width:37.49999999999999%" class="column"><figure id="4bd8d763-bdb6-41a0-b73c-21b7476bd4a8" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-01_at_14.24.28.png"><img style="width:299px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-01_at_14.24.28.png"/></a></figure></div></div><ul id="b2e599c7-ca0f-4536-8845-fd430117b7fc" class="bulleted-list"><li style="list-style-type:disc">Extended FABs can collapse into a FAB on scroll and expand on reaching the bottom of the view.</li></ul><ul id="e9a95ac7-08e0-48c1-9702-fe73de8c56cf" class="bulleted-list"><li style="list-style-type:disc"><a href="https://m3.material.io/components/floating-action-button/guidelines#4dd3a071-5250-4b4b-97b8-78c7ca9e808f">When tabs are present, the FAB should briefly disappear, then reappear when the new content moves into place. This shows that the FAB is not connected to any particular tab or destination.</a></li></ul><ul id="65a3dd86-86c5-421e-88c2-83af4d17d328" class="bulleted-list"><li style="list-style-type:disc">The FAB can expand and adapt to any shape.<div id="340c2d53-a5ee-4ff5-af71-65be34117f91" class="column-list"><div id="d4434a63-c864-446b-b99d-0dfd03f2d2d9" style="width:29.166666666666668%" class="column"><figure id="34e410be-3125-4cc5-836e-eeefde52a2f5"><div class="source"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/l5jnpuq1-Moving_Across_Tabs_DO_3P.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ac024c39-4145-4059-86a8-878471f40691/l5jnpuq1-Moving_Across_Tabs_DO_3P.mp4</a></div></figure></div><div id="9193acab-fbb2-4c42-a1a1-a50883ba1b37" style="width:41.666666666666664%" class="column"><figure id="5c97417d-4daa-44d8-b2b6-1acd7ebace7b"><div class="source"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/l0js5c2i-efab__scrolling_3P.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0dfb76dc-4d4f-4e5e-bb03-7a0e236e7b4f/l0js5c2i-efab__scrolling_3P.mp4</a></div></figure></div><div id="dac3816b-69de-4e02-9317-3c14d1c85c74" style="width:29.166666666666675%" class="column"><figure id="a2641373-ca69-46c6-af94-bb9eef4b847b"><div class="source"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/l0a5htks-fab-primary-action.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/02d732ae-22cc-4d3e-a181-1efed2bc1601/l0a5htks-fab-primary-action.mp4</a></div></figure></div></div><p id="8ee2bcfa-428b-4fb9-af82-ab06ee8ddde1" class="">
+</p></li></ul></div><h2 id="62a09db4-9632-41bf-a91e-8c2e1914b2c7" class=""><details open=""><summary>Extended Floating Action Buttons</summary></details></h2><div class="indented"><ul id="ea5e1661-a084-4519-88c7-584bde64dfae" class="bulleted-list"><li style="list-style-type:disc">Extended FABs are t<span style="border-bottom:0.05em solid">he most visually prominent button</span>.</li></ul><ul id="12f1d6f2-6a84-4bc2-8bbb-1ecdf4742a34" class="bulleted-list"><li style="list-style-type:disc">Use an extended FAB to provide persistent access to a primary action above long-scrolling surface content.</li></ul><ul id="b07c8438-3458-400b-b726-a9159fe55a6f" class="bulleted-list"><li style="list-style-type:disc">Because it has room for both a text label and an icon, the extended FAB can be more effective where an icon alone might be too ambiguous.</li></ul><p id="995c02f6-5a34-4035-b699-6804d6451cab" class=""><div class="indented"><figure id="674f24d9-52aa-406d-8fa1-a43add00a0e8" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/unnamed%201.png"><img style="width:2048px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/unnamed%201.png"/></a></figure><p id="6cf8b31d-2fc2-499f-92fd-9e8ac6a9ec44" class="">1. Extended FAB with both icon and label text</p><p id="a2db83dd-213e-4314-8bf3-1db2c213cbea" class="">2. Extended FAB without icon</p></div></p><figure id="d686f81f-6fc0-465b-b79d-991c260ac206" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-02_at_12.20.21.png"><img style="width:919px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-02_at_12.20.21.png"/></a></figure><figure id="cbd0aef3-9cc8-456e-95b5-f7d080678813" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-02_at_12.21.54.png"><img style="width:620px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-02_at_12.21.54.png"/></a></figure><figure id="a9501afc-91e1-4869-8677-472a6f2e0d05" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-02_at_12.22.24.png"><img style="width:631px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-02_at_12.22.24.png"/></a></figure><figure id="8e03bbf4-e546-421d-a081-30e4e561cccf" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-02_at_12.22.57.png"><img style="width:626px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-02_at_12.22.57.png"/></a></figure><figure id="b2e81b63-87c9-4576-958a-c038e4107a93" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-02_at_12.24.19.png"><img style="width:931px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-02_at_12.24.19.png"/></a></figure><p id="085bcf68-ac3c-4ba7-86b6-60491ad037b6" class="">
+</p><ul id="55b8e7f7-a0c0-42bb-91c7-cc059e10a99c" class="bulleted-list"><li style="list-style-type:disc">animation<div id="905baf59-0dc1-4a87-b5fa-f6fb88f3ce40" class="column-list"><div id="3e7209a2-d2b5-4014-9a30-c9c7bd043a02" style="width:50%" class="column"><figure id="e7b0774e-87a0-449b-bd4b-7e52397bb381"><div class="source"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/l6paf0gh-EFAB_appear_3P_2.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/deab391b-326a-4a68-982b-17a9d0e3e690/l6paf0gh-EFAB_appear_3P_2.mp4</a></div></figure><figure id="85b2d7e4-bb90-4e48-96b2-820b0afcba76"><div class="source"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/l5iqp2np-efab_switch_1P_2.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0a10f0e1-b3b0-4c3f-93cd-fb63098d4122/l5iqp2np-efab_switch_1P_2.mp4</a></div></figure><p id="9b46f367-96fb-45f8-af38-76db722ae3e6" class="">
+</p></div><div id="96907fa0-4a85-4d58-af59-97b0e59b9653" style="width:50%" class="column"><figure id="5320b6bf-a9cf-44ef-8a40-6003dd71d67c"><div class="source"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/l6pafa18-EFAB_Transforming_3P_2.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1685fd03-d2fd-4cff-bcf8-6f25053bd8a0/l6pafa18-EFAB_Transforming_3P_2.mp4</a></div></figure><figure id="fde2d1a1-30e8-45d0-b6a1-1cd28badb8cd"><div class="source"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/l5iqmku1-eFAB_-_Container_transform_-_3p.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/38c1c394-fcd9-4495-a368-9111d19923a6/l5iqmku1-eFAB_-_Container_transform_-_3p.mp4</a></div></figure></div></div></li></ul></div><h2 id="eabdda61-1450-48ca-b9d8-793a0a7ab080" class=""><details open=""><summary>Icon Buttons</summary></details></h2><div class="indented"><ul id="21bf7b66-fc38-4c26-93d9-7b5cf684c841" class="bulleted-list"><li style="list-style-type:disc">Use icon buttons <span style="border-bottom:0.05em solid">when a compact button is required</span>, such as in a toolbar or image list<figure id="9de61810-6d17-4e24-9369-e7f6885b8dd6" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/unnamed%202.png"><img style="width:2048px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/unnamed%202.png"/></a></figure><p id="b777b566-9a83-4e6f-ae56-5c53622ac07d" class="">1. Standard icon button</p><p id="bd135517-d610-4da6-914a-bfd417dcc14c" class="">2. Contained icon button (including filled, filled tonal, and outlined styles)</p></li></ul><ul id="c7785df0-c3ec-4fe1-bf6c-399ac79586c1" class="bulleted-list"><li style="list-style-type:disc">Icon buttons can take the form of a wide range of system icons</li></ul><ul id="20d9280c-bb9f-48eb-a5c8-f36df90a3089" class="bulleted-list"><li style="list-style-type:disc">Ensure the meaning of the icon is unambiguous</li></ul><ul id="1bb8acf4-f8ea-4fb1-95fc-d104fe346d33" class="bulleted-list"><li style="list-style-type:disc">On hover, include a tooltip that describes the button’s action, rather than the name of the icon itself<figure id="ae9986e5-27c2-4d4a-946c-83c8e16ea918" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/l1m70y6i-icon_btn_selection_a_3P.gif"><img style="width:432px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/l1m70y6i-icon_btn_selection_a_3P.gif"/></a></figure></li></ul><ul id="d966cad6-6cf5-4275-904d-dd1905018480" class="bulleted-list"><li style="list-style-type:disc">Use the outline-style icons to indicate an unselected state and a filled style to indicate selection<figure id="d4ff3e60-9b1a-4b98-9eef-4958b1a79dab" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/l1m717rq-icon_btn_selection_b_3P.gif"><img style="width:432px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/l1m717rq-icon_btn_selection_b_3P.gif"/></a></figure></li></ul><p id="a934d715-72f7-427a-8ac9-b12d1dc4afa8" class="">
+</p><ul id="64a8554a-8e60-46eb-bb7d-54a359c7e792" class="bulleted-list"><li style="list-style-type:disc">placement<div id="afe9bf0c-5bdb-44e8-95de-3639be618d16" class="column-list"><div id="9cfe60a8-badf-4824-8241-818e9816fb2b" style="width:43.75%" class="column"><figure id="18026bb5-e873-4791-83d8-9f13ff39ac0d" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-03_at_12.15.46.png"><img style="width:240px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-03_at_12.15.46.png"/></a></figure></div><div id="2d6e7eab-ae00-4692-af59-d04414987157" style="width:56.25%" class="column"><figure id="251ba577-1df6-444a-83ca-e2c6e9915daa" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-03_at_12.15.58.png"><img style="width:240px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-03_at_12.15.58.png"/></a></figure></div></div><figure id="9277522b-1895-4422-bfa6-79ae327571cf" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-03_at_12.12.15.png"><img style="width:432px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-03_at_12.12.15.png"/></a></figure><p id="087a5e00-3639-48be-8aab-a342481d8530" class="">
+</p></li></ul><ul id="9fcadaa7-2c56-493b-82f5-f63bba6da2f5" class="bulleted-list"><li style="list-style-type:disc">dos and don’ts<figure id="0671127e-0094-474d-8c89-672c1ae091bc" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screen_Recording_2022-11-03_at_12.19.51.gif"><img style="width:624px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screen_Recording_2022-11-03_at_12.19.51.gif"/></a></figure></li></ul></div><h2 id="b5ecdfd4-f36e-4132-bb40-9730cccaacca" class=""><details open=""><summary>Segmented Buttons</summary></details></h2><div class="indented"><p id="1302427a-0e5b-49bb-a4dc-89a590322240" class="">Segmented buttons help people select options, switch views, or sort elements.</p><figure id="c34a3433-1ab4-4238-83e2-afb774fe5614" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%202.png"><img style="width:1352px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%202.png"/></a><figcaption>A segmented button can help switch between viewing restaurant and bar options.</figcaption></figure><div id="3add5bb9-584e-4292-9f15-6009c19e5dec" class="column-list"><div id="fa6a499f-cff6-4ca8-b629-522b3f2c9341" style="width:56.25%" class="column"><figure id="c9f0896b-1d18-4d4c-91b9-8e872f0db3a9" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%203.png"><img style="width:2049px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%203.png"/></a><figcaption>1. Single-select segmented button  | 2. Multi-select segmented button</figcaption></figure></div><div id="2a86a6e0-55f7-4848-9a73-8d973027533f" style="width:43.75%" class="column"><figure id="300932de-8dbb-49cd-89ba-02a761ec8619" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%204.png"><img style="width:1353px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%204.png"/></a><figcaption>Optional check icon to indicate selected state</figcaption></figure></div></div><figure id="f72c93a1-6447-43d2-9439-8598384f3dc3" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-07_at_14.57.29.png"><img style="width:987px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-07_at_14.57.29.png"/></a></figure><div id="cd45d5ab-1a05-4e10-a088-6836ef6b0248" class="column-list"><div id="15f5ac2d-d1fc-447a-8fd1-618b85eedbe7" style="width:75%" class="column"><figure id="914dacc9-2713-4590-8b1b-e301b99fecf3" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-07_at_15.00.20.png"><img style="width:576px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-07_at_15.00.20.png"/></a></figure></div><div id="43b78de5-a9eb-41c0-be50-b53126eb823d" style="width:24.999999999999996%" class="column"><figure id="40a31c55-20dc-4331-b376-f5570f04787d" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-07_at_15.00.28.png"><img style="width:336px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Screenshot_2022-11-07_at_15.00.28.png"/></a></figure></div></div><figure id="48ed50ef-9094-44f5-bb43-82d7aab5767d"><div class="source"><a href="https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl519nuby-%5B3P%5D%20segmented-button-behavior.mp4?alt=media&amp;token=a5834979-23cb-42e9-b6fd-05b510f6934a">https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl519nuby-%5B3P%5D%20segmented-button-behavior.mp4?alt=media&amp;token=a5834979-23cb-42e9-b6fd-05b510f6934a</a></div><figcaption>Icons become checkmarks when selected in buttons that also use label text.</figcaption></figure><p id="81407f9d-09d6-41c7-bdcd-303dc3ba97ed" class="">
+</p></div></div><h1 id="c102e134-e60e-45b1-aca2-cd7da18cde55" class=""><details open=""><summary>Communication</summary></details></h1><div class="indented"><h2 id="1121b622-2de4-4099-aa9e-142e925a0e78" class=""><details open=""><summary>Badges</summary></details></h2><div class="indented"><p id="67286b57-82b4-4e41-90ca-523c67ab02e8" class="">Use badges with navigation items to convey dynamic information associated with that destination</p><figure id="fe149585-372c-49eb-ba21-a401baf5a8c1" class="image"><a href="https://lh3.googleusercontent.com/bJWl4TtT9yNTCfsCPsZ4xzduOm2kk9xyhiRfu2ZCpNMvGGkGgqShRAKNBpsxfrTFg0vJ9sw2nkfgndkfS5NDY9iSKDoHKo5Gl--O0QrUSvNF=s0"><img style="width:2048px" src="https://lh3.googleusercontent.com/bJWl4TtT9yNTCfsCPsZ4xzduOm2kk9xyhiRfu2ZCpNMvGGkGgqShRAKNBpsxfrTFg0vJ9sw2nkfgndkfS5NDY9iSKDoHKo5Gl--O0QrUSvNF=s0"/></a><figcaption>Small badge (on a navigation item) | Large badge (on a navigation item) | Large badge with max characters (on a navigation item)</figcaption></figure><figure id="4cdc7713-b33a-490a-8639-aff9be9df74c" class="image"><a href="https://lh3.googleusercontent.com/sWniiwDnJYwg6CSy2aNXFYZqflr8MHCQJUBqKts9U_sdhfPX9bFDTyf7dokV-LbQRmaeXEd4pXJW_K-HxQ17BN4hCxs6j_E1wA_sXbUH8Uk=s0"><img style="width:1352px" src="https://lh3.googleusercontent.com/sWniiwDnJYwg6CSy2aNXFYZqflr8MHCQJUBqKts9U_sdhfPX9bFDTyf7dokV-LbQRmaeXEd4pXJW_K-HxQ17BN4hCxs6j_E1wA_sXbUH8Uk=s0"/></a><figcaption>In navigation bars, hide the badge once the destination has been selected.</figcaption></figure><div id="5c85fc73-5ce8-4a54-94de-52cca1ee98ab" class="column-list"><div id="cb30e61e-f520-455a-9a87-4e35a8b4a829" style="width:43.75%" class="column"><figure id="dce0397c-5874-4bf9-a8cd-b0f9250e5e37" class="image"><a href="https://lh3.googleusercontent.com/yPLx3YgXp-usHMNhFQrs33NsBv0Jpz1lnlYgeiNoLCOpl7NaaVTbkSKvOaoXQjcnC00IhswGE8Bh2ewzNyj9C0rBae0zIyDewpXxpkCPILRI=s0"><img style="width:336px" src="https://lh3.googleusercontent.com/yPLx3YgXp-usHMNhFQrs33NsBv0Jpz1lnlYgeiNoLCOpl7NaaVTbkSKvOaoXQjcnC00IhswGE8Bh2ewzNyj9C0rBae0zIyDewpXxpkCPILRI=s0"/></a><figcaption>Don’t let the badge get cut off or collide with another element.</figcaption></figure></div><div id="e558f85c-dab4-4dc6-884b-c489126b25b8" style="width:56.25%" class="column"><figure id="8ac548f4-762a-4c2a-a600-74b238308c9a" class="image"><a href="https://lh3.googleusercontent.com/DBABe9WStgE3YbZPf0yvO5TSjGkEMEBNBB6WiV89yH0MpGyq8FNuwG3h7Rrq78u_zkd5y3vswob4yPXaSdoPk6oOQL1Boh1VV6O7mkXnwX8=s0"><img style="width:336px" src="https://lh3.googleusercontent.com/DBABe9WStgE3YbZPf0yvO5TSjGkEMEBNBB6WiV89yH0MpGyq8FNuwG3h7Rrq78u_zkd5y3vswob4yPXaSdoPk6oOQL1Boh1VV6O7mkXnwX8=s0"/></a><figcaption>Avoid using a large badge when it might overlap with a trailing element. Either place it at the ending edge of the lockup or use a small badge instead.</figcaption></figure></div></div><div id="630f1dd8-c4a5-4961-8ce6-1c6e021f1c96" class="column-list"><div id="7cad75d2-a5ac-4de1-bb5f-f2770385768a" style="width:43.75%" class="column"><figure id="377575a5-c073-43f7-adbf-f7aed8d93d8d" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%205.png"><img style="width:288px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%205.png"/></a><figcaption>Badges have fixed positions. Don’t change the position of the badge arbitrarily or place the badge over the icon.</figcaption></figure></div><div id="58c0f3a5-5ee2-4b03-b6bb-808f806229db" style="width:56.25%" class="column"><figure id="10fad655-cb92-4e74-8c01-a69955fa7448" class="image"><a href="https://lh3.googleusercontent.com/X1OaGXtq2nwatHa69ZCxJQmLLuLS5tRQvlc5-cv1ayoHKEdG_Ru_CdSL6UOOJx29uuD3gcYt49O23zQ7mADdlnOhqX-DKZaT2eLHtvlehbRr=s0"><img style="width:336px" src="https://lh3.googleusercontent.com/X1OaGXtq2nwatHa69ZCxJQmLLuLS5tRQvlc5-cv1ayoHKEdG_Ru_CdSL6UOOJx29uuD3gcYt49O23zQ7mADdlnOhqX-DKZaT2eLHtvlehbRr=s0"/></a><figcaption>Avoid using custom color mappings for the badge container and label text. They may not meet accessibility requirements.</figcaption></figure></div></div><p id="af26f5e5-be16-4c52-afba-1bd21afd077a" class="">
+</p></div><h2 id="74ec6a7c-c380-47ff-b840-288c013a1424" class=""><details open=""><summary>Progress Indicators</summary></details></h2><div class="indented"><p id="8a62a24b-d22e-4e8a-91e2-fa6bf213e9a2" class="">Progress indicators should be applied to all instances of a process (such as loading) in a consistent format (linear or circular)</p><figure id="6114e688-52d1-4017-96de-7f1e57faa346" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%206.png"><img style="width:2048px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%206.png"/></a><figcaption>There are two types of progress indicators: Linear and circular.</figcaption></figure><div id="5af69efd-36ca-4446-a7ed-322bcbfc8345" class="column-list"><div id="0aca54b9-3f4e-438d-8964-250103c7e4bb" style="width:50%" class="column"><figure id="c3e9610b-7764-4f33-aa2c-37351a4ce652" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/ezgif-2-55a2ffe1cf.gif"><img style="width:600px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/ezgif-2-55a2ffe1cf.gif"/></a><figcaption>Determinate linear progress indicator</figcaption></figure></div><div id="ecd5714b-6d33-402c-9951-2487a90ea6e6" style="width:50%" class="column"><figure id="bba7a42c-2fa5-44eb-94c3-197d7d082e20" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/ezgif-2-be3c943737.gif"><img style="width:600px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/ezgif-2-be3c943737.gif"/></a><figcaption>Indeterminate linear progress indicator</figcaption></figure></div></div><p id="46c3ef5e-140c-4dd7-bf5b-822d7d48a382" class="">
+</p></div><h2 id="e6a3e9f5-b9d8-4ed4-9f0e-b6c233a807f3" class=""><details open=""><summary>Snackbars</summary></details></h2><div class="indented"><p id="908f0861-6edb-4d80-bd8d-61d6ce058ae4" class="">Dismissive snackbars appear temporarily, and disappear on their own without requiring user input. Non-dismissive snackbars persist until the user takes an action or selects the close affordance.</p><ul id="fa329703-691a-4d21-a67c-b523fef83b0f" class="bulleted-list"><li style="list-style-type:disc">Only one snackbar may be displayed at a time.</li></ul><ul id="e040f51e-886a-423f-84de-f04c438b46cc" class="bulleted-list"><li style="list-style-type:disc">A snackbar can contain a single action. &quot;Dismiss&quot; or &quot;cancel&quot; actions are optional.</li></ul><ul id="377a4bbc-ba71-45ae-b701-fe74c4eacad5" class="bulleted-list"><li style="list-style-type:disc">On mobile, the text label can contain up to two lines of text.</li></ul><ul id="86976d8b-6935-493e-ab2f-bab5a9a0a3a8" class="bulleted-list"><li style="list-style-type:disc">Containers should be completely opaque, so that text labels remain legible.</li></ul><div id="13a08eea-2415-4e52-bb1a-78a501216d7f" class="column-list"><div id="45d1365a-5bc2-4a74-b2aa-1eed844a05d7" style="width:37.5%" class="column"><figure id="6f1c41bf-9e88-4df9-81ce-ed48e1c33b6b" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%207.png"><img style="width:432px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%207.png"/></a><figcaption>Don’t use icons in snackbars. If your message needs an icon, consider using a different component.</figcaption></figure></div><div id="cd604a3f-3cc6-4f10-a355-88d574dd1877" style="width:62.5%" class="column"><figure id="a745d8ab-fc66-409d-b386-479e63f98b47" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%208.png"><img style="width:1004px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%208.png"/></a><figcaption>An app can apply slight transparency to the container background, as long as text remains clearly legible.</figcaption></figure></div></div><div id="42e5b63a-2cbf-4d4f-8791-4cfc3c285c1a" class="column-list"><div id="5cd8ff48-1b70-4e94-87a0-f5f614d6c603" style="width:56.25%" class="column"><figure id="79ad5fc4-e89c-434e-a2b8-cee0da6eaab1" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%209.png"><img style="width:1352px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%209.png"/></a><figcaption>To distinguish the action from the text label, text buttons should display colored text.</figcaption></figure></div><div id="7bf60c0c-0ab5-4e2a-953e-3994c42b79bb" style="width:43.74999999999999%" class="column"><figure id="3b6695eb-274c-4c56-b0ec-1b358f0c2f35" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2010.png"><img style="width:1004px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2010.png"/></a><figcaption>Don’t use a filled or elevated button in a snackbar, as it draws too much attention.</figcaption></figure></div></div><div id="e9878924-10fd-4d63-a0fb-046e63939cad" class="column-list"><div id="1f1211ad-fd05-43f9-84b2-23a62b0bf5d8" style="width:50%" class="column"><figure id="611ce278-ce1b-42d8-b4f9-f650715b107b" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2011.png"><img style="width:656px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2011.png"/></a><figcaption>If an action is long, the button can be displayed on a third line.</figcaption></figure></div><div id="ab590cac-ea25-415d-847e-9c6f1af3088a" style="width:50%" class="column"><figure id="21a650ee-0d80-41e6-ace2-7d82b6b49819" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2012.png"><img style="width:656px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2012.png"/></a><figcaption>A dismiss action is unnecessary, as snackbar disappears on their own by default.</figcaption></figure></div></div><div id="c744dc46-41c4-45f9-9d32-98867e9c48cc" class="column-list"><div id="ed2ba642-2787-4c26-b7cc-ab608efdece4" style="width:62.5%" class="column"><figure id="5c89f2c8-50ae-40fa-b529-97befd060f99" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2013.png"><img style="width:1004px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2013.png"/></a><figcaption>Avoid significantly altering the shape of a snackbar container.</figcaption></figure></div><div id="8e521bb6-e19e-4ae0-89b2-5a0280db98c6" style="width:37.50000000000001%" class="column"><figure id="66f87090-43fa-410f-a8cd-240d17785af1" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2014.png"><img style="width:656px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2014.png"/></a><figcaption>Avoid placing snackbars in front of navigation components.</figcaption></figure></div></div><div id="715c5ce1-66c3-42f2-b960-373008db065d" class="column-list"><div id="688b58ca-ccf8-4e7e-9751-e126a7c5fb4f" style="width:33.33333333333333%" class="column"><figure id="89b1ddb8-a150-4651-b24d-5831be8ca7c8" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2015.png"><img style="width:1004px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2015.png"/></a><figcaption>Don’t place a snackbar behind a FAB.</figcaption></figure></div><div id="d51fe010-598e-412b-bb4d-f793f2790964" style="width:29.166666666666668%" class="column"><figure id="ca819893-172e-4285-8f4c-605a40fa9bb5" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2016.png"><img style="width:1004px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2016.png"/></a><figcaption>Don’t place a snackbar in front of a FAB.</figcaption></figure></div><div id="c94d3bcf-295b-4e3d-9a16-24b0e00c0d47" style="width:37.50000000000001%" class="column"><figure id="09aedf4e-f1d8-4cea-bfa9-a1fb362e2958" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2017.png"><img style="width:1352px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2017.png"/></a><figcaption>Snackbar above a FAB.</figcaption></figure></div></div><div id="d9693646-8d06-449b-a9ee-a693ec34a102" class="column-list"><div id="fc9e8bcc-817d-4d36-a8d9-e41199d274e4" style="width:50%" class="column"><figure id="9b3a7948-31be-4a12-a751-f4a175340e43"><div class="source"><a href="https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl7qbqg9s-3p-snackbars-behavior-don_t.mp4?alt=media&amp;token=646b3186-f507-4d98-a1e6-90a6b9c48695">https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl7qbqg9s-3p-snackbars-behavior-don_t.mp4?alt=media&amp;token=646b3186-f507-4d98-a1e6-90a6b9c48695</a></div><figcaption>Don’t stack snackbars on top of one another.</figcaption></figure></div><div id="faf40815-4551-43e0-b0a6-7b6e69e505f6" style="width:50%" class="column"><figure id="d72bed8a-7834-44b9-a15c-71e0ed0d4ca7"><div class="source"><a href="https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl7qbrszo-3p-snackbars-behavior-dont-2.mp4?alt=media&amp;token=cb43d1bb-1be5-4943-b80c-122470c4a26c">https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl7qbrszo-3p-snackbars-behavior-dont-2.mp4?alt=media&amp;token=cb43d1bb-1be5-4943-b80c-122470c4a26c</a></div><figcaption>Don’t animate other components along with snackbar animations, such as the floating action button.</figcaption></figure></div></div></div><p id="7ba66465-eb4b-489c-a11b-4d4484c8da8f" class="">
+</p></div><h1 id="1cf86d69-702e-44d6-aea9-fe8cd80f4fff" class=""><details open=""><summary>Containment</summary></details></h1><div class="indented"><p id="c96d8762-276d-4b84-b035-e1343ff4531d" class="">Containment components hold information and actions – including other components like buttons, menus, or chips.</p><h2 id="491c12be-4d9a-493a-b36f-f9925f6a48f1" class=""><details open=""><summary>Bottom sheets</summary></details></h2><div class="indented"><p id="c31d9d51-fd61-4908-881c-a10c748b8df5" class="">Bottom sheets display content that complements the screen’s primary content. They can be dismissed in order to interact with the underlying content.</p><figure id="55417387-11e2-4a1b-bd19-54ce05342d67" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2018.png"><img style="width:2048px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2018.png"/></a><figcaption>There are two types of bottom sheets: ① standard and ② modal. Modal bottom sheets are above a scrim while standard bottom sheets don&#x27;t have a scrim. Besides this, both types of bottom sheets have the same specs.</figcaption></figure></div><h2 id="34727bb0-0a26-4a02-9620-9c6d36b9a403" class=""><details open=""><summary>Cards</summary></details></h2><div class="indented"><p id="268a0789-4198-417f-8bcc-91488759b960" class="">Use a card to display content and actions on a single topic</p><figure id="37b48de0-5563-4e8d-9508-e1286096b8f0" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2019.png"><img style="width:2048px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2019.png"/></a><figcaption>There are three types of cards: ① elevated, ② filled, and ③ outlined.</figcaption></figure><div id="af38557c-fffe-4bf8-a2cd-48ead2cc37be" class="column-list"><div id="f4c394e0-fcb0-4221-9686-19b31ce0ec9e" style="width:50%" class="column"><figure id="0a3e76f5-20a1-4162-a61b-82f2a510657f"><div class="source"><a href="https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl0d2qjpe-cards-expand_3P_2.mp4?alt=media&amp;token=f6252b7c-cb3d-4c91-9701-13b9bf9f482d">https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl0d2qjpe-cards-expand_3P_2.mp4?alt=media&amp;token=f6252b7c-cb3d-4c91-9701-13b9bf9f482d</a></div><figcaption>Cards use a container transform transition pattern to reveal additional content.</figcaption></figure></div><div id="638a452a-e2f5-450d-b20d-5ec725803aa3" style="width:50%" class="column"><figure id="4884b270-99d6-4986-bd6a-9c784c1e2142"><div class="source"><a href="https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl5joquou-Cards%20-%20Forward%20and%20backward%20-%203P.mp4?alt=media&amp;token=bf9b389b-77df-40cd-ba28-8d05bfaeb05d">https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl5joquou-Cards%20-%20Forward%20and%20backward%20-%203P.mp4?alt=media&amp;token=bf9b389b-77df-40cd-ba28-8d05bfaeb05d</a></div><figcaption>Cards can use a forward and backward transition pattern to navigate between screens.</figcaption></figure></div></div><div id="8485949e-864b-42da-b006-d74f68e53da5" class="column-list"><div id="7969823e-5ab6-437a-a595-4e10faf078ae" style="width:33.33333333333333%" class="column"><figure id="ef70cbdc-c6a7-456b-9dbb-de262cef2c23" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2020.png"><img style="width:656px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2020.png"/></a><figcaption>Cards can contain icon buttons like stars to rate content.</figcaption></figure></div><div id="a24bf171-d041-4bfe-bd15-6a775a88adf2" style="width:33.333333333333336%" class="column"><figure id="6ca383e7-a37b-473f-8930-1eef033c8e1a" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2021.png"><img style="width:656px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2021.png"/></a><figcaption>Cards can contain choice chips within the action area.</figcaption></figure></div><div id="81797921-f092-43d3-9815-78ab9c38db26" style="width:33.333333333333336%" class="column"><figure id="45fe8cf8-7938-4085-a291-358564b42751" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2022.png"><img style="width:656px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2022.png"/></a><figcaption>Cards can contain a slider control within the action area.</figcaption></figure></div></div><div id="4b7e245d-4ce3-4c68-9f38-68181286698e" class="column-list"><div id="8d586f89-8932-4072-99da-c22d46183685" style="width:33.33333333333333%" class="column"><figure id="b4ae8806-4a57-4bfc-ad8b-5d4c63b813f6" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2023.png"><img style="width:1352px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2023.png"/></a><figcaption>Multiple cards can be grouped into collections with a shared resting elevation.</figcaption></figure></div><div id="76693632-72d5-417a-834d-154133b59fe1" style="width:33.333333333333336%" class="column"><figure id="e56e4342-6a89-4661-b1e3-3c952df9d258"><div class="source"><a href="https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl0d1zeju-cards_vertical_list_nosparkle_3P.mp4?alt=media&amp;token=dcb21e89-f041-4999-877e-85a10962c0b5">https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl0d1zeju-cards_vertical_list_nosparkle_3P.mp4?alt=media&amp;token=dcb21e89-f041-4999-877e-85a10962c0b5</a></div><figcaption>Cards can be shown in a vertical list.</figcaption></figure></div><div id="50929d6a-e800-4e64-96b7-b8c0eeb4890c" style="width:33.333333333333336%" class="column"><figure id="9d40d7d2-ea86-497a-a7ba-2236e83e8331"><div class="source"><a href="https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl0v8qhs7-cards_carousel_3P_1.mp4?alt=media&amp;token=bde00407-78d3-4d1c-9cb6-a58729bd257d">https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl0v8qhs7-cards_carousel_3P_1.mp4?alt=media&amp;token=bde00407-78d3-4d1c-9cb6-a58729bd257d</a></div><figcaption>Cards displayed together in a horizontal row or carousel.</figcaption></figure></div></div><div id="94976fb0-b34a-4197-9118-029df3b64e54" class="column-list"><div id="504564dd-6200-4d93-a49f-4c60a100816f" style="width:43.75%" class="column"><figure id="0f2ba3f5-177c-4d7e-a287-7d776eb1bcf3"><div class="source"><a href="https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl0d22chv-cards-swapping_3P_1.mp4?alt=media&amp;token=5574195f-e203-4ee6-a85d-02e4dff005fe">https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl0d22chv-cards-swapping_3P_1.mp4?alt=media&amp;token=5574195f-e203-4ee6-a85d-02e4dff005fe</a></div><figcaption>Adjust component layout so content remains the main focus on large screens.</figcaption></figure></div><div id="34304551-dd05-4bcc-bc38-dce6703ad037" style="width:56.25%" class="column"><figure id="bd971f6c-e980-4344-837b-e843a4106511" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2024.png"><img style="width:2048px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2024.png"/></a><figcaption>Example of the same card with two different orientations and element positioning.</figcaption></figure></div></div><div id="d08b62d9-7b75-4fb1-a847-3776b3a3c364" class="column-list"><div id="5138a2fc-520a-4fd6-9358-bc4f96e0853b" style="width:50%" class="column"><figure id="ab577448-cb91-4f3d-91ea-ca6b60050733"><div class="source"><a href="https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl0d24rvo-cards-swipe_do_3P.mp4?alt=media&amp;token=2f1faebb-e159-4b6c-a324-87257ae596cc">https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl0d24rvo-cards-swipe_do_3P.mp4?alt=media&amp;token=2f1faebb-e159-4b6c-a324-87257ae596cc</a></div><figcaption>A card should only have 1 swipe action assigned to it.</figcaption></figure></div><div id="79cbf35f-7f33-47ea-8b11-76f3fa8e020e" style="width:49.99999999999999%" class="column"><figure id="0038021f-d136-48b5-a5bd-8f616e9a2282"><div class="source"><a href="https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl0d27q3j-cards-move_do_3P_1.mp4?alt=media&amp;token=246075d0-1e2f-4fe0-b9b8-1f59aadecff5">https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl0d27q3j-cards-move_do_3P_1.mp4?alt=media&amp;token=246075d0-1e2f-4fe0-b9b8-1f59aadecff5</a></div><figcaption>When moving a card, increase its elevation</figcaption></figure></div></div><div id="fba3fb5b-3a50-435a-811f-d9b9a28781ac" class="column-list"><div id="e1d42c26-4580-4cf3-8884-e3489de9f972" style="width:25%" class="column"><figure id="5c93002a-a2a9-4d55-9882-5fda5cdc2079"><div class="source"><a href="https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl0d2gcqf-cards-scrolling_do.mp4?alt=media&amp;token=051d6c03-c436-4d86-9084-ae3bbc3f0528">https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl0d2gcqf-cards-scrolling_do.mp4?alt=media&amp;token=051d6c03-c436-4d86-9084-ae3bbc3f0528</a></div><figcaption>On a mobile device, cards can expand to reveal more content. Content within cards doesn’t scroll.</figcaption></figure></div><div id="dfbea80d-fd93-4fa1-9fd6-4b146d4e963b" style="width:75%" class="column"><figure id="96c6c503-ceda-4242-ba5e-f7e1c7c9d687"><div class="source"><a href="https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl0d2oom6-cards-desktop_scroll_3P.mp4?alt=media&amp;token=e57dba99-5a1b-433e-ba5e-ca1ee7824d0e">https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl0d2oom6-cards-desktop_scroll_3P.mp4?alt=media&amp;token=e57dba99-5a1b-433e-ba5e-ca1ee7824d0e</a></div><figcaption>On a desktop device, card content can expand and scroll within a card.</figcaption></figure></div></div></div><h2 id="5549b43b-f0bb-48a6-9f07-1df85a4cdb41" class=""><details open=""><summary>Dialogs</summary></details></h2><div class="indented"><figure id="64b2db94-a5c0-461c-a499-2b6132364c65" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2025.png"><img style="width:2402px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2025.png"/></a><figcaption>There are two types of dialogs: basic and full-screen.</figcaption></figure><div id="05249930-d0f6-4967-9cfa-23618704c586" class="column-list"><div id="8151b8f4-a354-4de7-8b97-ae3cecc733e8" style="width:56.25%" class="column"><figure id="6ab1d30b-1865-443e-963b-db00c495e60a" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2026.png"><img style="width:1612px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2026.png"/></a><figcaption>Don’t use dialogs for low- or medium-priority information. Also, dialog can be custom positioned on the right side of the screen for a more ergonomic experience.</figcaption></figure></div><div id="7cbec9ff-b938-4edc-a79e-205b6dce9f46" style="width:43.75%" class="column"><figure id="3de8dc3c-5a5b-4b14-88d8-7a9358e1f8cd"><div class="source"><a href="https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl0v3n834-Dialogs_Modal_3P_2.mp4?alt=media&amp;token=48cffc7a-0431-4ae6-94b9-665a01829bc2">https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl0v3n834-Dialogs_Modal_3P_2.mp4?alt=media&amp;token=48cffc7a-0431-4ae6-94b9-665a01829bc2</a></div><figcaption>Full-screen dialogs contain actions that require a series of tasks to complete.</figcaption></figure></div></div><div id="35cc93a1-caa0-4340-a6db-2644824e8283" class="column-list"><div id="a11c8fc6-b24d-4375-a3fd-e600467d4059" style="width:25%" class="column"><figure id="189f7bce-62fc-43da-bd3f-7313e947c66b" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2027.png"><img style="width:1156px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2027.png"/></a><figcaption>Basic dialogs require the user to take action before it will close.</figcaption></figure></div><div id="3e3cd630-83c9-4427-95a1-460267a14c1c" style="width:25%" class="column"><figure id="053207a2-7d12-47a4-9264-600eeb689e02" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2028.png"><img style="width:1156px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2028.png"/></a><figcaption>Basic dialogs can give users the ability to provide confirmation of a choice before committing to it.</figcaption></figure></div><div id="9911750b-5ab6-4025-8a1e-978eb8e32321" style="width:25%" class="column"><figure id="a294a750-96d1-404d-b76f-bc88e864bd35" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2029.png"><img style="width:1156px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2029.png"/></a><figcaption>Date picker dialogs allow users to tap a date, then confirm it by tapping “OK.”</figcaption></figure></div><div id="00a682a3-c8c8-4a27-b857-35457c2a9f09" style="width:25%" class="column"><figure id="7f43c0d0-0d87-49d5-9eb3-1d5277ed89a0" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2030.png"><img style="width:1156px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2030.png"/></a><figcaption>Time picker dialogs allow users to move the clock hand and then confirm by tapping “OK.”</figcaption></figure></div></div><div id="6bfa89cc-1c9c-487a-a025-0eb059904ee3" class="column-list"><div id="c96ffc94-5509-4656-966a-4ddfe97f82c2" style="width:50%" class="column"><figure id="cac838cd-78a8-40e5-8945-08c4ab8d3a48" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2031.png"><img style="width:1156px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2031.png"/></a><figcaption>For headlines, avoid apologies (Sorry for the interruption), extra alarm (Warning!), or ambiguity (Are you sure?</figcaption></figure></div><div id="841a5866-e8c0-4799-b2ac-ce64d096f8fb" style="width:50%" class="column"><figure id="e8a6edf1-ec5b-42cb-b891-957ff9307b26" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2032.png"><img style="width:1156px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2032.png"/></a><figcaption>Avoid placing long headlines in a full-screen dialog’s top app bar (1), as the truncated text may lead to misunderstanding.</figcaption></figure></div></div><div id="cc7fc213-3603-419d-be81-de168e513dae" class="column-list"><div id="44485342-29e5-4875-b3e0-6bc1dc2342c6" style="width:37.5%" class="column"><figure id="190f0a86-2573-4a19-96b7-f60d2bbc9e19" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2033.png"><img style="width:1156px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2033.png"/></a><figcaption>Don’t place dismissive actions (1) to the right of confirming actions. Instead, place them to the left of confirming actions.</figcaption></figure></div><div id="dcb0fa99-d199-436e-9cbb-5b78490a1f55" style="width:62.5%" class="column"><figure id="02540f71-9d70-4b74-8da3-c33e860fdcc6" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2034.png"><img style="width:1156px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2034.png"/></a><figcaption>Stacked buttons accommodate longer button text but take up more room. Confirming actions appear above dismissive actions.</figcaption></figure></div></div><div id="3e7d767d-3be8-498f-b802-076d4bd0eddb" class="column-list"><div id="ad4ba7fe-9206-4c68-872a-e57d8457317c" style="width:50%" class="column"><figure id="a33a901b-1a86-46b6-b5c1-a461ce0f9bbf" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2035.png"><img style="width:1520px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2035.png"/></a><figcaption>Don’t use the third button other than the confirming button and the dismissive button. The “Learn more” action (1) navigates away from this dialog, potentially leaving it in an indeterminate state.</figcaption></figure></div><div id="c0e3a5f3-4ae7-4912-b712-951ca9862ca2" style="width:50%" class="column"><figure id="af08e6be-13e4-4b70-abc2-15c901cc5491"><div class="source"><a href="https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl5jnvi3y-Dialog%20-%20Enter%20and%20exit%20-%203P.mp4?alt=media&amp;token=b76e88e2-438f-4b04-b4c8-c5cf3ab26a78">https://firebasestorage.googleapis.com/v0/b/design-spec/o/projects%2Fm3%2Fimages%2Fl5jnvi3y-Dialog%20-%20Enter%20and%20exit%20-%203P.mp4?alt=media&amp;token=b76e88e2-438f-4b04-b4c8-c5cf3ab26a78</a></div><figcaption>Dialogs appear without warning, entering and exiting the screen in a fade-transition pattern.</figcaption></figure></div></div></div><h2 id="d68c7f9a-b260-4a33-ac29-03c25817b963" class=""><details open=""><summary>Divider</summary></details></h2><div class="indented"><ul id="150d79f8-6261-4b45-b277-474ba589584e" class="bulleted-list"><li style="list-style-type:disc">A divider is a thin line that groups content in lists and containers.</li></ul><ul id="305e1dc3-6f0d-4ced-b02d-970f854799df" class="bulleted-list"><li style="list-style-type:disc">Dividers can reinforce tapability, such as when used to separate list items or define tappable regions in an accordion.</li></ul><figure id="527543a1-6170-49d0-b287-a17e6e3b7821" class="image"><a href="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2036.png"><img style="width:2048px" src="Material%20design%20-%20components%204d9549132e6d4c31bdc72e7e26b6992a/Untitled%2036.png"/></a></figure></div></div></div></article></body></html>

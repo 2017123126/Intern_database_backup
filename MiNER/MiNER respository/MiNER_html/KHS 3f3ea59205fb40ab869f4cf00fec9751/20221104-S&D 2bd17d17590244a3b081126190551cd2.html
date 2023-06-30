@@ -1,0 +1,695 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>20221104-S&amp;D</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2bd17d17-5902-44a3-b081-126190551cd2" class="page sans"><header><h1 class="page-title">20221104-S&amp;D</h1><table class="properties"><tbody><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>관련 링크</th><td></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>Type</th><td></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Due Date</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-orange">meeting</span></td></tr><tr class="property-row property-row-status"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesStatus"><path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path></svg></span>상태</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>작성 일자</th><td><time>@2022년 11월 7일 오후 3:05</time></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Date</th><td></td></tr><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>Participants</th><td></td></tr></tbody></table></header><div class="page-body"><h3 id="2b57cf86-d092-48ce-81d4-f5eb6380d0f2" class="">회의록</h3><h3 id="431c9578-1f83-4d6a-8580-5565835bd9cd" class=""><details open=""><summary>SHT</summary></details></h3><div class="indented"><ul id="d6c4f8c2-4750-4e14-8966-48d1c17d3392" class="toggle"><li><details open=""><summary>select | edit 시 화면 변화</summary><p id="6d83a46b-b4f7-4dae-a34a-0d4b54bfc4cc" class=""><a href="https://www.notion.so/Select-Edit-2f45b4937e1d4f51b858e7b677082027">Select나 Edit 화면에서의 뷰 변화</a> </p><div><p id="8c5c0d56-bced-4aee-9533-2e0e97622fbf" class=""><mark class="highlight-orange_background">select일 때, 선택되지 않은 객체에도 빈 동그라미(선택 가능한 객체가 있다는 표지)</mark></p><p id="c9a6102b-24cf-4a09-9029-4320b76a8aac" class=""><mark class="highlight-orange_background">롱클릭을 통한 select 전환과 드래그 다중 선택 적용</mark></p></div></details></li></ul><ul id="4d311266-61c0-407e-aaba-6404d0752a7e" class="toggle"><li><details open=""><summary>저전력모드(?) 문구 변화</summary><p id="7f1b2f35-acf6-462a-bac6-339a291179ac" class=""><a href="https://www.notion.so/SHT-8699981cc057478aabc7cdd51f5e0ad3">SHT 다이얼로그 전체 챌린지</a></p><p id="3bfe3699-496a-40b0-8b63-5752ac9fa81a" class=""> </p><div><p id="68a9f3b3-b696-4f43-bef1-89a8783b98db" class="">“Some features may slow down under this mode”라는 문구를 사용하지 말자</p><ul id="a1497fd8-f6cb-402d-aa93-2148f1b034e2" class="bulleted-list"><li style="list-style-type:disc">단점을 너무 대놓고 “느려진다”고 드러낸다</li></ul><ul id="830c2a3b-4989-4f54-acdd-bf492a5ac133" class="bulleted-list"><li style="list-style-type:disc">이런 식의 system dialogue에 slow down이라는 표현을 사용한 reference가 없다</li></ul><ul id="1232e80a-f7cf-4a13-ab79-2877d46a7ad4" class="bulleted-list"><li style="list-style-type:disc">slow down이란 표현이 들어간 아티클들이 다들 너무 부정적이다</li></ul><p id="3f8c1d78-83ba-4c85-8641-8d40801d41e5" class=""><mark class="highlight-orange_background"><strong>You’re in power save mode
+</strong></mark><mark class="highlight-orange_background">App performance will be reduced in power save mode.</mark></p><ul id="9035b028-f6f5-47b4-8c5e-556b50d60481" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><mark class="highlight-orange_background">Do not show again</mark></span></li></ul></div><p id="33371348-abed-4039-8f0d-4aa2ef5d1ef9" class="">
+</p></details></li></ul><ul id="69ed686a-89d4-4997-8db7-67fa19a51139" class="toggle"><li><details open=""><summary>다이얼로그 규칙</summary><div><ul id="da7fcca0-a3be-435c-9411-19a35e0fbb88" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">헤더에는 마침표를 사용하지 않는다, 물음표는 쓴다</mark></li></ul><ul id="7b52e858-884a-4ca6-8b30-ad48aed3875f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">바디 텍스트는 최대한 한 문장으로 구성하고, 완성된 문장 형태로 쓴다(모든 문장 부호를 사용한다)</mark></li></ul><ul id="59af8083-a2fb-4d37-9fbd-6451652c11c5" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">액션의 텍스트에는 문장 부호를 사용하지 않고, 최대한 한 동사로 사용한다</mark></li></ul></div><p id="7fe0ac0b-e497-4fd1-8311-e1135ef07468" class="">
+</p></details></li></ul><ul id="521fbbcf-c033-492f-ab78-b22c42ce570c" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/56de62240f29408f96806e2a375c14e1">온오프라인 및 자동 태깅 여부 구분</a> </summary><div><ul id="159a05a0-2a9e-4f1d-b895-2a06fe6bbaba" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">메인 및 검색 결과 페이지에 이미지 썸네일 영역과 툴바 사이에 한 줄 추가</mark><ul id="523ac962-a8bb-4296-a170-a7b25b95f178" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">온라인 상황에서 태깅되지 않은 사진을 탐지하는 경우(최초 설치, 새롭게 찍힌 사진 등)</mark><p id="345c7239-d33f-4f07-873d-4e18d0f8532f" class=""><mark class="highlight-orange_background">“Tagging n screenshots”</mark></p></li></ul><ul id="d6e7a422-a16a-444c-82d1-3cee2682910a" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">오프라인 상황에서 태깅되지 않은 사진을 탐지하는 경우(최초 설치, 새롭게 찍힌 사진 등)
+”Tagging paused for n screenshots”</mark></li></ul></li></ul><ul id="049a752f-6fb9-4910-a7b9-cd6ff0a2db5f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">오프라인 상황에서 태깅되지 않은 사진을 탐지하는 경우(최초 설치, 새롭게 찍힌 사진 등) 그 사진의 썸네일 및 이미지디테일 우상단에 별도의 표시</mark>
+</li></ul></div></details></li></ul><ul id="ca606b7a-e258-4fe9-9525-7b021d6b8721" class="bulleted-list"><li style="list-style-type:disc">세팅에서 아이콘 싹 다 빼기? 는 생각해 보자</li></ul><div><ul id="1343c093-cb74-4077-b3fd-18d7550c013c" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/f21d916c8e324f7da5e4d38846376bbf">개발자에게 연락하기</a> </summary><div><ul id="cca87edf-c3cf-4813-b05f-8002b8e46f23" class="toggle"><li><details open=""><summary><mark class="highlight-orange_background"><strong>Edmunds처럼 하기로</strong></mark></summary><p id="593d2e86-4988-4596-b498-7dee377daad3" class=""><strong>“send </strong>feedback” 또는 “Feedback”</p><p id="80fcbdb1-44a6-431b-be05-6ad66830c47f" class=""><span style="border-bottom:0.05em solid"><strong>앱으로 바로 이동 / 안되면 토스트 띄움</strong></span></p><figure id="43214896-b6cb-4099-b60c-c27b50445cff"><div class="source"><a href="20221104-S&amp;D%202bd17d17590244a3b081126190551cd2/Screen_Recording_20221013-134840_Edmunds.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/71c087d0-6785-4dfd-9b59-5cf9cfc66f39/Screen_Recording_20221013-134840_Edmunds.mp4</a></div></figure></details></li></ul><p id="9bb89fb0-4dbe-48d9-ae56-2a29e932aea3" class=""><mark class="highlight-orange_background">아이콘은 튜토리얼 이 물음표니까 Feedback은 말풍선(카카오톡 같은) 모양 아이콘으로</mark></p><p id="421e88de-69e4-453a-804c-8d2c886ea40c" class=""><mark class="highlight-orange_background">메일은 굳이?</mark></p><p id="d2143a7a-4049-4b46-8665-5d2833bafa03" class=""><mark class="highlight-orange_background">특정 채널을 연결, 가장 적절한 채널은 Discord 아닐까</mark></p></div></details></li></ul></div><div><ul id="a5eb0c3d-3ea6-4d0e-90b5-ebbe31107d4d" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/aa4f7774bf9a4df386e24b3ceda172aa">앱 공유하기</a> 통과</summary><p id="a86e9e64-73a5-45f8-8ddc-7fdc5e98536e" class=""><mark class="highlight-orange_background">아이콘이 들어간다면 링크나 아예 기존에 쓰는 공유 아이콘을 넣자</mark></p></details></li></ul></div><ul id="6f0f984a-40da-45d5-8833-60acb9744cef" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/SHT-d1c65cc7bbcf472990b53c09f1c3fadf">SHT-튜토리얼</a> </summary><div><p id="c7821023-587b-4495-a669-6739dad25399" class=""><mark class="highlight-orange_background">종료 시에 다이얼로그 창이 올라오는 건 너무 무겁다</mark></p><p id="d49d5c18-f1a9-4a6e-a275-5e925fd74c43" class=""><mark class="highlight-orange_background">skip 색깔은 바꿔 줘도 될듯</mark></p><p id="285f932a-d2bf-4051-bccb-861e06486516" class=""><mark class="highlight-orange_background">객체 위에 올라가는 메시지가 투명할지 말지는 선택</mark></p><p id="d461ad6e-8a63-4f8b-9e00-566e4dd68c15" class=""><mark class="highlight-orange_background">skip 및 done 대소문자 처리 일치시키기</mark></p><p id="175d3614-1432-41ab-bf7f-0b279e2184e0" class=""><mark class="highlight-orange_background">지금 텍스트와 플로우는 괜찮을 것 같음</mark></p><p id="06e337c9-bb06-451a-9118-50b94a4f1e95" class=""><mark class="highlight-orange_background">탭 가이드 애니메이션은 아래 참조</mark></p><figure id="9f22bf28-f686-47de-acb7-a4eef0ea62e5" class="image"><a href="20221104-S&amp;D%202bd17d17590244a3b081126190551cd2/Screen_Recording_2022-11-03_at_12.19.51.gif"><img src="20221104-S&amp;D%202bd17d17590244a3b081126190551cd2/Screen_Recording_2022-11-03_at_12.19.51.gif"/></a></figure></div></details></li></ul></div><h3 id="1dfef3f6-5f12-4e60-9676-a8f656381d9c" class=""><details open=""><summary>MSC</summary></details></h3><div class="indented"><ul id="b8829ee6-da8d-4a60-b33c-b4be69457210" class="toggle"><li><details open=""><summary>플앱의 티켓 양도 기능 업데이트</summary><p id="a1301dfe-e28b-401b-a393-c3c57553d180" class="">찬: 욕먹느라 바쁨
+<a href="https://www.notion.so/1a8b56068eef4cdaaeab9cdcaa07a81d">https://www.notion.so/1a8b56068eef4cdaaeab9cdcaa07a81d</a>
+건: 플앱 정보를 받아올 수 있는 방안, export data 활용</p><p id="d097e9e5-9fa8-403e-b13e-c6c8d638c9ed" class="">찬: 친구 기능에 대한 니즈
+건: 유료화해도 괜찮을 듯</p><p id="538fe105-23c3-4801-8579-a3e9fd9dbf1c" class="">찬: 엑셀에 정리해도 자기만의 형식으로
+보통 제가 생각할 때 들어갈 항목은 다 비슷할 듯
+그 항목만 합리적으로 정해서 여러분들이 정리한 걸 이렇게 주면
+건: 특정 형식 표형식으로 올리는 걸 유료로 여는데
+티켓 불러오기 → csv 업로드 등의 방식
+엑셀 형식</p></details></li></ul><ul id="0dcf7182-7a9d-456e-a57b-ac5fd961e9b0" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/DB-5631812180a4461992f41acc21595246">DB에 존재하는 뮤지컬이 앱에서 조회되지 않습니다.</a> <span class="user">@구일</span> → 이번주 주말 안</summary><p id="fb81ed40-3320-41d7-b00a-01d41753bbb5" class="">웨이스티드, 미수</p></details></li></ul><ul id="21f9f337-c005-4aff-be85-6a58184da900" class="bulleted-list"><li style="list-style-type:disc">이미지 수정 <span class="user">@건표</span> → 오늘</li></ul><ul id="d97e9df0-309a-4c43-a4eb-6038448b25eb" class="bulleted-list"><li style="list-style-type:disc">캣츠, 앤 등 뮤지컬 이름 관련 문제 <span class="user">@구일</span> </li></ul><ul id="828730e8-4fe3-4d80-bb86-ade2cd15e4fa" class="toggle"><li><details open=""><summary>AOS <a href="https://www.notion.so/2-1-2-864ac068bd8947d38f2753e88552636a">2.1.2</a>, iOS <a href="https://www.notion.so/2-1-2-5371926169974a519d764b58c05bb38f">2.1.2</a> QA 및 업로드</summary><p id="fdc5b44c-8a60-4802-8596-737c84a87745" class="">AOS는 업로드 전 전체적으로 확인, iOS는 네트워크만 한번 더 체크</p></details></li></ul><ul id="a66932cd-c57a-432f-9342-eac2d20b88e3" class="toggle"><li><details open=""><summary>후기 커서</summary><ul id="f5607c04-aa0a-4012-9a8f-fb63b7f2fd48" class="bulleted-list"><li style="list-style-type:disc">유저 CS (1)<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="dd83364d-198d-4d1b-8d26-963da268a692"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">후기 수정하려고 할때마다 창이 맨 위 아님 맨 아래로 자동으로 이동해서 너무 힘들어요.... 창이 커서 있는 곳에 멈추게 해주세요ㅠㅠ (아이폰7 기준)</div></figure><p id="a2a84d4b-a0a5-4caf-8cc2-a0b38f48d858" class="">→ 확인 후 유저에게 자세한 상황 화면 공유 해달라고 해서 영상 받음</p><figure id="810227a8-c672-4801-8d67-44fa55697610"><div class="source"><a href="20221104-S&amp;D%202bd17d17590244a3b081126190551cd2/RPReplay_Final1667439911.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a87bda30-8536-4809-bc91-049155ebb934/RPReplay_Final1667439911.mp4</a></div><figcaption>유저가 보내준 동영상</figcaption></figure></li></ul></details></li></ul><ul id="77f1cd3d-88a0-4508-9626-fd926c0ead33" class="toggle"><li><details open=""><summary>캘린더 행동 수정</summary><p id="c2ab32d4-92f4-485f-8ba1-361743c5ce71" class="">달력 창에서 두 개 이상의 표가 있을 경우 클릭하면 아래에 표를 선택할 수 있게 뜨는데, 한 개의 표만 있을 경우 바로 표 세부사항으로 넘어가더라고요. 작은 창의 표는 중요한 정보들만 빠르게 보기도 편할 뿐더러 지나간 표가 몇 번째 관람인지 달력창에서도 볼 수 있는 유일한 방법이라 혹시 한 개의 표만 있더라도 작은 창으로 먼저 뜨게 만들어주실 수는 없으실까요? 
+찬: 일정탭과 티켓탭에서의 행동을 분리하는 차원도 있는 것 같고 괜찮은 듯.</p></details></li></ul><ul id="5546bf9a-be54-43a8-ae8b-889ab2486128" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/S-D_-8405137f64b041918221fe8f3ef636ad">S&amp;D_찬</a> </summary><ul id="42bf4557-fe0c-4c4d-a92c-ec34fc60a899" class="toggle"><li><details open=""><summary>초대권 관련</summary><p id="c63e0197-be71-45aa-9de5-23bfbee8d6a7" class="">1. 당첨자에게 공연 공지 및 관람 가능 날짜 회신 (2022.11.04)
+2. HJ컬쳐 측에 전달 및 초대권 구매</p></details></li></ul><ul id="5d52465a-e86f-4baf-b1d1-48b8d2513d0c" class="toggle"><li><details open=""><summary>자주 만나는 배우 카운팅 오류</summary><p id="7780f866-9756-4d70-b7ad-954dba099c8d" class="">공연 관람 종료 내용만 반영</p></details></li></ul><ul id="5adb90ef-61a7-43fa-bee1-bcb3edfc1325" class="toggle"><li><details open=""><summary>다른 장르 공연의 데이터 반영</summary></details></li></ul></details></li></ul></div><h3 id="e6824499-bc9a-42eb-877e-00e56cc1e8f1" class=""><details open=""><summary><a href="https://www.notion.so/2022-12-1-1360c6b3a4bb4e4f90df4a1010621597"><span class="icon">🏃🏻</span>2022년 12월 1주</a> </summary></details></h3><div class="indented"><ul id="5688a735-9f38-499e-af4e-bd36bac3c978" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/11-3-Sprint-80bf6a0e646346a0a2cb3c1ae5761bbd"><img class="icon" src="https://www.notion.so/icons/video-game_brown.svg"/>11월 3주차 Sprint</a> </summary><p id="53c08b4a-5853-4c02-926b-271c9206100c" class="">예매내역 불러오기) 뮤지컬-시즌-기간
+검색 범위를 시즌 캐스팅 정보로 하고, 해당 배우가 시즌 캐스팅에 없는 경우에는 전체 범위로 넓히기
+역할-캐스팅 이니까 역할 정보도 활용할 수 있지 않을까</p><ul id="b2ca4185-d2e6-4930-924e-9aaefdae67af" class="toggle"><li><details open=""><summary>로직</summary><p id="7e36f043-392a-4efd-8e73-058576ec0706" class="">시즌 캐스팅 정보 있다<div class="indented"><p id="4205e2d1-619b-4a25-ac60-9a78704a5f56" class="">역할-캐스팅 다 지정되어 있다<div class="indented"><p id="9a958be4-6f82-4b14-8e32-a6d1f9726fb9" class="">예매내역서에 역할 이름이 있다<div class="indented"><p id="6fff8cf8-1eea-4a7c-8429-9fba6532e44d" class="">시즌 데이터 기반으로 역할 내 캐스팅 그대로 비교해서 가져온다</p></div></p><p id="22281c56-3083-4904-9d1f-38cab113587b" class="">예매내역서에 역할 이름이 없다<div class="indented"><p id="a898274c-fbbb-4e92-bf71-ef2c5efcc646" class="">우리 DB에 있는 역할을 우선 무시하고 캐스팅(출연진)만 기준해서 비교</p></div></p></div></p><p id="a9dce30b-a838-4f5e-aba2-90cfd8db800c" class="">출연진으로 싹 다 퉁쳤다<div class="indented"><p id="36ce8495-6c76-4413-8da9-d1762bfe1dde" class="">예매내역서에 역할 이름이 있다<div class="indented"><p id="d2e9ba80-ff6b-4b29-8029-659be20aa328" class="">역할을 씹고 우리 출연진 목록을 기준으로 비교</p></div></p><p id="df63e0ce-48a1-432a-b457-63b11eb97c3d" class="">예매내역서에 역할 이름이 없다<div class="indented"><p id="0696231d-1dab-409b-ad11-3bdebd17014b" class="">우리 출연진 목록을 기준으로 비교</p></div></p></div></p></div></p><p id="c293d394-0e0e-4fa9-853f-a08a1346a097" class="">시즌 캐스팅 정보 없다<div class="indented"><p id="cd6ae659-d005-4fa2-835c-3acbef7d13bc" class="">예매내역서에 역할 이름이 있다<div class="indented"><p id="4347626b-e0dd-4d8e-9820-137674d40dd2" class="">전체 배우 DB를 기준으로 비교, 동명이인 발생 시 우리가 지정한 우선순위 따라 불러오기</p></div></p><p id="5b6cd7d8-e412-4b5d-9a42-00dc8b518a55" class="">예매내역서에 역할 이름이 없다<div class="indented"><p id="e8368c35-445a-4400-867d-750d1b73b376" class="">전체 배우 DB를 기준으로 비교, 동명이인 발생 시 우리가 지정한 우선순위 따라 불러오기</p><p id="696d255f-376d-4d0c-9b56-d99c79cca155" class="">
+</p></div></p></div></p></details></li></ul><p id="19eb89fd-8614-4c5d-b672-e16aea006225" class="">같은 역할을 동명이인이 하지 않는 이상 문제는 발생하지 않을 것 같다.</p></details></li></ul><ul id="c82a120e-e19d-418c-ab35-add236a9c62f" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/2b8339d1e0f144098cfac3da2efdd6ce">출연진 입력 방식 수정</a> <a href="https://www.notion.so/4e6bd833333e461bb50f86d596147ddf">출연진 입력 방식 변경 및 변환</a> </summary><blockquote id="2c1da6e2-7ef9-4bb3-a74b-e7ebf5f4fe03" class="">출연진 입력 관련 - 미등록 배우 수정시 처리문제 [배우 Alias 전제]</blockquote><p id="4ed4e796-b6a3-4ee0-80d9-0e67bca6ae20" class="">
+</p><p id="75e9d6b8-3b5d-49c1-b4d7-d2a8ab42b588" class="">출연진 편집을 시도할 때
+그 전까지는 의미 없는 데이터는 전부 남아 있음</p><p id="4579f25a-cf09-4aad-b10f-2f5b7c5f4e06" class="">찬: 업데이트한 후에 상황 설명 공지
+기존 데이터 수정이 필요하니까 확인이 필요하면 들어가 봐라 팝업</p><p id="dd29546a-6a2c-41a8-b84f-2db39cfe43f5" class="">
+</p><ol type="1" id="a373e8b5-3b03-4cf5-b808-0349b3414e95" class="numbered-list" start="1"><li>미등록 출연진 삭제할게 다이얼로그<ol type="a" id="69739ec9-806f-4a6e-9e48-ecb937270caf" class="numbered-list" start="1"><li>취소하면 안 사라지는 거 명시하기</li></ol><ol type="a" id="dc41c2d0-d1c5-4681-a189-39f3de18e81c" class="numbered-list" start="2"><li>어떤 출연진이 잘못되었는지 확인하기 힘듦</li></ol><ol type="a" id="e59cdebb-cbeb-44f4-9cdc-ce32f5f57f65" class="numbered-list" start="3"><li>제보하기로 바로 이어질 수 있으면 좋을 텐데… :0</li></ol></li></ol><ol type="1" id="36939aa3-6a51-442f-a44c-e8b3654f078c" class="numbered-list" start="2"><li>출연진 선택 뷰 <strong>상단</strong>에 미등록 출연진 표시 후, 출연진 삭제 전까지 <strong>저장</strong><ol type="a" id="332cf2e3-69e9-47d8-8be9-2683a4525e84" class="numbered-list" start="1"><li>뷰가 많이 복잡해질 수 있음</li></ol><ol type="a" id="b23d5f5a-f2f1-4d99-88b1-54820f6d2269" class="numbered-list" start="2"><li><strong>설명하는 글이 필요함</strong></li></ol></li></ol><p id="e766937c-a16e-4757-9db5-c44bea722230" class="">
+</p><p id="86f8fe57-0f19-4045-ada9-2fbbc2f38cd6" class="">희: Action Sheet 를 활용해서 미등록 출연진 자세히 보여주고, 설명하기.</p><figure id="fa6bedaa-0e76-460a-ba2e-e973be10b696" class="image" style="text-align:center"><a href="20221104-S&amp;D%202bd17d17590244a3b081126190551cd2/Untitled.png"><img style="width:432px" src="20221104-S&amp;D%202bd17d17590244a3b081126190551cd2/Untitled.png"/></a></figure><p id="1e748a61-22c2-454a-8066-8ef215b5d433" class="">바로 제보도 할 수 있으면 좋을 것 같아용</p><p id="65e1dd25-a619-4a2a-a160-e59065f5d446" class="">
+</p><p id="d83f4549-0fa0-4e97-a3d6-1d922a03230e" class="">DB 등록이 되지 않은 ‘텍스트’</p><p id="cecb8f0a-bc02-483a-a3ec-b6114deee753" class="">찬: 편집을 들어왔다가 담아둘 수 있다, 텍스트를 남겨 두고 빠져나갈 수 있다
+건: 출연진 안, ‘직접 추가한 출연’ 아래쪽에 (존재하는 경우) 한 줄이 있을 것
+하나만 삭제하는 기능이 오히려 필요할 수도</p><p id="16eed6a2-b6ef-4187-9f07-e1d9a74b7544" class="">찬: 한 번이라도 추가된 출연진의 체크박스는 티켓에서 사라지지 않는다, 선택은 해제할 수 있음</p><p id="f54444f7-0038-4c40-896c-965574738953" class="">찬: 최상단에 배치하면 올라올 필요는 없다</p></details></li></ul></div><hr id="243fc21f-2b3f-415f-9d7c-8c42f15bc728"/><p id="658759a0-9b7e-4b5c-b6f3-754419c1cecf" class="">시즌 정보에 이미 출연진 리스트로 들어간 애들은 직접 선택 해 와도 아래에 추가되지 않고 사라짐</p></div></article></body></html>

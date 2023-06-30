@@ -1,0 +1,744 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>20221212-S&amp;D</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7d41f488-0284-4e81-925b-b95a37b53be2" class="page sans"><header><h1 class="page-title">20221212-S&amp;D</h1><table class="properties"><tbody><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>관련 링크</th><td></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>Type</th><td></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Due Date</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-orange">meeting</span></td></tr><tr class="property-row property-row-status"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesStatus"><path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path></svg></span>상태</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>작성 일자</th><td><time>@2022년 12월 12일 오후 8:11</time></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Date</th><td></td></tr><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>Participants</th><td></td></tr></tbody></table></header><div class="page-body"><p id="50962739-22e7-44ad-8126-7370b51167f3" class="">
+</p><h3 id="a4cc0ec9-8df7-477b-bd39-fcd2f8035628" class="">회의록</h3><h3 id="f31b3c0f-8d39-4efc-807c-f29f666585e4" class=""><details open=""><summary>SHT</summary></details></h3><div class="indented"><div><ul id="94f3aa99-da86-47bc-b5ff-36550ed9afec" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/20221208-S-D-d2a81b13138e42e28839e6d2c6a2dd5f"><span class="icon">📊</span>20221208-S&amp;D</a> 메모 UX 확정</summary><figure id="d270f61e-673f-414e-ba2d-60d45b96f0d1" class="image"><a href="20221208-S&amp;D%20694e38ec82b14d24a882d963abdf854f/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2022-12-08_16.55.26.png"><img style="width:432px" src="20221208-S&amp;D%20694e38ec82b14d24a882d963abdf854f/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2022-12-08_16.55.26.png"/></a></figure></details></li></ul></div><ul id="a47f2f6e-b6a9-496e-aca1-fb7ed265cf69" class="toggle"><li><details open=""><summary>search</summary><p id="b912e2ad-ff56-4ea7-86cb-9ff97d6525a3" class="">검색어1의 위치</p><p id="f86494b8-eee5-4f7c-a174-b01c7e0358cd" class="">(검색어2의 위치)</p><p id="dad675c8-dacc-4d7e-b558-ae7c64f49cb1" class="">(검색어3의 위치)</p><p id="5513d404-edb6-40ff-8288-c03084337c46" class="">abc순</p><div><p id="093fd319-19ba-4134-9b72-6b540b4b2aeb" class="">빈칸은 모든 abc에서 맨 앞임</p></div></details></li></ul><div><ul id="b07208cf-78f2-4375-8558-84e7831f1d33" class="toggle"><li><details open=""><summary>편집(crop)을 아예 빼는 것</summary><p id="7790c333-e2b4-4e17-9731-8508b9e5759a" class="">건: mvp에서 중요한지 모르겠다, 최대한 가볍게 하는 차원
+이후 crop 로직 정해 줘야 함</p></details></li></ul></div><ul id="11753650-273a-4b27-9301-51ad5c1a4266" class="toggle"><li><details open=""><summary>다중 add tags + add tags</summary><div><p id="21b5c5e4-b887-4dfe-b19e-38498899c3cd" class="">키보드가 올라와 있을 때는 스크롤이 없음</p><p id="df302190-0e4c-4e8b-b509-9eab6f63047c" class="">키보드가 내려갔을 때는 전체 화면의 스크롤</p></div><p id="759e7983-0ee2-433c-8f2d-018e5874aa1e" class="">(다중의 경우)</p><div><p id="9d3043fd-a9fe-4675-8ed5-19f8ab277f03" class="">태그가 보이도록 화면이 올라가다가, 검색바가 최상단에 가면 검색바 기준으로 고정</p></div><p id="b8cf6f88-5cba-4d64-b25c-e6f52172ed28" class="">(단일의 경우) </p><p id="6e1fbddc-5726-4561-a42a-aa80e58f7ae4" class="">가만히 있음</p><p id="536f34a9-6f22-47de-ad78-3c5f8ff97385" class="">
+</p></details></li></ul><div><ul id="6c6f0208-2468-4bbe-9540-c123bcc201f8" class="toggle"><li><details open=""><summary><strong>초기에 가입 시에 닉네임 설정 → 마이페이지 바뀌어야 됨 + 초기 가입 화면 뷰 필요함</strong></summary><p id="89fae7af-943d-476b-9a69-f47a6e739cab" class="">(이메일) + 닉네임(이름), <del>프로필 사진?</del></p><div><ul id="51d14065-36a2-4dfd-8dbe-bca6df1da40f" class="toggle"><li><details open=""><summary>프로필 사진을 뺀다</summary><p id="9db6f310-fa28-4af4-a159-a9546a90638e" class="">찬: 프로필 사진 쓸 건덕지가 안 보인다</p><p id="37752a74-0280-4f47-9f43-b05f96cbc1b9" class="">현: 소셜 기능을 넣느냐에 따라 다를 듯</p><p id="b0013a3e-2ef3-49db-ad93-abbb23eab843" class="">현: 추후에 어떻게 하느냐에 따라 다를 듯</p><p id="5c19eb35-79ab-41ee-9075-7497b6263216" class="">
+</p></details></li></ul></div><div><ul id="09ee18c5-51d6-49a5-85ba-8f642eebf931" class="toggle"><li><details open=""><summary>가입절차</summary><p id="9f2d2f75-dba5-4d3f-84bd-8f4b97c6ce6e" class="">현: 가입 절차 닉네임 칸이 있고 자동으로 채워지기로</p><p id="7bc1816d-40b9-43f0-9ed1-2b8a3387c77a" class="">건: 닉네임이라는 칸, 이메일 표시</p><p id="17a08274-cde9-4df8-bf2c-2e9908776c8e" class="">찬: 오히려 심플한 게 안 거슬려서 좋을 듯</p><p id="6d5a2386-81d0-42eb-9cd0-dd5091e036a9" class="">현: 너무 빌 것 같다는 게 어느 정도 공감이 된다,</p><p id="9695848d-6671-4de8-ad6f-049adc25101b" class="">전체화면에 두 칸만 있으면 그건 좀,,,</p><p id="92215a03-ec08-4878-be77-8eede342b614" class="">만약 하게 된다면 null 화면처럼 일러스트가 들어간다거나</p><p id="63d4a103-ed53-4c79-953e-86fdfcf7536c" class="">건: 다른 요소는 없다</p><p id="4aa065ee-7195-4052-82ea-329e9e34c3ad" class="">
+</p></details></li></ul></div><div><ul id="54683746-8d8b-4048-b616-87f290e3132e" class="toggle"><li><details open=""><summary>닉네임 편집 가능하도록 + 중복 여부도 가능하도록</summary><p id="a5db8055-b2aa-4a45-873a-10e1e4b64fc6" class="">건: 닉네임 편집의 필요성?</p><p id="77c3d063-da17-4936-a2cb-b699b860c73c" class="">찬: ㅇㅇ 닉네임을 처음에 자동으로 부여했으니까</p><p id="4365a361-e365-44bd-a61e-723264619ddf" class="">
+</p><p id="2717ba1b-4858-42e4-a427-310082bc4fdb" class="">현: 닉네임이 겹쳐도 되는지,,,</p><p id="a37f0518-63b7-4681-8903-2dd93a1f3f18" class="">현: 당근은 닉네임 하핫, 예를 들어 다른 사람이 하핫이라는 나를 검색해야 한다(특정 유저)
+저한테 부여된 난수가 따로 있다, 그때 난수를 집어넣고 하는 식으로 난수를 선택적으로 사용함</p><p id="67dfc6af-faca-4779-bfaa-1ae4a910d34e" class="">건: 닉네임은 중복 허용</p><p id="ea52973b-3a80-4823-88f0-05932cc6ccf6" class="">
+</p><p id="2a6f9066-1dfc-4899-818b-d5cb239ece76" class="">건: 가입 시와 비슷하게 변경 뷰도 만들면 되지 않을까</p><p id="1540a373-f2c2-47d5-849a-ae849edbe545" class="">
+</p></details></li></ul></div><ul id="1eef3e20-7999-4758-a112-7cc9fb9c7845" class="bulleted-list"><li style="list-style-type:disc">닉네임 change 버튼의 위치 (마이페이지/세팅)</li></ul></details></li></ul></div><p id="815b6bf1-f9c7-4d91-a36c-61799c5a2307" class="">
+</p></div><h3 id="e9e2c802-1e6e-4bc1-b343-7cf0fc2f6578" class=""><details open=""><summary>MSC</summary></details></h3><div class="indented"><ul id="16a4ecc3-e543-44f8-84cb-e1388f87d512" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/20221208-MSC-8870ae53591c4bb288f1eef180429352"><img class="icon" src="20221212-S&amp;D%207d41f48802844e81925bb95a37b53be2/logo_white.png"/>20221208-MSC</a> 내용 확인</summary><ul id="5ed5de03-a6d3-4878-9ff7-d041058952ff" class="toggle"><li><details open=""><summary>정보 업데이트 하면서 동명이인 리셋되는 문제 발생
+(금일 오전 넥투노-최재웅, 포미니츠-양지원, 스프링 어웨이크닝-이정화 수정)</summary><ul id="28e1f61e-32f4-45c7-bc5b-c59cab0f649d" class="bulleted-list"><li style="list-style-type:disc">시놉시스, 넘버, 연출진: 덮어쓰기</li></ul><ul id="3e775b48-c90c-4442-bedb-86c10feb7377" class="bulleted-list"><li style="list-style-type:disc"><del>출연진</del><ul id="b6ff5179-b837-48b3-855b-28691d7074e5" class="bulleted-list"><li style="list-style-type:circle"><del>기존에 비어 있을 경우/’출연진’ 단일 역할일 경우 내용 덮어쓰기</del></li></ul><ul id="c94990b7-4bce-4980-bbad-a61156a3574b" class="bulleted-list"><li style="list-style-type:circle"><del>그 외의 경우 변동 없음</del></li></ul></li></ul><ul id="44dd6767-e21f-4d62-8eda-243c0fe1f202" class="bulleted-list"><li style="list-style-type:disc">출연진 → 역할 + 캐스팅</li></ul><ul id="6d88ab95-480a-45c9-9ab3-6977e28a8158" class="bulleted-list"><li style="list-style-type:disc"><strong>무조건 db 역할로 가져와서 비교 후 있으면 놔두기 (actor id 가 아니라 name으로 비교)
++ 이거 앞에 ID는 먼저 처리한다</strong></li></ul><p id="f62876ce-2026-4c8c-a5d5-24406ee963d8" class="">
+</p><p id="a1e2c676-1b5f-4824-92dd-55ed20086366" class="">어드민에서 등록하면 아이디</p><p id="6c892e8f-ec9d-4ce0-8f62-4732a4c4304e" class="">
+</p></details></li></ul><ul id="7ab1e036-2809-47ec-a0c6-41a983beb5ee" class="toggle"><li><details open=""><summary>노션에서 올릴 때 출연진 중복 선택 여부 구분하는 방법?</summary><ul id="af58c7dc-b167-4f7f-8659-4ea26e8703a6" class="bulleted-list"><li style="list-style-type:disc">엑셀 업로드 시, 앙상블 여부 가 1로 지정되어 있으면 변경하지 않음<p id="340d37b9-0024-4b84-936c-456f02e6927a" class="">* 0 → 1 수정은 반영</p></li></ul><ul id="ffecaf3a-311e-47e1-a56b-510fc8b57906" class="bulleted-list"><li style="list-style-type:disc">어드민에서는 수정 가능</li></ul></details></li></ul><p id="e7245b33-2da5-4ca2-ad01-e3803b6c11c6" class="">웨이스티드를 올리면서 출연진 작업을 해서 넘겼는데,
+간헐적으로 ‘엑셀로 업로드할 때 누락되는 경우’</p></details></li></ul><ul id="6ec8beea-5f7c-4069-96c2-727851909402" class="bulleted-list"><li style="list-style-type:disc">안드로이드 출시 확인하자</li></ul><ul id="8ab2f6fc-4185-4e4c-9de8-88fa153d7802" class="toggle"><li><details open=""><summary>다음 스프린트! 마이페이지 리뉴얼 프로세스 및 UI 확정 ⭐</summary><p id="f2e7365a-dc0c-481b-adb0-fe1360c907f0" class=""><a href="https://www.notion.so/5477c8745ae747c5be74232551f0f151">마이페이지 리뉴얼</a> </p><p id="6489e336-c497-4981-acf5-95acf743eb29" class="">후기 공유 비공유</p><p id="2fc0340c-a560-4b90-b8ef-c16bea817da9" class="">사진 업로드 프로세스 필요해용 (마이 페이지 프로필)</p><p id="e57f9b36-dfeb-495e-b7de-c9d89f7599a8" class="">모든 게 비공유된 상태로, 나만 보기는 가능했으면 좋겠다</p><p id="5f9d4274-c85f-4ae9-b836-1e67eafd78af" class="">
+</p><ul id="50c8cfc6-7152-4986-be01-f68533972710" class="toggle"><li><details open=""><summary>편집 UX</summary><p id="258e0ca6-79fa-46b1-b2da-d29f812c625e" class="">건: 사진을 누르면?</p><p id="e37d27e6-a48f-4146-9cdd-17c988f74c03" class="">찬; 원본이 보여야 함</p><p id="4585dada-69b7-44ec-88f1-3a1f6bac9446" class="">찬호: 애초에 ui에 원 밑에 편집
+사진 밖에 아이콘이 있으면 눌렀을 때 원본이?</p><p id="a646c6b2-e87b-4b01-9860-7da1145dd8a9" class="">찬: 사진이 가려져도 될지?</p><p id="256bd283-a5a1-4440-9dbb-e9576a43e10d" class="">건: 사진을 눌러서 원본 </p><p id="e7dced68-eca7-4dc7-879d-0e0e119b038a" class="">건: 인스타그램 참고,</p><p id="7f08a193-808c-40b8-8f6b-2702d7d28163" class="">찬: 보기, 기본이미지변경(리무브), 이미지 변경
+정방형</p><p id="b5409402-eec9-46aa-b5fe-fc8f3aade93e" class="">건: 닉네임 편집은 계정 관리로 보내자</p><p id="1fec4280-2132-4120-b67e-99a4781a45a7" class="">
+</p><p id="69b7829b-df89-4352-9fa2-565eddd7c56f" class="">건: ㅅ지금 사진이 없으면 </p><p id="23e7051c-6137-442b-9226-9cb5a4f08db7" class="">찬: 굳이?</p><p id="2adfb9b1-d8f3-41f1-9180-d41ee30604e5" class="">건: 귀찮지만 않으면 세부적으로 나눠 주는게</p><p id="76866ea5-7a69-45d4-8a46-006f2a5a7c06" class="">
+</p></details></li></ul><ul id="ca21783f-1ff7-4c55-bcbd-499c79539b99" class="toggle"><li><details open=""><summary>사진 교체 시 UX</summary><p id="eb6bfdca-dcf2-418b-9f70-b4e15670e824" class="">예매내역서처럼</p><ul id="cef9f4d1-9fa9-414d-a3b1-3200b21ccfa9" class="toggle"><li><details open=""><summary>보기</summary><p id="6d1ba653-01d0-4c9c-b0b6-a87091f6074c" class="">별도 화면 필요</p><p id="74655a65-d519-431a-afce-7d8952919d1e" class="">찬: 업로드한 예매내역서 보기처럼?</p><p id="4642ae23-4fb1-4927-9a7b-f0eb3e47d036" class="">건: 헤더 없애도 될듯</p></details></li></ul><ul id="1942a112-f003-4829-865e-8dfaa87cdb83" class="toggle"><li><details open=""><summary>기본으로 변경</summary><p id="5c6c234d-b3ca-4f13-bce6-8e7cef7ee63d" class="">새 페이지 없이 </p></details></li></ul><ul id="f67181f2-180e-4259-b5f6-7311149cdd0a" class="toggle"><li><details open=""><summary>변경/추가</summary><p id="9eee6802-ec74-431a-bea5-61c039e482a8" class="">이미지 올리는 ux</p><p id="d20a6628-0b94-4a9a-bd5d-d57a6ad418b0" class="">눌러서 </p><p id="748143dc-5310-4299-8ee5-ea0e7dfcc80a" class="">안 된다고 하면 티켓에서 이미지 바꿀 때처럼</p><p id="c85f4495-aecc-422b-adce-2256272ebe9c" class="">
+</p></details></li></ul></details></li></ul><p id="3d58c6a0-a817-47b7-807e-ed280ce0eb2f" class="">마이페이지 편집 아이콘 바꿔 주고, 사진을 보기 선택했을 때 화면</p><p id="795427b9-21ba-4d39-b74c-d1cba09a42fe" class="">
+</p><ul id="4bf5d873-edff-4cca-bc58-a98022b60f1c" class="toggle"><li><details open=""><summary>후기 모아보기 UX</summary><p id="8472a297-a639-4c4d-8161-14298f6930d1" class="">건: 그 티켓의 후기로 보내는데
+장기적으로 후기 여부 구분하는 버튼이 티켓 안 후기 옆에 있을 듯</p><p id="d7544b84-10fb-46d5-87bf-34ba5462d3bf" class="">찬: 작품 포스터 영역이라 가리는 게 좀 그럴까</p><p id="a734deeb-7a94-4f1d-8686-0d3e0245fad4" class="">
+</p><p id="3b6bd6f6-ea87-41e5-b3dc-6330c568c4fc" class="">건:잠금된 걸 표시할 건지, 열렸을 때 표시한 건지</p><p id="d17be2ca-1f05-4b8b-bd53-0342a93d01aa" class="">찬: 열려 있는 걸 표시
+그걸 포스터에 한다면 더욱이,,,</p><p id="fa051567-05d6-4b2f-984d-86480dc233e9" class="">찬호: 사실 이 잠금과 후기 자체가 나만 보고 남들에게 공유하고 차이</p><p id="a7035297-7b32-4f8b-af2c-341bef3c8181" class="">찬: 지금은 후기
+나만 보고 싶은 후기라고 한들
+자발적인 유저들을 우리 자원으로 쓰는 측면</p><p id="098fbcc6-1be9-487f-8f3f-85a7ceb0080e" class="">건: 저는 공개 가 선택지여야 한다</p><p id="c01fb502-e370-4840-b112-dbf2f7cb75d9" class="">찬: 후기가 갑자기 모이면?</p><p id="29408f06-0bfc-4d47-97e0-6aa1a68246bb" class="">
+</p><p id="d36cc80f-cedb-4f9a-8931-352e18c71f8a" class="">공개를 표현할 수 있는 방법</p><p id="b7ce99e8-c8b8-4123-a237-c7f774efd83a" class="">찬호: 시안을 좀 더 만들어 봐도?</p><p id="2006f756-9b8b-4944-8b9f-019141edef1a" class="">
+</p><p id="ed990b44-8838-465d-80bd-0fe841eba642" class="">누르면 </p><p id="cddd3951-9e73-418f-92ab-535903125f0d" class="">
+</p><p id="2ba28565-03c5-4ed4-993b-cb7c8a2815e8" class="">티켓 날짜 최신순</p></details></li></ul><ul id="0e905fc4-25a1-41d5-9635-fe8e3943c26a" class="toggle"><li><details open=""><summary>좋아하는 뮤지컬 UX</summary><p id="3ebef5d5-9275-4cf0-a4b2-e05408a92c3e" class="">찬: 뮤즈위키 vs 내 티켓 중 어디,
+뮤즈위키로 넘어가는 것도 말이 되고
+내가 좋아하는 거니까
+저는 전자가 맞다고 생각</p><p id="16474827-c413-43bb-9dc2-93946b3cdaf7" class="">건: 뮤즈위키로</p><p id="129231aa-9083-407c-b9f1-4d97eaf98226" class="">찬: 순서? 최신순</p></details></li></ul><p id="02ddb4de-1c67-461d-ac53-32b9191440ef" class="">갯수를 표시할 필요성은 둘 다 없다</p><p id="8b48dd71-7661-42b7-8c0a-75414d303b3e" class="">
+</p><p id="82f60b73-072e-4507-8f7a-af8af534d7c3" class="">프로필 이미지를 바꾸는 아이콘</p><p id="0a6efcb8-466d-45b3-b1ca-c11e9e055f3c" class="">각 탭들의 ui (뮤지컬, 후기 모두)</p><p id="e06af2a0-ad22-4d66-99ba-c95fe20627b5" class="">페이지 이동 구조도</p><p id="a80661c9-10dc-4fb7-ad7d-a0aa6d65a190" class="">+공개된 후기를 마이페이지에서 표시할 방법</p><p id="d0d93289-3bf7-456b-8b26-53524859895b" class="">+티켓 안에서 어떤 식으로 공개 비공개를 가를지</p><p id="a74bb7eb-9d09-4042-a79a-58023a49c664" class="">
+</p></details></li></ul><ul id="5f457e61-53ea-40c5-a57c-3f70b8542ab0" class="toggle"><li><details open=""><summary>기타</summary><ul id="fd6d9138-573d-476a-87fb-53b49110487a" class="bulleted-list"><li style="list-style-type:disc">배우 클릭 → 만난 작품 리스트 (ok)</li></ul><ul id="a22f2124-c5b6-444c-8dda-2bb21f5eb4fe" class="bulleted-list"><li style="list-style-type:disc">캐스팅 보드 입력 가능하게?
+후기 쓰는 데에 사진 넣게 해 달라
+건: 근시일에는 어렵다</li></ul><ul id="16fd48a3-5f03-4eb4-a5c4-84ec83bd6940" class="bulleted-list"><li style="list-style-type:disc">내한공연 외국 배우 등록 요청 있음 (노트르담드파리 5연 앵콜)
+<strong>찬: 제가 귀찮다</strong><p id="5f67314c-eb6b-4995-9b2d-786542f74e1c" class="">
+</p></li></ul></details></li></ul><p id="a2dbbb56-41e4-4591-a3ea-0a43e29f28b9" class="">
+</p></div><ul id="d0cb1676-c771-4412-bbd9-a7eeebc6d988" class="toggle"><li><details open=""><summary>프리토타이핑</summary><p id="d6e42293-f691-45da-aee1-52322653eca7" class="">아래의 가치를 파악할 수 있는 선택지 제시</p><p id="34ee4ad6-b096-423d-9ce1-10a82f2d243b" class="">현: 생각을 듣고 가는 게 나을 것 같다 싶음</p><ul id="2726f4f7-eca3-49e9-a2ca-72130a73a22f" class="toggle"><li><details open=""><summary>(<strong>타겟을 포함할 수도 있고, 타겟을 넓혀 버릴 수도 있고) 문제인가? 문제라면 해결하고 싶어하는가? </strong></summary><h3 id="f53d8b71-d98a-4dca-8b2d-8a2f4e4d897a" class="">목표의 구체화</h3><p id="acbedbf9-fc53-41bc-83cd-7a2d2d395efa" class="">→ <strong>어떤 스크린샷이 떠오른 후 그 화면으로 되돌아가는 데에 필요한 시간과 노력을 줄이고 싶어하는 </strong>사람이 미국에 거주하는 20대 안드로이드 유저 중에서 어느 정도 되는가?</p><p id="d68473cb-4b54-4f62-bbc5-11bcd790b252" class="">→ 그 사람들이 그 불편함을 겪는 주기는 어느 정도인가?</p><p id="4982d0d5-05c8-4d6a-b94c-1f79b5463bd8" class="">→ 그 중 <a href="%5Bprioritized%5DShotag%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%2098cbf591c2544ff98e2258106befc0f1.html">자동 태깅 애플리케이션을 통한 모바일 스크린샷 검색</a>(①과 ②을 모두 갖춘 솔루션 = shotag)을 설치하여 한 번이라도 사용하고자 하는 미국 안드로이드 20대 유저들의 규모가 어느 정도 되는가?</p><h3 id="2ce19680-ea85-4d82-b211-de6300afbbcc" class="">검증 방법</h3><p id="27228637-783b-47c4-b9ca-64ba1a22ac93" class="">(low-fidelity MVP)</p><p id="4838a64e-6b1e-4d2e-9273-de4f6162dfa5" class="">
+</p><p id="29e0dacf-da91-440b-a245-17c9b0a60339" class="">
+</p></details></li></ul><ul id="239abd12-d9a9-4dcd-b96f-9016cfd12939" class="toggle"><li><details open=""><summary><strong>타겟(20 미국 안드로이드) → 솔루션(샷태그) → 해결책(만족감을 줄 수 있을 것인가)</strong></summary><h3 id="d68eda57-47a3-46e8-852d-b75b5e5f6174" class="">목표의 구체화</h3><p id="7c260466-225c-4414-a562-d942c2107a41" class="">→ 미국 안드로이드 20대 유저들이 자동 태깅 어플리케이션을 통해 일치하는 텍스트로 검색하여 찾아내는 기능을 얼마나 계속 사용하는가? — ①</p><p id="fd680e12-3a1e-448a-b6ee-1af09c859505" class="">→ 미국 안드로이드 20대 유저들이 자동 태깅 어플리케이션을 통해 비슷한 텍스트로 검색하여 찾아내는 기능을 얼마나 계속 사용하는가? — ②</p><h3 id="e6e3e757-48fc-40b8-bdbc-5d2e6711d4a3" class="">검증 방법</h3><p id="200933e0-20c7-4ebd-8d94-b91ad78554b5" class="">(high-fidelity MVP)</p><p id="2af6a1e1-c7d1-401c-be7d-635b8a8c0396" class="">
+</p><p id="8da7a98e-0ec6-4f96-a4ef-19ee6fa209eb" class="">건: 두번째 목표에서 “자동 태깅 어플리케이션”이 샷태그라면 목표가 다른 듯</p><p id="1ba59296-8d3b-4f98-b20d-429e0d31d7b4" class="">현: 질문을 잘못 해석한 듯, 두 번째 질문의 의도가 “그 중 <a href="%5Bprioritized%5DShotag%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%2098cbf591c2544ff98e2258106befc0f1.html">자동 태깅 애플리케이션을 통한 모바일 스크린샷 검색</a>(①과 ②을 모두 갖춘 솔루션 = shotag)을 설치하여 한 번이라도 사용하고자 하는 미국 안드로이드 20대 유저들의 규모가 어느 정도 되는가?”</p><p id="e668c993-ee93-40cb-80c1-e2c83f779d32" class="">찬: ㅇㅇ</p></details></li></ul><p id="0d67f5f0-5eba-4939-abd9-70979a1d3254" class="">
+</p><p id="31f762da-b9e8-4411-a4b0-74f2c26fb660" class="">현: 해결 방안을 생각해 보진 않았는데 그냥 그걸 찾아보는 과정에서 가설 검증의 방식들
+mvp를 찾아보니까 lofi hifi 두가지
+lofi의 경우 해결책보다는 문제점에 방점, 우리 같은 경우에는 첫번째 질문에 부합
+hifi의 경우 그거를 해결책을 제시했을 때 반응
+우리가 던진 질문 중에
+hifi는 사실상 만드는 경우</p><p id="98a3c196-28b6-4227-bf85-4713a93702d0" class="">건: 최종적으로 제시하는 mvp의 수준</p><p id="45a1fbff-4e29-4f66-b9b7-9b5292c3bb79" class="">
+</p><p id="e944a3fe-a73b-4554-b25d-197343b3518f" class="">현: 랜딩페이지, 컨텐츠(비디오 짧글 긴글)</p><p id="e5b715f1-39b6-41cd-860c-de74dcaac21c" class="">
+</p><h2 id="478ea84e-1972-448b-9240-151c5ba488cf" class=""><details open=""><summary>Low Fidelity</summary></details></h2><div class="indented"><h3 id="8a904964-149b-4343-ba8a-8e65bd862080" class=""><details open=""><summary><a href="9%20Types%20of%20Minimum%20Viable%20Products%20312d4a213111474191b686cc5b47d240.html"><strong><strong>Marketing Campaign MVP</strong></strong></a></summary></details></h3><div class="indented"><p id="8ebb0a55-3ac3-4507-b74f-21de809d2172" class=""><span style="border-bottom:0.05em solid">To investigate your target audience</span>, you can use all free and paid promotional methods available today such as banner ads or instagram story ads.</p></div><h3 id="af1b726f-8946-4a59-ba65-d953847e277a" class=""><details open=""><summary><a href="9%20Types%20of%20Minimum%20Viable%20Products%20312d4a213111474191b686cc5b47d240.html"><strong><strong>“The Fake Door” (= audience building MVP = An MVP before the MVP)</strong></strong></a></summary></details></h3><div class="indented"><p id="c28cefa2-b2b4-45a7-87d4-d0dfdc3a3191" class="">A landing page that <span style="border-bottom:0.05em solid">offers access to a feature you’d like to test</span>. The CTA button itself guides you to the subscription page or checkout, only to lead to a <span style="border-bottom:0.05em solid">message that this functionality is “under construction.”</span></p><p id="bb2bc7d8-0c68-4c0c-b276-d5eeafc07ac3" class="">
+</p></div><h3 id="96c9f4d9-35c6-4d81-88a2-a782ab70372e" class=""><details open=""><summary><a href="PSF%E1%84%87%E1%85%A1%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B8%E1%84%85%E1%85%A9%E1%86%AB%20-%204)%20%E1%84%8E%E1%85%A9%E1%84%80%E1%85%B5%20%E1%84%8E%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%209d7ee826929e49b6a2fc5a8fdab7bb60.html">Landing page</a></summary></details></h3><div class="indented"><p id="0ddb8991-708b-42eb-ab3f-077f69cc2204" class="">검증가능한 가설 유형 : 고객 가설, 제품 가설, 지속성장성 가설</p><p id="407d54ff-9860-4102-b75a-0241e998400c" class="">요구 리소스(시간 / 노력 / 비용) : 중간 / 중간 / 낮음</p><p id="56bd9105-52f2-4c9b-bc1c-8f6e7cdee3ad" class=""><mark class="highlight-gray">읽어보기: </mark><a href="https://yozm.wishket.com/magazine/detail/1297/"><mark class="highlight-gray">랜딩페이지로 비즈니스 아이디어 검증하기</mark></a></p><p id="f59a7197-81c3-42ef-a0f0-f39dc4ea9449" class="">
+</p><p id="853d2646-ebec-46b8-8764-314d04120417" class="">1) The Opt-in Bribe Landing Page (미끼를 활용한 랜딩페이지)</p><p id="ab695579-6503-4eb3-baf3-2a235f1fae4d" class="">목표 고객이 관심을 가질만한 Bribe(흔히 PDF 파일 등)를 내걸고, 이를 받기 위해서 합법적으로 잠재고객의 연락처(주로 이름, 직급, 회사메일 등)를 획득하는 랜딩페이지.</p><p id="85e7275c-7e88-4325-8894-e25bb4a062f8" class="">
+</p><p id="f4252e80-2528-43aa-b0a2-8649d8c5d150" class="">2) The Video Landing Page</p><p id="3b657d56-0834-4386-9150-fedee80a22c6" class="">It consists of a video, a form, a button or a landing page. It’s only after a viewer has watched the entire video will the landing page redirect them to a download or sales page</p><p id="4443e907-571b-4db1-bef3-d8c6290b0a67" class="">
+</p><p id="cfb80305-63fb-499f-ae09-6ca4d6f34a53" class="">3) The Product Landing Page (extremely flexible one)</p><ul id="75bd60f8-e4e9-4f01-8c48-7b08dccec3cc" class="bulleted-list"><li style="list-style-type:disc">A hero image + strong copy + list of features/benefits</li></ul><ul id="91172e56-2e77-4278-b7e6-9929d3d68464" class="bulleted-list"><li style="list-style-type:disc">A pricing/how to buy section.</li></ul><p id="c9b5ffa8-089d-4d68-86aa-87bb2dc2b63e" class="">
+</p><p id="8fd772a2-086c-4e51-aacf-b5c2c1db603a" class="">4) The Long Sales Page</p><p id="bdf4acdf-0e38-4489-83dd-986fef198df2" class="">It consists of a headline, a body copy and a call to action button. These types of sales pages work particularly well f<span style="border-bottom:0.05em solid">or customers in the last stages of the buyer’s journey.</span> Instead of the standard single-column page, you can have something that resembles a product landing page, but with a focus on storytelling just as apple does.</p><p id="37c67c1c-09e7-4c32-b048-651c50cdce62" class="">
+</p></div><h3 id="34d6e11a-51f9-4f0b-9e5d-23bcfb383bed" class=""><details open=""><summary>Tutorial (<a href="Language%20Market%20Fit%E1%84%8B%E1%85%B3%E1%84%85%E1%85%A9%20%E1%84%8E%E1%85%A9%E1%84%80%E1%85%B5%20%E1%84%8C%E1%85%A6%E1%84%91%E1%85%AE%E1%86%B7%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%20%E1%84%89%E1%85%A5%E1%86%BC%E1%84%80%E1%85%A9%E1%86%BC%E1%84%89%E1%85%B5%2012accfc952104dc5bd64a566a3c235bd.html">LMF process</a>)</summary></details></h3><div class="indented"><p id="24b164a4-cacd-4d77-bb5e-302fe59b6e7c" class=""><a href="Language%20Market%20Fit%E1%84%8B%E1%85%B3%E1%84%85%E1%85%A9%20%E1%84%8E%E1%85%A9%E1%84%80%E1%85%B5%20%E1%84%8C%E1%85%A6%E1%84%91%E1%85%AE%E1%86%B7%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%20%E1%84%89%E1%85%A5%E1%86%BC%E1%84%80%E1%85%A9%E1%86%BC%E1%84%89%E1%85%B5%2012accfc952104dc5bd64a566a3c235bd.html">Buffer</a>는 <span style="border-bottom:0.05em solid">가상의 제품 사용법을 보여줘 아이템을 검증했습니다</span>. Buffer MVP는 <span style="border-bottom:0.05em solid">간단한 제품 사용 방식을 설명하는 1페이지와 거기서 흥미를 느낀 잠재 고객이 가격 정보를 얻으려 버튼을 누르면 도달하는 2페이지로</span> 구성됐습니다. 충분한 반응이 들어왔습니다. <span style="border-bottom:0.05em solid">두 페이지 사이에 요금제 정보를</span> 보여주고 어떤 플랜을 선택하는지 행동을 추적했습니다. <span style="border-bottom:0.05em solid">유료 플랜을 선택하는 고객이 나타났습니다. </span></p><p id="f51f8962-5d28-4b9c-89f2-6bfc7e812b19" class="">
+</p></div><h3 id="4c9b402d-c757-48f5-a6e4-bb8a9c626de0" class=""><details open=""><summary><a href="9%20Types%20of%20Minimum%20Viable%20Products%20312d4a213111474191b686cc5b47d240.html"><strong><strong>Email Campaign MVP</strong></strong></a></summary></details></h3><div class="indented"><p id="4ecaad8e-d08d-4717-a2ef-487e9ecc6667" class="">It is useful when you’d like to determine whether your customers are interested in a new feature or product <span style="border-bottom:0.05em solid">among an existing customer base</span>. </p><p id="9a7d5818-cead-4a01-9e79-3c8179fd5eae" class="">
+</p></div><h3 id="5e8e922a-2310-4d67-9619-5f7dcff94262" class=""><details open=""><summary><a href="9%20Types%20of%20Minimum%20Viable%20Products%20312d4a213111474191b686cc5b47d240.html"><strong><strong>Pre-order MVP</strong></strong></a></summary></details></h3><div class="indented"><p id="d66114ef-c183-4edc-b837-4a6b778bcd3d" class="">It is a solution that describes the future product and engages consumers to pay for it before its actual release.</p><p id="7b688e21-05cc-486e-a576-4cc92c0b5a6d" class="">
+</p></div><h3 id="ff142dcf-a0dd-4b0b-b636-914b834cc16a" class=""><details open=""><summary><a href="PSF%E1%84%87%E1%85%A1%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B8%E1%84%85%E1%85%A9%E1%86%AB%20-%204)%20%E1%84%8E%E1%85%A9%E1%84%80%E1%85%B5%20%E1%84%8E%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%209d7ee826929e49b6a2fc5a8fdab7bb60.html"><strong>이미지 또는 영상</strong></a></summary></details></h3><div class="indented"><p id="cf5140ac-a774-4a2a-ad35-48d3a9ca1867" class="">글이나 말로 설명하는 것보다 직접 컨셉을 보여주는 것이 상대방을 이해시키는데 훨씬 효과적이다. 드롭박스는 자신들의 클라우드 스토리지 서비스 핵심 기능을 영상으로 만들어 올렸고, 이 영상이 Reddit 등 Tech Savvy들이 모인 커뮤니티에 폭발적으로 회자되면서 하룻밤 사이에 75,000명의 Signup을 받은 것으로 유명하다.</p><p id="de409ff9-0e00-446b-86a5-468224a29688" class="">
+</p></div><h3 id="1cbda162-41e4-40f2-945d-1c45a909a63e" class=""><details open=""><summary><a href="PSF%E1%84%87%E1%85%A1%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B8%E1%84%85%E1%85%A9%E1%86%AB%20-%204)%20%E1%84%8E%E1%85%A9%E1%84%80%E1%85%B5%20%E1%84%8E%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%209d7ee826929e49b6a2fc5a8fdab7bb60.html">문제 &amp; 솔루션 Interview</a></summary></details></h3><div class="indented"><p id="7a7f83c8-38b5-4a6d-b8c0-acd038bf072c" class="">검증가능한 가설 유형 : <a href="PSF%E1%84%87%E1%85%A1%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B8%E1%84%85%E1%85%A9%E1%86%AB%20-%202)%20%E1%84%8B%E1%85%A9%E1%86%AF%E1%84%87%E1%85%A1%E1%84%85%E1%85%B3%E1%86%AB%20%E1%84%87%E1%85%B5%E1%84%8C%E1%85%B3%E1%84%82%E1%85%B5%E1%84%89%E1%85%B3%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%89%E1%85%AE%E1%84%85%E1%85%B5%E1%86%B8%20787c3a398fec4993b2908eab26aa5469.html">고객 가설</a>, <a href="PSF%E1%84%87%E1%85%A1%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B8%E1%84%85%E1%85%A9%E1%86%AB%20-%202)%20%E1%84%8B%E1%85%A9%E1%86%AF%E1%84%87%E1%85%A1%E1%84%85%E1%85%B3%E1%86%AB%20%E1%84%87%E1%85%B5%E1%84%8C%E1%85%B3%E1%84%82%E1%85%B5%E1%84%89%E1%85%B3%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%89%E1%85%AE%E1%84%85%E1%85%B5%E1%86%B8%20787c3a398fec4993b2908eab26aa5469.html">제품 가설</a></p><p id="9f76db05-97b8-411f-bfc7-9f5fcae858be" class="">요구 리소스(시간 / 노력 / 비용) : 중간 / 낮음 / 낮음</p><p id="ccc9c5c9-1ea2-4112-98e3-e8215401a268" class="">
+</p></div><h3 id="7e0f9657-76b7-4c22-a389-37048fe01358" class=""><details open=""><summary><a href="https://getliner.com/file/pdf/7KYC3BZF4XRTSX7AW8NTG7QMWX">Pinocchio</a></summary></details></h3><div class="indented"><p id="5e5ef275-6bf6-4b85-aafd-2e611fd6be2e" class="">Create a non-operational version of your product and use your
+imagination to pretend that it actually works to see if and/or how
+you would use it.</p><p id="68ffd232-a453-4093-83b2-d6247ff514bf" class="">
+</p></div><h3 id="7098352e-7279-4c10-becc-a48da173bd74" class=""><details open=""><summary><a href="https://getliner.com/file/pdf/7KYC3BZF4XRTSX7AW8NTG7QMWX">Infiltrator</a></summary></details></h3><div class="indented"><p id="6c936b9f-1126-45ba-8249-566de4956648" class="">Take advantage of the customer traffic in an existing store (brick-and-mortar or online) to stick an artifact of your idea (it could be a one off, even an empty box) on the shelves to see if people would buy it.</p><p id="619276ba-8b4b-47ed-b72c-1cf4b0276121" class="">
+</p></div><h3 id="0436f569-1c81-4d3d-bb3e-34c00caed306" class=""><details open=""><summary><a href="https://readyfundgo.com/crowdfunding-mvp/">Reward-based crowdfunding</a></summary></details></h3><div class="indented"><p id="a5389811-6111-4a8f-869b-507bbb8c14af" class="">It acts as a gateway to end users who are excited about trying out innovative products and share their opinion. It’s relatively cheap and helps to build demand. Early adopters agree to fund ideas by purchasing “rewards” which are often initial versions of products and services at a discount from what is expected to be the future retail price. It gives access to a community who might provide entrepreneurs with advice, keep them informed about emerging needs in their markets, introduce valuable connections, and refer existing and future products to their friends and networks.</p><p id="bfb6b7e5-01e2-4005-bf3f-36f47e063fa3" class="">
+</p></div></div><h2 id="6a0ca841-ca0a-4d31-b2c2-84fa565ca541" class=""><details open=""><summary>High Fidelity</summary></details></h2><div class="indented"><h3 id="a1a4cbfb-120f-4c49-95cd-5d0cfd7c4cc7" class=""><details open=""><summary><a href="PSF%E1%84%87%E1%85%A1%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B8%E1%84%85%E1%85%A9%E1%86%AB%20-%204)%20%E1%84%8E%E1%85%A9%E1%84%80%E1%85%B5%20%E1%84%8E%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%209d7ee826929e49b6a2fc5a8fdab7bb60.html"><strong>오즈의 마법사 MVP</strong></a></summary></details></h3><div class="indented"><p id="beb0cb34-f01d-4ea3-b948-2b9d558f7a6d" class="">&#x27;오즈의 마법사 MVP&#x27;는 잠재고객의 눈에는 체계가 잡힌 자동화 서비스로 보이지만, 실제 서비스 수행은 사람이 수동으로 처리하는 유형의 MVP이다.</p><p id="e0bcff87-4042-4a1a-821b-7dfa37e8fd54" class="">
+</p></div><h3 id="f2c7e7cf-c7e5-48b8-a438-72c3e7e11ef3" class=""><details open=""><summary><a href="PSF%E1%84%87%E1%85%A1%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B8%E1%84%85%E1%85%A9%E1%86%AB%20-%204)%20%E1%84%8E%E1%85%A9%E1%84%80%E1%85%B5%20%E1%84%8E%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%AE%E1%84%8B%E1%85%AD%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%209d7ee826929e49b6a2fc5a8fdab7bb60.html"><strong>컨시어지 MVP</strong></a></summary></details></h3><div class="indented"><p id="fc218a7b-5ffb-4eb0-9436-29818102ecde" class="">컨시어지 MVP는 일단 고객의 요구사항을 사람이 직접 수작업으로 처리해주는 MVP이다. 그 작업을 처리하는 과정이 수작업으로 진행된다는 것을 잠재고객이 알고 있다.</p><p id="d859e78e-576b-43f4-b994-e5963d724379" class=""><a href="%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%90%E1%85%B3%E1%84%8B%E1%85%A5%E1%86%B8%20%E1%84%89%E1%85%A5%E1%86%BC%E1%84%80%E1%85%A9%E1%86%BC%20%E1%84%87%E1%85%B5%E1%86%AF%E1%84%83%E1%85%B5%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%A8,%20MVT%2060158e62bc8e4cbcbf2ab37c047926d6.html"><strong><strong>온라인 패션 커머스 플랫폼 자포스(Zappos)</strong></strong></a></p><p id="12fe24f1-4391-46fc-8fd3-2c339b60d2b8" class="">1) <strong>가치 제안</strong>: 지역 판매점 재고에 연연하지 않고 원하는 신발을 바로 살 수 있는 온라인 커머스</p><p id="04ce72c1-e9cc-4b43-a75b-a8196a0085ef" class="">2) <strong>주요 리스크</strong>: 고객의 필요성. 직접 신어보고 구매하는 등의 이유로 온라인에서 신발을 사지 않을 수 있다.</p><p id="d34f3929-e4a0-407c-b509-7c98a8b17727" class="">3) <strong>최소 단위 검증</strong>: 지역 판매점에서 찍은 신발 사진을 웹페이지에 게시, 주문이 들어오면 판매점에서 사서 배송하는 식으로 실제 니즈를 파악</p></div><h3 id="668e1cd4-f615-4593-a5c7-32772600ed24" class=""><details open=""><summary>직접 판매</summary></details></h3><div class="indented"><p id="94b33829-a4ff-448d-b4c2-d52b7591e49a" class=""><a href="%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%90%E1%85%B3%E1%84%8B%E1%85%A5%E1%86%B8%20%E1%84%89%E1%85%A5%E1%86%BC%E1%84%80%E1%85%A9%E1%86%BC%20%E1%84%87%E1%85%B5%E1%86%AF%E1%84%83%E1%85%B5%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%A8,%20MVT%2060158e62bc8e4cbcbf2ab37c047926d6.html"><strong><strong>집단 온라인 교육 플랫폼 메이븐(Maven)</strong></strong></a></p><p id="afd1699e-ef59-4be1-9508-f48397fc876e" class="">1) <strong>가치 제안</strong>: 집단으로 수강하는 온라인 교육의 장이 되어 온라인 교육의 질을 끌어올리기</p><p id="13f90b36-bb89-4ec0-8e8a-ca059587ec0e" class="">2) <strong>주요 리스크</strong>: 수익성. 일반적인 녹화 강좌보다 집단 수강 강의에 더 많은 돈을 지불할 의사가 없을 수도 있다.</p><p id="bbfc9e97-215a-407b-ac7e-8ed964f92048" class="">3) <strong>최소 단위 검증</strong>: 이미 잘 알고 있는 특정 분야를 골라 스스로 직접 집단 수강 강의 열어보기 (전문 강사 없이)</p><p id="6059a2d8-79aa-4657-8055-20b1dcee84d5" class="">
+</p></div><h3 id="e0fb1843-b1a4-448d-906b-018d41a5dda2" class=""><details open=""><summary><a href="https://medium.com/@mdotflow22/types-of-minimum-viable-products-series-the-single-feature-application-e3c7e182a2bb">Piecemeal MVP</a></summary></details></h3><div class="indented"><p id="aaac861b-538e-4cd6-8db1-a1ae96e6a02b" class="">a product whose significant piece of functionality is powered manually, but some of its missing features are emulated with existing services. This is the most traditional option usually used to explain what an MVP is.</p><p id="b37c2eeb-834e-4a5c-a375-fd3d0f6046f7" class="">
+</p></div><h3 id="4ef6acee-39fd-4a1f-b10f-e2f8fa521e67" class=""><details open=""><summary><a href="https://getliner.com/file/pdf/7KYC3BZF4XRTSX7AW8NTG7QMWX">One-night stand</a></summary></details></h3><div class="indented"><p id="8178e2cb-2949-489b-b8ea-7672199e3ef3" class="">Offer a pretotype version of you product or service on a very
+limited time basis to see if there is any interest before making any long-term commitments.</p></div><h3 id="f4bf685c-ad02-4eaf-9331-85e78091f81e" class=""><details open=""><summary><a href="13%20Types%20of%20Minimum%20Viable%20Product%209877ba7e1ea24eca878ce029993c21c6.html">Single-Featured / One Painkiller Feature MVP</a></summary></details></h3><div class="indented"><p id="785cb3df-d548-4e5a-82a9-94906766e6e5" class="">You develop a simple app that solves a single, specific problem your customers have, that is core to your unique value proposition</p><p id="ea9220c2-493e-4807-af4c-46e3b8d629d4" class="">
+</p></div><p id="2b981c36-9f67-4edb-b16c-e7f883e3ad85" class="">
+</p></div><p id="97575470-a7df-4fd6-a4bd-ea47ebdc73ec" class="">
+</p><p id="1477ffa5-1518-4577-bf95-1a74be6b58b1" class="">
+</p><ul id="0d230e23-16fe-4a9e-9c5b-7f6a24e44040" class="toggle"><li><details open=""><summary><strong>타겟(20 미 안) → 솔루션(샷태그) → 해결책(만족감을 줄 수 있을 것인가)</strong></summary><p id="5bfab655-d146-4da3-a703-923d10cd73ec" class="">타겟, 솔루션, 해결책</p><ol type="1" id="b9f5da80-09d7-4fdb-b7d5-1be3f082fde2" class="block-color-purple numbered-list" start="1"><li>변형된 sean elli test</li></ol><ol type="1" id="f8e66ac0-4efe-45f1-8485-4c38ac73116c" class="block-color-purple numbered-list" start="2"><li>랜딩 페이지 + 사전 등록</li></ol><ol type="1" id="444c4bc2-b00a-411d-8fd0-3127349890ee" class="block-color-purple numbered-list" start="3"><li>커뮤니티를 통한 공유 빈도 보기</li></ol><ol type="1" id="c6afa5a9-b092-4ad7-b4ee-416f62ae4e1a" class="block-color-purple numbered-list" start="4"><li>ProductHunt 같은 채널</li></ol></details></li></ul></details></li></ul></div></article></body></html>

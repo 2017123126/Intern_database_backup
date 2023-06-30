@@ -1,0 +1,672 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Google Ads (Google Adwords)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="20d80987-ed3f-49ce-82e4-046f264f5f73" class="page sans"><header><h1 class="page-title">Google Ads (Google Adwords)</h1><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Ad types</th><td><span class="selected-value select-value-color-pink">배너</span><span class="selected-value select-value-color-brown">이메일</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>audience targeting</th><td><span class="selected-value select-value-color-pink">demographic targeting</span><span class="selected-value select-value-color-purple">device(android mobile) targeting</span><span class="selected-value select-value-color-green">location(nation) targeting</span></td></tr></tbody></table></header><div class="page-body"><p id="c54728aa-baf9-4dd5-a828-b4c9e6a8b685" class=""><a href="https://support.google.com/google-ads/answer/2580383?hl=en">Demographic targeting</a></p><p id="15d0d0cd-19a8-4f13-9a48-911ec4d0a48f" class="">→ <a href="https://support.google.com/google-ads/answer/2580383?hl=en">https://support.google.com/google-ads/answer/2580383?hl=en</a></p><p id="41800a3d-8faa-4c0c-9d1a-3429cc0c6b32" class=""><a href="https://support.google.com/google-ads/answer/1722028?hl=en">Device targeting</a> </p><p id="14c0fabb-0c19-4d3b-8ef1-fb73d02bc5df" class="">→ <a href="https://support.google.com/google-ads/answer/1722028?hl=en">https://support.google.com/google-ads/answer/1722028?hl=en</a></p><p id="f9f1857a-69c9-4a76-8204-2f284788aceb" class="">
+</p><blockquote id="83bb4032-2115-43b8-9a14-2cb75daa72bd" class=""><a href="https://webtechpreneur.com/ultimate-comparison-of-online-advertising-platforms/">“Google dominates the search market with over 90% search share”</a></blockquote><h1 id="54808dc9-a485-46fe-b273-2c89fa8355dc" class=""><details open=""><summary>Google Display Ads</summary></details></h1><div class="indented"><div id="e7fe36c6-6224-4ba8-86cd-5faac64afc54" class="column-list"><div id="9b93b2df-0d48-451b-9ea2-04d47b176c92" style="width:50%" class="column"><h2 id="e532d71d-c6ec-49fe-a440-5699e68ff2ae" class=""><a href="https://support.google.com/google-ads/answer/6363750">Types of Google Display Ads</a></h2><ul id="b18a43cb-0166-4824-b930-0eda870a270a" class="bulleted-list"><li style="list-style-type:disc">Responsive display ad</li></ul><ul id="035ae496-8a86-4a1f-8b3d-690fb94af948" class="bulleted-list"><li style="list-style-type:disc">Responsive Gmail ad</li></ul><ul id="76644f51-e077-401c-aac9-b49c735eddae" class="bulleted-list"><li style="list-style-type:disc">your own image ad</li></ul></div><div id="a0a26d88-f7e5-4920-ab5e-a90547a33ffd" style="width:50%" class="column"><figure id="8d160827-44bf-4d58-86f4-440cb62cccbc" class="image"><a href="Google%20Ads%20(Google%20Adwords)%2020d80987ed3f49ce82e4046f264f5f73/%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25B0%25EC%2583%25B7_2022-12-19_%25EC%2598%25A4%25ED%259B%2584_8.05.46.png"><img style="width:1407px" src="Google%20Ads%20(Google%20Adwords)%2020d80987ed3f49ce82e4046f264f5f73/%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25B0%25EC%2583%25B7_2022-12-19_%25EC%2598%25A4%25ED%259B%2584_8.05.46.png"/></a></figure></div></div><h2 id="0d99ba3f-e748-40cf-8710-46e8375b927b" class=""><a href="https://support.google.com/google-ads/answer/6363750">Responsive display ad and Gmail ad</a></h2><p id="bfa71f43-8294-4fb1-acbe-fcbbc49cbf62" class="">You can upload your assets (images, headlines, logos, videos, and descriptions), and Google will automatically generate ad combinations for various websites, apps, YouTube, and Gmail. For example, a responsive display ad might show as a banner ad on one site and a dynamic text ad on another.</p><div id="719d78dd-cefd-48ef-a5cd-d73658f44dfd" class="column-list"><div id="97f66417-7c3b-496a-89e7-c915b16180f3" style="width:50%" class="column"><figure id="c3efdccc-60ea-4ac3-834e-a11f18209731" class="image"><a href="Google%20Ads%20(Google%20Adwords)%2020d80987ed3f49ce82e4046f264f5f73/Untitled.png"><img style="width:456px" src="Google%20Ads%20(Google%20Adwords)%2020d80987ed3f49ce82e4046f264f5f73/Untitled.png"/></a><figcaption>Example of mobile Gmail ad</figcaption></figure></div><div id="e75339c3-0f9a-4dc2-836b-d473b6330e03" style="width:50%" class="column"><figure id="3d747a81-d136-4412-a539-64e0764e73f5" class="image"><a href="Google%20Ads%20(Google%20Adwords)%2020d80987ed3f49ce82e4046f264f5f73/Untitled%201.png"><img style="width:456px" src="Google%20Ads%20(Google%20Adwords)%2020d80987ed3f49ce82e4046f264f5f73/Untitled%201.png"/></a><figcaption>Example of desktop Gmail ad</figcaption></figure></div></div><h3 id="6b391e99-1c4a-4049-aee7-de89e5f36a58" class=""><a href="https://www.discoveryad.hk/google-display-ads.html">Responsive Gmail ad</a></h3><p id="52e2537c-cfdf-433c-9a87-62baf89b0ff4" class="">Show expandable interactive ads above the Promotions tab in Gmail inboxes. You’ll only pay for clicks on the collapsed ad as it appears at the top of the Promotions tab in Gmail inboxes. Gmail ads appear initially in a collapsed state at the top of the Gmail Promotions tab. Clicks on the collapsed ads expand them into a full email-sized canvas, where the viewer can interact with the ad&#x27;s images and text. </p><h2 id="a6d2295b-ce6c-483e-8e5f-764a5b540bce" class=""><a href="https://support.google.com/google-ads/answer/6363750">Your own image ad</a></h2><p id="060f818d-11da-4b3a-b0c8-5eb83cf94249" class="">If you want to have more control over the creatives for your Display campaigns, you may build and upload your own image ads. </p><h2 id="c3e0e5d7-17d5-477f-a359-59a8428fb922" class=""><a href="https://support.google.com/google-ads/answer/2404190?hl=en">Downside - need to plan ahead</a></h2><p id="0d7db840-910e-4f31-ac26-0985c6702988" class="">Changes in the Display Network can take 12–24 hours to apply and may not show right away. Keep this in mind while creating a new campaign or making changes to an existing campaign</p></div><h1 id="164b752d-00ba-4bf3-b407-10f1b25dfd18" class=""><details open=""><summary>Google App Ads</summary></details></h1><div class="indented"><p id="e022ae3c-14a8-4de2-b318-2aaf9f1ae247" class=""><a href="https://webtechpreneur.com/ultimate-comparison-of-online-advertising-platforms/">Unlike other Google ad types, hese App campaigns are created and distributed by Google’s systems</a></p><h2 id="e442fd03-fc3c-4f0f-ba3e-56306f713f24" class="">How it works</h2><p id="f89a04cc-cd01-46a2-9517-100037392af5" class="">We use your ad text ideas, images, videos, and assets from your app’s store listing to design a variety of ads across several formats and networks. To get started, all you need to do is provide some text, a starting bid and budget, and let us know the languages and locations for your ads. </p><h2 id="2223abb4-b516-450a-afff-cf31c807a5bd" class="">Required assets</h2><p id="3c646866-a20b-4921-bfbe-cc7dc970d624" class="">at least one landscape image, one portrait video, and one landscape video, and where relevant, HTML5 assets</p><h2 id="05b70e63-abae-4a66-a3e7-6b17724415af" class=""><strong><strong>Types of app campaigns</strong></strong></h2><p id="96410c8c-41c7-4697-b037-93919a2f066c" class="">When you choose “App promotion” as your goal, you can choose from three campaign subtypes: “App installs,” “App engagement,” and “App pre-registration (Android only).“ App installs campaign is to run ads that encourage people to install your app. App campaigns for engagement (ACe) can help you re-engage customers who&#x27;ve installed your app and encourage them to take specific, in-app actions. App pre-registration campaign(Android only) Run ads that build excitement and awareness for your apps and games before they release on Google Play. People that click on the ad can then pre-register for your app or game from the Play store.</p><h2 id="be816781-6531-408a-882e-7d7ad921f75f" class=""><strong>Where your ads can appear</strong></h2><p id="d3fe0b3a-bd63-494a-bd37-f20b6424cfd0" class="">Your ads will be eligible to appear across Google&#x27;s properties. This includes Google Search, Google Play, YouTube, the Google Display Network, AdMob, Discover on Google Search, our search partners, and many more publishers who host app ads. </p></div><h1 id="37588d24-89f4-4f65-901f-ccda37b5aa7c" class=""><details open=""><summary>Google Discovery Ad</summary></details></h1><div class="indented"><div id="478d44c3-e03a-4e3b-9464-5364c4a84b1d" class="column-list"><div id="61043c1d-036f-4970-ad24-9e06a3e2273a" style="width:50%" class="column"><h2 id="a2a929ae-78dc-4b74-8820-cc45708ec204" class=""><a href="https://webtechpreneur.com/ultimate-comparison-of-online-advertising-platforms/">What is Google Discovery Ad?</a></h2><p id="36e28eec-6066-4958-93aa-e64d2f227dfc" class="">Google Discover – formerly known as Google feed – is a side of Google where users set up their interests and Google shows them information around these settings. The <a href="https://support.google.com/google-ads/answer/9176876?hl=en">Google Discovery Ads campaigns</a> use this system to promote specific websites, brands, and products to only highly interested users. </p><h2 id="81b83457-a314-49f4-9f27-cc9c345b14ad" class=""><a href="https://www.seerinteractive.com/insights/why-you-should-implement-google-discovery-ads">What is Google Discover?</a></h2><p id="6b96761a-a169-44c3-ba64-aa5ec8e69f0e" class=""><a href="https://developers.google.com/search/docs/appearance/google-discover?visit_id=638054414794456297-3782251230&amp;rd=1">Discover is a feed</a> that appears on the home page of Google’s iOS and Android app, as well as the mobile Google.com homepage. Google sorts users into audiences based on activity and serves ads relevant to that person. </p><h2 id="138346ca-91b3-497b-a122-2d9be0015150" class=""><a href="https://support.google.com/google-ads/answer/9176876?hl=en">When to use </a></h2><p id="fd76014b-3c3c-46e2-af9c-c7039efe6f12" class="">When you want to reach new customers with your media. Discovery campaigns can help you drive interest from potential customers when they&#x27;re open to trying new brands. </p></div><div id="0df22c90-82fa-44ef-b871-2dc72790489a" style="width:50%" class="column"><figure id="56664219-fcdc-41aa-9f3f-6e0400115642" class="image"><a href="https://developers.google.com/static/search/docs/images/google-discover.png?hl=ko"><img src="https://developers.google.com/static/search/docs/images/google-discover.png?hl=ko"/></a></figure></div></div><h2 id="18af2a94-c890-44d1-8abe-5d45b078c4c2" class=""><a href="https://developers.google.com/search/docs/appearance/google-discover?hl=ko&amp;safari_group=9">팔로우 기능 및 웹사이트</a></h2><p id="b7777fa5-5573-488a-ad88-88f22c29fb9a" class=""><a href="https://blog.chromium.org/2021/05/an-experiment-in-helping-users-and-web.html">팔로우 기능</a>을 이용하면 사용자가 웹사이트를 팔로우하고 Chrome 디스커버의 <strong>팔로우 중</strong> 탭에서 팔로우한 웹사이트의 최신 소식을 확인할 수 있습니다. 현재 &#x27;팔로우&#x27; 버튼은 Chrome Android를 사용하며 미국, 뉴질랜드, 남아프리카 공화국, 영국, 캐나다, 오스트레일리아에서 로그인한 상태인 사용자에게 영어로 제공되는 기능입니다.</p><h2 id="8664fc0c-632a-4c7f-94b7-ae085829724b" class=""><a href="https://support.google.com/google-ads/answer/9176876?hl=en">Benefits </a></h2><p id="1894ec96-7e68-4199-986e-ca49e22ada70" class="">Thanks to Google&#x27;s audience and customer intent signals, this campaign type helps you deliver highly visual, inspiring personalized ad experiences to people who are ready to discover and engage with your brand—all through a single Google Ads campaign. </p><ul id="cfedd905-e269-4b61-8c4c-9543ecd7efec" class="bulleted-list"><li style="list-style-type:disc">Drive engagement with richer, more relevant ads</li></ul><ul id="202ef939-dabf-4f9a-9b16-457d1ce3f589" class="bulleted-list"><li style="list-style-type:disc">Visually rich ads rendered natively across Google properties at scale</li></ul><ul id="74629160-77d9-4322-950d-e05076979a7f" class="bulleted-list"><li style="list-style-type:disc">Automated bidding options to meet your media performance goals. You can use <a href="https://support.google.com/google-ads/answer/7381968">Maximize conversions bidding</a>, <a href="https://support.google.com/google-ads/answer/6268632">Target CPA</a>, or <a href="https://support.google.com/google-ads/answer/6268637">Target ROAS</a> to optimize your campaign bids</li></ul><h2 id="01b99dd2-ba17-4fb2-898c-085af95e27f4" class=""><a href="https://support.google.com/google-ads/answer/9176876?hl=en">Downsides</a></h2><p id="53544fce-5f75-455e-9977-70dc6386c859" class="">When using Discovery campaigns, you won&#x27;t be able to adjust the following settings:</p><ul id="525b88a3-5937-46a4-a03d-c916f2c5b5f9" class="bulleted-list"><li style="list-style-type:disc">Manual bid strategies</li></ul><ul id="6ce91a31-14e7-4802-9406-1ad94bd0f02d" class="bulleted-list"><li style="list-style-type:disc">Delivery method</li></ul><ul id="98be794c-3d3a-4660-8671-9477809a55b5" class="bulleted-list"><li style="list-style-type:disc">Device targeting</li></ul><ul id="66164bd8-0d01-448c-a327-9c5f92eb8380" class="bulleted-list"><li style="list-style-type:disc">Placement targeting (including exclusions)</li></ul><ul id="de28bc52-a12f-4104-b74e-cd3aaec22c04" class="bulleted-list"><li style="list-style-type:disc">Frequency capping</li></ul><ul id="484e4b2e-9ee6-402d-a487-f24acea36c23" class="bulleted-list"><li style="list-style-type:disc">Ad rotation</li></ul><ul id="13548341-a42c-4177-8cfd-9d72f2bf7c48" class="bulleted-list"><li style="list-style-type:disc">Contextual targeting</li></ul><h3 id="47dd1c8a-7d8a-4da2-9814-36bd881b9e90" class=""><a href="https://www.seerinteractive.com/insights/why-you-should-implement-google-discovery-ads"><strong>Assets Required to Set Up Google Discovery Ads</strong></a></h3><ul id="65aa4d47-c0f2-4b40-9e8d-764024118053" class="bulleted-list"><li style="list-style-type:disc">Up to 5 Headlines (40 characters)</li></ul><ul id="b08ba59a-6011-462d-98bc-794e0280bef7" class="bulleted-list"><li style="list-style-type:disc">Up to 4 Descriptions (90 characters)</li></ul><ul id="ee813729-e64f-463b-bd18-aabdff70e3ca" class="bulleted-list"><li style="list-style-type:disc">Business Name (25 characters)</li></ul><ul id="07df2825-e979-4bf1-b2e0-8d15dfd223ed" class="bulleted-list"><li style="list-style-type:disc">URL</li></ul><ul id="d82d1d0e-10a0-4707-9397-e334709861a4" class="bulleted-list"><li style="list-style-type:disc">Call-to-Action</li></ul><ul id="5de2f12e-4632-493e-8c63-8702a05a1931" class="bulleted-list"><li style="list-style-type:disc">Images</li></ul><ul id="ccba982d-5348-4a87-96c9-434a31e10495" class="bulleted-list"><li style="list-style-type:disc">Logo</li></ul></div><h1 id="722b39d7-d8f7-4191-90ca-19f2a886bc2b" class=""><details open=""><summary><a href="https://webtechpreneur.com/ultimate-comparison-of-online-advertising-platforms/">Pricing</a></summary></details></h1><div class="indented"><p id="1e46ed51-47af-4316-868f-84d2bd522477" class="">Google Ads campaigns use one of three pricing strategies – pay per click, pay per engagement, or pay per action. The most common billing option is pay per click, <a href="https://www.wordstream.com/blog/ws/2017/07/05/online-advertising-costs">Google Ads, which on average costs</a> between $1 and $3 per click. Google’s average Cost per Action goes as high as $58. However, users set their own budgets, so how much one spends on their campaign, ultimately depends on one’s budget.</p></div><h1 id="7ea852a4-c5c7-4a62-9cb8-973aeb6bbf83" class=""><details open=""><summary><a href="https://webtechpreneur.com/ultimate-comparison-of-online-advertising-platforms/">Ease of Use</a></summary></details></h1><div class="indented"><p id="4a08fdc0-25ce-49de-a58c-9e971927d1f8" class="">Google Ads campaigns are very easy to create and manage. The actual setup is a simple step-by-step process where users are guided through each step. Google also provides hints in the form of information bubbles. </p><p id="1572aaf9-ff9c-4af0-9ad0-8606dea93cf1" class="">
+</p><p id="132042b0-de64-4c87-a737-87bf10eec4d1" class="">
+</p></div></div></article></body></html>

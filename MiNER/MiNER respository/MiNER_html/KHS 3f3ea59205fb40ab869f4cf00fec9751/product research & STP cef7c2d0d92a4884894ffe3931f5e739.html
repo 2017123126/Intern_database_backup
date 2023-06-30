@@ -1,0 +1,672 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>product research &amp; STP</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="cef7c2d0-d92a-4884-894f-fe3931f5e739" class="page sans"><header><h1 class="page-title">product research &amp; STP</h1><table class="properties"><tbody><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>관련 링크</th><td></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>Type</th><td></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Due Date</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-green">research</span></td></tr><tr class="property-row property-row-status"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesStatus"><path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path></svg></span>상태</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>작성 일자</th><td><time>@2022년 9월 16일 오후 3:30</time></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Date</th><td></td></tr><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>Participants</th><td></td></tr></tbody></table></header><div class="page-body"><ol type="1" id="cf8c6d9f-ea70-43bf-88bf-98596ae4612c" class="numbered-list" start="1"><li>배경설명<ol type="a" id="d5cb80e2-4781-4e6a-bc24-b773f30bd2c6" class="numbered-list" start="1"><li>Problem - 문제의 정의와 검증<ol type="i" id="5b70b2d5-b853-4e96-83fa-5a244ba67ad1" class="numbered-list" start="1"><li>우리가 추구하는 문제 상황<ol type="1" id="acba3e2e-4ea3-40bd-8d6e-ea2cef8e52da" class="numbered-list" start="1"><li>나중을 위해 스크린샷을 저장 (나중에 이 바지 사야지, 나중에 이 글귀 봐야지)</li></ol><ol type="1" id="02e6ff28-3b38-43ff-9067-147ed42e8a3c" class="numbered-list" start="2"><li>이후에 찾으려고 해도 찾기 어려움</li></ol><ol type="1" id="296d6894-d24e-4420-b5f4-a7afca423e4d" class="numbered-list" start="3"><li>그러다보니 찾지도 않는 스크린샷이 계속 쌓임</li></ol></li></ol><ol type="i" id="9e8d1e76-f3c2-4043-a940-874aabe60d40" class="numbered-list" start="2"><li>그 문제 상황 이면의 욕구<ol type="1" id="180b4e80-8f1b-4d34-baab-c16fc83de18b" class="numbered-list" start="1"><li>필요할 때 쉽게 찾을 수 있었으면…  내가 굳이 찾으려고 노력하지 않았으면…</li></ol><ol type="1" id="ff1a49e8-5b79-44bc-8ad0-58909036dfee" class="numbered-list" start="2"><li>(만약 가능하다면) 필요할 때 누군가 찾아줬으면…<p id="cb4cda74-bff2-41f3-8948-37e8d1455e4b" class="block-color-purple">i와 ii 두 가지 솔루션을 구현했을 때의 코스트와 효용을 비교해 볼 필요가 있다고 봅니다. 알아서 찾아주는 것을 완벽히 구현할 수 없다는 점이나 어떤 욕구가 더 보편적인가(낮은 단계인가)를 고려해 보면 필요할 때 쉽게 찾을 수 있도록 하는 솔루션이 선행되어야 한다는 결론이 나옵니다.</p></li></ol><ol type="1" id="a6450d19-7d45-4ffc-9e12-955ed518e294" class="numbered-list" start="3"><li>쌓여서 부담되는 일이 없었으면…</li></ol><ol type="i" id="4734496e-e798-4a41-bb46-f6e38d13f963" class="block-color-purple numbered-list" start="4"><li><mark class="highlight-purple">(궁극적으로 유도해야 하는 방항) 내가 하려고 했던 거로 바로 연결해 줬으면</mark></li></ol></li></ol><ol type="i" id="17307382-e6b6-4088-b73d-fb4a1f1d03a6" class="numbered-list" start="3"><li>문제 상황 검증 여부<ol type="1" id="49a6dbe9-6e06-4511-873d-48bf97613294" class="numbered-list" start="1"><li>사실상 대부분의 20대 유저가 해당하는 문제</li></ol></li></ol></li></ol><ol type="a" id="b6900aa5-e2f7-4e69-a3ca-f44e81e97a40" class="numbered-list" start="2"><li>Solution - 최적의 해결책을 찾기 (usability, feasibility, value)<ol type="i" id="c722340f-6076-4d28-896c-49cbc50f4989" class="numbered-list" start="1"><li>우리가 추구하는 포지셔닝<ol type="1" id="7d5abcc6-04a7-43af-9dab-1f43320d73ff" class="numbered-list" start="1"><li>수동적이보다는 적극적인 어플리케이션</li></ol><ol type="1" id="6c4c13f4-339f-4067-a389-4ea19ab183b9" class="numbered-list" start="2"><li>딱 봤을 때 이해하기 쉬울 정도의 직관성</li></ol><ol type="1" id="35d63010-8e2f-40b1-927e-c4c7fb4e19ca" class="numbered-list" start="3"><li>방문 횟수가 많은 앱<p id="436b2c70-458e-4aa3-9e18-3bdf24435429" class=""><mark class="highlight-purple">평균적으로 방문 횟수가 많을 것이며 그래야 한다는 데에 동의하지만, ‘체류 시간이 짧아야 한다&#x27;고 생각하지는 않습니다.</mark></p></li></ol></li></ol></li></ol></li></ol><ol type="1" id="26f14068-b033-4cc3-ab97-28f2064efddb" class="numbered-list" start="2"><li>기존에 찾아본 비슷한 제품들<ol type="a" id="d2275d14-b9e7-47d3-83f7-6d378686c87f" class="numbered-list" start="1"><li><a href="https://play.google.com/store/apps/details?id=co.slidebox&amp;hl=ko&amp;gl=US">Slidebox</a><ol type="i" id="9a66b653-d07c-44fa-8f14-372a584f9198" class="numbered-list" start="1"><li>검색보다는 정리를 위한 앱</li></ol><ol type="i" id="4691a626-c77c-4271-bc37-46ad42a16fbe" class="numbered-list" start="2"><li>적극적이기보다는 수동적인 앱</li></ol></li></ol><ol type="a" id="75d247ab-839a-4bb6-8662-5de08b945db2" class="numbered-list" start="2"><li><a href="https://www.hashphotos.app">hash photos</a><ol type="i" id="226cfc38-c84e-4dbc-83bf-241816ca658a" class="numbered-list" start="1"><li>사진과 관련된 모든 툴은 조금씩 다 건드린 앱<ol type="1" id="1ddd123d-a12b-4a21-9355-01b19bc61c04" class="numbered-list" start="1"><li>사진 정리를 위한 앨범 (폴더)</li></ol><ol type="1" id="ecc57eea-5120-4710-8a06-ede4be6043e3" class="numbered-list" start="2"><li>사진 정리를 위한 유저가 직접 입력하는 태그 </li></ol><ol type="1" id="e5f1342f-382b-4fb6-ae5a-0d4ae66dab49" class="numbered-list" start="3"><li>날짜로 사진 검색</li></ol><ol type="1" id="bd141bb6-87d0-40b9-8831-e8a64ab7146a" class="numbered-list" start="4"><li>간단한 gif 만들기</li></ol><ol type="1" id="94529caa-538c-4f82-987b-b9c7e048c336" class="numbered-list" start="5"><li>비슷하게 생긴 사진 찾고 비교하기</li></ol></li></ol><ol type="i" id="942c0078-241e-4a60-a7cb-0830c29741d6" class="numbered-list" start="2"><li>검색과 관련해서는 여전히 적극적이기보다는 수동적인 앱</li></ol></li></ol><ol type="a" id="e76023e5-d0f5-464a-9e65-23138812f2a5" class="numbered-list" start="3"><li><a href="https://play.google.com/store/apps/details?id=com.jpspso.photocleaner&amp;hl=ko&amp;gl=US">사진청소기</a><ol type="i" id="666ce47e-6c2c-487f-8c62-9cd826346af9" class="numbered-list" start="1"><li>사진 정리를 위해 이런 것들을 골라줌<ol type="1" id="6bde838d-c9f6-42f9-a2f2-729526d4653d" class="numbered-list" start="1"><li>비슷한 사진</li></ol><ol type="1" id="abd46df5-dd6b-4711-a852-9dff40ff5dfb" class="numbered-list" start="2"><li>유사한 순간</li></ol><ol type="1" id="a1d383dc-95b8-4dbb-ac9f-dc15c4c2b8c5" class="numbered-list" start="3"><li>큰 파일</li></ol></li></ol><ol type="i" id="60a533f6-e6ad-4983-abae-93b88f3b84ea" class="numbered-list" start="2"><li>사진 정리를 위해서는 적극적이지만 스크린샷 정리를 위해서는 제 역할을 하지 못함<ol type="1" id="4ccc447d-0124-49c6-b817-a24d6d7b201b" class="numbered-list" start="1"><li>스크린샷이 저장된 목적을 달성했는지 여부를 알 수 없음</li></ol></li></ol></li></ol><ol type="a" id="8efe273a-a9b6-47da-993f-a6454a3e0804" class="numbered-list" start="4"><li><a href="https://www.youtube.com/shorts/V8bexl_3Mus">screenshot pro</a><ol type="i" id="ed164e5e-850d-4489-b4c7-205d15adf096" class="numbered-list" start="1"><li>스크린샷 검색<ol type="1" id="4949e847-e65f-4a38-832a-563729500e22" class="numbered-list" start="1"><li>스크린샷 내부의 텍스트를 인식해서 검색함</li></ol><ol type="1" id="b75572b0-1af8-4037-90d7-396cc1989b04" class="numbered-list" start="2"><li>그러나 비슷한 태그를 추천하는 등 적극적이지는 못함</li></ol></li></ol><ol type="i" id="332f368c-360c-4de0-b819-1cded7d0b32d" class="numbered-list" start="2"><li>스크린샷 태깅<ol type="1" id="d7abc51a-dcf4-4b50-bfd8-22485ebd31fb" class="numbered-list" start="1"><li>검색을 위한 태깅이 아닌 정리를 위한 태깅임<ol type="a" id="19c625e7-2edf-4d47-9284-1b7681f10ef3" class="numbered-list" start="1"><li>유저가 스스로 태깅을 하도록 유도</li></ol><ol type="a" id="70f743a0-fd2f-43c9-b253-6975c27a4991" class="numbered-list" start="2"><li>자동으로 태깅이 되는 것이 아니라 유저 스스로의 정리정돈을 위한 기능으로 수동적임</li></ol><p id="070fec85-39d9-4fa3-9212-2fa51fa31302" class="">
+</p></li></ol></li></ol></li></ol></li></ol><ol type="1" id="8f5d0d8f-56a1-461a-9d25-e8f74196581a" class="numbered-list" start="3"><li>추가적으로 찾아본 비슷한 제품들<ol type="a" id="8e9f723a-7fa6-418c-b733-ee17c3440272" class="numbered-list" start="1"><li><a href="https://screenotate.com">screenotate</a><ol type="i" id="304c1607-d7dc-4674-9354-2f33beb4de08" class="numbered-list" start="1"><li>스크린샷 검색<ol type="1" id="f099df1d-e6d2-404b-9854-3883901fd2a1" class="numbered-list" start="1"><li>스크린샷 내부의 텍스트를 인식해서 검색함</li></ol><ol type="1" id="092e973a-8e6b-4e68-9f69-b10d24034b80" class="numbered-list" start="2"><li>스크린샷의 메타 데이터를 인식해서 검색함</li></ol><ol type="1" id="d9b47ad5-8c6d-4a25-a1a0-b194036929fa" class="numbered-list" start="3"><li>그러나 비슷한 태그를 추천하는 등 적극적이지는 못함</li></ol></li></ol><ol type="i" id="c3a5812c-e9cc-4723-ba20-f4aede270a50" class="numbered-list" start="2"><li>스크린샷 태깅<ol type="1" id="5cb13d72-a9c5-4f21-8a66-93cdac1bdfe6" class="numbered-list" start="1"><li>스크린샷 태그는 UI의 일부가 아님</li></ol><ol type="1" id="9148b225-29c9-42a1-8709-9e37bbf976fb" class="numbered-list" start="2"><li>검색을 위해 마련된, 유저로부터 숨겨진 요소임</li></ol></li></ol></li></ol><ol type="a" id="4bc21911-ef41-41e6-929c-f8ebf1b92935" class="numbered-list" start="2"><li><a href="https://support.mozilla.org/en-US/kb/firefox-screenshotgo-capture-organize-screenshots">firefox screenshot go</a><ol type="i" id="a98b08ce-4747-40c8-bced-20fb49348806" class="numbered-list" start="1"><li>스크린샷 검색보다는 정리에 초점을 맞춘 앱</li></ol><ol type="i" id="2daef7e5-3491-410a-a8bd-f8ebeb254976" class="numbered-list" start="2"><li>스크린샷 OCR<ol type="1" id="f12755ce-4313-4725-adcd-ddad330743a1" class="numbered-list" start="1"><li>OCR 글자를 복붙하거나 공유하는 용도</li></ol></li></ol></li></ol><ol type="a" id="9824d2ef-ca63-4b50-8608-d9f7fe53a41f" class="numbered-list" start="3"><li><a href="https://gyazo.com/pro">gyazo pro</a><ol type="i" id="19980806-5d4e-444c-b90d-e7b5488c89e6" class="numbered-list" start="1"><li>스크린샷 검색<ol type="1" id="77a24482-fe44-43e1-be7f-1fa1d9b93f55" class="numbered-list" start="1"><li>스크린샷 내부의 텍스트와 내용을 인식해서 태깅함</li></ol><ol type="1" id="9638cc0d-5297-484b-a6bd-156d81fca6e5" class="numbered-list" start="2"><li>스크린샷 내부의 텍스트와 내용을 검색함</li></ol><ol type="1" id="d5a81522-da2a-473e-bf9e-8a9566a60211" class="numbered-list" start="3"><li>그러나 비슷한 태그를 추천하는 등 적극적이지는 못함</li></ol></li></ol><ol type="i" id="fbe55ac3-a2a6-4943-a6bc-f2545a19fa96" class="numbered-list" start="2"><li>스크린샷 공유<ol type="1" id="a170286b-ec91-480e-9c2a-a37d0e0a3107" class="numbered-list" start="1"><li>찍자마자 바로 링크의 형태로 공유 가능</li></ol></li></ol></li></ol></li></ol><ol type="1" id="7ac168ce-42c7-4aac-9d52-19a52ddccd85" class="numbered-list" start="4"><li>Similar solutions to information curation services<ol type="a" id="f4979e06-2fba-4088-940b-06e55ffdecd9" class="numbered-list" start="1"><li><a href="https://www.youtube.com/watch?v=ojoXzDV-eog">pikurate</a><ol type="i" id="349be6ed-834d-4a82-b718-4649d09476b6" class="numbered-list" start="1"><li>링크 정리 및 공유 서비스<ol type="1" id="bd21fe94-c2ee-4baa-8b31-e86763924ee7" class="numbered-list" start="1"><li>하나의 주제를 담은 pik을 생성한다.</li></ol><ol type="1" id="28d4f2dd-f174-4379-a08c-2fcd516a5841" class="numbered-list" start="2"><li>그 pic 내에서 category들을 생성한다.</li></ol><ol type="1" id="4d6596bc-7eb7-471c-886e-3abf65ab7309" class="numbered-list" start="3"><li>웹사이트 링크들을 복붙하여 알맞은 pic의 알맞은 category에 저장한다.</li></ol></li></ol><ol type="i" id="93009a1a-5113-494a-90bb-cf8459fdcff4" class="numbered-list" start="2"><li><a href="https://www.youtube.com/watch?v=V_dFgGVBcO0">차별점</a><ol type="1" id="e1033aa1-7fe9-473b-a5b7-a690591d360b" class="numbered-list" start="1"><li>특정 주제에 대한 정보를 논리적으로 분류하는 무한대의 구조화된 데이터 패키지를 만든다</li></ol><ol type="1" id="f3283719-5182-4a51-ab8b-61375debdfb1" class="numbered-list" start="2"><li>링크 정리 및 공유를 위해 수많은 유저들이 만든 pik들을 가지고 특정 주제에 대해 정리된 정보를 원하는 유저들에게 제공</li></ol><ol type="1" id="e3169f8d-4717-47ff-932f-2d58aa1d84ae" class="numbered-list" start="3"><li>조사를 시작하자마자 완성된 결과를 얻을 수 있는 경험을 이용자들에게 제공</li></ol><ol type="1" id="8e70a41b-25d7-4fd8-aadb-5d5038ce5fa4" class="numbered-list" start="4"><li>이용자들의 특성과 그들이 보는 Pik을 분석하여 다른 이용자들에게 적절한 Pik을 추천함</li></ol></li></ol></li></ol><ol type="a" id="a9438f0f-2a52-44b5-a372-be2a3e4f34e2" class="numbered-list" start="2"><li><a href="https://sayhohoho.tistory.com/29">갤럭시 내장 기능</a><ol type="i" id="0cc3886e-cd33-401e-aa25-9729f6ed46e9" class="numbered-list" start="1"><li>스크린샷 정리 및 공유 서비스<ol type="1" id="bf2b9aec-0630-4eec-92cd-f6130cc47f7e" class="numbered-list" start="1"><li>스크린샷을 찍은 이후 유저가 #태그 버튼을 누르면 해쉬태그를 생성할 수 있는 화면으로 넘어간다.</li></ol><ol type="1" id="9c4cd4b7-594a-49c1-a2a4-b05b7d5bfb3d" class="numbered-list" start="2"><li>화면 컨텐츠에 맞춰서 유저가 원할 법한 해쉬태그의 후보들을 추천해준다.</li></ol><ol type="1" id="4c6f0b8a-8c8b-437b-b2a6-db8269842652" class="numbered-list" start="3"><li>유저가 해당 후보를 탭하면 해쉬태그로 추가하여 검색에 이용할 수 있다</li></ol></li></ol><ol type="i" id="8ec9daa4-1ac7-4e80-96f3-ba6099acbfea" class="numbered-list" start="2"><li>공통점<p id="bcdedb6d-c319-4a4b-bb8e-bf079648d503" class="">사실상 같은 기술을 사용한다.</p></li></ol><ol type="i" id="da87a25a-220c-48ac-aa1f-14887966c1d1" class="numbered-list" start="3"><li>차별점<ol type="1" id="7633376b-d643-47bf-8a8f-e8986d8ad250" class="numbered-list" start="1"><li>적극적이지 않다.<ol type="a" id="48797723-53c9-4ffe-b43c-68a6c786064d" class="numbered-list" start="1"><li>유저가 검색을 하기 전에 태그를 추천해주지 않는다</li></ol><ol type="a" id="9d557821-25b1-432b-bc0a-519fc4b1e7b0" class="numbered-list" start="2"><li>유저가 직접 선택해야만 태그가 더해지고 검색이 가능해진다.</li></ol></li></ol></li></ol></li></ol><ol type="a" id="bfda8d8e-8e5b-40c5-b729-df19b173eac1" class="numbered-list" start="3"><li><a href="https://www.wired.co.uk/article/future-screenshots">Big tech’s movement</a><ol type="i" id="6b135dbc-8c93-431a-8ca3-14dafceec8b1" class="numbered-list" start="1"><li>automatically capturing metadata of a screenshot<ol type="1" id="71592432-36c6-4dd7-9422-98a69f47881e" class="numbered-list" start="1"><li>saving links</li></ol><ol type="1" id="6a78468f-c3c8-4ff4-914d-68955f5f91b4" class="numbered-list" start="2"><li>street address, GPS location</li></ol><ol type="1" id="2342972d-792e-42f1-b975-a61f5584b6d6" class="numbered-list" start="3"><li>data about a music being played</li></ol><ol type="1" id="3e7c43cd-e155-4e10-a58b-5f8fe488b99d" class="numbered-list" start="4"><li>full copyable text</li></ol><ol type="1" id="68c64deb-ecbc-4a11-9c54-244f69f468d0" class="numbered-list" start="5"><li>website URL</li></ol><ol type="1" id="cb2e7bc3-c1fe-4543-b80c-b1b118019dff" class="numbered-list" start="6"><li>video length</li></ol><ol type="1" id="aa324df5-7097-41a9-8365-3d7f294ada2a" class="numbered-list" start="7"><li>direct link to a chat session</li></ol><ol type="1" id="ebac4395-7b75-4637-889f-60a667df974f" class="numbered-list" start="8"><li>device state</li></ol><ol type="1" id="0d8b7d17-ecd7-4cea-b321-2b0cbc1e490c" class="numbered-list" start="9"><li>image alt text</li></ol></li></ol><ol type="i" id="2b2572fe-c7a5-44b7-a22d-ab011c1f8ede" class="numbered-list" start="2"><li>공통점<ol type="1" id="e91f54ba-eacf-497e-ae48-c4db1b39542f" class="numbered-list" start="1"><li>automatically extracting metadata of a screenshot<p id="e54c3d36-40c2-438b-8e72-5436cc3437db" class="">even more meta data being extracted..</p></li></ol></li></ol><ol type="i" id="68de60eb-5337-4db2-94c1-a19a0a4ceaaf" class="numbered-list" start="3"><li>차별점<ol type="1" id="3400c8c2-5994-4ba5-8cd6-9b2dd76f28c7" class="numbered-list" start="1"><li>just a tech or a patent</li></ol><ol type="1" id="bcd6b201-a44b-43ce-b96c-86e886f39660" class="numbered-list" start="2"><li>no thoughts on users’ needs</li></ol><ol type="1" id="ba638b4f-c062-4b4f-a3f1-7bcc7fe09a9a" class="numbered-list" start="3"><li>big techs need to satisfy a wide range of customers and may end up being just a minor feature hiding between their big mega products</li></ol><ol type="1" id="579e2d69-6b04-45b9-b6c9-ab6b7c3467a7" class="numbered-list" start="4"><li>personalization</li></ol></li></ol><p id="6bc5fba1-7df4-49ea-9732-0d3e755d3f29" class="">
+</p></li></ol><p id="17403d76-fbb8-44da-a953-0c88d416b8af" class="">그림 요약 - 여기는 블루오션이다</p><figure id="fbd31f5b-1133-4e63-ae3a-1042a1517a80" class="image"><a href="product%20research%20&amp;%20STP%20cef7c2d0d92a4884894ffe3931f5e739/STOP.png"><img style="width:1536px" src="product%20research%20&amp;%20STP%20cef7c2d0d92a4884894ffe3931f5e739/STOP.png"/></a></figure></li></ol><p id="b19dd1fa-674d-4ca6-a90a-28b3d4cad738" class="">
+</p></div></article></body></html>

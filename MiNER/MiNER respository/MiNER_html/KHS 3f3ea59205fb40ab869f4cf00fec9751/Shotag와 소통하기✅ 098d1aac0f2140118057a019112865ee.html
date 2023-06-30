@@ -1,0 +1,710 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Shotag와 소통하기✅</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="098d1aac-0f21-4011-8057-a019112865ee" class="page sans"><header><h1 class="page-title">Shotag와 소통하기✅</h1><table class="properties"><tbody><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>관련 링크</th><td></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>Type</th><td></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Due Date</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-purple">Suggestion</span></td></tr><tr class="property-row property-row-status"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesStatus"><path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path></svg></span>상태</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>작성 일자</th><td><time>@2022년 10월 6일 오후 4:54</time></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Date</th><td></td></tr><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>Participants</th><td></td></tr></tbody></table></header><div class="page-body"><div><ul id="b28f5be9-17ab-4106-a964-6f0eba179bd9" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">텍스트는 그대로? 아니면 “Discord to Shotag”</span></li></ul></div><ul id="7bc4a7dc-62a5-4ead-a78e-c6819f7899c5" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">디스코드 채널 파는 방법?</span></li></ul><hr id="9f80ab77-9fd4-4b91-83b0-f291c66f7577"/><h2 id="a9f5017c-85df-40ec-b2f2-c13d1327df4f" class="">Resolution</h2><div><ul id="cca87edf-c3cf-4813-b05f-8002b8e46f23" class="toggle"><li><details open=""><summary><mark class="highlight-orange_background"><strong>Edmunds처럼 하기로</strong></mark></summary><p id="593d2e86-4988-4596-b498-7dee377daad3" class=""><strong>“send </strong>feedback” 또는 “Feedback”</p><p id="80fcbdb1-44a6-431b-be05-6ad66830c47f" class=""><span style="border-bottom:0.05em solid"><strong>앱으로 바로 이동 / 안되면 토스트 띄움</strong></span></p><figure id="43214896-b6cb-4099-b60c-c27b50445cff"><div class="source"><a href="20221104-S&amp;D%202bd17d17590244a3b081126190551cd2/Screen_Recording_20221013-134840_Edmunds.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/71c087d0-6785-4dfd-9b59-5cf9cfc66f39/Screen_Recording_20221013-134840_Edmunds.mp4</a></div></figure></details></li></ul><p id="9bb89fb0-4dbe-48d9-ae56-2a29e932aea3" class=""><mark class="highlight-orange_background">아이콘은 튜토리얼 이 물음표니까 Feedback은 말풍선(카카오톡 같은) 모양 아이콘으로</mark></p><p id="421e88de-69e4-453a-804c-8d2c886ea40c" class=""><mark class="highlight-orange_background">메일은 굳이?</mark></p><p id="d2143a7a-4049-4b46-8665-5d2833bafa03" class=""><mark class="highlight-orange_background">특정 채널을 연결, 가장 적절한 채널은 Discord 아닐까</mark></p></div><p id="c69fd6ec-9eef-498e-b31f-6426bda29f82" class="">“Feedback”으로 결정</p><ul id="3a268273-f827-4067-a0cf-3b19b06ef050" class="toggle"><li><details open=""><summary>20221014 회의</summary><div><ul id="2396c979-54c5-4d3a-9ed4-1309ad644982" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">텍스트는 그대로? 아니면 “Discord to Shotag”
+특정 서비스명을 써도 괜찮은지
+목적이 디스코드냐!가 아닌 것 같아서
+<mark class="highlight-gray_background"><strong>Feedback</strong></mark> → 다 명사라서
+ask</span></li></ul></div></details></li></ul><hr id="1d14a876-5b98-445d-bf9c-6b11b955d1a9"/><h2 id="e0d3ed62-87ab-406b-89dd-8335d0d28369" class="">Suggestion</h2><ul id="b0e1ceb8-8c83-4674-9fe2-8a21970ed703" class="toggle"><li><details open=""><summary><strong>Edmunds처럼</strong></summary><p id="c06a11ff-9025-4deb-a43b-34d3169c4e79" class=""><strong>“send </strong>feedback” 또는 “Feedback”</p><p id="4264b784-63bc-4cbb-a44c-6eb50114868f" class=""><span style="border-bottom:0.05em solid"><strong>앱으로 바로 이동 / 안되면 토스트 띄움</strong></span></p><figure id="f9f45f4e-f01f-42c1-91f3-89879cfb1f54"><div class="source"><a href="20221104-S&amp;D%202bd17d17590244a3b081126190551cd2/Screen_Recording_20221013-134840_Edmunds.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/71c087d0-6785-4dfd-9b59-5cf9cfc66f39/Screen_Recording_20221013-134840_Edmunds.mp4</a></div></figure></details></li></ul><p id="f61a5535-8cb7-4304-b442-0986c8b8ca66" class="">
+</p><hr id="547ce163-15d2-4bd6-ac07-3a647244d168"/><h2 id="e85d82b2-be22-41cd-9fa9-56758dbc648f" class="">Reasoning</h2><ul id="1f403035-fc58-4f22-9001-bd92f03a1496" class="bulleted-list"><li style="list-style-type:disc">거시적 관점에서 우리 제품의 방향성<ul id="f52c6579-ba46-4a1b-ae61-0f843e1a9c80" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">개인화와 적극성</span><strong> </strong>(적극적으로 유저가 원할 때 스크린샷을 쉽게 발견하고 그 다음 액션으로 이어주는 것 유저 개개인을 위한 맞춤형 서비스를 제공하는 것)<ul id="c6aff19e-c31d-4b3d-b799-efe58bb52205" class="bulleted-list"><li style="list-style-type:square">우리의 포지셔닝이니까</li></ul></li></ul></li></ul><ul id="5a8ec4a8-ea00-4869-9eab-308d2bb8d22c" class="bulleted-list"><li style="list-style-type:disc">단기간에 이뤄야 할 KPI<ul id="d5f3c1bc-98cc-4081-a5ea-ce2e8463df4a" class="bulleted-list"><li style="list-style-type:circle"> 사람들이 <span style="border-bottom:0.05em solid">검색하는 횟수와 시간 늘리기 (= 참여율)</span><ul id="191592d7-5b60-4135-b77c-eb09666fd322" class="bulleted-list"><li style="list-style-type:square">우리 앱의 <a href="https://www.google.com/search?client=safari&amp;rls=en&amp;q=what+does+usp+stand+for+in+marketing&amp;ie=UTF-8&amp;oe=UTF-8">USP</a>니까</li></ul></li></ul></li></ul><ul id="2a2abcc9-afa3-4c4b-aa88-34e63bd61963" class="bulleted-list"><li style="list-style-type:disc">이 영역의 목표<ul id="64a71328-3111-48a2-8c99-014b3b540fb9" class="bulleted-list"><li style="list-style-type:circle">고객과 소통을 통해 원하는 것을 파악하고 다음 기능의 후보가 될 만한 아이디어들을 축적하기</li></ul></li></ul><ul id="a87284df-6958-4bf7-8da5-68a82e85548e" class="bulleted-list"><li style="list-style-type:disc">이 영역이 사용자에게 주는 가치<ul id="2ca2fe8e-c4e2-4215-a7f8-6351a066053c" class="bulleted-list"><li style="list-style-type:circle">고객과의 소통을 통해 관계 맺기</li></ul><ul id="c239648a-da32-420d-8ddd-4b0067ea0027" class="bulleted-list"><li style="list-style-type:circle">그 가치를 설정한 이유<ul id="3ef483f2-35f3-41d7-b3f4-89d5ee3b7a21" class="bulleted-list"><li style="list-style-type:square">개인화라는 가치와 합치함<ul id="7ed11f65-ecdc-41ea-8a17-ea6a21bb4957" class="bulleted-list"><li style="list-style-type:disc">개인화는 유저 개개인의 취향을 학습하며 관계를 맺는 과정임</li></ul></li></ul><ul id="92c3b333-975a-4c06-8d19-5691c499f7c8" class="bulleted-list"><li style="list-style-type:square">앱과 더 가깝게 느낄 수 있어야 참여율이 올라가기 때문<ul id="dec3f936-903b-4be0-841b-e0a308d651da" class="bulleted-list"><li style="list-style-type:disc"><a href="https://en.wikipedia.org/wiki/Serial-position_effect#Primacy_effect">초두효과 (익숙하면 좋아진다)</a><blockquote id="81daab85-4852-435b-8829-1012d077c358" class="">The primacy effect, in <a href="https://en.wikipedia.org/wiki/Psychology">psychology</a> and <a href="https://en.wikipedia.org/wiki/Sociology">sociology</a>, is a <a href="https://en.wikipedia.org/wiki/Cognitive_bias">cognitive bias</a> that results in a subject recalling primary information presented better than information presented later on.</blockquote></li></ul></li></ul></li></ul><ul id="e7fa9111-3a20-44a6-8d8d-96478c01822a" class="bulleted-list"><li style="list-style-type:circle">왜 이 방법이어야 하는가?<ul id="100878ce-a12b-4f77-a275-05105a3b6fd2" class="bulleted-list"><li style="list-style-type:square">활발한 소통을 지향하는 이유<ul id="d384f7c8-26d3-402d-8e63-e6eee0fc14c5" class="bulleted-list"><li style="list-style-type:disc">사용자는 스스로 방향성을 제시하는 과정을 통해 사용자는 긍정적 경험을 하고 이는 긍정적 관계 형성에 기여한다.<blockquote id="6ee314c6-ab1e-4a6a-a7de-031776fbe8df" class=""><a href="https://greatergood.berkeley.edu/article/item/why_losing_control_make_you_happier">Human beings have a deep-seated desire for control.</a> The more in control we feel, the more efficacious we feel about achieving the outcomes we desire, and this sense of competence <a href="https://selfdeterminationtheory.org/SDT/documents/2000_RyanDeci_SDT.pdf">boosts well-being</a>.</blockquote></li></ul></li></ul><ul id="7e7c0d0a-ad64-4142-868d-a84c1d0bf259" class="bulleted-list"><li style="list-style-type:square">메뉴명이 “Chat”이 아니라 “Feedback”인 이유<ul id="13489f5f-7661-4ea8-9015-9cc6e4c5ef9f" class="bulleted-list"><li style="list-style-type:disc">소수의 목적이 분명한 Early Adapter들만 들어오도록 하기 위해</li></ul><ul id="2b2b4b45-75ce-43c5-b713-f798851f0297" class="bulleted-list"><li style="list-style-type:disc">참여자 관리에 들어가는 노력은 줄이고 얻을 수 있는 정보는 많게 하기 위해</li></ul><ul id="facfc1e4-2f33-4afc-9548-d4a2c9b8f13d" class="bulleted-list"><li style="list-style-type:disc">특정 채널에서 자유롭게 토론의 장을 만들되, 1:1의 소통이 이뤄져야 하는 채널에서는 참여자 수를 의도적으로 제한하는 등의 방법도 있을 것</li></ul></li></ul><ul id="fd450dd5-3f3b-42cc-85e7-60ca32ac0768" class="bulleted-list"><li style="list-style-type:square">Edmunds 스타일을 차용하는 이유<ul id="56993cd6-50f4-4fa1-98ce-f7469354d04f" class="bulleted-list"><li style="list-style-type:disc">Discord의 해당 채널로 넘어가 상호작용하도록 하는 <span style="border-bottom:0.05em solid">hurdless experience</span></li></ul><ul id="d2e08469-e6a0-4b3d-88b1-26f5b7227fa0" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><a href="https://www.youtube.com/watch?v=vDBs2_tr7pA">앱이 없는 경우 토스트를 띄워주고 디스코드 온라인 링크</a></span><a href="https://www.youtube.com/watch?v=vDBs2_tr7pA">로 redirect하면 불친절하게 느끼지 않을 것</a></li></ul></li></ul><ul id="cdf73b18-cdc4-4248-8632-edaadaecd9e0" class="bulleted-list"><li style="list-style-type:square">다른 platform이 아니라 디스코드인 이유<ul id="bc375c7a-aa44-4604-abd6-a567b0911987" class="bulleted-list"><li style="list-style-type:disc">Discord는 <span style="border-bottom:0.05em solid">유저들과 활발하게 상호작용할 수 있는 채널임</span></li></ul><ul id="1ae9f3dd-4cef-414c-9d18-2397c88287ce" class="bulleted-list"><li style="list-style-type:disc"><a href="https://medium.com/sbblog/reasons-why-people-use-discord-e199591e0a29">흔히 덕후들이 많이 사용하는 채널임. </a><span style="border-bottom:0.05em solid">Early Adapter</span>들에게 적합할 것으로 기대함 <figure id="42a9dd9a-1b40-457a-85c6-81ff6b668d07" class="image"><a href="Shotag%E1%84%8B%E1%85%AA%20%E1%84%89%E1%85%A9%E1%84%90%E1%85%A9%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%E2%9C%85%20098d1aac0f2140118057a019112865ee/1_I5Xmajh1PXBa6heWOEDDlA.png"><img style="width:720px" src="Shotag%E1%84%8B%E1%85%AA%20%E1%84%89%E1%85%A9%E1%84%90%E1%85%A9%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%E2%9C%85%20098d1aac0f2140118057a019112865ee/1_I5Xmajh1PXBa6heWOEDDlA.png"/></a></figure></li></ul></li></ul></li></ul></li></ul><ul id="6364d1f6-7a99-4977-af36-5811ea3e08aa" class="bulleted-list"><li style="list-style-type:disc">검증 가능성<ul id="85d3cd90-685d-485a-9f87-6a5a8a2fe35d" class="bulleted-list"><li style="list-style-type:circle">디스코드 참여하기 전 후의 앱 사용 시간 및 사용 빈도로 검증이 가능할 듯</li></ul><p id="d570db52-3edb-4cfb-b61d-7082d5622f8b" class="">
+</p></li></ul><hr id="c6e1243c-c977-4921-ac89-d11f9fcd457d"/><h2 id="5fb5b783-1eea-42c7-a88f-2b80f61745f9" class="">References</h2><div id="cc286dec-e210-46de-813b-78ff4e06dc31" class="column-list"><div id="85237eea-f4e7-423a-aed9-b03a0cf65ac2" style="width:33.33333333333333%" class="column"><ul id="ffd91e43-e15c-4019-b2fa-e0f78226f048" class="bulleted-list"><li style="list-style-type:disc"><strong>Edmunds</strong><p id="9e690f6c-e424-4958-8271-1c6e1000d804" class=""><strong>“</strong>feedback”</p><p id="dc28696a-0504-4b99-b137-39c04ba942a5" class="">“tell us what you think”</p><p id="ca857cef-d06d-4c7b-bd1e-744647025a0b" class=""><span style="border-bottom:0.05em solid"><strong>앱으로 바로 이동</strong></span></p><p id="93c7d9be-f658-4dbc-a151-22cdb42149ce" class=""><span style="border-bottom:0.05em solid"><strong>안되면 토스트 띄움</strong></span></p><figure id="a9bd3bac-339f-4919-9ad5-5fc4cf96e93b"><div class="source"><a href="20221104-S&amp;D%202bd17d17590244a3b081126190551cd2/Screen_Recording_20221013-134840_Edmunds.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/71c087d0-6785-4dfd-9b59-5cf9cfc66f39/Screen_Recording_20221013-134840_Edmunds.mp4</a></div></figure></li></ul><p id="32c80b5e-8c9a-4851-ad07-15c31119b283" class="">
+</p><p id="70f4c6b5-7d92-40da-9f66-e41d25032a63" class="">
+</p><ul id="7e2085ce-43b0-4f1b-87c1-f0c30009655e" class="bulleted-list"><li style="list-style-type:disc">Bible.is<p id="305ec033-f588-4650-9a9f-e40dee5dc848" class="">“[앱 이름] feedback”</p><figure id="ac1ae252-e028-4e37-9335-7ed048af9eaa"><div class="source"><a href="Shotag%E1%84%8B%E1%85%AA%20%E1%84%89%E1%85%A9%E1%84%90%E1%85%A9%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%E2%9C%85%20098d1aac0f2140118057a019112865ee/Screen_Recording_20221013-134645_Bibleis.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/19584144-547d-4d54-817c-8c7154e0f7a6/Screen_Recording_20221013-134645_Bibleis.mp4</a></div></figure></li></ul><p id="73f2e2bc-e070-4573-8b84-2d590074ffb9" class="">
+</p><p id="8072bb8a-a82b-4baa-9f09-f774022ad960" class="">
+</p><p id="d12c1517-23cd-47ba-bbe6-74a2488202a4" class="">
+</p><p id="497140b5-c0d4-4f2d-8e26-64739f132972" class="">
+</p><ul id="1e7bfdc9-28e5-425e-868d-b6e6166afa86" class="bulleted-list"><li style="list-style-type:disc">Youtube <p id="bfc00d2a-f946-4d7f-991d-226529d3cee1" class="">투머치인 거 같기도..</p><p id="86d1a4da-396f-475e-8f11-c6eab21084fc" class="">“help &amp; feedback”</p><figure id="60dc8e06-85d5-4d0c-bbfc-ba2e71a0b692"><div class="source"><a href="Shotag%E1%84%8B%E1%85%AA%20%E1%84%89%E1%85%A9%E1%84%90%E1%85%A9%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%E2%9C%85%20098d1aac0f2140118057a019112865ee/Screen_Recording_20221013-135812_Google_Play_services.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1c95fdc2-f588-49f9-92d2-3e24311250e7/Screen_Recording_20221013-135812_Google_Play_services.mp4</a></div></figure><p id="4490f5fa-35a6-44c1-9f6e-4543e1397e4c" class="">
+</p><p id="f3ad5f4e-8714-47dd-9769-32cb046ef042" class="">
+</p></li></ul><ul id="6303b6db-d130-427e-8af7-4bd59a29ac0c" class="bulleted-list"><li style="list-style-type:disc">Airbnb<p id="1d4c0e80-d90b-4d05-be4e-bf7eafde1480" class="">“give us feedback”</p><figure id="89e998a9-fc6f-4f87-8d82-cc9f41f579d3"><div class="source"><a href="Shotag%E1%84%8B%E1%85%AA%20%E1%84%89%E1%85%A9%E1%84%90%E1%85%A9%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%E2%9C%85%20098d1aac0f2140118057a019112865ee/Screen_Recording_20221013-140703_Airbnb.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/db6cc2a1-3118-476c-8898-b5be83525417/Screen_Recording_20221013-140703_Airbnb.mp4</a></div></figure></li></ul><p id="3a719e48-63c7-462f-bed4-45e7eef25974" class="">
+</p></div><div id="27e39a9d-352a-4e30-86bb-4a053731367e" style="width:33.33333333333333%" class="column"><ul id="da2255e7-5729-4e01-9d1b-0faf482d5185" class="bulleted-list"><li style="list-style-type:disc">IMDb<p id="dc18bb29-5352-4913-b83d-7ea98840118e" class="">“Write a review”</p><figure id="6691f76d-5cbc-4dc5-8ae7-34828d055b11"><div class="source"><a href="Shotag%E1%84%8B%E1%85%AA%20%E1%84%89%E1%85%A9%E1%84%90%E1%85%A9%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%E2%9C%85%20098d1aac0f2140118057a019112865ee/Screen_Recording_20221013-132010_Gmail.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/89aab727-a2bc-4ac0-b939-871d9a8c8cad/Screen_Recording_20221013-132010_Gmail.mp4</a></div></figure></li></ul><p id="3d875a00-5587-4291-ad8f-00d46fc1356d" class="">
+</p><p id="db18b37e-73a7-4bb8-8c7b-b1507274ae2f" class="">
+</p><p id="a377f42c-d356-4172-98b1-f30737fb5814" class="">
+</p><p id="ecca8c85-1f05-46a6-b640-72ce54b6dbe5" class="">
+</p><p id="036d80bd-416d-4893-8d86-7c8c92875969" class="">
+</p><ul id="218d4926-8d47-4c98-afe2-476c98dfe5ab" class="bulleted-list"><li style="list-style-type:disc">ESPN<p id="06e78e7c-141d-4bd4-af7b-e686daef4e44" class="">투머치인 거 같기도…</p><p id="35f1c0a1-6f0e-4b8f-b21f-2c1d25c3896d" class="">“Send feedback”</p><figure id="3ffadab0-4eba-40f5-b96d-6ddddc0c7331"><div class="source"><a href="Shotag%E1%84%8B%E1%85%AA%20%E1%84%89%E1%85%A9%E1%84%90%E1%85%A9%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%E2%9C%85%20098d1aac0f2140118057a019112865ee/Screen_Recording_20221013-140056_ESPN.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ea002cca-62e6-4580-83f5-bee7abf40960/Screen_Recording_20221013-140056_ESPN.mp4</a></div></figure><p id="000179c8-58c7-49ed-9ad8-0027b94d9bc7" class="">
+</p><p id="965dd121-f0f4-43e1-a8f9-8a83f33c8545" class="">
+</p><p id="1ee6acf0-bab4-4a02-a0f7-d1ee9be80b6e" class="">
+</p><ul id="b34c8e61-9fad-4b01-8c3f-8b37f8c96f02" class="bulleted-list"><li style="list-style-type:circle">All Recipes <p id="010d6185-97ba-4f72-a960-6ddeb458828a" class="">“Report a bug”</p><p id="21e15ba8-e9df-4053-b56e-b2d833a77e98" class="">(no response)</p><figure id="c6381458-8e1a-423c-a871-f10951401b9e" class="image"><a href="Shotag%E1%84%8B%E1%85%AA%20%E1%84%89%E1%85%A9%E1%84%90%E1%85%A9%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%E2%9C%85%20098d1aac0f2140118057a019112865ee/Screenshot_20221013-130836_All_Recipes.jpg"><img style="width:1080px" src="Shotag%E1%84%8B%E1%85%AA%20%E1%84%89%E1%85%A9%E1%84%90%E1%85%A9%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%E2%9C%85%20098d1aac0f2140118057a019112865ee/Screenshot_20221013-130836_All_Recipes.jpg"/></a></figure></li></ul></li></ul><p id="a088cdc8-c50e-4f63-bc69-dd4c744d943a" class="">
+</p></div><div id="e1814199-c3b9-4f28-97a4-aec0ec2ba150" style="width:33.33333333333333%" class="column"><ul id="97d0a859-7a4a-429c-99f3-d80af5d1e3fd" class="bulleted-list"><li style="list-style-type:disc">Red Box<p id="2ead812b-d9f6-4a4b-98e9-1fe807d7683b" class="">“Report bug &amp; help”</p><figure id="951d8281-4aca-42b2-8ea2-cf6b99cd4e4d"><div class="source"><a href="Shotag%E1%84%8B%E1%85%AA%20%E1%84%89%E1%85%A9%E1%84%90%E1%85%A9%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%E2%9C%85%20098d1aac0f2140118057a019112865ee/Screen_Recording_20221013-133128_Red_Box.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5fa8a1c1-00e5-4007-84c2-10b58c450a75/Screen_Recording_20221013-133128_Red_Box.mp4</a></div></figure></li></ul><p id="1d10c8e5-9817-4362-8c67-9ebc3c9ab785" class="">
+</p><p id="1a4af507-33df-4aef-a40f-051ba1ccb028" class="">
+</p><p id="f17097e7-e4f0-4766-9673-b9d4a6b59afc" class="">
+</p><p id="cb859c38-5991-4ea8-b772-2d24e791330b" class="">
+</p><p id="49bd4c61-706f-4321-b4f7-2d211156a1b3" class="">
+</p><ul id="9aabb3d2-2d6b-4b09-b0b4-deab6cd06e63" class="bulleted-list"><li style="list-style-type:disc">Shein<p id="ff7e9d01-4e39-4a96-9186-4a2a60f658a7" class="">“Rating &amp; Feedback”</p><figure id="ab16ba3b-160f-4616-a2ab-de43ff304ba6"><div class="source"><a href="Shotag%E1%84%8B%E1%85%AA%20%E1%84%89%E1%85%A9%E1%84%90%E1%85%A9%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%E2%9C%85%20098d1aac0f2140118057a019112865ee/Screen_Recording_20221013-135255_SHEIN.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/105f93c5-5e9f-40fd-a335-796ac11a28a7/Screen_Recording_20221013-135255_SHEIN.mp4</a></div></figure></li></ul><p id="3a7825b3-a31e-4d34-9154-a6fb63427ec7" class="">
+</p><p id="f433d850-dd81-4f39-8be0-a61b0325ab5a" class="">
+</p><p id="fc14ac55-db9b-4f00-8c68-50212079ef12" class="">
+</p><p id="801e7e8a-8ae6-4491-b493-c3c8f4fe0bf5" class="">
+</p><ul id="5455a4fb-e36e-4391-b775-a56fd1f3e124" class="bulleted-list"><li style="list-style-type:disc">NY Times<p id="e17c6b38-44ac-4fa9-a519-bd6c1f26e3bd" class="">“send app feedback”</p><figure id="66094ccc-42c4-41cd-aed5-ae9d7880027d"><div class="source"><a href="Shotag%E1%84%8B%E1%85%AA%20%E1%84%89%E1%85%A9%E1%84%90%E1%85%A9%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%E2%9C%85%20098d1aac0f2140118057a019112865ee/Screen_Recording_20221013-140426_NYTimes.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4b5b2e17-7c04-4257-8a3e-b7d4782bdefe/Screen_Recording_20221013-140426_NYTimes.mp4</a></div></figure></li></ul><p id="c0ed3af9-c225-4a70-a394-4431b1cc39aa" class="">
+</p></div></div><p id="db0da4bd-2f38-4b52-a7e9-f6251a87cd18" class="">
+</p><hr id="4568b49d-3642-498c-a077-35fd4400b274"/><p id="f956eb0d-4bd4-43b8-9c8e-b62e8eaab60d" class="">20221007 회의록</p><div><ul id="550394a3-786b-432f-8d8f-e579bf839e51" class="toggle"><li><details open=""><summary>개발자에게 제보하기 버튼이 필요할까, 있다면 어떤 식으로 되어야 할까
+<mark class="highlight-orange_background">있으면 좋겠고, 이왕 할 거면 메일보다 덜 딱딱한 루트</mark></summary><p id="58d39812-bab4-40f6-85ab-40d420aeeec9" class=""><mark class="highlight-teal">지금 누르면 복사,
+그냥 바로 이메일 드래프트 열어 주면 안 되나?</mark></p><p id="ce0381a4-9774-4e4c-b48a-7dd4e02bf496" class=""><mark class="highlight-purple">통로가 없으면 안 되는 상황이라 넣어 놓은 의미가 큼
+걍 디코 류/채널톡의 채널 하나 파는 게 좋을 듯</mark></p><p id="c9819744-98e1-4c2f-9c4e-01311984b435" class=""><mark class="highlight-teal">물론 그런 의도는 아니었겠지만, 카피만 시켜주는 게 성의 없게 느껴질 수 있음</mark></p></details></li></ul></div><hr id="5d87e54e-15a3-4872-bf88-1e7bcfde91ea"/><p id="b2b2b3e6-a732-4ad9-a639-4a916826e0b8" class="">Suggestion </p><p id="d04b518f-0d8d-40a6-a7e4-a45a7f43eafe" class="">
+</p><p id="f9aefba4-3705-4fa0-81db-580045574e4b" class="">contacts 정도면 충분할 듯<div class="indented"><p id="dd7388a1-37c0-4e1b-8f6a-9a159568de80" class="">대신 자동으로 이메일 작성 화면으로 넘어가는 거 정도는 필요할 듯?</p></div></p><p id="352cc06a-3946-49cd-9e66-85860fc8f18d" class="">
+</p><ul id="9e7fc9fa-3a89-4c71-83e7-ada5060fdf8d" class="bulleted-list"><li style="list-style-type:disc">거시적 관점에서 우리 제품의 방향성<ul id="7b88b5b8-f45b-4dc9-8c73-3fb7477987ac" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">개인화와 적극성</span><strong> </strong>(적극적으로 유저가 원할 때 스크린샷을 쉽게 발견하고 그 다음 액션으로 이어주는 것 유저 개개인을 위한 맞춤형 서비스를 제공하는 것)</li></ul></li></ul><ul id="f4ca38a5-09ce-484f-a536-d22a4cf22430" class="bulleted-list"><li style="list-style-type:disc">단기간에 이뤄야 할 KPI<ul id="588b5e10-8b37-4b3b-a6d4-f30e47f57ade" class="bulleted-list"><li style="list-style-type:circle"> 사람들이 <span style="border-bottom:0.05em solid">검색하는 횟수와 시간 늘리기 (= 참여율)</span></li></ul></li></ul><ul id="4bf3e9c9-3e89-451a-afb8-f16bef2ee3b9" class="bulleted-list"><li style="list-style-type:disc">이 영역의 목표<ul id="6c978ad4-414b-400f-8ef3-54d4ef7573f8" class="bulleted-list"><li style="list-style-type:circle">이 영역의 목표 자체는 고객이 원하는 것을 파악하고 다음 기능의 후보가 될 만한 아이디어들을 축적하기</li></ul></li></ul><ul id="da9a4f8b-00aa-44d9-8656-c45f1f4e2153" class="bulleted-list"><li style="list-style-type:disc">이 영역이 사용자에게 주는 가치<ul id="5fe843df-a0e4-495d-9205-1dcb12330f02" class="bulleted-list"><li style="list-style-type:circle">이 영역을 통해 사용자는 자신이 주체적으로 참여하는 앱이라는 느낌을 가지고 앱과 더 가깝게 느낄 수 있다</li></ul><ul id="742866b6-e894-4093-a0cf-64ff259fde60" class="bulleted-list"><li style="list-style-type:circle">그 가치를 설정한 이유<ul id="6191c2f2-af1e-47c4-bf19-0d8d06a6af84" class="bulleted-list"><li style="list-style-type:square">앱과 더 가깝게 느낄 수 있어야 참여율이 올라가기 때문</li></ul></li></ul><ul id="ff804dfd-b80e-43eb-8ccf-e8587042d1ff" class="bulleted-list"><li style="list-style-type:circle">왜 이 방법을 통해 앱과 더 가깝게 느낄 수 있어야 하는가<ul id="22ee8ddc-8ebb-4627-a568-269052e56594" class="bulleted-list"><li style="list-style-type:square">contacts 화면만 있으면 “우리 연락처 여깄으니까 알아서 보내든지~”식의 성의없다는 인식을 줄 수 있다</li></ul></li></ul></li></ul><ul id="d0c6c26a-ec18-4ad3-91ad-f97678909da9" class="bulleted-list"><li style="list-style-type:disc">검증 가능성<ul id="7d70b3a0-105c-4f7e-b087-e803273f539d" class="bulleted-list"><li style="list-style-type:circle">이메일을 작성하기 전 후의 앱 사용 시간 및 사용 빈도로 검증이 가능할 듯</li></ul></li></ul><p id="43380267-e267-484a-9cab-2c10ea7f518a" class="">
+</p></div></article></body></html>

@@ -1,0 +1,689 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>[MVP 이후][shotag만의 잠재력] 모든 사이트의 스크랩 리스트를 하나로 만들기</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7f897289-8b26-4eeb-b265-770279b53bc3" class="page sans"><header><h1 class="page-title">[MVP 이후][shotag만의 잠재력] 모든 사이트의 스크랩 리스트를 하나로 만들기</h1><table class="properties"><tbody><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>관련 링크</th><td></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>Type</th><td></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Due Date</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-purple">Suggestion</span></td></tr><tr class="property-row property-row-status"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesStatus"><path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path></svg></span>상태</th><td><span class="status-value select-value-color-blue"><div class="status-dot status-dot-color-blue"></div>In progress</span></td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>작성 일자</th><td><time>@2022년 10월 7일 오후 7:51</time></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Date</th><td></td></tr><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>Participants</th><td></td></tr></tbody></table></header><div class="page-body"><p id="2b7939f9-b0ae-4fc8-af19-498c2e239a23" class="">마이너는 어떤 이미지의 브랜드여야 하는가<div class="indented"><p id="43f04304-7dbc-45a8-a7bf-dce4770465e2" class="">“버려진 데이터를 가치있게 만드는”</p><p id="d67416c7-ea0c-4284-9a8f-17aed2e31ecc" class=""><mark class="highlight-gray_background">사람들의 모바일 환경에서의 저장/즐겨찾기/북마크/좋아요 목록은 버려지기 마련 (마치 스크린샷처럼)</mark></p><p id="959b2842-134d-46e7-b89d-58a5ec6b23c7" class="">
+</p><p id="1b9ea259-4e1c-4dfa-b82e-8f4effa34588" class="">어떤 앱들이 이런 기능을 가지고 있나?<div class="indented"><p id="f0dc25de-e82d-497f-8674-88e13eae5684" class="">인스타, 페북, 트위터, 네이버지도, 망고플레이트, 당근마켓, 화해 등 거의 모든 앱</p></div></p></div></p><hr id="36050934-f1ec-4df1-8be9-aa6c5f62681a"/><h2 id="820a523a-2070-4fc0-8539-9918f6054fdf" class="">Suggestion</h2><div><ul id="91a04757-a550-490b-baf4-cee1889ede05" class="bulleted-list"><li style="list-style-type:disc">모든 앱의 저장 기능을 하나로 모으기 (Universal scrapping)<ul id="05c93980-7dff-4d8a-a634-083d0796bcae" class="bulleted-list"><li style="list-style-type:circle">스크린샷 한 그 화면으로 돌아가는 기능을 제공되어야 함</li></ul><ul id="47a3797e-e034-4e71-9880-c904342f6bac" class="bulleted-list"><li style="list-style-type:circle">주기적으로 내용이 업데이트 되어야 함</li></ul><ul id="b62a1138-548e-4ed0-8ef4-d1d8f25cb686" class="bulleted-list"><li style="list-style-type:circle">스크랩 기능을 사용하기 위해 로그인을 할 필요가 없다면 좋을 듯</li></ul></li></ul><p id="3620b3c8-d67b-44d8-bf22-5bdcbad331ad" class="">
+</p><p id="8492421c-2256-4b4d-89cb-3391cbb5876d" class="">just like an updated Mymind</p><p id="54679b38-7dab-4d8d-af2c-fd88a1035a36" class="">“Remember everything, organize nothing”</p><p id="aa0169ee-953b-47fd-af8e-0c14beb2dfe8" class="">“You know the feeling: When you&#x27;re talking with a friend and trying to remember a song or quote, and you can&#x27;t quite seem to access it. It might help if the friend helped &quot;trace your steps&quot; with triggers like colors or keywords. But databases like Google are not connected to our own memories.”</p><p id="a41a867c-1133-4d1a-a816-775ea933b51e" class="">a life logger of some sort</p><p id="59d942db-11d1-4260-ba11-c9d5b68c7fd6" class="">building a personal library</p><p id="b3ff64a2-a4ce-42f5-a855-7787ccc1f13a" class="">digital de-cluttering</p><p id="d51f8c88-b067-40fd-aaf5-d5cdeac81bdd" class="">digital Pensieve</p><figure id="9f06bb39-f9da-4797-aa95-f7b172dca3b6"><div class="source"><a href="https://mymind.com/">https://mymind.com/</a></div></figure></div><p id="c01bd53d-991b-49bb-a860-4e0b2dcac08b" class="">
+</p><p id="7a5966a1-0335-4dcb-ae59-137ab6373b1d" class="">그것을 쉽게 해주기 위한 솔루션을 일단 나열을 해보자<div class="indented"><ul id="f03fe8a6-1464-47d3-845b-41bd4f1bf7f8" class="toggle"><li><details open=""><summary><mark class="highlight-gray">[rejected by myself]공유 기능 (Linking) </mark></summary><ul id="52871531-9a06-49cd-9aca-db04cdc5660f" class="bulleted-list"><li style="list-style-type:disc">기능 설명<ul id="5bf8f18e-8839-4fb6-91dc-ec4d34b1a100" class="bulleted-list"><li style="list-style-type:circle">공유 버튼을 누르고 우리 앱을 누르면 우리 앱에 Link으로 따로 저장됨. 공유 시 앱에서 기본으로 제공하는 이미지와 텍스트를 그 컨텐츠로 함 || (if possible) 공유 시 앱의 스크린샷을 촬영하여 이미지와 추출된 텍스트를 그 컨텐츠로 함</li></ul><ul id="d918b6b2-ed43-4787-83f5-7b09a379fb01" class="bulleted-list"><li style="list-style-type:circle">이미 같거나 관련된 스샷이 찍혀있는 경우 공유 버튼을 누르면 그 Screenshot의 Link로 연동하여 저장할 수 있는 옵션을 share sheet에서 제공</li></ul><ul id="c7edef4c-e41e-417a-9f72-a9af53f6c5b8" class="bulleted-list"><li style="list-style-type:circle">스샷 찍을 때 공유 버튼이 감지되는 경우 공유를 통한 저장을 유도</li></ul><ul id="7ee31d2e-ef53-41bb-b889-25ea7db263a9" class="bulleted-list"><li style="list-style-type:circle">주기적으로 내용이 업데이트 되지 못할 가능성이 높음</li></ul></li></ul><ul id="1ca0bf85-9240-4bd5-ac31-006e86b8a52d" class="bulleted-list"><li style="list-style-type:disc">disadvantages<ul id="97bb345e-a6df-40da-9abc-1d0e8123f804" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">애초에 abandoned data가 발생하지 않을 것이다</span>. 스샷이나 저장 기능이 abandoned data가 발생하는 이유는 원터치이고 너무너무 편리해서. 그런데 굳이 링크 아이콘을 찾아가지고 여러 번 거쳐 들어가는 거는 진성 유저가 아닌 한 안할 것임</li></ul><ul id="6c066a38-05a6-43ff-aff2-69f406cfa209" class="bulleted-list"><li style="list-style-type:circle">어차피 내용이 업뎃되지도 않고 그냥 링크만 저장되어 그 앱의 그 페이지로 빠르게 갈 수 있는 정도인데 유저가 들여야 하는 <span style="border-bottom:0.05em solid">추가적인 노력에 비해 얻을 수 있는 게 별로 없음</span></li></ul><ul id="df3a4a20-4e92-44b2-bc7d-958304ef3c8d" class="bulleted-list"><li style="list-style-type:circle">일부 링크를 저장하고 싶은 유저만 하는 <span style="border-bottom:0.05em solid">마이너한 기능으로 밖에 안 남을 듯</span></li></ul><ul id="518e0b29-3cee-40f7-8dc7-77b40db8251f" class="bulleted-list"><li style="list-style-type:circle">conversion data를 받고 싶은 거라면 이거는 <span style="border-bottom:0.05em solid">표본과 모집단이 일치하지 않음</span><p id="83a49e95-467f-453a-a08f-3dcfa8031a38" class="">표본 = 일반 shotag 사용자</p><p id="4caa22fc-8a15-41d9-a5b3-d448bea47426" class="">모집단 = shotag 사용자 중 <mark class="highlight-gray">공유 기능 (Linking)</mark>을 사용하는 소수의 유저</p></li></ul></li></ul></details></li></ul><ul id="03422d7b-af16-4248-89ac-3616083d482b" class="toggle"><li><details open=""><summary>제일 좋은 건 하나하나 제휴를 맺는 것  (Linkshot)</summary><ul id="98c253d2-d3c7-4f7e-a8fb-348d4fe7022e" class="bulleted-list"><li style="list-style-type:disc">interactive layout<ul id="37bb87ca-19ca-4452-9c47-fc991bc4ec2b" class="bulleted-list"><li style="list-style-type:circle">Linkshot을 추가 시, 공유된 페이지의 모든 컨텐츠가 추가되며, 항상 내용이 업데이트 됨</li></ul><ul id="a397a80c-bfb6-4270-9be9-c6aa606a106f" class="bulleted-list"><li style="list-style-type:circle">Linkshot detail 화면에서 Linkshot 화면 상의 모든 UI 요소가 실시간으로 움직이며 스크롤 가능하고 유저와 interact도 가능. 클릭시 해당 앱의 해당 화면으로 이동 및 유입됨</li></ul><ul id="2132f826-384c-44cf-96b6-632d6a399e53" class="bulleted-list"><li style="list-style-type:circle">Linkshot의 섬네일도 모든 linkshot들의 UI 요소가 실시간으로 움직임</li></ul></li></ul><ul id="d951ef8d-8b29-4070-97c7-553d4fa4cb01" class="bulleted-list"><li style="list-style-type:disc">“log in with Shotag”<ul id="660a214d-1448-4830-9a34-c8f837d53625" class="bulleted-list"><li style="list-style-type:circle">Shotag 전용 스크랩 버튼</li></ul><ul id="dbb95129-651c-4f78-a1e7-37571d724bfe" class="bulleted-list"><li style="list-style-type:circle">이 계정으로 가입하면 모든 좋아요 리스트와 방문 기록이 연동됨</li></ul><ul id="a7f809ac-782a-46e3-bf03-7c28d00e6827" class="bulleted-list"><li style="list-style-type:circle">일괄적으로 Shotag 자동 동기화 할 수 있는 옵션 </li></ul><ul id="2c7165ec-b239-4c30-9e5e-7e2327cfc1be" class="bulleted-list"><li style="list-style-type:circle">제휴 맺은 앱과 같은 계정으로 가입했다면 스샷 찍을 때마다 자동으로 Linkshot으로 추가됨</li></ul><ul id="e458260d-4c1f-421e-9d2e-9257628abbf0" class="bulleted-list"><li style="list-style-type:circle">다른 방식으로 계정을 만들었더라도 같은 구글 계정으로 로그인한 것이 감지되면 모든 좋아요 리스트와 방문 기록이 연동됨</li></ul></li></ul><ul id="a093b39f-f139-4912-b813-4b1abd05db37" class="bulleted-list"><li style="list-style-type:disc">Utilizing tags<ul id="290b06ec-1974-4440-b3bd-026ba5f0b245" class="bulleted-list"><li style="list-style-type:circle">pathway to other pages<ul id="605e880e-58df-41b4-83af-0cb09d923161" class="bulleted-list"><li style="list-style-type:square">해당 앱의 다른 화면이나 다른 앱으로 향하는 functional tag 생성 가능</li></ul><ul id="15144969-1d9a-4d9d-9d0e-227250c83e79" class="bulleted-list"><li style="list-style-type:square">경쟁자들이 다른 앱들로 향하는 functional tag를 생성하면 우리가 표출해줄 수 있음</li></ul></li></ul><ul id="f61086a7-b32e-43b1-a422-625246ba5a60" class="bulleted-list"><li style="list-style-type:circle">used as another form of notification<ul id="cb475c51-fe28-47fc-813d-3fcd055a3985" class="bulleted-list"><li style="list-style-type:square">hot deal</li></ul><ul id="e062aa8d-6d93-4284-92f9-c290082becda" class="bulleted-list"><li style="list-style-type:square">coupon</li></ul><ul id="3b16be9d-6cb8-447e-8801-70474461be8d" class="bulleted-list"><li style="list-style-type:square">various eye-catching events</li></ul><ul id="9458bafd-3cc7-4813-9307-9ef733b0f9b0" class="bulleted-list"><li style="list-style-type:square">another form of notification</li></ul></li></ul><ul id="8e8a62e4-a9ae-4d89-9975-9104e9ce9927" class="bulleted-list"><li style="list-style-type:circle">더 많은 context를 기본으로 태그 생성 가능</li></ul></li></ul><ul id="f6c22fe9-578d-4aa5-87c1-d5c727f82421" class="bulleted-list"><li style="list-style-type:disc">app-specific features<ul id="d9e7f79b-5751-42c8-8b57-83b773ae05d7" class="bulleted-list"><li style="list-style-type:circle">제휴한 앱 서비스마다 notification 받는 내용들을 Shotag에 자동으로 Linkshot으로 추가하기</li></ul></li></ul><ul id="2d2c1d56-dccb-4869-a11d-edadbcb3fb4d" class="bulleted-list"><li style="list-style-type:disc">extension-specific features<div><ul id="f086baee-4e95-4c5a-8255-7695c69116cd" class="bulleted-list"><li style="list-style-type:disc">[mobile website] 웹페이지의 경우 제휴하지 않아도 <a href="%5Bdelayed%5D%E1%84%87%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%84%8C%E1%85%A5%20%E1%84%8B%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%AB%E1%84%89%E1%85%A7%E1%86%AB%20abfebf5955e849b59b0dda8ce35a630a.html">extension</a>으로 Linkshot 가능하게 하기</li></ul><ul id="30b56e4f-100b-4554-94c8-5c0da17de5e6" class="bulleted-list"><li style="list-style-type:disc">[mobile website] 웹페이지의 경우 별다른 옵션 없이 <a href="%5Bdelayed%5D%E1%84%87%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%84%8C%E1%85%A5%20%E1%84%8B%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%AB%E1%84%89%E1%85%A7%E1%86%AB%20abfebf5955e849b59b0dda8ce35a630a.html">extension</a>을 설치했다면 자동으로 샷태그로 로그인하도록 prompt</li></ul></div></li></ul></details></li></ul><ul id="b90ded9e-0513-4936-a530-5ef2d25c9197" class="toggle"><li><details open=""><summary>스샷을 찍었을 때 저장 아이콘을 탐지한 경우 유저가 그것을 클릭하고 다시 찍도록 유도하고 그것을 클릭했다면 어디에 저장했는지 알 수 있도록 하는 방법</summary><ul id="5f9ee4b3-3fa5-49ab-9263-7830ccbbfed9" class="bulleted-list"><li style="list-style-type:disc">keyboard app-specific feature<div><ul id="15bacd67-b3f2-41c1-85e8-0aa18609f913" class="bulleted-list"><li style="list-style-type:disc">나중에 그 앱에 다시 들어가서 비슷한 항목을 검색했을 때 방금 검색한 아이템과 비슷한, 그 앱에 스크랩(저장)된 항목의 스크린샷을 띄워줄 수는 있을 듯</li></ul><ul id="19e68017-76c6-4004-aa25-d44cf5dce7d5" class="bulleted-list"><li style="list-style-type:disc">또 나중에 비슷한 항목을 타이핑했을 때 저장된 스크린샷을 띄워주면서 그 앱으로 바로 갈 수 있는 옵션을 만들어주는 것도 좋을 듯</li></ul></div></li></ul><ul id="6b1fcd42-28cc-4828-947e-7456f402afe1" class="bulleted-list"><li style="list-style-type:disc">pathway to the corresponding app<ul id="2a477479-ce5b-4ed0-973b-c4cc3ea139ea" class="bulleted-list"><li style="list-style-type:circle">찍은 그 앱으로 향하는 functional tag를 생성 가능</li></ul></li></ul><ul id="f783e38f-34c0-4b35-b382-625b00afa521" class="bulleted-list"><li style="list-style-type:disc">더 많은 정보를(저장 여부, 앱 이름) 기반으로 태그 생성 가능</li></ul><ul id="11daedc0-93ea-4e18-af4c-8d9b4ecd2ca0" class="bulleted-list"><li style="list-style-type:disc">다만 이렇게 하면 주기적으로 내용이 업데이트 되지는 못함</li></ul></details></li></ul><ul id="1535218a-0fc4-43ac-bd12-46e4fc79b9e8" class="toggle"><li><details open=""><summary><mark class="highlight-gray">[highly unlikely]스크린샷 한 그 화면으로 돌아가는 기능</mark></summary><ul id="7b8eb994-b4d2-41ec-86fe-e1584a51f34c" class="bulleted-list"><li style="list-style-type:disc">공유 아이콘이 찍혀 있는 스샷의 경우 아마 그 앱을 막 돌아다니게 하면 링크를 찾을 수도 있을 듯</li></ul><ul id="73728c51-946c-4471-9d38-6fe406442762" class="bulleted-list"><li style="list-style-type:disc">근데 아마 이거 앱에서 막아놨을 가능성이 농후해…</li></ul></details></li></ul></div></p><p id="75ecc1a0-f0a2-442e-b65e-7724d4826c39" class="">
+</p><p id="3ba8d286-3f45-465e-bcc8-f122adab4c09" class="">로드맵</p><ol type="1" id="b3dea046-73b8-4da8-a212-57f08722007b" class="numbered-list" start="1"><li><a href="%5Bdelayed%5D%E1%84%87%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%84%8C%E1%85%A5%20%E1%84%8B%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%AB%E1%84%89%E1%85%A7%E1%86%AB%20abfebf5955e849b59b0dda8ce35a630a.html">extension</a> &amp; <a href="%5BMVP%20%E1%84%8B%E1%85%B5%E1%84%92%E1%85%AE%5Dkeyboard%20app%20dd44924951e94d5298a6de61363f7713.html">[if possible]keyboard </a>를 통해 전환률 데이터 모으기<ol type="a" id="8345ace1-4e42-4ff9-a70d-0a114c5c13fa" class="numbered-list" start="1"><li>모바일 환경에서 얼마나 많은 사람들이 모바일 <a href="%5Bdelayed%5D%E1%84%87%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%84%8C%E1%85%A5%20%E1%84%8B%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%AB%E1%84%89%E1%85%A7%E1%86%AB%20abfebf5955e849b59b0dda8ce35a630a.html">extension</a> 그리고 <a href="%5BMVP%20%E1%84%8B%E1%85%B5%E1%84%92%E1%85%AE%5Dkeyboard%20app%20dd44924951e94d5298a6de61363f7713.html">[if possible]keyboard </a>을 이용해 샷태그에서 해당 앱이나 웹사이트로 넘어갔는지 데이터 모으기</li></ol><ol type="a" id="5c3fcc39-5ff0-4645-92f9-e2b4e3b201ed" class="numbered-list" start="2"><li>모바일 환경에서 샷태그 모바일 <a href="%5Bdelayed%5D%E1%84%87%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%84%8C%E1%85%A5%20%E1%84%8B%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%AB%E1%84%89%E1%85%A7%E1%86%AB%20abfebf5955e849b59b0dda8ce35a630a.html">extension</a>을 통해 샷태그에서 해당 웹사이트로 진입한 경우 원하는 행동을 하기까지의 conversion rate이 어떻게 되는지 데이터 모으기</li></ol><ol type="a" id="935f8815-ead0-40ff-bdeb-c2dcfda62acf" class="numbered-list" start="3"><li>데스크탑 환경에서 얼마나 많은 사람들이 데스크탑 <a href="%5Bdelayed%5D%E1%84%87%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%84%8C%E1%85%A5%20%E1%84%8B%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%AB%E1%84%89%E1%85%A7%E1%86%AB%20abfebf5955e849b59b0dda8ce35a630a.html">extension</a>을 통해 샷태그에서 해당 웹사이트로 넘어갔는지 데이터 모으기</li></ol><ol type="a" id="90da7447-c20d-43de-b0f6-befcf4d61c8a" class="numbered-list" start="4"><li>모바일 및 데스크탑 환경에서 샷태그 <a href="%5Bdelayed%5D%E1%84%87%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%84%8C%E1%85%A5%20%E1%84%8B%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%AB%E1%84%89%E1%85%A7%E1%86%AB%20abfebf5955e849b59b0dda8ce35a630a.html">extension</a>을 통해 해당 웹사이트에 진입한 경우 원하는 행동을 하기까지의 conversion rate이 어떻게 되는지 데이터 모으기</li></ol></li></ol><ol type="1" id="da7b48f5-a4d5-4283-9495-e6fc53376476" class="numbered-list" start="2"><li>해당 데이터를 통한 협상력이 충분한 경우 다른 플랫폼과의 연동 시작<ol type="a" id="3feaba42-f56f-4631-9c21-b03b519cb334" class="numbered-list" start="1"><li><a href="%5Bdelayed%5D%E1%84%87%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%84%8C%E1%85%A5%20%E1%84%8B%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%AB%E1%84%89%E1%85%A7%E1%86%AB%20abfebf5955e849b59b0dda8ce35a630a.html">extension</a> &amp; <a href="%5BMVP%20%E1%84%8B%E1%85%B5%E1%84%92%E1%85%AE%5Dkeyboard%20app%20dd44924951e94d5298a6de61363f7713.html">[if possible]keyboard </a>통해 website/app user와 website/app owner들의 킬러 서비스로 진출</li></ol><ol type="a" id="4ca9838d-fa88-40d1-8332-3afcdc30801c" class="numbered-list" start="2"><li>하나하나 제휴를 맺어(<a href="%5BMVP%20%E1%84%8B%E1%85%B5%E1%84%92%E1%85%AE%5D%5Bshotag%E1%84%86%E1%85%A1%E1%86%AB%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A1%E1%86%B7%E1%84%8C%E1%85%A2%E1%84%85%E1%85%A7%E1%86%A8%5D%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%B3%E1%86%AB%20%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B4%20%E1%84%89%E1%85%B3%207f8972898b264eebb265770279b53bc3.html">Linkshot</a>)감에 따라 네트워크 효과를 만들어나감</li></ol></li></ol><p id="f02f8a89-9981-4abb-b69f-78d9c362813c" class="">
+</p><hr id="c9e387bf-c285-4706-a582-ffd6c14533f4"/><h2 id="4dbe47db-3400-4969-b2ae-b2fe409cb3b6" class="">Suggestion</h2><p id="cd68eb28-20ea-458e-9476-b651c6eff24d" class="">검증 방법</p><ul id="75fd8580-1ec0-4d78-81be-8ce5631f2e8d" class="bulleted-list"><li style="list-style-type:disc">notion embedding feature 가지고 비슷하게는 만들 수 있음<p id="1a0897c6-a148-4bed-8ed0-03273c8635af" class="">notion embedding features란?</p><p id="cbfd4299-f1a7-441e-9d60-bcccc31335ce" class="">웹페이지 링크를 임베딩하면 아래처럼 웹페이지가 노션 안으로 들어옴 (아래처럼)</p><figure id="7c1b0298-003d-4a64-80c8-7e50546673ee"><div class="source"><a href="https://mymind.com/what">https://mymind.com/what</a></div></figure></li></ul><hr id="d033d020-475a-4da8-bf27-48dcd99560a7"/><h2 id="7c6c1205-b19e-4315-b957-0f0edfe0b8aa" class="">Reasoning</h2><p id="fc581e8f-37d3-456a-994c-50204551d93b" class="">유저들은 Shotag를 언제 의미있게 사용할까?</p><div><ul id="92bf61cd-e0c3-4f33-bb7e-bbf891d87aa2" class="bulleted-list"><li style="list-style-type:disc">앱 하나하나에서 검색하는 것보다 내가 저장한 정보에서 찾는 게 더 빠르거나 정확하거나 그냥 좋을 때<ul id="4a889339-1231-42f7-a360-127a3cbba8dc" class="bulleted-list"><li style="list-style-type:circle">한 분야에 대해 관련된 여러 앱을 사용하느라 예전에 언뜻 봤던 것을 어느 앱에서 찾아야 하는지 모를 때</li></ul><ul id="47c29258-1b3a-4603-869d-866590c98e03" class="bulleted-list"><li style="list-style-type:circle">검색을 잘 하더라도 결국엔 내용을 직접 살펴본 이후에 본인의 판단이 들어가야 하는 경우<ul id="cff67ca6-3b45-4332-872a-ca0be5076025" class="bulleted-list"><li style="list-style-type:square">나에게 의미있는 정보가 담긴 아티클</li></ul><ul id="ed0de2d7-ff63-4a74-ac54-f6418ada15cf" class="bulleted-list"><li style="list-style-type:square">옷쇼핑</li></ul><ul id="d0186363-c161-45f1-954d-9b3597fc77af" class="bulleted-list"><li style="list-style-type:square">각종 쇼핑</li></ul></li></ul><ul id="f20776e4-f4bc-4edf-b5e3-dd4540b70eb6" class="bulleted-list"><li style="list-style-type:circle">우연히 정말 좋은 것이 생각나거나 발견한 경우<ul id="a3c2c0d7-afe4-4cf2-ac29-97518d3ab4b6" class="bulleted-list"><li style="list-style-type:square">전에 우연히 마주한 재밌는 유튜브 영상을 다시 찾는 경우</li></ul><ul id="f3aa1926-15c8-4237-a4a4-4ecca1da97de" class="bulleted-list"><li style="list-style-type:square">전에 우연히 마주한 나한테 딱맞는 스타일의 옷을 다시 찾는 경우</li></ul><ul id="1722d001-d611-44ee-95d9-bd98a4662e15" class="bulleted-list"><li style="list-style-type:square">전에 우연히 마주한 나한테 딱맞는 스타일의 헤어 스타일러를 다시 찾는 경우</li></ul><ul id="d886eaaa-dbd0-4ee8-a4ab-d4023fd9c0fb" class="bulleted-list"><li style="list-style-type:square">한 순간 스쳐가는 아이디어와 생각들을 기록하는 것</li></ul><ul id="234c8dae-b08c-4af8-8e5e-f5766593afc4" class="bulleted-list"><li style="list-style-type:square">언젠간 살 물건</li></ul></li></ul></li></ul><ul id="39f3982a-b9f2-4c4a-bee8-09bfc25e225f" class="bulleted-list"><li style="list-style-type:disc">기록 자체로 의미가 있는 경우<ul id="9a3f4681-074f-4d05-8f5d-c01e807d74a0" class="bulleted-list"><li style="list-style-type:circle">내가 관심있는 것과 관련된 기록을 소장하려고 할 때<ul id="558b5fc4-383d-42e9-9916-1a3cc0396f0b" class="bulleted-list"><li style="list-style-type:square">철덕의 철도 예매내역</li></ul><ul id="db480df7-bba4-4dcb-aa48-8cf5948e9a19" class="bulleted-list"><li style="list-style-type:square">지도앱 상의 여행 기록</li></ul><ul id="e7c2918a-b600-4d28-a90c-e06ebbab2973" class="bulleted-list"><li style="list-style-type:square">특정 브랜드 자동차 팬의 짤 모음</li></ul></li></ul><ul id="0f3f5e62-e8fa-4ca1-8b78-54e164d5f1ed" class="bulleted-list"><li style="list-style-type:circle">과거의 행동에 대한 기록<ul id="7a6af96c-ca08-4358-929e-fd8763447bf7" class="bulleted-list"><li style="list-style-type:square">쇼핑 내역</li></ul></li></ul><ul id="314dd938-081f-44cb-96c6-55e0776f4d8b" class="bulleted-list"><li style="list-style-type:circle">온라인 상의 영향력이 있는 법적/공적 문서를 저장해야 할 때<ul id="2d520562-9130-420e-89bc-00ba06c6b795" class="bulleted-list"><li style="list-style-type:square">영수증</li></ul><ul id="71c51e74-c366-432e-84f3-e8527e969e61" class="bulleted-list"><li style="list-style-type:square">예약 화면</li></ul><ul id="38591f50-bab2-4eec-b00d-4d951c5faf7a" class="bulleted-list"><li style="list-style-type:square">계약서</li></ul><ul id="3bd6c98c-4d1c-4ac3-9000-e41810ad530e" class="bulleted-list"><li style="list-style-type:square">각종 우편물 통지서</li></ul></li></ul></li></ul><ul id="bf8df498-7c3d-4a48-a2ba-434c64e793e3" class="bulleted-list"><li style="list-style-type:disc">앱 내에서 저장을 하고 싶은데 그러려면 로그인을 해야 하는 경우<ul id="2276ca02-98c6-4932-9615-1faeb908c6a6" class="bulleted-list"><li style="list-style-type:circle"><a href="https://seo-hacker.com/user-registration-affects-business/">“</a><a href="https://seo-hacker.com/user-registration-affects-business/"><strong><strong>Users hate long registration forms</strong></strong></a><a href="https://seo-hacker.com/user-registration-affects-business/">”</a></li></ul><ul id="b5a26dbc-6734-4cd1-a1c4-de694a90e99e" class="bulleted-list"><li style="list-style-type:circle">저장 버튼을 누르지 않고 그냥 스크린샷을 찍어버리기 쉬움</li></ul></li></ul><ul id="c656964a-3f86-4434-b2e1-ce17b4ec65ff" class="bulleted-list"><li style="list-style-type:disc">지금 하기 귀찮아서 나중에 하려고 미루는 경우<div><ul id="423f1694-77b2-449b-8386-7b7d41963745" class="bulleted-list"><li style="list-style-type:disc">유용한 정보를 담았지만 당장 필요하지 않아 그냥 저장만 해놓는 정보성 글</li></ul></div><div><ul id="1294cdab-9efe-4587-8af7-51d08e5da7c0" class="bulleted-list"><li style="list-style-type:disc">친구에게 사적으로 공유할 만한 가치가 있는 정보를 찾았지만 당장 공유하기 귀찮아서 언젠간 공유할 생각으로 저장만 해놓는 게시물 (reddit 같은 거) <ul id="db295944-9724-4b30-a85b-ba2321b6b9ff" class="bulleted-list"><li style="list-style-type:circle">남들에게 정보를 빨리 습득하는 “얼리어답터”라고 인정받고 싶은 사람</li></ul><ul id="9dc94771-7e35-4255-84c9-841ec8f69dbd" class="bulleted-list"><li style="list-style-type:circle">다만 이런 경우에는 키보드가 있어야지 제대로 된 notification이 가능할 듯</li></ul></li></ul></div><div><ul id="2a790c1b-d838-4446-a412-21e5815c54d6" class="bulleted-list"><li style="list-style-type:disc">SNS에 공적으로 공유할 만한 가치가 있는 정보를 찾았지만 당장 공유하기 귀찮아서 언젠간 공유할 생각으로 저장만 해 놓는 게시물 (reddit 같은 거) <ul id="fa2bcbe0-f5da-4f90-a92d-1c829d439138" class="bulleted-list"><li style="list-style-type:circle">남들에게 정보를 빨리 습득하는 “얼리어답터”라고 인정받고 싶은 사람</li></ul><ul id="c76174b5-a0f8-49c2-814e-d2176e8347ca" class="bulleted-list"><li style="list-style-type:circle">다만 이런 경우에는 키보드가 있어야지 제대로 된 notification이 가능할 듯</li></ul></li></ul></div></li></ul></div><p id="386a4df8-114f-442c-b9c7-c29e1039aa01" class="">
+</p><p id="0b53bf89-f88d-4b97-b824-a568e8061838" class="">Shotag의 진짜 잠재력은 무엇일까<div class="indented"><div><ul id="ebcdf18e-9c80-42c5-a3b3-917bbd6c186a" class="bulleted-list"><li style="list-style-type:disc">관심 있는 영역을 모바일 앱 <strong><span style="border-bottom:0.05em solid">플랫폼에 구애받지 않고</span></strong> 저장하기 (일단 쌓아두고 나중에 필요할 때 찾아보기)<ul id="5626361d-41fe-4287-8d6e-f9db185384d0" class="bulleted-list"><li style="list-style-type:circle">내가 관심있는 자취방/부동산 매물</li></ul><ul id="b2c6698d-37ae-4425-97c4-881d4e385323" class="bulleted-list"><li style="list-style-type:circle">내가 관심있는 자동차 중고차 매물</li></ul><ul id="464c74c8-d6ae-4c64-81e1-325d28792bd6" class="bulleted-list"><li style="list-style-type:circle">내가 가고 싶은 관광지의 호텔</li></ul><ul id="4e509544-0458-4f49-9858-6ac994f482f0" class="bulleted-list"><li style="list-style-type:circle">내가 입고 싶은 스타일의 옷</li></ul><ul id="1ba2f052-4327-4108-92c4-72c0c99f0916" class="bulleted-list"><li style="list-style-type:circle">각종 온라인 쇼핑몰 쿠폰</li></ul><ul id="011b3e68-a7c5-4615-83ff-2ae9e2625df6" class="bulleted-list"><li style="list-style-type:circle">(feat. 커리어리) 내가 관심있는 분야의 지식과 관련된 포스팅</li></ul></li></ul></div></div></p><p id="5a4d48b1-f689-4674-b006-139dc85d4066" class="">
+</p><p id="dfa964a9-c98d-475f-b5bb-daddffe0b99d" class="">그것의 의의는 “플랫폼 간의 경계를 무너뜨리는 것”<div class="indented"><ul id="92fe6b6e-e641-4d75-af4d-1596bd1ed073" class="bulleted-list"><li style="list-style-type:disc">각 분야의 1위 플랫폼 기업들은 네트워크 효과를 증대시키려고 한다.</li></ul><ul id="d12966d4-bdd3-4765-8ecc-564a0635b7ea" class="bulleted-list"><li style="list-style-type:disc">반면 2위 이하의 플랫폼 기업들은 네트워크 효과를 약화시키기 위한 유인책을 만들어내려고 한다<ul id="f09389d9-a2fe-4884-8f4e-cf774faa336e" class="bulleted-list"><li style="list-style-type:circle">산업의 특성 상 네트워크가 배타적이지 않은 등 네트워크 효과가 약할 수밖에 없는 산업의 경우 이는 더 활발함<ul id="f27ffc5c-0669-43d0-9892-4e6cf0241d32" class="bulleted-list"><li style="list-style-type:square">특히 온라인 플랫폼 산업이 네트워크 효과가 약한 경우<ul id="fa0c592c-b522-41a3-a6b2-f53125ff52f8" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-gray_background">모빌리티</mark><p id="e5d0255c-4643-43fd-a0ef-b8efb8c89129" class=""><a href="https://www.apurple.co/uber-vs-lyft-ridesharing-apps/">“</a><a href="https://www.apurple.co/uber-vs-lyft-ridesharing-apps/"><em><strong>Among the population in the USA, 63% users use Uber, 27% users use Lyft and the remaining 10% use both the taxi apps.”</strong></em></a></p></li></ul><ul id="163c9dcd-73e1-4646-8faf-f2d012684221" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-gray_background">사람들이 사용하는 인터넷 쇼핑몰 개수</mark><p id="477c930f-0d3c-4d05-9ad3-65bf5ad54e52" class="">“<a href="https://www.newstore.com/articles/survey-1-in-3-consumers-prefer-mobile-shopping-apps/">Almost all consumers (88%) have at least one shopping app on their phone. Half of consumers have more than four, and 9% have more than 10.”</a></p></li></ul></li></ul></li></ul><ul id="7097a8b1-70e9-4d59-8d2c-7b64ae73d568" class="bulleted-list"><li style="list-style-type:circle"><strong><span style="border-bottom:0.05em solid">이러한 시장의 흐름을 도와주고 편승하여 2위 이하의 플랫폼 기업 사이의 연합을 이끌어냄으로써 거대한 가치를 만들어낼 수 있다는 것이 shotag의 진짜 잠재력이다.</span></strong></li></ul></li></ul></div></p><p id="df984cb1-ee5d-45d9-baef-3cc48b32cf29" class="">
+</p><p id="5cb1d06f-dce2-4670-9549-ff18d2ca9494" class="">
+</p><p id="b55103df-0949-4ccc-9d2d-236b63673d5a" class="">때문에 어느 한 플랫폼이 경쟁에서 압승하도록 놔두면 안됨</p><ul id="321682e8-e435-4916-9e1e-6d6a7d52d5c9" class="bulleted-list"><li style="list-style-type:disc">shotag는 계속해서 시장에서 underdog들이 승리할 돌파구를 마련하기 위해 도움을 줘야 함</li></ul><ul id="c996d470-97f1-4435-99f0-770004c90985" class="bulleted-list"><li style="list-style-type:disc">수요자들은 <a href="%5BMVP%20%E1%84%8B%E1%85%B5%E1%84%92%E1%85%AE%5D%5Bshotag%E1%84%86%E1%85%A1%E1%86%AB%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A1%E1%86%B7%E1%84%8C%E1%85%A2%E1%84%85%E1%85%A7%E1%86%A8%5D%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%B3%E1%86%AB%20%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B4%20%E1%84%89%E1%85%B3%207f8972898b264eebb265770279b53bc3.html">Linkshot</a>을 통해서 자유롭게 허들 없이 다양한 앱의 도움을 받을 수 있게 될 것</li></ul><ul id="1e7f55d2-4352-4521-9b99-962aa56dbaee" class="bulleted-list"><li style="list-style-type:disc">공급자들은 <a href="%5BMVP%20%E1%84%8B%E1%85%B5%E1%84%92%E1%85%AE%5D%5Bshotag%E1%84%86%E1%85%A1%E1%86%AB%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A1%E1%86%B7%E1%84%8C%E1%85%A2%E1%84%85%E1%85%A7%E1%86%A8%5D%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%B3%E1%86%AB%20%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B4%20%E1%84%89%E1%85%B3%207f8972898b264eebb265770279b53bc3.html">Linkshot</a>을 통해서 자유롭게 허들 없이 (Shotag의 손을 거쳐서 간접적으로) 다양한 앱에 저장된 유저 행동 데이터에 접근이 가능해질 것<p id="80f50f53-8321-4c80-a6f0-906c543bdb25" class=""><mark class="highlight-gray">“Every time customers add products to your website’s wishlist, you can use the data gleaned to learn more about their behavior and create personalized offers. Marketing to customers based on cart interactions is a powerful tool for </mark><mark class="highlight-gray"><a href="https://mailchimp.com/resources/what-is-retargeting/"><strong>retargeting</strong></a></mark><mark class="highlight-gray"><strong> </strong></mark><mark class="highlight-gray">and gaining customer insights” </mark></p><p id="918f6ccc-9120-4467-b054-9a4a5b96953f" class=""><mark class="highlight-gray">- </mark><mark class="highlight-gray"><a href="https://mailchimp.com/resources/what-is-online-shopping-cart/">What are the benefits of online shopping carts?</a></mark><mark class="highlight-gray"> -</mark></p></li></ul><ul id="819ea653-73d8-4227-aee7-d8c7a6b73cac" class="bulleted-list"><li style="list-style-type:disc">뿐만 아니라 특정 앱에서 찍은 <a href="%5BMVP%20%E1%84%8B%E1%85%B5%E1%84%92%E1%85%AE%5D%5Bshotag%E1%84%86%E1%85%A1%E1%86%AB%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A1%E1%86%B7%E1%84%8C%E1%85%A2%E1%84%85%E1%85%A7%E1%86%A8%5D%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%B3%E1%86%AB%20%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B4%20%E1%84%89%E1%85%B3%207f8972898b264eebb265770279b53bc3.html">Linkshot</a>에서도 다른 앱들로 향하는 functional tag를 유저들이 적극적으로 활용하도록 어필해야 함</li></ul><ul id="40b12e4f-5923-49cf-ad70-52a59cdd8056" class="bulleted-list"><li style="list-style-type:disc">그리고 참여자들은 비슷한 품목을 다른 플랫폼에서는 어떻게 판매하는지/다루는지에 대한 정보를 더욱 빠르고 자세하게 수집하고 빠르게 대응할 수 있음</li></ul><p id="e4661b1c-ec4d-4227-b5ad-de34b508adc0" class="">
+</p><p id="997088fd-c676-4a6d-9b52-7b4e0e690358" class="">
+</p><p id="4271c56c-710e-4615-825c-abd7bfe38292" class="">그럼 어떻게? Underdog들의 conversion rate을 올려주자</p><p id="7967cb74-31a4-4c1a-81bd-1ed14d05eac7" class="">우선 let’s focus on e-commerce services<div class="indented"><div><ul id="5980f032-7eb1-4ea5-83e7-475b6050b614" class="toggle"><li><details open=""><summary><mark class="highlight-red">*다른 </mark><a href="various%20categories%20of%20mobile%20services%208ef0a7c12dfd4e559a25fb14225114bb.html"><mark class="highlight-red">mobile service category</mark></a><mark class="highlight-red">보다 mobile 쇼핑이 중요하게 찾아본 이유?</mark></summary><ul id="59f4dde3-3a89-448d-9196-b27497627783" class="bulleted-list"><li style="list-style-type:disc">digital marketing and e-commerce is a rapidly growing business<ul id="3f079b57-0354-4996-ad3d-abd9e7fb0855" class="bulleted-list"><li style="list-style-type:circle">“In 2023, eCommerce retail purchases are <a href="https://www.statista.com/statistics/534123/e-commerce-share-of-retail-sales-worldwide/"><strong>expected to rise</strong></a>
+ from 14.1% to 22%.”<p id="2119c30c-c3de-433d-88c8-66797dbc1c32" class="">- <a href="https://optinmonster.com/online-shopping-statistics">Online Shopping Statistics You Need to Know in 2022</a> -</p></li></ul><ul id="90620749-6654-46df-8e33-3698876a4685" class="bulleted-list"><li style="list-style-type:circle">digital marketing growth rate<div><figure id="e7f0b2ae-2cca-4b0f-83de-f09639e13238" class="image"><a href="%5Bdelayed%5D%E1%84%87%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%84%8C%E1%85%A5%20%E1%84%8B%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%AB%E1%84%89%E1%85%A7%E1%86%AB%20abfebf5955e849b59b0dda8ce35a630a/Screenshot_2022-11-17_at_15.31.34.png"><img style="width:432px" src="%5Bdelayed%5D%E1%84%87%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%84%8C%E1%85%A5%20%E1%84%8B%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%AB%E1%84%89%E1%85%A7%E1%86%AB%20abfebf5955e849b59b0dda8ce35a630a/Screenshot_2022-11-17_at_15.31.34.png"/></a><figcaption>        <a href="https://www.statista.com/outlook/dmo/digital-advertising/worldwide#ad-spending">Digital Advertising - Worldwide</a></figcaption></figure></div></li></ul></li></ul><ul id="8b04ae36-af3f-4003-8486-09c98553c8fa" class="bulleted-list"><li style="list-style-type:disc">numerous small businesses are entering online markets<ul id="5b4e358c-700e-4248-8f92-1dd91fea9c8a" class="bulleted-list"><li style="list-style-type:circle">“소자본으로 시작할 수 있는 온라인의 시장 규모가 빠르게 커지고 있고 경쟁자가 없는 매력적인 시장이라는 점”<p id="24d419d8-5e64-4bde-84c5-f72bfb5b3768" class=""> - <a href="https://channel.io/ko/blog/josh_bj_interview"><strong>[PRESS] 방향 전환의 기술 &#x27;피벗&#x27;, 채널톡이 탄생하기까지</strong></a> - </p></li></ul><ul id="9f50dd12-f29b-4bd7-a968-43f893b4f5ef" class="bulleted-list"><li style="list-style-type:circle">“The ecommerce industry is growing rapidly and new stores are popping up every day. According to etailinsights, as of 2022, there are over <a href="https://www.etailinsights.com/online-retailer-market-size#breakdown-items"><strong>9.1 million online retailers globally</strong></a><strong> </strong>and 2.5 million in the US alone.”<p id="65052cfb-d38b-412e-9ac3-1359b06de85e" class=""> - <a href="https://fitsmallbusiness.com/ecommerce-statistics/">23 Ecommerce Statistics To Know in 2022</a> -  </p></li></ul></li></ul><ul id="0d18e286-23d8-4c93-8302-08a091f50ee3" class="bulleted-list"><li style="list-style-type:disc">“A whopping 49% of people exclusively use their phones for shopping.”<p id="34f960db-61b9-4948-8478-7318384e65ee" class=""> - <a href="https://optinmonster.com/online-shopping-statistics">Online Shopping Statistics You Need to Know in 2022</a> -</p></li></ul></details></li></ul></div><div><ul id="35f33df1-efcc-4109-b287-44d6575706c1" class="toggle"><li><details open=""><summary><mark class="highlight-red">online conversion rate을 올리는 서비스에 대한 니즈가 있을까? </mark>Yes!</summary><ul id="5fbe4384-06b8-4060-b403-ab6ba1ba7afc" class="bulleted-list"><li style="list-style-type:disc">statistics show that in-store yield higher sales conversion rates than e-commerce<ul id="022bb2e8-c468-4ba8-bec1-98222e5dc183" class="bulleted-list"><li style="list-style-type:circle">“conversion rates in brick-and-mortar are around <a href="https://www.shopify.com/retail/retail-conversion-rate">20-40%</a>, while online stores yield <a href="https://www.forbes.com/sites/patfitzpatrick/2020/07/23/retail-conversion-rate-secrets-you-never-knew/?sh=134139bdfbaa">3%</a> on average”<p id="95a20c76-48fa-42c1-8111-bc405ca4c2ea" class=""> - <a href="https://www.linkedin.com/pulse/in-store-yield-higher-sales-conversion-rates-than-e-commerce-"><strong>In-store Yield Higher Sales Conversion Rates Than E-commerce</strong></a> - </p></li></ul><ul id="044c48cb-d0eb-4303-bfd5-e083f457eecd" class="bulleted-list"><li style="list-style-type:circle">“<a href="https://www.statista.com/statistics/439576/online-shopper-conversion-rate-worldwide/">According to Statista, most online retailers have an average conversion rate of only 2-3 percent.</a>”   <p id="44f879a8-7280-40c3-b852-a39e6232aa82" class="">- <a href="https://vimos.io/blog/digital-transformation-of-retail-industry-in-the-pandemic/"><strong><strong>2022 E-commerce Trends: 4 Ways to Achieve Digital Transformation</strong></strong></a><strong><strong> -</strong></strong></p></li></ul><ul id="f93d49fc-49e9-4d3a-95fc-95f18cde8ba1" class="bulleted-list"><li style="list-style-type:circle">“Compared with offline sales, the average conversion rate of online stores is only 20% to 30%. The biggest difference is that the website lacks sales staff who can establish contact with customers through face-to-face dialogue”<p id="ccb41d04-d9bf-4071-b4b8-624ab455487f" class="">- <a href="https://vimos.io/blog/digital-transformation-of-retail-industry-in-the-pandemic/"><strong><strong>2022 E-commerce Trends: 4 Ways to Achieve Digital Transformation</strong></strong></a><strong><strong> -</strong></strong></p></li></ul></li></ul><ul id="d0f06125-f3b9-4a3f-bc69-d0d726285693" class="bulleted-list"><li style="list-style-type:disc">people invest a lot in online marketing for the sake of higher conversion rates<ul id="aecdf383-98a3-4a2f-bc3d-38ed4b1b25f9" class="bulleted-list"><li style="list-style-type:circle">“워크인사이트 서비스 이용사 중에 오프라인 매장처럼 홈페이지에 대한 고객 분석을 해달라고 요청하는 경우가 있었는데 온라인 환경을 분석하다 보니 새로운 기회를 발견하게 됐다. 기업들은 온라인에 투자를 늘리며 신규 고객 유치 에 집중했지만 정작 구매 전환율은 현저히 낮은 수준이었다”<p id="87f98bc5-71a9-4ba6-9557-d925034a9f8b" class=""> - <a href="https://channel.io/ko/blog/josh_bj_interview"><strong>[PRESS] 방향 전환의 기술 &#x27;피벗&#x27;, 채널톡이 탄생하기까지</strong></a> - </p></li></ul></li></ul></details></li></ul></div><div><ul id="0d2f7f60-431b-4189-88ab-ceb5cba71a65" class="toggle"><li><details open=""><summary><mark class="highlight-red">우리가 conversion rate을 높여줄 수 있을까?</mark> Worth trying out!</summary><ul id="37960044-c980-4fae-9c78-6a136be3ab33" class="bulleted-list"><li style="list-style-type:disc">“A wishlist on the company’s webpage encourages the users to re-visit the website where they have saved products. This leads to a higher rate of customer return, which has a positive effect on the conversion rate.”<p id="0cc3990d-b222-43aa-affb-e0052ee81faf" class=""><a href="https://spreecommerce.org/5-reasons-to-add-a-wishlist-to-your-ecommerce-website/">- 5 Reasons to Add a Wishlist to Your eCommerce Website -</a></p></li></ul><ul id="56aa3126-2ccf-421b-9ffd-7db44fda5046" class="bulleted-list"><li style="list-style-type:disc">“A common behavior amongst most website visitors is that they wish to buy only the products they need urgently rather than looking through all the items available on the website. By adding a wishlist to your online store, you can encourage them to add the products they hope to buy in the near future; hence the chances of converting a customer into a buyer increase.”<p id="6459bc40-5285-40eb-a9fd-64a25e099145" class=""><a href="https://spreecommerce.org/5-reasons-to-add-a-wishlist-to-your-ecommerce-website/">- 5 Reasons to Add a Wishlist to Your eCommerce Website -</a></p></li></ul><ul id="134673e6-9059-4bc3-a42d-22adcd776149" class="bulleted-list"><li style="list-style-type:disc">“Wishlists are reminders. Creating a wishlist doesn’t mean that you need to buy things right now. A wishlist could be for the house that you are in the process of buying, or the dog you will adopt in a few months. They act as reminders to purchase things you will need in the future”<p id="77aad690-f07f-454f-9ef2-f140f7e1b20e" class="">- <a href="https://www.oberlo.com/ecommerce-wiki/wishlists">WISHLISTS</a> -</p></li></ul><ul id="84e89c73-0b11-422f-94d1-bb6dd6642f76" class="bulleted-list"><li style="list-style-type:disc">indeed somebody has tried this out, allegedly turned out to be successful<p id="8d467b97-c99d-469a-adf8-e0878d2c6fc5" class="">“<a href="https://swym.it/help/wishlist-features-and-the-metrics-they-drive/">a wishlist tool has become a go-to tool that increases shopper re-engagement and hence conversions</a>”</p></li></ul></details></li></ul></div><p id="3841be5f-7155-42d6-87f2-d6479b28ba97" class="">
+</p><p id="199765cf-7fd7-4e9a-80b9-5488e6581dfd" class="">
+</p></div></p><p id="12a69332-caea-4c54-8972-caa7c63676ce" class="">그러면 참여자들은 돈은 어떻게 버나</p><ul id="4ddc3d20-e750-4952-912c-4fd88a089286" class="bulleted-list"><li style="list-style-type:disc">각자가 제일 잘하는 서비스 분야에서 micro-positioning이 될 것<ul id="da1e31d2-6bfb-41e9-9649-00137bb4a1db" class="bulleted-list"><li style="list-style-type:circle">마치 수많은 벡만 유튜버를 보유한 유튜브처럼</li></ul><ul id="c63b9814-b8c7-41c3-808e-e0f6d828d70f" class="bulleted-list"><li style="list-style-type:circle">마찬가지로 틱톡</li></ul><ul id="9298eb2f-a68d-4d5f-9f78-68bcdadc64b1" class="bulleted-list"><li style="list-style-type:circle">마찬가지로 인스타그램</li></ul></li></ul><ul id="de756715-c830-4f65-849e-d9212da3bdc7" class="bulleted-list"><li style="list-style-type:disc">이전에는 소비자의 인식 세분화 능력에 따라 Positioning의 세분화 수준이 어느 정도 이상을 넘어설 수 없었겠지만, </li></ul><ul id="0afde88d-0834-4944-a429-4f0aff2c4ae0" class="bulleted-list"><li style="list-style-type:disc">지금은 Shotag의 추천 세분화 능력과 해당 micro-position에서 특정 참여자가 최선이라는 점을 설득하는 능력에 따라 positioning 세분화의 한계를 넘어설 수 있게 됨</li></ul><ul id="8d066130-8b76-4da2-b459-f176b8191f74" class="bulleted-list"><li style="list-style-type:disc">다만 참여자들은 유저들이 샷태그에서 특정 버튼을 누르지 않는 한 자신의 앱으로 돌아오지 않기 때문에 자신의 앱에서 얻을 수 있는 데이터를 조금 잃게 될 것임</li></ul><p id="ca5848cb-d41e-485d-9930-534e109ec883" class="">
+</p><p id="7cda5b0b-22d1-479d-8bb7-55c0722c6abf" class="">
+</p><p id="472a6e4f-bcaa-44b8-9905-6d84a8e46f03" class="">마케팅 채널로서의 가능성</p><ul id="8864a43f-4706-4a3c-a4df-516d92c1b836" class="toggle"><li><details open=""><summary>The downfall of cookies </summary><p id="56d974f4-a019-4cab-9f34-7f6108d749c9" class=""><a href="https://getliner.com/for-you/community?savedPage=45925052&amp;shareOption=thread">Advertisers use cookies to collect data—like what websites you visited—that will help them deliver the most relevant and targeted content to specific audiences.</a> <a href="https://getliner.com/for-you/community?savedPage=45923043&amp;shareOption=thread">(But) with Google phasing out the third-party cookie on Chrome browsers by late 2023 and Apple implementing changes to its iOS14 operating system, the death of third-party cookies is imminent. </a></p></details></li></ul><ul id="54fb3d05-6860-4e3b-9181-383263bb07b2" class="toggle"><li><details open=""><summary>Ongoing need for digital marketing nonetheless</summary><div><figure id="e7f0b2ae-2cca-4b0f-83de-f09639e13238" class="image"><a href="%5Bdelayed%5D%E1%84%87%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%84%8C%E1%85%A5%20%E1%84%8B%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%AB%E1%84%89%E1%85%A7%E1%86%AB%20abfebf5955e849b59b0dda8ce35a630a/Screenshot_2022-11-17_at_15.31.34.png"><img style="width:432px" src="%5Bdelayed%5D%E1%84%87%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%84%8C%E1%85%A5%20%E1%84%8B%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%AB%E1%84%89%E1%85%A7%E1%86%AB%20abfebf5955e849b59b0dda8ce35a630a/Screenshot_2022-11-17_at_15.31.34.png"/></a><figcaption>        <a href="https://www.statista.com/outlook/dmo/digital-advertising/worldwide#ad-spending">Digital Advertising - Worldwide</a></figcaption></figure></div></details></li></ul><ul id="d535e62c-2eff-4858-b5f7-d106e29dbb6c" class="toggle"><li><details open=""><summary>unsatisfied digital advertisers</summary><ul id="de2ba2f5-256d-472d-a1fa-dc148276b06b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://getliner.com/for-you/community?savedPage=45925052&amp;shareOption=thread">Cookies, which were used to deliver the most relevant and targeted content to specific audiences, are expected to be phased out</a> </li></ul><ul id="5cb10c22-e43f-4c11-a1ef-087dd3244cef" class="bulleted-list"><li style="list-style-type:disc"><a href="https://getliner.com/for-you/community?savedPage=45923043&amp;shareOption=thread">Customers report frustration and negative brand association with digital advertising clutter that prevents them from reading an article, watching a video, or browsing a website.</a></li></ul><ul id="def87610-a521-4952-ae94-3feec292583b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://getliner.com/for-you/community?savedPage=45923447&amp;shareOption=thread">Digital ads, they aren’t Trusted, they are Being Ignored, and they are being blocked</a></li></ul></details></li></ul><ul id="db72a859-a1d8-4d38-8a51-e466f91bfaf4" class="toggle"><li><details open=""><summary>Shotag is different from third party cookies</summary><ul id="ea630b3a-3b13-4d99-9dff-e90dc33d1cd7" class="bulleted-list"><li style="list-style-type:disc">third party cookies: privacy concerns<p id="17031592-7cd9-4028-a18e-d00e6c1b13fd" class=""><a href="https://getliner.com/for-you/community?savedPage=45925150&amp;shareOption=thread">third-party cookies have raised privacy concerns among internet users regarding their browsing history. </a><a href="https://getliner.com/for-you/community?savedPage=45925543&amp;shareOption=thread">Third-Party site - which provides the Social Media button, or the Advertising banner - is embedded into lots of different websites. They have their code embedded in many different websites, they can build a profile of you and all the websites that you like to visit, as well as how long you stay on them, what times you visit and so on. </a><a href="https://getliner.com/for-you/community?savedPage=45925150&amp;shareOption=thread">As a result, lawmakers have  implemented new privacy regulations. These trends will only continue as internet users become more knowledgeable about where their information goes</a></p></li></ul><ul id="f046feb9-b583-464a-9f92-1fde4adbac6b" class="bulleted-list"><li style="list-style-type:disc">Shotag: just like YouTube<ul id="080f266e-dd25-4ca9-b259-42fe5a1131ed" class="bulleted-list"><li style="list-style-type:circle">On Shotag, unknown third party players cannot create a user profile</li></ul><ul id="b211cdb5-cb20-4721-8b4e-5be02f5ac137" class="bulleted-list"><li style="list-style-type:circle">What is recorded on Shotag, stays within Shotag</li></ul><ul id="01de8057-879d-4d9d-823c-82e9761aa057" class="bulleted-list"><li style="list-style-type:circle">Only Shotag can create a user profile for personalization purposes<ul id="bf753fbf-df3c-4de2-9883-9d98dc1c9598" class="bulleted-list"><li style="list-style-type:square">By the way, YouTube is not considered harmful privacy-wise</li></ul></li></ul><ul id="ee844961-a7d8-4116-961b-6bbd10e5d54f" class="bulleted-list"><li style="list-style-type:circle">Users can explicitly know that their &quot;Shots&quot; are being processed online</li></ul><ul id="7a5b2496-b581-4ecd-9bde-8e6367448e5b" class="bulleted-list"><li style="list-style-type:circle">End-to-end encryption: Even Shotag cannot view your Shots</li></ul></li></ul></details></li></ul><p id="de20b2a5-6c25-46c3-b028-f4b6128bb774" class="">
+</p><p id="5e2075f2-f83f-486e-811d-3c7dafcf272e" class="">
+</p><p id="0e146f6d-ad58-43e9-a716-399f79a9da72" class=""><a href="%5BMVP%20%E1%84%8B%E1%85%B5%E1%84%92%E1%85%AE%5D%5Bshotag%E1%84%86%E1%85%A1%E1%86%AB%E1%84%8B%E1%85%B4%20%E1%84%8C%E1%85%A1%E1%86%B7%E1%84%8C%E1%85%A2%E1%84%85%E1%85%A7%E1%86%A8%5D%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%B3%E1%86%AB%20%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B4%20%E1%84%89%E1%85%B3%207f8972898b264eebb265770279b53bc3.html">Linkshot</a>을 만들어서 승부를 볼 거라면 그런 거는 안드로이드나 iOS가 더 잘하지 않을까?</p><ul id="835af324-ee23-4238-b0cd-57155cc02af9" class="bulleted-list"><li style="list-style-type:disc">안드로이드나 iOS가 더 잘하는 점<ul id="31a9b4ea-33c7-4b73-a9af-7e4774f6b866" class="bulleted-list"><li style="list-style-type:circle">각자의 OS에 속해 있는 앱 개발자들로부터 해당 기능을 강제하여 빠르게 따라잡기 가능</li></ul><ul id="57122a0f-882d-4a20-be21-460933ba34d9" class="bulleted-list"><li style="list-style-type:circle">대기업이니까 더 완성도도 좋을 듯</li></ul><ul id="d77efc83-2907-43ad-a740-fe33ad0f6295" class="bulleted-list"><li style="list-style-type:circle">더 많은 고객과 빠르게 contact point 형성 가능</li></ul></li></ul><ul id="a871eb1a-6cc0-412f-8c1c-c199d5306b46" class="bulleted-list"><li style="list-style-type:disc">우리 같은 특정 OS에 속하는 않는 party가 더 잘하는 점<ul id="60470301-7ec5-49ab-beb5-addd5b750886" class="bulleted-list"><li style="list-style-type:circle">first mover <ul id="0d8d4b26-0411-4005-9cdf-80588d853b3e" class="bulleted-list"><li style="list-style-type:square">이미 그동안 유저들의 스샷과 관련된 취향을 우리가 다 파악함</li></ul><ul id="0cdef6bd-b70e-4036-9840-8bb125f36ae8" class="bulleted-list"><li style="list-style-type:square">이미 그동안의 유저들의 Linkshot들은 우리한테 다 있음<ul id="d722e989-79ce-4dc8-89fe-7c10150270ae" class="bulleted-list"><li style="list-style-type:disc">특히 협력사에서 자체적으로 post saving / 스크랩 기능을 가지지 않고 Shotag에 맡긴 경우</li></ul></li></ul></li></ul><ul id="870112c4-f466-4404-b240-868322202764" class="bulleted-list"><li style="list-style-type:circle">OS independency<ul id="e873b78d-7fcc-40de-be2c-7b73d1ac8ec8" class="bulleted-list"><li style="list-style-type:square">특정 OS에 속하지 않기 때문에 원한다면 모든 party와 협력이 가능하다</li></ul><ul id="456abf03-45d0-4069-8cef-633c299f44e1" class="bulleted-list"><li style="list-style-type:square">OS사가 전략적으로 경쟁사가 아니기 때문에 모든 OS에서 최적화가 가능</li></ul><ul id="a17ce87e-92a7-4d5e-89d2-fa159721f3f2" class="bulleted-list"><li style="list-style-type:square">유저는 여러 OS를 넘나들면서 일관적인 경험을 할 수 잇다.</li></ul></li></ul><p id="7d73a419-4d72-4ad4-aed5-98ab854aee0b" class="">
+</p></li></ul><p id="b47390ab-5cd8-4902-b802-0618420b64ed" class="">
+</p><p id="d63b8d70-1317-4075-a2ae-e41db80ce36c" class="">그러면 우리의 경쟁사는 누구일까?</p><ul id="b669e9b4-2ae8-45be-ba2b-dbcf6a465419" class="bulleted-list"><li style="list-style-type:disc">네이버 쇼핑과 같이 여러 쇼핑 플랫폼의 정보를 모아 가공해서 제공하는 업체?<ul id="db50e6ca-7da9-4326-a4a7-6086b9c01f1e" class="bulleted-list"><li style="list-style-type:circle">Shotag보다 탐색의 행위가 더 많은 비중을 차지한다는 점에서 포지션이 다름</li></ul><ul id="4cce556f-048c-4886-9b30-6b43d9827a5b" class="bulleted-list"><li style="list-style-type:circle">Shotag는 본인이 저장한 것만 보여준다는 점에서 포지션이 다름<ul id="f838e074-a706-4206-b8a9-96811ffc590e" class="bulleted-list"><li style="list-style-type:square">오히려 탐색(검색) 및 저장은 네이버와 같은 곳에서 하고 소장은 shotag에서 할 수 있다는 점에서 상호보완적인 관계이기도 함</li></ul></li></ul></li></ul><ul id="e5b06909-8dd6-4503-aa58-b3078a30b03c" class="bulleted-list"><li style="list-style-type:disc">wishlist apps<ul id="457f8b46-21de-4e63-bbfb-407e9ca1378a" class="bulleted-list"><li style="list-style-type:circle">players<ul id="45c5ecc0-9ad4-4f92-945b-586a7385e25f" class="bulleted-list"><li style="list-style-type:square"><a href="https://giftbuster.app">giftbuster</a>, <a href="https://www.giftster.com">giftster</a></li></ul></li></ul><ul id="7a7c6ba5-ff31-4600-a311-5d0aa8d5b203" class="bulleted-list"><li style="list-style-type:circle">어떤 상품이든 링크를 통해 저장하는 앱<ul id="f9aada65-f718-4be3-8966-b6c2f17a0ba7" class="bulleted-list"><li style="list-style-type:square">링크를 전달하면 가격과 상세 설명, 사진 등을 크롤링하여 저장함</li></ul><ul id="1c72bfee-23df-4371-bd78-f575efa3d5e3" class="bulleted-list"><li style="list-style-type:square">잘 안되는 경우가 많음 (특히 가격의 경우)</li></ul></li></ul><ul id="9f771987-8df9-4a2a-9411-d3381f986ae5" class="bulleted-list"><li style="list-style-type:circle">optimized for sharing wishlists and exchanging gifts<ul id="03b09773-e090-46ef-89d3-5c19217222ad" class="bulleted-list"><li style="list-style-type:square">“share wishlist and let friends know what you want”</li></ul><ul id="69f7b6d4-5e8f-4407-9362-b39476b954fc" class="bulleted-list"><li style="list-style-type:square">“promo codes” (<a href="https://giftbuster.app">giftbuster</a>)</li></ul><ul id="a8c7eb8b-8ee9-43e9-989a-f03335dd8e00" class="bulleted-list"><li style="list-style-type:square">“price drop alerts” (<a href="https://giftbuster.app">giftbuster</a>)</li></ul><ul id="ef11e710-eff3-406f-8b13-0d3940e2f25c" class="bulleted-list"><li style="list-style-type:square">“deal notifications” (<a href="https://giftbuster.app">giftbuster</a>)</li></ul></li></ul><ul id="4429a1fb-d11a-458a-8c0a-aa444702a900" class="bulleted-list"><li style="list-style-type:circle">shortcommings<ul id="4344fa18-5923-4960-b07c-279a50505c85" class="bulleted-list"><li style="list-style-type:square">no consistent supply (선물을 매일 하진 않잖아?)</li></ul><ul id="ec8053bd-5d83-42fc-b2bb-f4bcd8791daf" class="bulleted-list"><li style="list-style-type:square">no consistent updates</li></ul><ul id="1e367b30-2aaf-4df0-87c4-8e41afaf4e40" class="bulleted-list"><li style="list-style-type:square">doesn’t understand the user or content intelligently</li></ul></li></ul></li></ul><ul id="0086c3a5-9263-41de-a3f2-de8570e335a1" class="bulleted-list"><li style="list-style-type:disc">mobile link collector apps<ul id="76d05a1a-a052-4bce-8cd1-ce9e1be4a7d6" class="bulleted-list"><li style="list-style-type:circle">players, Link Collector, My Links, AnyLink, LinkStore</li></ul><ul id="1ed8ed5e-4464-4feb-b04e-5001dbf357a6" class="bulleted-list"><li style="list-style-type:circle">모바일을 위한 즐겨찾기 컨셉<ul id="a8317ac2-342c-43f7-ab81-8d695cfb6fd2" class="bulleted-list"><li style="list-style-type:square">링크와 미리보기, 설명 정도를 저장</li></ul><ul id="415ec1e6-5640-4cc7-ab9a-b79cc83469ad" class="bulleted-list"><li style="list-style-type:square">링크를 내보내는 앱을 떠나지 않고 사용 가능</li></ul></li></ul><ul id="1796e04f-30cf-4d4a-8748-fe5384b7336e" class="bulleted-list"><li style="list-style-type:circle">shortcommings<ul id="12c7dcd3-84d8-45b5-8037-509e6b5af847" class="bulleted-list"><li style="list-style-type:square">non-interactive list view</li></ul><ul id="889e83d7-4432-41e6-af7a-ff2ee883eb6d" class="bulleted-list"><li style="list-style-type:square">no information gathered actively</li></ul><ul id="7e03df63-bcd1-4bef-a247-57850c4cae6d" class="bulleted-list"><li style="list-style-type:square">doesn’t understand the user or content intelligently</li></ul></li></ul></li></ul></div></article></body></html>

@@ -1,0 +1,711 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>튜토리얼 설계하기✅</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b8e3fbf0-ff09-4824-9972-f4639c9a2b39" class="page sans"><header><h1 class="page-title">튜토리얼 설계하기✅</h1><table class="properties"><tbody><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>관련 링크</th><td></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>Type</th><td></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Due Date</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-purple">Suggestion</span></td></tr><tr class="property-row property-row-status"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesStatus"><path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path></svg></span>상태</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>작성 일자</th><td><time>@2022년 10월 7일 오후 7:25</time></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Date</th><td></td></tr><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>Participants</th><td></td></tr></tbody></table></header><div class="page-body"><h2 id="2921e490-1faf-4f90-a408-4baeca3e3dd0" class="">Resolution</h2><div><ul id="1b79fb2c-efdf-4dfc-b6a7-1c6471b4444f" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/SHT-d1c65cc7bbcf472990b53c09f1c3fadf">SHT-튜토리얼</a> 희윤님께 전달 및 <mark class="highlight-brown_background">디자인 디테일 잡기</mark></summary><figure id="5cba6ddc-4710-40f8-855d-8e18d94d6aea"><div class="source">https://www.figma.com/file/Br8LM0DLidEqe1fU2b3h7H/SHT-Design-System?node-id=0%3A1</div></figure><ul id="cac035fb-ed5a-4409-89b1-d53b38ec8776" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown_background">skip 버튼 색깔</mark></li></ul><ul id="4bd1e3be-00eb-4253-9424-8233c30cc961" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown_background">Skip, Done 대문자</mark></li></ul><ul id="f66b5a77-883e-4568-8612-d1631ff54137" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown_background">메시지 글씨와 바탕 색깔</mark></li></ul><ul id="457192cd-4b37-46bc-9c03-386010dbefa4" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown_background">“You can add or remove tags” 가리키는 위치가 다소 애매하더라도 문제 없음</mark></li></ul></details></li></ul></div><div><p id="c7821023-587b-4495-a669-6739dad25399" class=""><mark class="highlight-orange_background">종료 시에 다이얼로그 창이 올라오는 건 너무 무겁다</mark></p><p id="d49d5c18-f1a9-4a6e-a275-5e925fd74c43" class=""><mark class="highlight-orange_background">skip 색깔은 바꿔 줘도 될듯</mark></p><p id="285f932a-d2bf-4051-bccb-861e06486516" class=""><mark class="highlight-orange_background">객체 위에 올라가는 메시지가 투명할지 말지는 선택</mark></p><p id="d461ad6e-8a63-4f8b-9e00-566e4dd68c15" class=""><mark class="highlight-orange_background">skip 및 done 대소문자 처리 일치시키기</mark></p><p id="175d3614-1432-41ab-bf7f-0b279e2184e0" class=""><mark class="highlight-orange_background">지금 텍스트와 플로우는 괜찮을 것 같음</mark></p><p id="06e337c9-bb06-451a-9118-50b94a4f1e95" class=""><mark class="highlight-orange_background">탭 가이드 애니메이션은 아래 참조</mark></p><figure id="9f22bf28-f686-47de-acb7-a4eef0ea62e5" class="image"><a href="20221104-S&amp;D%202bd17d17590244a3b081126190551cd2/Screen_Recording_2022-11-03_at_12.19.51.gif"><img src="20221104-S&amp;D%202bd17d17590244a3b081126190551cd2/Screen_Recording_2022-11-03_at_12.19.51.gif"/></a></figure></div><p id="5bf8d86e-a1f3-4455-9f20-869b4029c8b4" class="">
+</p><h2 id="250fb625-81bf-40bf-ba2c-a06594525806" class="">Checklist</h2><ul id="302b4481-f065-4646-b206-5ab299b632d8" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">아예 샘플 사진으로?</span><ul id="ef0a7ac6-4925-4f93-bbff-fa1c351ae7f7" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">if not, 비반응형 튜토리얼 텍스트</span></li></ul></li></ul><ul id="0a36a8c5-2771-48e4-97af-568637be79ef" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">마지막 화면 - 영역 표시하기? (약간 on hover처럼)</span></li></ul><ul id="698c6ce6-4789-4b37-ad3c-669c2554b9fb" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">다이얼로그시 다만 기다려야 하는 점을 주의</span></li></ul><ul id="6b2775da-13e8-4f11-84d9-680a692ffba0" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">메인화면 검색 (screenshot searching by text) 단계에서 태그 추천을 설명하는 텍스트를 표출?</span></li></ul><ul id="9b8d6c39-0e5f-4332-b6e6-a171dc478cf5" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">튜토리얼 전 첫 로딩 화면 필요성</span></li></ul><ul id="96014cfa-8561-4f77-a5e0-098187d255ee" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">일부 유저 데이터를 사용하여 액티비티를 실행하는 게 현실적으로 가능한지 판단 (최근 n장)</span></li></ul><ul id="e2f3f424-8b6c-4844-a927-1ca65f599183" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">progress bar에서 스킵을 넣어야 하나? 넣는다면 몇 초?</span></li></ul><ul id="6ac9f524-20b7-4d9e-8cd0-7f559acfe2cf" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">3번째 화면 - 빈 공간 누르기?</span></li></ul><ul id="08a0b896-9e6f-4e13-8684-3c075bd8c43b" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">개발 난도 물어보기</span></li></ul><ul id="b461975c-8d45-43d5-87a5-739a37969aa6" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">다중 검색을 보여줘야 하나?</span></li></ul><ul id="abbfb2ea-2d6f-47be-86c6-28a705f5c245" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">반응형 튜토리얼 비활성 영역</span></li></ul><ul id="dd08f981-e7f6-4389-a792-323f8d553775" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">반응형 튜토리얼 플로우</span></li></ul><ul id="3fc949ee-84c2-4c63-879c-8e77507e171e" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">반응형 튜토리얼 애니메이션</span></li></ul><p id="9d358f8e-01fa-490f-9aad-c74eb35718ba" class="">
+</p><hr id="96c61910-ec59-48b1-b7ba-fdff8f62d50d"/><h2 id="94ef036c-10f4-4d42-953a-3b414d73ef8c" class="">Suggestion</h2><h2 id="4ff7e6b7-e74b-4cec-a0fb-3b84e4cc63b8" class=""><details open=""><summary>구조도</summary></details></h2><div class="indented"><p id="ad2ba2b9-f082-4c90-8555-b04ec824ca13" class=""> 마치 게임에서 하는 것과 비슷한 방식 튜토리얼입니다!</p><ul id="f9a6b32f-838b-4b5e-8b01-cdd6bd22fba0" class="bulleted-list"><li style="list-style-type:disc">활성화하고 싶은 영역 이외에 음영을 주어 의도한대로 유저가 행동하도록 합니다.</li></ul><ul id="371d029f-d125-4d2f-b3cb-302cb6861fb0" class="bulleted-list"><li style="list-style-type:disc">애플리케이션의 플로우를 따를 필요가 없고 임시 화면을 도입하여 일시적으로 원하는 화면으로 이동할 수 있습니다.</li></ul><ul id="3e8a440d-a9cb-4a5f-a72d-50cd29fddde8" class="bulleted-list"><li style="list-style-type:disc"><a href="%E1%84%90%E1%85%B2%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AF%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%80%E1%85%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%E2%9C%85%20b8e3fbf0ff0948249972f4639c9a2b39.html">예시</a></li></ul><div id="eb2b0b50-cba5-45bb-b935-6d58de187566" class="column-list"><div id="0f1cf7cf-292c-46c0-b457-7283a87ab981" style="width:62.5%" class="column"><figure id="9921d48d-83a8-406b-a4ec-a1f9b7456b0e" class="image"><a href="%E1%84%90%E1%85%B2%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AF%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%80%E1%85%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%E2%9C%85%20b8e3fbf0ff0948249972f4639c9a2b39/%25E1%2584%2590%25E1%2585%25A2%25E1%2584%2580%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B3%25E1%2586%25AF.jpg"><img style="width:1536px" src="%E1%84%90%E1%85%B2%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AF%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%80%E1%85%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%E2%9C%85%20b8e3fbf0ff0948249972f4639c9a2b39/%25E1%2584%2590%25E1%2585%25A2%25E1%2584%2580%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B3%25E1%2586%25AF.jpg"/></a></figure></div><div id="6c75baca-da9a-4636-bac4-453f04704293" style="width:37.49999999999999%" class="column"><div><h3 id="970ea258-7353-4aa5-9e75-46328d8da2aa" class="">타이핑 애니메이션</h3><p id="392abafd-f662-49f3-affc-0dbeec28319f" class="">우리가 원하는 특정 조건을 만족하는 검색어가 자동으로 입력된다.</p><p id="4a2ee9d1-55b7-49dd-b162-19c5683c59e6" class="">이 때 키보드는 표출되지 않아 유저가 검색어를 수정할 수 없다.</p><figure id="ad1675d7-a60b-4285-9bc9-fdea7e630bd1" class="image"><a href="../S&amp;D%205f286d9aeaac44da8016a434fabbee28/S&amp;D%20Task%209104b75c88e940b1aed2f97f26e1ca69/SHT-%E1%84%90%E1%85%B2%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AF%20d1c65cc7bbcf472990b53c09f1c3fadf/Screen_Recording_2022-10-14_at_14.56.22_2.gif"><img style="width:498px" src="../S&amp;D%205f286d9aeaac44da8016a434fabbee28/S&amp;D%20Task%209104b75c88e940b1aed2f97f26e1ca69/SHT-%E1%84%90%E1%85%B2%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AF%20d1c65cc7bbcf472990b53c09f1c3fadf/Screen_Recording_2022-10-14_at_14.56.22_2.gif"/></a></figure><p id="6d8a3e30-b375-450f-8675-721e11f24a74" class="">
+</p></div><div><h3 id="b8f36387-06a0-4dfc-bac0-bf8456435e16" class="">파란 동그라미는 tap guide</h3><figure id="194eb99b-f574-496d-bd91-a3d604641860"><div class="source"><a href="../S&amp;D%205f286d9aeaac44da8016a434fabbee28/S&amp;D%20Task%209104b75c88e940b1aed2f97f26e1ca69/SHT-%E1%84%90%E1%85%B2%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AF%20d1c65cc7bbcf472990b53c09f1c3fadf/Screen_Recording_2022-10-12_at_13.29.49.mov">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1526dedc-fca4-4d25-8380-b9d6f6155bd5/Screen_Recording_2022-10-12_at_13.29.49.mov</a></div><figcaption>이것보다는 좀 더 얌전하게 하는 걸로..</figcaption></figure><figure id="fb9fb3e2-12a5-4d47-bfea-dfd82a36f9f3" class="image"><a href="../S&amp;D%205f286d9aeaac44da8016a434fabbee28/S&amp;D%20Task%209104b75c88e940b1aed2f97f26e1ca69/SHT-%E1%84%90%E1%85%B2%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AF%20d1c65cc7bbcf472990b53c09f1c3fadf/Screen_Recording_2022-11-03_at_12.19.51.gif"><img style="width:500px" src="../S&amp;D%205f286d9aeaac44da8016a434fabbee28/S&amp;D%20Task%209104b75c88e940b1aed2f97f26e1ca69/SHT-%E1%84%90%E1%85%B2%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AF%20d1c65cc7bbcf472990b53c09f1c3fadf/Screen_Recording_2022-11-03_at_12.19.51.gif"/></a><figcaption>요런 느낌으루다가 어떨까요?</figcaption></figure><h3 id="782c6b16-6053-4f6b-9c7f-4da73e7b2542" class="">이외 파란색</h3><p id="798de90c-c02f-4b95-b385-84cea4e5c8bf" class="">next 버튼, info 메시지</p></div></div></div></div><h2 id="ab86bb4f-a5eb-42b6-a810-ddcbfe9efdef" class=""><details open=""><summary>비반응형 tutorial text</summary></details></h2><div class="indented"><ul id="9227e6d1-f58b-470b-8264-0d1effc9f330" class="bulleted-list"><li style="list-style-type:disc">context-based tag suggestion</li></ul><ul id="63e08ad2-b37e-444b-9989-58f703195cc5" class="bulleted-list"><li style="list-style-type:disc">screenshot searching by text</li></ul><ul id="e7790776-b653-4e78-82a5-1d9f1ecfe647" class="bulleted-list"><li style="list-style-type:disc">Customizable shortcuts </li></ul><ul id="c9679c50-163b-4e8c-a54b-147b305a16bd" class="bulleted-list"><li style="list-style-type:disc">multi-tag searching</li></ul><ul id="09a064b8-2178-4e1a-9ac7-3be81f552536" class="bulleted-list"><li style="list-style-type:disc">multi-screenshot actions</li></ul><ul id="d1535e17-7c6c-48fd-97d2-3794003d5a63" class="bulleted-list"><li style="list-style-type:disc">screenshot memo</li></ul><ul id="85b5a92b-2a30-4168-8707-1f3aec749455" class="bulleted-list"><li style="list-style-type:disc">customizable tags list</li></ul><div><ol type="1" id="6ead8da6-aff9-4b3e-a7fc-83b2c8fa5afe" class="numbered-list" start="1"><li>뒷 배경 투명도를 더 줄이고, 확실히 보이게 하자
+- 스킵 위치가 아래쪽이어서 잘 안보임→ 위치 조정하면 좋을 듯
+- 튜토리얼 4에서 처럼 명사형으로 문장을 구성해 → 여기 00 임 만 해도 좋을 듯 하다. 의미를 전달하려고 해서 길어짐
+- 튜토리얼 3 글 수정해야할 듯</li></ol></div><p id="b8f878ec-8ce5-4064-8972-d8fb1dcc157d" class="">
+</p></div><h2 id="8a7830b3-0e74-4106-8a37-9ce43863ac1a" class=""><details open=""><summary><strong>일부 유저 데이터를 사용하여 액티비티를 실행하는 게 현실적으로 가능한지 </strong></summary></details></h2><div class="indented"><ul id="ba02a3a6-181e-441a-9433-d7c25953da27" class="bulleted-list"><li style="list-style-type:disc">범석 → 유저 데이터 불러오는 데에 너무 오래 걸린다. 3초면 6장 정도…</li></ul><p id="898b0502-64e6-4990-ac75-cb512caff220" class="">
+</p></div><hr id="7a05c26d-4119-48d7-a366-d4eedf20c742"/><h2 id="38aa5403-d1b7-459b-bd89-4f6df7baf63f" class="">인포 메시지를 다시 보는 경우</h2><div><ul id="0dd95ac7-40fa-4afa-8503-3571bea81419" class="toggle"><li><details open=""><summary>인포 메시지(튜토리얼 대용) 다시 보고 싶은 경우 어떻게 할까,
+더하여 현재 마이페이지의 튜토리얼은 필요 없지 않나
+<mark class="highlight-orange_background">튜토리얼 확정하면 됨 그리고 똑같이 보여주면 됨</mark></summary><p id="b1c66a62-abc0-4897-833e-ef23d3d19262" class=""><mark class="highlight-purple">단순 메시지를 보여주는 것, 그리고 실제 기능을 사용하게 하는 것 중 튜토리얼의 방식이 정해져야 함
+튜토리얼이 후자의 방식이라면 더 좋을 듯
+튜토리얼 다시보기라는 기능이 ‘없을 필요는 없다’</mark></p><p id="307464e6-f39e-4423-baec-07f5bc372ea6" class=""><mark class="highlight-blue">찬희: 똑같은 스텝을 밟아도 될 것 같다 </mark></p><p id="49479a29-47a1-4bc1-b153-b407a85fcf34" class=""><mark class="highlight-purple">튜토리얼이 세팅에 포함이 되고, 변경된 튜토리얼과 동일한 컨텐츠를 제공하자</mark></p><p id="1b600a21-9802-4c7d-aa91-2941362f4d5a" class=""><mark class="highlight-blue">튜토리얼이 필요는 하다고 생각, 게임도 있는 마당에 샷태그는 유틸
+조금 더 잘 사용하고 싶다면 튜토를 보는데, 없으면 불편하다고 느낄 듯</mark></p><p id="de2668d0-5235-4cfb-8813-087d108a48d1" class="">
+</p></details></li></ul><p id="e9c92e9d-f9e8-4254-9bec-a650dacd1180" class="">
+</p><hr id="4ecee79f-c5a4-4647-b89f-4b215fb5fa0c"/></div><p id="20e97a9f-a992-4d95-b251-c6b1cb353f84" class="">
+</p><div><h2 id="1bf70dd4-98a1-4021-b66e-09f5add3c7ce" class="">References</h2><div id="8eb5b0ac-4b56-4b57-bffc-39beac249985" class="column-list"><div id="1f265713-23bb-40e0-99af-960c81af6535" style="width:37.5%" class="column"><ul id="2dab9489-0f28-48f4-96ac-52717d277f5d" class="bulleted-list"><li style="list-style-type:disc">Liner</li></ul><figure id="290e4b4d-817a-4d99-b815-d108e4685f6b"><div class="source"><a href="%E1%84%90%E1%85%B2%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AF%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%80%E1%85%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%E2%9C%85%20b8e3fbf0ff0948249972f4639c9a2b39/Screen_Recording_2022-10-19_at_12.01.38.mov">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/38238925-5bf4-4a5b-b9cd-87e7193f144a/Screen_Recording_2022-10-19_at_12.01.38.mov</a></div></figure><p id="3969574a-1acc-4dee-ab64-efba47fd1d82" class="">
+</p></div><div id="3ce73d1e-5c8e-45eb-a71a-5418052ab2da" style="width:62.5%" class="column"><ul id="47d67815-7df9-486b-b580-c6d6728908ca" class="bulleted-list"><li style="list-style-type:disc">원신</li></ul><figure id="8e9168a4-6937-4548-8f96-0927769a3a24"><div class="source"><a href="%E1%84%90%E1%85%B2%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AF%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%80%E1%85%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%E2%9C%85%20b8e3fbf0ff0948249972f4639c9a2b39/Screen_Recording_2022-10-20_at_14.38.33.mov">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/507e985e-363c-4a5f-a1c2-15bfc64fdb6b/Screen_Recording_2022-10-20_at_14.38.33.mov</a></div></figure><p id="e887c2e0-bacd-4d9e-8319-5e4d52d93693" class="">
+</p></div></div></div><p id="f6bdac93-7f1a-48e0-bf9a-00222880a4f6" class="">
+</p><ul id="90308410-330f-4a90-97d4-b4e6de7639b2" class="bulleted-list"><li style="list-style-type:disc">거시적 관점에서 우리 제품의 방향성<ul id="522915d7-13c0-4032-905b-74477d03dfbc" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">개인화와 적극성</span><strong> </strong>(적극적으로 유저가 원할 때 스크린샷을 쉽게 발견하고 그 다음 액션으로 이어주는 것 유저 개개인을 위한 맞춤형 서비스를 제공하는 것)<ul id="c2e3556b-4bc7-4526-9ea0-c22f6e5eb4db" class="bulleted-list"><li style="list-style-type:square">우리의 포지셔닝이니까</li></ul></li></ul></li></ul><ul id="48633824-7b9f-4b8a-8db9-7808ceb34087" class="bulleted-list"><li style="list-style-type:disc">단기간에 이뤄야 할 KPI<ul id="bd35b591-5158-4272-b25f-ba1ec02706ff" class="bulleted-list"><li style="list-style-type:circle"> 사람들이 <span style="border-bottom:0.05em solid">검색하는 횟수와 시간 늘리기 (= 참여율)</span><ul id="8c2cf585-e878-45c5-9c07-799544108406" class="bulleted-list"><li style="list-style-type:square">우리 앱의 <a href="https://www.google.com/search?client=safari&amp;rls=en&amp;q=what+does+usp+stand+for+in+marketing&amp;ie=UTF-8&amp;oe=UTF-8">USP</a>니까</li></ul></li></ul></li></ul><ul id="bee3c0a0-2a4a-47a8-ab5a-d20152663734" class="bulleted-list"><li style="list-style-type:disc">이 영역을 통해 우리 제품이 달성하고자 하는 목표는<ul id="8000b670-b28c-4b2d-bc9e-94a8a9756ed7" class="bulleted-list"><li style="list-style-type:circle">사용법이 <span style="border-bottom:0.05em solid">익숙해지도록</span> 느끼게 유도함으로써 핵심 기능을 <span style="border-bottom:0.05em solid">더 많이 사용하도록 </span>유도하는 것<ul id="cf0d5752-d0e2-48a2-a1db-6e80446a8ce3" class="bulleted-list"><li style="list-style-type:square">익숙하지 않은 기능을 제공하는 형태의 유틸 앱이기 때문에 다른 앱에서 찾아볼 수 없는 액션과 UI가 들어간 경우가 있음<ul id="856a21ee-7d88-4d5c-9b01-9c25b0e60835" class="bulleted-list"><li style="list-style-type:disc">검색어가 태그가 되는 것</li></ul><ul id="6c397bb3-777c-4249-820a-c838da389034" class="bulleted-list"><li style="list-style-type:disc">다중 검색</li></ul><ul id="c2ef115a-f73c-43a2-8194-29c600c020d4" class="bulleted-list"><li style="list-style-type:disc">(사람들이 잘 안 쓰는) 스마트 폴더와 비슷한 기능을 하는 숏컷</li></ul></li></ul><ul id="77cae40f-7ee4-436a-bcb4-436756e79399" class="bulleted-list"><li style="list-style-type:square">우리 앱의 <a href="https://www.google.com/search?client=safari&amp;rls=en&amp;q=what+does+usp+stand+for+in+marketing&amp;ie=UTF-8&amp;oe=UTF-8">USP</a>가 잘 받아들여지도록 하기 위한 목적</li></ul><ul id="532c0b1e-3d68-45ee-836c-26fe3504ec41" class="bulleted-list"><li style="list-style-type:square"><a href="https://en.wikipedia.org/wiki/Mere-exposure_effect"><strong>Mere-exposure effect</strong></a><blockquote id="1e9e6bc9-8d07-47c8-ab2e-85fce6a9566e" class="">The <strong>mere-exposure effect</strong> is a <a href="https://en.wikipedia.org/wiki/Psychological">psychological</a> phenomenon by which people tend to develop a preference for things merely because they are familiar with them.</blockquote></li></ul></li></ul></li></ul><ul id="7b4c993d-2ee5-462d-8ef4-17f140076cb1" class="bulleted-list"><li style="list-style-type:disc">이 영역이 사용자에게 어떤 가치를 줄 수 있을지<ul id="6391c3cf-7c32-42d0-a3dc-67dd4f77c537" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">유저 친화적인</span> 앱 사용 경험(=유저가 사용하기 편하도록 친절한)<ul id="e9379b9f-0106-4f19-8bfd-48386f22fe42" class="bulleted-list"><li style="list-style-type:square">다수의 유저들에게 별다른 인지적 노력 없이 자연스럽게 서비스에 발을 들여놓을 수 있도록 하는 것</li></ul></li></ul><ul id="3972c153-e551-429b-9ca5-82b1d659e259" class="bulleted-list"><li style="list-style-type:circle">그 가치를 설정한 이유<ul id="6e14b8e3-2d17-43ee-ae1d-2fd867b35176" class="bulleted-list"><li style="list-style-type:square">유저 친화적인 앱 사용 경험은 다른 스크린샷 유틸리티 앱과 비교되는 우리의 포지셔닝임</li></ul><ul id="a16250f9-a943-45a2-b237-8d697c3da327" class="bulleted-list"><li style="list-style-type:square">앱이 사용자에게 선택받기 위한 가장 기본적인 조건</li></ul><ul id="9699ea23-56a4-4d4e-b380-46e824ac3bdd" class="bulleted-list"><li style="list-style-type:square">서비스에 <span style="border-bottom:0.05em solid">좋은 첫인상</span>을 남김으로써 핵심 기능을 <span style="border-bottom:0.05em solid">더 많이 사용하도록 유도할 수 있기 때문</span><ul id="c7464bee-95ef-448b-82e5-708fac66cee3" class="bulleted-list"><li style="list-style-type:disc">유저가 처음으로 애플리케이션과 동적으로 상호작용하는 단계이기 때문</li></ul><ul id="09d7299d-0d7c-4a07-812e-8ef62d6d9947" class="bulleted-list"><li style="list-style-type:disc"><a href="https://en.wikipedia.org/wiki/Serial-position_effect#Primacy_effect">초두효과 (익숙하면 좋아진다)</a><blockquote id="04a8e3b2-9ae5-406d-a00e-605137a868a0" class="">The primacy effect, in <a href="https://en.wikipedia.org/wiki/Psychology">psychology</a> and <a href="https://en.wikipedia.org/wiki/Sociology">sociology</a>, is a <a href="https://en.wikipedia.org/wiki/Cognitive_bias">cognitive bias</a> that results in a subject recalling primary information presented better than information presented later on.</blockquote></li></ul></li></ul></li></ul><ul id="4165a35c-3822-4093-ad6f-7d762cf9b397" class="bulleted-list"><li style="list-style-type:circle">그 가치를 달성하기 위한 수단이 왜 이것이어야만 하는지<ul id="cf1d9317-6047-4356-8460-e2c1efd5912c" class="toggle"><li><details open=""><summary>체험형 튜토리얼</summary><ul id="bb39cbcc-f108-492f-87b6-9b9122f6faf4" class="bulleted-list"><li style="list-style-type:disc">텍스트를 통해 읽기보다 유저가 직접 실행하면서 배우는 쪽이 훨씬 효율적임<div><ul id="c4d679f9-3913-4093-98d0-a2f0779526cc" class="bulleted-list"><li style="list-style-type:disc">Visual content is processed 60,000 times faster than text</li></ul></div></li></ul><ul id="e5cd90e6-ceca-416c-bcac-b64b798993a8" class="bulleted-list"><li style="list-style-type:disc">사람들은 텍스트를 읽기 싫어하기 때문에 반응형 컨텐츠는 유저 친화적인 경험에 기여</li></ul><ul id="57e0074f-7b75-4230-99d0-d191910a2bbf" class="bulleted-list"><li style="list-style-type:disc">마치 유저가 사용할 법한 시나리오를 직접 보여주어 개인화된 이미지를 해치지 않음</li></ul></details></li></ul><ul id="df8d35de-4d90-4dcb-bf25-a00797e63c16" class="toggle"><li><details open=""><summary>지시는 탭 가이드로, 메시지는 가능한 짧은 텍스트로 전달 </summary><ul id="5ea22497-5d0b-4824-b65f-da417a3d8c1c" class="bulleted-list"><li style="list-style-type:disc">하라는 건지 읽으라는 건지가 구분이 안 되는 혼란을 방지하여 유저 친화적인 경험에 기여</li></ul><ul id="306a1d1c-3ddb-458c-87a2-eae0307f7c65" class="bulleted-list"><li style="list-style-type:disc">하라는 액션을 시각적 신호로 직관적으로 나타내어 (유저가 나서기 전에 우리가 먼저 이해를 돕는) 적극성을 해치지 않음</li></ul></details></li></ul><ul id="b8531930-9bb1-44d4-bde1-9bac2a8e2ea1" class="toggle"><li><details open=""><summary>체험형이 불가능한 경우의 비반응형 튜토리얼은 가능한 짧게 명사형으로 우리의 USP와 포지셔닝을 간략히 전달</summary><ul id="0463f194-386d-40ab-9dc7-cecfe9f9e01f" class="bulleted-list"><li style="list-style-type:disc">반응형이 아니라 정지된 사진이므로 명사형이 자연스러움</li></ul><ul id="3c2465e0-bf6c-4bab-bdb7-0cb99196aa3e" class="bulleted-list"><li style="list-style-type:disc">동사가 없어서 문장이 더 짧고 간략하고 긴 글을 싫어하는 다수 유저를 위한 유저 친화성에 기여</li></ul><ul id="44ca01c9-9641-48e0-92ec-c911fcf42fdb" class="bulleted-list"><li style="list-style-type:disc">customizable, context-based와 같은 단어를 통해 개인화의 느낌을 전달</li></ul></details></li></ul><ul id="13ff1996-2478-4229-9d97-42d93de1dcaf" class="toggle"><li><details open=""><summary><mark class="highlight-gray">[resolved]지시어 위치에 메시지를 넣다보니 너무 길어짐</mark></summary><ul id="2ae2bba8-20c8-4694-9383-a2c0037553f3" class="bulleted-list"><li style="list-style-type:disc">그러려면 __하기 위해 ___하시오로 되어야 하다보니</li></ul><ul id="6efbc6e8-e1ef-4a0e-866e-bb45298561e5" class="bulleted-list"><li style="list-style-type:disc">지시어와 메시지를 한 톤앤 매너로 넣다보니 지시어가 너무 긿어짐</li></ul><p id="e48efeb7-80fc-4161-a1c8-85c099734373" class="">→ 지시어를 아예 없애버리고 (굳이 의도를 다 전달할 필요가 없기 때문에) 메시지를 짧게 만듦</p></details></li></ul><ul id="c1380371-7c7a-427b-b313-5c52fe1167c2" class="toggle"><li><details open=""><summary><mark class="highlight-gray">[declined]일단은 지시어가 있어야 뭘 하려는 건지 의도의 전달</mark></summary><ul id="334efcd0-66b6-4a2d-8fae-cc718f93bef7" class="bulleted-list"><li style="list-style-type:disc">한 단계로 해결이 안됨</li></ul><ul id="9647a0d8-33a4-4bbf-a8c7-f9b13a6599b3" class="bulleted-list"><li style="list-style-type:disc">왜 하라는 건지가 해결이 안됨</li></ul><p id="551ccd13-0d42-4a0a-acbd-636c1a674c90" class="">→ 굳이 다 전달 안해도 됨</p></details></li></ul><ul id="9f26c775-2d99-4abb-a642-b84dd4abb0c5" class="toggle"><li><details open=""><summary><mark class="highlight-gray">[declined]</mark><mark class="highlight-gray"><strong>왜 꼭 typing animation이 들어가야 하는지?</strong></mark></summary><ul id="788ca9bf-abe3-436b-a418-40408663b795" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>result 화면에서의 검색바가 다중 검색으로 작동한다는 점을 잘 알려주기 위해서 </strong></span><ol type="1" id="7edd980a-25c0-48ec-9a42-150453235b6d" class="numbered-list" start="1"><li><strong>result 화면에서의 검색바가 </strong><span style="border-bottom:0.05em solid"><strong>일반적으로 작동하는 방식과 다르기 때문에</strong></span><strong> 이 부분을 반드시 알려주어야 한다.</strong></li></ol><ol type="1" id="3489247e-cc40-4fd3-bdc1-db12235afa25" class="numbered-list" start="2"><li><strong>1을 직접 잘 알려주기 위해서는 다중 검색을 통해 </strong><span style="border-bottom:0.05em solid"><strong>검색 결과가 줄어드는 모습을</strong></span><strong> 보여주어야 한다.</strong></li></ol><ol type="1" id="efe6bbcb-13ad-452a-bdc2-f8c4ca056a26" class="numbered-list" start="3"><li><strong>그러기 위해서는 다중 검색 이전의 태그 하나만 검색했을 때 </strong><span style="border-bottom:0.05em solid"><strong>검색 결과가 적어도 2개 이상은</strong></span><strong> 있어야 한다.</strong></li></ol><ol type="1" id="7fcfa87c-cb77-4c6b-a2aa-c43f11dac10c" class="numbered-list" start="4"><li><strong>그러기 위해서는 </strong><span style="border-bottom:0.05em solid"><strong>아무 검색어나 검색하도록 해선 안된다</strong></span></li></ol></li></ul><ul id="8053f8d5-04d1-437c-ba58-ad92d100abc2" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>검색어를 지정함으로써 불필요하게 생기는 오해를</strong></span><strong> 방지하기 위해서</strong><ul id="d7c348e3-0b3d-4116-aaaa-e0407381a8d6" class="bulleted-list"><li style="list-style-type:circle"><strong>아무런 애니메이션 없이 그냥 검색어가 들어가 있으면 오해가 발생함</strong></li></ul><ul id="c31654d4-7fb8-448c-9847-cef4d988ec80" class="bulleted-list"><li style="list-style-type:circle"><strong>타이핑 애니메이션을 넣어 </strong><span style="border-bottom:0.05em solid"><strong>유저가 검색어를 입력하는 자리라는</strong></span><strong> 점을 명확하게 전달</strong></li></ul></li></ul></details></li></ul></li></ul></li></ul><ul id="5ab6f5da-b5d8-4a79-8695-54af9539042e" class="bulleted-list"><li style="list-style-type:disc">이 기능의 근거가 되는 가설과 검증 방법<ul id="441607af-92e9-4606-b841-a1336a34e21e" class="bulleted-list"><li style="list-style-type:circle">“사용법을 한 번이라도 알려주면 좀 더 익숙하다고 느낄 것이다”</li></ul><ul id="3352d8dc-1184-452e-a8a8-4f53e4d4affd" class="bulleted-list"><li style="list-style-type:circle">한 사람이 튜토리얼을 보기 전과 다시 본 후의 설명된 기능의 사용 빈도수</li></ul></li></ul><p id="6d8dcc76-a699-4da1-b357-fed391705a32" class="">
+</p><hr id="68ba59ab-da1d-4aec-89aa-ad3a3c935539"/><h2 id="b2aad43e-a5ca-4906-a4a7-c9495049c107" class="">회의</h2><p id="b5ee6309-1cd9-4a54-8728-5d77c0152108" class="">20221025 상황</p><div><ul id="f1cea9a2-3921-4047-87dc-9412c9c191f7" class="toggle"><li><details open=""><summary><mark class="highlight-gray_background"><a href="https://www.notion.so/SHT-d1c65cc7bbcf472990b53c09f1c3fadf">SHT-튜토리얼</a></mark><mark class="highlight-gray_background"> 에 포함될 것들과 순서 등등 확정. 디테일은 추후 논의가 필요</mark></summary><p id="363f1f2f-b2d6-47ad-b0c2-be98d46b101c" class="">모든 화면의 순서</p><ol type="1" id="100d3927-8de0-4289-a8d0-a1ea5321348c" class="numbered-list" start="1"><li><mark class="highlight-gray_background">메인화면 검색 (screenshot searching by text)</mark><p id="ab7515a3-e575-437a-8c65-dc04c5386316" class="">태그 추천 텍스트?</p></li></ol><ol type="1" id="63ae21aa-9f05-4d8b-a8cb-5a294e713ca6" class="numbered-list" start="2"><li><mark class="highlight-gray_background">검색창</mark></li></ol><ol type="1" id="151d01e1-6258-46ea-8381-a70867ff8cf3" class="numbered-list" start="3"><li><mark class="highlight-gray_background">검색결과</mark><p id="51b610f3-82b8-4050-aafe-3f19a197bcc8" class="">다중 검색 텍스트</p></li></ol><ol type="1" id="2e7c56ed-941c-499b-b66a-fe15809900ff" class="numbered-list" start="4"><li><mark class="highlight-gray_background">검색 결과 페이지에서 사진 하나 눌러보라는 거</mark></li></ol><ol type="1" id="812cff26-b470-4ea7-a673-23e8a9e6158a" class="numbered-list" start="5"><li><mark class="highlight-gray_background">이미지 디테일</mark><p id="83e04abc-dfcc-4d31-9ccb-432bd5b2e039" class="">애드 태그 있다라는 거까지 설명</p></li></ol><ol type="1" id="cc5f95f5-cc4a-49fc-91d8-e72590bf1fab" class="numbered-list" start="6"><li><mark class="highlight-gray_background">(in image) 뒤로가기</mark><p id="864c4da7-ad2a-4899-ad58-f4b8bc2c0cd5" class="">서치 페이지로 가시오</p></li></ol><ol type="1" id="32996c11-bab5-46fb-8979-27cb2c2e249e" class="numbered-list" start="7"><li><mark class="highlight-gray_background">숏컷 생성</mark></li></ol><ol type="1" id="4221d98f-8585-42c1-a32f-9cf06dacf8d4" class="numbered-list" start="8"><li><mark class="highlight-gray_background">뒤로가기</mark><p id="b1835b44-2cb2-43a5-b312-bfdc9f53363b" class="">메인으로 가시오</p></li></ol><ol type="1" id="1c959173-3088-474f-b9cb-1c62584248ed" class="numbered-list" start="9"><li><mark class="highlight-gray_background">메인에서 종료</mark><p id="d959df72-1713-475e-aa69-32c8ed7f26a0" class="">숏컷 확인</p></li></ol><p id="6f32a3c4-2e08-442a-be1a-e767244868fd" class="">
+</p><p id="c1845e2d-a4ec-46f6-afb9-59f193de1c96" class=""><mark class="highlight-gray_background">이동이 포함되지 않는 메시지에는 OK를 주고 바로 넘길 수 있도록</mark></p><p id="61c8bcad-a58f-49fc-abed-d620b6332173" class=""><mark class="highlight-gray_background">검색 → 검은색으로 검색어 채워 놓기</mark></p><p id="c5a0cbb7-46b9-467b-b1a1-2344aadb17bd" class=""><mark class="highlight-gray_background">키보드에서 엔터 버튼만 enable, 나머지는 disable</mark></p></details></li></ul></div><p id="ec77a43b-dfd5-48d4-836d-d62796b00b9e" class="">
+</p><p id="d80c2a45-e7ca-4873-b2f5-554236132773" class="">20221020 상황</p><div><p id="e82807ef-16db-4283-9b05-c8eb27d9415b" class="">정리:</p><ol type="1" id="42cd676e-132d-41ee-b2b4-7b82364be6a9" class="numbered-list" start="1"><li><mark class="highlight-orange_background">모든 사진에 대한 태깅이 끝난 후 튜토리얼이 돌아가는 건 불가능하다</mark><p id="46ebd5d2-53ac-4bb0-9e76-89d995bc8bd6" class=""><mark class="highlight-orange_background">→ 별도의 우리가 준비한 사진을 쓰거나, 일부 유저 데이터를 쓰거나</mark></p></li></ol><ol type="1" id="81cbe3a9-b248-4bc7-bb69-a32ab6db52db" class="numbered-list" start="2"><li><mark class="highlight-orange_background">체험형 튜토리얼 자체는 긍정적이고 개발이 가능하다</mark></li></ol><ol type="1" id="45ce02aa-9be1-4869-ae12-46f9e588f445" class="numbered-list" start="3"><li><mark class="highlight-orange_background">로딩의 경우, 로그인 - 튜토리얼 사이에 기본적인 프로그레스 바가 들어갈 수도</mark></li></ol><ol type="1" id="60f8aa2e-5f97-4b37-947e-89da14375971" class="numbered-list" start="4"><li><mark class="highlight-orange_background">유저 데이터에서 튜토리얼이 필수로 사용하는 ‘태그’가 없을 때에 대한 대비</mark><ol type="a" id="9ff9d833-b34c-4634-933a-45398dc7fc11" class="numbered-list" start="1"><li><mark class="highlight-orange_background">3번의 로딩 과정에서 3 상황에 대한 대비가 필요함
+→ 비반응형 (백업) 튜토리얼로 넘기는 방안이 있다</mark></li></ol></li></ol><ol type="1" id="b2829583-6804-4f3c-a6ed-54cf2f6c657d" class="numbered-list" start="5"><li><mark class="highlight-orange_background">skip은 필요하다</mark></li></ol><p id="62f4d07d-b9aa-4067-b95a-03758a870cce" class="">
+</p><p id="4cdadde0-7e5e-46c0-a94e-c02b97adccce" class="">판단해야 하는 문제:</p><p id="74f1a556-4d39-4ffd-96ba-f68b909950e5" class=""><mark class="highlight-orange_background"><strong>일부 유저 데이터를 사용하여 액티비티를 실행하는 게 현실적으로 가능한지 판단 (최근 n장)</strong></mark></p><p id="bff27616-af44-4b5a-aaf4-2ae46cf0c87c" class=""><mark class="highlight-orange_background">다중 검색을 보여줘야 하나?</mark></p><p id="0c7fbb82-8ad8-4106-ad2f-29234aa9765b" class=""><mark class="highlight-orange_background">progress bar에서 스킵을 넣어야 하나? 넣는다면 몇 초?</mark></p><p id="921494bf-fff0-47d4-99c9-87936ed2f7a3" class="">
+</p><p id="09d32cc9-ffe3-4956-a419-9733ac05845f" class="">현재 상황:</p><p id="93063ad2-cfe5-4436-8602-8a282476a2cf" class=""><mark class="highlight-gray_background">현재 플로우는 </mark><mark class="highlight-gray_background"><strong>메인 → 검색(자동) → 검색 결과 → 다중 검색 → 이미지디테일 → 애드태그 → 태그 추가(자동) →→ 검색 결과(뒤로가기 두번) → 숏컷 →→ 메인(뒤로가기) (→ 두 번은 next 버튼으로 넘어가는 경우)</strong></mark></p><p id="b6d39b85-7f39-439f-a305-b6caec2fe888" class=""><mark class="highlight-gray_background">포함된 요소: 검색, 다중 검색, 이미지디테일, 애드태그 기능, 숏컷</mark></p><p id="e8b3063d-c6b3-4925-a865-8c0011b2e315" class=""><mark class="highlight-gray_background">건표: 플로우는 아마 거의 비슷하게 가겠지만 조금 바꿀 수도 있음</mark></p><p id="316b66b7-5f65-449b-a92b-0b64abb18f83" class="">
+</p><figure id="2bbea8b9-ca69-42fb-9972-d89a578c141b" class="image"><a href="20221020-S&amp;D%200751e34cf264491486cbfe8958b53290/AEBB7B6A-E877-4204-8F1B-DA19E10AE28E_1_201_a.jpeg"><img style="width:1449px" src="20221020-S&amp;D%200751e34cf264491486cbfe8958b53290/AEBB7B6A-E877-4204-8F1B-DA19E10AE28E_1_201_a.jpeg"/></a></figure></div><hr id="1feec643-182d-4b4e-ad88-4587d4a2936b"/><p id="645a2599-8af0-4d44-85e5-c08f36e37c1a" class="">20221007 상황</p><div><ul id="b1bac440-ab8f-44c9-b5bd-7d5cd25d31c8" class="toggle"><li><details open=""><summary>튜토리얼
+<mark class="highlight-orange_background">1. 스크린샷의 유뮤, 2. 검색 결과의 유무를 중심으로 구조도 만들고 개발 난도 문의하기</mark></summary><p id="2b81c27c-f831-418b-8569-6bc754a4ea28" class="">
+</p><p id="91e1db35-a99f-4f8a-8cd9-3c8940e03d57" class="">포함할 요소들</p><ul id="ab2ca0e1-1fc1-4f69-8f62-ec65febd5e17" class="bulleted-list"><li style="list-style-type:disc">메인 화면의 검색 바</li></ul><ul id="fe23af85-81a2-4503-856a-a4ffd858a93e" class="bulleted-list"><li style="list-style-type:disc">태그의 다중 검색</li></ul><ul id="22924b37-3a0a-43e6-baea-758a9d759d3a" class="bulleted-list"><li style="list-style-type:disc">숏컷 생성</li></ul><ul id="d093ba1d-51d1-4f2b-a94d-e9b03344ead0" class="bulleted-list"><li style="list-style-type:disc">검색 결과 페이지에서 사진 하나 눌러보라는 거</li></ul><ul id="88965937-b5b3-4e8f-8555-45387ae28d8f" class="bulleted-list"><li style="list-style-type:disc">그 사진 안에서 태그 추가</li></ul><ul id="04896585-31e8-4dbd-b86f-55a8bfa8f61b" class="bulleted-list"><li style="list-style-type:disc">나와서 메인의 숏컷</li></ul><p id="3c0e1457-ec44-4c6b-a5ed-6463012c3aed" class="">
+</p><p id="42852054-5191-45e9-9e5d-e395cfeb9608" class="">참고할 부분들</p><ol type="1" id="fa53ed69-d605-40d8-9a53-07631b98e750" class="numbered-list" start="1"><li>처음 설치한 메인 화면에 추천 태그는 있는데 숏컷은 없을 거</li></ol><ol type="1" id="d3bba7e0-22b5-4ec4-9841-29a8d3478bc0" class="numbered-list" start="2"><li>메인화면으로 돌아와서 숏컷 생성은 알려 주는데 어떻게 쓰는지도 알려주기
+<mark class="highlight-blue">타이틀이라고 해야 하나? 저 말이 tap these tags 같은 넛징이 있는데 굳이 인포 없어도 될듯</mark><p id="078aa0ac-b7e7-43fc-b4e9-27bc8a5a0061" class=""><mark class="highlight-blue">메인 화면에서 숏컷이라는 게 있는데, 숏컷 생성의 안내 후 메인으로 돌아왔을 때 생긴 게 확 보이니까
+</mark><mark class="highlight-purple">숏컷이 뭔지는 안 알려 주나?</mark>
+<mark class="highlight-blue">숏컷 빈 화면에서 설명해 주지 않나</mark></p></li></ol><ol type="1" id="9c664660-c427-49fc-8cfe-a55847bdd6ca" class="numbered-list" start="3"><li>검색 결과가 있다 없다 두 가지를 염두에 두고 짜야 할듯<p id="4ecccac7-93a1-4eaf-a1c2-835f00eb6400" class=""><mark class="highlight-teal">아예 사진이 없을 때도 기능 설명, 스크린샷 사용을 촉진하기 위한 튜토리얼이 필요해 보임
+</mark><mark class="highlight-purple">사진 있을 때와는 달라도 된다, 혹은 달라야 한다
+</mark><mark class="highlight-blue">최초 기획된 튜토리얼과 형식,말은 다듬을 수 있지만
+다만 </mark><mark class="highlight-purple">저런 상황이 많이 없을 거라는 생각도 들긴 함</mark></p></li></ol><ol type="1" id="3f91b73e-a5ee-413e-925a-417f7cdeb417" class="numbered-list" start="4"><li>우리가 원하는 플로우대로 가지 않을 가능성
+<mark class="highlight-purple">그걸 방지하기 위해서, 일부 기능만 제공하는 거 ok 다만 그 안에서 자율성 확보</mark></li></ol><ol type="1" id="c2322b6b-12fa-498e-b093-7a69e5f336ad" class="numbered-list" start="5"><li>튜토리얼 마지막 마무리<p id="2c55d146-0b06-484f-955f-cab85d513f1b" class=""><mark class="highlight-purple">마지막 인포가 어디서든 이제부터 마음대로 쓰라는 메시지, 아무 곳이나 클릭하겠죠</mark></p><p id="471f497c-ad49-462d-84ce-ed82d193d43a" class=""><mark class="highlight-purple">그리고 튜토리얼이 끝났다는 토스트</mark></p></li></ol></details></li></ul></div><p id="97d022f6-bced-4576-a81f-ddbb837470c2" class="">
+</p><p id="40c73ae6-ffc2-436c-b4bd-2caac68af076" class="">
+</p><p id="f6f48658-2a1d-44b4-acfd-bf320fb6440b" class="">
+</p><p id="566acfaa-6183-41c6-b45c-f4ceb200770e" class="">
+</p><p id="a6a685fc-36a3-4638-adf7-99ca4d8a5317" class="">
+</p><p id="952916c9-0374-4916-bd34-2aaaa39c58d8" class="">
+</p></div></article></body></html>

@@ -1,0 +1,755 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>직관적이고 통일성 있는 UI</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="cd3ea4e9-85c4-48b1-b1e5-d54d5a12074a" class="page sans"><header><h1 class="page-title">직관적이고 통일성 있는 UI</h1><table class="properties"><tbody><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>관련 링크</th><td></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>Type</th><td></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Due Date</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-yellow">Shotag concept</span></td></tr><tr class="property-row property-row-status"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesStatus"><path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path></svg></span>상태</th><td><span class="status-value select-value-color-blue"><div class="status-dot status-dot-color-blue"></div>In progress</span></td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>작성 일자</th><td><time>@2022년 9월 27일 오후 2:25</time></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Date</th><td></td></tr><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>Participants</th><td></td></tr></tbody></table></header><div class="page-body"><ol type="1" id="490ed957-ce59-41cc-b5a7-a3183715a0fa" class="numbered-list" start="2"><li>반영한다 → 잘못 지운 경우
+search 페이지에서 검색된 태그를 다 지우면 메인으로 가야 함
+이게 너무 빡세면, 홀드하고 있다가 뒤로가기 했을 때 메인으로 보내기</li></ol><p id="342ec9cd-2fb9-4c3c-a061-cc6014242bb6" class="">
+</p><h3 id="e40eef9f-3fea-41d9-91c4-de52c0e837ab" class=""><details open=""><summary>main</summary></details></h3><div class="indented"><ol type="1" id="a11991c9-5aa1-4c10-947a-5bbf5bd1fa8d" class="numbered-list" start="1"><li>위계가 정리가 안 되어 있는 것 같다<p id="832a5622-c7dc-4ce3-adee-a8335ce01955" class="">explore these와 shortcut, 검색창 <strong>각 기능이 다른 거면 영역 벌리자</strong></p></li></ol><ol type="1" id="945272e5-ce17-476c-ae45-133ccda59d07" class="numbered-list" start="2"><li>세 가지(추천, 직접 검색, 숏컷)가 각각의 기능인 점을 강조하고 싶다
+결론은 검색으로 같은 결과가 나오더라도 수행하는 목적이 다름<p id="75c4f8ea-2587-4de1-bee0-93f05f59d83e" class="">→ 간격을 떨어뜨린다 (각 기능의 영역을 확보해 준다)</p></li></ol><ol type="1" id="1c043e5d-2bca-443f-98dd-4078ef79bf78" class="numbered-list" start="3"><li>사진내 두 손가락 Pinch를 이용한 확대 축소<div><p id="783b03b1-9b5e-47da-8b91-582ea2f24946" class=""><mark class="highlight-gray_background">사진 안에서 줌 인아웃 해본 이후 썸네일 크기 조절</mark></p></div><div><ul id="de287324-7a4c-4e00-8b06-efdc37c156b6" class="toggle"><li><details open=""><summary>썸네일 크기 조절(범석님의 기능 제안) 2-3(Default)-5</summary><p id="f402a695-f3e9-4988-b6e1-6f32647c6653" class="">범석: 최대 가로 5장까지만 의미 있을 것 같다, 7장 이상으로 작아지면 의미 없을 듯</p><p id="c05c1708-a055-42cc-a0cf-0b16f78ca563" class="">개발적으로 크게 어렵지는 않고, 이상하지만 않으면 고려해볼 만한 듯
+현식: OS 기본 사진 앱
+안드로이드는 사진 비율에 맞춰서 유동적으로 사진 배치
+→ 스크린샷만 쓰기 때문에 굳이 필요 없음, IOS와 유사해질 듯</p><p id="df0e5c0e-9a41-42f3-b40e-32ce877632a6" class="">3→5→7→9 또는 2→3→4→5 또는 3→5
+기능을 지원한다면 몇 단계를, 또는 몇 단계까지를 지원할 건지
+ㄷ지금 정한 사항이 기능 업데이트 시점 에 반영될 것</p><p id="011bb715-a48b-4c0a-9ac0-34fc7bda5b87" class="">핸드폰이 작은 편이 아닌데도 7장이면 잘 안 보임
+스크린샷을 찾는 것에 대해 의미가 있을까?
+저는 오히려 3→2는 의미 있을지도?
+현식: 3→4→7
+건표: 비슷한 관점에서 나온 게  2→3→4→5였다</p><p id="a0f7d79e-e921-4a64-a376-ab55e9e9a689" class="">찬희: 2를
+사진 크기 조절과 사진 비율 조정
+1/3 사이즈에서도 원본 사진을 볼 수 있고, 기존에는 크기 조절 기능이 없었다
+크기 조절+비율 조정 → 비율조정 버튼이 빠진다 → 1/3 에서는 원본 비율 못 봄
+현식: 1?
+건표: 생각에는 있었는데 이미지디테일이랑 같지 않나
+현식: 5를 넘어가면 콜라주같이 보일 것 같다
+찬희: 저도 최대치를 5로 두는 건 좋다, 앞에 어떤 관계로 떨어져야 할지는 모르겠다
+현식: 2-3-5
+건표: 3을 기준으로 확대 축소 한 단계씩 주는 느낌
+현식: 2로 하면 창문같다,3보다는 자세-5로하면 더 많은 사진</p><p id="9056e800-bd9f-4938-bb89-b5a85c06c7ad" class="">도입을 한다면 2-3-5</p><p id="26ecf767-fc0d-4171-98af-31678a9490b7" class="">현식: 별도 버튼?
+찬희: 익숙해서 ㄱㅊ을듯</p></details></li></ul></div></li></ol><ol type="1" id="1f32b925-1df1-4d5b-afcd-b82e81b7ff7a" class="numbered-list" start="4"><li>두 손가락 Pinch를 이용한 썸네일 크기 조절 2 → 3 → 5<div><ul id="98eb74d0-baaf-46e6-bffc-805e5269c317" class="toggle"><li><details open=""><summary>추천 태그가 길어져서 첫 줄 밖으로 나가면?</summary><p id="ca50c1a1-c57a-42be-af53-0eeb1dd4d5c6" class=""><mark class="highlight-gray_background">두 줄로 가게는 안 하고 길이를 제한하거나 추천 태그 두 개만 나오게 하거나</mark></p></details></li></ul></div></li></ol><ol type="1" id="604057ec-78d3-486e-8830-6918a44d9e8a" class="numbered-list" start="5"><li>select시<div><p id="8c5c0d56-bced-4aee-9533-2e0e97622fbf" class=""><mark class="highlight-orange_background">select일 때, 선택되지 않은 객체에도 빈 동그라미(선택 가능한 객체가 있다는 표지)</mark></p><p id="c9a6102b-24cf-4a09-9029-4320b76a8aac" class=""><mark class="highlight-orange_background">롱클릭을 통한 select 전환과 드래그 다중 선택 적용</mark></p></div></li></ol><ol type="1" id="a9188816-5d27-4b8d-8d26-0c6ab2aaf4f1" class="numbered-list" start="6"><li>태깅 상황에 대한 안내 메시지<div><ul id="159a05a0-2a9e-4f1d-b895-2a06fe6bbaba" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">메인 및 검색 결과 페이지에 이미지 썸네일 영역과 툴바 사이에 한 줄 추가</mark><ul id="523ac962-a8bb-4296-a170-a7b25b95f178" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">온라인 상황에서 태깅되지 않은 사진을 탐지하는 경우(최초 설치, 새롭게 찍힌 사진 등)</mark><p id="345c7239-d33f-4f07-873d-4e18d0f8532f" class=""><mark class="highlight-orange_background">“Tagging n screenshots”</mark></p></li></ul><ul id="d6e7a422-a16a-444c-82d1-3cee2682910a" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange_background">오프라인 상황에서 태깅되지 않은 사진을 탐지하는 경우(최초 설치, 새롭게 찍힌 사진 등)
+”Tagging paused for n screenshots”</mark></li></ul></li></ul><ul id="049a752f-6fb9-4910-a7b9-cd6ff0a2db5f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">오프라인 상황에서 태깅되지 않은 사진을 탐지하는 경우(최초 설치, 새롭게 찍힌 사진 등) 그 사진의 썸네일 및 이미지디테일 우상단에 별도의 표시</mark>
+</li></ul></div></li></ol></div><p id="00ef0feb-8e9a-4f35-9aab-067eedcf3290" class="">
+</p><h3 id="e07d83e4-a5ef-493b-aad9-372428601c50" class=""><details open=""><summary>search</summary></details></h3><div class="indented"><ol type="1" id="0d2cd861-6e70-426d-bfbe-8e182875d3db" class="numbered-list" start="1"><li>검색창을 누르는 것이 검색할 태그를 더 넣는 행위라는 것을 알려줄 만한 모션이 필요<ol type="a" id="8c7a75a8-4b75-40ad-a8d0-d4c29c655260" class="numbered-list" start="1"><li>검색 창에서 recent search 위에 지금 검색으로 적용되고 있는 태그들을 보여주자<figure id="c0f430a2-89d4-4a08-a607-43b448d8c10b" class="image"><a href="%E1%84%8C%E1%85%B5%E1%86%A8%E1%84%80%E1%85%AA%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%B5%E1%84%80%E1%85%A9%20%E1%84%90%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%89%E1%85%A5%E1%86%BC%20%E1%84%8B%E1%85%B5%E1%86%BB%E1%84%82%E1%85%B3%E1%86%AB%20UI%20cd3ea4e985c448b1b1e5d54d5a12074a/Screen_Shot_2022-09-27_at_16.22.44.png"><img style="width:306px" src="%E1%84%8C%E1%85%B5%E1%86%A8%E1%84%80%E1%85%AA%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%B5%E1%84%80%E1%85%A9%20%E1%84%90%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%89%E1%85%A5%E1%86%BC%20%E1%84%8B%E1%85%B5%E1%86%BB%E1%84%82%E1%85%B3%E1%86%AB%20UI%20cd3ea4e985c448b1b1e5d54d5a12074a/Screen_Shot_2022-09-27_at_16.22.44.png"/></a></figure><ul id="27eaa779-7f78-4911-9eb4-91b19b8b8616" class="bulleted-list"><li style="list-style-type:disc">이 정도면 충분히 유저가 인지할 수 있다</li></ul></li></ol><p id="78249774-9c27-4832-8495-d27ff537c21e" class="">b. search view에서 검색된 태그 삭제 이후 뒤로 가기를 하면 어느 화면으로 가야 할까? → 태그를 지운 후의 search result 화면으로 가자<div class="indented"><div><ol type="1" id="0d1ca33d-a997-4f82-9642-b8215aa970cf" class="numbered-list" start="1"><li>x하고 뒤로가기 하면 원래 상태 유지한다(반영 안한다) → 지우기만 하고 
+그럼 사실 못 지운다
+search에서 태그 하나 지우고 검색을 안 하는 상황</li></ol></div><div><ol type="1" id="4a5b429f-3d9e-46c7-8033-bd08585ea61e" class="numbered-list" start="2"><li>반영한다 → 잘못 지운 경우
+search 페이지에서 검색된 태그를 다 지우면 메인으로 가야 함
+이게 너무 빡세면, 홀드하고 있다가 뒤로가기 했을 때 메인으로 보내기</li></ol></div><div><p id="64b51be7-f448-44fc-b550-1e7000c63a56" class="">지우기만 하려는 행동을 search 페이지에서 사실상 막는 건데 그게 괜찮나</p><p id="17e8d774-7e2d-4bf6-ab65-8a4ad8e59dc3" class="">실수로 지운 게 반영이 되어 버리고 복구가 안 된다</p></div><div><p id="33d6ff44-d002-4254-adaf-3631b5b456b3" class="">재: 삭제되어야 한다</p><p id="b154b291-63fb-4529-a730-72e927e13db7" class=""><mark class="highlight-teal_background">종: 개발자적 측면으로는 없어져야
+뒤로가기가 이 데이터 삭제를 번복시켜야 하는가
+뒤로가기를 했을 때 삭제를 번복한다기보다는 스크린을 이동하는 거지</mark></p><p id="0d1348ee-6987-47cc-b34f-9c6ae1033fdb" class=""><mark class="highlight-teal_background">재: 자기가 잘못 눌렀는데 다시 써야죠</mark></p><p id="8d68f7e8-dbc7-4773-ab88-45cb87d311a2" class="">
+</p><p id="72737ce1-49e7-416b-9c84-0cacd4cbcc3e" class="">종: 벗어나는 거긴 한데, 애플처럼 삭제를 할 때 한 번 더 누르는 UI를 만드는 건 어떨까요?</p><p id="0220fc32-3984-4262-83b2-6b30d4436bc2" class="">건: 그거는 새로운 뷰를 짜야 하고 애플의 UI를 안드로이드로 가져오는 것도 무리임</p><p id="cb82edde-af60-4bfc-860d-6f0d18d7a8bb" class="">
+</p><p id="a31d48dc-e68d-499c-b7ec-0bd4821251cc" class=""><mark class="highlight-brown_background">건: 데이터 삭제를 번복하지 않는 방향으로 가자</mark></p></div></div></p></li></ol><p id="377ec214-485c-41f1-96ca-54e5b66bc13b" class="">
+</p><ol type="1" id="c67e3f1f-0de7-458a-ad67-30b64733ec0b" class="numbered-list" start="2"><li><a href="recent%20search%20%E1%84%80%E1%85%A1%20%E1%84%8B%E1%85%A5%E1%86%B9%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%80%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%AE%E1%84%8B%E1%85%B4%20%E1%84%86%E1%85%AE%E1%86%AB%E1%84%80%E1%85%AE%2040c3ba6eb8b145cf90fbab9551d8ff9d.html">recent search, delete all을 다 없애자 (유튜브처럼)</a></li></ol><p id="5ad24b21-ac85-43bb-bfbb-b30d1eb8e2a8" class="">
+</p><ol type="1" id="4386bff4-5fde-4fcc-b17e-91ec7dfa10ab" class="numbered-list" start="3"><li>shortcut 자동완성<p id="03c1986e-2943-4e44-9177-c5ef755c254b" class="">이렇게 바뀜…</p><div><ul id="c0dfdc8d-381d-4645-9600-5d90903e7a26" class="toggle"><li><details open=""><summary>숏컷</summary><p id="753441e2-9cda-44cc-9cc8-a6a7e65068e9" class=""><mark class="highlight-brown_background">검색(타이핑) 중일 땐 숏컷 안 나옴</mark></p><p id="33f1062e-253a-4dc7-8a07-09f06f70f36a" class="">filter: 순서 재정렬한 거를 컬럼 3개 추가해서 들고 있는거, 태그1 = A, 쿼리 2개 비교
+→ <mark class="highlight-brown_background">검색된 태그를 가진 숏컷을 필터링한다</mark></p><p id="c06fb974-7777-4d84-ab73-2cc60b3712c8" class="">sort: updated at
+→ <mark class="highlight-brown_background">숏컷 자체의 정렬 순서는 최신순</mark></p><p id="c3360206-d930-4f38-ab70-a213c49f3af8" class=""><mark class="highlight-brown_background">숏컷 안에서 태그를 어떻게 정렬할 거냐? 메인 순서 유지 쪽으로</mark></p><div><p id="f7372ca9-06e9-4d13-a182-9605d8d7de4e" class="">태그가 아무것도 검색되지 않았거나, 3개 이상의 태그가 검색되어 있을 때도 나올 필요가 없음</p></div></details></li></ul></div><ul id="a01f1fd1-f9a7-4eb6-b1c4-4b6c660acad9" class="toggle"><li><details open=""><summary>그러니까 바뀐대로 정리하면</summary><ul id="e001b105-4dc6-4615-bc31-16e3bfdbcc2c" class="bulleted-list"><li style="list-style-type:disc">list element<ul id="2bd5202f-b656-4251-be78-8ccca547d267" class="bulleted-list"><li style="list-style-type:circle">두 줄을 넘어갈 때는 넘어가는 부분을 …으로 생략하기</li></ul><ul id="467b63d9-6d61-465e-aa0a-39bd8ed6f67e" class="bulleted-list"><li style="list-style-type:circle">숏컷 - 기록 - 자동완성 순서</li></ul></li></ul><ul id="04799d5f-c5c6-4020-91b8-223915a2479e" class="bulleted-list"><li style="list-style-type:disc">상황별 표출<ol type="1" id="6b1ddd63-4376-4ee2-be0d-e05a9b504ade" class="numbered-list" start="1"><li>처음 검색 바를 누름 - 숏컷 미표출, 기록만 표출, 개수 제한 50개<p id="cc07adc8-412b-4302-b621-60defba60c75" class=""><mark class="highlight-gray">아무 것도 검색 안한 상태에서 보이는 숏컷 3개는 어차피 메인하고 똑같으니까</mark></p></li></ol><ol type="1" id="eb051e34-6d0f-4f2d-ba45-f0735653aacf" class="numbered-list" start="2"><li>첫 검색어를 타이핑 - 숏컷 미표출, 기록과 자동완성 20개까지<p id="aa87fa38-869d-4e53-99b9-8ec0024df64c" class=""><mark class="highlight-gray">타이핑 중에 검색하는 게 개발하기에 너무 힘들다</mark></p></li></ol><ol type="1" id="2e7fab4a-d373-4fb6-961e-b45a73518f20" class="numbered-list" start="3"><li>상세 검색 바를 누름 - (1개나 2개의 태그가 검색되어 있을 때)숏컷 표출, 숏컷과 기록 자동개수 제한 50개<p id="d659d13d-ac76-4633-b088-a5d68dad2fc1" class=""><mark class="highlight-gray">타이핑하지 않고 관련된 숏컷을 검색할 수 있다는 점이 확실하게 강점이다.</mark></p></li></ol><ol type="1" id="2052b498-a30d-4e44-a45e-1dc1d8f3f2b6" class="numbered-list" start="4"><li>상세 검색할 검색어를 타이핑 - 숏컷 미표출, 기록과 자동완성 20개<p id="b34c745b-780d-4c08-9f41-a0a6012f58da" class=""><mark class="highlight-gray">타이핑 중에 검색하는 게 개발하기에 너무 힘들다</mark></p></li></ol></li></ul><ul id="c08c440a-2fa0-47e5-bc58-1c95b6486ee7" class="bulleted-list"><li style="list-style-type:disc">검색 화면에서의 숏컷 표출<ul id="58907ada-be35-4a4c-819b-6e3e12d9ece5" class="bulleted-list"><li style="list-style-type:circle">한 shortcut 내에서 굳이 검색된 태그가 앞에 나오도록 재배치할 필요가 없음<p id="a39b2e23-dcbe-4992-9256-362246b1632b" class=""><mark class="highlight-gray">우선 숏컷 하나 안에서 태그의 순서보다는 표출 여부가 중요</mark></p></li></ul><ul id="8f6876ad-42e4-4777-bf5a-af95792c7e78" class="bulleted-list"><li style="list-style-type:circle">상위 3개 표출<p id="aeb027d1-11fb-4f2e-a944-aae3bca7db9c" class=""><mark class="highlight-gray">찬: 숏컷의 생성도 검색으로 치고 있는데 이렇게 되면 검색 view에서의 숏컷의 표출이 늘어날 것. 이렇게 되다보면 숏컷들에 밀려서 최근 검색이나 검색어 추천이 밀려버릴 가능성이 있다.</mark></p></li></ul><ul id="8286edf3-2ae7-4678-859d-af0668c69019" class="bulleted-list"><li style="list-style-type:circle">숏컷 표출의 순서<ul id="ebe85ee1-e58d-4b53-8c6d-889b6efe5030" class="bulleted-list"><li style="list-style-type:square">최신순</li></ul></li></ul><ul id="580d7f31-37e9-4f0a-b435-1f844f9cd596" class="bulleted-list"><li style="list-style-type:circle">숏컷 item의 아이콘은 진한 검정색으로 두께는 다른 list item과 동일하게<ul id="d2f109ff-1b68-48e3-b2a5-a710ad99fda5" class="bulleted-list"><li style="list-style-type:square"><mark class="highlight-gray">다른 리스트들의 요소보다 명확히 상위의 위계를 가져야</mark></li></ul></li></ul></li></ul></details></li></ul><div><ul id="f47ebb81-413d-41a3-ab80-404e1ccf08a3" class="toggle"><li><details open=""><summary>search 페이지 → 기록+자동완성 = 20개 유지?</summary><p id="51b56775-fe3e-4175-b0a9-ab5070773bef" class=""><mark class="highlight-brown_background">삭제하면 그냥 줄어드는 대로</mark></p><p id="527d29d0-65b1-42e1-a9cd-f648fa421b5c" class="">기록과 자동완성 합쳐서 만약 20개였는데 기록 하나를 삭제했다면 19개 표출</p></details></li></ul></div><p id="194f9247-8e70-4b5d-a95a-155f20376c7b" class="">
+</p><p id="eb40dc51-4b02-424d-840e-a76a34a7f1b8" class="">원래는 말이야…</p><div><ul id="4f66cc8c-b263-48b5-8bc1-006f0653b88d" class="toggle"><li><details open=""><summary>search에서</summary><div><ul id="f82a41cf-5517-4af4-87d9-48d2593ad9a6" class="bulleted-list"><li style="list-style-type:disc">shortcut의 형성 = 검색으로 한다</li></ul><ul id="1ed61b74-9ed6-4213-9a5d-7ee5d30fb9b0" class="bulleted-list"><li style="list-style-type:disc">검색 화면<ul id="e9e9173c-f650-47cc-b319-2d7810dd8eff" class="bulleted-list"><li style="list-style-type:circle">list element<ul id="a184a07f-6903-4397-8ffe-43b2f06f96dd" class="bulleted-list"><li style="list-style-type:square">두 줄을 넘어갈 때는 넘어가는 부분을 …으로 생략하기</li></ul><ul id="4463edb7-229b-460f-b701-a7c1416876bb" class="bulleted-list"><li style="list-style-type:square">숏컷 - 기록 - 추천 순서</li></ul></li></ul><ul id="eb8c3c31-ea29-4ccb-8425-509ab1ba787c" class="bulleted-list"><li style="list-style-type:circle">상황별 표출<ol type="1" id="63fdf2f3-b037-47f6-8186-127889aa89b3" class="numbered-list" start="1"><li>처음 검색 바를 누름 - 숏컷 미표출, 개수 제한 50개<p id="a4717083-de78-44ad-98bb-4969a512b6cd" class=""><mark class="highlight-gray">아무 것도 검색 안한 상태에서 보이는 숏컷 3개는 어차피 메인하고 똑같으니까</mark></p></li></ol><ol type="1" id="ddbb6d10-4436-4c01-a426-cbb7ff5db6fa" class="numbered-list" start="2"><li>첫 검색어를 타이핑 - 숏컷 표출, 숏컷 포함 20개까지<p id="aef8b807-6465-48f2-8d5b-b70641781a0b" class=""><mark class="highlight-gray">숏컷이 너무 많아서 생기는 문제에 대한 보완이 확실하게 된다.</mark></p></li></ol><ol type="1" id="a3ccc9b8-e72b-4cd4-a9c0-5b8db180ce6e" class="numbered-list" start="3"><li>상세 검색 바를 누름 - 숏컷 표출, 개수 제한 50개<p id="3be253a3-10ea-4618-8789-81ee004a09fa" class=""><mark class="highlight-gray">타이핑하지 않고 관련된 숏컷을 검색할 수 있다는 점이 확실하게 강점이다.</mark></p></li></ol><ol type="1" id="4ea551d9-f6b7-4669-b299-5ccd7790550e" class="numbered-list" start="4"><li>상세 검색할 검색어를 타이핑 - 숏컷 표출, 숏컷 포함 20개<p id="51b54037-448d-4923-bb8e-c092751f285f" class=""><mark class="highlight-gray">숏컷이 너무 많아서 생기는 문제에 대한 보완이 확실하게 된다.</mark></p></li></ol></li></ul><ul id="a9758001-27c5-4ede-9fbb-40a98d825a77" class="bulleted-list"><li style="list-style-type:circle">검색 화면에서의 검색 기록의 표출<ul id="32194333-bfb4-4bd3-ba51-8152e2089dea" class="bulleted-list"><li style="list-style-type:square">기록은 삭제 가능</li></ul><ul id="c80163ff-9c23-48d7-9411-846100a013dc" class="bulleted-list"><li style="list-style-type:square">숏컷의 검색 기록은 안해도 됨<p id="66c43c8e-9160-482a-b6da-2619f1acf5ea" class=""><mark class="highlight-gray">기록보다 상위에 있어서 숏컷의 검색 기록을 남길 필요가 없다.</mark></p></li></ul></li></ul><div><ul id="92f3e04c-b5e0-4184-b2bc-217e4209ea51" class="bulleted-list"><li style="list-style-type:disc">검색에 적용된 태그에 색상 부여 X<p id="e8aa8a77-2239-4c38-bf16-d29bd4d0a697" class=""><mark class="highlight-gray">찬: 색상 부여 해야 될 것 같다, 검색되어 있는 걸 구분을 </mark></p><p id="5c0b713b-1bb0-4c70-9963-fdac51db6a8d" class=""><mark class="highlight-gray">찬: 다른 태그는 더해진다는 의미를 주면, 지금 쟤가 검색이 되어 있구나 를 보여주는 역할</mark></p><p id="0a41e475-ab88-439b-8d1a-1d0e90bfcbc1" class=""><mark class="highlight-gray">찬: 검색이 된 태그에 대해서만, 타이핑을 라이브하게 따라가며 색상을 바꿀 필요는 없을 것 같다</mark></p><p id="ef62d6bd-7ebd-404d-80c3-3781ed9f20c0" class=""><mark class="highlight-gray">건: but </mark><mark class="highlight-gray"><a href="20221124-S&amp;D%20152d69444a30441c89d0bfe83bf6ec0d.html">검색 뷰에서 숏컷과 태그를 시각적으로 구분했으니 </a></mark><mark class="highlight-gray">필요가 없음</mark></p><p id="253c4fdf-89d1-49b7-8642-caa97a3fa6f3" class=""><mark class="highlight-gray">또 한 줄에서 세 개의 색상을 사용하는 것보다 하나의 색상을 사용하는 것이 자연스러움</mark></p></li></ul></div><ul id="db0f4bc3-da1b-4ae4-8e7c-6b7adb359016" class="bulleted-list"><li style="list-style-type:circle">검색 화면에서의 숏컷 표출<ul id="56d4d0ce-98db-4207-aaaf-b1cab11f10b6" class="bulleted-list"><li style="list-style-type:square">한 shortcut 내에서 굳이 검색된 태그가 앞에 나오도록 재배치할 필요가 없음<p id="6cc4700b-c3ac-4060-bb29-8b78004c03be" class=""><mark class="highlight-gray">우선 숏컷 하나 안에서 태그의 순서보다는 표출 여부가 중요</mark></p></li></ul><ul id="71f7f33a-f8f9-40b0-beae-cd00ce5ecd57" class="bulleted-list"><li style="list-style-type:square">상위 3개 표출<p id="f0298fde-dfc4-4967-ba63-4e57291ec1d2" class=""><mark class="highlight-gray">찬: 숏컷의 생성도 검색으로 치고 있는데 이렇게 되면 검색 view에서의 숏컷의 표출이 늘어날 것. 이렇게 되다보면 숏컷들에 밀려서 최근 검색이나 검색어 추천이 밀려버릴 가능성이 있다.</mark></p></li></ul><ul id="ab073e49-9e83-461c-aa8f-fe33a9dc049c" class="bulleted-list"><li style="list-style-type:square">숏컷 표출의 순서<ol type="1" id="155789f4-e4dd-4a0a-9ae4-0169085340b8" class="numbered-list" start="1"><li>숏컷 내 일치하는 태그의 위치가 앞에 있을수록 먼저 표출<p id="a84570af-762f-4e9d-9592-d18d8437c2f9" class=""><mark class="highlight-gray">숏컷을 형성할 때 먼저 검색한 태그가 상단에 놓이기 때문</mark></p></li></ol><ol type="1" id="4c385f0f-b1f3-467f-9951-2db10a7e9424" class="numbered-list" start="2"><li>첫번째 단어의 ABC 순서 → 두번째 단어의 ABC 순서 → 세번째 단어의 ABC 순서<div><p id="093fd319-19ba-4134-9b72-6b540b4b2aeb" class="">빈칸은 모든 abc에서 맨 앞임</p></div></li></ol></li></ul><ul id="777ca487-153e-4c40-bda8-4e51fc8a0e56" class="bulleted-list"><li style="list-style-type:square">숏컷 item의 아이콘은 진한 검정색으로 두께는 다른 list item과 동일하게<ul id="0e2d6f38-6c97-401c-9f32-26c5d8c28a00" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-gray">다른 리스트들의 요소보다 명확히 상위의 위계를 가져야</mark></li></ul></li></ul></li></ul></li></ul></div></details></li></ul></div></li></ol><ol type="1" id="f9e4fba5-6188-49a9-88e8-faa01bf1aeee" class="numbered-list" start="4"><li>검색 로직<div><ul id="0e9ed43f-8551-4820-8089-24447a022cc9" class="toggle"><li><details open=""><summary>search result에서</summary><ul id="41a8969c-5436-4166-9cb6-aef82957285f" class="bulleted-list"><li style="list-style-type:disc">검색 logic<div><ul id="4fb57f3a-2e4e-4e70-9d32-ff2434911a38" class="bulleted-list"><li style="list-style-type:disc">띄어쓰기를 감안하지 않고 검색한 태그를 포함하는 태그도 검색 범위로 지정<ul id="e79be203-081c-4dd2-89fe-7ffc954a0854" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-gray">loss 대비 gain 이 확실하기 때문</mark><ul id="0746c98c-1014-4965-bc36-767a469f5245" class="bulleted-list"><li style="list-style-type:square"><mark class="highlight-gray">loss: 검색한 단어를 포함하되 사이에 띄어쓰기를 두고 있는지 여부를 고려하지 않음으로써  일부 관련성이 없는 결과를 얻게 되는 상황</mark></li></ul><ul id="85053093-1051-42c0-8212-99cb6f7dd9aa" class="bulleted-list"><li style="list-style-type:square"><mark class="highlight-gray">gain: 검색한 단어를 포함하되 사이에 띄어쓰기를 두고 있는 태그만 포함함으로써 관련성이 높은 검색 result를 잃게 되는 상황</mark></li></ul></li></ul><ul id="c527cef8-e8fb-4042-8ed0-a63aa9acd574" class="bulleted-list"><li style="list-style-type:circle">다만 공백 문자의 검색/태그 추가 행위 금지<p id="8a74954a-d57d-4f81-86f9-47e746332b51" class=""><mark class="highlight-gray">현: space(공백 문자) 검색하면?
+건: 그건 못하도록 막아야 할 거 같다.</mark></p></li></ul></li></ul></div></li></ul></details></li></ul></div></li></ol><ol type="1" id="e26aafeb-99e2-4718-924b-252be23c117f" class="numbered-list" start="5"><li>null message는 없애고 빈칸으로<figure id="11c6b831-9050-45f7-b7b7-07225237a354" class="link-to-page"><a href="SHT%20Null%20page%2011c6b831905045f7b7b707225237a354.html">SHT Null page </a></figure></li></ol><ol type="1" id="2ba4e211-3fbd-470d-8afd-2670056cd672" class="numbered-list" start="6"><li>edge case<div><p id="0858c8c2-6b65-4de1-a78f-1d3cd8828d99" class="">구: search페이지에서 a, b가 검색된 상황에 다시 a를 누르면?</p><p id="a2f61bc1-98fe-48e0-a232-2ba14456cef2" class="">건: alert 띄움 (이미 검색되어 있음) → 모든 snackbar 메시지 정리 예정</p></div></li></ol><ol type="1" id="d8171ce0-78cc-48cb-a149-7afd317fbc4b" class="numbered-list" start="6"><li><strong><mark class="highlight-brown">[rejected]</mark></strong>애플처럼 하기 </li></ol><figure id="a25b0a06-8f37-4b82-b92d-d32961bdefc5" class="image"><a href="%E1%84%8C%E1%85%B5%E1%86%A8%E1%84%80%E1%85%AA%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%B5%E1%84%80%E1%85%A9%20%E1%84%90%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%89%E1%85%A5%E1%86%BC%20%E1%84%8B%E1%85%B5%E1%86%BB%E1%84%82%E1%85%B3%E1%86%AB%20UI%20cd3ea4e985c448b1b1e5d54d5a12074a/Untitled.png"><img src="%E1%84%8C%E1%85%B5%E1%86%A8%E1%84%80%E1%85%AA%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%B5%E1%84%80%E1%85%A9%20%E1%84%90%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%89%E1%85%A5%E1%86%BC%20%E1%84%8B%E1%85%B5%E1%86%BB%E1%84%82%E1%85%B3%E1%86%AB%20UI%20cd3ea4e985c448b1b1e5d54d5a12074a/Untitled.png"/></a></figure><p id="2f8145a0-2e46-4d5b-813d-d230d0414194" class="">
+</p><ol type="1" id="9f53bbee-108b-4072-8bc4-038e0174d119" class="numbered-list" start="7"><li><strong><mark class="highlight-brown">[rejected]</mark></strong><a href="%5BMVP%20%E1%84%8B%E1%85%B5%E1%84%92%E1%85%AE%5D%E1%84%8B%E1%85%B5%E1%84%85%E1%85%A5%E1%87%82%E1%84%80%E1%85%A6%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%80%E1%85%B5%E1%86%AB%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8%20results%20%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%8B%20e37ecfe5f407461ca6f87366066816c5.html">other possibilities</a>(얘들이 별로인 이유)</li></ol></div><p id="31054892-2158-4fbd-aae2-f24500937ea4" class="">
+</p><h3 id="ec03ebfe-e06d-4f29-a5cd-b44651755763" class=""><details open=""><summary>search result</summary></details></h3><div class="indented"><ol type="1" id="f89f0a21-3402-4848-92b4-60e51e9583de" class="numbered-list" start="1"><li>100%와 100% 미만을 갈라서 보여준다</li></ol><ol type="1" id="4efa1a9f-0121-4226-ab88-549ffb8eb16b" class="numbered-list" start="2"><li>1번의 두 결과를 한 화면에서 보여준다</li></ol><ol type="1" id="5890b27f-b1e9-40ab-8223-372a58e16ec6" class="numbered-list" start="3"><li>100% 미만(유사) 검색 결과를 보여줄 때, shotag가 어떤 태그가 유사하다고 판단했는지 상위 3개를 보여준다<ol type="a" id="84a94e5c-0db4-4b20-8710-8dd799de5acb" class="numbered-list" start="1"><li><strong>유사한 태그가 마치 유튜브에서 검색할 때 필터 먹이는 것처럼 작동한다 (on, off)</strong><ol type="i" id="91f775b8-69dd-40d1-9a30-86bea3ae1013" class="numbered-list" start="1"><li>좋은 점<ol type="1" id="cc7c82b0-d26c-4173-9cbf-71e64f8240e8" class="numbered-list" start="1"><li>유저데이터로 쌓겠다면 쌓을 수 있다.</li></ol><ol type="1" id="8c5a26b1-1618-4574-a58c-cc9af5c081c4" class="numbered-list" start="2"><li>설사 필터 중 하나라도 검색된 스샷의 태그에 들어있지 않더라도 유튜브 필터링 태그 생각하면 모든 비디오에 대한 필터가 존재하는 게 아니니까 괜찮다.</li></ol></li></ol><ol type="i" id="9d45116a-f6c4-4e7e-8534-b8980d610aac" class="numbered-list" start="2"><li>비판점<ol type="1" id="ed6e77dc-f228-47ff-9456-d4c18e1ebbcb" class="numbered-list" start="1"><li>검색에서의 행동이 무거워지지 않을까</li></ol><ol type="1" id="49d968c7-8754-43d2-a3b2-596bcc3e7ebc" class="numbered-list" start="2"><li>지금 how about these의 비중이 너무 크지 않나?<ol type="a" id="4302691c-dbbe-4b06-a919-47aabe80f629" class="numbered-list" start="1"><li>가로로 슬라이드는 어떨까?<ol type="i" id="d1c33b5d-52e1-4fbe-9292-0533d5d28ce4" class="numbered-list" start="1"><li>얘만 방향이 달라지는 건 좀 그렇다</li></ol><ol type="i" id="5e6f0ac3-04d2-4ef2-8de3-2e36a829f992" class="numbered-list" start="2"><li>차라리 세 장 보이고 more 눌렀을 때 필터들과 함께 더 보인다거나</li></ol></li></ol></li></ol></li></ol><ol type="i" id="e6cc6e82-a615-4316-87d8-3dbfa912847a" class="numbered-list" start="3"><li>보완점<ol type="1" id="93c5b88b-4144-413a-b9d5-efa5069b0ce4" class="numbered-list" start="1"><li>필터들의 개수는 생각해볼 만한다</li></ol><ol type="1" id="1b223eb2-cf1f-4e3f-b5ce-ee081f5720ca" class="numbered-list" start="2"><li>슬라이드처럼 넘기는 방식도 가능하다</li></ol><ol type="1" id="3d64ca2b-577a-492e-a5d1-94908e73b1dd" class="numbered-list" start="3"><li>전체 같은 필터가 맨 앞에 존재하고 걔만 색깔이 다르면 터치를 유도할 수 있을 듯</li></ol><ol type="1" id="a24d3023-53c3-4ec0-94bf-2d5252ce54db" class="numbered-list" start="4"><li>How about these에 해당하는 스샷이 하나라도 없을 경우에는 해당 섹션 전체가 안보이는 걸로</li></ol><ol type="1" id="1607206b-d871-4fa4-b714-217a8923d0b1" class="numbered-list" start="5"><li>how about these 섹션 위의 마진은 유지한다.</li></ol><ol type="1" id="38380f93-1fc9-4479-9c16-4efdfeccb700" class="numbered-list" start="6"><li>n screenshots 부분이 좀 두꺼우니 세미볼드에서 미디엄정도로 낮추자</li></ol></li></ol></li></ol><ol type="a" id="f6460da9-da2e-4dc5-8c48-d1e63b89864f" class="numbered-list" start="2"><li><strong><mark class="highlight-brown">[rejected]</mark></strong>유사한 태그를 누르면 그냥 (image detail에서처럼) 검색을 시켜 준다.<ol type="i" id="0eee43c4-ea6d-4373-9151-e12008996544" class="numbered-list" start="1"><li>비판점<ol type="1" id="d59f07b7-7dab-4c58-84f9-c7a92b9afe7e" class="numbered-list" start="1"><li>이동했다가 다시 뒤로 가면 메인으로 가버리는 바람에 유저가 이탈할 수 있다.</li></ol><ol type="1" id="f9dc476f-e0ef-4c67-91de-12160bd1bb67" class="numbered-list" start="2"><li>유저가 당황할 수 있다.</li></ol></li></ol></li></ol><ol type="a" id="f4c7b124-9bcc-422a-aa71-6483c5ff870d" class="numbered-list" start="3"><li><strong><mark class="highlight-brown">[rejected]</mark></strong>아무것도 없다<ol type="a" id="76fbcff1-6af8-45d4-a757-36560600d9d4" class="numbered-list" start="1"><li>비판점<ol type="a" id="de5330b6-2092-4d96-b852-8101bb39e76d" class="numbered-list" start="1"><li>유저의 행동이 제한된다.</li></ol></li></ol></li></ol></li></ol><ol type="1" id="a16be142-8ef4-48ec-a4aa-5ba45ae4041a" class="numbered-list" start="4"><li>select 시<div><ul id="89a64e5b-3926-44fa-adea-1af36c0b9a5c" class="toggle"><li><details open=""><summary>SearchResult</summary><p id="59ac5b35-e1f4-46ac-b2e4-338d4f7eba17" class="">select 누를 시 How about these 섹션의 토글 가능한 태그들이 사라지고 result 결과가 모두 펼쳐져 보임. 안 그러면 토글하거나 how about these 섹션을 펼치거나 접느냐에 따라 선택된 이미지 썸네일이 안 보일 수도 있음</p><div id="e45f4e1e-54e8-45c4-b5f1-12af0a857615" class="column-list"><div id="b2e5b308-d086-4f5e-af72-19ac8790cb78" style="width:33.333333333333336%" class="column"><figure id="cdc8d98c-a08c-47dc-984f-2af7d648502a" class="image"><a href="20221102-S&amp;D%204944959a9d3c49438481eb56ae586466/Screenshot_2022-11-03_at_14.58.14.png"><img style="width:240px" src="20221102-S&amp;D%204944959a9d3c49438481eb56ae586466/Screenshot_2022-11-03_at_14.58.14.png"/></a><figcaption><mark class="highlight-red">이렇게 했을 때는 select시 ^ 버튼과 태그 버튼을 disable</mark></figcaption></figure></div><div id="56e7733e-dad1-4dae-9e3a-a99b0d0908cd" style="width:33.333333333333336%" class="column"><figure id="9219772f-08a2-465a-8f8c-9ac76ce378bc" class="image"><a href="20221102-S&amp;D%204944959a9d3c49438481eb56ae586466/Screenshot_2022-11-03_at_14.58.32.png"><img style="width:240px" src="20221102-S&amp;D%204944959a9d3c49438481eb56ae586466/Screenshot_2022-11-03_at_14.58.32.png"/></a><figcaption><mark class="highlight-teal">이렇게 해야 함</mark></figcaption></figure></div><div id="2664ded3-b0f3-4d52-9605-9463ad4a4761" style="width:33.33333333333333%" class="column"><figure id="8da019c9-2217-453f-b166-e752edefc794"><div class="source"><a href="20221102-S&amp;D%204944959a9d3c49438481eb56ae586466/File_from_Android.mp4">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5d9e82ba-dd95-43b8-ab55-7b28599028f7/File_from_Android.mp4</a></div><figcaption>갤럭시도 이렇게 하네</figcaption></figure></div></div></details></li></ul></div></li></ol><ol type="1" id="5e0a9b8b-dc9f-4110-8a41-e735e2411d05" class="numbered-list" start="5"><li>태깅 상황에 대한 안내 메시지<div><ul id="049a752f-6fb9-4910-a7b9-cd6ff0a2db5f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">오프라인 상황에서 태깅되지 않은 사진을 탐지하는 경우(최초 설치, 새롭게 찍힌 사진 등) 그 사진의 썸네일 및 이미지디테일 우상단에 별도의 표시</mark>
+</li></ul></div></li></ol><p id="32cc6fa1-55a4-40cc-9952-422dcc0e02cf" class="">
+</p></div><p id="d8154aff-716c-4982-9b60-61cf043666e6" class="">
+</p><h3 id="a4e6a066-dc77-4455-923a-86bbff9f9935" class=""><details open=""><summary>detail view</summary></details></h3><div class="indented"><ol type="1" id="5e933947-eda3-46a4-b0cb-595d42ee2544" class="numbered-list" start="1"><li>스크린샷 선택 이후 하단에 나오는 태그들의 개수는 1n개로 제한<ol type="a" id="2b5fa4f7-0e8d-4206-aef6-2d0a634098e9" class="numbered-list" start="1"><li>버튼 하나하나가 사실상 option</li></ol><ol type="a" id="78eea6e9-1110-4c4c-b1f2-2609e5715366" class="numbered-list" start="2"><li>option이 너무 많으면 결국에는 안쓴다</li></ol><ol type="a" id="55f47b7f-1f72-4223-ba1e-78b07bd0f11a" class="numbered-list" start="3"><li>결국에는 보여줄 수 있는 통제권은 부여하되 처음에 보이는 걸 깔끔하게</li></ol></li></ol><ol type="1" id="d32ad612-3891-443a-af89-b0331a31af63" class="numbered-list" start="2"><li>그 색상은 보라색 색상을 유지하기</li></ol><ol type="1" id="4469fab7-44b3-49fd-b76f-4627b2bbe42a" class="numbered-list" start="3"><li>그 태그들의 순서는 사진과 관련성이 높은 순서대로<div><ul id="f874fdb3-db44-4c1e-80bd-ffbffcfc80d0" class="bulleted-list"><li style="list-style-type:disc">건표님: “사진의 내용과 다소 동떨어져 있는 태그가 문제라면 사진과 관련성이 높은 순서대로 태그를 나열하기로 했으니 괜찮다.”</li></ul></div><div><ul id="9780b6b1-750d-4591-a0e0-0912dee15b01" class="bulleted-list"><li style="list-style-type:disc">개발 현황<div><p id="e9de473c-cf3a-44fb-a3f7-7c4c5e3a7616" class="">구: 저희가 사진 하나당 특정 태그의 중요도를 지금 당장 넣을지 고민 중
+이 중요도 점수가 들어가면 카운트를 버려야 함
+카운트는 행동 하나 당 1 부여
+</p><p id="75cc5389-f99d-4b4f-a723-baf471146ef0" class="">구: 이미 유저가 그 태그 셋을 보고 사진을 인정하고 넘어감
+태그 셋이 바뀌어 버릴 수 있다
+중요도를 넣고자 했던 가장 큰 이유는, 너무 관계 없어 보이는 태그를 빼고 넘어가고자
+지금은 하나도 안 들어가 있다</p><p id="abb7e8ea-0089-4025-a078-b939776392a8" class="">
+</p><p id="f288c143-29e3-4019-b28b-2ed5841216a3" class="">건: 출시 시점에 넣을 생각?</p><p id="96be4db3-2e14-411b-8aaa-0e2a0fc424f4" class="">구: 서버 모델에는 들어가 있음(사진-태그), 정확도 개선 중
+한 사진 분석하는 데 1초, 이게 코스트상 합당한지 고민 중</p><p id="3f427cc5-7d24-40a6-8b82-0842e0dcd486" class="">
+</p><p id="8a3acf45-faab-4a62-9c46-cfeec8f6864c" class="">현: 제가 기억하기로 detail에서 태그 표출 순서에 중요도 넣기로 했는데</p><p id="2b901e20-bc9b-4c5d-bc02-1e4f253b7d71" class="">구: 중요도가 안 들어가면 빠져야 함, 태그 순서
+먼저 잡힌 순서대로 하지 않을까 싶음, 만약 안 되면</p><p id="fd184d2a-917b-40f8-82f2-3224eab820fc" class="">
+</p><p id="e3d428c3-5b30-417e-a75c-92d06c0fb384" class="">일단 얘는 필수적인 거만 해 놓고 미룰 거, 서버 업데이트 하면 되니까</p></div></li></ul></div><div></div></li></ol><ol type="1" id="c63c9fe7-e874-4466-a6b4-a41a56fdb35b" class="numbered-list" start="4"><li>왜 … 버튼 뒤에 공유랑 삭제랑 크롭을 숨겨놨을까?<ol type="a" id="3bace6aa-c05f-4340-9861-7514729fcf58" class="numbered-list" start="1"><li>원래 상단 바에 노트 외에 알람 등의 기능들이 있었음</li></ol><ol type="a" id="0ee53f0f-ee94-4b00-a3ca-1d63407b8329" class="numbered-list" start="2"><li>그러면 상단바의 균형이 잘 맞음</li></ol></li></ol><ol type="1" id="eee75654-7ca8-4e53-8029-1fc29beb770c" class="numbered-list" start="5"><li><a href="detailed%20view%E1%84%8B%E1%85%A6%E1%84%89%E1%85%A5%20%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%8B%E1%85%B3%E1%86%AF%20%E1%84%8C%E1%85%B5%E1%84%8B%E1%85%AE%E1%86%AF%20%E1%84%84%E1%85%A2%20%E1%84%8C%E1%85%B5%E1%84%8B%E1%85%AF%E1%84%8C%E1%85%B5%E1%86%AB%20%E1%84%8B%E1%85%B5%E1%84%92%E1%85%AE%E1%84%8B%E1%85%B4%2048e89520c4c84c9ba6f420aa437d9494.html">detailed view에서 사진을 지울 때 지워진 이후의 화면</a></li></ol><ol type="1" id="6906a5c7-634c-44fa-bb8a-f86aeb0183c2" class="numbered-list" start="6"><li>memo<div><p id="89e7dba5-caa6-4d12-a4b0-6fced0f610de" class="">이번 회의를 통해 합의된 내용 → 이걸로 확정</p><figure id="dc8b0ea5-01fe-4a29-9282-e54c3c191b7b" class="image"><a href="20221208-S&amp;D%20694e38ec82b14d24a882d963abdf854f/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2022-12-08_16.55.26.png"><img style="width:480px" src="20221208-S&amp;D%20694e38ec82b14d24a882d963abdf854f/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2022-12-08_16.55.26.png"/></a></figure><ol type="1" id="46ffbac2-da1f-402a-98d4-7fa4f597fff4" class="numbered-list" start="1"><li>처음 메모를 생성할 때는 왼쪽 화면으로 나온다.<ol type="a" id="720a9ae5-4778-40b5-9e69-ade7193aaee9" class="numbered-list" start="1"><li>글자를 입력한 뒤 Done을 누르거나 바깥 영역을 누르면 memo가 저장되면서 시트와 키보드가 한꺼번에 내려온다.</li></ol><ol type="a" id="20883bac-ed0a-4ac3-bb38-48ec0503eab8" class="numbered-list" start="2"><li>글자를 입력하지 않은 뒤 Done을 누르거나 바깥 영역을 누르면 아무것도 저장되지 않으면서 시트와 키보드가 한꺼번에 내려온다.</li></ol><ol type="a" id="7c6fbd1f-4749-4b2a-ae03-bb36b4e4e33f" class="numbered-list" start="3"><li>메모 아이콘에 빨강색 점이 뜬다</li></ol></li></ol><ol type="1" id="9a9ce057-0c9a-485f-b2ae-b376585d000e" class="numbered-list" start="2"><li>빨강색 점이 뜬 이후 메모 아이콘을 누르면 오른쪽 화면으로 나온다.<ol type="a" id="ab979795-7a7f-4750-8453-b6062ee4dab4" class="numbered-list" start="1"><li>Done을 누르면 memo가 저장되면서 시트와 키보드가 한꺼번에 내려온다.</li></ol><ol type="a" id="b3fb5b2b-36e6-4a36-a3b6-eafc7df01948" class="numbered-list" start="2"><li>Delete를 누르면 dialogue가 뜨면서 memo가 삭제된다.</li></ol><ol type="a" id="82e52cd5-ba6e-49a6-86ac-1dbadfc930b4" class="numbered-list" start="3"><li>메모 영역을 누르면 왼쪽 화면으로 나온다. <ol type="i" id="4fd2a3a7-bbf0-4e5d-9777-203ca230d688" class="numbered-list" start="1"><li>이후의 로직은 <a href="20221208-S&amp;D%20694e38ec82b14d24a882d963abdf854f.html">얘</a>를 따른다.</li></ol></li></ol></li></ol><p id="3212614e-a75f-4e41-a060-cb76b7d01c2b" class="">
+</p></div><div><ul id="94f3aa99-da86-47bc-b5ff-36550ed9afec" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/20221208-S-D-d2a81b13138e42e28839e6d2c6a2dd5f"><span class="icon">📊</span>20221208-S&amp;D</a> 메모 UX 확정</summary><figure id="d270f61e-673f-414e-ba2d-60d45b96f0d1" class="image"><a href="20221208-S&amp;D%20694e38ec82b14d24a882d963abdf854f/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2022-12-08_16.55.26.png"><img style="width:432px" src="20221208-S&amp;D%20694e38ec82b14d24a882d963abdf854f/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2022-12-08_16.55.26.png"/></a></figure></details></li></ul></div></li></ol><ol type="1" id="73ecf087-3170-4b3d-a0ef-68deaf99d1cd" class="numbered-list" start="7"><li>detailed view option gesture<div><p id="27ea9a5a-939d-45ea-bccf-4639d1e8200e" class="">화면에서 아래로 내리면 메인으로 돌아갈 수 있게 하자</p></div><div><ul id="075d5786-7886-40a3-889e-351ba06bd697" class="toggle"><li><details open=""><summary>확대축소</summary></details></li></ul></div><div><ul id="807356e8-c1b2-40c0-b3c7-664cbb12ffe8" class="toggle"><li><details open=""><summary><mark class="highlight-gray_background">detail view에서 점 세 개짜리 클릭한 후 시트가 아래에서 올라오기보다는 팝업으로 하자</mark></summary><p id="73529199-2132-4dc3-a0ea-fd63de79e031" class="">지금의 시트 방식이 올드하다</p><p id="304a2f0d-91a7-4817-8f5a-641fbe9ce71e" class="">지금의 방식으로 하기에는 해당 옵션들이 가지기에는 비중이 과한 UI이다.</p><p id="bc806d17-2df3-4d00-8034-f60522c259fb" class="">아이콘이 상단바를 차지하도록 하는 방법도 있지만 아이콘에 텍스트를 추가하기 어려워 설명이 힘들고 나중에 기능들이 추가되었을 때 버튼들이 너무 많아진다.</p></details></li></ul></div><p id="3554fb9b-5af1-45c5-8f85-0ca24bd7f641" class="">좀 더 구체적으로는:</p><div><ul id="83101d6d-9c67-4ef5-967a-76887e11c926" class="toggle"><li><details open=""><summary>이미지디테일 옵션 디자인 수정</summary><p id="84b23abd-f813-411c-9897-9b494fad4129" class=""><mark class="highlight-gray_background">루마퓨전처럼</mark></p><p id="503cbf2c-8dd3-49e1-ad21-32ad0ccc9ee2" class=""><mark class="highlight-purple">툴바 (점 세 개짜리 아이콘) 조금 위에서, 화면의 그림자 없이, 불투명하게, 툴바와 같은 색으로, 길이는 툴바의 반 정도</mark></p></details></li></ul></div></li></ol><div id="2a5292bf-af95-40a3-b0ac-2a696e87847c" class="column-list"><div id="0e45a90e-5947-4304-a6c8-cb1e193bc196" style="width:50%" class="column"><figure id="d4b86cdf-4be3-4e24-a021-ce8d6d32ee19" class="image"><a href="%E1%84%8C%E1%85%B5%E1%86%A8%E1%84%80%E1%85%AA%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%B5%E1%84%80%E1%85%A9%20%E1%84%90%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%89%E1%85%A5%E1%86%BC%20%E1%84%8B%E1%85%B5%E1%86%BB%E1%84%82%E1%85%B3%E1%86%AB%20UI%20cd3ea4e985c448b1b1e5d54d5a12074a/ezgif-1-4c067e6fa5.gif"><img style="width:240px" src="%E1%84%8C%E1%85%B5%E1%86%A8%E1%84%80%E1%85%AA%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%B5%E1%84%80%E1%85%A9%20%E1%84%90%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%89%E1%85%A5%E1%86%BC%20%E1%84%8B%E1%85%B5%E1%86%BB%E1%84%82%E1%85%B3%E1%86%AB%20UI%20cd3ea4e985c448b1b1e5d54d5a12074a/ezgif-1-4c067e6fa5.gif"/></a></figure><p id="52589c4f-83c3-49fd-9a72-33702fafa7ff" class="">얘에서</p></div><div id="a3f07257-b507-4e6f-a0b8-a8e0bfd49350" style="width:50%" class="column"><figure id="fe89acdd-350d-44d7-9996-a5081ec8d9ce" class="image"><a href="%E1%84%8C%E1%85%B5%E1%86%A8%E1%84%80%E1%85%AA%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%B5%E1%84%80%E1%85%A9%20%E1%84%90%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%89%E1%85%A5%E1%86%BC%20%E1%84%8B%E1%85%B5%E1%86%BB%E1%84%82%E1%85%B3%E1%86%AB%20UI%20cd3ea4e985c448b1b1e5d54d5a12074a/ezgif-1-1c8e6026fe.gif"><img style="width:240px" src="%E1%84%8C%E1%85%B5%E1%86%A8%E1%84%80%E1%85%AA%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%B5%E1%84%80%E1%85%A9%20%E1%84%90%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%89%E1%85%A5%E1%86%BC%20%E1%84%8B%E1%85%B5%E1%86%BB%E1%84%82%E1%85%B3%E1%86%AB%20UI%20cd3ea4e985c448b1b1e5d54d5a12074a/ezgif-1-1c8e6026fe.gif"/></a></figure><p id="23f16ea0-b539-462f-8f06-226f66a326cb" class="">얘로</p></div></div><h3 id="84206f14-2acc-4d7d-9d82-990da889fe71" class=""><strong><mark class="highlight-brown">[rejected]</mark></strong>또다른 안</h3><figure id="c682e144-255b-4c13-a5bf-11108a724025" class="image"><a href="detail%20view%2059bd20edf5a14d8681fae1dc44bbf8c6/Untitled.png"><img style="width:416px" src="detail%20view%2059bd20edf5a14d8681fae1dc44bbf8c6/Untitled.png"/></a></figure><p id="6d4e6f04-639c-41fc-92a8-92e0358b333b" class="">이렇게 하는 이유</p><ol type="1" id="65b23a6c-8f15-4e6f-ad62-8dc883ca79c4" class="numbered-list" start="1"><li>add tag 버튼이 왼쪽에 있어서 시선의 흐름과 자연스럽게 매칭된다.<ol type="a" id="1a109828-ebf4-4fc6-a415-5064c0a7b4f1" class="numbered-list" start="1"><li>add tag가 다른 버튼들에 비해서 강조되어 있다</li></ol><ol type="a" id="7ded5e05-48a4-4fca-90b9-94c0dd3812e1" class="numbered-list" start="2"><li>글을 왼쪽에서 오른쪽으로 읽는 문화권을 반영하면 강조된 요소가 왼쪽에 있는 것이 자연스럽다</li></ol></li></ol><ol type="1" id="dee3ba46-cd02-4bda-8ff4-367475f78f41" class="numbered-list" start="2"><li>detail view 화면에서 보이는 태그가 전부가 아니라는 점을 알려줄 요소가 필요하다<ol type="a" id="0d9aac46-53c9-428a-a255-9415079e40a2" class="numbered-list" start="1"><li>detail view 화면에서 보이는 태그가 전부라고 알게 되면 유저에게 혼란을 줄 수 있다.</li></ol><ol type="a" id="2ec495d5-176f-42c9-85aa-85a48fdd7339" class="numbered-list" start="2"><li>detail view 화면에서 보이는 태그가 전부라고 알게 되면 완성도가 떨어진 듯한 인상을 줄 수 있다.<ol type="i" id="61a025af-2f14-42bb-882d-acbfb681af80" class="numbered-list" start="1"><li>나 분명히 다른 검색어로 이 사진을 찾았을 때는 이 태그 봤던 거 같은데 왜 지금은 없지?</li></ol><ol type="i" id="62f3a48e-f014-4bda-917b-8d99d3c2836a" class="numbered-list" start="2"><li>아 태그가 원래 사진마다 고정된 게 아니라 그때그때 바뀌는 건가?</li></ol><ol type="i" id="fbed4e88-a066-4a54-b0ea-fc339430276d" class="numbered-list" start="3"><li>어 그럼 내가 추가한 태그는 저장이 되긴 하는 건가?</li></ol><ol type="i" id="38283914-32eb-4d99-a2ec-21de159cdcd7" class="numbered-list" start="4"><li>아니면 개발 과정에서 실수한 건가?</li></ol></li></ol></li></ol><ol type="1" id="3f1e4c95-efa1-440b-a51d-e23491b75df3" class="numbered-list" start="3"><li>중복된 요소가 들어가는 경우도 있다.<ol type="a" id="b9286e30-51fb-4904-accf-ed6f0cca60c5" class="numbered-list" start="1"><li>우리의 검색, shortcut, explore these</li></ol><ol type="a" id="b5e8b568-656f-4765-bbc2-eda9744bba93" class="numbered-list" start="2"><li>구글의 UI - 더보기와 첫번째 아이콘이 같은 화면으로 이어짐</li></ol></li></ol><figure id="8479f4b9-9a2f-4348-b820-b0d1dc18634b" class="image"><a href="detail%20view%2059bd20edf5a14d8681fae1dc44bbf8c6/ezgif-4-378d678630.gif"><img style="width:600px" src="detail%20view%2059bd20edf5a14d8681fae1dc44bbf8c6/ezgif-4-378d678630.gif"/></a></figure><p id="647cb33f-4aa4-4514-85e7-cfb5bdcde973" class="">이게 별로인 이유</p><ol type="1" id="13f6d442-67ff-45be-a899-6300add3db60" class="numbered-list" start="1"><li>너무 왼쪽에 쏠려 있어서 좌우 균형이 안맞음</li></ol><ol type="1" id="7c110d5e-f502-4aa3-8cc6-daf9b8fe1a11" class="numbered-list" start="2"><li>add tag 버튼이 more tag와 비슷한 의미를 가지기도 함</li></ol></div><p id="7262b867-7aee-446d-af97-fe2aed26ee54" class="">
+</p><div><h3 id="beb1f414-2d22-4c8c-8536-61a829b7fdd5" class=""><details open=""><summary>검색 이후 detail view</summary></details></h3><div class="indented"><ol type="1" id="d094a293-be65-40c0-9775-83df3470bd15" class="numbered-list" start="1"><li>스크린샷 선택 이후 하단에 나오는 태그들의 개수는 여전히 1n개로 제한</li></ol><ol type="1" id="8f73211a-6590-4650-bf1e-d68486a7a700" class="numbered-list" start="2"><li>그 색상은 보라색 색상을 여전히 유지하기</li></ol><ol type="1" id="a0c52173-da1e-4f91-b36b-122f4c38eaf5" class="numbered-list" start="3"><li>그 태그들의 순서는 스크린샷이 가지고 있는 태그들 중 검색어와 유사한 순서<ol type="a" id="9ba83d5f-7af9-4c1c-abdc-039263e51c2f" class="numbered-list" start="1"><li>그렇다면 검색한 태그가 가장 먼저 나와야 하고 그 태그와 비슷한 순으로 나열이 되도록<ol type="i" id="41b02d57-34ec-47d7-99e1-5a3cbc55f7bc" class="numbered-list" start="1"><li>유저에게 뭘로 검색했는지 알려주게 하기 위해서</li></ol><ol type="i" id="7c7ac381-16e3-40a6-ba06-2e032bbc9516" class="numbered-list" start="2"><li>유저가 혹시 관련된 걸 검색하고 싶을 때 도와주기 위해서</li></ol></li></ol><div></div></li></ol><p id="fec43d18-800f-4082-830b-427ae865727b" class="">
+</p></div></div><p id="d7304141-cb9a-42f1-8c85-ab4006a4cd33" class="">
+</p><h3 id="82bcd9ab-308d-410d-84d3-76dcb6bf40dd" class=""><details open=""><summary>add tags</summary></details></h3><div class="indented"><ol type="1" id="d2d44be2-5237-4e49-ab1b-63daf5b26c92" class="numbered-list" start="1"><li>태그의 무게감을 줄이기</li></ol><ol type="1" id="f62e26af-f687-4f65-b275-18c36c2d3a9f" class="numbered-list" start="2"><li>스크린샷의 전체태그 화면에서 선 색상과 X표시가 정신없다.</li></ol><ol type="1" id="cec408ce-0671-45a8-85da-2182320c85b7" class="numbered-list" start="3"><li>태그가 지워지는 모션을 그냥 블러 이후 리프레쉬로 심플하게 만들기</li></ol><ol type="1" id="17ba0216-88f7-48f4-ae97-20991abfc093" class="numbered-list" start="4"><li>more이 있으면 less도 넣자</li></ol><p id="3fe65dc7-932f-46e2-b824-450d8467cf5d" class="">
+</p></div><p id="10f288d5-eea8-44ef-9496-043ed22621fe" class="">
+</p><h3 id="810d9314-bc0c-4762-94b2-07bad67f60f5" class=""><details open=""><summary>여러 스샷의 동시 add tag</summary></details></h3><div class="indented"><div><p id="7c6134bb-10c1-4bad-adcd-ad7814f3f2e3" class="">세로 스크롤 하려는 순간 키보드를 내리기</p></div><div><p id="21b5c5e4-b887-4dfe-b19e-38498899c3cd" class="">키보드가 올라와 있을 때는 스크롤이 없음</p><p id="df302190-0e4c-4e8b-b509-9eab6f63047c" class="">키보드가 내려갔을 때는 전체 화면의 스크롤</p></div><div><p id="9d3043fd-a9fe-4675-8ed5-19f8ab277f03" class="">태그가 보이도록 화면이 올라가다가, 검색바가 최상단에 가면 검색바 기준으로 고정</p></div></div><p id="0c496195-2e02-455b-8974-0f6523c954e4" class="">
+</p><h3 id="e3118b31-5f12-4d80-9c20-5d04a76e3e0a" class=""><details open=""><summary>메뉴텍스트</summary></details></h3><div class="indented"><div><p id="1ce01c35-5758-4646-9927-03a2505128bb" class=""><mark class="highlight-gray_background">메뉴명에는 대문자</mark>를 쓰자고 확정했었다</p></div></div><p id="e71571a0-dd68-49be-a240-502c9447ea05" class="">
+</p><h3 id="29344af9-b0d5-4556-b17c-2cfe1f8765c3" class=""><details open=""><summary>placeholder</summary></details></h3><div class="indented"><ul id="ca624532-a586-453e-a293-1a4e5ca5b236" class="bulleted-list"><li style="list-style-type:disc">첫 검색<ul id="8935035b-2e45-439e-a203-7e941196d317" class="bulleted-list"><li style="list-style-type:circle">누르기 전 <ul id="14775da7-59cb-4435-af20-cbf384d62227" class="bulleted-list"><li style="list-style-type:square">Search for you screenshots</li></ul></li></ul><ul id="54eaa651-6b53-418d-809c-e95cfa5a55ca" class="bulleted-list"><li style="list-style-type:circle">누른 다음<ul id="de5b8928-9325-410d-a54a-9c660f24f653" class="bulleted-list"><li style="list-style-type:square">search “[최근 수가 부쩍 늘어난 태그]”</li></ul></li></ul></li></ul><ul id="21c6253c-c414-4b7c-b376-a1328c1ed02c" class="bulleted-list"><li style="list-style-type:disc">다중 검색<ul id="0365fe03-78a4-400e-8952-daecd5db7b7e" class="bulleted-list"><li style="list-style-type:circle">누르기 전<ul id="b94573d6-19d7-404e-a80a-8528780c4704" class="bulleted-list"><li style="list-style-type:square">Search within results</li></ul></li></ul><ul id="6a79b9f9-0319-49ec-9ad5-0d681e6a363c" class="bulleted-list"><li style="list-style-type:circle">누른 다음<ul id="8e9eee7d-64f1-414d-be1b-d15f5783bb87" class="bulleted-list"><li style="list-style-type:square">search “[검색 결과를 5개 이상 포함하고 있는 태그 중 explore these의 첫 순위]”</li></ul></li></ul></li></ul><div><p id="a722dba3-5c27-411f-a425-ce4de6483165" class=""><mark class="highlight-gray_background">placeholder 첫 글자 대문자</mark>를 사용하자? Ok</p></div></div><p id="379a8aa6-6e1d-4beb-bdf1-0e77c06cf82e" class="">
+</p><h3 id="84df0fc6-d36f-47dd-a1b3-8797c7be228b" class=""><details open=""><summary>널 화면</summary></details></h3><div class="indented"><div><p id="eed055ee-fea4-4a9d-88ca-648cb6c2d591" class="">“No screenshot<span style="border-bottom:0.05em solid">s</span> yet”</p><p id="a70866e5-4d37-4694-8baa-dbd8fb599491" class="">다른 곳은 다 s가 붙어있음</p><p id="d6096633-915e-4e47-8ca8-996cff157e39" class="">
+</p><p id="78511009-a66d-4a0a-b5ff-d7ad3704ff3f" class="">“No shortcuts”</p><p id="603dc249-9d31-4a8b-86a0-ea51d7ba7ac9" class="">이 화면이 나오는 경우는 사용자가 shortcut이 있는 상태에서 more에 들어가서 </p><p id="a9def043-db12-435d-9807-90a38901e5d7" class="">모든 shortcut을 지웠을 때일 테니 </p><p id="059c72cb-c8ca-46dc-8be7-9aef21a18bdd" class="">yet은 부자연스럽다.</p><p id="38815509-7f1c-4f70-a30a-d6e094ad730c" class="">
+</p><p id="1c3dc99a-fdfd-4b00-a362-89838fcaea67" class="">“Pin tag sets for faster search”</p><p id="583019f8-d58a-4595-940d-def442d7ead9" class="">빠른 검색을 강조하기 위해서</p><p id="359096d3-3cbf-4e9a-a424-707a51705ddf" class="">-er가 없으면 어색 (그 전에는 안 빨랐나?)</p><p id="bd1a7645-5b42-40d4-8671-f315c1667ebd" class="">
+</p></div></div><p id="1ccfa366-9e1d-490c-8d0f-5cf128fe3f67" class="">
+</p><h3 id="1011b3b5-44f1-4c0f-a2d6-9ccd4c42dce8" class=""><details open=""><summary>Settings</summary></details></h3><div class="indented"><figure id="47ee692d-cee3-470d-96fa-55dcab5edbb7" class="image"><a href="%E1%84%8C%E1%85%B5%E1%86%A8%E1%84%80%E1%85%AA%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%B5%E1%84%80%E1%85%A9%20%E1%84%90%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%89%E1%85%A5%E1%86%BC%20%E1%84%8B%E1%85%B5%E1%86%BB%E1%84%82%E1%85%B3%E1%86%AB%20UI%20cd3ea4e985c448b1b1e5d54d5a12074a/Screenshot_2022-11-03_at_15.40.25.png"><img style="width:432px" src="%E1%84%8C%E1%85%B5%E1%86%A8%E1%84%80%E1%85%AA%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%B5%E1%84%80%E1%85%A9%20%E1%84%90%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%89%E1%85%A5%E1%86%BC%20%E1%84%8B%E1%85%B5%E1%86%BB%E1%84%82%E1%85%B3%E1%86%AB%20UI%20cd3ea4e985c448b1b1e5d54d5a12074a/Screenshot_2022-11-03_at_15.40.25.png"/></a></figure><div><ul id="0ee40323-c859-4946-96bd-84f90c0e1082" class="toggle"><li><details open=""><summary>settings 웬만하면 셀렉트 시 UI가 안 바뀌게 하자</summary><p id="5be30426-1b2e-45fe-a215-ad528e66f6a2" class="">현: 노트 셀렉트해서 사진과 노트 중
+select 클릭했을 때는 사진의 미리보기가 나오지 않는 것
+현: select 상황에 사진이 안 보이게 할 수는 없나</p><p id="9ffe091a-65aa-447e-8124-bf81f8f02a0a" class="">건: select 상황에 뷰가 변하는 게 더 큰 문제
+다이얼로그로 완화할 수 있다고 생각
+애초에 사진이 오른쪽에 배치
+희: 메모라고 써 있으니 미리보기로 생각하지 않을까</p></details></li></ul></div></div><p id="884ed1e7-4bc9-4fff-bc44-58dca7891c64" class="">
+</p><h3 id="1399bc17-17dd-4353-9b14-cd20e5dc45fd" class=""><details open=""><summary>문구</summary></details></h3><div class="indented"><div><ul id="5c629c2a-70c0-4a4f-abcb-e9fc4d39bb32" class="bulleted-list"><li style="list-style-type:disc"><strong>Unpin shortcut?</strong> You can pin again later if you want.</li></ul></div><ul id="e0190fd6-0de4-4b52-a675-c3d9697b744e" class="bulleted-list"><li style="list-style-type:disc">사진 여러 개 선택 후 add tag시 문구<div><p id="0ac1994e-3f9f-4f44-91f8-9ec1d0db9361" class=""><mark class="highlight-brown_background">tags in common으로 결정</mark></p></div><figure id="5f1f6876-c923-4747-af6a-a8c88a3e4157" class="image"><a href="%E1%84%8C%E1%85%B5%E1%86%A8%E1%84%80%E1%85%AA%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%B5%E1%84%80%E1%85%A9%20%E1%84%90%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%89%E1%85%A5%E1%86%BC%20%E1%84%8B%E1%85%B5%E1%86%BB%E1%84%82%E1%85%B3%E1%86%AB%20UI%20cd3ea4e985c448b1b1e5d54d5a12074a/Screenshot_2022-11-03_at_14.24.19.png"><img style="width:240px" src="%E1%84%8C%E1%85%B5%E1%86%A8%E1%84%80%E1%85%AA%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%B5%E1%84%80%E1%85%A9%20%E1%84%90%E1%85%A9%E1%86%BC%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%89%E1%85%A5%E1%86%BC%20%E1%84%8B%E1%85%B5%E1%86%BB%E1%84%82%E1%85%B3%E1%86%AB%20UI%20cd3ea4e985c448b1b1e5d54d5a12074a/Screenshot_2022-11-03_at_14.24.19.png"/></a></figure></li></ul><p id="c4f558d9-95ec-4a55-8567-d1c5e676bdab" class="">
+</p><ul id="678ac28b-1481-47d6-831e-525a4e5b43ed" class="bulleted-list"><li style="list-style-type:disc">power save mode 문구<div><p id="68a9f3b3-b696-4f43-bef1-89a8783b98db" class="">“Some features may slow down under this mode”라는 문구를 사용하지 말자</p><ul id="a1497fd8-f6cb-402d-aa93-2148f1b034e2" class="bulleted-list"><li style="list-style-type:disc">단점을 너무 대놓고 “느려진다”고 드러낸다</li></ul><ul id="830c2a3b-4989-4f54-acdd-bf492a5ac133" class="bulleted-list"><li style="list-style-type:disc">이런 식의 system dialogue에 slow down이라는 표현을 사용한 reference가 없다</li></ul><ul id="1232e80a-f7cf-4a13-ab79-2877d46a7ad4" class="bulleted-list"><li style="list-style-type:disc">slow down이란 표현이 들어간 아티클들이 다들 너무 부정적이다</li></ul><p id="3f8c1d78-83ba-4c85-8641-8d40801d41e5" class=""><mark class="highlight-orange_background"><strong>You’re in power save mode
+</strong></mark><mark class="highlight-orange_background">App performance will be reduced in power save mode.</mark></p><ul id="9035b028-f6f5-47b4-8c5e-556b50d60481" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><mark class="highlight-orange_background">Do not show again</mark></span></li></ul></div></li></ul></div><p id="5c2e3067-67ab-460f-a0e5-0897c58926ec" class="">
+</p><h3 id="ec0d9cef-60cf-4f47-b23b-ac5a68a90dc3" class=""><details open=""><summary>오프라인 실행 시</summary></details></h3><div class="indented"><div><p id="2abcd907-e53b-41f2-a304-844dc34446f2" class="">앱 설치 후 처음 실행 시 오프라인인 경우는?</p></div><p id="476f1e0a-5223-477c-8655-1722b0e9be83" class="">오프라인 시
+자동으로 태깅 안된 사진이 있다면
+갤러리와 섬네일에서 표시
+섬네일을 누르면 도움말이 나오도록</p><p id="b0580c55-0ed3-415d-b2e5-8e04bf189d2e" class="">
+</p></div><p id="8f1a7713-277e-458d-bf38-5b4fe68318ad" class="">
+</p><h2 id="db428a09-b79a-448b-8a4a-86c300a60afc" class=""><details open=""><summary>튜토리얼</summary></details></h2><div class="indented"><div><ul id="1b79fb2c-efdf-4dfc-b6a7-1c6471b4444f" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/SHT-d1c65cc7bbcf472990b53c09f1c3fadf">SHT-튜토리얼</a> 희윤님께 전달 및 <mark class="highlight-brown_background">디자인 디테일 잡기</mark></summary><figure id="5cba6ddc-4710-40f8-855d-8e18d94d6aea"><div class="source">https://www.figma.com/file/Br8LM0DLidEqe1fU2b3h7H/SHT-Design-System?node-id=0%3A1</div></figure><ul id="cac035fb-ed5a-4409-89b1-d53b38ec8776" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown_background">skip 버튼 색깔</mark></li></ul><ul id="4bd1e3be-00eb-4253-9424-8233c30cc961" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown_background">Skip, Done 대문자</mark></li></ul><ul id="f66b5a77-883e-4568-8612-d1631ff54137" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown_background">메시지 글씨와 바탕 색깔</mark></li></ul><ul id="457192cd-4b37-46bc-9c03-386010dbefa4" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown_background">“You can add or remove tags” 가리키는 위치가 다소 애매하더라도 문제 없음</mark></li></ul></details></li></ul></div><div><p id="c7821023-587b-4495-a669-6739dad25399" class=""><mark class="highlight-orange_background">종료 시에 다이얼로그 창이 올라오는 건 너무 무겁다</mark></p><p id="d49d5c18-f1a9-4a6e-a275-5e925fd74c43" class=""><mark class="highlight-orange_background">skip 색깔은 바꿔 줘도 될듯</mark></p><p id="285f932a-d2bf-4051-bccb-861e06486516" class=""><mark class="highlight-orange_background">객체 위에 올라가는 메시지가 투명할지 말지는 선택</mark></p><p id="d461ad6e-8a63-4f8b-9e00-566e4dd68c15" class=""><mark class="highlight-orange_background">skip 및 done 대소문자 처리 일치시키기</mark></p><p id="175d3614-1432-41ab-bf7f-0b279e2184e0" class=""><mark class="highlight-orange_background">지금 텍스트와 플로우는 괜찮을 것 같음</mark></p><p id="06e337c9-bb06-451a-9118-50b94a4f1e95" class=""><mark class="highlight-orange_background">탭 가이드 애니메이션은 아래 참조</mark></p><figure id="9f22bf28-f686-47de-acb7-a4eef0ea62e5" class="image"><a href="20221104-S&amp;D%202bd17d17590244a3b081126190551cd2/Screen_Recording_2022-11-03_at_12.19.51.gif"><img src="20221104-S&amp;D%202bd17d17590244a3b081126190551cd2/Screen_Recording_2022-11-03_at_12.19.51.gif"/></a></figure></div></div><h2 id="3676ed02-f16b-4092-80ea-0a81b94cc960" class=""><details open=""><summary><mark class="highlight-yellow">[delayed]</mark>notification</summary></details></h2><div class="indented"><ul id="a61df24f-8fbc-4a49-9eed-0a6520037809" class="bulleted-list"><li style="list-style-type:disc">확인하지 않은 알림과 확인한 알림은 가로로 섹션을 구분하기</li></ul><ul id="b0c1d164-fa9f-4439-88f1-989e17cd3943" class="bulleted-list"><li style="list-style-type:disc">확인한 알림은 날짜별로 가로로 섹션을 구분하기</li></ul><p id="ba7a10f7-71ca-4991-9c88-23ee6b9f6e0c" class="">
+</p></div><p id="9d06f495-515c-45ff-99c1-a35a87dffb26" class="">
+</p></div></article></body></html>

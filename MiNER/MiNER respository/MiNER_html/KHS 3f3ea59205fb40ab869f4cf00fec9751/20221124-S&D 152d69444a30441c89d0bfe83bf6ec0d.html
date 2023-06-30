@@ -1,0 +1,676 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>20221124-S&amp;D</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="152d6944-4a30-441c-89d0-bfe83bf6ec0d" class="page sans"><header><h1 class="page-title">20221124-S&amp;D</h1><table class="properties"><tbody><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>관련 링크</th><td></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>Type</th><td></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Due Date</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-orange">meeting</span></td></tr><tr class="property-row property-row-status"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesStatus"><path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path></svg></span>상태</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>작성 일자</th><td><time>@2022년 11월 24일 오후 6:19</time></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Date</th><td></td></tr><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>Participants</th><td></td></tr></tbody></table></header><div class="page-body"><h3 id="59a01bba-4191-477d-9698-bb0968b71fdb" class="">회의록</h3><h3 id="56812dfe-fb1b-4dfb-a39e-e3a6dcd3c63e" class=""><details open=""><summary>SHT</summary></details></h3><div class="indented"><div><ul id="bc74d37f-8838-4434-9eda-8441e3be559b" class="toggle"><li><details open=""><summary>현 상태 점검 (ImageDetail)</summary><p id="4d07700e-7d6f-4441-b7f3-e168787971e8" class="">- ImageDetail에서 일부 사진의 위치와 배율이 이상하게 잡힘</p><p id="778408ac-d54d-4c09-8218-149251101202" class="">- 스와이프 다운 동작과 태그바 영역/status bar 겹치는 문제</p><p id="ba396da2-ec21-4c52-b833-88f17cc16bc8" class="">- 최대 상태에서 확대 → 뻑뻑함 개선 </p><p id="3a7da2d1-d8d8-4943-a7f4-70f0743fea01" class="">- 최소 상태에서 축소 → 사진에서 빠져나가는 동작</p><p id="49ad1480-74a3-47e8-b5ca-1934d0dd061b" class="">- 사진 확대 상태에서 이동을 조금 더 민감하게 할 필요</p><p id="320c0029-603f-4847-a876-dead2cf23b27" class="">- 상하와 좌우 스와이프 명확하게 구분</p><p id="09f7c109-e5a2-4d9d-9c0c-a7f7acdca9a2" class="">- 사진 확대 상태에서 사진 전환 시 애니메이션 매끄럽게 개선</p></details></li></ul></div><div><ul id="4f66cc8c-b263-48b5-8bc1-006f0653b88d" class="toggle"><li><details open=""><summary>search에서</summary><div><ul id="f82a41cf-5517-4af4-87d9-48d2593ad9a6" class="bulleted-list"><li style="list-style-type:disc">shortcut의 형성 = 검색으로 한다</li></ul><ul id="1ed61b74-9ed6-4213-9a5d-7ee5d30fb9b0" class="bulleted-list"><li style="list-style-type:disc">검색 화면<ul id="e9e9173c-f650-47cc-b319-2d7810dd8eff" class="bulleted-list"><li style="list-style-type:circle">list element<ul id="a184a07f-6903-4397-8ffe-43b2f06f96dd" class="bulleted-list"><li style="list-style-type:square">두 줄을 넘어갈 때는 넘어가는 부분을 …으로 생략하기</li></ul><ul id="4463edb7-229b-460f-b701-a7c1416876bb" class="bulleted-list"><li style="list-style-type:square">숏컷 - 기록 - 추천 순서</li></ul></li></ul><ul id="eb8c3c31-ea29-4ccb-8425-509ab1ba787c" class="bulleted-list"><li style="list-style-type:circle">상황별 표출<ol type="1" id="63fdf2f3-b037-47f6-8186-127889aa89b3" class="numbered-list" start="1"><li>처음 검색 바를 누름 - 숏컷 미표출, 개수 제한 50개<p id="a4717083-de78-44ad-98bb-4969a512b6cd" class=""><mark class="highlight-gray">아무 것도 검색 안한 상태에서 보이는 숏컷 3개는 어차피 메인하고 똑같으니까</mark></p></li></ol><ol type="1" id="ddbb6d10-4436-4c01-a426-cbb7ff5db6fa" class="numbered-list" start="2"><li>첫 검색어를 타이핑 - 숏컷 표출, 숏컷 포함 20개까지<p id="aef8b807-6465-48f2-8d5b-b70641781a0b" class=""><mark class="highlight-gray">숏컷이 너무 많아서 생기는 문제에 대한 보완이 확실하게 된다.</mark></p></li></ol><ol type="1" id="a3ccc9b8-e72b-4cd4-a9c0-5b8db180ce6e" class="numbered-list" start="3"><li>상세 검색 바를 누름 - 숏컷 표출, 개수 제한 50개<p id="3be253a3-10ea-4618-8789-81ee004a09fa" class=""><mark class="highlight-gray">타이핑하지 않고 관련된 숏컷을 검색할 수 있다는 점이 확실하게 강점이다.</mark></p></li></ol><ol type="1" id="4ea551d9-f6b7-4669-b299-5ccd7790550e" class="numbered-list" start="4"><li>상세 검색할 검색어를 타이핑 - 숏컷 표출, 숏컷 포함 20개<p id="51b54037-448d-4923-bb8e-c092751f285f" class=""><mark class="highlight-gray">숏컷이 너무 많아서 생기는 문제에 대한 보완이 확실하게 된다.</mark></p></li></ol></li></ul><ul id="a9758001-27c5-4ede-9fbb-40a98d825a77" class="bulleted-list"><li style="list-style-type:circle">검색 화면에서의 검색 기록의 표출<ul id="32194333-bfb4-4bd3-ba51-8152e2089dea" class="bulleted-list"><li style="list-style-type:square">기록은 삭제 가능</li></ul><ul id="c80163ff-9c23-48d7-9411-846100a013dc" class="bulleted-list"><li style="list-style-type:square">숏컷의 검색 기록은 안해도 됨<p id="66c43c8e-9160-482a-b6da-2619f1acf5ea" class=""><mark class="highlight-gray">기록보다 상위에 있어서 숏컷의 검색 기록을 남길 필요가 없다.</mark></p></li></ul></li></ul><div><ul id="92f3e04c-b5e0-4184-b2bc-217e4209ea51" class="bulleted-list"><li style="list-style-type:disc">검색에 적용된 태그에 색상 부여 X<p id="e8aa8a77-2239-4c38-bf16-d29bd4d0a697" class=""><mark class="highlight-gray">찬: 색상 부여 해야 될 것 같다, 검색되어 있는 걸 구분을 </mark></p><p id="5c0b713b-1bb0-4c70-9963-fdac51db6a8d" class=""><mark class="highlight-gray">찬: 다른 태그는 더해진다는 의미를 주면, 지금 쟤가 검색이 되어 있구나 를 보여주는 역할</mark></p><p id="0a41e475-ab88-439b-8d1a-1d0e90bfcbc1" class=""><mark class="highlight-gray">찬: 검색이 된 태그에 대해서만, 타이핑을 라이브하게 따라가며 색상을 바꿀 필요는 없을 것 같다</mark></p><p id="ef62d6bd-7ebd-404d-80c3-3781ed9f20c0" class=""><mark class="highlight-gray">건: but </mark><mark class="highlight-gray"><a href="20221124-S&amp;D%20152d69444a30441c89d0bfe83bf6ec0d.html">검색 뷰에서 숏컷과 태그를 시각적으로 구분했으니 </a></mark><mark class="highlight-gray">필요가 없음</mark></p><p id="253c4fdf-89d1-49b7-8642-caa97a3fa6f3" class=""><mark class="highlight-gray">또 한 줄에서 세 개의 색상을 사용하는 것보다 하나의 색상을 사용하는 것이 자연스러움</mark></p></li></ul></div><ul id="db0f4bc3-da1b-4ae4-8e7c-6b7adb359016" class="bulleted-list"><li style="list-style-type:circle">검색 화면에서의 숏컷 표출<ul id="56d4d0ce-98db-4207-aaaf-b1cab11f10b6" class="bulleted-list"><li style="list-style-type:square">한 shortcut 내에서 굳이 검색된 태그가 앞에 나오도록 재배치할 필요가 없음<p id="6cc4700b-c3ac-4060-bb29-8b78004c03be" class=""><mark class="highlight-gray">우선 숏컷 하나 안에서 태그의 순서보다는 표출 여부가 중요</mark></p></li></ul><ul id="71f7f33a-f8f9-40b0-beae-cd00ce5ecd57" class="bulleted-list"><li style="list-style-type:square">상위 3개 표출<p id="f0298fde-dfc4-4967-ba63-4e57291ec1d2" class=""><mark class="highlight-gray">찬: 숏컷의 생성도 검색으로 치고 있는데 이렇게 되면 검색 view에서의 숏컷의 표출이 늘어날 것. 이렇게 되다보면 숏컷들에 밀려서 최근 검색이나 검색어 추천이 밀려버릴 가능성이 있다.</mark></p></li></ul><ul id="ab073e49-9e83-461c-aa8f-fe33a9dc049c" class="bulleted-list"><li style="list-style-type:square">숏컷 표출의 순서<ol type="1" id="155789f4-e4dd-4a0a-9ae4-0169085340b8" class="numbered-list" start="1"><li>숏컷 내 일치하는 태그의 위치가 앞에 있을수록 먼저 표출<p id="a84570af-762f-4e9d-9592-d18d8437c2f9" class=""><mark class="highlight-gray">숏컷을 형성할 때 먼저 검색한 태그가 상단에 놓이기 때문</mark></p></li></ol><ol type="1" id="4c385f0f-b1f3-467f-9951-2db10a7e9424" class="numbered-list" start="2"><li>첫번째 단어의 ABC 순서 → 두번째 단어의 ABC 순서 → 세번째 단어의 ABC 순서<div><p id="093fd319-19ba-4134-9b72-6b540b4b2aeb" class="">빈칸은 모든 abc에서 맨 앞임</p></div></li></ol></li></ul><ul id="777ca487-153e-4c40-bda8-4e51fc8a0e56" class="bulleted-list"><li style="list-style-type:square">숏컷 item의 아이콘은 진한 검정색으로 두께는 다른 list item과 동일하게<ul id="0e2d6f38-6c97-401c-9f32-26c5d8c28a00" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-gray">다른 리스트들의 요소보다 명확히 상위의 위계를 가져야</mark></li></ul></li></ul></li></ul></li></ul></div></details></li></ul></div><div><ul id="0e9ed43f-8551-4820-8089-24447a022cc9" class="toggle"><li><details open=""><summary>search result에서</summary><ul id="41a8969c-5436-4166-9cb6-aef82957285f" class="bulleted-list"><li style="list-style-type:disc">검색 logic<div><ul id="4fb57f3a-2e4e-4e70-9d32-ff2434911a38" class="bulleted-list"><li style="list-style-type:disc">띄어쓰기를 감안하지 않고 검색한 태그를 포함하는 태그도 검색 범위로 지정<ul id="e79be203-081c-4dd2-89fe-7ffc954a0854" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-gray">loss 대비 gain 이 확실하기 때문</mark><ul id="0746c98c-1014-4965-bc36-767a469f5245" class="bulleted-list"><li style="list-style-type:square"><mark class="highlight-gray">loss: 검색한 단어를 포함하되 사이에 띄어쓰기를 두고 있는지 여부를 고려하지 않음으로써  일부 관련성이 없는 결과를 얻게 되는 상황</mark></li></ul><ul id="85053093-1051-42c0-8212-99cb6f7dd9aa" class="bulleted-list"><li style="list-style-type:square"><mark class="highlight-gray">gain: 검색한 단어를 포함하되 사이에 띄어쓰기를 두고 있는 태그만 포함함으로써 관련성이 높은 검색 result를 잃게 되는 상황</mark></li></ul></li></ul><ul id="c527cef8-e8fb-4042-8ed0-a63aa9acd574" class="bulleted-list"><li style="list-style-type:circle">다만 공백 문자의 검색/태그 추가 행위 금지<p id="8a74954a-d57d-4f81-86f9-47e746332b51" class=""><mark class="highlight-gray">현: space(공백 문자) 검색하면?
+건: 그건 못하도록 막아야 할 거 같다.</mark></p></li></ul></li></ul></div></li></ul></details></li></ul></div><div><ul id="bc58e9f1-adda-4811-9a58-4e4b2b6c0bd4" class="toggle"><li><details open=""><summary>그냥 null message를 없애자</summary><p id="a18bdf2a-1f94-45bd-8344-479024f0697b" class=""><mark class="highlight-gray">찬: 좀 길다, relevant 까지 들어간 건</mark></p><p id="99588e8b-f58c-47c1-976f-efcd46fa6d3b" class=""><mark class="highlight-gray">건 &amp; 현: 빈칸으로 놔두는 경우도 많다</mark></p></details></li></ul></div><div><ul id="3a9bd3fb-77c9-4900-9298-c5c8e3d6e14e" class="toggle"><li><details open=""><summary>태그가 쌓이는 순서 보정 필요</summary><ul id="a3e34e26-2839-4168-b86a-6c9542feb772" class="bulleted-list"><li style="list-style-type:disc">숏컷을 형성할 때 먼저 검색한 태그가 상단에 놓여야 함<ul id="64a09b70-14c8-4ea1-977e-ddf8fa34c693" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-gray">먼저 검색한 태그가 더 높은 위계를 가져야 하기 때문임</mark></li></ul></li></ul><ul id="99555ad3-9378-4a10-b030-d406111fd311" class="bulleted-list"><li style="list-style-type:disc">그런데 지금은 반대로 되고 있음</li></ul><p id="ad85a761-e302-4286-8b10-6e416f1c9e6e" class="">
+</p></details></li></ul></div></div><h3 id="0e04e34e-49f8-4f0b-9d6a-e4da5b118dec" class=""><details open=""><summary>MSC</summary></details></h3><div class="indented"><ul id="3e30b146-1c77-4ded-a1c0-06360777b187" class="bulleted-list"><li style="list-style-type:disc"><strong>소크라테스 패러독스</strong> 작품 등록 요청</li></ul><ul id="af7387a8-5bdd-4a7b-a633-7d9eb7e2e649" class="toggle"><li><details open=""><summary>CSV 폼 및 스토리 제작✅</summary><figure id="db9619d2-1995-48ec-aca7-1f9799ddb288"><a href="https://docs.google.com/forms/d/11be0nGQ0FwJ_P1N1eFEckZcfIUZs_XMgD9CY3MXoOYM/edit" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://docs.google.com/favicon.ico" class="icon bookmark-icon"/>https://docs.google.com/forms/d/11be0nGQ0FwJ_P1N1eFEckZcfIUZs_XMgD9CY3MXoOYM/edit</div></div></a></figure></details></li></ul><ul id="4c8ef563-111a-476c-8c61-2b865163970a" class="toggle"><li><details open=""><summary>드라큘라 체코판인데 브로드웨이 판으로 불러와짐</summary><p id="bc2450c6-ba1e-457b-8799-8957d275fac5" class="">지금 크롤링으로 잡히는 드라큘라를 드라큘라c로 바꿔야 한다 <span class="user">@구일</span> </p><p id="21dd013e-f825-478e-9eb1-b850d68602aa" class="">장기적으로는 기간(+공연장)으로 잡는 게 나을 것 같다</p><p id="17effadd-b970-4cce-9cd3-29859e01c7d6" class="">지금 크롤링에서 오는 제목이 어떤건지 알랴주세요!</p><p id="38db8387-d529-4b94-9ae0-1351f8857760" class="">
+</p></details></li></ul><ul id="050132b1-4717-4ad3-964a-78dae714432b" class="toggle"><li><details open=""><summary>iOS <a href="https://www.notion.so/2-2-0-c4d6cf8b89624e649e150d62deb76187"><img class="icon" src="20221124-S&amp;D%20152d69444a30441c89d0bfe83bf6ec0d/notion-ios.png"/>2.2.0</a> 및 AOS <a href="https://www.notion.so/2-2-0-04f7a8f05bbb427fb8df58f3f86f434b"><img class="icon" src="20221124-S&amp;D%20152d69444a30441c89d0bfe83bf6ec0d/notion-aos.png"/>2.2.0</a> </summary><ul id="79472044-529c-411e-b050-8890f3cb4f8b" class="toggle"><li><details open=""><summary>중복 선택 처리 여부</summary><p id="f664401d-a43c-4fd9-bc71-1b318897ccd5" class="">선택에 터치가 적은 게 편한지, 안내가 있는 게 편한지 명확하지 않아서
+안드랑 ios를 지금처럼 다르게 출시해 보는 것도 좋을 듯</p></details></li></ul><ul id="3fdf37a2-35d7-43b6-a14c-608134127213" class="toggle"><li><details open=""><summary>(예상키로는) 기존 데이터 변환 과정에서 템플릿에 존재하지 않을 때, 존재하는 배우도 미등록 처리</summary><p id="450ae1cf-2c04-4fe5-a89a-47b3cabf4e1f" class="">아마 ‘이 시즌에 있나?’ 에 no로 간 값이 바로 미등록으로 가는 듯
+’이 시즌에 없다’ → ‘배우 디비에 있나?’ 체크해서 ‘내가 추가한 출연진’으로 보내야 함</p></details></li></ul><ul id="6386a3da-a993-449e-9981-f75c6f344c39" class="toggle"><li><details open=""><summary>‘출연진 추가 선택하기’ 관련</summary><p id="71b3989c-530f-4c31-a00b-e1fdcc357969" class="">지금 iOS 로직을 따라간다</p><p id="7a7dfe46-69f1-4c0f-be5b-9d42a9a6df6d" class="">‘추가 선택하기’ → 하단 버튼이 저장, 항상 활성화</p></details></li></ul><ul id="71e536d2-8b2e-4c95-b382-e372aa234471" class="bulleted-list"><li style="list-style-type:disc">출연진 이름 순서도 변경 필요 (가나다가 아니라 일치하는 거로 시작하는 것부터)</li></ul><ul id="3d2dc42b-0ed4-4355-84a2-e34811e45bb3" class="toggle"><li><details open=""><summary>티켓에서 보이는 출연진의 순서 (안드로이드)</summary><p id="9fb013d3-95cd-4f7a-b970-7eb666d88639" class="">‘역할 순 → 한 역할 내에서 추가한 순/뮤즈위키 등록순’이면 좋겠다</p><p id="1bb6cd8b-2fea-4ad4-a413-c94ee25be363" class="">직접 추가한 경우 → 선택한 순서로 가져오면 좋겠고, 그거 안 되면 그냥 ㄱㄴㄷ ㄱ</p></details></li></ul></details></li></ul><ul id="52b84b5b-96fd-47b7-a65d-d81d434ce563" class="toggle"><li><details open=""><summary>대표 배우를 볼 수 있는 방법</summary><p id="a4ed58d8-4c2b-44c9-90ca-5fde353b78ce" class="">동명이인 리스트 및 현재 대표배우 지정자</p><p id="3abe3a7c-8864-4bd7-bbca-5ffbbca86145" class="">가능하면 바로 변경까지</p><p id="1ce69758-bc14-4d15-ac2a-e11cfbd20ebb" class="">
+</p></details></li></ul><ul id="70adbe9c-16ec-429a-8821-8c0ae87f48cf" class="toggle"><li><details open=""><summary>뮤즈위키 동명이인 처리</summary><p id="20c36f35-8a29-470b-9e71-7baf12cef007" class="">넥투노, 쓰릴미, 더데빌(트위터 도는 거 잡아내기)</p><p id="9cad0488-66bf-4625-9516-33d1a730f56a" class="">바꾸고 리트윗 한번 해주기</p><p id="0f1facfe-cecc-4d8f-9939-d8f78aedf921" class="">+엑셀을 계속해서 업로드할 때, 배우가 어떻게 되는지 확인하기(넥투노 4연)</p></details></li></ul></div><p id="ca1e70af-e4f2-41c3-ab8d-3226a18c9468" class="">
+</p></div></article></body></html>

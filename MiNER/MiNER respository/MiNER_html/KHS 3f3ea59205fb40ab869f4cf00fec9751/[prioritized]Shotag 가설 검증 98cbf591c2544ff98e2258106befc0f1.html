@@ -1,0 +1,724 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>[prioritized]Shotag 가설 검증</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="98cbf591-c254-4ff9-8e22-58106befc0f1" class="page sans"><header><h1 class="page-title">[prioritized]Shotag 가설 검증</h1><table class="properties"><tbody><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>관련 링크</th><td></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>Type</th><td></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Due Date</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-yellow">Shotag concept</span></td></tr><tr class="property-row property-row-status"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesStatus"><path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path></svg></span>상태</th><td><span class="status-value select-value-color-blue"><div class="status-dot status-dot-color-blue"></div>In progress</span></td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>작성 일자</th><td><time>@2022년 12월 5일 오후 1:39</time></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Date</th><td></td></tr><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>Participants</th><td></td></tr></tbody></table></header><div class="page-body"><h2 id="8e530bd4-9db9-4d54-9598-8ab31ed55b33" class="">Status quo</h2><p id="3ba84134-f06b-4bdc-a7f6-1124e7220799" class="">잠시 미루기 - 랜딩페이지 구체화가 우선이다</p><div><p id="541bde50-5c78-49bc-b5af-8cbc9dff8170" class="">일단 스토리보드 구체화가 필요해</p><p id="a08151ff-d2a0-4d62-beb2-9a2ffb1ef277" class="">애플리케이션에 대한 짧은 설명으로 눈길을 잡기에 확신이 없다면 긴 시간을 허비해야 하는 컨텐츠를 랜딩 페이지의 첫 페이지에 넣는 것은 무리가 있다</p><p id="553aa08b-5c2a-42c5-86bc-d4e8a422c763" class="">
+</p><p id="08646c36-5bd7-4e47-9ca5-b67653f8862f" class="">배너는?</p><p id="518773af-3f47-4908-b4f2-f0e0e39d76d5" class="">인력이 조금 딸림. 병렬적으로 하면 좋음</p><p id="56d86d87-5b74-492b-82cd-6e9e8ee8b5b7" class="">다같이 스크린샷과 관련된 문제들 중에서 사람들을 공감시킬 수 있는 문장들을 고민해보자</p></div><p id="6cea026e-ed6c-45b4-827d-7597b86082bd" class="">
+</p><p id="d6ab297f-3b79-4bdb-a790-13f14d59de57" class="">확정</p><ul id="ff7d9505-86ef-44f7-b007-ee7812214747" class="toggle"><li><details open=""><summary>랜딩 페이지 mvp</summary><div><p id="e0a7d7a7-47e7-40fa-8db2-7c021f1bd904" class="">배너(텍스트, 이미지, 영상 / 광고 컨텐츠) → 페이지(tutorial) → 버튼(Fake door)</p></div><div><ul id="87c24897-f0fa-4d95-bf91-8d1ba17022cc" class="toggle"><li><details open=""><summary>질문들과 검증 방법</summary><ol type="1" id="eac8a564-d8d9-44c3-bb81-b3ec2f969700" class="numbered-list" start="1"><li>어떤 스크린샷이 떠오른 후 그 화면으로 되돌아가는 데에 필요한 시간과 노력을 줄이고 싶어하는 사람이 미국에 거주하는 20대 안드로이드 유저 중에서 어느 정도 되는가?<ol type="a" id="7f8968d6-eedf-4ca9-9427-561a692a4e80" class="numbered-list" start="1"><li>노출 대비 클릭 비율을 가지고 검증</li></ol></li></ol><ol type="1" id="6ddf4aea-6231-401f-844f-e2a3c1db19e6" class="numbered-list" start="2"><li>그 중 <a href="%5Bprioritized%5DShotag%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%2098cbf591c2544ff98e2258106befc0f1.html">자동 태깅 애플리케이션을 통한 모바일 스크린샷 검색</a>(①과 ②을 모두 갖춘 솔루션)을 설치하여 한 번이라도 사용하고자 하는 미국 안드로이드 20대 유저들의 규모가 어느 정도 되는가? (만약 최종 MVP에서 ①만 들어간다면 ②는 빼는 게 좋을 듯)<ol type="a" id="2454589c-7283-4b0e-87d5-aee6b68424fb" class="numbered-list" start="1"><li>최종 Download 버튼을 누른 비율</li></ol></li></ol></details></li></ul></div></details></li></ul><p id="aebd102f-b12e-4516-a229-a70c21347dce" class="">
+</p><ul id="59da18dd-0c6f-429c-84e2-1c1757d25196" class="toggle"><li><details open=""><summary>앞으로 할 일</summary><p id="bdce1ea5-c610-408e-ae09-d19856509e76" class=""><mark class="highlight-brown_background">어디에 있는 사람을 얼리어답터라고 볼 것이냐</mark></p><p id="ed7808b7-b8f8-4552-a868-49b77cafd260" class=""><mark class="highlight-brown_background">채널 찾기</mark></p><p id="57dab706-cbd9-4029-9fb0-51341d79f22d" class="">1. 채널
+ 1-1 채널의 종류
+ 1-2 채널별 비용 및 책정 방식
+ 1-3 채널별로 확인할 수 있는 수치
+2. 배너에서 사용할 주제
+ 2-1 문제 의식
+ 2-2 우리가 생각하는 강점
+ 2-3 …
+3. 랜딩 페이지의 구성 (다른 거에 비하면 뼈대가 잡힌 상태)
+ 3-1
+ 3-z 마지막 다운로드 버튼을 눌렀을 때 추후 스토리</p><p id="cba437b8-b030-462b-ac22-547b8d02da74" class="">3. 랜딩페이지의 스토리보드 → <span class="user">@현식</span>
+2. 후킹 컨텐츠의 컨셉 → 찍어내서 거름
+1. 채널 조사 → 다같이
+전체 리스트+적합한 리스트</p><p id="e3600902-c972-47ad-a4db-2cd79c88dd5b" class="">
+</p><p id="a7c58bf3-3753-439c-b200-e552b4adad45" class=""><mark class="highlight-brown_background">채널 탐색 방법</mark></p><ul id="7ae63d16-5e8f-4aaf-a605-4f9315c9c0aa" class="bulleted-list"><li style="list-style-type:disc">demographic targeting</li></ul><ul id="cbb59e36-531e-473a-afe2-da6e6560ff3c" class="bulleted-list"><li style="list-style-type:disc">device targeting 여부</li></ul><ul id="34b69f46-5b1f-4a8c-a9ae-aeceedaea10a" class="bulleted-list"><li style="list-style-type:disc">여기에 정말 다양한 정보들 전부 다</li></ul><p id="9a5deaa9-8b8e-4bb4-b52f-4f83dcc8be82" class="">
+</p><p id="0abbc537-443b-4128-9a0b-f0ae7314df8b" class=""><mark class="highlight-brown_background">랜딩 페이지 제작 방법</mark></p><div><ul id="c83d5dfa-fb45-4705-b8a2-0b9117662086" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown_background">노코드 웹 제작 사이트 (아임웹)</mark></li></ul><ul id="bb071ebc-cf2b-4969-b343-33019a47206c" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown_background">노션</mark></li></ul></div><p id="40464b1a-e4fa-4afb-a71f-8147ad2dab16" class="">
+</p><p id="4dad1136-62db-4022-8460-08da0a22f3a8" class="">우리가 알고 싶은 것들 (모두 동의함)</p><ul id="0507fefd-e41a-47f8-983c-eaed1b980695" class="toggle"><li><details open=""><summary>문제와 솔루션 정리(모두 동의함)</summary><ul id="ad02c3f9-90a6-4683-8ad5-0990e4153c1d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">문제: </mark><mark class="highlight-teal"><a href="%E1%84%80%E1%85%AA%E1%84%80%E1%85%A5%20focus%20group%20interview%201f5baef6a906422bb7ea001b3382f068.html">유저에게 떠오른 모바일 스크린샷을 찾기 위해 필요한 시간과 노력이 너무 많이 든다.</a></mark></li></ul><ul id="222c0191-2f5e-4b2a-936c-5e2ac1e2a3f3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">목표 고객: 미국에 거주하며, 20대 안드로이드 유저</mark></li></ul><ul id="07422219-219f-4962-bfde-24c352631acd" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">목표 고객의 문제 상황: 어떤 스크린샷이 떠오르더라도 그 화면으로 되돌아가기 어렵다</mark></li></ul><ul id="a0191392-63a4-470f-82d4-09dc60726850" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">해당 문제의 반복 여부 및 주기: 정확하지 않지만 인터뷰에 의하면 많은 수의 응답자가 자주 그렇다</mark></li></ul><ul id="ebbdb49c-29ef-40e7-9b9d-93008a817537" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">솔루션: 유저가 필요할 때 자동 태깅 애플리케이션을 통한 모바일 스크린샷 검색
+태그를 통한 검색 엔진 내 스크린샷 검색 &amp; 검색의 유연성과 편리성 </mark></li></ul><ul id="4160911b-5c3a-4e85-b8da-ba30957e8231" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">기술: 스마트폰 애플리케이션과 OCR, NLP 모델</mark></li></ul></details></li></ul><ul id="3a600070-aa27-4429-8bea-c189a62e33ed" class="toggle"><li><details open=""><summary><a href="%5Bprioritized%5DShotag%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%2098cbf591c2544ff98e2258106befc0f1.html">지금 검증이 필요한 것들</a> &gt; 지금 검증이 필요한 것들 → 지금은 필요 없다</summary><ul id="7ebd9fa4-d3d8-407f-b27a-5b41767c4c8c" class="bulleted-list"><li style="list-style-type:disc">지금은 필요 없다.<ul id="73cb37cb-4a20-4617-9fe9-d7a17afff221" class="bulleted-list"><li style="list-style-type:circle">지금은 PMF가 불필요하다<ul id="d8635484-24a7-4434-926c-113993ce6120" class="bulleted-list"><li style="list-style-type:square">PMF가 필요한 이유가 캠페인에 대한 성과 판단의 기준이었는데 그 시점이 서비스 출시 이후임</li></ul></li></ul><ul id="883ea31e-5589-4604-971e-abf1e6ef84b9" class="bulleted-list"><li style="list-style-type:circle">지금은 PMF가 불가능하다<ul id="81f49b55-3b00-4077-ba2e-4562759551a7" class="bulleted-list"><li style="list-style-type:square">PMF를 정의할 수 있는 지표가 서비스 출시 이후에 얻을 수 있는 지표들임</li></ul></li></ul></li></ul><ul id="d6460dd1-204e-4b3f-8163-1eaec5c90b6c" class="bulleted-list"><li style="list-style-type:disc">나중에 마케팅 성과를 측정할 때 필요<ul id="9fa7b4c1-f2ca-48ab-b212-91acf189fa3c" class="bulleted-list"><li style="list-style-type:circle">PMF가 필요한 이유가 캠페인에 대한 성과 판단의 기준이라는 점에 동의</li></ul></li></ul><p id="e14e8f88-269d-4afd-bd44-644c190a4204" class="">
+</p></details></li></ul><ul id="af525d97-2df4-4c0a-9318-230892bd5bb9" class="toggle"><li><details open=""><summary><a href="%5Bprioritized%5DShotag%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%2098cbf591c2544ff98e2258106befc0f1.html">나중에 검증이 필요한 것들</a> &gt; 나중에 검증이 필요한 것들 → 나중에 의미있을 듯</summary><p id="1c33b79c-d034-4eca-a8e2-99aa0c36e084" class="">
+</p><p id="803e8a3e-c9ab-4cd8-9bc0-61f8e13a9813" class="">
+</p></details></li></ul><p id="d9352cd2-f465-4989-ad00-2d05d2cb3fbb" class="">
+</p></details></li></ul><p id="aa608677-7c45-49aa-9019-caae07d19fc0" class="">
+</p><div><ul id="72d52327-0f1f-407d-811f-fffa701aa853" class="toggle"><li><details open=""><summary>채널의 컬럼</summary><p id="a0fdf389-20ba-49de-93fb-670c0c680369" class="">현: 각 라인하나가 플랫폼 나열한다고 쳤을 떄
+<mark class="highlight-brown_background">- 어떤 종류(배너, 피드, 인앱, 비디오)
+- 어떤 audience를 타겟할 수 있는가 (연령, 지역, 디바이스)</mark></p><p id="ce98bb90-4f0f-47fd-ac53-96c815e23ac4" class=""><a href="%5Bprioritized%5DShotag%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%2098cbf591c2544ff98e2258106befc0f1.html">https://www.notion.so/minerinc/prioritized-Shotag-98cbf591c2544ff98e2258106befc0f1#0950f8b38d18460e86e888334efbbddf</a></p></details></li></ul></div><hr id="c6c5eca2-950a-4520-ae8a-0c4191497628"/><h2 id="c32efa4c-119c-4392-9ae8-32912ce9ea78" class="">Suggestion</h2><p id="9a7fbf82-bea0-42f2-9ac2-a74db9db5465" class="">REFERENCES (3:30)</p><p id="395f75af-95a1-408f-b4d0-88062b881172" class="">competitors’ strategy</p><div id="939c6f58-e3da-415e-97fb-022323852d84" class="column-list"><div id="da6253be-26c1-499c-ada0-03b7177718ce" style="width:50%" class="column"><figure id="1c7c8264-9fb3-4a31-9876-2b894a401a8f"><div class="source"><a href="https://www.adbeat.com/">https://www.adbeat.com/</a></div></figure></div><div id="3927ef6a-6763-4502-b583-ca27740928aa" style="width:50%" class="column"><figure id="482d8fbe-36b6-4fed-99ce-e6c6630d3f78"><a href="https://pro.similarweb.com/#/digitalsuite/websiteanalysis/home" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">SimilarWeb Identity</div></div><div class="bookmark-href">https://pro.similarweb.com/#/digitalsuite/websiteanalysis/home</div></div></a></figure><p id="f92309cc-e989-4425-b8bf-1409121d5461" class="">
+</p></div></div><ul id="b429226d-8c6b-4ee5-b431-c8ef695f8e93" class="toggle"><li><details open=""><summary>mymind</summary><p id="a948a2aa-52d5-406d-950a-383333dfdb8d" class="">direct marketing이 유입의 대부분</p><p id="d8f6c2d7-78fa-4571-8911-e69f16a7a6ec" class="">direct marketing 컨텐츠는 알 수 없음</p><p id="ff4ba489-1513-4d1b-921d-0dd554e6c563" class="">display 광고도 진행하지만 그 컨텐츠는 알 수 없음</p></details></li></ul><ul id="db8449aa-b17a-4a04-bd54-739c0f8edd61" class="toggle"><li><details open=""><summary>napkin</summary><p id="4b19d092-c3d4-49f0-b185-d003e2231501" class="">social &gt; direct &gt; organic search &gt; referrals &gt; email 순서 </p><p id="9c5b13d0-50f3-4b13-a1ad-45e8b93a838a" class="">social의 대부분은 youtube를 통한 유입</p><p id="251f34a8-408e-48b7-ae20-ae438c565e5e" class="">display광고는 진행하지 않음</p></details></li></ul><p id="c6f6d0e9-b6f9-405a-925e-4a36c8a16fdd" class="">
+</p><p id="25d13f6e-ddde-474f-a95e-66ccf48e7e9f" class="">IDEAS (5:00)</p><p id="85ac3973-4197-4183-a1a0-29e86eb9b814" class="">articles</p><ul id="b3d4b07f-71d9-4fbf-beb7-4dcb208671f5" class="toggle"><li><details open=""><summary><a href="%E1%84%83%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20AB%20%E1%84%90%E1%85%A6%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%20%E1%84%89%E1%85%A1%E1%84%85%E1%85%A8%20fb619e6fb75d4676b339d160e78c7bdf.html">당장 활용하는 AB 테스트 사례</a> </summary><ul id="c3a7ebc0-b03d-48ab-8cad-e989a9eb4012" class="bulleted-list"><li style="list-style-type:disc">기능보다 가치 (“나에게 어떤 도움이 되는지! 그게 궁금하다”) → 컨텐츠 내용</li></ul><ul id="0d43c974-a9fd-4148-8633-4c83b509dd69" class="bulleted-list"><li style="list-style-type:disc">심리적 허들을 최소화하는 가장 단순한 카피 → 컨텐츠 내용</li></ul><ul id="112e602b-0f84-4415-b809-22ec7daba34a" class="bulleted-list"><li style="list-style-type:disc">CTA 버튼은 반드시 하나 → 컨텐츠 내용</li></ul><ul id="c482d355-e471-4d98-b8cb-4704d7a82311" class="bulleted-list"><li style="list-style-type:disc">컨텐츠 발행일 숨기기 → 컨텐츠 내용</li></ul></details></li></ul><ul id="298a297d-fa1e-489e-b220-b63b17d7d9fc" class="toggle"><li><details open=""><summary>랜딩 페이지를 잘 만드는 방법 <a href="%E1%84%85%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B5%E1%86%BC%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5%E1%84%85%E1%85%A9%20%E1%84%87%E1%85%B5%E1%84%8C%E1%85%B3%E1%84%82%E1%85%B5%E1%84%89%E1%85%B3%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B5%E1%84%8B%E1%85%A5%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%208e4d240dd5674fbcb020e02ba5642702.html">랜딩페이지로 비즈니스 아이디어 검증하기</a> </summary><ul id="38746ba9-a604-4b16-88e2-7a31cc9a16ef" class="bulleted-list"><li style="list-style-type:disc">첫 섹션에서는 why가 아니라 what을 이야기한다. → 컨텐츠 내용</li></ul><ul id="b519d400-cd9b-4e4f-a160-6ae7b549c753" class="bulleted-list"><li style="list-style-type:disc">첫 섹션에서는 유니크한 셀링 포인트를 드러내야 합니다. → 컨텐츠 내용<ul id="ce4ce783-25d3-4438-8842-32638cec15b2" class="bulleted-list"><li style="list-style-type:circle">“기존 경쟁 제품보다 내 제품의 10배 이상 좋은 차별점을 명시해줘야 합니다”</li></ul><ul id="e0a10320-9114-46db-8e51-bbff10a65126" class="bulleted-list"><li style="list-style-type:circle">우리 같은 경우는 스샷 만으로 뭐든지 저장하고 기억할 수 있다는 거 (만약 가설을 추가한다면) </li></ul><ul id="5d770f93-4e68-48f7-b3a1-addd154232c8" class="bulleted-list"><li style="list-style-type:circle">optimized for mobile experiences, nothing can be easier than just taking a screenshot (만약 가설을 추가한다면) </li></ul><ul id="b155fbd6-71ed-45d5-bcea-d48765793729" class="bulleted-list"><li style="list-style-type:circle">기존의 가설의 경우에는 스크린샷 검색 그 자체를 센세이셔널하게 드러내는 카피</li></ul></li></ul><ul id="e28460c0-6d49-4c8c-8a8c-29dccc030637" class="bulleted-list"><li style="list-style-type:disc">증거와 추천으로 제품에 대한 신뢰를 이끌어내야 합니다. → 고객의 추천사나 이 문제에 공감하는 사람의 이야기를 인터뷰처럼 발췌해서 넣기</li></ul><ul id="f00d6e11-0285-4e27-b03f-0624534d01fd" class="bulleted-list"><li style="list-style-type:disc">소비자 입장에서 기능보다는 혜택의 관점에서 기술하기 → 솔루션이 얼마나 쉽고 심플한지에 집중하기</li></ul><ul id="b3428d74-39f2-4cbb-ab8b-0ebd0e7aca1c" class="bulleted-list"><li style="list-style-type:disc">이해하기 쉬운 언어로 짧게 글을 써야 합니다. → 문구 디자인</li></ul><ul id="0e197a56-cd60-4dfd-9c6f-f509f6f8c8d1" class="block-color-brown_background bulleted-list"><li style="list-style-type:disc">시각적으로 일관되게 하고 눈길을 끄는 대표 이미지를 만들기 → <mark class="highlight-gray">컬러, 폰트, 여백을 1-2개만 정하고 일관성을 유지하기</mark></li></ul><ul id="a82322b6-7a55-41e2-bf73-d591d1c71851" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown_background">통계 세팅 (일별 총 방문자 수, 그중 CTA클릭한 수, 공유한 사람 수 등) → 디자인 이후에 결정</mark></li></ul><ul id="8a73d772-259c-4776-9127-49ae3d304d53" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown_background">랜딩 페이지를 이해하는지 반드시 테스트하기 → 디자인 이후 체크</mark></li></ul></details></li></ul><p id="6b8d9389-99f1-405d-8309-2c5d75ce9bc6" class="">
+</p><p id="9ff77d35-85c7-4137-85c4-5ff9316d290e" class="">가설의 추가 <span class="user">@찬호</span> </p><ul id="34ae84dc-43a1-417b-b2aa-d43c4e2a694d" class="bulleted-list"><li style="list-style-type:disc">뭘 추가할 건데?<ul id="b47975da-3371-4640-bfd9-88a03e0f4b19" class="bulleted-list"><li style="list-style-type:circle">“모바일에서 어떤 컨텐츠를 기억하기 위해 스크린샷을 찍은 후 그대로 까먹어버리는 것을 문제로 인식하는 사람들은 20대 미. 안. 유저 중에서 어느 정도 되는가?”</li></ul><ul id="ae8b8bae-260d-471f-a3b9-9fc4c66b589b" class="bulleted-list"><li style="list-style-type:circle">“_______________________하기 위해 스크린샷을 찍은 후 그대로 그대로 까먹어버리는 것을 문제로 인식하는 사람들은 20대 미. 안. 유저 중에서 어느 정도 되는가?”<ul id="22bdb71c-8c25-4713-bfd3-eff173c72f38" class="bulleted-list"><li style="list-style-type:square">problem과 solution의 fit이 보다 잘 맞을 것으로 보이기 때문</li></ul><ul id="7f221649-5de3-4376-ae11-5983199dd32f" class="bulleted-list"><li style="list-style-type:square">지금 샷태그가 해주는 일 = 찾고 싶은 것을 쉽게 찾아주는 것 = 과거와 미래의 기억의 간극을 줄여주는 것</li></ul><ul id="2ac45957-aa30-4a04-ba91-74990af4008f" class="bulleted-list"><li style="list-style-type:square">_____에 들어갈 것 = 데이터를 저장하는 시점과 저장한 데이터가 가치를 발하는 시점이 다른 경우 = (에를 들면 아이디어, life-hacks, 사회적 격리 단계 안내, 나중에 호캉스 갈 때 좋은 호텔 정보) </li></ul><ul id="27dd3dab-ad2f-4c14-84a1-6bf11074de6f" class="bulleted-list"><li style="list-style-type:square">_____에 들어갈 것을 찾아내기 위해서 인터뷰를 해보자</li></ul></li></ul></li></ul><ul id="822d7566-9977-4f18-9f7d-78de31963341" class="bulleted-list"><li style="list-style-type:disc">그게 왜 필요한데?<ul id="c219b651-2d1b-4938-b64d-2af1e2bf7cdb" class="bulleted-list"><li style="list-style-type:circle">타겟을 명확하게 하기 위해서</li></ul><ul id="47af9133-bdb9-46ba-a04c-9a82571e6878" class="bulleted-list"><li style="list-style-type:circle">스크린샷 자체는 사람들에게 밀접하게 다가가지 않는 문제이기 때문. 사람들은 “그래서 나에게 어떤 도움이 되는데?” 그게 궁금하고 피부로 와닿지 않는 한 공감하지 않기 때문</li></ul></li></ul><ul id="6ce90b0a-3afd-4d6e-b1fc-8834063cefd4" class="bulleted-list"><li style="list-style-type:disc">가설 추가 시에만 해당하는 CREATION들<ul id="47fd0b1c-47e2-48e5-9c02-d03922174108" class="bulleted-list"><li style="list-style-type:circle">랜딩 페이지에 들어가는 게 달라진다<ul id="f509d406-97d6-41bc-9d77-39d9b6956996" class="bulleted-list"><li style="list-style-type:square">예전에는 스크린샷을 찾는 어려움에 대한 해결책으로서 샷태그를 담아야 했다면, 지금은 다양한 목적을 위해 찍은 스크린샷을 기억하게 해주는 해결책으로서의 샷태그를 담아야</li></ul></li></ul></li></ul><p id="27b94664-585e-49ed-9d8f-e2dc5766d4a9" class="">
+</p><p id="66ebcb4d-31aa-4513-acea-05b10c00f3b1" class="">
+</p><p id="1a619023-3fb0-49d7-ad86-b725db603452" class="">
+</p><p id="d0dddb6a-3525-4c3e-8b7d-75a4ad110ec1" class="">CREATION (5:30)</p><p id="bea4ba3c-0f43-4803-8a65-e052f59931a9" class="">(문구, 레이아웃, 래퍼런스)</p><p id="354f773e-bbc4-4915-84a2-435101415842" class="">문제 → 해결책의 구조로 가려고 함</p><ul id="cb602b12-9d0e-4a9c-8496-9d64b96099a4" class="bulleted-list"><li style="list-style-type:disc">해당 솔루션을 선택하는지 검증하는 방법으로 적절</li></ul><ul id="56639702-7544-4bd2-9c60-aa28bb1ae74e" class="bulleted-list"><li style="list-style-type:disc">찬희님이 얘기했든 가장 많이 앱 설치까지 갔던 게 문제 → 해결책<div><p id="7740b9a3-7a11-4f41-8e82-35fefdafb7a1" class="">찬: 예ㄷ전 회사에서 잘 기억 안나는데, 반려동물 어플
+초기에 랜딩페이지까진 아니고 홍보를 돌릴 때 광고
+노출 대비 유입률 확인했는데 가장 높은 게 앱 설치까지 갔던게
+문제 → 해결책
+이미지배너보다 영상이 훨씬 높고, 영상들 중에서도 문제 제기는 짧고 해결책 ^
+문제 제시를 하고, 우리는 이런 것도 있고 ~ 이런 것들을 제시할 수 있으면
+공장처럼 찍어낼 순 없으니</p></div></li></ul><p id="54e273de-489d-409e-a454-8256dcbf65f9" class="">컨텐츠 배치 <div class="indented"><ul id="bc3e6ec0-b1ad-49f7-9de0-122c414724ce" class="bulleted-list"><li style="list-style-type:disc">문제 → 일부 배너에서 기술</li></ul><ul id="9c1a0f07-1ac5-4186-9f04-5a1a9abd213e" class="bulleted-list"><li style="list-style-type:disc">배너의 변주 → 타겟을 쪼개고 어디에 집중을 할지 (스크린샷 자체? 기억 일반? 특정 정보?)</li></ul><ul id="4ba240af-cf47-4fc1-a0fb-f7e263e6fb62" class="bulleted-list"><li style="list-style-type:disc">제목 → 해결책으로써의 유니크한 가치는 무엇인지</li></ul><ul id="e75bf62c-64aa-4e4b-9dc0-f8281de43575" class="bulleted-list"><li style="list-style-type:disc">부제목 → 뭐하는 앱인지<ul id="2303ec20-bb1d-4551-a362-97d4bf27101f" class="bulleted-list"><li style="list-style-type:circle">단순히 스크린샷이 아니다 → 유저에게 더 밀접한 문제로 인식하게 한다.</li></ul><ul id="cfc602cf-1fb0-4cf5-bd36-7ee88e865049" class="bulleted-list"><li style="list-style-type:circle">스크린샷의 변주 → favorite deal, coupon, inspiring message, etc</li></ul></li></ul><ul id="713d31de-8ca9-4ea4-acaa-7ded51a459bf" class="bulleted-list"><li style="list-style-type:disc">본문 <p id="efa81e75-d02c-48ba-a662-319571e6ab67" class="">랜딩페이지에는 사용법을 설명하는 세 개의 gif와 텍스트를 교차해서 배치<div class="indented"><ol type="1" id="75a83172-d9c6-48f0-966d-0b6a5ad39384" class="numbered-list" start="1"><li>스샷 찍는다</li></ol><ol type="1" id="8d1211e3-0efd-46a6-8f1f-a8f9d3474e7a" class="numbered-list" start="2"><li>앱 켜면 자동으로 불러와진다</li></ol><ol type="1" id="8214f9c4-4f32-49cb-a38b-6c1e78d982aa" class="numbered-list" start="3"><li>검색한다 끝! (개쉬움)</li></ol></div></p></li></ul></div></p><p id="a02dc57a-a36c-4443-ac29-ce17ffdd4077" class="">
+</p><p id="e56cb443-a4c9-4fb7-899e-da092c631992" class="">CHECKLIST (6:00)</p><ul id="57719924-5945-4d04-9e14-9cd735d22ba4" class="toggle"><li><details open=""><summary>DM3</summary><ul id="83016b49-9876-42ed-a8fb-6cb963b8af65" class="toggle"><li><details open=""><summary>display advertising → contents design</summary><ul id="225b6c02-1c36-4411-9b1b-3cb801e78018" class="bulleted-list"><li style="list-style-type:disc">consistent messaging</li></ul><ul id="4e1fbcaa-f588-4617-9f8a-970a222aa0a7" class="bulleted-list"><li style="list-style-type:disc">context messaging OR obstrusiveness</li></ul><ul id="b989b323-c7db-4485-b7e3-a4a68e9a8af9" class="bulleted-list"><li style="list-style-type:disc">저관여 저가격인 경우 초반부터 customization에 용이</li></ul></details></li></ul><ul id="cc482a3f-084b-4043-a52b-5a73a97f6d3a" class="toggle"><li><details open=""><summary>email advertising</summary><ul id="7a1f575c-3ddf-4ee4-99bc-30f6df8abb9f" class="bulleted-list"><li style="list-style-type:disc">open rate 대비 ROI가 되게 잘 나옴 → 나중에 수치를 해석할 때 감안하고 볼 것</li></ul></details></li></ul><ul id="f6effdf4-c100-4e7f-96ab-bf0921465804" class="toggle"><li><details open=""><summary>mobile (push) marketing → contents design</summary><ul id="3a9b1744-0fc1-4c19-8fae-c6308c7f6d0c" class="bulleted-list"><li style="list-style-type:disc">push가 반응이 들어올지 말지는 30분 안에 결정남</li></ul><ul id="31e018b2-dd0c-46bf-9677-1cdd14cce5c7" class="bulleted-list"><li style="list-style-type:disc">fat finger</li></ul><ul id="74904f45-2b3e-4b3e-a11f-87b4305493cf" class="bulleted-list"><li style="list-style-type:disc">more impatient</li></ul><ul id="563c9603-15ca-4a60-92b6-3dd54f88a980" class="bulleted-list"><li style="list-style-type:disc">snacking not feasting</li></ul></details></li></ul></details></li></ul><ul id="05511f1d-74c1-43fd-ac2b-50def8d33596" class="toggle"><li><details open=""><summary>DM4</summary><ul id="7597c886-a51b-4d13-bc4d-52a105e4419c" class="toggle"><li><details open=""><summary>social media marketing mechanisms</summary><ul id="338f60dc-c6bc-4859-8d79-c86bf72ff4be" class="bulleted-list"><li style="list-style-type:disc">informative influence → contents design<ul id="58d2b4da-9089-4bfe-9bdb-9518d269c5ed" class="bulleted-list"><li style="list-style-type:circle">그러려면 일단 awareness diffusion이 있어야 함</li></ul><ul id="2c820b4c-97ae-4122-8fce-bae095e9cfc6" class="bulleted-list"><li style="list-style-type:circle">information transfer 좋은 제품 남에게 물어봐서 살 때 </li></ul><ul id="a37f410a-fe61-430d-8b14-3c813aa489c0" class="bulleted-list"><li style="list-style-type:circle">social learning <ul id="cbe5b188-9f90-4ab2-ae19-94f0338a26e3" class="bulleted-list"><li style="list-style-type:square">특히 experience prouduct 같은 경우에는 샘플링, trial을 통해 social learning을 자극할 수 있음  → contents design</li></ul></li></ul></li></ul><ul id="f5cf0431-55f8-4265-abbf-6f202b7ebf8a" class="bulleted-list"><li style="list-style-type:disc">normative influence → contents design<ul id="64f1a9c7-a4e6-43c6-bf99-26f1fa8dc7e1" class="bulleted-list"><li style="list-style-type:circle">normative pressure</li></ul><ul id="dcf5190f-a9c2-44b2-85bd-32f98ad844f6" class="bulleted-list"><li style="list-style-type:circle">normative influence</li></ul></li></ul><ul id="69876303-4252-4fa0-8438-22a64af3d7ac" class="bulleted-list"><li style="list-style-type:disc">competitive influence → contents design<ul id="08f87763-7ead-4e41-bcd8-e63deda252d9" class="bulleted-list"><li style="list-style-type:circle">이걸 사면 남들보다 앞서갈 수 있습니다 라는 걸 풍기는 멘트</li></ul></li></ul><ul id="7d75c166-06af-4b9a-8937-1ea505f2f051" class="bulleted-list"><li style="list-style-type:disc">emotional contagion → contents design<ul id="751bd7e0-0378-46f1-800d-dd3751cf0ae8" class="bulleted-list"><li style="list-style-type:circle">이걸 쓴 사람들이 이렇게 행복했어요~ 이런 느낌인 거지</li></ul></li></ul></details></li></ul><ul id="88e38c30-8123-40c6-b179-f27e238af64c" class="toggle"><li><details open=""><summary>contents design할 때 포함할 것</summary><ul id="51fa5b69-3390-4791-841e-783d74b47935" class="bulleted-list"><li style="list-style-type:disc">구매함으로써 얻는 사회적 이미지 → 흠 딱히?</li></ul><ul id="1d7a024b-12b4-4f6b-bdf1-c81bde005b7c" class="bulleted-list"><li style="list-style-type:disc">끊임없이 회자될 만한 어떤 것 → 이거는 상황 봐서</li></ul><ul id="a1899380-f8a1-4fda-b14f-eec92cf1b63c" class="bulleted-list"><li style="list-style-type:disc">소속집단과의 끈끈한 관계 → 이거는 상황 봐서</li></ul><ul id="93152b47-d81a-4cb0-b4bd-6ecdb247a455" class="bulleted-list"><li style="list-style-type:disc">컨텐츠를 통해 전달할 수 있는 제품의 practical value</li></ul><ul id="f9c77ec4-6fb3-49a1-814e-d5ef4b41f184" class="bulleted-list"><li style="list-style-type:disc">스토리 (b급 갬성 스토리) → 흠 딱히?</li></ul><p id="bab8be06-6be3-4d52-b8a1-5f3542175cac" class="">
+</p></details></li></ul></details></li></ul><p id="7a2b58a2-2667-4377-b0d3-cd507672b48d" class="">
+</p><hr id="88baf349-3c07-49a7-bedd-d4a9ec15e569"/><h2 id="038b5e70-1c83-4778-94f2-8522d1b0677a" class="">Response</h2><ul id="afb17c97-5f9b-4cef-9683-cf8c4cf4050c" class="toggle"><li><details open=""><summary><a href="%5Bprioritized%5DShotag%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%2098cbf591c2544ff98e2258106befc0f1/List%20of%20Online%20Advertising%20Platforms%2008305f700da14522a2bb52fdb2b79b5b.html">List of Online Advertising Platforms</a> VS <a href="https://www.notion.so/4043a3fa6a34421ca4da66d56dc3dde8">마케팅 채널 조사</a> </summary><div><ol type="1" id="740a46a6-229a-42a7-be14-fd934a053588" class="numbered-list" start="1"><li>내가 판단 기준을 뭐로 할지, 어떤 정보들이 꼭 들어가야 하는지 suggestion까지 만들어야 그럼 건표님이 판단</li></ol><ol type="1" id="3d95e685-f5a6-4b83-96cd-c7542ea81095" class="numbered-list" start="2"><li>내가 중심이 되어서 분업하기 어떻게 분업하자 그럼 건표님이 판단</li></ol><ol type="1" id="655d6a73-b4aa-46d6-98f8-87298747ee61" class="numbered-list" start="3"><li>영어에서 한글로 바꾸기</li></ol><p id="e3e7b8b8-8629-4136-ae51-53949ab4fa19" class="">(잘 몰랐으면 진작에 내가 중심인지 물어봤어야…)</p></div><div><p id="4285d858-c4d6-425f-850e-db04701a127a" class="">저는 만약 사용을 한다면 두 가지를 꼽고 싶다
+
+우선 구글 디스플레이→ your own- &gt;가설 점검
+구글 디스커버리 → 잠재 고객을 확보하고 싶다면 이 방법이 제일 적절하지 않나</p></div></details></li></ul><ul id="8de258b8-3dd0-45c7-a58a-36d4441cb94c" class="toggle"><li><details open=""><summary>여러 채널, 여러 배너를 통해 퍼포먼스 마케팅을 하려는 이유. 모집단 타게팅, 훅과 랜딩 페이지를 담을 수 있는 채널인지 외에 다른 기준이 필요한 이유?</summary><div><p id="d29c4280-ca11-49b7-b756-b9e5ade8f470" class="">현: 목적 중에 가설검증 중에 모집단을 타겟팅 할 수 있는지와 우리가 원하는 랜딩페이지 배너 담을 수 있는지만 충족하면 되는지?  또 채널 여러 개를 할 필요?</p><p id="193d09b2-3915-4bb4-a63f-0cd710d4617f" class="">건: 이거 말고도 다양한 정보 싹 다 있으면 두 조건을 모두 충족한 채널들 사이에서 비교하는데 도움될 것. </p><p id="d2f19b16-6540-4fea-abc0-299ed65131cf" class="">건: 우리가 랜딩페이지 MVP를 동의할 때의 근거가 의미 있는 가설이라는 점, 가설 검증의 정교함도 뒷받침된다는 점과 동시에 잠재고객을 확보하는 데에 활용할 수 있다는 점도 있었음. 그래서 필요한 거임</p></div><p id="f1ebf2da-27cb-4b6c-b1be-be6c70d88e39" class="">
+</p></details></li></ul><h2 id="02077c9c-d1c1-4f5c-8b12-03baa7100256" class="">Sugestion - List of Online Advertising Platforms</h2><div id="bd4374e0-3415-409b-bb64-f91e8baff942" class="column-list"><div id="f2ee7042-4dd0-457b-8ccc-1b0f37e27dd5" style="width:50%" class="column"><figure id="7f7d3343-a4af-46f4-928b-f9d868b2d5fd"><div class="source"><a href="https://www.everywheremarketer.com/blog/best-online-advertising-platforms">https://www.everywheremarketer.com/blog/best-online-advertising-platforms</a></div></figure></div><div id="9bb7393d-80cb-4d97-9beb-64993c12c256" style="width:50%" class="column"><figure id="999251b0-857f-4808-81d3-d50e74c2fe97"><div class="source"><a href="https://webtechpreneur.com/ultimate-comparison-of-online-advertising-platforms/">https://webtechpreneur.com/ultimate-comparison-of-online-advertising-platforms/</a></div></figure></div></div><figure id="fd476d6b-eb64-446b-8ced-aed2a4cdea9e"><a href="https://www.google.com/search?q=online+advertising+platforms+list&amp;ei=n2miY6W_K-aQ4-EP2ZW6qA0&amp;oq=online+advertising+platforms+comparison+chart&amp;gs_lcp=ChNtb2JpbGUtZ3dzLXdpei1zZXJwEAEYADIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwA0oECEEYAFAAWABgrgJoAXAAeACAAQCIAQCSAQCYAQDIAQjAAQE&amp;sclient=mobile-gws-wiz-serp" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">online advertising platforms list - Google Search</div><div class="bookmark-description">Please click here if you are not redirected within a few seconds. Google Ads. With Google ads, ads can show on both desktop and mobile devices. ... Meta Ads. Due to its large user base, the social media giant launched Audience Network, an easy-to-use ad platform to deliver Facebook and Instagram ads.</div></div><div class="bookmark-href"><img src="https://www.google.com/favicon.ico" class="icon bookmark-icon"/>https://www.google.com/search?q=online+advertising+platforms+list&amp;ei=n2miY6W_K-aQ4-EP2ZW6qA0&amp;oq=online+advertising+platforms+comparison+chart&amp;gs_lcp=ChNtb2JpbGUtZ3dzLXdpei1zZXJwEAEYADIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwAzIKCAAQRxDWBBCwA0oECEEYAFAAWABgrgJoAXAAeACAAQCIAQCSAQCYAQDIAQjAAQE&amp;sclient=mobile-gws-wiz-serp</div></div></a></figure><figure id="9f09a158-abe1-48ff-9c6c-9f316e4c9127"><a href="https://www.plumfind.com/ultimate-guide-on-ad-platforms-google-facebook-microsoft-linkedin-amazon-ads-compared" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Plumfind - Platform comparison calculator</div><div class="bookmark-description">Lead Generation for personal services B2C (e.g., home services, personal accounting): Lead Generation for corporate services B2B (e.g., human resources, corporate accounting): Job Title based audience targeting (i.e., being able to show your ads to people with specific job titles, for example &quot;Human Resources Manager&quot;, &quot;Purchasing Manager&quot;, etc.): E-commerce - my customers do extensive research/ comparison before buying my products (e.g., consumer electronics): E-commerce - my customers are mostly impulse/influencer purchasers (e.g., fashion, home decor, jewelery): Video Ads are important for my brand: Top advertising platforms offer different features to address your marketing needs.</div></div><div class="bookmark-href"><img src="https://www.plumfind.com/static/images/favicon.ico" class="icon bookmark-icon"/>https://www.plumfind.com/ultimate-guide-on-ad-platforms-google-facebook-microsoft-linkedin-amazon-ads-compared</div></div><img src="https://storage.googleapis.com/plumfind.appspot.com/homepage_images/Saly-19.png" class="bookmark-image"/></a></figure><p id="cdb9a366-a357-4995-bcfa-c9a118973f83" class="">
+</p><p id="c2f77470-c718-456a-a43d-59db52f07699" class=""><a href="https://brunch.co.kr/@ashashash/109">퍼포먼스 마케팅 시 공통으로 해야 하는 일</a></p><ul id="b8054a0f-df31-48fa-9ac2-5b82344e799d" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">캠페인 구조에 대한 이해 (= 작동법)</span><p id="cd9f2db9-24eb-44d7-818c-50eef0d47204" class="">각 광고 채널들은 비슷하면서도 조금씩 다르다. 채널 별로 이름은 조금씩 다르지만, 다수의 광고 채널은 &#x27;캠페인 - 광고 그룹 - 광고&#x27;라는 3단계 위계로 광고 구조가 구성되어 있다. (참고로 가장 하위 위계인 광고에서 이름 차이가 많이 난다. 페이스북은 AD creative, 구글은 Ad Asset, 네이버는 광고 소재라고 한다.)</p><p id="958d5927-e031-4d0c-9b0e-75deec0c891f" class=""><strong>어느 광고 채널을 담당하든 이 위계 구조를 정확히 알고, 해당 위계에서 어떤 것을 컨트롤할 수 있는지를 알아야 체계적으로 광고를 운영할 수 있다.</strong></p></li></ul><ul id="057752ca-17dd-4d4c-8263-ca6aadfea377" class="bulleted-list"><li style="list-style-type:disc">타겟 설정</li></ul><ul id="dba94b15-82b6-432b-b7e0-f78fa9fa3b69" class="bulleted-list"><li style="list-style-type:disc">소구 포인트를 잘 나타내는 카피 및 이미지 제작</li></ul><h3 id="b7e0da6d-dc40-446c-941c-d882bada51a4" class="">2번 목적의 경우 배너 광고가 맞느냐</h3><ul id="3f740d2c-d276-4702-ba7c-2902010ec8e2" class="bulleted-list"><li style="list-style-type:disc">노션의 사례
+<a href="%F0%9F%91%A8%E2%80%8D%F0%9F%92%BB%20marketing%20planning%2076e07f0fb3744485a27a4656524a0cd6.html">Notion</a> </li></ul><ul id="345ca3a7-c271-4c12-9ceb-2d7565b95bd1" class="bulleted-list"><li style="list-style-type:disc"><a href="https://moz.com/blog/a-checklist-to-choose-which-internet-marketing-channel-is-right-for-your-business">which Internet Marketing Channel is Right for You?</a><figure id="1c1234c0-e7e8-4886-aba7-af788765e3be" class="image" style="text-align:left"><a href="https://moz.com/img_uploads/goals-budget-priorities.gif"><img style="width:240px" src="https://moz.com/img_uploads/goals-budget-priorities.gif"/></a></figure></li></ul><hr id="4ce8a137-459c-41e2-821a-7e77fa099ebc"/><p id="d6bc96e5-c649-4352-ada2-a5de0de8f664" class="">
+</p><p id="e466b8d6-f84c-42e2-8dcc-03d7227d3939" class="">
+</p><hr id="737dc2d9-c349-4699-8e48-1febd01511f9"/><h2 id="76246630-fd38-4f65-8d67-51257e57a980" class="">Suggestion 스토리보드</h2><p id="99817c70-8667-4813-bacc-0cd5468d716d" class="">마지막 다운로드 버튼을 눌렀을 때 추후 flow</p><div><figure id="ac95ee12-1892-44db-840f-1a1f2a9b8175"><a href="https://www.icloud.com/notes/02ewV0OgLG4QH1r0xwV0oJQ9w" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">iCloud.com</div><div class="bookmark-description">Sign in to iCloud to access your photos, videos, documents, notes, contacts, and more. Use your Apple ID or create a new account to start using Apple services.</div></div><div class="bookmark-href"><img src="https://www.icloud.com/favicon.ico" class="icon bookmark-icon"/>https://www.icloud.com/notes/02ewV0OgLG4QH1r0xwV0oJQ9w</div></div><img src="https://www.icloud.com/icloud_logo/icloud_logo.png" class="bookmark-image"/></a></figure></div><div><h3 id="8b315a57-ac14-410f-b41e-f17b4edc4e2c" class=""><details open=""><summary>미리보기</summary></details></h3><div class="indented"><figure id="548aab28-cf01-4b53-a989-95b3c3c1dea2" class="image"><a href="../S&amp;D%205f286d9aeaac44da8016a434fabbee28/S&amp;D%20Task%209104b75c88e940b1aed2f97f26e1ca69/%E1%84%85%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B5%E1%86%BC%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5%20MVP%20%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%87%E1%85%A9%E1%84%83%E1%85%B3%203ff2b1590df24d0ca0eba4d9438c131e/storyboard.jpg"><img style="width:2143px" src="../S&amp;D%205f286d9aeaac44da8016a434fabbee28/S&amp;D%20Task%209104b75c88e940b1aed2f97f26e1ca69/%E1%84%85%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B5%E1%86%BC%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5%20MVP%20%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%87%E1%85%A9%E1%84%83%E1%85%B3%203ff2b1590df24d0ca0eba4d9438c131e/storyboard.jpg"/></a></figure></div></div><hr id="560382d1-1669-4409-b71a-da7a1cdcd676"/><h2 id="f36d6966-1c90-4552-81d0-02024d7aff08" class="">Suggestion</h2><ul id="a4a2db35-2ac5-4ae3-8b88-19651c80176d" class="toggle"><li><details open=""><summary>(<strong>타겟을 포함할 수도 있고, 타겟을 넓혀 버릴 수도 있고) 문제인가? 문제라면 해결하고 싶어하는가? </strong></summary><h3 id="85664f13-e872-4d14-9539-029f46c7756a" class="">목표의 구체화</h3><p id="7dfd77ff-4311-416e-a1f6-44b1b493319e" class="">→ 어떤 스크린샷이 떠오른 후 그 화면으로 되돌아가는 데에 필요한 시간과 노력을 줄이고 싶어하는 사람이 미국에 거주하는 20대 안드로이드 유저 중에서 어느 정도 되는가?</p><p id="becef36f-2f6a-4779-b464-ce438fe0710d" class="">→ 그 사람들이 그 불편함을 겪는 주기는 어느 정도인가?</p><h3 id="93ed1f0d-4bf0-4ef3-b514-7fa8dea5e848" class="">검증 방법</h3><p id="f629eb83-c71a-44a3-93bd-7764b8d6afd8" class="">(low-fidelity MVP)</p><p id="6f5325cd-a97c-4bdb-aef5-446a3880768e" class="">
+</p></details></li></ul><ul id="5c02d30a-8940-455e-87a1-d3a163d55985" class="toggle"><li><details open=""><summary><strong>타겟(20 미국 안드로이드) → 솔루션(샷태그) → 해결책(만족감을 줄 수 있을 것인가)</strong></summary><h3 id="1893cf17-c3c5-4bc8-ad3e-ef03d3464146" class="">목표의 구체화</h3><p id="d0533076-571f-4bac-b6c0-c0221e25a0cb" class="">→ 그 중 <a href="%5Bprioritized%5DShotag%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%2098cbf591c2544ff98e2258106befc0f1.html">자동 태깅 애플리케이션을 통한 모바일 스크린샷 검색</a>(①과 ②을 모두 갖춘 솔루션)을 설치하여 한 번이라도 사용하고자 하는 미국 안드로이드 20대 유저들의 규모가 어느 정도 되는가?</p><h3 id="33cd14ae-44c1-422a-9da3-a29bafc4f982" class="">검증 방법</h3><p id="e10171ba-de2b-4a30-adc1-2c04d446c855" class="">(low-fidelity MVP)</p><p id="a0437c1d-926f-44cc-97c8-3e389b4eb7e1" class="">
+</p></details></li></ul><h3 id="d4748454-79d0-44ff-afbb-4bab8120eb8d" class=""><details open=""><summary>brainstorming</summary></details></h3><div class="indented"><p id="bc5c0332-c8a1-4105-acae-92788b7484a1" class=""><mark class="highlight-gray">*찾던 중에 생각이 나서 적어본 거니까 읽어주시고 뚝딱뚝딱 고쳐봐용</mark></p><h3 id="9b458be8-7caf-41a6-b473-4aa00a5371db" class="">설문조사</h3><ul id="c8b5fe4e-6b77-4741-8f57-ca4d3bb77e42" class="bulleted-list"><li style="list-style-type:disc">미국 20대 안드로이드 유저 대상 설문조사</li></ul><ul id="6432957f-055c-41fa-8dc6-638d644c8afd" class="bulleted-list"><li style="list-style-type:disc">불편함을 겪는 주기 질문 → 비율을 통해 첫번째 질문과 두 번째 질문 해결</li></ul><ul id="e1dde956-83c7-4ebd-9d5d-b824ea7385b6" class="bulleted-list"><li style="list-style-type:disc">일반 대중<ul id="91392e22-f827-4d0c-969e-e57de5cf7dd9" class="bulleted-list"><li style="list-style-type:circle">일반 대중을 대상으로 설문조사하여 일반적인 니즈를 알아보고자</li></ul><ul id="543427b5-88f2-4aeb-9f6d-88e5b9e0ba55" class="bulleted-list"><li style="list-style-type:circle">설문조사 사이트들…</li></ul></li></ul><ul id="3d09f701-fe2c-4965-82aa-11c9c50d9a30" class="bulleted-list"><li style="list-style-type:disc">커뮤니티<ul id="2cbae5a8-4d8f-4013-9306-70196e608117" class="bulleted-list"><li style="list-style-type:circle">커뮤니티를 대상으로 설문조사하여 early adapter의 반응을 알아보고자</li></ul><ul id="c9af6016-c4e1-4ff2-81b2-1f5c4f62df73" class="bulleted-list"><li style="list-style-type:circle">subreddits</li></ul><figure id="a3ae8c8b-0f12-4500-8063-d996690b3b7b"><a href="https://www.reddit.com/r/newapps/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">r/newapps</div><div class="bookmark-description">r/newapps: The NewApps subreddit allows developers to receive top tier feedback on their apps all the while giving everyday users access to the ...</div></div><div class="bookmark-href"><img src="https://www.redditstatic.com/desktop2x/img/favicon/favicon-16x16.png" class="icon bookmark-icon"/>https://www.reddit.com/r/newapps/</div></div></a></figure></li></ul><h3 id="1c1a8e6b-f628-460e-9353-7248f8b0cebd" class="">랜딩 페이지를 통한 검증</h3><ul id="6b2ffca6-ba11-4344-ad52-e338b192126d" class="bulleted-list"><li style="list-style-type:disc">첫번째로 눈에 보이는 화면<ul id="44df717a-8efe-44e2-9971-a260041e304f" class="bulleted-list"><li style="list-style-type:circle">문제 상황 스토리텔링<ul id="94f5d1f4-5c32-43d7-afa0-c2c75a7a9d42" class="bulleted-list"><li style="list-style-type:square">(만약 가능하다면?) 애플의 프로덕트 랜딩 페이지와 비슷한 반응형(움직이는) 이미지로 구성</li></ul></li></ul><ul id="6e55406d-785d-4fc9-9bbc-275d802429d4" class="bulleted-list"><li style="list-style-type:circle">“딱 내 얘기임”/”흠 그닥” 버튼 → 비율을 통해 첫 번째 질문 해결</li></ul></li></ul><ul id="ed6bbe2c-fcdf-4544-b4ea-55d2ca9ebc58" class="bulleted-list"><li style="list-style-type:disc">“딱 내 얘기임”을 클릭 시 그 다음으로 보이는 화면<ul id="cf1f32a1-c240-4bf1-8fc7-47cdc21bec5d" class="bulleted-list"><li style="list-style-type:circle">반응형 튜토리얼 사용하여 솔루션 정보 전달</li></ul><ul id="dc6293a2-c10c-48d3-9bfd-45d6fe8c39ff" class="bulleted-list"><li style="list-style-type:circle"><a href="pmf%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%88%E1%85%A1%E1%84%85%E1%85%B3%E1%84%80%E1%85%A6%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AF%20%E1%84%89%E1%85%AE%20%E1%84%8B%E1%85%B5%E1%86%BB%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%87%E1%85%A1%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B8%E1%84%83%E1%85%B3%E1%86%AF%2007c14c586064488eafeb2a74b448ebf2.html">fake-door</a> CTA 버튼을 이용해 실질적으로 다운받아 이용하려는 수요를 측정<ul id="f8c0d2b8-e6f8-4b94-9b0d-9c7e2168d04e" class="bulleted-list"><li style="list-style-type:square">(만약 가능하다면?) 깡통 앱 다운받기 → 비율을 통해 세 번째 질문 해결</li></ul><ul id="3e598376-92ee-4741-9370-e8c35c279bf9" class="bulleted-list"><li style="list-style-type:square">커뮤니티를 통한 공유 기능을 통해 반응 측정 → 공유 수를 통해 세 번째 질문 해결</li></ul><figure id="54d092c5-5bc9-48b5-85b4-187d61b9cf15"><a href="https://keyua.org/blog/types-of-minimum-viable-product/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">9 Types of Minimum Viable Products (MVP) for Startups | KeyUA</div><div class="bookmark-description">It&#x27;s not a surprise that most startups fail. According to the latest report from Failory, 9 of 10 startups are unsuccessful. However, the lack of skills, knowledge, or fortune rarely leads to failure. The key reasons lie deeper and include the following: The basis for every new product is various assumptions.</div></div><div class="bookmark-href"><img src="https://keyua.org/static/images/favicon.ico" class="icon bookmark-icon"/>https://keyua.org/blog/types-of-minimum-viable-product/</div></div><img src="https://keyua.org/media/articles/768_9_Minimum_Viable_Product_Types_for_Your_Startup.png" class="bookmark-image"/></a></figure></li></ul></li></ul></div><p id="538ef700-735a-4c78-9cf9-3407a19e160b" class="">
+</p><hr id="933d781c-0f72-4224-b18e-49b0f26b27ca"/><h2 id="1f7ec391-2504-4cdb-9432-14ca111783d6" class="">Suggestion</h2><h3 id="1967f108-362a-478c-ada8-5918aa2e9d8c" class=""><a href="%E1%84%89%E1%85%B3%E1%84%90%E1%85%A1%E1%84%90%E1%85%B3%E1%84%8B%E1%85%A5%E1%86%B8%20%E1%84%89%E1%85%A5%E1%86%BC%E1%84%80%E1%85%A9%E1%86%BC%20%E1%84%87%E1%85%B5%E1%86%AF%E1%84%83%E1%85%B5%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%A8,%20MVT%2060158e62bc8e4cbcbf2ab37c047926d6.html">가치 제안</a></h3><p id="7dc122d1-f489-4ceb-96ae-b4c000ae06ab" class="">자동 태깅 애플리케이션을 통한 모바일 스크린샷 검색</p><ul id="d33d05a6-673a-4174-ac24-a8035b7c0881" class="toggle"><li><details open=""><summary>details</summary><ul id="34c01dd5-ff7f-4a4f-a642-b04fd5829fdb" class="bulleted-list"><li style="list-style-type:disc">문제<p id="9f20fa33-f08a-4ac8-92db-1e81fd9d7e60" class=""><a href="%E1%84%80%E1%85%AA%E1%84%80%E1%85%A5%20focus%20group%20interview%201f5baef6a906422bb7ea001b3382f068.html">유저에게 떠오른 모바일 스크린샷을 찾기 위해 필요한 시간과 노력이 너무 많이 든다.</a></p></li></ul><ul id="3b51eeb6-c954-41db-adb2-1c60d004770b" class="bulleted-list"><li style="list-style-type:disc">우리의 목표 고객은 어떤 프로필을 가지고 있으며, 어떤 상황에 현재 놓여있는가?<p id="48b5b603-98d0-4433-95bd-c33a63e0283a" class="">목표 고객은 미국에 거주하며, 20대 안드로이드 유저들이다. 이들의 문제는 유저에게 어떤 스크린샷이 떠오르더라도 그 화면으로 되돌아가기 어렵다는 점</p></li></ul><ul id="5476b566-e0e3-4df2-928b-5c8e457ee987" class="bulleted-list"><li style="list-style-type:disc">해당 문제는 매월 혹은 매분기, 매년 얼마나 반복적으로 일어나는가?<p id="3c0e9e24-68d1-4c1d-856f-d22ed9048683" class="">정확하지는 않지만 인터뷰에 의하면 많은 수의 응답자가 자주 그렇다고 답함</p></li></ul><ul id="e776a034-65fe-4a94-9f0b-94b6989f1925" class="bulleted-list"><li style="list-style-type:disc">고객의 진짜 문제는 무엇인가? (5 Whys) <p id="f4b8b229-f628-4f84-a2a8-bdcebce9d50b" class="">다양한 성능의 디바이스에 맞춰야 하다보니 안드로이드에서는 <span style="border-bottom:0.05em solid">그동안 모바일 스크린샷에 OCR 기술이 적용되어 있지 않았다</span>. 따라서 유저가 스스로 (스크린샷 검색에 최적화되어 있지 않은) OCR 솔루션을 설치해서 (억지로 끼워맞춰서) 이용해야 했다. 그렇지 않은 경우에는 유저 스스로가 스크린샷에 대한 기억을 되살려서 찾아내야 했다.</p><p id="427fbd37-ecf3-4011-8f8f-f236f24a68d0" class="">또한 유저들은 자신의 스마트폰에 OCR 솔루션이 내장되어 있다하더라도 그 솔루션을 제때 떠올리지 못해 어려움을 겪기도 했다. 그동안 <span style="border-bottom:0.05em solid">OCR을 이용한 스크린샷 검색 전용 어플리케이션이 없는 </span>관계로 스크린샷을 찾는 방법을 떠올리기 위해서는 OCR 솔루션과 스크린샷을 연결짓는 인지적 절차를 겪어야 하는 불편함이 있었다. </p><p id="237103a2-bedc-4a8b-a94e-429d7af499da" class="">일부 제조사에서 스크린샷 OCR과 관련된 기능을 제공하더라도 <span style="border-bottom:0.05em solid">사진앱에서 통합적으로 관리하게</span> 됨에 따라 일반 사진과 정보성 스크린샷이 한 데 섞여서 관리되었다. 이에 따라 해당 솔루션은 사람들이 잘 사용하지 않는 애물단지 기능으로 전락했다. </p></li></ul><ul id="de8e65e5-2f00-4ba8-b52d-582d36bb2d83" class="bulleted-list"><li style="list-style-type:disc">해결책<p id="901444b1-fee8-4966-be89-ea8d74f78744" class="">유저가 필요할 때 자동 태깅 애플리케이션을 통한 모바일 스크린샷 검색</p><p id="8b6e8303-ee13-449c-9ae1-5cfea424ce8b" class="">태그를 통한 검색 엔진 내 스크린샷 검색 ① &amp; 검색의 유연성과 편리성 ②</p></li></ul><ul id="617f0336-7faa-4a22-9dc0-9cfe334696b7" class="bulleted-list"><li style="list-style-type:disc">기술<p id="68e377ce-2ee1-435c-8895-27ca03c5ec85" class="">스마트폰 애플리케이션과 OCR, NLP 모델</p></li></ul><ul id="f453f677-6d82-42e3-9380-894c17d8911d" class="bulleted-list"><li style="list-style-type:disc">진행 단계<p id="6eced2f9-c7b7-456b-8ce5-790f034a0459" class="">→ 신버전 안드로이드 앱 출시 </p><p id="cd29a775-dbfd-4642-9033-6568b33efb49" class="">→ 이외 features 넣기</p><p id="3733ea48-88f2-4c13-bc0c-73549f425f9f" class="">→ Util tag를 위한 제휴 맺기</p></li></ul><ul id="50dd819f-bca1-45e1-b2d2-8a52672b4aa5" class="bulleted-list"><li style="list-style-type:disc">monetization (미정)<figure id="4d44cf08-c1d8-4044-9a28-d0405884e8e0"><div class="source">https://miner-inc.slack.com/archives/D0415KU9BNF/p1670314121153299</div></figure></li></ul></details></li></ul><h3 id="70b638cf-1dd1-45b1-ab64-9d620e1a548f" class=""><details open=""><summary>지금 검증이 필요한 것들</summary></details></h3><div class="indented"><ul id="a9a02a21-e23d-46e4-84a5-f2b742b90d4e" class="bulleted-list"><li style="list-style-type:disc">당신이 제시하는 솔루션이 그 문제를 해결해주는가?<ul id="d3f113c1-140b-4f9c-962c-11cdaf1a78e9" class="bulleted-list"><li style="list-style-type:circle">실제로 스크린샷 탐색에 드는 시간과 비용이 얼마나 줄어들까? 소비자들이 서비스를 주기적으로 사용할 정도로 체감할 정도가 될까?<p id="088eb66d-b374-4403-abb1-446b6e6af0e9" class=""><a href="%5Bprioritized%5DShotag%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%2098cbf591c2544ff98e2258106befc0f1.html">자동 태깅 애플리케이션을 통한 모바일 스크린샷 검색</a>이 미국 20대 안드로이드 유저에게 떠오른 모바일 스크린샷을 찾기 위해 필요한 시간과 노력을 ______ 정도 줄일 수 있을 것이다.</p></li></ul></li></ul><ul id="1bf57cf5-f855-4460-9770-16230ab6d70d" class="bulleted-list"><li style="list-style-type:disc">[shotag MVP]고객의 필요성 &amp; 시장 규모 &amp; 수익성<ul id="4e5fc76d-5231-4261-8956-9df25cef2f55" class="bulleted-list"><li style="list-style-type:circle">시장 규모가 어느정도 될까? 추후 제휴하기 위해 참여자들을 설득하기에 충분할 정도 / 또는 수익화를 위해 필요한 정도가 될까?<p id="7fe2a46c-68c7-4ae9-8163-4c7a2fb32812" class=""><a href="%5Bprioritized%5DShotag%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%2098cbf591c2544ff98e2258106befc0f1.html">자동 태깅 애플리케이션을 통한 모바일 스크린샷 검색</a>을 설치하여 한 번이라도 사용하고자 하는 미국 안드로이드 20대 유저들의 규모가 ___ 정도 될 것이다. </p></li></ul><ul id="172fcc2a-9199-47e4-9e07-c4f84d884242" class="bulleted-list"><li style="list-style-type:circle">시장의 성장률이 어느정도 될까? 추후 제휴하기 위해 참여자들을 설득하기에 충분할 정도 / 또는 수익화를 위해 필요한 정도가 될까?<p id="71739a20-d4a4-4eec-860f-46fd6c82444a" class=""><a href="%5Bprioritized%5DShotag%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%2098cbf591c2544ff98e2258106befc0f1.html">자동 태깅 애플리케이션을 통한 모바일 스크린샷 검색</a>을 설치하여 한 번이라도 사용하고자 하는 미국 안드로이드 20대 유저들의 규모와 성장률이 _____ 정도 될 것이다. </p></li></ul><ul id="48d1bc44-99ed-4526-8b90-9f36fb02fb3f" class="bulleted-list"><li style="list-style-type:circle">retention plateau는 어느정도 될까? 추후 제휴하기 위해 참여자들을 설득하기에 충분할 정도 / 또는 수익화를 위해 필요한 정도가 될까?<p id="9f1cdeb9-ec2a-4524-a9b7-1cd1fdbde3cc" class=""><a href="%5Bprioritized%5DShotag%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%2098cbf591c2544ff98e2258106befc0f1.html">자동 태깅 애플리케이션을 통한 모바일 스크린샷 검색</a>을 설치하여 사용하는 미국 안드로이드 20대 유저들이 retention plateau를 형성했을 때 그 수치가 ____ 정도 될 것이다. </p></li></ul></li></ul><ul id="40c3ef02-46b0-4bd0-847e-4b0ba0482004" class="bulleted-list"><li style="list-style-type:disc">[shotag MVP]마케팅<ul id="701d7abe-be05-42e5-a1c6-0a601a3229d9" class="bulleted-list"><li style="list-style-type:circle">유저들의 referral이 얼마나 될까? 그 규모, 성장률, retention과 함께 추후 제휴하기 위해 참여자들을 설득하기에 충분할 정도 /  수익화를 위해 필요한 정도가 될까?<p id="56d26de3-91fe-4739-bc6c-ed3fca00371d" class=""><a href="%5Bprioritized%5DShotag%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%2098cbf591c2544ff98e2258106befc0f1.html">자동 태깅 애플리케이션을 통한 모바일 스크린샷 검색의 가치</a>를 전달하여 우리가 제시하는 솔루션을 설치하도록 설득한 미국 안드로이드 20대 유저의 referral이 ____ 정도는 될 것이다. </p></li></ul><ul id="841ddadd-82a1-471d-9098-4d9bca14d863" class="bulleted-list"><li style="list-style-type:circle">유저들 모으는 비용이 얼마나 될까? (제휴 및 수익화를 위해 필요할 거 같아서)<p id="95df1155-1174-4234-afa6-7f8a2f03cda2" class="">추후 util tag 등 추가적인 서비스를 위해 제휴에 참여하도록 업체들을 설득할 만큼의 유저들을 모으기 위해 드는 시간과 비용이 미래의 예상되는 수익보다 낮을 것이다.</p></li></ul></li></ul></div><h3 id="4d9fc475-ccde-44a1-b486-6e82bfee6479" class=""><details open=""><summary>나중에 검증이 필요한 것들</summary></details></h3><div class="indented"><ul id="a87155f9-57f9-4466-a815-2add0fbf37f1" class="bulleted-list"><li style="list-style-type:disc">[스샷과 관련된 액션 쉽게 해주기]고객의 필요성 &amp; 시장 규모 &amp; 수익성<ul id="19922a81-91a2-44be-87fa-e19f4d8184e4" class="bulleted-list"><li style="list-style-type:circle">과연 전환율을 우선순위로 고려할까? (추후 제휴하기 위해 참여자들을 설득하기에 필요한 조건 / 또는 수익화를 위해 필요한 조건인 거 같아서)<p id="01e7ddb7-aef1-41e7-8572-580e79f4dc4b" class="">온라인 마케팅 매체의 다양한 고객들은 매체를 선택할 때 비용 대비 전환율 상승을 중심적으로 고려할 것이다. </p></li></ul><ul id="91750a52-a3b1-4e40-adb9-4661b78d2dff" class="bulleted-list"><li style="list-style-type:circle">전환율 상승이 어느정도 있을까? 경쟁 마케팅 채널 대비 효율적임을 증명할 수 있는 정도가 될까? (추후 제휴하기 위해 참여자들을 설득하기에 필요한 조건 / 또는 수익화를 위해 필요한 조건인 거 같아서)<p id="b75a48cb-7400-4109-ae16-969785a9d306" class="">추후 util tag를 통해 외부 서비스에 진입한 미국 안드로이드 20대 유저들의 전환율 상승 효과가 ____ 정도 있을 것이다. </p></li></ul><ul id="49ede701-c309-4263-b25c-2f7257010ad8" class="bulleted-list"><li style="list-style-type:circle">추가 수익의 어느 정도까지 지불할까? 시장 지배력을 확보하여 수익을 지속적으로 창출하기에 충분할까? (수익화를 위해 필요한 조건인 거 같아서)<p id="8d2dc66e-7dc8-49f1-8ee8-2af522081964" class="">추후 util tag 등 추가적인 서비스를 위해 제휴에 참여한 업체들이 기꺼이 shotag 제휴를 통해 얻은 추가 수익의 ___% 이상을 플랫폼 사용의 대가로 지불할 것이다. </p></li></ul><ul id="63101e82-214c-4a67-8bae-2860deda2e19" class="bulleted-list"><li style="list-style-type:circle">그 정도 추가 수익을 내려는 사업자가 얼마나 될까? 시장 지배력을 확보하여 수익을 지속적으로 창출하기에 충분할까? (수익화를 위해 필요한 조건인 거 같아서)<p id="033dd77e-88a7-4def-ae1a-7c8071727333" class="">추후 util tag 등 추가적인 서비스를 위해 제휴에 참여하여 기꺼이 shotag 제휴를 통해 얻은 추가 수익의 ___% 이상을 플랫폼 사용의 대가로 지불하려는 온라인 사업자의 규모가 ___ 정도 될 것이다.  (___% → <a href="%5Bprioritized%5DShotag%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%2098cbf591c2544ff98e2258106befc0f1.html">여기</a>에서 검증한 수치)</p></li></ul><ul id="2e623fec-e9cb-4a37-b64f-618adcaee462" class="bulleted-list"><li style="list-style-type:circle">그 사업자 규모의 성장률은 어떻게 될까? 시장 지배력을 확보하여 수익을 지속적으로 창출하기에 충분할까? (수익화를 위해 필요한 조건인 거 같아서)<p id="e610308c-03dc-484c-ba19-0152eaacfa59" class="">추후 util tag 등 추가적인 서비스를 위해 제휴에 참여하여 기꺼이 shotag 제휴를 통해 얻은 추가 수익의 ___% 이상을 플랫폼 사용의 대가로 지불하려는 온라인 사업자의 성장률이 ___ 정도 될 것이다.  (___% → <a href="%5Bprioritized%5DShotag%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%2098cbf591c2544ff98e2258106befc0f1.html">여기</a>에서 검증한 수치)</p></li></ul><ul id="3aff38d2-1a4e-4220-a329-85ae66ddd685" class="bulleted-list"><li style="list-style-type:circle">그 사업자들의 retention plateau는 어떻게 될까? 시장 지배력을 확보하여 수익을 지속적으로 창출하기에 충분할까? (수익화를 위해 필요한 조건인 거 같아서)<p id="ad2b937c-b23e-4047-b2fc-63543c6380a8" class="">추후 util tag 등 추가적인 서비스를 위해 제휴에 참여하여 기꺼이 shotag 제휴를 통해 얻은 추가 수익의 일부를 플랫폼 사용의 대가로 지불하려는 온라인 사업자들이 retention plateau를 형성했을 때 ___ 정도 될 것이다. </p></li></ul></li></ul><ul id="5a1b6c1f-e66c-4961-b4de-80414361d6e6" class="bulleted-list"><li style="list-style-type:disc">[스샷과 관련된 액션 쉽게 해주기]마케팅<ul id="29b9ba47-a06b-46db-bbc6-6166fe2a1b49" class="bulleted-list"><li style="list-style-type:circle">참여자들을 위한 튜토리얼을 제공하면 얼마나 쓰려나? (제휴 및 수익화를 돕기 위해 tutorial을 이용하려면 필요한 조건인 거 같아서)<p id="8f34f310-d758-4a07-b232-ed5acd9524e7" class="">추후 참여자들이 util tag 등 추가적인 서비스를 시험해보기 위해 tutorial을 제공했을 때 그렇지 않을 때보다 더 많이 참여할 것이다.</p></li></ul><ul id="0de4c977-ed51-484a-a7bf-a611251ad3a4" class="bulleted-list"><li style="list-style-type:circle">참여자들을 위한 튜토리얼에서 cherry picking이 일어나도 괜찮으려나? (제휴 및 수익화를 돕기 위해 tutoria을 이용하려면 필요한 조건인 거 같아서)<p id="0fcbce4f-7661-4cef-8475-652cdac1fd18" class="">추후 참여자들이 util tag 등 추가적인 서비스를 시험해보기 위해 tutorial을 제공하는 과정에서 cherry picking이 일어나더라도 수익성에 문제가 없을 것이다.  </p></li></ul><ul id="1622238b-2ab5-4eb8-93da-4cc91fe28b7e" class="bulleted-list"><li style="list-style-type:circle">참여자들 referral이 얼마나 될까? 시장 지배력을 확보하여 수익을 지속적으로 창출하기에 충분할 정도일까? (수익화를 위해 필요한 조건인 거 같아서)<p id="02ffa3ae-cc39-4cfa-a718-f9bd8a52a969" class="">추후 shotag 제휴를 통해 얻은 추가 수익의 일부를 플랫폼 사용의 대가로 지불하려는 온라인 사업자들의 referral이 ___ 정도는 될 것이다. </p></li></ul><ul id="c33008e6-5312-4a73-bb67-72da89f94410" class="bulleted-list"><li style="list-style-type:circle">참여자들 모으는 비용이 얼마나 되려나? (제휴 및 수익화를 위해 필요한 조건인 거 같아서)<p id="6bd2a144-8375-4aee-beaf-4f66eb8ac44f" class="">util tag를 통한 전환률 상승의 가치를 전달함으로써 시장 지배력을 확보할 만큼의 제휴할 온라인 사업자를 설득하는 데에 드는 시간과 비용을 <a href="%5Bprioritized%5DShotag%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%2098cbf591c2544ff98e2258106befc0f1.html">이것</a>과 합쳤을 때 미래의 예상되는 수익보다 낮을 것이다. </p></li></ul></li></ul><ul id="8712a7da-378e-4ec6-a1eb-3ab3b0c79a37" class="bulleted-list"><li style="list-style-type:disc">[스샷과 관련된 액션 쉽게 해주기]기술적 실현성<ul id="c88f4469-f2f0-49cd-a7f2-5eed97fe64cb" class="bulleted-list"><li style="list-style-type:circle">추가 수익을 모니터링할 수 있을까? (제휴 및 수익화를 위해 필요할 거 같아서)<p id="14a2abc9-49f9-4dbf-a761-9c6ce4b3a62f" class="">추후 util tag 등 추가적인 서비스를 위해 제휴에 참여한 업체들이 shotag 제휴를 통해 얻은 추가 수익을 모니터링할 수 있을 것이다.</p></li></ul><ul id="13aa98ca-b47b-440a-816b-592e7837f49f" class="bulleted-list"><li style="list-style-type:circle">협업할 수 있는 사업자의 수의 한계는 어떻게 될까? 수익화를 위해 필요한 만큼 시장 지배력을 확보하여 수익을 지속적으로 창출하기에 충분할까?<p id="4348a305-ef0b-4d69-9de1-a8b38308b169" class="">추후 제휴를 확대할 시점에 shotag가 ___ 정도 수의 온라인 사업자들과 기술적으로 협업할 수 있을 것이다.</p></li></ul><ul id="60b64fcd-2371-4bd6-9141-b97d37f7bdb7" class="bulleted-list"><li style="list-style-type:circle">추가 기능을 만들려면 얼마나 걸릴까? (제휴 및 수익화를 위해 필요할 거 같아서)<p id="96f953de-2d3c-49c7-bd48-4e094a29cd12" class="">개인화를 위해 수집한 유저 데이터를 통해 유저에게 가장 적절한 util tag를 추천하는 기능을 우리 팀의 역량으로 _____개월 이내에 실현 가능할 것이다. (_____→  우리가 투자할 수 있는 최대 시간)</p></li></ul><ul id="08f7d099-177e-4a9d-aefd-8932bbdd0f1a" class="bulleted-list"><li style="list-style-type:circle">추가 기능을 유지보수하는 데에 얼마나 버틸 수 있을까? (제휴 및 수익화를 위해 필요할 거 같아서)<p id="2720a9a4-4be4-40f0-82b5-3aabb2c2fdcc" class="">개인화를 위해 수집한 유저 데이터를 통해 유저에게 가장 적절한 util tag를 추천하는 기능을 우리 팀의 역량으로  _____개월 동안 유지 가능할 것이다.  (_____개월 → 우리가 시장 지배력을 확보하기까지 필요한 시간)</p></li></ul></li></ul><p id="b7873550-5c2e-4f4f-b106-be64f03810f4" class="">
+</p><p id="a75a3776-3f66-423e-a030-dc52e1fef779" class="">
+</p></div></div></article></body></html>

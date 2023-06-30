@@ -1,0 +1,813 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>20221213-S&amp;D</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="d3c8e3a1-3418-4c7d-9beb-5ebcb8a636d4" class="page sans"><header><h1 class="page-title">20221213-S&amp;D</h1><table class="properties"><tbody><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>관련 링크</th><td></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>Type</th><td></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Due Date</th><td></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-orange">meeting</span></td></tr><tr class="property-row property-row-status"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesStatus"><path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path></svg></span>상태</th><td><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td></tr><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>작성 일자</th><td><time>@2022년 12월 16일 오후 12:49</time></td></tr><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Date</th><td></td></tr><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>Participants</th><td></td></tr></tbody></table></header><div class="page-body"><h3 id="faa55e30-cc65-4a73-8f66-235dd1cc6b31" class="">회의록</h3><h3 id="16efd281-4c7d-47ea-b8a0-508fcf08e28a" class=""><details open=""><summary>MSC</summary></details></h3><div class="indented"><ul id="8a9d3463-d058-4fb3-a49c-c8ad924c31ce" class="bulleted-list"><li style="list-style-type:disc">playdb 더뮤지컬 모두 없는 배우 리스트업 <span class="user">@찬희</span> → <a href="https://www.notion.so/DB-a23687642fa745e2ab497c3fb88739c0">DB에 없는 배우</a> </li></ul><ul id="b1aac6f3-14e1-409d-8669-d56ddcbb1929" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/5477c8745ae747c5be74232551f0f151">마이페이지 리뉴얼</a> </summary><p id="1f94b235-aa90-4b12-b3f3-68f2852357b8" class="">프로필 사진 선택 시의 행동
+→ (AOS) 뮤즈위키에서 추천 뮤지컬 타입 고르는 거
+→ (iOS) 월 선택에서 커스텀한 버튼 / ios 자체 선택 버튼</p><p id="fd8bb34f-04c0-439e-8bd0-723e776658e3" class="">
+</p><p id="433084ca-87a4-4435-bba4-b1e1ca7a7cf8" class="">호: 흰색이면 그림자, 검은색은 그냥
+검은색 버튼 쓰면 어두운 사진일 때 안 보인다</p><p id="ac97186f-643c-4951-b58e-39fa2d7654be" class="">건: 다른 색은?</p><p id="a135e5a5-78ef-4f14-ad71-66cf68694bf6" class="">호: 일단 블랙앤화이트</p><p id="80afe9e2-bbb8-4847-80fe-ecd9e480afd3" class="">찬: 검은 버튼이 낫다</p><p id="591b2c48-e11b-4d42-9f2a-93579e98ccb7" class="">건: 그림자 반영 어떻게 하고 있지?</p><p id="52c8e5b7-a4e8-4b20-94dc-3a43a05fb6aa" class="">찬: 찬호님이랑 같이 앱 봤는데, 뮤즈위키 뮤지컬에서 추천하는 영역 보면 그림자 들어가 있음</p><p id="0f47ead9-a169-4c3c-9c90-d8e14388e0a3" class="">호: 흰색이 낫다고 생각, 블랙은 너무 잘 보이는 것 같다</p><p id="1190aa1c-e291-449b-9ad5-4b9a81963191" class="">
+</p><p id="5074c57b-a734-41ee-afe0-932b433426df" class="">호: 후기 란은 캘린더와 같은 비율로 써야 할 것 같아서, 라운드값만
+제목이랑 후기 사이 구분선 좀 약하게</p><p id="9dc9d373-e01e-43a1-a6d8-bb200be55224" class="">건: 안에 넣을 거면 상하좌 여백 4보다 크게?</p><p id="c8f4513b-5aae-46db-9931-a52b54df8e6c" class="">찬: 재희님한테 물어봄, 어떤 게 만들기 쉽냐
+오른쪽(이미지 꽉 채우는 거)이 쉽다
+시간이 그렇게 많지 않다 보니 개발이랑 맞춰서 오른쪽으로 가도 되지 않을까</p><p id="af9cc324-593f-4f14-881c-11a274b0484f" class="">
+</p><p id="69e713ec-db2f-4ba4-961d-930f8584658a" class="">호: 글자가 더 잘 보이는 건 객체 색이 흰색</p><p id="1950cc68-6e75-413e-9da6-ff9669624369" class="">건: 뮤즈위키/티켓 탭 참고하면 배경색이 흰색이어야 할 듯</p><p id="cc1f70e6-200a-4417-86e8-12519ee4afa3" class="">
+</p><p id="2a759586-20f0-43a7-9b74-d903927a7932" class="">찬: 구분선 얇은 게 좋다</p><p id="9ba1ef2c-5f59-4575-a45b-b4437c09dfff" class="">
+</p><p id="7f8923f7-abfb-4cd5-b90a-f222d0de81e8" class="">찬: 두 줄밖에 없으니, 가독성을 그렇게까지 신경 안 써도 될 것 같다</p><p id="989a382f-9fd5-4af0-b7a1-b89a4a9fe1a4" class="">
+</p><p id="511b93a3-3fa2-4243-a2c3-6ab420c9c5ed" class="">건: 메뉴명들 수정?</p><p id="7cc9c150-c22b-4d88-afb7-6b0adeca9f63" class="">찬: 이대로 가도 좋을 것 같다</p><p id="1e960a1d-8fb3-4867-8598-316877be8445" class="">호: 좋아하는 뮤지컬은 헷갈릴 듯, 찜한 뮤지컬은 좀 웃김</p><p id="2518559b-9535-455e-a449-2e30c6f9fbae" class="">찬: 관심 있는?</p><p id="f91dc941-435d-4183-90e5-2a277c9564e4" class="">건: 좋아요 한 / 좋아하는, 좋아하는도 큰 문제 안 될듯</p><p id="2e4096b8-d6d6-406d-a9a9-2b56795ae63a" class="">
+</p><p id="f7922dfd-cf66-420d-87b8-efa63a231e1b" class="">
+</p><p id="88c9a0ae-0a7a-4045-a357-38a9feab60cf" class="">찬: 후기를 눌러서 티켓으로 이동할 때, 후기가 바로 보이는 위치로 스크롤
+그게 안 되면 그냥 상세 페이지,,, 맨 위</p><p id="9a4abc55-ee7d-44c4-8793-9cb99c2961b2" class="">
+</p><p id="a8d4911c-547f-406e-8bf2-e3b5e74900f6" class="">찬: 기본 이미지가 필요</p><p id="de3d8c21-5948-4bb3-a153-4ec88a3aae71" class="">건: M 아니면 캐릭터
+랜덤으로 하든, 하나만 하든</p><p id="f6bdda9e-a21f-4607-acfe-dced25292e29" class="">찬: 동그라미 안에 집어넣기</p><p id="18adf19c-d1e9-4cf3-9a1e-8dc516979060" class="">건: 1. 배경색 배리에이션 2. 캐릭터 형태 배리에이션 3. 캐릭터 자체 배리에이션
+여러 개를 쓸 거라면 2보다는 3</p><p id="6e8f88bc-15fb-432d-89cf-31c7defcf49d" class="">찬: 배경은 한 색깔이었으면 좋겠고, 티켓 객체 색이랑 같은 색</p><p id="5ab953da-701c-4cb5-a98d-24207e37981b" class="">
+</p><p id="6109fa61-f4aa-4b06-9064-d9079f10d03a" class="">찬: 사진 업로드 시</p><p id="624ee7df-4d69-4e55-8d6b-ecf01844f4a0" class="">건: 예매내역서처럼 자체 사진 라이브러리 동작 가져다 쓰고,
+사진 하나 선택 후에 크게 보는 중간 단계(가능하면) 있었으면 좋겠다</p><p id="022a2cc0-23f5-4cb6-8de4-a7963ce3ca2a" class="">
+</p></details></li></ul><ul id="fc88ad0c-7ff6-4e29-8cca-72ab7819c503" class="toggle"><li><details open=""><summary><a href="https://www.notion.so/64f0df7f2aa34c8eae58f3a33548bc80"><img class="icon" src="20221219-MiNER%200eada1fd1310498885342ef5ddea7f75/logo_white.png"/>뮤지컬 상세 페이지에서 예매처로 연결</a> </summary><p id="4d479e01-b82f-41fd-9f0d-6d0ed04eca49" class="">회색 배경은 좀 더 진해지면 좋겠다</p><p id="0ee001d4-ed46-4c61-9047-021ce23f0ee6" class="">x라는 버튼이 구현 번거로움 따져서 편한 대로 해 달라</p><p id="80c8a8ba-2b84-421b-8ceb-36a1bc5c8cc2" class="">건: 타이틀 있을 거라고 생각했는데 없어도 될듯</p><p id="612ddc54-c584-4ae9-b48d-1cb44b06448d" class="">
+</p><p id="13614f09-dfd4-4c3e-b085-8fef9df94a7e" class="">위치?</p><figure id="48b6fa3e-0923-4874-a689-9e3f4ccc0797" class="image"><a href="20221213-S&amp;D%20d3c8e3a134184c7d9beb5ebcb8a636d4/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2022-12-13_14.27.25.png"><img style="width:2030px" src="20221213-S&amp;D%20d3c8e3a134184c7d9beb5ebcb8a636d4/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2022-12-13_14.27.25.png"/></a></figure><p id="2a97afb5-d5b0-4fa0-88e3-05f3528e737e" class="">호: 위계상 왼쪽</p><p id="39f712c3-1e8d-4c7c-8316-e6beaf6d01e9" class="">찬: 예매처 아이콘이 하나인 경우가 많다, 오른쪽이 너무 많이 비어서 웃길 것 같다</p><p id="1f36afe1-b290-4fc9-8171-2083a68df9ec" class="">건: 최대 다섯개니까, 타이틀까지 한 줄로 왼쪽 정렬하는 방법
+아예 타이틀을 빼는 건 여전히 오른쪽 비는 문제가 있을 듯</p><p id="eb2d1e50-8909-494d-9f08-9b577cf58d9d" class="">찬: 오글에서 예매처 제공해 주지 않나 → 확인해 보니 없다</p><p id="595e157e-4831-4dd2-aac1-08b973cf2c0e" class="">건: 포도알은?</p><p id="f8ba4249-0a3d-4874-b71a-e1a78255283f" class="">찬: 포도알 리뉴얼했네,,,</p><p id="131468dd-5425-41f1-ac2b-2c1fc42da339" class="">호: 포도알(뮤지컬)</p><figure id="eb5d391b-84c2-403a-ae56-e4808c47f537" class="image"><a href="20221213-S&amp;D%20d3c8e3a134184c7d9beb5ebcb8a636d4/KakaoTalk_Photo_2022-12-13-14-35-43.png"><img style="width:240px" src="20221213-S&amp;D%20d3c8e3a134184c7d9beb5ebcb8a636d4/KakaoTalk_Photo_2022-12-13-14-35-43.png"/></a></figure><p id="c1ca0c92-46f0-47f6-a769-4877d38f13d1" class="">
+</p><p id="d493a438-5539-4423-8c6c-f72bc00c12d8" class="">앞에서부터 1-5, 6-10일 때, 각자의 1픽</p><figure id="cc47271d-6ffb-493b-8ae8-e3a76618f28e" class="image"><a href="20221213-S&amp;D%20d3c8e3a134184c7d9beb5ebcb8a636d4/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2022-12-13_15.48.52.png"><img style="width:1566px" src="20221213-S&amp;D%20d3c8e3a134184c7d9beb5ebcb8a636d4/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2022-12-13_15.48.52.png"/></a></figure><figure id="dbbfdd75-1c61-4055-95df-21c064ab7580" class="image"><a href="20221213-S&amp;D%20d3c8e3a134184c7d9beb5ebcb8a636d4/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2022-12-13_15.53.31.png"><img style="width:2226px" src="20221213-S&amp;D%20d3c8e3a134184c7d9beb5ebcb8a636d4/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2022-12-13_15.53.31.png"/></a></figure><p id="23ea8596-992b-4fdc-93cf-0da35ee042a7" class="">찬: 2→1→5</p><p id="6f031b9d-a396-43b8-9988-736b6042995d" class="">건: x버튼 없이?
+찬: ㅇㅇ</p><p id="c304e3ce-e892-4735-9c9c-a8201c7bc153" class="">건: 2에서 예매처명이 없는 경우</p><p id="ead77ad8-54fe-4221-b4c6-87dd393a5373" class="">찬: 일부 예매처가 헷갈릴 수 있다, 충무나 인터파크 같은 경우</p><p id="38373269-281f-4789-8e46-fffeb2cf83a7" class="">건: 4, 5번에 회색 텍스트로 예매처 표시하는건?</p><p id="360aa0a8-51c3-43ec-9189-30f6c1521c0c" class="">찬: 1개일 때(6,8) 애매?</p><p id="336997fa-a1e8-4aab-ae91-4a56a271c1e8" class="">건: 여러 가지를 종합적으로 고려하면 5 또는 5+예매처명 텍스트가 제일 낫지 않겠나</p><figure id="3ec20e87-d25f-4f8c-86ad-a3f6b145dc9a" class="image"><a href="20221213-S&amp;D%20d3c8e3a134184c7d9beb5ebcb8a636d4/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2022-12-13_15.56.35.png"><img style="width:576px" src="20221213-S&amp;D%20d3c8e3a134184c7d9beb5ebcb8a636d4/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2022-12-13_15.56.35.png"/></a></figure><p id="ed958d03-1157-483a-a10d-b30cefd97301" class="">호: 텍스트 있는 거 괜찮은데,,, 여백들을 줄 필요는 있을 듯</p><p id="77e5796d-13b1-4cee-93ce-7aaeeef13577" class="">건: 지금 텍스트 색은 위 ‘관람한 티켓/좋아요/후기’ 색</p><p id="6938c5a5-8fda-4707-875d-d40ecee4b9aa" class="">찬: 그 정도 맞는 것 같다</p><p id="f2df1878-72bc-4a36-856b-04a34a5c8df6" class="">
+</p><p id="9e3bfaf1-0a4d-4996-bf67-28fcdb693447" class="">한줄로 배치, 아이콘+예매처명</p><p id="ce58e26b-18b2-4682-ae90-20b980f3cefd" class=""><strong>배경과 텍스트 색깔, 간격 확정해서 넘김</strong></p></details></li></ul><ul id="8cf7453d-8b4f-4050-9e5e-3c4dc25b9f26" class="toggle"><li><details open=""><summary>2.2.1 (안드로이드 2.2.2) → <span class="user">@건표</span></summary><p id="7bf7cdb1-a687-4bcf-aac6-bdc5a1f8b95c" class=""><a href="https://www.notion.so/a68736f8aad44363b89025b9b3183619"><img class="icon" src="20221219-MiNER%200eada1fd1310498885342ef5ddea7f75/logo_white.png"/>‘내가 추가한 출연진’ 템플릿 유지와 관련된 로직</a> </p><p id="b25c580f-5fca-4ee1-ad9d-91164c361bb1" class=""><a href="https://www.notion.so/cbc79188c51949ebb937a94f5feb01e9">템플릿에 있는 배우를 추가로 선택하려 할 때의 다양한 시나리오 대응</a> </p><p id="b01b7855-399a-4391-bd35-0a09c890f9e5" class=""><a href="https://www.notion.so/Alert-847b9a3ba69449958061bb4447119863"><img class="icon" src="20221219-MiNER%200eada1fd1310498885342ef5ddea7f75/logo_white.png"/>티켓 편집 → 출연진 수정 후 뒤로가기 할 때 변동사항이 있을 경우 Alert</a></p></details></li></ul><ul id="db117519-1cea-4f0e-9c7e-18c56944f3c3" class="toggle"><li><details open=""><summary>2.2.0 IOS 수정사항 → <a href="https://www.notion.so/ac2696b455cc4348b137a78387d4035f">뮤지컬 직접 입력 시 출연진 플레이스홀더 수정</a> </summary><p id="0697d757-f537-4afb-b4db-3440c14e331e" class="">티켓 직접 입력시 출연진 플레이스 홀더 변경
+출연진을 입력해 주세요 → 출연진을 선택해 주세요</p></details></li></ul></div><h3 id="53b0785f-b9bc-40dd-96df-1d561632cb85" class=""><details open=""><summary>SHT</summary></details></h3><div class="indented"><ul id="1fe5479a-b1d1-4bf5-82c5-12011fa7b356" class="toggle"><li><details open=""><summary>프리토타이핑 관련 <mark class="highlight-teal">HS’s brainstorming</mark></summary><p id="0ed8fdbc-8d2d-4db7-a469-b4a8f6391b86" class=""><mark class="highlight-gray">*찾던 중에 생각이 나서 적어본 거니까 읽어주시고 뚝딱뚝딱 고쳐봐용</mark></p><h3 id="128c3ba2-b107-4a7b-a13e-328638aa0ddb" class="">설문조사</h3><ul id="77503619-2715-49fc-931c-30728b3b68a7" class="bulleted-list"><li style="list-style-type:disc">미국 20대 안드로이드 유저 대상 설문조사</li></ul><ul id="ae5d6a9e-7087-4bec-9f6d-0ecb50322b12" class="bulleted-list"><li style="list-style-type:disc">불편함을 겪는 주기 질문 → 비율을 통해 첫번째 질문과 두 번째 질문 해결</li></ul><ul id="78ac342d-5f8f-4844-ad79-349c52d368fb" class="bulleted-list"><li style="list-style-type:disc">일반 대중<ul id="9f7cdefb-e1cc-409d-a051-d721c0f5a2b5" class="bulleted-list"><li style="list-style-type:circle">일반 대중을 대상으로 설문조사하여 일반적인 니즈를 알아보고자</li></ul><ul id="aa891d96-e17e-4d18-a4aa-29e5af600088" class="bulleted-list"><li style="list-style-type:circle">설문조사 사이트들…</li></ul></li></ul><ul id="110245b4-0cbd-4dc4-b4d2-84a5492a94a3" class="bulleted-list"><li style="list-style-type:disc">커뮤니티<ul id="4feefb0f-16d7-4002-abe7-fe779559106f" class="bulleted-list"><li style="list-style-type:circle">커뮤니티를 대상으로 설문조사하여 early adapter의 반응을 알아보고자</li></ul><ul id="60825012-d2df-4ca5-8634-0ef449891a67" class="bulleted-list"><li style="list-style-type:circle">subreddits, </li></ul><figure id="524cdc8d-3d05-46ed-ab47-a33b48347c6f"><a href="https://www.reddit.com/r/newapps/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">r/newapps</div><div class="bookmark-description">r/newapps: The NewApps subreddit allows developers to receive top tier feedback on their apps all the while giving everyday users access to the ...</div></div><div class="bookmark-href"><img src="https://www.redditstatic.com/desktop2x/img/favicon/favicon-16x16.png" class="icon bookmark-icon"/>https://www.reddit.com/r/newapps/</div></div></a></figure></li></ul><h3 id="d2f2d835-c656-4b1e-aef9-6f30202845ff" class="">랜딩 페이지를 통한 검증</h3><ul id="0504a096-ae01-4ae5-914a-fa350216b6a6" class="bulleted-list"><li style="list-style-type:disc">미국 20대 안드로이드 유저 대상 캠페인</li></ul><ul id="6cd59ef7-c48a-4e96-93a8-8dc50737aa0e" class="bulleted-list"><li style="list-style-type:disc">첫번째로 눈에 보이는 화면<ul id="627f1d49-087a-4f8e-a745-980b070193ee" class="bulleted-list"><li style="list-style-type:circle">문제 상황 스토리텔링<ul id="c2d530c8-77dd-4425-853d-df6933818ea1" class="bulleted-list"><li style="list-style-type:square">(만약 가능하다면?) 애플의 프로덕트 랜딩 페이지와 비슷한 반응형(움직이는) 이미지로 구성</li></ul></li></ul><ul id="facf0920-138a-4f88-8a24-f62693dd36f4" class="bulleted-list"><li style="list-style-type:circle">“딱 내 얘기임”/”흠 그닥” 버튼 → 비율을 통해 첫 번째 질문 해결</li></ul></li></ul><ul id="35b0e7cb-c3cd-4261-a502-5541b935c131" class="bulleted-list"><li style="list-style-type:disc">“딱 내 얘기임”을 클릭 시 그 다음으로 보이는 화면<ul id="605c151b-526b-4d85-bb81-16eeb2129eca" class="bulleted-list"><li style="list-style-type:circle">반응형 튜토리얼 사용하여 솔루션 정보 전달</li></ul><ul id="bbb8ed22-cebe-432d-bb3d-f06dc5c0b0f7" class="bulleted-list"><li style="list-style-type:circle"><a href="pmf%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%88%E1%85%A1%E1%84%85%E1%85%B3%E1%84%80%E1%85%A6%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AF%20%E1%84%89%E1%85%AE%20%E1%84%8B%E1%85%B5%E1%86%BB%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%87%E1%85%A1%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B8%E1%84%83%E1%85%B3%E1%86%AF%2007c14c586064488eafeb2a74b448ebf2.html">fake-door</a> CTA 버튼을 이용해 실질적으로 다운받아 이용하려는 수요를 측정<ul id="00576668-052a-4636-a316-67ae7b659132" class="bulleted-list"><li style="list-style-type:square">(만약 가능하다면?) 깡통 앱 다운받기 → 비율을 통해 세 번째 질문 해결</li></ul><ul id="4ce6a96a-e21b-43f9-9471-594eb3e3e444" class="bulleted-list"><li style="list-style-type:square">공유 기능을 통해 반응 측정 → 공유 수를 통해 세 번째 질문 해결</li></ul><figure id="79d78ac2-8835-4f55-a321-7af41c657555"><a href="https://keyua.org/blog/types-of-minimum-viable-product/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">9 Types of Minimum Viable Products (MVP) for Startups | KeyUA</div><div class="bookmark-description">It&#x27;s not a surprise that most startups fail. According to the latest report from Failory, 9 of 10 startups are unsuccessful. However, the lack of skills, knowledge, or fortune rarely leads to failure. The key reasons lie deeper and include the following: The basis for every new product is various assumptions.</div></div><div class="bookmark-href"><img src="https://keyua.org/static/images/favicon.ico" class="icon bookmark-icon"/>https://keyua.org/blog/types-of-minimum-viable-product/</div></div><img src="https://keyua.org/media/articles/768_9_Minimum_Viable_Product_Types_for_Your_Startup.png" class="bookmark-image"/></a></figure></li></ul></li></ul></details></li></ul><p id="a9b44085-79b1-4ec2-9e37-b3dd880c6b26" class="">
+</p><p id="eb4faa9a-9ca5-4cb6-9168-9b4fc677a683" class=""><strong>현: 랜딩페이지에 우리가 기획했던 반응형 튜토리얼을 쓰자
+</strong>질문이 3개
+1. 앞에 있는 설문 조사랑 랜딩 페이지를 통해 검증할 수 있을 듯
+솔루션이 크게 설문-랜딩페이지 2개
+나머지 3개 질문은 랜페로 해결할 수 있다
+첫 번째 질문이 중요하다고 생각해서 여러개의 검증방안 사용하는 거 나쁘지 않을 듯
+설문조사 → 특별할 것 없음
+미 20 안드 대상 설문조사
+불편한 주기를 묻기, 원하는 답변은 모수 중에서(설문 대답한 인원 중) 어느 정도 비율이 우리가 원하는 정도의 불편함을 겪고 있느냐
+이 비율을 통해 첫(문제냐) 두(자주 겪느냐) 질문 해결 가능
+생각해봐야 할 건 설문을 어찌어찌 만드는데 어느 채널에 뿌리냐
+일반 대중 / 커뮤
+커뮤니티 먼저 보면, 새로운 카테고ㅓ리의 제품
+제품의 특성이라던지 성격, 경쟁축이라던지 이런 게 대중에게 익숙하지 않음
+얼리어댑터의 반응을 보는 게 중요 → 커뮤니티
+일반 대중 상대는, 우리가 알고 싶은 타겟이 20미국 안드, 일반적인 대중ㅇ,ㄹ 대상으로
+몇%정도의 니즈가 있는지를 알고 싶은 거니까
+커뮤/일반 중 뭐가 맞는지 생각을 듣고 싶다
+랜딩페이지 같ㄴ은 경우 두가 지 화면ㅇ,로 구성
+1. 문제상황을 스토리텔링하는 형식
+첫번째로 눈에 보이는 화면이라고 써 놨는데
+배너 광고(적절치 않은 예시) 예로 들면 배너를 보고 그걸 클릭해서 우리 페이지
+배너를 클릭하는 과정 또한 소비자의 액션
+그거에 있어서 어떤 계산 필요ㅕ
+배너를 클릭해서 들어온 사람이 우리의 모수라면 몰,겠지만,
+우리는 20 안드 유저 전체의 상대를 보고 싶은 거니까
+앞에 개입되는게 적으면 좋겠다
+그래서 처음 보이는 화면은 스토리텔링응ㄹ 했으면 좋겠고
+정ㄱ절한 형식으로 애플 프로덕트 랜딩 페이지와 비슷하게
+글은 최소한, 반응형 이미지 많이
+예를 들어 스크롤 안 하면 가만 있다가 스크롤 하면 움직이고
+굳이 그런 로직 안 들어가도gif같은 거
+그 다음 버튼, 스토리텔링 읽고 내 얘긴 거 같다 버튼
+그 버튼을 눌렀을 때 그 다음 화면이 보이게 된다
+샷태그라는 솔루션의 정보를 전달
+이때 사용하고 싶은게 기획을 했었던 반응형튜토리얼 장면
+반응형 튜토리얼은 실제로 어느 부분을 눌러서 어떤 로직으로 흘러갈지 계산
+이걸 여기에 사용하면 소비자가 제품 자체의 특성들 또한 받아들일 수 있을 것
+fake door→ cta 버튼 맨 아래, cta 버튼에 이메일 집어넣기가 아니라 앱 다운로드 버튼
+실제로 받아지는 게 아니라 준비 중 이런 방식
+fake door로 만들고 싶은 이유는 (실제) 다운받을 비율을 보고 싶어서</p><p id="dfd4102f-403b-4fc6-baaf-4504b42daa9d" class="">fake door, 반응형 튜토리얼, 애플 같은 페이지
+일반 대중이냐 커뮤니티냐는 생각이 필요하다</p><p id="3c827e80-ce16-42ef-9332-ad578730e80d" class="">건: 일반 대중, 질문의 목적은</p><p id="f1fb9f6e-9fb5-4005-b4b9-0e4524e040b9" class="">현: + 커뮤니티를 통한 공유 기능</p><p id="a935b25c-faf0-4c44-a748-ae2872502bc0" class="">건: 커뮤니티를 통한 공유 기능?</p><p id="f3130188-7f35-48dd-ad3c-d28c49839e12" class="">현: 랜딩페이지 자체, 서브레딧
+특정한 카테고리에 모아져 있는데 초기 제품을 모아서 설명하는 서브레딧
+프로덕트헌트는 적절하지 않을 수도</p><p id="00b111d5-89bd-4692-b2ad-b4f1bb1c4861" class="">건: 목적은 서브레딧이나 프헌이나 비슷한데, 설문 유저 모으기엔 서브레딧이 적합
+그냥 공유 버튼</p><p id="454af58d-cf46-43ba-b5a7-c752ec2ed9a1" class="">건: 커뮤니티에는 다른 목적으로 공유해도 될듯</p><p id="e3345e66-ad00-4ee2-b76b-08fc3d939fab" class="">현: 얼리어댑터(초기수용자)의 반응을 측정하고 싶다</p><p id="2000dd9a-8157-4f23-8075-e208c8da562d" class="">건: 얼리어댑터의 기준? 뭐 레딧의 유저든,,,</p><p id="a8d0c9fe-0609-4f5f-bbcf-f8833939c6a4" class="">현: 초기 수용자의 반응을 얻고 싶다? → 초기수용자들과 우리가 다양한 유저들이 사용하는 어떤 앱으로 갔을 때
+찬: 얼리어댑터와 후기 수용자의 (유저들의) 특성이 다르다
+현: 그 둘의 가장 큰 차이는 완성되지 않은 프로덕트를 어떻게 바라보느냐의 태도,
+초기 수용자는 대중이 많이 사용하지 않는 nitch?한 프로덕트를 사용하는 거로 만족감
+우리 shotag에 아직 미완성된 부분들에 있어서, 거기에 부정적으로 다가오지 않거나 긍정적으로</p><p id="4f4c1c1d-7494-4894-ad95-e55273371fae" class="">건: 초기 수용자를 구분할 필요</p><p id="5be8db9f-a711-4b39-b601-7f06380cd6e2" class="">현: <a href="https://www.reddit.com/r/newapps/">https://www.reddit.com/r/newapps/</a> 유저는 초기수용자 같다</p><p id="fc456452-47be-45e2-b7e0-b585fae9a8da" class="">
+</p><p id="606d7791-3922-4db8-80be-62d3b4f99c54" class="">1-1 문제냐 </p><p id="1d451c1f-72d8-4ab0-ba7d-b2fd5eaf0236" class="">1-2 얼마나 자주 문제를 겪느냐</p><p id="a66f0d72-6d3d-4e85-82e2-10dd2dd95c08" class="">2 이 문제를 우리 솔루션으로 해결하고 싶어하느냐</p><p id="8df7c9e2-2ba9-4498-bb46-3f2d08412fe8" class="">
+</p><p id="59b28cf1-299f-4aef-9df0-f17a339bab0b" class="">호: 샷태그가 그거에 대한 솔루션이 될 수 있냐 → 제품을 써 보지 않고 말하기 힘든 부분
+사실 이런 질문을 이런 문제의식을 가지고 도출했는데
+거의 유도질문과 마찬가지
+대다수가 사용할 것 같다, 막상 출시하면</p><p id="7c7f89fc-397a-477e-b598-ec7ae572ebdd" class="">건: 페이크 버튼 / sean ellis test</p><p id="03a268cf-267c-4548-8ad9-a33b99adc761" class="">
+</p><p id="5a0d2171-91f3-4c2d-93fd-e8e0281bc415" class="">현: 연결된 질문들
+문제인가
+→ 1. 이거를 문제라고 여기는 사람이 잠재 고객 중 얼마나 되느냐
+→ 2. 이 문제를 겪는 주기가 얼마나 되느냐
+두번째, 문제와 솔루션이 맞느냐
+→ 이 문제를 겪는다고 응답한 사람 중, 실제로 설치해서 한 번이라도 사용하려고 하는 사람 수</p><p id="92c1bd91-d32b-4ff3-a0ca-112a6ce9b789" class="">
+</p><p id="45e3d7cf-9af9-4e91-a7c6-876b640df511" class="">애플 상품 구매 페이지</p><p id="74726a6a-6334-45d3-a70f-52b42f9293c3" class="">건: 랜딩페이지1부 → 더읽을래(내 얘기다) → 랜딩페이지2부 → 앱 다운로드(가짜)
+랜딩페이지1부
+아까 배너의 예시를 든 거</p><p id="89914e28-b757-485f-ad07-f7f2ceb2f194" class="">현: publish를 했을 때, 예를 들어
+이거(유저의 대답을 나타내는 수치가 왜곡될 수 있다)
+이전에 생각할 때는 1부의 cta 버튼
+당연히 어떤 배너가 떴고, 그 배너가 스크린샷 솔루션에 대한 배너
+그 사람은 당연히 솔루션이</p><p id="a8764575-463c-4193-9915-105f56546e24" class="">건: 모집단의 구성 중에 배너의 내용으로 인해 편향되게 응답할 수 있다</p><p id="24bc8b11-1d6c-41cf-bad8-49d81347569b" class="">현: 잠깐 생각한 건 이메일, 이메일도 제목을 보고 클릭
+(광고 메일 쏴 주는 업체)</p><p id="623a8224-951d-4e7a-ad1d-9151e5310ff3" class="">건: 방문율 reach(노출) / advance(방문)</p><p id="a1f3d963-cb90-40fb-8301-e544136d68e4" class="">현: funnel (1차진입 2차진입 다운로드)</p><p id="76f55794-316f-4b73-87fe-5ee5d0fd182e" class="">건: 노출에 대한 내용, reach가 편향되지 않게
+”랜딩페이지1부 → 더읽을래(내 얘기다) → 랜딩페이지2부 → 앱 다운로드(가짜)”
+앞 뒤 과정이 필요하지 않나</p><p id="6ef6117f-8e4d-45c4-97eb-7921b0ad4670" class="">찬: 전 회사에서 사전 예약 운영
+한국 대상이어서 채널이 구 페 인 네 
+거기마다 배너 사이즈도 양도 다르고
+퍼마를 하다 보니 일주일은 무지성(예산 편성대로) 모든 채널 동일하게
+구글에서는 어디가 높네? 뭐 이런 식
+배너마다 클릭률이 차이가 크고, 배너를 몇십 개
+채널마다도 채널이 5개
+컨텐츠 배너가 생각보다 중요
+배너가 진짜 생각보다 관심이 안 들면 안 누름</p><p id="a08d1f8c-1faa-4dbd-9189-c1d554b79907" class="">현: 요즘 그런 것도 많던데, 아예 배너 안 뜨게 만드는 익스텐션
+adblock</p><p id="80ac06b2-4281-4a70-83a1-c6b18feac1b1" class="">건: 이건 어쩔 수없다</p><p id="c56acc25-8e18-4bb3-9085-b0062c16b446" class="">찬: 랜딩페이지를 하는 순간 필수불가결</p><p id="d2029f76-2a8c-4437-b4b4-21f95b61ac85" class="">현: 매체?</p><p id="0a6c84f0-27e0-4593-be6a-b691dce2e59d" class="">찬: 한국 대상, 미국 대상이면 또 다르다</p><p id="bb084e0e-afa2-4b0a-89cb-7522575bc879" class="">건: 나열해서 거르고</p><p id="de25feb8-82fb-4585-abd3-2d5596eda4f2" class="">건: 이 문제가 내 문제다 라는 검증 자체가 가능할지
+”랜딩페이지1부 → 더읽을래(내 얘기다)” 이거를 묶어서 컨텐츠로 만들고
+이 전환율 자체를 “문제냐”의 답으로 판정하는 게
+문제 지적 후킹 배너 → 샷태그를 애니메이션처럼 볼 수 있는 페이지+DL 버튼
+fake button인 게 제일 우리가 알고 싶은 목적에 가깝다고 생각
+페이지의 내용, 구조도 괜찮은 듯</p><div><p id="7740b9a3-7a11-4f41-8e82-35fefdafb7a1" class="">찬: 예ㄷ전 회사에서 잘 기억 안나는데, 반려동물 어플
+초기에 랜딩페이지까진 아니고 홍보를 돌릴 때 광고
+노출 대비 유입률 확인했는데 가장 높은 게 앱 설치까지 갔던게
+문제 → 해결책
+이미지배너보다 영상이 훨씬 높고, 영상들 중에서도 문제 제기는 짧고 해결책 ^
+문제 제시를 하고, 우리는 이런 것도 있고 ~ 이런 것들을 제시할 수 있으면
+공장처럼 찍어낼 순 없으니</p></div><p id="1ecf8ffc-64ec-4d16-a619-64c7aefc1bd3" class="">건: 컨텐츠 형식보다는 채널이 중요하다고 봄</p><p id="64ca4273-bd3a-4d90-b2b5-decfc067bb20" class="">
+</p><p id="9a373883-727c-441c-a7aa-3b86bc55d423" class="">건: 모바일 친화적이고, 스크린샷을 실제로 쓰고 싶은 채널</p><p id="62765a45-acae-4060-8eb4-93cd9aca0c91" class="">현: 핀터레스트</p><p id="8eb3373d-9ea6-4b29-8ced-2bb2d59df482" class="">
+</p><p id="69e07b63-b542-45d6-bc34-be9734d0ceb6" class="">현: </p><div><p id="e0a7d7a7-47e7-40fa-8db2-7c021f1bd904" class="">배너(텍스트, 이미지, 영상 / 광고 컨텐츠) → 페이지(tutorial) → 버튼(Fake door)</p></div><p id="bef4ab9e-3b0f-462b-bc6b-9673ec3cdfde" class="">
+</p><p id="fc18c468-8e3f-414c-8d2f-9cf504595168" class="">건:</p><div><p id="9d41d16b-d773-4679-8e8d-d61e97b1570d" class="">1. 채널
+ 1-1 채널의 종류
+ 1-2 채널별 비용 및 책정 방식
+ 1-3 채널별로 확인할 수 있는 수치
+2. 배너에서 사용할 주제
+ 2-1 문제 의식
+ 2-2 우리가 생각하는 강점
+ 2-3 …
+3. 랜딩 페이지의 구성 (다른 거에 비하면 뼈대가 잡힌 상태)
+ 3-1
+ 3-z 마지막 다운로드 버튼을 눌렀을 때 추후 스토리</p></div><p id="90b81951-1607-45d4-b5cf-6251ae35a8b1" class="">
+</p><p id="5ded440f-6112-4497-8ec8-54bb9db0931e" class="">현: 두 가지를 다 나열?</p><p id="33013b81-c7d4-4a98-887b-5bfe3ad7ff3f" class="">건: 종합한 새로운 옵션마저 하나의 추가 옵션</p><p id="cbf199d3-9d10-4172-a167-1363ce2edd33" class="">
+</p><p id="4f6b4684-9ed1-43cb-99d0-75b09f340874" class="">현: 어떤 기준으로 채널을 고름?
+우리가 선택한 모수에 얼마나 왜곡되지 않게 접근 할 수있는가</p><p id="6def8faf-5f25-4626-bb62-844b6604829e" class="">건: 이게 목적이면 큰 쪽(서비스가 월드와이드하고 이용자가 많고)이 적합하다고 봄</p><p id="e7f3627f-6643-4ccb-958d-38565107f425" class="">건: </p><p id="c8e1c7b2-b2fb-4df9-8df3-49e410341f3e" class="">3. 랜딩페이지의 스토리보드 → <span class="user">@현식</span>
+2. 후킹 컨텐츠의 컨셉 → 찍어내서 거름
+1. 채널 조사 → 
+전체 리스트+적합한 리스트</p><p id="fcb66b80-c588-4dbf-a258-f24cc9829ddf" class="">
+</p><p id="8bc27442-35e3-4c77-becc-f18a4e93cc08" class="">찬: 배너 제작만 함
+채널 선정의 
+타겟에 따라 조금씩 다름, 주로 다 20-30
+반려동물 화장품
+채널 조사를 해본 적이 있는데, 인구대비 이용률
+그 사이트 들어가면 ad 들어가서
+</p><ul id="1ca25e4d-9ad1-4cb2-aedc-8055da0091b6" class="toggle"><li><details open=""><summary><strong>타겟(20, 미국, 안드로이드) → 솔루션(샷태그) → 해결책(만족감을 줄 수 있을 것인가)</strong></summary><p id="f4341559-cdfd-4c99-ba6b-174858f24a94" class="">타겟, 솔루션, 해결책</p><ol type="1" id="9a5abdb3-8592-4c92-9376-9cb34e385f9a" class="block-color-purple numbered-list" start="1"><li>변형된 sean elli test</li></ol><ol type="1" id="99660c7b-ab07-4ead-a931-df07580b3d05" class="block-color-purple numbered-list" start="2"><li>랜딩 페이지 + 사전 등록</li></ol><ol type="1" id="05445277-47e1-4d21-88d7-b295473fe202" class="block-color-purple numbered-list" start="3"><li>커뮤니티를 통한 공유 빈도 보기</li></ol><ol type="1" id="19508242-cc54-4a41-9da3-f96168f00705" class="block-color-purple numbered-list" start="4"><li>ProductHunt 같은 채널</li></ol></details></li></ul><ul id="4c1d9879-571f-4737-b84d-84cb72e71765" class="toggle"><li><details open=""><summary><strong>초기에 가입시에 닉네임 설정 → 마이페이지 바뀌어야 됨+초기 가입 화면</strong></summary><p id="cad74819-0e53-4375-81a4-b81059f3512a" class="">(이메일) + 닉네임(이름), <del>프로필 사진?</del></p><ul id="b6b5e83e-5e65-430c-8ee8-0aaa7a1b9014" class="bulleted-list"><li style="list-style-type:disc">프로필 사진 없음</li></ul><ul id="007d0872-81ef-41db-ab29-76aee53fdcfe" class="bulleted-list"><li style="list-style-type:disc">구글에 등록된 이름을 자동으로 가져온다</li></ul><ul id="c5a8dc1b-0404-49f5-90d0-8dc240af41de" class="bulleted-list"><li style="list-style-type:disc">이메일 표시 / 닉네입 입력란, 다소 빈약해 보일 경우 일러스트 추가</li></ul><ul id="ca54ea85-f94c-46f0-affa-bd89abf5535c" class="bulleted-list"><li style="list-style-type:disc">닉네임 중복 허용, 추후 필요한 경우 난수 추가 부여 (당근마켓)</li></ul><ul id="d6e7be66-4fd7-4e1c-a318-6fe2a78c626c" class="bulleted-list"><li style="list-style-type:disc">닉네임 변경 가능, 가입 시와 비슷한 뷰</li></ul><ul id="fa6bc080-a545-4ae0-b091-c51e94a04d6b" class="bulleted-list"><li style="list-style-type:disc">닉네임 change 버튼의 위치 (마이페이지/세팅)</li></ul><p id="4b2e877d-26e0-412d-a5d3-f746c3827ea1" class="">
+</p></details></li></ul><div><ul id="87c24897-f0fa-4d95-bf91-8d1ba17022cc" class="toggle"><li><details open=""><summary>질문들과 검증 방법</summary><ol type="1" id="eac8a564-d8d9-44c3-bb81-b3ec2f969700" class="numbered-list" start="1"><li>어떤 스크린샷이 떠오른 후 그 화면으로 되돌아가는 데에 필요한 시간과 노력을 줄이고 싶어하는 사람이 미국에 거주하는 20대 안드로이드 유저 중에서 어느 정도 되는가?<ol type="a" id="7f8968d6-eedf-4ca9-9427-561a692a4e80" class="numbered-list" start="1"><li>노출 대비 클릭 비율을 가지고 검증</li></ol></li></ol><ol type="1" id="6ddf4aea-6231-401f-844f-e2a3c1db19e6" class="numbered-list" start="2"><li>그 중 <a href="%5Bprioritized%5DShotag%20%E1%84%80%E1%85%A1%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%80%E1%85%A5%E1%86%B7%E1%84%8C%E1%85%B3%E1%86%BC%2098cbf591c2544ff98e2258106befc0f1.html">자동 태깅 애플리케이션을 통한 모바일 스크린샷 검색</a>(①과 ②을 모두 갖춘 솔루션)을 설치하여 한 번이라도 사용하고자 하는 미국 안드로이드 20대 유저들의 규모가 어느 정도 되는가? (만약 최종 MVP에서 ①만 들어간다면 ②는 빼는 게 좋을 듯)<ol type="a" id="2454589c-7283-4b0e-87d5-aee6b68424fb" class="numbered-list" start="1"><li>최종 Download 버튼을 누른 비율</li></ol></li></ol></details></li></ul></div></div></div></article></body></html>
