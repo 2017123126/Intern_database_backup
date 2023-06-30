@@ -1,0 +1,676 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>스튜디오넘버나인 by 승환,승제님</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ccaf548f-4809-4a9c-b55b-b09d60e65ae1" class="page sans"><header><h1 class="page-title">스튜디오넘버나인 by 승환,승제님</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-brown">인터뷰/외부미팅</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td><a href="https://lionrocket.slack.com/archives/C02GN0KUW6N/p1684324852282909" class="url-value">https://lionrocket.slack.com/archives/C02GN0KUW6N/p1684324852282909</a></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><p id="d26ee867-2ac6-4680-a70f-121907389c3f" class="">금일 승환님하고 다녀온 스튜디오넘버나인 미팅내용입니다 . 기존 저희가 주로 청취하였던 <strong>CP사와는 또다른 관점에서의 이야기를 듣고 온 미팅</strong>이라 리더채널에 공유드립니다.</p><ul id="4a3beabc-4761-4144-ba68-0d24429013f9" class="bulleted-list"><li style="list-style-type:disc">참석자 : 스튜디오넘버나인 김동훈 대표</li></ul><p id="3211017f-35ba-475f-bdd2-cdfb36b86dcb" class="">라이언로켓 정승환대표, 양승제이사</p><ul id="c60e934e-0e40-4a93-baf7-c4c660f759a3" class="bulleted-list"><li style="list-style-type:disc">김동훈대표 소개<ul id="dd7ca824-37eb-4713-9f95-1e4bee4e21d1" class="bulleted-list"><li style="list-style-type:circle">작가겸 대표, 웹툰협회 부회장</li></ul><ul id="cf78147a-3295-4141-93b9-3a372a68058a" class="bulleted-list"><li style="list-style-type:circle">두나무에서 투자 받음, 카카오에는 투자 제안 들어가 있다.</li></ul><ul id="10cc8e33-51e3-4b7d-a29a-4a598235ad1c" class="bulleted-list"><li style="list-style-type:circle">작가이자 비즈니스맨의 입장으로 기존 <strong>CP사와는 또다른 관점에서의 이야기를 듣고 온 미팅</strong>이었습니다.</li></ul></li></ul><ul id="dbd573d5-cb6f-43ac-bd03-6ede62a6bc45" class="bulleted-list"><li style="list-style-type:disc">미팅내용<ul id="54253bf1-a0f1-4d7c-83e4-eca95c6a13af" class="bulleted-list"><li style="list-style-type:circle">AI업체들의 현황<ul id="e8d2ce12-448b-4a6f-aa1f-1a8825b4b5a1" class="bulleted-list"><li style="list-style-type:square">4곳과 이야기를 해봤다. 다 오픈소스 조합이고 어느정도 한다. 비슷비슷.</li></ul><ul id="e48d9b1c-ffff-409f-a825-52955af97c1c" class="bulleted-list"><li style="list-style-type:square">결과물만 보여주고 공정을 안보여줌. 아마 실제 공정이 설명과 달라서 그러는 것일 듯</li></ul><ul id="aae251ec-96a8-4ce7-a3c9-ff1536a8ca1e" class="bulleted-list"><li style="list-style-type:square">고객에게 솔루션 소개시 다들 결과물 이미지 한컷만 보여주는데 무의미. <strong>이어지는 3~4컷을 보여줘야 함. 그래야 쓸 수 있는지 판단이 됨. 웹툰시장에 들어올려면 이렇게 준비해야 함.</strong></li></ul><ul id="ef573cfd-878b-40e6-a6c3-e5c59ee5b90f" class="bulleted-list"><li style="list-style-type:square">업체별 현황<ul id="561d3db9-91f8-4777-93d6-719f8fc5b27c" class="bulleted-list"><li style="list-style-type:disc">코니스트<ul id="b079f8e9-127c-4c1a-a0f9-2d73d3d0767d" class="bulleted-list"><li style="list-style-type:circle">서버비용 1,000만원(무제한 사용) + 캐릭터당 100만원</li></ul><ul id="02117e92-7ecf-43ef-a658-733577576394" class="bulleted-list"><li style="list-style-type:circle">비싸서 아무도 안쓰지만 이해는 됨. 시장 조사 결과 CP대상 사업이 수익성이 떨어진다고 나와서 비싸게 팔아야 함.</li></ul></li></ul><ul id="a182d2be-6208-4a0a-b019-ddc8c09095f4" class="bulleted-list"><li style="list-style-type:disc">딥툰<ul id="cf8e7b83-e520-4f11-950a-ce1463bab222" class="bulleted-list"><li style="list-style-type:circle">쓰리킹덤으로 AI 개발중, 본인(김동훈 대표) 작품인데 작가 입장에서 아직 퀄리티가 낮다. 후보정 할 것이 많음</li></ul></li></ul><ul id="10982821-e654-424e-ac3d-7b73020fec19" class="bulleted-list"><li style="list-style-type:disc">콘파파<ul id="d4240dc6-9a1c-4170-8c1a-fe686a607af3" class="bulleted-list"><li style="list-style-type:circle">콘티만 하는 회사이다. 웹툰 형식으로 길게 세로형으로 제작, 호환성이 좋아 많이 쓴다</li></ul></li></ul><ul id="dfefee6a-5694-4f1a-a9d5-b6da6631234a" class="bulleted-list"><li style="list-style-type:disc">툰스퀘어<ul id="a3fb9546-775a-4648-88d0-0c56aac11e7e" class="bulleted-list"><li style="list-style-type:circle">박태준만화회사와 AI웹툰 제작 기술 개발 협업중인데 박태준 대표에게 어떤 상황인지 물어보면 얘기를 않해 줌. 결과 별로인 듯</li></ul></li></ul></li></ul></li></ul></li></ul><div><ul id="3a600ff6-9ac9-41e5-a747-d38c3befddb6" class="bulleted-list"><li style="list-style-type:disc">AI가 해결해주기를 원하는 가장 큰 니즈는?<ul id="7822a19b-9cc3-4632-a717-7d63cb4ed0d4" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">클립스튜디오에서 벗어날 수 있게 해주는 솔루션</span><ul id="bccd24dd-ec63-481b-aad8-ea715a08cdb1" class="bulleted-list"><li style="list-style-type:square">일본 동인지 시장에서 출발, 어설퍼도 혼자서 만들 수 있는 아마추어용 솔루션이었는데 한국의 웹툰시장이 열리며 작가들이 쓰기 시작</li></ul><ul id="5a40cc6b-f3a6-4818-96d1-8944f38574f6" class="bulleted-list"><li style="list-style-type:square">초기 무료버전 사용하며 락인됨. 현재 정액제.</li></ul><ul id="34a7d880-88e3-45a4-bb0b-836c1432acee" class="bulleted-list"><li style="list-style-type:square"><span style="border-bottom:0.05em solid">폐쇄적이고 브러쉬 성능도 떨어지는데 다들 쓰고있다.</span></li></ul></li></ul><ul id="acb69afe-f633-442d-b01b-d8c7b7850d1d" class="bulleted-list"><li style="list-style-type:circle">일반인, CP, 작가 입장이 다르니 다르게 접근 필요<ul id="5d2621ab-0188-4c0a-bb59-1315b1540a1a" class="bulleted-list"><li style="list-style-type:square"><span style="border-bottom:0.05em solid">일반인 들에겐 놀이터를 제공해 줘야한다.</span><ul id="f18df78b-f545-4143-96e5-3d6604882277" class="bulleted-list"><li style="list-style-type:disc">무료로 다양한 레퍼런스 제공하여 이것₩저것 만들어보게.</li></ul></li></ul><ul id="e337b653-b35f-42b7-b489-72df2832efbc" class="bulleted-list"><li style="list-style-type:square">CP는 생산성, 특히 필요한 대표적인 기능은 채색<ul id="36d1057a-9885-44f7-bc92-352a723f1d3c" class="bulleted-list"><li style="list-style-type:disc">네이버가 만들었으나 바보같아서 안씀.<ul id="5b0c3f6d-6d1e-42df-88c1-3b15bc7e1dbc" class="bulleted-list"><li style="list-style-type:circle">개성이 안담긴다. 만화는 낙서에 가깝다. 직관적인 개성이 담겨야 함.</li></ul></li></ul></li></ul><ul id="88149ecf-815c-46d1-9781-48223b32e9bb" class="bulleted-list"><li style="list-style-type:square">작가는 퀄리티, 필요한 기능은 전 공정이다<ul id="9f65d4c8-d4ad-4c36-8d6c-d93130e8239e" class="bulleted-list"><li style="list-style-type:disc">결과물이 레이어로 분리가 되어있어야 한다. 그래야 공정에서 수정이 가능. 레이어가 컷당 10여개 된다. AI가 이미지를 만들어주면 완벽하지 못할것이고 오히려 작업이 힘들어짐.</li></ul><ul id="27554d65-bb54-4bd9-878b-222b213fb875" class="bulleted-list"><li style="list-style-type:disc"><strong>작가 입장에서는 밑색을 가장 귀찮아함. 밑색 작업하는 보조작가(어시스트의)들이 AI의 도움으로 작업을 2~3개 함께 할 수 있다면 수입증대에 도움이 될 거다.</strong> <code>작업도 단순하고 니즈도 높아 AI에 적합</code></li></ul><ul id="44ca8f07-8645-42d0-8e6b-490a6a0b619c" class="bulleted-list"><li style="list-style-type:disc">선화는 있으면 좋은데 선이 다 연결되어있어야 된다. 너무 단순 작업이라 완성도가 높아야 AI를 쓰는 의미가 있으나 뚤려 있는걸 막는건 채색영역임. </li></ul></li></ul></li></ul><ul id="e2a04872-f782-4359-993e-277924650aaf" class="bulleted-list"><li style="list-style-type:circle"><strong>그림체 반영된 3D로 포징</strong><ul id="bf06384c-79e2-4bff-85d2-31fee252f37c" class="bulleted-list"><li style="list-style-type:square">사진이나 포즈집으로 레퍼런스 따라하고 조작 가능하게</li></ul><ul id="79a24a0a-abe0-4646-a2fb-2251b10eca73" class="bulleted-list"><li style="list-style-type:square"><strong>더미가 커스텀 되어야 쓸 수 있다.</strong></li></ul><ul id="642e9de8-c11f-4a44-a146-5b503cab4da5" class="bulleted-list"><li style="list-style-type:square">이렇게 만들어진 더미는 상품등록하여 판매, 작가와 R/S (OOO작가의 어떤 캐릭터 더미)</li></ul><ul id="12563a79-0059-467d-970f-c423452c3603" class="bulleted-list"><li style="list-style-type:square"><strong>콘티와 스케치가 가장 시간이 많이 걸린다. 이를 해소 가능</strong></li></ul><ul id="4d72fca3-01ec-48b2-8182-a7212e8082f3" class="bulleted-list"><li style="list-style-type:square">클립에도 기능이 있지만 더미가 아니다. 안이쁘면 안쓰는 사람도 있다.</li></ul></li></ul><ul id="5add42b7-e47a-4fde-8997-5db4860d6291" class="bulleted-list"><li style="list-style-type:circle"><strong>어도비의 사진을 3D로 변환해주는 기능이 작가들에게 매우 유용</strong><ul id="e6aa8617-268b-4ba7-a62b-ba2a44c8d9df" class="bulleted-list"><li style="list-style-type:square">스토리를 구상할때 스케치업부터 찾는다 (영화에서 장소 헌팅 하듯)</li></ul><ul id="24c3665a-6e2c-4cee-adee-6ef02af3f433" class="bulleted-list"><li style="list-style-type:square"><strong>이미지를 3D로 전환해주면 이걸 스케치업처럼 쓸 수 있다.</strong></li></ul></li></ul><ul id="20d6c2bf-5593-46eb-9e80-59ca0b5e0f36" class="bulleted-list"><li style="list-style-type:circle">어느 콘티회사의 매력적인 기능 소개<ul id="59f3f668-d316-45e3-9a66-72a2c6da355e" class="bulleted-list"><li style="list-style-type:square"><strong>스케치업을 불러와서 캡처해서 콘티에 바로 붙힐 수 있다</strong></li></ul><ul id="ebadca2e-4d8b-4bed-925d-7f89b10c6446" class="bulleted-list"><li style="list-style-type:square">현재는 스케치업 쓸때 스케치업에서 구도잡고 반투명 화면으로 만들어서 구도 잡고 2D로 추출하는데 번거롭다.</li></ul></li></ul></li></ul></div><ul id="bf72a213-49a1-4909-9741-c3219196cca8" class="bulleted-list"><li style="list-style-type:disc">아마존과 애플이 이시장에 들어왔는데 파급효과는?<ul id="4f6ed558-b333-4c03-95eb-dc7c0cccf3e7" class="bulleted-list"><li style="list-style-type:circle">시장은 적어도 수입배분율이 좋다고 한다.</li></ul><ul id="f5c79ca4-2120-4c56-bf1d-2d8c777c8ec8" class="bulleted-list"><li style="list-style-type:circle">네이버는 본사를 미국으로 옮겼다. 마치 웹툰이 미국것인것 처럼 문화적으로 접근 전략</li></ul></li></ul><ul id="5d27c964-fe9e-46e3-9bb9-9f99e65184b9" class="bulleted-list"><li style="list-style-type:disc">AI는 공공제와 같다고 생각<ul id="fdeafa15-ac84-48b0-88d9-aa9f7fe8d184" class="bulleted-list"><li style="list-style-type:circle">협회랑 함께 움직이는게 좋다.</li></ul><ul id="972f7250-a165-421d-b4a9-a60b4d8b42a1" class="bulleted-list"><li style="list-style-type:circle">협회 회원들에게는 할인해주는 방식</li></ul><ul id="725a209d-d2fb-4cac-bb6f-31886b1110c4" class="bulleted-list"><li style="list-style-type:circle">클립과 스케치업은 협회이사가 진흥원에서 강의를 열심히 했다</li></ul><ul id="dc26ea35-f158-4c2c-b074-b9fefb58eeeb" class="bulleted-list"><li style="list-style-type:circle">별도 특혜 없이 너무 좋으니까 알렸다</li></ul><ul id="b71582a2-43d6-4fbe-a60c-9487188279fb" class="bulleted-list"><li style="list-style-type:circle">좋은 솔루션이 있으면 포럼, 세미나를 통해 알려야 된다.</li></ul><ul id="6242cdd8-dbb4-468c-98d8-839ae59ab591" class="bulleted-list"><li style="list-style-type:circle">피드백 필요하면 작가들 모아서 하면 된다.</li></ul><ul id="2671674f-28aa-4aa5-a1fa-98481a2e091e" class="bulleted-list"><li style="list-style-type:circle">상호 수익 배분을 정하고 함께 협업 한다면 이런 부분들을 해줄 수 있다.</li></ul></li></ul><ul id="71427dda-60d9-4a09-8ee2-2aff1f870ac0" class="bulleted-list"><li style="list-style-type:disc">기타<div><ul id="eff134e6-bf67-4545-8912-a04710f02549" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">CP사와 작가의 입장이 다름. CP사를 대상으로 솔루션을 만들면 작가들이 안쓴다. 작가들이 쓰는 솔루션을 만들어야. 그러면 CP는 자동적으로 쓰게됨</span></li></ul></div><ul id="7f280c21-83c3-4a1d-8c2d-3cde44a9c118" class="bulleted-list"><li style="list-style-type:circle">CP사는 양산을 위해 퀄리티를 낮춰왔는데 이 방식은 이제 끝났다. 더는 시장에 먹히지 않음.</li></ul><ul id="21aaddf8-e399-4184-bfda-b13d2ef3e9de" class="bulleted-list"><li style="list-style-type:circle">CP사들은 곧 부실해 질거다. 매력적인 콘텐츠를 못 뽑아냈기 때문</li></ul><ul id="a801580d-bc3b-4a6a-95c0-62d3f5c525cf" class="bulleted-list"><li style="list-style-type:circle">카카오가 오리지널 IP확보에 주력하는 이유 임. 조직개편하고 난리도 아니다.</li></ul><ul id="fd73b584-6c5b-4e64-b9ec-5c0c6893c7bc" class="bulleted-list"><li style="list-style-type:circle">디테일한 협업 내용은 개발한 솔루션의 수익배분 등 관계정립하고 나누자.</li></ul></li></ul></div></article></body></html>

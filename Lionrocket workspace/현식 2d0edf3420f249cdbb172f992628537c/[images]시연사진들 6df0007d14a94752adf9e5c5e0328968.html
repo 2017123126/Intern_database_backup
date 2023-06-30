@@ -1,0 +1,711 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>[images]시연사진들</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="6df0007d-14a9-4752-adf9-e5c5e0328968" class="page sans"><header><h1 class="page-title">[images]시연사진들</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-yellow">knowledge base</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><nav id="d51af839-7ef7-4831-99b6-e88b46d1d305" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#3ef95a27-3c56-4080-885c-83a81cea18b1">Notion</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#05dcbac8-c489-474d-b73a-25f9b2515a4d">이미지모델 세부기능</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#87372eed-731a-405f-9bb4-ef8ec0d83389">객체고정</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#ef8eb1e4-07d1-4351-9ff2-c0bb8a8ee168">동작제어</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#55de61ae-87c6-4fc0-8d9e-04f190fb8b3c">인페인팅</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#ea71ddb1-b0c6-47b2-8bb6-807676c7f9c6">스케치 to 이미지</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#d2e27f02-b82d-4468-9f83-ed3302f65058">배경유지</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#e0ffc197-eff5-4a08-89ad-6421084ef52f">화풍변화</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#6557df2d-a166-4cbc-81ff-d33a7bb7a03c">2D → 실사화</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#1d942c94-2589-4455-a7f7-2a43b2701a64">아웃페인팅</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#00e44eaf-f39e-41d9-be35-0b807c1a42f5">광원조절</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#030ece13-50bc-4e1e-9a5e-f939ea4c268b">슈퍼레졸루션</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#514f2e86-bb80-4f3a-97f1-ce945aad5fa1">기술강점</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8319676b-4e14-460c-b4bd-c0b5b60bdfff"><a href="https://fastcampus.co.kr/dgn_online_rima">일러스트 6단계 작업 과정</a></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#eff2be65-3c1c-4012-9bd6-8d6b67875010">콘티 비용 절감</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8ebe9f8e-c426-4031-a3aa-40ffdaa17490">Canva</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#cba41e22-b8eb-420d-a9aa-1f0f528f5f74"><a href="https://www.canva.com/design/DAFeeJijhkU/fkgG5Kp6RCvaP11OLEz-qg/edit?analyticsCorrelationId=eebd9dca-b9bf-4b76-998a-148556287368">망가지지 않는 글자</a></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0adb1375-0aa7-4c4e-b466-3e4b1a8a0fc9"><a href="https://www.canva.com/design/DAFeeJijhkU/fkgG5Kp6RCvaP11OLEz-qg/edit?analyticsCorrelationId=eebd9dca-b9bf-4b76-998a-148556287368">채색 러프 (웹소설 일러스트)</a></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#17475932-fd1d-4697-b2cb-b6b87a0d3b14"><a href="https://www.canva.com/design/DAFeeJijhkU/fkgG5Kp6RCvaP11OLEz-qg/edit?analyticsCorrelationId=eebd9dca-b9bf-4b76-998a-148556287368">리터칭이 가능한 일러스트</a></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a39bbd08-46eb-4e28-b64e-d266393d4ba4"><a href="https://www.canva.com/design/DAFeeJijhkU/fkgG5Kp6RCvaP11OLEz-qg/edit?analyticsCorrelationId=eebd9dca-b9bf-4b76-998a-148556287368">실시간 디자인 수정 조율 (웹소설 일러스트)</a></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ba4df866-aa80-4eb9-afa5-69c2353fd42f"><a href="https://www.canva.com/design/DAFeeJijhkU/fkgG5Kp6RCvaP11OLEz-qg/edit?analyticsCorrelationId=eebd9dca-b9bf-4b76-998a-148556287368">의상, 악세사리 재생성</a></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#6747d84f-7c78-4cce-83e6-ec0784d88c8d"><a href="https://www.canva.com/design/DAFeeJijhkU/fkgG5Kp6RCvaP11OLEz-qg/edit?analyticsCorrelationId=eebd9dca-b9bf-4b76-998a-148556287368">동작제어</a></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a2030a04-efb9-4abf-9ccc-ac59c873d1da"><a href="https://www.canva.com/design/DAFfTali9wk/uFAHKlbFY0Zaa5IM0rZ0Bw/edit?analyticsCorrelationId=6ee18f75-0894-4692-875a-f00b796cb59b">원하는 이미지를 그대로 생성</a></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a24d7590-d1bd-4672-a42a-f02dbc5c07ea"><a href="https://www.canva.com/design/DAFfTali9wk/uFAHKlbFY0Zaa5IM0rZ0Bw/edit?analyticsCorrelationId=6ee18f75-0894-4692-875a-f00b796cb59b">다양한 각도 및 시점 변환</a></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#82c7a40d-6332-422d-89c9-f2160f8a8e57"><a href="https://www.canva.com/design/DAFfTali9wk/uFAHKlbFY0Zaa5IM0rZ0Bw/edit?analyticsCorrelationId=6ee18f75-0894-4692-875a-f00b796cb59b">디테일 작업 자동화 - 얼굴표현</a></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#08aaa3f2-d08f-48b5-9e9a-a79f481bccd0"><a href="https://www.canva.com/design/DAFfTali9wk/uFAHKlbFY0Zaa5IM0rZ0Bw/edit?analyticsCorrelationId=6ee18f75-0894-4692-875a-f00b796cb59b">디테일 작업 자동화 - 디테일, 손</a></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e6979000-cb4d-48e8-bb8b-ad5cd6b766fb"><a href="https://www.canva.com/design/DAFfTali9wk/uFAHKlbFY0Zaa5IM0rZ0Bw/edit?analyticsCorrelationId=6ee18f75-0894-4692-875a-f00b796cb59b">화풍의 비율 조절</a></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1f0efc65-4eb1-4f25-8fe4-6bcc7202a3b9"><a href="https://www.canva.com/design/DAFfTali9wk/uFAHKlbFY0Zaa5IM0rZ0Bw/edit?analyticsCorrelationId=6ee18f75-0894-4692-875a-f00b796cb59b">콘티 to 스케치 to 펜터치</a></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#c29187e1-5c35-4aa7-a640-11a4102d8a78"><a href="https://www.canva.com/design/DAFfTali9wk/uFAHKlbFY0Zaa5IM0rZ0Bw/edit?analyticsCorrelationId=6ee18f75-0894-4692-875a-f00b796cb59b">실시간 디자인 수정 조율 (웹툰)</a></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#05c05d74-2aa0-4af7-93d5-662be61fc73c"> <a href="https://www.canva.com/design/DAFd7O4MXdI/eSyVmk68v07rJ1Oss_zjKw/edit?analyticsCorrelationId=07cf5a61-c18e-410e-8137-ce475da1a300">채색 러프 (웹툰)</a></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d79fa575-3c9a-4c3a-b98f-af285942c603"><a href="https://www.canva.com/design/DAFgtSFMCCk/1JnNinoqO0yLevc0jUfI1g/edit?analyticsCorrelationId=c2105a53-91f7-4e8d-bbe2-99d84bb75960">표정 제어</a></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a08a57be-2cc8-485d-95a3-66c479e9f3b2"><a href="https://www.canva.com/design/DAFgtSFMCCk/1JnNinoqO0yLevc0jUfI1g/edit?analyticsCorrelationId=c2105a53-91f7-4e8d-bbe2-99d84bb75960">LR plugin</a></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3e6fceb3-ff9a-45f4-88e3-2d20acf4da3d"><a href="https://www.canva.com/design/DAFjJMUCQHY/7HCLgjxuPqkbO4imjrDN1w/edit?utm_content=DAFjJMUCQHY&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton">웹소설 표지</a> 1차</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0618101a-36a3-4cbd-9e87-ff8c2d1d5161"><a href="https://lionrocket.slack.com/archives/C050R41UPGD/p1685524625875729?thread_ts=1683709732.699599&amp;cid=C050R41UPGD">웹소설 표지</a> 2차</a></div></nav><h1 id="3ef95a27-3c56-4080-885c-83a81cea18b1" class="">Notion</h1><h2 id="05dcbac8-c489-474d-b73a-25f9b2515a4d" class="">이미지모델 세부기능</h2><div><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">객체고정</summary><div class="indented"><p id="abc8a9d1-fe56-47a4-8a09-0128de9b8dba" class="">특정 인물이나 캐릭터의 특성을 유지한 채 이미지를 생성할 수 있는 기능</p><p id="a0c7d31f-afbe-421f-96c9-0a4c7cb21b42" class="">
+</p><div id="9ca4478a-06a3-4ecd-822a-d5efeeb5eb7b" class="column-list"><div id="9ad29220-e640-4cce-940d-a37effc014e2" style="width:50%" class="column"><p id="c3d04aee-b5a1-4197-8301-83a2708926ea" class="">모델에 입력한 이미지들</p></div><div id="2acfd7a0-ec20-4c40-ba09-42b2fb354d2a" style="width:12.5%" class="column"><p id="484deace-935c-4bff-b7d3-823029244a13" class="">→</p></div><div id="0fe2726d-d528-4e88-b713-4aed229ae5c2" style="width:37.500000000000014%" class="column"><p id="a05ca128-fa64-4ef4-a3ba-5cd08d958aaa" class="">모델이 그려준 이미지들</p></div></div><div id="820ed750-48af-4d23-83df-4a5bf2f0a62b" class="column-list"><div id="a5925324-99a4-417c-9260-1cae75078398" style="width:56.25%" class="column"><figure id="51062c13-6df1-41c4-9be8-0da147741423" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.49.02_AM.png"><img style="width:280px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.49.02_AM.png"/></a></figure><figure id="ad617c5d-0fa0-4607-bc10-75937c075df9" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.46.52_AM.png"><img style="width:132px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.46.52_AM.png"/></a></figure><figure id="8e58910a-80fd-43a6-9497-6898122daf48" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.47.08_AM.png"><img style="width:132px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.47.08_AM.png"/></a></figure><p id="b5ffe8c7-eeb0-4f76-b624-7fdd77f02a52" class="">
+</p></div><div id="3e7bd0c7-6475-458d-a2d3-44013a1a013b" style="width:43.75000000000001%" class="column"><figure id="8d169da4-11aa-43ee-97ee-3bd58220cd01" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.45.35_AM.png"><img style="width:240px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.45.35_AM.png"/></a></figure><figure id="f64a28d5-18b6-41be-b336-9b3354242baf" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.46.11_AM.png"><img style="width:192px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.46.11_AM.png"/></a></figure><figure id="e0c6c825-bac5-478d-bf57-a98ee48c6e48" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.45.56_AM.png"><img style="width:163px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.45.56_AM.png"/></a></figure></div></div><p id="bbbb555f-897e-4ab3-88e7-8946b32f97ba" class="">이미지 출처: <a href="https://arxiv.org/pdf/2208.12242.pdf">https://arxiv.org/pdf/2208.12242.pdf</a></p></div></details><hr id="0bd6d2b5-224e-4449-a6c8-99109d5280e7"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">동작제어</summary><div class="indented"><p id="9746cd0c-8e9d-44fd-9990-49403ccbf5ab" class="">인물의 포즈를 간단한 스케치로부터 생성해낼 수 있는  기능 (신체 각 부위를 드래그로 제어 가능)</p><p id="63ce13ec-c63e-4741-b679-46df94aa1a98" class="">
+</p><div id="725c501c-05ac-4951-8975-ebe38789d5ca" class="column-list"><div id="5816ca79-cefd-46d4-b4a0-e7da5d45f8d0" style="width:50%" class="column"><p id="57f4c379-2766-411b-a0a1-9207e8745006" class="">모델에 입력한 이미지</p><figure id="cb176e73-5ec9-45c5-a744-43946030f8cc" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_11.43.01_AM.png"><img style="width:254px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_11.43.01_AM.png"/></a></figure><p id="d82113f8-581d-46c4-bb70-888967dc7279" class="">
+</p></div><div id="489671e3-2df5-4c51-ae48-1fdb52e8edb5" style="width:12.5%" class="column"><p id="706c226b-f8cf-4728-bb11-f6d55d6dbff8" class="">→</p><p id="a9b1ea51-c0ec-4785-8f29-08abbab46436" class="">
+</p></div><div id="ec3d9757-b5d4-458c-8d67-599fc19ab1a1" style="width:37.500000000000014%" class="column"><p id="87f8023f-1201-4587-94dd-5c3cfcea4138" class="">모델이 그려준 이미지들</p><figure id="998d2f54-ee50-4918-bbfc-cce7ad829028" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_11.48.07_AM.png"><img style="width:257px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_11.48.07_AM.png"/></a><figcaption>a woman dancing near a street corner</figcaption></figure><figure id="ecda2222-0113-48b7-a854-c300b673f89a" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_11.48.25_AM.png"><img style="width:248px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_11.48.25_AM.png"/></a><figcaption>artwork of Michael Jordan playing basketball</figcaption></figure></div></div><p id="7c3789f4-f207-4696-be47-a7abebbc5ecf" class="">이미지 출처: <a href="https://arxiv.org/pdf/2302.05543.pdf">https://arxiv.org/pdf/2302.05543.pdf</a></p></div></details><hr id="a65858d1-baa9-40f4-b14b-e5356581fa6b"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">인페인팅</summary><div class="indented"><p id="f6530904-3981-42af-a0c6-71bafd1fae87" class="">생성된 이미지의 일부분을 재생성할 수 있는 기능</p><p id="c2f9553a-7faf-4a41-84bc-6ec1a437167a" class="">
+</p><div id="da5fbe8c-0dfb-4644-9dea-46301219651e" class="column-list"><div id="02686f2a-d52b-4e3a-8e96-0dcc4e5ba54c" style="width:41.666666666666664%" class="column"><p id="f3e87ad7-1599-46c0-8f7e-2bc5e1a40126" class="">Before</p><figure id="edf2ccd2-d14d-4d44-b32f-2eee7bcdc015" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled.png"><img style="width:566px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled.png"/></a><figcaption>&#x27;Girl with a Pearl Earring’</figcaption></figure><p id="05f6f6b3-118f-4282-ac96-cbddef46926c" class="">
+</p></div><div id="08b2e6db-52ad-4194-9d90-fa7a14548ec5" style="width:4.166666666666666%" class="column"><p id="810197b0-dd5e-4110-990d-cf0c76e4e3f0" class="">→</p></div><div id="af612dc6-5798-4f81-a443-208e7cc38bf9" style="width:54.166666666666686%" class="column"><p id="80ee119b-9ff0-4b60-9c36-ee077da5ea22" class="">After</p><figure id="7b13d7d3-7db1-4ebf-bf1c-cdb0345c57b2" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled%201.png"><img style="width:288px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled%201.png"/></a><figcaption>&#x27;Girl with a Red Hair’</figcaption></figure><p id="0253cfab-3e3c-4518-b107-4af5b6cef5a0" class="">
+</p></div></div><p id="616ef685-342b-42e4-9aaa-93d62b50ef5f" class=""><a href="https://getimg.ai/guides/inpainting-with-stable-diffusion">https://getimg.ai/guides/inpainting-with-stable-diffusion</a></p></div></details><hr id="7e1bf221-e7ce-483a-9f98-56362270e75a"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">스케치 to 이미지</summary><div class="indented"><p id="e207022a-bed4-414d-98e9-d3163b5d3b82" class="">간단한 선으로 구성된 스케치를 일러스트, 또는 실사화 이미지로 생성할 수 있는 기능</p><div id="b0537a30-0bcc-4902-afaa-379b024ee118" class="column-list"><div id="36ca06de-5a95-4b56-8e45-8c1d0ce1a524" style="width:50%" class="column"><p id="308deddf-650a-4e65-aab3-a555a72a809a" class="">모델에 입력한 이미지</p><p id="5eefcd07-1bd5-450b-b65c-c226fea02c1d" class="">
+</p></div><div id="ce198ff3-17a5-4071-b925-ff1cc93d0523" style="width:4.166666666666666%" class="column"><p id="63428642-e253-47f6-b7c0-3b5325a1cd00" class="">→</p></div><div id="63b22c5a-d3b8-40d4-b5b1-08699ce02b3d" style="width:45.83333333333335%" class="column"><p id="ca61e883-ffda-49c1-80d8-1b861de786c4" class="">모델이 그려준 이미지들</p></div></div><div id="1c65a6a2-d567-4ba8-ad5b-2d75f5c803be" class="column-list"><div id="9b1a77d2-5f9c-4c2a-bc6c-c42cc8845e55" style="width:50%" class="column"><figure id="97105847-9f92-49a6-b9c8-4f1c1bb35eea" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_12.53.47_PM.png"><img style="width:153px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_12.53.47_PM.png"/></a></figure></div><div id="dcfff006-636b-412f-a7a6-071f3d953965" style="width:25%" class="column"><figure id="5a36a336-2fa5-4831-b278-c7c8323c4caa" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_12.54.00_PM.png"><img style="width:154px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_12.54.00_PM.png"/></a></figure><p id="3682ec09-890f-4b40-9c01-d986c571b101" class="">
+</p></div><div id="828fc38d-32e5-41a2-a18c-996cbaaf6f1b" style="width:25%" class="column"><figure id="972e0f56-aa8c-4f5b-8d06-7e6ba95e66b5" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_12.54.16_PM.png"><img style="width:153px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_12.54.16_PM.png"/></a></figure></div></div><p id="bfa3dea1-92d5-4c21-a214-41d23250b56b" class="">
+</p><p id="fbe312b9-55a2-4671-abab-60b94eafd21b" class=""><a href="https://arxiv.org/pdf/2302.05543.pdf">https://arxiv.org/pdf/2302.05543.pdf</a></p></div></details><hr id="8f6896ff-bfeb-4dce-9db5-1bcafe397c60"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">배경유지</summary><div class="indented"><p id="da4fd99f-94b7-4040-b355-e95eeae76633" class="">배경과 구도를 유지한 채로 이미지 속에 등장하는 다양한 인물을 교체할 수 있는 기능</p><p id="853b3314-01bc-4f43-b4bf-1d0682cba5d7" class="">
+</p><figure id="f8e307ca-dc81-4f0d-9a38-a55e784125a8" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled%202.png"><img style="width:821px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled%202.png"/></a></figure><figure id="0ee700d1-d187-4e39-8681-2a62722875fe" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/ddetailer_example_3.gif"><img style="width:1020px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/ddetailer_example_3.gif"/></a></figure><div id="53e2b27c-f8b3-4461-8e4d-d1eeba7d29bd" class="column-list"><div id="00c01d6a-b532-4b83-bc5e-75c1cc00a0a1" style="width:50%" class="column"><figure id="6f60d453-19c0-4076-a7e4-2cd42468699e" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled%203.png"><img style="width:422px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled%203.png"/></a></figure></div><div id="5245abbc-6229-43c5-9719-4c14751b7618" style="width:50%" class="column"><figure id="a3f20cb6-a254-49a6-b8c5-4b0ad4db8f6a" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled%204.png"><img style="width:422px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled%204.png"/></a></figure></div></div><p id="1cfee1d1-73ad-40f5-82bc-f22b607d02f8" class="">이미지출처: <a href="https://github.com/dustysys/ddetailer">https://github.com/dustysys/ddetailer</a>, <a href="https://www.youtube.com/watch?v=FEuv-HfUDz0">https://www.youtube.com/watch?v=FEuv-HfUDz0</a></p></div></details><hr id="69002cd0-606d-4d9a-bb64-d0176956b8a7"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">화풍변화</summary><div class="indented"><p id="214e6cc3-57e0-4219-9579-5503c91d1fb3" class="">생성된 또는 존재하는 이미지를 원하는 그림체로 새로 그려낼 수 있는 기능</p><p id="6418ba98-ce51-4231-8ae9-19dc900c769a" class="">
+</p><div id="d5b8563c-9b70-4429-8e5d-ca3f7a62b496" class="column-list"><div id="053f792a-2c95-4e88-b870-555d6bf26b3a" style="width:41.666666666666664%" class="column"><p id="5374bb3c-bf0c-4bc7-be73-5fbbeba22dac" class="">모델에 입력한 이미지들</p><figure id="3f5a292d-fea3-4543-a12f-47abd9a79846" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_11.27.35_AM.png"><img style="width:337px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_11.27.35_AM.png"/></a></figure></div><div id="b816b1cf-434e-4a32-a811-5e4f92a2d67b" style="width:4.166666666666666%" class="column"><p id="597fecdb-fb75-4816-a433-83e250d75e08" class="">→</p></div><div id="20939400-8b38-4323-8106-43aaf2e04fff" style="width:54.166666666666686%" class="column"><p id="af009d98-cbb9-4954-9394-a24f2a05cbee" class="">모델이 그려준 이미지들</p><figure id="1a85241d-6cc1-4ae2-9273-9cab02f3d863" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_11.28.16_AM.png"><img style="width:682px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_11.28.16_AM.png"/></a></figure></div></div><p id="546c704f-e110-4ba3-a114-d594fce1d4d8" class="">
+</p><p id="549b1a1a-9a86-4a43-bf7f-cbd43e9b0b11" class="">이미지 출처: <a href="https://arxiv.org/pdf/2208.12242.pdf">https://arxiv.org/pdf/2208.12242.pdf</a></p></div></details><hr id="73cf83b1-a698-413c-b28b-d02ba07f0e08"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2D → 실사화</summary><div class="indented"><p id="2b814b1b-1ad9-49f3-a857-e0a0d52a2ed4" class="">2D 이미지를 실사화 이미지로 변경할 수 있는 기능 (배경, 사물 함께 변경)</p><figure id="4e25048b-b438-489b-bcb4-3e413d32f259" class="image" style="text-align:left"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/alpha_scale.gif"><img style="width:432px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/alpha_scale.gif"/></a></figure><p id="da24f29e-79a8-44d3-b613-e5105f7d2f18" class="">
+</p><p id="d9af09be-792c-4ef7-a99e-1c4d052fde41" class="">이미지 출처: <a href="https://github.com/cloneofsimo/lora">https://github.com/cloneofsimo/lora</a> </p></div></details><hr id="07aeb22d-acd6-4f10-93e4-d039482c76b5"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">아웃페인팅</summary><div class="indented"><p id="fe0b3b59-59b9-4ac2-823a-23edea12cb06" class="">이미지 프레임 밖으로 그림을 이어 그릴 수 있는 기능</p><p id="190c7787-bf76-4401-8120-9eabc2321bca" class="">
+</p><div id="45e218d6-5a5d-4e37-8338-f73e2fa5012f" class="column-list"><div id="ac8fd633-dbb4-418b-ac51-4f44668f550a" style="width:25%" class="column"><p id="5c12ddd9-b9ef-400c-946e-756e661713fd" class="">Before</p><figure id="aadbf5d4-ac1f-48ad-9e3f-4ea3d4b6a047" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled.png"><img style="width:566px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled.png"/></a></figure></div><div id="ce8f0010-5740-40d2-8303-5dbc63303831" style="width:4.16666666666667%" class="column"><p id="fbeaf8cf-c64e-413c-80d9-a4d865aa5f63" class="">→</p></div><div id="ce14edb4-d9f2-4da3-9a00-4080da45ee14" style="width:70.83333333333334%" class="column"><p id="4ea8bd71-ba25-4a19-abc4-8593f21eb280" class="">After</p><figure id="467ed823-be01-4745-9a88-a7a44518893c" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled%205.png"><img style="width:1803px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled%205.png"/></a></figure></div></div><p id="28b98148-6f73-4187-bca2-b6ce41640349" class=""><a href="https://github.com/lkwq007/stablediffusion-infinity">https://github.com/lkwq007/stablediffusion-infinity</a></p></div></details><hr id="b0669fc5-a3d4-40d5-b7b4-54b33b344c8d"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">광원조절</summary><div class="indented"><p id="4e84530b-a420-4b2d-87b8-1e5d1e33f12d" class="">이미지 내부의 광원의 위치, 종류, 세기 등을 변경할 수 있는 기능</p><p id="15362d42-56bb-41e5-87f3-48c0bb7212a6" class="">
+</p><div id="7adc1204-d84e-478f-a01c-51ea6d4af825" class="column-list"><div id="a0bc3885-0087-48a4-962c-1b2e16f87720" style="width:25%" class="column"><p id="d4c5a293-7e8b-463a-8661-859578f5e061" class="">Before</p></div><div id="5aaa4fe4-5ba3-4a30-8660-aaf3c5cd852a" style="width:12.499999999999996%" class="column"><p id="a9aad8cc-ec5f-4f08-9e6e-9b800c29b265" class="">→</p></div><div id="1bfe6ac7-e7e6-4a88-be63-2e8640a4ca4d" style="width:62.500000000000014%" class="column"><p id="37a2e632-3c3e-4c12-beee-68e8b635551c" class="">After</p></div></div><div id="9211c937-52eb-4fa1-a32d-713079250e6c" class="column-list"><div id="95a4dc20-340d-4870-93cd-cd517f924cfd" style="width:41.666666666666664%" class="column"><figure id="d6561971-93ea-4054-9c58-01d83bbb13a6" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.04.35_PM.png"><img style="width:131px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.04.35_PM.png"/></a></figure></div><div id="a31f2725-fc7d-4461-a29e-a4c4bd3d9e54" style="width:25.00000000000001%" class="column"><figure id="df6cf21d-5076-4699-b8d3-e80fff5bb0b8" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.04.23_PM.png"><img style="width:132px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.04.23_PM.png"/></a></figure></div><div id="3b36bd20-a101-4a02-b0cc-d86438331945" style="width:33.33333333333333%" class="column"><figure id="216c07a1-9202-4fca-8c5b-af2ab277908e" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.05.07_PM.png"><img style="width:130px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.05.07_PM.png"/></a></figure></div></div><p id="13c92bf8-d68b-4a50-b901-993be916d277" class=""><a href="https://arxiv.org/pdf/2302.05543.pdf">https://arxiv.org/pdf/2302.05543.pdf</a></p><p id="015ed3ba-e3d0-49b2-a2dd-881c3ea4ad3d" class="">
+</p><div id="1ac1a54c-c6db-4cd6-9965-90b756c588f0" class="column-list"><div id="b2a80619-461b-486b-b7ed-c4c67250bca6" style="width:41.666666666666664%" class="column"><figure id="a3bddbd3-a3f3-4ac7-8e45-ed0eccaccd4d" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-29_at_2.16.33_PM.png"><img style="width:144px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-29_at_2.16.33_PM.png"/></a></figure></div><div id="6c7ea3e9-5048-49b7-9cda-1991352b97ac" style="width:25.00000000000001%" class="column"><figure id="53f0c04b-a61a-43f0-a432-e12adeba1d56" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-29_at_2.16.53_PM.png"><img style="width:144px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-29_at_2.16.53_PM.png"/></a></figure></div><div id="47413582-e86b-4333-b3f9-7f38d8f82f4e" style="width:33.33333333333333%" class="column"><figure id="362a4a37-6e3d-49bf-9584-73694d48a142" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-29_at_2.18.15_PM.png"><img style="width:144px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-29_at_2.18.15_PM.png"/></a></figure></div></div><p id="6a6f16b3-5cd9-47aa-b8b8-21c84c5431bc" class=""><a href="https://www.youtube.com/watch?v=YGEBATgrBPM">https://www.youtube.com/watch?v=YGEBATgrBPM</a></p><p id="76717cbf-b08e-4a43-b034-df107c71e8f5" class="">
+</p></div></details><hr id="203b77fe-aa0e-43b8-a540-1c15f2e886cc"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">슈퍼레졸루션</summary><div class="indented"><p id="2c23b6ea-e98a-48dc-8fc2-a5fb33d2ddf5" class="">이미지를 4k 이상의 해상도로 생성할 수 있는 기능</p><p id="c645c8b3-f9d5-4933-98ff-b84f4e28861c" class="">
+</p><figure id="4dab765d-16ef-4990-8c21-8b1f09b688f7" class="image" style="text-align:left"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.26.46_PM.png"><img style="width:326px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.26.46_PM.png"/></a></figure><div id="a94593d2-8280-4c1b-88a4-264b8dfe6d04" class="column-list"><div id="ad6bd62f-06b7-4924-997b-bf950616ee1d" style="width:29.166666666666664%" class="column"><p id="bf64f333-28fb-48b9-86e3-c505cb87a26a" class="">Before</p><figure id="6b4d3309-5f4a-46b7-8d23-588d6f1afc28" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.27.09_PM.png"><img style="width:144px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.27.09_PM.png"/></a></figure><p id="1e9b8a04-3942-458b-88a8-4f402014a4b3" class="">
+</p></div><div id="d40df4fe-0f2f-4af8-acdb-5095b1014853" style="width:8.333333333333337%" class="column"><p id="359b8e56-9e98-413f-bb3d-0e2ea8e527a7" class="">→</p></div><div id="4e894016-79d1-4bd1-8164-edb858c97f18" style="width:62.500000000000014%" class="column"><p id="dc3bc19b-cadc-4a33-a4d9-7ae2cb990da8" class="">After</p><figure id="469997a8-ec6b-4e0c-a0c6-ef990a01e9d0" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.27.22_PM.png"><img style="width:140px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.27.22_PM.png"/></a></figure></div></div><p id="ed553a4e-b2c8-41d8-b0bb-4e7471ef13bd" class=""><a href="https://arxiv.org/pdf/1809.00219.pdf">https://arxiv.org/pdf/1809.00219.pdf</a></p><p id="30a933c8-bf5a-46e8-b9ba-19c81b389b43" class="">
+</p></div></details></div><div><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">기술강점</summary><div class="indented"><p id="2176c65f-6edf-453e-85c0-04dc810a8be6" class="">고정된 이미지에서 인물 표정, 행동, 소품, 배경 등을 손쉽게 변경 가능</p><div id="61f80d1b-807f-4775-ba11-cd327998d1da" class="column-list"><div id="c184cd53-f699-4e39-9691-ecbd27e57715" style="width:25%" class="column"><figure id="a6198ee9-b0a1-4cda-ac11-bfaf168d849f" class="image"><a href="%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8%20%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%91%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A1%E1%84%8E%E1%85%B5%20suggestion%2067b8f09f4d394eb9893fda377a7b9533/00144-478352256-((intricate_de___.png"><img style="width:512px" src="%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8%20%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%91%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A1%E1%84%8E%E1%85%B5%20suggestion%2067b8f09f4d394eb9893fda377a7b9533/00144-478352256-((intricate_de___.png"/></a></figure></div><div id="0af4e512-2c65-4d9d-8801-75b22008df54" style="width:25%" class="column"><figure id="7f31467d-c108-4cfa-ad96-5ce8c57ab53a" class="image"><a href="%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8%20%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%91%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A1%E1%84%8E%E1%85%B5%20suggestion%2067b8f09f4d394eb9893fda377a7b9533/00145-2005894523-((intricate_d___.png"><img style="width:512px" src="%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8%20%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%91%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A1%E1%84%8E%E1%85%B5%20suggestion%2067b8f09f4d394eb9893fda377a7b9533/00145-2005894523-((intricate_d___.png"/></a></figure></div><div id="77e0183f-6075-46e3-a452-d6ca3d945e06" style="width:25%" class="column"><figure id="8767e4bb-8348-4785-a1dd-3b44ea6db0a1" class="image"><a href="%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8%20%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%91%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A1%E1%84%8E%E1%85%B5%20suggestion%2067b8f09f4d394eb9893fda377a7b9533/00147-1267412316-((intricate_d___.png"><img style="width:512px" src="%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8%20%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%91%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A1%E1%84%8E%E1%85%B5%20suggestion%2067b8f09f4d394eb9893fda377a7b9533/00147-1267412316-((intricate_d___.png"/></a></figure></div><div id="90d8ec31-ee1e-45cb-8505-95bbce918d86" style="width:25%" class="column"><figure id="2f83cead-f68d-4f50-86e7-e3547abe0270" class="image"><a href="%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8%20%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%91%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A1%E1%84%8E%E1%85%B5%20suggestion%2067b8f09f4d394eb9893fda377a7b9533/00141-207311782-((intricate_de___.png"><img style="width:512px" src="%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8%20%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%91%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A1%E1%84%8E%E1%85%B5%20suggestion%2067b8f09f4d394eb9893fda377a7b9533/00141-207311782-((intricate_de___.png"/></a></figure></div></div><p id="0fe5cd9e-8f59-48d9-8e5c-a44b1e706622" class="">
+</p></div></details></div><div><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3"><a href="https://fastcampus.co.kr/dgn_online_rima">일러스트 6단계 작업 과정</a></summary><div class="indented"><div id="5d9e2411-e6fa-46d6-bb28-a90edbd6b0c9" class="column-list"><div id="14dcc859-2fed-4c36-910b-3ab9863ea865" style="width:33.33333333333333%" class="column"><figure id="88a65c1f-3f29-408e-bb57-0f873a69a811" class="image"><a href="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/Untitled.png"><img style="width:600px" src="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/Untitled.png"/></a></figure><h3 id="2eb69665-a3b4-48ae-8269-715737422be6" class=""><strong>01. 1차 러프스케치</strong></h3><p id="e9408ddf-34ef-48e0-ba8f-214fbdff06cf" class="">클라이언트와 원활하게 소통하기 위해 최종본의 느낌을 볼 수 있는 섬세한 스케치 작업</p></div><div id="9e6b20e9-8b03-4dde-abd0-8255dba6f2e5" style="width:33.33333333333334%" class="column"><figure id="e6a38021-f86f-4586-9ee0-544d58d6ff2a" class="image"><a href="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/Untitled%201.png"><img style="width:600px" src="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/Untitled%201.png"/></a></figure><h3 id="cfcd5e75-ac84-406c-8999-2e0429d35d0e" class=""><strong>02. 2차 러프스케치</strong></h3><p id="2b596193-0700-4008-8128-7dde4b51262f" class="">클라이언트의 피드백을 바탕으로 수정한 러프스케치를 작업</p></div><div id="cfbb0870-c8a7-49b5-be0f-a54da1383078" style="width:33.33333333333333%" class="column"><figure id="ff792059-029a-4a58-96af-b08ae819e3ad" class="image"><a href="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/Untitled%202.png"><img style="width:600px" src="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/Untitled%202.png"/></a></figure><h3 id="8036c92d-7352-4757-a2f9-cd5c1a1cf5d3" class=""><strong>03. 선화와 밑색</strong></h3><p id="724b86d4-380c-4979-ad46-da5abfe3a3c0" class="">클라이언트가 선정한 러프스케치를 토대로 선화와 밑색 작업을 진행</p></div></div><div id="b46d10a6-604b-4228-9e8f-d71eab61c9b4" class="column-list"><div id="d491ba8b-43f7-4711-9b03-55c3556b195e" style="width:33.333333333333336%" class="column"><figure id="2fa2024a-e87b-4580-a625-2cbfa5db499f" class="image"><a href="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/Untitled%203.png"><img style="width:600px" src="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/Untitled%203.png"/></a></figure><h3 id="913cfbe9-f8e0-4610-9e8c-333148c331a6" class=""><strong>04. 1차 일러스트</strong></h3><p id="55422c88-68c8-4bc0-adc7-53ada0d1e3de" class="">배경에 따라 인물의 느낌이 달라지는 것을 고려하여 전체 색감과 밝기를 표현하여 전달</p></div><div id="39e21b7c-e5c0-4073-8576-9842afa9fbf7" style="width:33.333333333333336%" class="column"><figure id="75cc6d03-64ff-4b4d-9867-d5fb2950636b" class="image"><a href="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/Untitled%204.png"><img style="width:600px" src="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/Untitled%204.png"/></a></figure><h3 id="d4fe8f9f-617c-4188-9d02-834d8babfe21" class=""><strong>05. 2차 일러스트</strong></h3><p id="8fe3d7fa-be09-4f8d-a7a2-af61dfc58bc4" class="">클라이언트의 피드백을 바탕으로 인물의 인상, 소품의 디자인, 배경을 다듬는 작업</p></div><div id="a9dcc1c1-f539-48f6-8d5f-3d06870480b4" style="width:33.33333333333333%" class="column"><figure id="5f71f709-9c7d-4226-a3b9-f87d3ad3c8d2" class="image"><a href="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/Untitled%205.png"><img style="width:600px" src="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/Untitled%205.png"/></a></figure><h3 id="58720e46-8fcb-4ccd-ae8c-9dc6ff8cbffe" class=""><strong>06. 최종 일러스트</strong></h3><p id="0c6888e6-8f23-44cb-acf3-1a037a402cbc" class="">자체 점검을 통해 일러스트를 개선하고 보정 작업을 진행 후, 마지막 컨펌 및 원본 전달</p></div></div><p id="a91cc638-3c87-412f-bedd-fe5efe1c17ec" class="">
+</p></div></details></div><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">콘티 비용 절감</summary><div class="indented"><div id="b49dc643-a7fa-4d78-8ab1-15e1368ef23f" class="column-list"><div id="c595a12c-2e7e-42a0-9e78-87b1d3fb7d92" style="width:50%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="54abaeab-f301-4934-bcb5-791861eb86bd"><div style="font-size:1.5em"><span class="icon">🖌️</span></div><div style="width:100%">생성된 이미지</div></figure><figure id="0cd0581d-a9d8-4e73-94e1-420a48f1472f" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Manga_style._Black_and_white_except_the_eyes_of_th.jpg"><img style="width:336px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Manga_style._Black_and_white_except_the_eyes_of_th.jpg"/></a></figure></div><div id="ae3e9ee4-1683-4491-89e4-30aca401e339" style="width:50%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="a0e1b67e-7b76-4ead-9860-0018f86db16f"><div style="font-size:1.5em"><span class="icon">🖊️</span></div><div style="width:100%">텍스트</div></figure><p id="6bc2ca85-6a9f-404e-89a8-338ea671f18b" class="">
+</p><p id="a556a341-a4b3-4576-9319-f7d9ab68a976" class="">boy in manga style, </p><p id="cd642ce7-8476-40f2-a26d-132f7ffa12b1" class="">black and white except the eyes of the character </p><p id="611f36ff-cd3c-4b87-9cbd-ede11b6f23f6" class="">clean lines with neon genesis, </p><p id="48c7cf54-5439-4519-bb7b-36f504b1343a" class="">evangelion style</p><p id="0bd770f9-9085-4d8b-85c8-a64c025028f8" class="">
+</p><p id="ba0efcf1-79ea-4584-b17f-ed893713f898" class="">만화 스타일의 소년</p><p id="89629d89-2f6c-457d-982a-152bbfcf5d7c" class="">캐릭터의 눈을 제외한 흑백 이미지이다</p><p id="462bdf0d-1d81-46e5-907d-c7ece13e13e5" class="">깔끔한 라인의 신세기 에반게리온 스타일</p></div></div></div></details><h1 id="8ebe9f8e-c426-4031-a3aa-40ffdaa17490" class="">Canva</h1><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://www.canva.com/design/DAFeeJijhkU/fkgG5Kp6RCvaP11OLEz-qg/edit?analyticsCorrelationId=eebd9dca-b9bf-4b76-998a-148556287368">망가지지 않는 글자</a></summary><div class="indented"><div id="78fb503b-fa7e-4388-af1b-a5027e66214d" class="column-list"><div id="c22c3ee7-7ee3-431d-a5b2-a92a24cc72c0" style="width:50%" class="column"><figure id="230c4127-96c2-4072-b740-6b1cf41cb4f3" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_5.32.44_PM.png"><img style="width:800px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_5.32.44_PM.png"/></a></figure></div><div id="b1a5a757-2816-4fac-a00b-a3fc3ed15e72" style="width:50%" class="column"><figure id="3bb293e4-b89d-4023-b314-dc89baf23126" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_5.33.31_PM.png"><img style="width:570px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_5.33.31_PM.png"/></a></figure></div></div><p id="eccd3b99-a935-4a20-aafb-54eeab9e1244" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://www.canva.com/design/DAFeeJijhkU/fkgG5Kp6RCvaP11OLEz-qg/edit?analyticsCorrelationId=eebd9dca-b9bf-4b76-998a-148556287368">채색 러프 (웹소설 일러스트)</a></summary><div class="indented"><div id="f1a39956-293a-44ff-94df-6d5419a926e2" class="column-list"><div id="8a6a3432-5a0a-4af2-9345-e5d0e641b07a" style="width:25%" class="column"><figure id="01494bae-0622-4823-baee-0fa94868d3ee" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/1%25E1%2584%258E%25E1%2585%25A1_%25E1%2584%2585%25E1%2585%25A5%25E1%2584%2591%25E1%2585%25B3%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25A6%25E1%2584%258E%25E1%2585%25B5.png"><img style="width:600px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/1%25E1%2584%258E%25E1%2585%25A1_%25E1%2584%2585%25E1%2585%25A5%25E1%2584%2591%25E1%2585%25B3%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25A6%25E1%2584%258E%25E1%2585%25B5.png"/></a></figure></div><div id="ee5a1e7f-3b62-4242-a28c-b4da5815c4bb" style="width:25%" class="column"><figure id="d55a6e5b-91bc-4338-8307-a785c2edf65e" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_5.59.29_PM.png"><img style="width:426px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_5.59.29_PM.png"/></a></figure></div><div id="cce10ba9-9e86-4f14-a418-11f8440bf229" style="width:25%" class="column"><figure id="637b1183-3da5-423b-898d-23a2b948e7df" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.00.05_PM.png"><img style="width:429px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.00.05_PM.png"/></a></figure></div><div id="63a208f7-f499-4370-ba6e-9b12b7d9acea" style="width:25%" class="column"><figure id="3f465e2b-15c3-47f9-b216-67caee9e0d56" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.00.23_PM.png"><img style="width:420px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.00.23_PM.png"/></a></figure></div></div><p id="4973177e-d751-402f-bfc7-c0097dad9a50" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://www.canva.com/design/DAFeeJijhkU/fkgG5Kp6RCvaP11OLEz-qg/edit?analyticsCorrelationId=eebd9dca-b9bf-4b76-998a-148556287368">리터칭이 가능한 일러스트</a></summary><div class="indented"><div id="ab5e4a0b-e81f-4862-bc01-d19e00ee3788" class="column-list"><div id="f5d55cdb-fc59-47f7-a3eb-6e7141ba497b" style="width:25%" class="column"><figure id="373e459d-6ce0-4128-ad9e-8086f1d32820" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/a_beautiful_painting-2.jpg"><img style="width:2048px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/a_beautiful_painting-2.jpg"/></a></figure></div><div id="a9d0edf6-951a-4a57-b31d-beb77afd6ef8" style="width:25%" class="column"><figure id="54ddfbd2-4fcb-4732-acd0-712b17b8bd97" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/a_beautiful_painting-3.jpg"><img style="width:2048px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/a_beautiful_painting-3.jpg"/></a></figure></div><div id="db8b9778-c46c-4744-95b0-034fc57fb4b5" style="width:25%" class="column"><figure id="f0e6f0f2-cb0d-4285-a8b7-996ce500b557" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/a_beautiful_painting-4.jpg"><img style="width:2048px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/a_beautiful_painting-4.jpg"/></a></figure></div><div id="1cf8feeb-0ae2-46b0-a877-6f8586401ed7" style="width:25%" class="column"><figure id="40827a98-4d9b-4d3f-acd1-5a9681dea663" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/a_beautiful_painting.jpg"><img style="width:2048px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/a_beautiful_painting.jpg"/></a></figure></div></div><p id="b26f6b9a-e34d-4d40-901e-f9b6a0f12efa" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://www.canva.com/design/DAFeeJijhkU/fkgG5Kp6RCvaP11OLEz-qg/edit?analyticsCorrelationId=eebd9dca-b9bf-4b76-998a-148556287368">실시간 디자인 수정 조율 (웹소설 일러스트)</a></summary><div class="indented"><div id="49703e14-c3fe-4463-a1a4-0b9237d0e1c4" class="column-list"><div id="8be373f7-67e6-4697-ac86-65a26ae906c8" style="width:33.333333333333336%" class="column"><figure id="59d2cbe7-4183-4813-9197-9f4757623a23" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/a_beautiful_painting-3%201.jpg"><img style="width:2048px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/a_beautiful_painting-3%201.jpg"/></a></figure></div><div id="3014d2e8-54df-4ee8-8c31-e06b806faf1e" style="width:33.333333333333336%" class="column"><figure id="ed2ae5f9-7db9-4b87-acb7-676be9be8ecb" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Picture1.png"><img style="width:360px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Picture1.png"/></a></figure></div><div id="31927f60-c304-4716-a098-c58a08013430" style="width:33.33333333333333%" class="column"><figure id="5e51985f-2474-4d0a-8cf2-666268e38d6d" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Picture2.png"><img style="width:360px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Picture2.png"/></a></figure></div></div></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://www.canva.com/design/DAFeeJijhkU/fkgG5Kp6RCvaP11OLEz-qg/edit?analyticsCorrelationId=eebd9dca-b9bf-4b76-998a-148556287368">의상, 악세사리 재생성</a></summary><div class="indented"><div id="a618773c-3fba-4bcb-bf02-287772910b44" class="column-list"><div id="74c38443-5577-45e2-ab56-7bf537607b33" style="width:25%" class="column"><figure id="6f06e19d-a126-4a87-875e-2b20179bed6e" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-03-28_at_4.40.57_PM.png"><img style="width:802px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-03-28_at_4.40.57_PM.png"/></a></figure></div><div id="1a9cfb11-c55b-47b2-a86e-3b9989acfee0" style="width:25%" class="column"><figure id="94923841-0df5-429d-9dd9-bb00a2e9b09f" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-03-28_at_4.41.08_PM.png"><img style="width:803px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-03-28_at_4.41.08_PM.png"/></a></figure></div><div id="19f983c1-7566-4589-99fe-ff80ee46ae78" style="width:25%" class="column"><figure id="f3fe7462-4ee1-4e25-816e-e700ab244058" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-03-28_at_4.45.49_PM.png"><img style="width:800px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-03-28_at_4.45.49_PM.png"/></a></figure></div><div id="834f86eb-63fb-4710-85dc-4e9c8ea79573" style="width:25%" class="column"><figure id="2d6383b4-0f0a-4274-80c0-3e0d378b720b" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-03-28_at_4.55.58_PM.png"><img style="width:805px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-03-28_at_4.55.58_PM.png"/></a></figure></div></div><p id="d848f6f7-6a16-4d6a-a97f-c8c85171fecf" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://www.canva.com/design/DAFeeJijhkU/fkgG5Kp6RCvaP11OLEz-qg/edit?analyticsCorrelationId=eebd9dca-b9bf-4b76-998a-148556287368">동작제어</a></summary><div class="indented"><div id="b6a22ede-ded7-4c21-bfe9-be5dc7a4ef2b" class="column-list"><div id="6aca94ac-3d6a-4265-9345-a164fe4844d3" style="width:49.99999999999999%" class="column"><figure id="662b09cf-8a7e-4a94-818f-00b307b23e9f" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.14.33_PM.png"><img style="width:338px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.14.33_PM.png"/></a></figure></div><div id="717a0c29-b11a-4853-a28a-1037262dc65f" style="width:49.99999999999999%" class="column"><figure id="6b4b2045-47e7-4a6a-a99c-5a6f8949068d" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.14.51_PM.png"><img style="width:340px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.14.51_PM.png"/></a></figure></div></div><div id="884b900d-c946-4901-8038-05817b9aa52b" class="column-list"><div id="25c06ac0-1089-47e4-99c4-fcb6a9baaf1d" style="width:50%" class="column"><figure id="e16fd923-f538-42a5-8ce0-4990e4323058" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.14.41_PM.png"><img style="width:341px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.14.41_PM.png"/></a></figure></div><div id="4d23f2f2-3ec9-4c69-bf19-4314869ed940" style="width:50%" class="column"><figure id="73709b7f-e8ed-433a-b7c0-9b9e1535fc0e" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.15.11_PM.png"><img style="width:339px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.15.11_PM.png"/></a></figure></div></div></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://www.canva.com/design/DAFfTali9wk/uFAHKlbFY0Zaa5IM0rZ0Bw/edit?analyticsCorrelationId=6ee18f75-0894-4692-875a-f00b796cb59b">원하는 이미지를 그대로 생성</a></summary><div class="indented"><div id="5caaac4c-bc54-4186-8103-5746807215e3" class="column-list"><div id="6ef7daf1-ca8c-46c5-bd2e-6f2397030d1a" style="width:25%" class="column"><figure id="bc247386-a6ac-4798-8e69-e2bd84ae74f2" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_1.34.20_PM.png"><img style="width:443px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_1.34.20_PM.png"/></a></figure></div><div id="b991a6bc-f72e-4ba5-ba41-abf921313c07" style="width:25%" class="column"><figure id="3d54aab9-2a16-4fd4-ad6d-f0df1457b258" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_1.35.42_PM.png"><img style="width:509px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_1.35.42_PM.png"/></a></figure></div><div id="e9465715-71b0-4fab-8c24-7117558ae312" style="width:25%" class="column"><figure id="6b7d1106-f338-4218-8aa5-9c3f8beb3a06" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_1.35.58_PM.png"><img style="width:520px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_1.35.58_PM.png"/></a></figure></div><div id="e991b34e-86d8-4966-8112-d157efa76632" style="width:25%" class="column"><figure id="c212bbb3-3d5f-43ba-899f-9c8fce31ca7b" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_1.36.24_PM.png"><img style="width:534px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_1.36.24_PM.png"/></a></figure></div></div><p id="c0af2ab6-80e1-40fe-a479-f735e4eb9a97" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://www.canva.com/design/DAFfTali9wk/uFAHKlbFY0Zaa5IM0rZ0Bw/edit?analyticsCorrelationId=6ee18f75-0894-4692-875a-f00b796cb59b">다양한 각도 및 시점 변환</a></summary><div class="indented"><div id="aa27d9c9-df22-4b51-b42b-8ac66c485897" class="column-list"><div id="11502c2e-a02c-4e34-adfc-368ea616a789" style="width:50%" class="column"><figure id="40373047-bf2d-4400-a8a2-e550ccfe2fe8" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_4.25.25_PM.png"><img style="width:1046px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_4.25.25_PM.png"/></a></figure></div><div id="fc868949-35ad-43eb-8645-97052ebc0d8f" style="width:50%" class="column"><figure id="6379300a-08b8-4c97-af9c-2395c4351981" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_4.26.13_PM.png"><img style="width:1042px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_4.26.13_PM.png"/></a></figure></div></div><div id="65098339-726a-4015-83a6-6bfba213b722" class="column-list"><div id="dbedffbf-f008-4f80-8e52-7eec3f9bf3dd" style="width:50%" class="column"><figure id="45c855ac-1aab-4a86-91df-f0108967099b" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_4.26.27_PM.png"><img style="width:1046px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_4.26.27_PM.png"/></a></figure></div><div id="279d2952-e537-49b9-a6cd-53940bf1a226" style="width:50%" class="column"><figure id="242b7f76-55f5-41e8-9d25-05a7b103997e" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_4.28.09_PM.png"><img style="width:1041px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_4.28.09_PM.png"/></a></figure></div></div><figure id="c3611c09-3073-4340-a4ac-7e7e606e66c7" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_4.30.02_PM.png"><img style="width:550px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_4.30.02_PM.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://www.canva.com/design/DAFfTali9wk/uFAHKlbFY0Zaa5IM0rZ0Bw/edit?analyticsCorrelationId=6ee18f75-0894-4692-875a-f00b796cb59b">디테일 작업 자동화 - 얼굴표현</a></summary><div class="indented"><div id="4b3b1710-83f2-4650-9d32-2814df91d3e2" class="column-list"><div id="66b2d430-b2eb-4fdd-b915-59ef14b4998d" style="width:50.000000000000014%" class="column"><figure id="899af722-2102-4ae1-8bfc-9947f1a9cd37" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_5.09.29_PM.png"><img style="width:529px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_5.09.29_PM.png"/></a></figure></div><div id="8197e5b2-69f4-4e0f-96c5-8b4946954102" style="width:50%" class="column"><figure id="f5de4507-6683-4463-a407-0206b088fc28" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_4.44.05_PM.png"><img style="width:571px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_4.44.05_PM.png"/></a></figure></div></div><figure id="55cafbd2-429e-4995-ac7b-f7e690693196" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_4.44.33_PM.png"><img style="width:932px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_4.44.33_PM.png"/></a></figure><figure id="059dd039-c975-4b00-935d-455a0cbf9865" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_4.45.47_PM.png"><img style="width:1235px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_4.45.47_PM.png"/></a></figure><figure id="a9f4b233-8ce0-47f8-ac63-6b2ef42c714c" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_4.46.21_PM.png"><img style="width:1182px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_4.46.21_PM.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://www.canva.com/design/DAFfTali9wk/uFAHKlbFY0Zaa5IM0rZ0Bw/edit?analyticsCorrelationId=6ee18f75-0894-4692-875a-f00b796cb59b">디테일 작업 자동화 - 디테일, 손</a></summary><div class="indented"><div id="a0157899-e9a3-4c20-b0c7-0b56f668ef12" class="column-list"><div id="ed362269-401f-45a8-b547-2454866d8191" style="width:50%" class="column"><figure id="4f26121d-059b-4532-b7c4-52ca0bba5b3c" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_5.09.29_PM%201.png"><img style="width:529px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_5.09.29_PM%201.png"/></a></figure></div><div id="a6f18c90-1c53-4f72-bcb7-770cede9454a" style="width:50%" class="column"><figure id="7a58edf4-4d7a-432e-88b2-e3b1ed4edb0f" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_5.09.41_PM.png"><img style="width:525px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_5.09.41_PM.png"/></a></figure></div></div><div id="96a023ae-d86d-49f0-95f2-ad7f459db9a1" class="column-list"><div id="801d0fef-bf2d-4fe7-a0fa-c2cd1516a649" style="width:50%" class="column"><figure id="816752b5-d863-494a-83e0-f13a610b0ad3" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_5.10.51_PM.png"><img style="width:545px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_5.10.51_PM.png"/></a></figure></div><div id="7599bf21-6b62-4c11-9741-1bd2e8ba593c" style="width:50%" class="column"><figure id="a4a95f82-d2ea-4204-b3b7-599e1d2a80bb" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_5.11.24_PM.png"><img style="width:546px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_5.11.24_PM.png"/></a></figure></div></div><div id="873591a1-3a79-4a25-8c71-51919e22be3b" class="column-list"><div id="9eb4e837-2c75-47c1-8464-517971d9a762" style="width:50%" class="column"><figure id="018184f8-4117-4c05-ab09-28a394be3deb" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_5.29.32_PM.png"><img style="width:466px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_5.29.32_PM.png"/></a></figure></div><div id="cee43ce6-377d-4471-a274-95b71f0c9027" style="width:50%" class="column"><figure id="a017ccb7-299b-4c4d-9cb2-c156299712f5" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_5.29.58_PM.png"><img style="width:468px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-06_at_5.29.58_PM.png"/></a></figure></div></div></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://www.canva.com/design/DAFfTali9wk/uFAHKlbFY0Zaa5IM0rZ0Bw/edit?analyticsCorrelationId=6ee18f75-0894-4692-875a-f00b796cb59b">화풍의 비율 조절</a></summary><div class="indented"><figure id="52a4b939-dca2-4231-bde8-4d1ffc5f6b87" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.31.12_PM.png"><img style="width:1190px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.31.12_PM.png"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://www.canva.com/design/DAFfTali9wk/uFAHKlbFY0Zaa5IM0rZ0Bw/edit?analyticsCorrelationId=6ee18f75-0894-4692-875a-f00b796cb59b">콘티 to 스케치 to 펜터치</a></summary><div class="indented"><figure id="7a9a139b-047d-4eee-bd81-f6a2b262b7ac" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.35.15_PM.png"><img style="width:929px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.35.15_PM.png"/></a></figure><p id="ecbe1eeb-de6f-4795-967e-38b4fe12ab05" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://www.canva.com/design/DAFfTali9wk/uFAHKlbFY0Zaa5IM0rZ0Bw/edit?analyticsCorrelationId=6ee18f75-0894-4692-875a-f00b796cb59b">실시간 디자인 수정 조율 (웹툰)</a></summary><div class="indented"><div id="4302a104-3e32-46bb-810f-4938d2bf1a41" class="column-list"><div id="4be0d6f9-2b96-4cad-814e-28d9df5901e2" style="width:33.333333333333336%" class="column"><figure id="e87e41f6-0b38-41cb-82b7-1a8ada223519" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.36.46_PM.png"><img style="width:435px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.36.46_PM.png"/></a></figure></div><div id="bcd9cc8a-2196-4fdf-aa57-5bfcb5a374f4" style="width:33.333333333333336%" class="column"><figure id="73a92f13-7e9b-4087-845e-29f09ffda3f6" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.37.46_PM.png"><img style="width:435px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.37.46_PM.png"/></a></figure></div><div id="5b4a953f-2f5d-4718-a84b-6719fe4877fd" style="width:33.33333333333333%" class="column"><figure id="bbb2817a-4b35-4cf3-9bcc-30df2ec2f654" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.38.04_PM.png"><img style="width:441px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-04-07_at_6.38.04_PM.png"/></a></figure></div></div></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"> <a href="https://www.canva.com/design/DAFd7O4MXdI/eSyVmk68v07rJ1Oss_zjKw/edit?analyticsCorrelationId=07cf5a61-c18e-410e-8137-ce475da1a300">채색 러프 (웹툰)</a></summary><div class="indented"><div id="d1848431-9948-4de8-8907-8a0cd6f7379a" class="column-list"><div id="4f071279-d232-40b8-9ffd-d67d74b808af" style="width:20%" class="column"><figure id="a138d269-12be-4638-b0e2-9fe837cf7377" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/1BFCDEE9-2D4F-4378-9B10-1D7F115CB5A0_1_201_a.jpg"><img style="width:714px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/1BFCDEE9-2D4F-4378-9B10-1D7F115CB5A0_1_201_a.jpg"/></a></figure></div><div id="2b71dc3b-e941-4a6a-9e32-e5e5a488b09e" style="width:20%" class="column"><figure id="13b00a27-5a87-4b0a-a054-476a38a3cbbe" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-03-28_at_2.54.31_PM_ai-paint.png"><img style="width:715px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-03-28_at_2.54.31_PM_ai-paint.png"/></a></figure></div><div id="b4078e31-0866-47bf-b243-02023c8d6254" style="width:20%" class="column"><figure id="b8fd4cf9-b4e8-47d4-87e0-217dbb552a5e" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-03-28_at_2.54.31_PM_ai-painter.png"><img style="width:715px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-03-28_at_2.54.31_PM_ai-painter.png"/></a></figure></div><div id="d9abcea6-b7d4-4137-8e2f-bdc932de45fd" style="width:20%" class="column"><figure id="86a819c2-040a-48a0-b894-ac4de763a3dc" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-03-28_at_2.54.31.png"><img style="width:715px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-03-28_at_2.54.31.png"/></a></figure></div><div id="35d6c829-c394-411c-adf1-1bd876ad1ca3" style="width:20%" class="column"><figure id="cc80f0cf-15a2-4c6e-823a-5ba0b881acbf" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-03-28.png"><img style="width:715px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/Screenshot_2023-03-28.png"/></a></figure></div></div></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://www.canva.com/design/DAFgtSFMCCk/1JnNinoqO0yLevc0jUfI1g/edit?analyticsCorrelationId=c2105a53-91f7-4e8d-bbe2-99d84bb75960">표정 제어</a></summary><div class="indented"><div id="9dca7492-2906-4909-8148-2bff22707efd" class="column-list"><div id="2902da66-5fac-43aa-9bd9-b209d1cc965b" style="width:18.75%" class="column"><ul id="b8c8dd46-82ac-4bf0-a30b-e3b7ec99f493" class="toggle"><li><details open=""><summary>원본이미지</summary><figure id="7bcad60a-0337-4de5-81dd-e02919a0040b" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/original_face.png"><img style="width:512px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/original_face.png"/></a></figure><p id="f8788259-09a3-4320-a29d-b839d9439d83" class="">
+</p></details></li></ul></div><div id="47f36423-88f5-4cad-889b-50429043681e" style="width:81.25%" class="column"><ul id="b6bd11a5-3258-402f-9ca4-94a75c1fdf7a" class="toggle"><li><details open=""><summary>변환이미지</summary><div id="21a45364-c87d-4e22-a9ff-2ad437ca2fc5" class="column-list"><div id="66f2180e-f29d-48b2-b6d3-591ae7a46106" style="width:25%" class="column"><figure id="4b216b13-1590-4bff-b2df-287aabaa2624" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!angry.png"><img style="width:512px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!angry.png"/></a></figure></div><div id="2dbf4ed9-7a4e-4021-8deb-b4c2c7c1f6de" style="width:25%" class="column"><figure id="ef09b13d-71fe-43e3-82b2-fe876b84cb37" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!laugh.png"><img style="width:512px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!laugh.png"/></a></figure></div><div id="ba9fe150-04e6-404d-a67f-a62eff91bbdb" style="width:25%" class="column"><figure id="70a2f161-83f4-405f-b5dd-8661cd865145" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!nervous.png"><img style="width:512px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!nervous.png"/></a></figure></div><div id="ef4d6280-c4e8-44b9-905e-6a47b48dd28e" style="width:25%" class="column"><figure id="3dc81a74-6d12-42dc-b9cd-1394ff533b74" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!sad.png"><img style="width:512px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!sad.png"/></a></figure></div></div><div id="e9092770-147b-49f8-82b6-40904bbb3108" class="column-list"><div id="3c87a957-890a-4eb4-b43c-c18728bd7894" style="width:25%" class="column"><figure id="8dd133a4-a41b-428c-a83d-01285fcbc937" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!angry%201.png"><img style="width:512px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!angry%201.png"/></a></figure></div><div id="0725cb9e-445f-46b3-8172-bc9aa3efe7f5" style="width:25%" class="column"><figure id="3f780f70-102d-433e-8c19-0b0a6a64cdfd" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!laugh%201.png"><img style="width:512px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!laugh%201.png"/></a></figure></div><div id="eb1ca267-0082-4b83-9285-2a4f73d62af4" style="width:25%" class="column"><figure id="e897fd68-fe0a-4071-b670-c7ff2625cfac" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!nervous%201.png"><img style="width:512px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!nervous%201.png"/></a></figure></div><div id="9fbd5ee9-63e5-4866-9252-0c354edaee27" style="width:25%" class="column"><figure id="5eb0e9b2-053b-4232-9ea6-7597f12207e1" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!sad%201.png"><img style="width:512px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!sad%201.png"/></a></figure></div></div></details></li></ul><p id="a08ae476-6cdc-40c4-ad3a-b916b8763a90" class="">
+</p></div></div></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://www.canva.com/design/DAFgtSFMCCk/1JnNinoqO0yLevc0jUfI1g/edit?analyticsCorrelationId=c2105a53-91f7-4e8d-bbe2-99d84bb75960">LR plugin</a></summary><div class="indented"><div id="2d2663a0-ce8a-4415-8a69-a4689c6ae1e6" class="column-list"><div id="1c2411d2-2a77-41c3-a8cd-7e574805dc3b" style="width:31.25%" class="column"><ul id="21bc9970-4a91-4eb8-880c-cc0b8c23c804" class="toggle"><li><details open=""><summary>원본 그림체</summary><figure id="bfee92ee-c481-4673-82e4-9af3c482e6bb" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!b6091c4f714d4e8eb4d93a7e48ba7062.png"><img style="width:512px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!b6091c4f714d4e8eb4d93a7e48ba7062.png"/></a></figure></details></li></ul></div><div id="be9d7be7-a4ca-4ec0-8783-72ae089d29e5" style="width:68.75%" class="column"><ul id="7669a3e8-a905-438e-8be0-6f15cb9ede7a" class="toggle"><li><details open=""><summary>애셋 변환 (위: 원본, 아래: 그림체에 따른 변환본)</summary><div id="7cb85d64-6771-4773-a372-fc48f39fdf55" class="column-list"><div id="1fc5953b-87fe-47fc-afdb-d6267d4d75d0" style="width:33.33333333333333%" class="column"><figure id="3d36cd24-3027-437e-97cc-2ed6c920ba59" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!%25E1%2584%2580%25E1%2585%25A9%25E1%2586%25B7%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2592%25E1%2585%25A7%25E1%2586%25BC.png"><img style="width:512px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!%25E1%2584%2580%25E1%2585%25A9%25E1%2586%25B7%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2592%25E1%2585%25A7%25E1%2586%25BC.png"/></a></figure></div><div id="cdce590b-67aa-40b9-8b6b-dc6212b1f518" style="width:33.333333333333336%" class="column"><figure id="0217676e-af19-42b3-af5f-5c6ab55e7d8d" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!%25E1%2584%258B%25E1%2585%25B4%25E1%2584%258C%25E1%2585%25A1.png"><img style="width:768px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!%25E1%2584%258B%25E1%2585%25B4%25E1%2584%258C%25E1%2585%25A1.png"/></a></figure></div><div id="5be7e55b-4832-4855-93ea-12ffc4fdb2f2" style="width:33.333333333333336%" class="column"><figure id="f34aa06a-1d7e-4ea7-8b0f-e1b818c1ab2f" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!%25E1%2584%258C%25E1%2585%25A1%25E1%2586%25BC%25E1%2584%2589%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2580%25E1%2585%25AE.png"><img style="width:768px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!%25E1%2584%258C%25E1%2585%25A1%25E1%2586%25BC%25E1%2584%2589%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2580%25E1%2585%25AE.png"/></a></figure></div></div><div id="b8f83522-fc57-4a38-9590-56644881dadc" class="column-list"><div id="0dcfd8cc-add1-4f40-862c-a55b2bc7c279" style="width:33.33333333333333%" class="column"><figure id="feef145e-8ccf-417d-9f90-8e054546ee04" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!%25E1%2584%2580%25E1%2585%25A9%25E1%2586%25B7%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2592%25E1%2585%25A7%25E1%2586%25BC%201.png"><img style="width:1274px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!%25E1%2584%2580%25E1%2585%25A9%25E1%2586%25B7%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2592%25E1%2585%25A7%25E1%2586%25BC%201.png"/></a></figure></div><div id="ce82200a-d305-4a86-b85a-a102d41cd503" style="width:33.333333333333336%" class="column"><figure id="950289de-be8e-4e94-ac9a-c4b8daf7b3d4" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!%25E1%2584%258B%25E1%2585%25B4%25E1%2584%258C%25E1%2585%25A1%201.png"><img style="width:1114px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!%25E1%2584%258B%25E1%2585%25B4%25E1%2584%258C%25E1%2585%25A1%201.png"/></a></figure></div><div id="6736616f-26c6-43eb-8394-df041c1c5f58" style="width:33.333333333333336%" class="column"><figure id="386885b5-1eb5-4c9b-bc99-d4b792be610e" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!%25E1%2584%258C%25E1%2585%25A1%25E1%2586%25BC%25E1%2584%2589%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2580%25E1%2585%25AE%201.png"><img style="width:1030px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/!%25E1%2584%258C%25E1%2585%25A1%25E1%2586%25BC%25E1%2584%2589%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2580%25E1%2585%25AE%201.png"/></a></figure></div></div></details></li></ul></div></div></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://www.canva.com/design/DAFjJMUCQHY/7HCLgjxuPqkbO4imjrDN1w/edit?utm_content=DAFjJMUCQHY&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton">웹소설 표지</a> 1차</summary><div class="indented"><div id="5ef0dae4-cf30-4260-a743-19d4fbf7bef1" class="column-list"><div id="ad1f82c2-2895-4d8b-84f4-b917f09ed24d" style="width:33.33333333333333%" class="column"><figure id="905990ec-9e0b-435d-a1b7-719c2c6f2e0e" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/BL.png"><img style="width:1024px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/BL.png"/></a></figure></div><div id="63fff3a7-e35d-41f1-83ad-2980e03b803b" style="width:33.33333333333334%" class="column"><figure id="82a8b0bd-7999-4fc1-83a2-c0e919799615" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25EB%25AC%25B4%25ED%2598%2591%25EC%25A7%2580.png"><img style="width:1024px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25EB%25AC%25B4%25ED%2598%2591%25EC%25A7%2580.png"/></a></figure></div><div id="afa5bf25-0d17-4276-8ef5-b93683a96e03" style="width:33.33333333333333%" class="column"><figure id="c855fba7-07fa-4aa8-873c-1a7b19017843" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25EB%25AF%25B8%25EC%258A%25A4%25ED%2584%25B0%25EB%25A6%25AC_%25EA%25B3%25B5%25ED%258F%25AC.png"><img style="width:1024px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25EB%25AF%25B8%25EC%258A%25A4%25ED%2584%25B0%25EB%25A6%25AC_%25EA%25B3%25B5%25ED%258F%25AC.png"/></a></figure></div></div><div id="4af48b4e-9c64-42d1-aa68-f921ed03af6e" class="column-list"><div id="db885ef4-fa8b-4a20-bd86-e6e1a6310879" style="width:25%" class="column"><figure id="eaff4713-a9dd-4afc-aa21-6395e77462c5" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25EC%2597%25B0%25EC%2595%25A0.png"><img style="width:1024px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25EC%2597%25B0%25EC%2595%25A0.png"/></a></figure></div><div id="6af7f7f8-09e1-4ce5-9a65-99e7c70c74ff" style="width:25%" class="column"><figure id="86970dd7-17ac-4f5a-99f4-7811b29442f5" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25EC%259D%25BC%25EC%2583%2581.png"><img style="width:1024px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25EC%259D%25BC%25EC%2583%2581.png"/></a></figure></div><div id="ae92774e-1610-4809-9e33-c60392e92a41" style="width:21.875%" class="column"><figure id="fec5206c-0b1b-410f-bd39-4a7230b98b75" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25ED%258C%2590%25ED%2583%2580%25EC%25A7%2580.png"><img style="width:1024px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25ED%258C%2590%25ED%2583%2580%25EC%25A7%2580.png"/></a></figure></div><div id="16bff502-dd79-4f8c-8c8f-f1a63aaa7633" style="width:28.125%" class="column"><figure id="1104ccab-9a36-47cd-aef9-13347850e493" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25ED%2598%2584%25EB%258C%2580_%25ED%258C%2590%25ED%2583%2580%25EC%25A7%2580.png"><img style="width:1024px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25ED%2598%2584%25EB%258C%2580_%25ED%258C%2590%25ED%2583%2580%25EC%25A7%2580.png"/></a></figure></div></div><p id="eaf0729b-bd5e-4058-9bbd-20b75fd19866" class="">
+</p></div></details><div><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://lionrocket.slack.com/archives/C050R41UPGD/p1685524625875729?thread_ts=1683709732.699599&amp;cid=C050R41UPGD">웹소설 표지</a> 2차</summary><div class="indented"><div id="9f94c024-03a9-48cb-bd88-7c2d96230aa2" class="column-list"><div id="5950ac71-5b0f-463c-8bb6-39c0fa5ca1dd" style="width:50%" class="column"><figure id="68f069a1-c32f-48f4-bfcf-50f23f48577a" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%2580%25E1%2585%25A9%25E1%2586%25BC%25E1%2584%2591%25E1%2585%25A9%25E1%2584%2581%25E1%2585%25B3%25E1%2587%2580.png"><img style="width:1024px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%2580%25E1%2585%25A9%25E1%2586%25BC%25E1%2584%2591%25E1%2585%25A9%25E1%2584%2581%25E1%2585%25B3%25E1%2587%2580.png"/></a></figure></div><div id="21339b43-ec2b-46ad-8b04-be1fc97114bc" style="width:50%" class="column"><figure id="0dc11422-64fb-4a25-b74c-880a5d764c7b" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%2586%25E1%2585%25AE%25E1%2584%2592%25E1%2585%25A7%25E1%2586%25B8%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2591%25E1%2585%25A6.png"><img style="width:1024px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%2586%25E1%2585%25AE%25E1%2584%2592%25E1%2585%25A7%25E1%2586%25B8%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2591%25E1%2585%25A6.png"/></a></figure></div></div><div id="50e6a763-6cc0-4fc0-86a4-f0b854a39acd" class="column-list"><div id="a0da8f9e-fd5c-4ae0-9af5-41e310895391" style="width:50%" class="column"><figure id="31058c26-f6be-4718-84da-70ffae54ede6" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25AF%25E1%2584%2589%25E1%2585%25A1%25E1%2586%25BC222222.png"><img style="width:1024px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25AF%25E1%2584%2589%25E1%2585%25A1%25E1%2586%25BC222222.png"/></a></figure></div><div id="864f9ad2-1338-4d33-903c-91e20b0a1ce4" style="width:50%" class="column"><figure id="b95af253-8352-4b77-9569-c610d326dfed" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%258B%25E1%2585%25A7%25E1%2586%25AB%25E1%2584%258B%25E1%2585%25A2dd.png"><img style="width:1024px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%258B%25E1%2585%25A7%25E1%2586%25AB%25E1%2584%258B%25E1%2585%25A2dd.png"/></a></figure></div></div></div></details></div></div></article></body></html>

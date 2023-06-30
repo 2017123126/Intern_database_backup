@@ -1,0 +1,699 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>생성 AI 게임 제작 솔루션 시장 조사</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c487daf3-4c32-45ca-a66a-1fe2c80d88c7" class="page sans"><header><h1 class="page-title">생성 AI 게임 제작 솔루션 시장 조사</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-orange">suggestion</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><nav id="44e4ed8a-dd1d-4512-b01d-11a38934b606" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5132e4c5-932a-4245-b342-25fd31bda72e">게임 산업의 미래</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#10613882-25f1-40cc-8a3c-6f9755c166b9">게임 에셋 모델링</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8f2efad5-93d9-4441-8bf9-7a9bc7863966"><mark class="highlight-red">1. 2D 에셋 생성</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#dc21eef0-97ba-4cf7-8962-3cd4f56b11fc"><mark class="highlight-red">2. 텍스처(=재질) 생성</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0c57bf2e-1024-45e0-b844-8cff5c970c81"><mark class="highlight-red">3. Topology 자동화</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5d11b5f5-6da1-4dd6-8bc1-b98b9bc1fe14"><mark class="highlight-red">4. UV맵 자동화</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9c5c34d1-8834-4783-821a-821dbcf99f9c">게임 일러스트</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#12fe84f9-4e85-4b89-b3f2-e85fb9e1073d"><mark class="highlight-red">1. 선화/밑색 시간 단축</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ba180d50-ca56-45a9-be22-5bd85fde6a7b"><mark class="highlight-red">2. 의사소통 비용 절감</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a23be082-3e82-4659-a5d7-545f6287c152"><mark class="highlight-red">3.  쉽고 빠른 레퍼런스 생성</mark></a></div></nav><h1 id="5132e4c5-932a-4245-b342-25fd31bda72e" class="">게임 산업의 미래</h1><figure id="f2d34c36-3b10-4326-86c5-8c96e3cdf592" class="link-to-page"><a href="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20x%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%89%E1%85%A1%E1%86%AB%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%8B%E1%85%B4%20%E1%84%86%E1%85%B5%E1%84%85%E1%85%A2%20f2d34c363b10432686c58c96e3cdf592.html">생성 AI x 게임 산업의 미래</a></figure><h1 id="10613882-25f1-40cc-8a3c-6f9755c166b9" class="">게임 에셋 모델링</h1><h3 id="8f2efad5-93d9-4441-8bf9-7a9bc7863966" class=""><mark class="highlight-red">1. 2D 에셋 생성</mark></h3><ul id="46b3864a-8e80-4791-ae3f-cd6c941a8dfa" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">제품과 회사</span><div class="indented"></div></li></ul><ul id="3886ae0c-5523-49fa-9831-9a4a7669b5ac" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">니즈와 기능</span><div class="indented"></div></li></ul><ul id="a275f956-960e-452a-985c-16f29d374ba6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">시장 규모</span><div class="indented"><ul id="3ae6f3e4-feb2-4db8-a8ab-fbcd2b82bd58" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">유료 가격</span><div class="indented"></div></li></ul><ul id="5660c8dd-e2d9-41de-9ba4-ef5ab537eb0b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">프리랜서 시장 규모</span><div class="indented"></div></li></ul><ul id="a74c03c9-40d8-408b-9f04-d16640196001" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">예상 시장 점유율</span><div class="indented"></div></li></ul><ul id="b4755b98-ef1c-4655-b75b-d7d65184c422" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">스프레드시트</span><div class="indented"></div></li></ul></div></li></ul><ul id="f2102480-384a-4383-a108-0f3ac792eec0" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">한계</span><div class="indented"></div></li></ul><ul id="74843deb-f5b4-4097-bcd1-6d3030787421" class="bulleted-list"><li style="list-style-type:disc">한계<ul id="dc446f2c-706d-44b7-a04a-2bd48d0aa5ed" class="bulleted-list"><li style="list-style-type:circle">현재 3D를 만드는 기술은 어려운 상황<ul id="7c4eef4c-3e26-48d6-aa74-2d6a08b12340" class="bulleted-list"><li style="list-style-type:square">실제 해보기도 했는데 문제가 많았다</li></ul></li></ul></li></ul><ul id="2f99a526-737c-4d99-b9b0-3d3525d897f0" class="bulleted-list"><li style="list-style-type:disc">scenario<ul id="5bda40c7-47b8-4bd2-93a1-9a686e355d21" class="bulleted-list"><li style="list-style-type:circle">style consistent</li></ul><ul id="80d6052f-b86c-4526-b2ec-a91ec1a937d4" class="bulleted-list"><li style="list-style-type:circle">custom-trained proprietary AI model, upload own training data</li></ul></li></ul><ul id="090d3630-5cbb-45da-91d4-fa59495f4627" class="bulleted-list"><li style="list-style-type:disc">leonardo.ai<ul id="513ccf2a-1678-46d3-a1e2-3aca7ad472ab" class="bulleted-list"><li style="list-style-type:circle">greater control over generations</li></ul><ul id="83b7974e-8e02-48d9-8408-866a15f188e4" class="bulleted-list"><li style="list-style-type:circle">upscaling and refinement</li></ul><ul id="877365c8-b289-4dad-996f-b45cc4dd2ff8" class="toggle"><li><details open=""><summary>using outpainting to combine multiple tiles to create a landscape</summary><figure id="3385ed59-fcab-49f6-bdce-c91654eb06f0" class="image"><a href="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Untitled.png"><img style="width:288px" src="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Untitled.png"/></a></figure></details></li></ul><ul id="078aaf6e-58ec-4eff-9aef-81f1d6bf0a52" class="toggle"><li><details open=""><summary>style consistent generation of concept art through custom-trained models</summary><div id="7507c82b-7715-4a8e-8d5b-f72e6694460b" class="column-list"><div id="0657f136-bbe2-42b8-9fb1-9a8091c5da38" style="width:33.33333333333333%" class="column"><figure id="37cb53b2-c3a7-46de-b8d2-de95ccee29de" class="image"><a href="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Untitled%201.png"><img style="width:300px" src="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Untitled%201.png"/></a></figure></div><div id="d8ba5a0e-8700-44c9-b1d8-b554f9f441a8" style="width:33.333333333333336%" class="column"><figure id="19f3a57f-ad5a-42e4-83b2-45562217108a" class="image"><a href="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Untitled%202.png"><img style="width:300px" src="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Untitled%202.png"/></a></figure></div><div id="54f72d4a-73f6-4cbe-8fe3-9407c348ee9a" style="width:33.333333333333336%" class="column"><figure id="54048684-d4a7-4c41-a728-56999866896e" class="image"><a href="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Untitled%203.png"><img style="width:300px" src="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Untitled%203.png"/></a></figure></div></div></details></li></ul></li></ul><ul id="fa01b882-b88b-4910-b47b-378630df1955" class="bulleted-list"><li style="list-style-type:disc">layer.ai<ul id="fa913e84-e564-4457-93bd-68cd91339e2b" class="bulleted-list"><li style="list-style-type:circle">used by  <a href="https://ace.games">Ace Gmaes</a>, <a href="https://www.hadi.gs">Hadi Games</a>, <a href="https://gameguru.net">GameGuru</a></li></ul></li></ul><h3 id="dc21eef0-97ba-4cf7-8962-3cd4f56b11fc" class=""><mark class="highlight-red">2. 텍스처(=재질) 생성</mark></h3><ul id="1ee57ef0-16e3-4c09-8c0d-e0b7f7ddf65f" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">제품과 회사</span><div class="indented"></div></li></ul><ul id="c243963f-3d25-4358-b73a-9a90be92735c" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">니즈와 기능</span><div class="indented"></div></li></ul><ul id="33c64f9d-cf31-4278-991f-60865f155d4c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">시장 규모</span><div class="indented"></div></li></ul><ul id="e279ad92-c1a4-41c9-afb8-280c8e506cc8" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">한계</span><div class="indented"></div></li></ul><ul id="c0255819-f417-435d-b942-33ba03999fe3" class="bulleted-list"><li style="list-style-type:disc">Roblox <a href="https://devforum.roblox.com/t/material-generator-beta/2224446">Material Generator</a><ul id="627a5acb-dab0-4371-9fa5-9a9c58ccfcf8" class="bulleted-list"><li style="list-style-type:circle">from text</li></ul><ul id="3d8fd3e3-0f67-4dc5-85a2-5720c6f7810d" class="bulleted-list"><li style="list-style-type:circle">roughness map: control sharpness of reflections</li></ul><ul id="599ba132-29e2-428c-b385-903fa5825ebd" class="bulleted-list"><li style="list-style-type:circle">normal map: RGB 데이터를 통해 <a href="https://www.pluralsight.com/blog/film-games/bump-normal-and-displacement-maps">시각적 착각을 일으켜 표면의 굴곡과 재질 정보를 표현하도록 하는 기능</a></li></ul></li></ul><ul id="5582bba6-a4a8-4f97-a2bb-4669c6787083" class="bulleted-list"><li style="list-style-type:disc"><a href="https://withpoly.com/browse/textures">Poly</a><ul id="20887027-add3-4022-b439-da136ff3e6d4" class="bulleted-list"><li style="list-style-type:circle">text prompt → displacement map, normal map<ul id="0f3364f2-b01a-4df8-b858-f82ab4c3d4d2" class="bulleted-list"><li style="list-style-type:square">displacement map: physically displace the mesh to which they are applied</li></ul></li></ul></li></ul><h3 id="0c57bf2e-1024-45e0-b844-8cff5c970c81" class=""><mark class="highlight-red">3. Topology 자동화</mark></h3><p id="42546033-3d0d-490e-b283-16b8ff5149fb" class=""><a href="https://3dcoat.com/ko/articles/article/retopology/">자동 리토폴로지 생성</a></p><figure id="bcc8caa7-2d8b-4bc5-9dd9-646c1b340899" class="image" style="text-align:left"><a href="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Untitled%204.png"><img style="width:384px" src="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Untitled%204.png"/></a></figure><ul id="e90181dd-5eb5-4520-a369-658c321721bf" class="bulleted-list"><li style="list-style-type:disc"><a href="https://3dcoat.com/ko/articles/article/retopology/">3D coat</a></li></ul><ul id="83fb4454-40cb-4b5e-8d69-a895daaa2752" class="bulleted-list"><li style="list-style-type:disc">blender: voxel remesh(built-in), quadriflow(built-in)</li></ul><ul id="3e89303b-891e-4d09-b15c-521c237e3728" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/huxingyi/autoremesher">autoremesh</a></li></ul><ul id="9a8692ad-31e2-4b20-8f13-894811765bd1" class="bulleted-list"><li style="list-style-type:disc"><a href="https://igl.ethz.ch/projects/instant-meshes/">instantmesh</a></li></ul><ul id="cc1f2a63-2428-49b1-a3dd-fd8224e15ca8" class="bulleted-list"><li style="list-style-type:disc"><a href="https://exoside.com/quadremesher/">quadremesh</a>($60)<ul id="f5eb96fc-0679-4353-b1ca-5201caa6c55a" class="bulleted-list"><li style="list-style-type:circle">environments<ul id="a38d350c-1641-4055-81cd-549feee349ee" class="bulleted-list"><li style="list-style-type:square">Autodesk 3ds Max, Autodesk Maya, Autodesk Fusion360, Modo, Blender, Houdini 를 지원하는 plug-in</li></ul><ul id="5f704bd3-e3a3-4039-bd9c-8ced7e7e5ba9" class="bulleted-list"><li style="list-style-type:square">Cinema4D에서 네이티브로 지원</li></ul></li></ul><ul id="89bc15d4-b92b-4790-a8d0-83c59633b53d" class="toggle"><li><details open=""><summary>원클릭 자동 리토폴로지</summary><div id="347454a4-6599-4de4-89af-498a314854c9" class="column-list"><div id="31f62de5-eb29-45de-8929-c1f535cd2034" style="width:33.33333333333333%" class="column"><figure id="b5d53d1b-2258-456b-99b4-7fbd1886a8d2" class="image"><a href="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Screenshot_2023-04-05_at_10.41.52_AM.png"><img style="width:773px" src="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Screenshot_2023-04-05_at_10.41.52_AM.png"/></a><figcaption><a href="https://sketchfab.com/3d-models/chess-rook-b7cf2ea41d22496882fcfa811f5f8b4c">retopology 이전의 모델</a></figcaption></figure></div><div id="2e8fd6d7-bb59-435d-bf22-4997d41c63a2" style="width:33.33333333333333%" class="column"><figure id="baff26f0-1947-4fe0-b989-3287205c68fa" class="image"><a href="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Screenshot_2023-04-05_at_10.53.19_AM.png"><img style="width:836px" src="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Screenshot_2023-04-05_at_10.53.19_AM.png"/></a><figcaption><a href="https://sketchfab.com/3d-models/chess-rook-retopo-2000-quads-adaptive-size0-394229819802413fa1d0c4a54d3c6f1f">2000개의 사각형으로 retopology</a></figcaption></figure></div><div id="ecd25b58-189b-4b8e-94d4-bf914c9cd102" style="width:33.33333333333333%" class="column"><figure id="82a7a60d-14b4-4c45-8712-21fad636e8e2" class="image"><a href="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Screenshot_2023-04-05_at_10.51.16_AM.png"><img style="width:811px" src="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Screenshot_2023-04-05_at_10.51.16_AM.png"/></a><figcaption><a href="https://sketchfab.com/3d-models/chess-rook-retopo-1200-quads-adaptive-size50-a0f8f775f2a34ad7981a10bdfbd7ac7c">1200개의 사각형으로 retopology</a></figcaption></figure></div></div></details></li></ul></li></ul><h3 id="5d11b5f5-6da1-4dd6-8bc1-b98b9bc1fe14" class=""><mark class="highlight-red">4. UV맵 자동화</mark></h3><p id="68c39872-953f-4668-bbe1-624f73eb8848" class="">automatic UV unwrapping</p><figure id="18d727c7-6d31-4a78-9915-28556eae3acb" class="image" style="text-align:left"><a href="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Untitled%205.png"><img style="width:528px" src="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Untitled%205.png"/></a></figure><ul id="066712a1-7ae0-43c1-9af5-f530324d5ab9" class="bulleted-list"><li style="list-style-type:disc"><a href="https://substance3d.adobe.com/documentation/spdoc/automatic-uv-unwrapping-188974350.html">Substance 3D Painter</a>(built-in)</li></ul><ul id="55283c94-21b5-4f28-8ad9-98acff5afe6d" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;ved=2ahUKEwjBzfX0ipD-AhVPhVYBHWwaDScQFnoECBsQAQ&amp;url=https%3A%2F%2Fwww.unwrella.com%2F&amp;usg=AOvVaw1WCo_rZeaPNrQY-ReVMurp">Unwrella</a>(149 euro per license)<ul id="0bcf0289-bc10-4180-8582-adddb18b81b4" class="bulleted-list"><li style="list-style-type:circle">크리에이티브 모델링과 텍스처링을 가로막는 걸림돌을 원클릭으로 해결 <p id="4013cdb3-fc70-419e-8d36-6c85223d7f2a" class="">Unfolding is the only disturbing thing that stands between your creative modeling and texturing</p><ul id="1417267a-e692-4819-8fdd-d05551c11ebf" class="bulleted-list"><li style="list-style-type:square">3D 아티스트와 스튜디오의 노고를 덜고 시간을 절약<p id="748d6584-54ef-47b8-931e-162e3ce53b7f" class="">relieve 3D artists and studios from <span style="border-bottom:0.05em solid">tedious</span> manual UV work in order to quickly deliver quality unwraps</p></li></ul></li></ul><ul id="ba74af8d-4314-4094-a639-3c8d21a863e4" class="bulleted-list"><li style="list-style-type:circle">Autodesk 3ds Max와 Maya에서 원클릭으로 사용 가능한 플러그인 <p id="7691d3e5-170a-4ce4-a964-a8f99c0bcf08" class="">a single-click unwrapping plug-in for Autodesk 3ds Max and Maya</p></li></ul><ul id="3938fbb6-40bd-4045-88a8-b0fc489a54b3" class="bulleted-list"><li style="list-style-type:circle">복잡하고 거대한 프로젝트도 거뜬히 한 번에<p id="d34d30fc-6b28-4ca6-b1db-6733c6444a40" class="">instantly create UVs for complex geometries and massive asset collections</p><ul id="bb8d4185-130c-478b-b907-3f16f0202fb2" class="bulleted-list"><li style="list-style-type:square">10만에서 100만 개의 오브젝트까지 처리 가능<p id="1216e2fe-09cf-4aff-a1d8-92f29c970968" class="">up to 100.000 to million polygon objects which need to be unwrapped</p><figure id="c502d12a-1212-4475-8d08-1743cffb6107" class="image"><a href="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Untitled%206.png"><img style="width:432px" src="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Untitled%206.png"/></a></figure></li></ul></li></ul><ul id="df8f9d83-4c98-4840-8629-6d374bd6b2ab" class="bulleted-list"><li style="list-style-type:circle">최적의 결과물을 위한 세 가지 모드: (왼쪽부터) organic, hard surface, projection unwrapping<p id="aaf4c857-39c6-4ec1-ad89-c40a629bfb4d" class="">3 unwrapping modes for optimal results: organic, hard surface and projection unwrapping</p><figure id="0f1f3a33-ca33-432a-aa72-c0e7e3c30814" class="image"><a href="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Untitled.jpeg"><img style="width:980px" src="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20%E1%84%89%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%BC%20%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20c487daf34c3245caa66a1fe2c80d88c7/Untitled.jpeg"/></a></figure></li></ul></li></ul><p id="b7214442-a945-4073-9a41-89cd9cd3d17b" class="">
+</p><h1 id="9c5c34d1-8834-4783-821a-821dbcf99f9c" class="">게임 일러스트</h1><h3 id="12fe84f9-4e85-4b89-b3f2-e85fb9e1073d" class=""><mark class="highlight-red">1. 선화/밑색 시간 단축</mark></h3><p id="517fc828-9c3d-43b6-8176-53925a36cd7b" class="block-color-teal_background">
+   🎨  밑그림만 작업한 후 다양한 조합의 색깔을 입혀 눈으로 직접 확인 후 선택하세요.
+
+   💡  맥락에 어울리는 색조합을 미리 확인하고 채색에 필요한 고민을 단축해보세요.
+</p><p id="98248df7-fdba-42c2-83d1-d57fdfb2bd6d" class="">
+</p><ul id="c4fc32c9-bfbf-480b-a2f2-828e5b16a086" class="bulleted-list"><li style="list-style-type:disc">N사는 자동 채색 서비스를 제공하여 작가들의 창작시간을 줄여주는 중</li></ul><ul id="1f7f06b1-d8ca-4223-bd83-c870968ef573" class="bulleted-list"><li style="list-style-type:disc">대부분의 창작자들은 채색 과정에 필요한 시간과 노력이 매우 크다는 점을 알고 있으며, 채색 과정을 효율화하여 보다 업무의 생산성을 높이고자 함</li></ul><ul id="d6319618-58f5-4ad4-82ee-dd55be8aebd2" class="bulleted-list"><li style="list-style-type:disc">생성 AI에 대해 <code>“분위기와 맥락에 알맞은 적절한 색체 조합 능력이 좋지 못해서 사용성이 떨어진다”</code>는 평가가 있으나, <mark class="highlight-orange_background">라이언로켓은 작가별 채색 패턴 학습을 통해 해당 문제를 해결 가능함.</mark></li></ul><ul id="cfe3f4bb-29ac-44e8-8326-c1eec7f49825" class="bulleted-list"><li style="list-style-type:disc">작업 이후에도 스케치 레이어와 채색 레이어를 색깔별로 분리하여 제공함으로써 연동된 작업 환경을 구축 가능</li></ul><p id="d50b937c-b238-4d2e-b42a-04c3ba73e58c" class="">
+</p><div id="c28a0248-0192-49ec-9c85-8b8d077e65b2" class="column-list"><div id="54d41072-263b-406e-bdd4-906b66718e2c" style="width:43.75%" class="column"><figure id="20c64dd9-cc33-4a70-90be-58b30a646973"><div class="source"><a href="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/mo-howto-01.mov">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d0a25974-8a5c-48a7-ad46-dc6b061c3384/mo-howto-01.mov</a></div></figure></div><div id="321c539b-8ccd-4b0d-a023-ffb7cabd88f6" style="width:56.25%" class="column"><figure id="772f0c55-3374-4784-bd0c-0f925caa6f59" class="image"><a href="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/Untitled%206.png"><img style="width:680px" src="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/Untitled%206.png"/></a></figure></div></div><p id="4f6225ae-a72c-4594-9466-e1831c89d377" class="">
+</p><h3 id="ba180d50-ca56-45a9-be22-5bd85fde6a7b" class=""><mark class="highlight-red">2. 의사소통 비용 절감</mark></h3><p id="da386bcc-7cb9-4ca3-9946-8ff62d28c9cb" class="block-color-teal_background">
+   🖌️  완성된 작업물을 보고 포즈, 스타일, 배경 등을 손쉽게 고쳐보세요.
+
+   🤝  실시간으로 작업물의 디테일을 확인해가면서 서로 똑같은 상상을 할 수 있습니다.
+</p><p id="bef335f8-b971-4f58-97fd-104435d38d33" class="">
+</p><ul id="f11f0f15-cd79-4597-bc8c-b96f67fb4d05" class="bulleted-list"><li style="list-style-type:disc">최종 결과물을 완성하기까지 창작자와 담당자 사이에서 수많은 커뮤니케이션 비용 발생</li></ul><ul id="4596ad90-88f4-4de6-ba42-3ce109cd815d" class="bulleted-list"><li style="list-style-type:disc">원하는 결과물이 나오지 않는 경우 재작업에 따른 추가 컨펌 비용을 지출해야 하는 경우도 생김</li></ul><ul id="1a256dea-5e6f-43f7-9f5e-f660baa6621b" class="bulleted-list"><li style="list-style-type:disc">라이언로켓의 image2image 기술을 이용해 <code>실시간 수정 사항을 담당자와 창작자가 함께 확인</code>해가며 불필요한 마찰을 최소화</li></ul><p id="90cab562-fc0c-4bbe-b8f5-4bc6caa4b31c" class="">
+</p><div id="dcdf85bd-d60c-4de7-9288-584d8b11b90b" class="column-list"><div id="66a8e165-c711-443b-bea6-bdff601e56fd" style="width:50%" class="column"><figure id="b390766d-2c33-4cba-b8b6-6d1e80d8d74d" class="image"><a href="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/a42700d8-f0eb-4f5f-af05-2c13ed881cc8.jpeg"><img style="width:2048px" src="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/a42700d8-f0eb-4f5f-af05-2c13ed881cc8.jpeg"/></a><figcaption>눈을 뜬 오른쪽 남자 (원본)</figcaption></figure></div><div id="01ccd4f3-880c-4f94-bdbc-4ca16c92626c" style="width:50%" class="column"><figure id="d1e1f13f-7b0a-4e34-ad35-9e591f25ac96" class="image"><a href="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/Picture1.png"><img style="width:360px" src="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/Picture1.png"/></a><figcaption>눈을 감은 오른쪽 남자 (수정본)</figcaption></figure></div></div><p id="9f722fe8-a21a-4d01-9fbb-18ab455f8550" class="">
+</p><h3 id="a23be082-3e82-4659-a5d7-545f6287c152" class=""><mark class="highlight-red">3.  쉽고 빠른 레퍼런스 생성</mark></h3><p id="88c1e384-51ee-4654-95ba-65e79e3dfe16" class="block-color-teal_background">
+   🆓  생성된 이미지를 통해 저작권 걱정 없는 에셋을 무한히 만들어보세요.
+
+   👠  다양한 스타일의 의상, 악세서리 등을 컷마다 손쉽게 새로 입힐 수 있습니다.
+</p><p id="844c4041-2a9a-4bad-a6f0-183f117dc8e8" class="">
+</p><ul id="965223a5-7750-4434-9381-9ee4db2d530d" class="bulleted-list"><li style="list-style-type:disc">의상, 악세서리와 같이 수시로 다양하게 바뀌는 디테일 요소의 경우 창작자들이 처음부터 디자인하는 데에 많은 시간과 노력을 들일 수 밖에 없음</li></ul><ul id="6493a861-2ccb-41cf-8d64-5ba8b397d3c4" class="bulleted-list"><li style="list-style-type:disc">대부분의 창작자들이 디테일한 요소에 얽매여 일일이 시간과 노력을 소모하기보다 생산적인 업무에 투자하기를 원함</li></ul><ul id="4691376e-4b9f-4d75-9978-1ad7d2a957de" class="bulleted-list"><li style="list-style-type:disc">라이언로켓 특유의 재생성 알고리즘을 이용하여 <code>이미지의 스타일만을 학습</code>해 <code>기존과 다른 이미지를 순식간</code>에 생성해낼 수 있음</li></ul><p id="85f19275-b9d6-4609-864b-1a707fc63fed" class="">
+</p><div id="7caf7451-3c6e-48a2-b3ff-7f112749abc5" class="column-list"><div id="2fdefd20-3f77-47c9-be49-93134c0337ed" style="width:50%" class="column"><figure id="a6e27f58-5f75-4f3f-bd4b-590e92341d2b" class="image"><a href="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/pngkit_copos-de-nieve-png_1084349.jpg"><img style="width:336px" src="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/pngkit_copos-de-nieve-png_1084349.jpg"/></a></figure><p id="a540ca7c-7f05-4efe-82a9-32d059b7fafa" class="">원본</p><p id="66d4bf61-67c7-4552-8db6-f9bed7dfb06a" class="">이미지 출처: <a href="https://www.pngkit.com/downpic/u2q8y3i1w7o0w7o0_vestido-copos-de-nieve-jelmezek-divatrajz-jtk-dress/">https://www.pngkit.com/downpic/u2q8y3i1w7o0w7o0_vestido-copos-de-nieve-jelmezek-divatrajz-jtk-dress/</a></p></div><div id="c2baf6a3-0fb1-486a-84d6-e952af774596" style="width:50%" class="column"><figure id="953ce0e1-ee0d-447c-a1f3-9bbd56c3c127" class="image"><a href="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/new_dress.png"><img style="width:354px" src="%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%85%E1%85%A5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI%20%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%89%202a02adaef371446a93c956320593f6e0/new_dress.png"/></a></figure><p id="dd8f734b-a099-4927-afb5-7065e0b063a9" class="">재생성 결과물</p><p id="7458312c-0928-48d6-aeaf-e4b55e4fab09" class="">
+</p></div></div><p id="9145f323-746d-4e25-b3c8-fe9bce19d847" class="">
+</p></div></article></body></html>

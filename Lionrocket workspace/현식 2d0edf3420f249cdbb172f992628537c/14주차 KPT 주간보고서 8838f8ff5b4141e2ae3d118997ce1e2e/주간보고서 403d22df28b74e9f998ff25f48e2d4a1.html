@@ -1,0 +1,679 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>주간보고서</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="403d22df-28b7-4e9f-998f-f25f48e2d4a1" class="page sans"><header><h1 class="page-title">주간보고서</h1><p class="page-description"></p></header><div class="page-body"><ul id="de202d6b-6d3a-4707-a7f8-68780b060f87" class="toggle"><li><details open=""><summary>매일 반복되는 업무</summary><ul id="312f2fb3-7982-4c4d-a5e0-7526e837637d" class="bulleted-list"><li style="list-style-type:disc">메일 확인<ul id="27c5fe0f-b8d0-4705-b1d8-cc1fb1ee9e9b" class="bulleted-list"><li style="list-style-type:circle">shj05230@lionrocket → 협력사 등 컨택 체크</li></ul><ul id="e71ffd67-658e-49f0-bf13-2940f8ed57cd" class="bulleted-list"><li style="list-style-type:circle">contact@lionrocket → 인바운드 협력 문의 여부 체크</li></ul></li></ul><ul id="dd8512d7-bfdd-460c-864b-5a31c2151965" class="bulleted-list"><li style="list-style-type:disc">전사메일 뉴스레터 체크<ul id="83117d18-7a43-4e16-b2e6-c708b50fd8f3" class="bulleted-list"><li style="list-style-type:circle">경쟁자 체크</li></ul><ul id="73741604-9a70-4290-af85-5ac16e77d380" class="bulleted-list"><li style="list-style-type:circle">시장 동향 체크</li></ul></li></ul><ul id="ab1fa292-3e30-4a98-b913-0485497b2f7d" class="bulleted-list"><li style="list-style-type:disc">인바운드 대응<ul id="f0f6dbfc-ccec-484b-9e0d-325208912ead" class="bulleted-list"><li style="list-style-type:circle"><a href="https://docs.google.com/spreadsheets/d/17YiOajlbh3GoihPnfKmVmHVxMtUOaRw03qzSZtW2E94/edit">Contact US 구글 스프레드시트</a> 인바운드 협력 문의 대응</li></ul></li></ul></details></li></ul><ul id="84efdfda-3c64-423e-8c68-318e52d9cbd7" class="toggle"><li><details open=""><summary>정리 및 문서화 업무</summary><ul id="ccd32fbd-0354-4bc2-a05b-75c9b450f7b1" class="bulleted-list"><li style="list-style-type:disc">회의 정리<ul id="65fe99a4-a84a-46d1-b00f-70dc96f598a1" class="bulleted-list"><li style="list-style-type:circle">morning/afternoon scrum</li></ul><ul id="b0624f28-b0b7-4115-ab58-aee4511cc668" class="bulleted-list"><li style="list-style-type:circle">B2B x Production 협업 미팅</li></ul></li></ul><ul id="5c9c9d4a-b2c5-4596-bce7-ed83530533ba" class="bulleted-list"><li style="list-style-type:disc">기타 정보 정리<ul id="b61bceca-aab7-457d-a5bf-b7028b6f3582" class="bulleted-list"><li style="list-style-type:circle">슬랙 체크</li></ul></li></ul></details></li></ul><ul id="3ba08e32-fc31-4491-bfa2-17cd062ed844" class="toggle"><li><details open=""><summary>금주 현안 업무</summary><p id="4f7b2556-0ae5-4e78-9300-8ded0f337678" class="">B2B 웹소설 표지 비즈니스 콜드메일 발송</p><ul id="3ee23eab-861c-4e37-a07b-c1dc70351d32" class="bulleted-list"><li style="list-style-type:disc">콜드메일 문구 수정</li></ul><ul id="cb4d5701-1e29-4ff1-89e5-511482cfc560" class="bulleted-list"><li style="list-style-type:disc">표지 반응 체크하여 완성도 검증</li></ul><ul id="5bfaf07a-a387-4098-9aff-ff26330ef656" class="bulleted-list"><li style="list-style-type:disc">콜드메일용 리플렛 수정 의뢰 @채은</li></ul><ul id="37f15d7f-2fe4-46a1-926f-56e9c07204fa" class="bulleted-list"><li style="list-style-type:disc">콜드메일 준비하고 발송 예약하기</li></ul><p id="9dfd2b8f-3d5d-4ede-87e0-8204f620117d" class="">
+</p><p id="d0bef0dc-f1da-4bb2-8a9a-02adf8f410d0" class="">웹소설 AI 작가 운영</p><ul id="dfbc74be-8ee8-446b-9b3b-93c9cec4ecf6" class="bulleted-list"><li style="list-style-type:disc">AI 작가 협력을 통한 AI 작가 운영 목적 조기 달성 제고<ul id="cba00b17-a1a8-4996-87a3-a787ac3fc810" class="bulleted-list"><li style="list-style-type:circle">화이트닝 작가님 후속대응</li></ul></li></ul><ul id="56436522-ef12-4634-9f6e-92ca2b1533c4" class="bulleted-list"><li style="list-style-type:disc">QA 인력 확보<ul id="bfcd4a01-df6d-4f7e-b113-311c1bf1c2cf" class="bulleted-list"><li style="list-style-type:circle">청강대 JD double check</li></ul><ul id="350b96c2-11bf-4b6f-bcd0-875db109a7af" class="bulleted-list"><li style="list-style-type:circle"> 원티드긱스 AI 작가 JD 수정</li></ul><ul id="60557057-ed61-42f8-ade0-ed343a9f3172" class="bulleted-list"><li style="list-style-type:circle">청강대 인턴 신청 여부 확인</li></ul></li></ul><ul id="770578c4-c279-4823-a5a5-6bc82561e8c4" class="bulleted-list"><li style="list-style-type:disc">웹소설 표지 제작 LRSD 개발<ul id="ab599040-c833-4d18-a00b-31081aa5db51" class="bulleted-list"><li style="list-style-type:circle">개발 상황 체크</li></ul><ul id="4a8fe22d-ed8c-4105-80dd-048e1a2a118c" class="bulleted-list"><li style="list-style-type:circle">기능 작동 체크</li></ul><ul id="79ffc21b-3722-4ad3-800e-bb85776e1214" class="bulleted-list"><li style="list-style-type:circle">보안 사항 체크</li></ul></li></ul><p id="155db3b9-e757-4b44-98eb-34f94967948d" class="">
+</p><p id="26188d1b-a488-485f-8fec-079b73e35f58" class="">B2B 웹툰 제작 지원 비즈니스</p><ul id="3faa799b-dbd0-4f71-a0f4-ab1a2fd4fa1a" class="bulleted-list"><li style="list-style-type:disc">고객사 리스트 보완<ul id="cd9c18a2-8087-4add-9e3f-6adef9415255" class="bulleted-list"><li style="list-style-type:circle">CP사별 매출 정보 보완</li></ul><ul id="1bf816ed-c289-4f28-af8d-fb289a1d334a" class="bulleted-list"><li style="list-style-type:circle">CP사 컨택 포인트 보완</li></ul></li></ul><ul id="68f652a6-dbcc-4750-8011-f50ead061054" class="bulleted-list"><li style="list-style-type:disc">CP사 리스트 출처 보완</li></ul></details></li></ul><p id="fc2d198e-b574-48eb-a3c3-c497ee20fdde" class="">
+</p><h2 id="475e4a8a-e9fd-4f98-90ca-444587b412c3" class="">daily routine</h2><p id="9fe1f6f0-7df6-4862-9f3b-6c450c9c2417" class="">협력사와의 컨택 내용을 체크하고 새로운 인바운드 협력 문의 여부를 체크했습니다. 또한, 전사메일 뉴스레터를 통해 경쟁자와 시장 동향을 체크했습니다. 마지막으로, 인바운드 문의 전용 구글 스프레드시트를 통해 새로운 인바운드 협력 문의 여부를 체크하고 대응했습니다.</p><p id="4257b5c6-060c-4317-b959-eb3b8e0627e9" class="">매일 진행되는 morning/afternoon scrum과 매주 진행되는 B2B x Production 협업 미팅 내용을 정리하고 다른 팀원들과 공유했습니다. 또한, 슬랙을 체크하여 새로운 정보와 공지사항을 확인하고 적절히 정리하고 문서화하여 다른 팀원과의 sync-up을 진행했습니다.</p><h2 id="3310211a-f680-4cad-b42a-a5bacafea874" class="">B2B 웹소설 표지 비즈니스 콜드메일 발송</h2><p id="b3fff48a-a38b-4688-a8f7-1e7d736029cd" class="">콜드메일 문구를 수정하여 설득력을 제고했습니다. 또한 웹소설 작가들이 모이는 온라인 커뮤니티를 통해 자체 제작한 웹소설 표지에 대한 웹소설 작가들의 반응 체크하였습니다. 해당 이미지를 반영하여 콜드메일용 리플렛 수정하고 콜드메일 발송 예약 등의 작업을 진행했습니다. </p><h3 id="5e627c54-1bdb-488b-bfe1-483a2a500a21" class="">웹소설 AI 작가 운영</h3><p id="f84fa86f-f183-4075-83b1-31181fde3400" class="">협력에 응하기로 한 작가님들에 대해서 follow-up을 진행했습니다. 또한 그림에 대한 전문 지식을 갖춘 QA 인력 확보하기 위해 JD를 double-check하고 구직 플랫폼에 올라온 JD를 수정하였습니다. 또한 새로운 협력 교육기관을 통한 인턴십 제도를 체크하고 이를 활용할지 여부를 결정했습니다.</p><h3 id="50a0b124-57db-4521-b926-b08910d6acd3" class="">B2B 웹툰 제작 지원 비즈니스</h3><p id="4bb63faa-7c91-46a6-8bb4-7c565bc9880f" class="">고객사 리스트 작성을 위해 수집한 고객사별 매출 정보와 컨택 포인트를 보완했습니다. 또한 고객사 리스트 확보를 위애 이용한 출처 목록을 보완했습니다.</p></div></article></body></html>

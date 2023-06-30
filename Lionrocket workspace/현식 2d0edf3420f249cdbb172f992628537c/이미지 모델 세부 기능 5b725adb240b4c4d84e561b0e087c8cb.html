@@ -1,0 +1,700 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>이미지 모델 세부 기능</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5b725adb-240b-4c4d-84e5-61b0e087c8cb" class="page sans"><header><h1 class="page-title">이미지 모델 세부 기능</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-yellow">knowledge base</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AATXAJyqLbmCwuQjRWK_G_jiIWd-GM6Mc8GN76HcF98B=s100" class="icon user-icon"/>김현식</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><div id="4eddd103-d330-4e39-be6b-fa3ce2f1da8e" class="column-list"><div id="998d123f-9d9f-42b2-8646-8b7ae564afa9" style="width:50%" class="column"><figure id="db63b8a4-7781-45f4-b706-fbce3d3e43d4" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/image.png"><img style="width:343px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/image.png"/></a></figure><p id="cfaff373-1683-4683-99cb-47dc8428a779" class="">
+</p></div><div id="97de9249-75d3-4dbb-842b-8396335b6db1" style="width:50%" class="column"><ul id="31eab064-df08-4971-91a6-9a5c87f023b0" class="bulleted-list"><li style="list-style-type:disc">dreambooth: <a href="https://arxiv.org/pdf/2208.12242.pdf">https://arxiv.org/pdf/2208.12242.pdf</a></li></ul><ul id="55ac3cd9-2165-495b-99ba-f0aea5b01736" class="bulleted-list"><li style="list-style-type:disc">controlnet: <a href="https://arxiv.org/pdf/2302.05543.pdf">https://arxiv.org/pdf/2302.05543.pdf</a></li></ul><ul id="b0cdd4c8-4aec-47d3-8bd0-529de28f84a1" class="bulleted-list"><li style="list-style-type:disc">stable diffusion: <a href="https://arxiv.org/pdf/2112.10752.pdf">https://arxiv.org/pdf/2112.10752.pdf</a></li></ul><ul id="a87e5ec4-ad5c-4ea8-bd50-36d4de31c555" class="bulleted-list"><li style="list-style-type:disc">ESRGAN: <a href="https://arxiv.org/pdf/1809.00219.pdf">https://arxiv.org/pdf/1809.00219.pdf</a></li></ul><ul id="8f51e04b-10c9-4b85-bf27-016a330c0709" class="bulleted-list"><li style="list-style-type:disc">--다음은 논문은 없고, 커뮤니티발로 작성된 코드들입니다.</li></ul><ul id="73a509e3-51d8-40b2-973c-569aeb0e8061" class="bulleted-list"><li style="list-style-type:disc">LoRA: <a href="https://github.com/cloneofsimo/lora">https://github.com/cloneofsimo/lora</a> (로라는 원래 챗봇 논문인걸 SD에 붙인거라 챗봇 논문에는 원하는 이미지가 없으실겁니다.)</li></ul><ul id="66bf3697-b826-42e2-bfb3-08eeb7fbcbd3" class="bulleted-list"><li style="list-style-type:disc">DDetailer: <a href="https://github.com/dustysys/ddetailer">https://github.com/dustysys/ddetailer</a></li></ul></div></div><p id="d5f74719-05ef-4944-bff5-8034db38c74b" class="">
+</p><hr id="ce5594fe-1164-4f19-a259-5264d0afabea"/><div><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">객체고정</summary><div class="indented"><p id="abc8a9d1-fe56-47a4-8a09-0128de9b8dba" class="">특정 인물이나 캐릭터의 특성을 유지한 채 이미지를 생성할 수 있는 기능</p><p id="a0c7d31f-afbe-421f-96c9-0a4c7cb21b42" class="">
+</p><div id="9ca4478a-06a3-4ecd-822a-d5efeeb5eb7b" class="column-list"><div id="9ad29220-e640-4cce-940d-a37effc014e2" style="width:50%" class="column"><p id="c3d04aee-b5a1-4197-8301-83a2708926ea" class="">모델에 입력한 이미지들</p></div><div id="2acfd7a0-ec20-4c40-ba09-42b2fb354d2a" style="width:12.5%" class="column"><p id="484deace-935c-4bff-b7d3-823029244a13" class="">→</p></div><div id="0fe2726d-d528-4e88-b713-4aed229ae5c2" style="width:37.500000000000014%" class="column"><p id="a05ca128-fa64-4ef4-a3ba-5cd08d958aaa" class="">모델이 그려준 이미지들</p></div></div><div id="820ed750-48af-4d23-83df-4a5bf2f0a62b" class="column-list"><div id="a5925324-99a4-417c-9260-1cae75078398" style="width:56.25%" class="column"><figure id="51062c13-6df1-41c4-9be8-0da147741423" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.49.02_AM.png"><img style="width:280px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.49.02_AM.png"/></a></figure><figure id="ad617c5d-0fa0-4607-bc10-75937c075df9" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.46.52_AM.png"><img style="width:132px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.46.52_AM.png"/></a></figure><figure id="8e58910a-80fd-43a6-9497-6898122daf48" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.47.08_AM.png"><img style="width:132px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.47.08_AM.png"/></a></figure><p id="b5ffe8c7-eeb0-4f76-b624-7fdd77f02a52" class="">
+</p></div><div id="3e7bd0c7-6475-458d-a2d3-44013a1a013b" style="width:43.75000000000001%" class="column"><figure id="8d169da4-11aa-43ee-97ee-3bd58220cd01" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.45.35_AM.png"><img style="width:240px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.45.35_AM.png"/></a></figure><figure id="f64a28d5-18b6-41be-b336-9b3354242baf" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.46.11_AM.png"><img style="width:192px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.46.11_AM.png"/></a></figure><figure id="e0c6c825-bac5-478d-bf57-a98ee48c6e48" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.45.56_AM.png"><img style="width:163px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_10.45.56_AM.png"/></a></figure></div></div><p id="bbbb555f-897e-4ab3-88e7-8946b32f97ba" class="">이미지 출처: <a href="https://arxiv.org/pdf/2208.12242.pdf">https://arxiv.org/pdf/2208.12242.pdf</a></p></div></details><hr id="0bd6d2b5-224e-4449-a6c8-99109d5280e7"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">동작제어</summary><div class="indented"><p id="9746cd0c-8e9d-44fd-9990-49403ccbf5ab" class="">인물의 포즈를 간단한 스케치로부터 생성해낼 수 있는  기능 (신체 각 부위를 드래그로 제어 가능)</p><p id="63ce13ec-c63e-4741-b679-46df94aa1a98" class="">
+</p><div id="725c501c-05ac-4951-8975-ebe38789d5ca" class="column-list"><div id="5816ca79-cefd-46d4-b4a0-e7da5d45f8d0" style="width:50%" class="column"><p id="57f4c379-2766-411b-a0a1-9207e8745006" class="">모델에 입력한 이미지</p><figure id="cb176e73-5ec9-45c5-a744-43946030f8cc" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_11.43.01_AM.png"><img style="width:254px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_11.43.01_AM.png"/></a></figure><p id="d82113f8-581d-46c4-bb70-888967dc7279" class="">
+</p></div><div id="489671e3-2df5-4c51-ae48-1fdb52e8edb5" style="width:12.5%" class="column"><p id="706c226b-f8cf-4728-bb11-f6d55d6dbff8" class="">→</p><p id="a9b1ea51-c0ec-4785-8f29-08abbab46436" class="">
+</p></div><div id="ec3d9757-b5d4-458c-8d67-599fc19ab1a1" style="width:37.500000000000014%" class="column"><p id="87f8023f-1201-4587-94dd-5c3cfcea4138" class="">모델이 그려준 이미지들</p><figure id="998d2f54-ee50-4918-bbfc-cce7ad829028" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_11.48.07_AM.png"><img style="width:257px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_11.48.07_AM.png"/></a><figcaption>a woman dancing near a street corner</figcaption></figure><figure id="ecda2222-0113-48b7-a854-c300b673f89a" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_11.48.25_AM.png"><img style="width:248px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_11.48.25_AM.png"/></a><figcaption>artwork of Michael Jordan playing basketball</figcaption></figure></div></div><p id="7c3789f4-f207-4696-be47-a7abebbc5ecf" class="">이미지 출처: <a href="https://arxiv.org/pdf/2302.05543.pdf">https://arxiv.org/pdf/2302.05543.pdf</a></p></div></details><hr id="a65858d1-baa9-40f4-b14b-e5356581fa6b"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">인페인팅</summary><div class="indented"><p id="f6530904-3981-42af-a0c6-71bafd1fae87" class="">생성된 이미지의 일부분을 재생성할 수 있는 기능</p><p id="c2f9553a-7faf-4a41-84bc-6ec1a437167a" class="">
+</p><div id="da5fbe8c-0dfb-4644-9dea-46301219651e" class="column-list"><div id="02686f2a-d52b-4e3a-8e96-0dcc4e5ba54c" style="width:41.666666666666664%" class="column"><p id="f3e87ad7-1599-46c0-8f7e-2bc5e1a40126" class="">Before</p><figure id="edf2ccd2-d14d-4d44-b32f-2eee7bcdc015" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled.png"><img style="width:566px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled.png"/></a><figcaption>&#x27;Girl with a Pearl Earring’</figcaption></figure><p id="05f6f6b3-118f-4282-ac96-cbddef46926c" class="">
+</p></div><div id="08b2e6db-52ad-4194-9d90-fa7a14548ec5" style="width:4.166666666666666%" class="column"><p id="810197b0-dd5e-4110-990d-cf0c76e4e3f0" class="">→</p></div><div id="af612dc6-5798-4f81-a443-208e7cc38bf9" style="width:54.166666666666686%" class="column"><p id="80ee119b-9ff0-4b60-9c36-ee077da5ea22" class="">After</p><figure id="7b13d7d3-7db1-4ebf-bf1c-cdb0345c57b2" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled%201.png"><img style="width:288px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled%201.png"/></a><figcaption>&#x27;Girl with a Red Hair’</figcaption></figure><p id="0253cfab-3e3c-4518-b107-4af5b6cef5a0" class="">
+</p></div></div><p id="616ef685-342b-42e4-9aaa-93d62b50ef5f" class=""><a href="https://getimg.ai/guides/inpainting-with-stable-diffusion">https://getimg.ai/guides/inpainting-with-stable-diffusion</a></p></div></details><hr id="7e1bf221-e7ce-483a-9f98-56362270e75a"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">스케치 to 이미지</summary><div class="indented"><p id="e207022a-bed4-414d-98e9-d3163b5d3b82" class="">간단한 선으로 구성된 스케치를 일러스트, 또는 실사화 이미지로 생성할 수 있는 기능</p><div id="b0537a30-0bcc-4902-afaa-379b024ee118" class="column-list"><div id="36ca06de-5a95-4b56-8e45-8c1d0ce1a524" style="width:50%" class="column"><p id="308deddf-650a-4e65-aab3-a555a72a809a" class="">모델에 입력한 이미지</p><p id="5eefcd07-1bd5-450b-b65c-c226fea02c1d" class="">
+</p></div><div id="ce198ff3-17a5-4071-b925-ff1cc93d0523" style="width:4.166666666666666%" class="column"><p id="63428642-e253-47f6-b7c0-3b5325a1cd00" class="">→</p></div><div id="63b22c5a-d3b8-40d4-b5b1-08699ce02b3d" style="width:45.83333333333335%" class="column"><p id="ca61e883-ffda-49c1-80d8-1b861de786c4" class="">모델이 그려준 이미지들</p></div></div><div id="1c65a6a2-d567-4ba8-ad5b-2d75f5c803be" class="column-list"><div id="9b1a77d2-5f9c-4c2a-bc6c-c42cc8845e55" style="width:50%" class="column"><figure id="97105847-9f92-49a6-b9c8-4f1c1bb35eea" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_12.53.47_PM.png"><img style="width:153px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_12.53.47_PM.png"/></a></figure></div><div id="dcfff006-636b-412f-a7a6-071f3d953965" style="width:25%" class="column"><figure id="5a36a336-2fa5-4831-b278-c7c8323c4caa" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_12.54.00_PM.png"><img style="width:154px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_12.54.00_PM.png"/></a></figure><p id="3682ec09-890f-4b40-9c01-d986c571b101" class="">
+</p></div><div id="828fc38d-32e5-41a2-a18c-996cbaaf6f1b" style="width:25%" class="column"><figure id="972e0f56-aa8c-4f5b-8d06-7e6ba95e66b5" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_12.54.16_PM.png"><img style="width:153px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_12.54.16_PM.png"/></a></figure></div></div><p id="bfa3dea1-92d5-4c21-a214-41d23250b56b" class="">
+</p><p id="fbe312b9-55a2-4671-abab-60b94eafd21b" class=""><a href="https://arxiv.org/pdf/2302.05543.pdf">https://arxiv.org/pdf/2302.05543.pdf</a></p></div></details><hr id="8f6896ff-bfeb-4dce-9db5-1bcafe397c60"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">배경유지</summary><div class="indented"><p id="da4fd99f-94b7-4040-b355-e95eeae76633" class="">배경과 구도를 유지한 채로 이미지 속에 등장하는 다양한 인물을 교체할 수 있는 기능</p><p id="853b3314-01bc-4f43-b4bf-1d0682cba5d7" class="">
+</p><figure id="f8e307ca-dc81-4f0d-9a38-a55e784125a8" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled%202.png"><img style="width:821px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled%202.png"/></a></figure><figure id="0ee700d1-d187-4e39-8681-2a62722875fe" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/ddetailer_example_3.gif"><img style="width:1020px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/ddetailer_example_3.gif"/></a></figure><div id="53e2b27c-f8b3-4461-8e4d-d1eeba7d29bd" class="column-list"><div id="00c01d6a-b532-4b83-bc5e-75c1cc00a0a1" style="width:50%" class="column"><figure id="6f60d453-19c0-4076-a7e4-2cd42468699e" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled%203.png"><img style="width:422px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled%203.png"/></a></figure></div><div id="5245abbc-6229-43c5-9719-4c14751b7618" style="width:50%" class="column"><figure id="a3f20cb6-a254-49a6-b8c5-4b0ad4db8f6a" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled%204.png"><img style="width:422px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled%204.png"/></a></figure></div></div><p id="1cfee1d1-73ad-40f5-82bc-f22b607d02f8" class="">이미지출처: <a href="https://github.com/dustysys/ddetailer">https://github.com/dustysys/ddetailer</a>, <a href="https://www.youtube.com/watch?v=FEuv-HfUDz0">https://www.youtube.com/watch?v=FEuv-HfUDz0</a></p></div></details><hr id="69002cd0-606d-4d9a-bb64-d0176956b8a7"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">화풍변화</summary><div class="indented"><p id="214e6cc3-57e0-4219-9579-5503c91d1fb3" class="">생성된 또는 존재하는 이미지를 원하는 그림체로 새로 그려낼 수 있는 기능</p><p id="6418ba98-ce51-4231-8ae9-19dc900c769a" class="">
+</p><div id="d5b8563c-9b70-4429-8e5d-ca3f7a62b496" class="column-list"><div id="053f792a-2c95-4e88-b870-555d6bf26b3a" style="width:41.666666666666664%" class="column"><p id="5374bb3c-bf0c-4bc7-be73-5fbbeba22dac" class="">모델에 입력한 이미지들</p><figure id="3f5a292d-fea3-4543-a12f-47abd9a79846" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_11.27.35_AM.png"><img style="width:337px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_11.27.35_AM.png"/></a></figure></div><div id="b816b1cf-434e-4a32-a811-5e4f92a2d67b" style="width:4.166666666666666%" class="column"><p id="597fecdb-fb75-4816-a433-83e250d75e08" class="">→</p></div><div id="20939400-8b38-4323-8106-43aaf2e04fff" style="width:54.166666666666686%" class="column"><p id="af009d98-cbb9-4954-9394-a24f2a05cbee" class="">모델이 그려준 이미지들</p><figure id="1a85241d-6cc1-4ae2-9273-9cab02f3d863" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_11.28.16_AM.png"><img style="width:682px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_11.28.16_AM.png"/></a></figure></div></div><p id="546c704f-e110-4ba3-a114-d594fce1d4d8" class="">
+</p><p id="549b1a1a-9a86-4a43-bf7f-cbd43e9b0b11" class="">이미지 출처: <a href="https://arxiv.org/pdf/2208.12242.pdf">https://arxiv.org/pdf/2208.12242.pdf</a></p></div></details><hr id="73cf83b1-a698-413c-b28b-d02ba07f0e08"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2D → 실사화</summary><div class="indented"><p id="2b814b1b-1ad9-49f3-a857-e0a0d52a2ed4" class="">2D 이미지를 실사화 이미지로 변경할 수 있는 기능 (배경, 사물 함께 변경)</p><figure id="4e25048b-b438-489b-bcb4-3e413d32f259" class="image" style="text-align:left"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/alpha_scale.gif"><img style="width:432px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/alpha_scale.gif"/></a></figure><p id="da24f29e-79a8-44d3-b613-e5105f7d2f18" class="">
+</p><p id="d9af09be-792c-4ef7-a99e-1c4d052fde41" class="">이미지 출처: <a href="https://github.com/cloneofsimo/lora">https://github.com/cloneofsimo/lora</a> </p></div></details><hr id="07aeb22d-acd6-4f10-93e4-d039482c76b5"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">아웃페인팅</summary><div class="indented"><p id="fe0b3b59-59b9-4ac2-823a-23edea12cb06" class="">이미지 프레임 밖으로 그림을 이어 그릴 수 있는 기능</p><p id="190c7787-bf76-4401-8120-9eabc2321bca" class="">
+</p><div id="45e218d6-5a5d-4e37-8338-f73e2fa5012f" class="column-list"><div id="ac8fd633-dbb4-418b-ac51-4f44668f550a" style="width:25%" class="column"><p id="5c12ddd9-b9ef-400c-946e-756e661713fd" class="">Before</p><figure id="aadbf5d4-ac1f-48ad-9e3f-4ea3d4b6a047" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled.png"><img style="width:566px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled.png"/></a></figure></div><div id="ce8f0010-5740-40d2-8303-5dbc63303831" style="width:4.16666666666667%" class="column"><p id="fbeaf8cf-c64e-413c-80d9-a4d865aa5f63" class="">→</p></div><div id="ce14edb4-d9f2-4da3-9a00-4080da45ee14" style="width:70.83333333333334%" class="column"><p id="4ea8bd71-ba25-4a19-abc4-8593f21eb280" class="">After</p><figure id="467ed823-be01-4745-9a88-a7a44518893c" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled%205.png"><img style="width:1803px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Untitled%205.png"/></a></figure></div></div><p id="28b98148-6f73-4187-bca2-b6ce41640349" class=""><a href="https://github.com/lkwq007/stablediffusion-infinity">https://github.com/lkwq007/stablediffusion-infinity</a></p></div></details><hr id="b0669fc5-a3d4-40d5-b7b4-54b33b344c8d"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">광원조절</summary><div class="indented"><p id="4e84530b-a420-4b2d-87b8-1e5d1e33f12d" class="">이미지 내부의 광원의 위치, 종류, 세기 등을 변경할 수 있는 기능</p><p id="15362d42-56bb-41e5-87f3-48c0bb7212a6" class="">
+</p><div id="7adc1204-d84e-478f-a01c-51ea6d4af825" class="column-list"><div id="a0bc3885-0087-48a4-962c-1b2e16f87720" style="width:25%" class="column"><p id="d4c5a293-7e8b-463a-8661-859578f5e061" class="">Before</p></div><div id="5aaa4fe4-5ba3-4a30-8660-aaf3c5cd852a" style="width:12.499999999999996%" class="column"><p id="a9aad8cc-ec5f-4f08-9e6e-9b800c29b265" class="">→</p></div><div id="1bfe6ac7-e7e6-4a88-be63-2e8640a4ca4d" style="width:62.500000000000014%" class="column"><p id="37a2e632-3c3e-4c12-beee-68e8b635551c" class="">After</p></div></div><div id="9211c937-52eb-4fa1-a32d-713079250e6c" class="column-list"><div id="95a4dc20-340d-4870-93cd-cd517f924cfd" style="width:41.666666666666664%" class="column"><figure id="d6561971-93ea-4054-9c58-01d83bbb13a6" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.04.35_PM.png"><img style="width:131px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.04.35_PM.png"/></a></figure></div><div id="a31f2725-fc7d-4461-a29e-a4c4bd3d9e54" style="width:25.00000000000001%" class="column"><figure id="df6cf21d-5076-4699-b8d3-e80fff5bb0b8" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.04.23_PM.png"><img style="width:132px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.04.23_PM.png"/></a></figure></div><div id="3b36bd20-a101-4a02-b0cc-d86438331945" style="width:33.33333333333333%" class="column"><figure id="216c07a1-9202-4fca-8c5b-af2ab277908e" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.05.07_PM.png"><img style="width:130px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.05.07_PM.png"/></a></figure></div></div><p id="13c92bf8-d68b-4a50-b901-993be916d277" class=""><a href="https://arxiv.org/pdf/2302.05543.pdf">https://arxiv.org/pdf/2302.05543.pdf</a></p><p id="015ed3ba-e3d0-49b2-a2dd-881c3ea4ad3d" class="">
+</p><div id="1ac1a54c-c6db-4cd6-9965-90b756c588f0" class="column-list"><div id="b2a80619-461b-486b-b7ed-c4c67250bca6" style="width:41.666666666666664%" class="column"><figure id="a3bddbd3-a3f3-4ac7-8e45-ed0eccaccd4d" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-29_at_2.16.33_PM.png"><img style="width:144px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-29_at_2.16.33_PM.png"/></a></figure></div><div id="6c7ea3e9-5048-49b7-9cda-1991352b97ac" style="width:25.00000000000001%" class="column"><figure id="53f0c04b-a61a-43f0-a432-e12adeba1d56" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-29_at_2.16.53_PM.png"><img style="width:144px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-29_at_2.16.53_PM.png"/></a></figure></div><div id="47413582-e86b-4333-b3f9-7f38d8f82f4e" style="width:33.33333333333333%" class="column"><figure id="362a4a37-6e3d-49bf-9584-73694d48a142" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-29_at_2.18.15_PM.png"><img style="width:144px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-29_at_2.18.15_PM.png"/></a></figure></div></div><p id="6a6f16b3-5cd9-47aa-b8b8-21c84c5431bc" class=""><a href="https://www.youtube.com/watch?v=YGEBATgrBPM">https://www.youtube.com/watch?v=YGEBATgrBPM</a></p><p id="76717cbf-b08e-4a43-b034-df107c71e8f5" class="">
+</p></div></details><hr id="203b77fe-aa0e-43b8-a540-1c15f2e886cc"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">슈퍼레졸루션</summary><div class="indented"><p id="2c23b6ea-e98a-48dc-8fc2-a5fb33d2ddf5" class="">이미지를 4k 이상의 해상도로 생성할 수 있는 기능</p><p id="c645c8b3-f9d5-4933-98ff-b84f4e28861c" class="">
+</p><figure id="4dab765d-16ef-4990-8c21-8b1f09b688f7" class="image" style="text-align:left"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.26.46_PM.png"><img style="width:326px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.26.46_PM.png"/></a></figure><div id="a94593d2-8280-4c1b-88a4-264b8dfe6d04" class="column-list"><div id="ad6bd62f-06b7-4924-997b-bf950616ee1d" style="width:29.166666666666664%" class="column"><p id="bf64f333-28fb-48b9-86e3-c505cb87a26a" class="">Before</p><figure id="6b4d3309-5f4a-46b7-8d23-588d6f1afc28" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.27.09_PM.png"><img style="width:144px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.27.09_PM.png"/></a></figure><p id="1e9b8a04-3942-458b-88a8-4f402014a4b3" class="">
+</p></div><div id="d40df4fe-0f2f-4af8-acdb-5095b1014853" style="width:8.333333333333337%" class="column"><p id="359b8e56-9e98-413f-bb3d-0e2ea8e527a7" class="">→</p></div><div id="4e894016-79d1-4bd1-8164-edb858c97f18" style="width:62.500000000000014%" class="column"><p id="dc3bc19b-cadc-4a33-a4d9-7ae2cb990da8" class="">After</p><figure id="469997a8-ec6b-4e0c-a0c6-ef990a01e9d0" class="image"><a href="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.27.22_PM.png"><img style="width:140px" src="%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%20%E1%84%89%E1%85%A6%E1%84%87%E1%85%AE%20%E1%84%80%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%205b725adb240b4c4d84e561b0e087c8cb/Screenshot_2023-03-15_at_1.27.22_PM.png"/></a></figure></div></div><p id="ed553a4e-b2c8-41d8-b0bb-4e7471ef13bd" class=""><a href="https://arxiv.org/pdf/1809.00219.pdf">https://arxiv.org/pdf/1809.00219.pdf</a></p><p id="30a933c8-bf5a-46e8-b9ba-19c81b389b43" class="">
+</p></div></details></div></div></article></body></html>

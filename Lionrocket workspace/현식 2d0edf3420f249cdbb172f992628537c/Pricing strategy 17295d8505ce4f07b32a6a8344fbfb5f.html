@@ -1,0 +1,711 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Pricing strategy</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="17295d85-05ce-4f07-b32a-6a8344fbfb5f" class="page sans"><header><h1 class="page-title">Pricing strategy</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-pink">routine</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><h1 id="cc1805a0-de61-440b-a905-03532c5cd411" class="">지불 용의 가격(=B)</h1><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">기업 측 발생 비용</summary><div class="indented"><h3 id="de8f4dd4-689f-4f21-992b-2684892b3b60" class="">웹툰 기존 비용</h3><ul id="b95db243-8e3d-4698-a023-0fb4642abd7a" class="toggle"><li><details open=""><summary>시간 → 사람마다 다름</summary><ul id="20629113-2196-48de-9c54-bdd1ffbcbc82" class="bulleted-list"><li style="list-style-type:disc"><a href="https://lionrocket.slack.com/archives/C05457W2KJN/p1684496584327469?thread_ts=1684496212.140659&amp;cid=C05457W2KJN">예시 1</a> (140컷 기준)<ol type="1" id="096b59dc-e2f5-4364-a00e-1283a178ee75" class="numbered-list" start="1"><li>글콘티 : 1일</li></ol><ol type="1" id="d4806dc0-b3e4-4bee-afec-701e6c725f98" class="numbered-list" start="2"><li>그림콘티 : 1일</li></ol><ol type="1" id="cf63679e-169f-4cf7-ad87-3d1e83a4999a" class="numbered-list" start="3"><li>스케치 : 1-2일</li></ol><ol type="1" id="2a7f594c-3fe1-4f12-b208-e2b231db4c35" class="numbered-list" start="4"><li>펜터치 : 2-3일</li></ol><ol type="1" id="adf4b92c-3b95-4522-bda7-a546549bdaad" class="numbered-list" start="5"><li>채색(밑색 + 명암), 배경 : 1일<figure id="c7bd8136-7ccb-4494-9362-ad2fa5283bf4" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/imaged.png"><img style="width:336px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/imaged.png"/></a></figure></li></ol></li></ul><ul id="f14e49b2-41d2-4cd9-ab90-4811e158241e" class="bulleted-list"><li style="list-style-type:disc"><a href="https://lionrocket.slack.com/archives/C05457W2KJN/p1684496716212469?thread_ts=1684496212.140659&amp;cid=C05457W2KJN">예시 2</a> (60컷 기준)<figure id="19a236cc-bafe-4589-86d2-7245832cde01" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-05-19_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_8.44.51.png"><img style="width:649px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-05-19_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_8.44.51.png"/></a></figure><p id="d5be0a45-77af-4ebf-88c5-11bb9575f581" class="">
+</p></li></ul></details></li></ul><ul id="3c322b94-54fa-4f5a-8217-7d0b8afcf85f" class="toggle"><li><details open=""><summary><a href="https://docs.google.com/spreadsheets/u/1/d/1ktgucwh1pM4THvj_1381Ai0Po_zhvsRmEJlWd49L6Eg/edit#gid=130748610">가격</a></summary><p id="f8f2cbc3-5691-43d8-b774-d34b681d1111" class="">회당 80컷 기준,</p><ul id="e443d56f-61ea-4026-be2f-fbf8babef3a6" class="toggle"><li><details open=""><summary>콘티: 회당 30만원 (예시 이미지)</summary><figure id="586e7cc4-4195-4974-9c99-34f71e3f5974" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Screenshot_2023-05-23_at_7.13.12_PM.png"><img style="width:1061px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Screenshot_2023-05-23_at_7.13.12_PM.png"/></a></figure></details></li></ul><ul id="9336fbc1-6784-4e1e-bf60-ee02ff28b5d1" class="toggle"><li><details open=""><summary>작화: 회당 50만원 (예시 이미지)</summary><figure id="86b7ea28-cafb-40d2-a07f-73dfe665ac31" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Screenshot_2023-05-23_at_7.14.09_PM.png"><img style="width:1061px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Screenshot_2023-05-23_at_7.14.09_PM.png"/></a></figure></details></li></ul><ul id="f7fb2e25-90d7-4d0b-a491-c34ce2b25949" class="toggle"><li><details open=""><summary>배경: 회당 35만원 (예시 이미지)</summary><figure id="c1de285c-dad0-49cd-880d-37eb009b66af" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Screenshot_2023-05-23_at_7.14.36_PM.png"><img style="width:1061px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Screenshot_2023-05-23_at_7.14.36_PM.png"/></a></figure></details></li></ul><ul id="78bb8222-2244-4f5f-b84f-ac9a6a8e5a18" class="toggle"><li><details open=""><summary>후보정: 회당 50만원 (예시 이미지)</summary><figure id="a2bbc185-f86b-42ec-a5dd-05eee845ec95" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Screenshot_2023-05-23_at_7.14.52_PM.png"><img style="width:1233px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Screenshot_2023-05-23_at_7.14.52_PM.png"/></a></figure><p id="a4dcfe45-ab9d-4689-b7a0-9829d26ae548" class="">
+</p></details></li></ul><p id="237222e6-1fbb-4860-9291-d9d1c2261aab" class="">
+</p><figure id="9fd18841-2b47-4dd5-9bd6-535b5b0c28ed" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Screenshot_2023-05-22_at_4.23.13_PM.png"><img style="width:710px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Screenshot_2023-05-22_at_4.23.13_PM.png"/></a></figure><p id="48d557a7-1b45-4040-ae5c-2ed47e671bd6" class="">
+</p><div><p id="7ba52671-d395-46c8-860a-62a5cc0612d8" class="">[60~80컷당 가격]</p><figure id="6a939d20-9cba-469f-b3e4-078627db6fa5" class="image"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%AB%20%20906555993ba34e2e9bbd12c720a49a04/image.png"><img style="width:746px" src="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%AB%20%20906555993ba34e2e9bbd12c720a49a04/image.png"/></a></figure></div><ul id="0a001b35-fec3-48ad-a2cd-c41818e9ef67" class="bulleted-list"><li style="list-style-type:disc">외주시 편당 150~200만원<ul id="d754874c-31b9-464b-92f2-f371593b7f8b" class="toggle"><li><details open=""><summary>출처</summary><div><ul id="8be33e2e-b3d5-455c-a5f5-a93afae4e2ed" class="bulleted-list"><li style="list-style-type:disc">외주시 작품당 150~200만원 소요</li></ul></div></details></li></ul></li></ul><ul id="ec660084-999f-4489-955a-923bf7a72b0c" class="bulleted-list"><li style="list-style-type:disc">웹소설 웹툰화 편당 <span style="border-bottom:0.05em solid">400~500</span>만원 <ul id="ccdc6435-30d7-4989-97b0-f570f88a2bbb" class="toggle"><li><details open=""><summary>출처</summary><div><ul id="17208334-3a9a-49e4-9567-32fdf8cb28a3" class="bulleted-list"><li style="list-style-type:disc">IP확보 경쟁이 갈수록 치열해지며 글작가들의 몸값이 치솟고 있음. 네이버와 카카오가 될 성 싶은 웹소설 IP를 빨아들이고 있음. <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">스튜디오도 신인 글작가 발굴에 주력</span></mark>. <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">웹툰화를 위해서는 작품당 4~5억이 드는데 (100화 기준, 편당 4~500만원) 적은 금액이 아니라 AI로 생산성이 올라간다면 많은 작품들이 웹툰화 될 것</span></mark></li></ul></div></details></li></ul></li></ul><ul id="4b2152ed-b033-4444-a195-ca2477f34414" class="bulleted-list"><li style="list-style-type:disc">웹툰 작가 평균 연봉 2800만원, 평균 시급 8651원<ul id="fe2b77e7-486d-4230-99e2-9318200770cc" class="toggle"><li><details open=""><summary>출처</summary><div><h3 id="cd90cba0-7dfe-4209-bfa3-aeeea7108931" class="">웹소설 일러스트</h3><ul id="8c79bcb5-858b-4751-9b50-9f96a56b6206" class="bulleted-list"><li style="list-style-type:disc"><a href="https://more-money-no-problems.tistory.com/2184">평균 월급 200만원 ~ 500만원 (상당히 불규칙함)</a></li></ul><h3 id="a7b7baf2-64fb-4204-82f2-4ead84eb9590" class="">웹툰 작가</h3><ul id="9c5f2a76-d0c5-4546-8ebb-a1460dcc334e" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.labortoday.co.kr/news/articleView.html?idxno=211008">평균 연봉 2800만원, 평균 시급은 8천651원이다</a></li></ul><p id="61f622d4-5965-4fce-ac10-c79cdc807c38" class=""><strong>[평균 창작시간 일/주] 2022년 기준 (</strong><a href="https://lionrocket.slack.com/archives/C058N600H3R/p1684980949772279"><strong>출처</strong></a>)</p><ul id="a4d36587-1047-453c-9496-811fd02f0ff2" class="bulleted-list"><li style="list-style-type:disc">하루 평균 창작 시간은 10.5시간</li></ul><ul id="a1243efe-dd7d-471f-b8da-54a4233a63be" class="bulleted-list"><li style="list-style-type:disc">활동 분야별로 보면, 그림작가의 하루 평균 창작 시간이 11.0시간으로 가장 높게 나타났고, 글(스토리, 콘티)작가의 하루 평균 창작 시간은 9.1시간으로 가장 낮게 나타남.</li></ul><ul id="591efa04-733f-4110-81aa-ababb2e210ad" class="bulleted-list"><li style="list-style-type:disc">주 평균 창작 활동 일수는 5.8일로 전년 대비 0.1일 감소한 것으로 나타남.</li></ul><ul id="b0bf6364-fc20-448f-b724-1bf748555a1b" class="bulleted-list"><li style="list-style-type:disc">활동 분야별 창작 활동 일수를 살펴보면, 그림)작가의 평균 창작 일수가 6.4일로가장 많고, 글(스토리, 콘티)작가는 5.1일로 가장 낮게 나타남.</li></ul><p id="fb6d3ff3-8692-46c3-87ec-758464545fe4" class=""><strong>[창작 작업 방식](</strong><a href="https://lionrocket.slack.com/archives/C058N600H3R/p1684980949772279"><strong>출처</strong></a>)</p><ul id="ad743d72-ce6e-46e3-8527-fb4c5a2828cf" class="bulleted-list"><li style="list-style-type:disc">창작 작업 방식으로는 ‘단독창작’ 방식이 35.1%로 가장 많았고,</li></ul><ul id="534bd254-774d-42fe-9d3f-bae7be7b9d17" class="bulleted-list"><li style="list-style-type:disc">그 다음으로는 ‘단독창작(보조작가 있음)’(31.7%)</li></ul><ul id="79e028a3-cf2a-4e95-8e2d-61a757801620" class="bulleted-list"><li style="list-style-type:disc">‘CP사 소속’(16.2%), ‘작가와 공동 작업’(12.6%) 등의 순으로 나타남.</li></ul><p id="91e6cdea-8e32-448a-a984-b58526d5235e" class=""><strong>[작업에 참여한 보조작가 수](</strong><a href="https://lionrocket.slack.com/archives/C058N600H3R/p1684980949772279"><strong>출처</strong></a>) </p><ul id="5d8cac77-1d7a-4794-9653-40d2c2a65bb3" class="bulleted-list"><li style="list-style-type:disc">혼자서 작업했다고 응답한 작가(45.4%)를 제외하면, ‘1명’의 보조작가와 작업하는 비율이29.3%로 가장 높게 나타남.</li></ul><ul id="1eac3a18-df6f-4b4f-afc0-6bbd38729c29" class="bulleted-list"><li style="list-style-type:disc">활동 분야별로 보면, 글(스토리, 콘티)작가는 혼자서 작업하는 비중이 61.2%로가장높게 나타났고, 작화(선화)작가는 27.6%로 혼자 작업하는 비율이 가장 낮음.</li></ul><ul id="a3f34226-c81a-4f41-86db-385cc9910984" class="bulleted-list"><li style="list-style-type:disc">계약 상대별로 살펴보면, 플랫폼과 계약한 작가의 ‘혼자서 작업함’ 비율이 50.7%로가장 높게 나타났고, 스튜디오의 경우 ‘4명 이상’ 비율이 13.8%로 상대적으로 높은 비율을 보임.</li></ul><h3 id="a909eb88-ac2c-4b24-816c-39e7f5e73f98" class="">게임 일러스트</h3><ul id="1df2d3b9-d6c3-404e-9dc6-140054f1b2c5" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.instagram.com/lwbv2001/?hl=ko">이원빈 일러스트레이터</a><p id="541b590a-bc9e-42e0-b58b-3a3da4bf0d20" class="">현직에서 오래 종사하셨다고 함</p><p id="6e3bbe11-240b-430b-8289-c7cecc71d15d" class="">현재는 학원 강사</p><p id="699610d1-cd16-4b95-bd35-8d0cb66e7312" class="">pay는 40만/월/주1회클래스 x 7일</p></li></ul><ul id="1b1acc37-2788-4af2-9c7f-e5874934f77d" class="bulleted-list"><li style="list-style-type:disc"><a href="https://twitter.com/hyulla_kot">혈라 일러스트레이터</a><p id="2a43a948-acd4-491c-beed-7a07108366ae" class="">게임 일러스트 계에서 탑급인 분</p></li></ul><ul id="700877e8-ea9f-4ea0-84d4-7db75f382531" class="bulleted-list"><li style="list-style-type:disc"><a href="https://m.blog.naver.com/xeros007/222073601574">게임 일러스트 평균 월급 340만원</a></li></ul></div><div><ul id="bb4b7835-97ce-40fe-abd7-4b9acdeca33e" class="bulleted-list"><li style="list-style-type:disc">일러 비용 계속 증가한다.<ul id="0f9c7d12-d4ba-48bc-abfe-a8ba44e21d3d" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">A급: 300 ~ 400만원 </span>      <span style="border-bottom:0.05em solid">B급: 60 → 100만원</span></li></ul></li></ul></div></details></li></ul></li></ul><ul id="d165078b-fd44-46f4-b469-e83b10880fbe" class="bulleted-list"><li style="list-style-type:disc">외주를 할 수밖에 없는 환경<ul id="282136ab-5c81-4f7e-82a5-1d4d19067bc4" class="toggle"><li><details open=""><summary>detail</summary><div><ul id="f512d334-cd17-40c8-a82f-5ef1f6328f8b" class="bulleted-list"><li style="list-style-type:disc">소속 <span style="border-bottom:0.05em solid">그림작가 1명이 2년에 한 작품</span> 제작 (<span style="border-bottom:0.05em solid">100화 기준</span>)<p id="30d968f7-9c0b-42d9-9cd3-029d21d6782f" class="">예) 스튜디오그리핀 2년 동안 자체 제작 2작품 만들었음.</p></li></ul></div><div><ul id="fc8884f8-9229-4040-8bee-31e956970059" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">PD 1명당 년간 4~5개 작품</span>을 한다.</li></ul><ul id="1cf08de4-adef-4a42-a3ac-3033fdb18eb0" class="bulleted-list"><li style="list-style-type:disc">스튜디오 <span style="border-bottom:0.05em solid">1작품 + 3~4개 작품 외주 작가</span>와 에이전시 방식 작업.</li></ul></div></details></li></ul></li></ul></details></li></ul><h3 id="34b60cfd-152c-44b5-9c8b-1eb1b1149164" class="">웹툰 이익</h3><div><ul id="520d671a-16e2-4984-95b0-a354f3d419d1" class="bulleted-list"><li style="list-style-type:disc">네이버 및 카카오 연재 작품수가 약 1600작품<ul id="7d3fa9af-f4b8-4411-bdca-8aa324b28303" class="bulleted-list"><li style="list-style-type:circle">이중 돈을 버는 작품은 약 100여 작품, 대형 제작사도 매출 200억 수준임, 이익률 50%(?)</li></ul><ul id="d89e2823-67cf-49b5-9922-a4ece35972cd" class="bulleted-list"><li style="list-style-type:circle">여기에 연관된 작가수가 약 10만명</li></ul></li></ul></div><h3 id="1a9cb4bc-5ac4-4a2e-8a23-336b8134e0ed" class="">웹소설 표지 기존 비용</h3><div><ul id="055d12de-70e7-4f7e-906a-e109dc41d922" class="bulleted-list"><li style="list-style-type:disc">프리랜스 웹소설 일러스트레이터 평균 월급 200~500만원</li></ul></div><ul id="8f1c99a8-b981-47d5-a06a-b3d84ae58d52" class="bulleted-list"><li style="list-style-type:disc">게임 아티스트 평균 월급 340만원, 경력 3년차 기준 시급 14,300원</li></ul><ul id="13075844-527f-4518-bcb7-6b95ed1bedad" class="bulleted-list"><li style="list-style-type:disc">웹소설 일러스트 비용 A급: <span style="border-bottom:0.05em solid">300~400</span>만원(<a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%AB%20%20906555993ba34e2e9bbd12c720a49a04.html">줄서서 기다리는 곳, 거의 부르는 게 값임</a>), B급: <span style="border-bottom:0.05em solid">100</span>만원<ul id="ca3d33c5-f7fc-40cc-9e0f-91cc472e2099" class="bulleted-list"><li style="list-style-type:circle">또 다른 출처에 따르면 장당 <span style="border-bottom:0.05em solid">200</span>만원 소요</li></ul><ul id="2a2e8a2e-dd0c-4ba8-b40c-dbcf0b54df8f" class="bulleted-list"><li style="list-style-type:circle">또 다른 출처에 따르면 <span style="border-bottom:0.05em solid">200-1000</span>만원 소요<ul id="519e5458-1d96-4392-a9d7-37b3c5f9cc0d" class="toggle"><li><details open=""><summary>출처</summary><div><h3 id="cd90cba0-7dfe-4209-bfa3-aeeea7108931" class="">웹소설 일러스트</h3><ul id="8c79bcb5-858b-4751-9b50-9f96a56b6206" class="bulleted-list"><li style="list-style-type:disc"><a href="https://more-money-no-problems.tistory.com/2184">평균 월급 200만원 ~ 500만원 (상당히 불규칙함)</a></li></ul><h3 id="a7b7baf2-64fb-4204-82f2-4ead84eb9590" class="">웹툰 작가</h3><ul id="9c5f2a76-d0c5-4546-8ebb-a1460dcc334e" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.labortoday.co.kr/news/articleView.html?idxno=211008">평균 연봉 2800만원, 평균 시급은 8천651원이다</a></li></ul><p id="61f622d4-5965-4fce-ac10-c79cdc807c38" class=""><strong>[평균 창작시간 일/주] 2022년 기준 (</strong><a href="https://lionrocket.slack.com/archives/C058N600H3R/p1684980949772279"><strong>출처</strong></a>)</p><ul id="a4d36587-1047-453c-9496-811fd02f0ff2" class="bulleted-list"><li style="list-style-type:disc">하루 평균 창작 시간은 10.5시간</li></ul><ul id="a1243efe-dd7d-471f-b8da-54a4233a63be" class="bulleted-list"><li style="list-style-type:disc">활동 분야별로 보면, 그림작가의 하루 평균 창작 시간이 11.0시간으로 가장 높게 나타났고, 글(스토리, 콘티)작가의 하루 평균 창작 시간은 9.1시간으로 가장 낮게 나타남.</li></ul><ul id="591efa04-733f-4110-81aa-ababb2e210ad" class="bulleted-list"><li style="list-style-type:disc">주 평균 창작 활동 일수는 5.8일로 전년 대비 0.1일 감소한 것으로 나타남.</li></ul><ul id="b0bf6364-fc20-448f-b724-1bf748555a1b" class="bulleted-list"><li style="list-style-type:disc">활동 분야별 창작 활동 일수를 살펴보면, 그림)작가의 평균 창작 일수가 6.4일로가장 많고, 글(스토리, 콘티)작가는 5.1일로 가장 낮게 나타남.</li></ul><p id="fb6d3ff3-8692-46c3-87ec-758464545fe4" class=""><strong>[창작 작업 방식](</strong><a href="https://lionrocket.slack.com/archives/C058N600H3R/p1684980949772279"><strong>출처</strong></a>)</p><ul id="ad743d72-ce6e-46e3-8527-fb4c5a2828cf" class="bulleted-list"><li style="list-style-type:disc">창작 작업 방식으로는 ‘단독창작’ 방식이 35.1%로 가장 많았고,</li></ul><ul id="534bd254-774d-42fe-9d3f-bae7be7b9d17" class="bulleted-list"><li style="list-style-type:disc">그 다음으로는 ‘단독창작(보조작가 있음)’(31.7%)</li></ul><ul id="79e028a3-cf2a-4e95-8e2d-61a757801620" class="bulleted-list"><li style="list-style-type:disc">‘CP사 소속’(16.2%), ‘작가와 공동 작업’(12.6%) 등의 순으로 나타남.</li></ul><p id="91e6cdea-8e32-448a-a984-b58526d5235e" class=""><strong>[작업에 참여한 보조작가 수](</strong><a href="https://lionrocket.slack.com/archives/C058N600H3R/p1684980949772279"><strong>출처</strong></a>) </p><ul id="5d8cac77-1d7a-4794-9653-40d2c2a65bb3" class="bulleted-list"><li style="list-style-type:disc">혼자서 작업했다고 응답한 작가(45.4%)를 제외하면, ‘1명’의 보조작가와 작업하는 비율이29.3%로 가장 높게 나타남.</li></ul><ul id="1eac3a18-df6f-4b4f-afc0-6bbd38729c29" class="bulleted-list"><li style="list-style-type:disc">활동 분야별로 보면, 글(스토리, 콘티)작가는 혼자서 작업하는 비중이 61.2%로가장높게 나타났고, 작화(선화)작가는 27.6%로 혼자 작업하는 비율이 가장 낮음.</li></ul><ul id="a3f34226-c81a-4f41-86db-385cc9910984" class="bulleted-list"><li style="list-style-type:disc">계약 상대별로 살펴보면, 플랫폼과 계약한 작가의 ‘혼자서 작업함’ 비율이 50.7%로가장 높게 나타났고, 스튜디오의 경우 ‘4명 이상’ 비율이 13.8%로 상대적으로 높은 비율을 보임.</li></ul><h3 id="a909eb88-ac2c-4b24-816c-39e7f5e73f98" class="">게임 일러스트</h3><ul id="700877e8-ea9f-4ea0-84d4-7db75f382531" class="bulleted-list"><li style="list-style-type:disc"><a href="https://m.blog.naver.com/xeros007/222073601574">게임 일러스트 평균 월급 340만원</a></li></ul></div><div></div><div><ol type="a" id="9a913302-29e7-4155-beb6-1db0497addc7" class="numbered-list" start="1"><li>조아라<div></div></li></ol><ol type="a" id="ed7180e0-7f19-41b5-bdd8-77539d992fef" class="numbered-list" start="2"><li>메타크래프트<div><ul id="a4dc84f1-8d50-4b99-a92a-6ddfe6a5c980" class="bulleted-list"><li style="list-style-type:disc">웹소설 표지 제작의 <strong>비용이 크다</strong><ul id="9e8849bb-c7d5-4292-9bd5-e6edfe0822f3" class="bulleted-list"><li style="list-style-type:circle">1 장 만드는 데<span style="border-bottom:0.05em solid"> 200 만원 </span>정도 소요</li></ul></li></ul></div><div><blockquote id="f2ca0a86-280c-4f57-973c-adb76497b945" class=""><mark class="highlight-red">웹소설 표지의 90% 정도의 퀄리티를 원하고, 
+후보정이 거의 안들어가는 정도(1-2 시간?)의 품질을 원한다</mark></blockquote></div></li></ol></div><div><h3 id="8ffe9481-cedf-484d-99d5-b004a2b88bae" class="">페이</h3><ul id="58ceb67f-9fd3-4a85-bc2d-6370265a16df" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.wanted.co.kr/salary/881">게임 아티스트 평균 월급 340만원</a></li></ul><ul id="e7b1d8f8-07f6-479d-a343-cb6dc0aeaf08" class="bulleted-list"><li style="list-style-type:disc">경력 3년 차 기준 시급 14,300원</li></ul><p id="4c67d1cd-6850-428b-8c96-3544b699a6e6" class="">
+</p></div><p id="f9d6a370-9847-4e0f-875f-b17019596765" class=""><a href="20230314%20%E1%84%8E%E1%85%A2%E1%84%8B%E1%85%B3%E1%86%AB%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%201e0141379b82478794008b146e5c50ea.html">20230314 채은님의 이야기</a> 이러한 표지를 만들기 위해서는 기존 시장에서는 최소 200만원에서 1000만원도 넘는 비용을 지불해야 했다</p></details></li></ul></li></ul></li></ul><h3 id="fa697f1f-82a3-4d94-8537-6242ad7c9d19" class="">콘티 기존 비용</h3><ul id="5c23d0fc-ab0b-473a-9a9b-f3f67d90da9a" class="bulleted-list"><li style="list-style-type:disc">콘티 외주 비용 <span style="border-bottom:0.05em solid">100~500</span>만원 <ul id="ecb559dc-b9e7-4372-ba64-50eef1670b62" class="toggle"><li><details open=""><summary>외주 콘티 비용</summary><div><ul id="1c4b7295-05d9-48c6-8592-f44b4eae26d1" class="bulleted-list"><li style="list-style-type:disc">기획서 또는 스크립트에서 콘티를 만들기 위해서는 최소 100만원, 많게는 500만원까지 외주 비용이 발생</li></ul></div></details></li></ul></li></ul><ul id="88fb9556-0307-44c8-9ae2-37f63c60e37c" class="bulleted-list"><li style="list-style-type:disc">웹툰 공정 40% 차지  </li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">이미지 생산성 소프트웨어 가격</summary><div class="indented"><h3 id="596d3ae3-f8a0-4b8a-b833-193f40ccc683" class="">스톡 이미지/애셋</h3><div><ul id="cbddbb25-c7aa-4d0c-8974-9511aba30a9d" class="bulleted-list"><li style="list-style-type:disc">istock 일상 이미지 <span style="border-bottom:0.05em solid">2340~4000</span>원/장, 단 월 21만원으로 750장 (= 280원/장)</li></ul><ul id="ab318ded-bb7d-433f-9267-c902c9ed8f10" class="bulleted-list"><li style="list-style-type:disc">istock 트렌디한 비주얼 이미지 <span style="border-bottom:0.05em solid">4960~9200</span>원/장, 단 월 42만원으로 750장 (= 560원/장)<ul id="661a79a1-daf2-4866-ab6a-37e83f7fbfa1" class="toggle"><li><details open=""><summary>istock</summary><ol type="1" id="65a56a52-8e06-47eb-89e8-13a2eee4cd9e" class="numbered-list" start="1"><li>Essential 이미지 (”인기 일상 콘텐츠”)<ol type="a" id="cf91e051-4db1-4ee8-99b5-bd566d65ee6b" class="numbered-list" start="1"><li>40,000/월, 월간 10장 제한 (4000)</li></ol><ol type="a" id="cfa2cfad-a1a8-40ce-88fb-3e62eaab74fe" class="numbered-list" start="2"><li>65,000/월, 월간 25장 제한 (2600)</li></ol><ol type="a" id="46fb685c-0f2b-4d77-bbc2-95467482f9b4" class="numbered-list" start="3"><li>117,000/월, 월간 50장 제한 (2340)</li></ol><ol type="a" id="351bc52e-1265-4c9f-beda-241f22d763cd" class="numbered-list" start="4"><li><span style="border-bottom:0.05em solid">210,000/월, 월간 750장 제한 (280)</span></li></ol></li></ol><ol type="1" id="9059c877-6589-4038-94eb-d386405ed53d" class="numbered-list" start="2"><li>Signature 이미지 (”트렌디한 비주얼”)<ol type="a" id="aa657f7a-8e31-432d-98fd-ef62b7e0e710" class="numbered-list" start="1"><li>92,000/월, 월간 10장 제한 (9200)</li></ol><ol type="a" id="6ad6b077-9216-465d-b837-0f6faff56d17" class="numbered-list" start="2"><li>158,000/월, 월간 25장 제한 (6320)</li></ol><ol type="a" id="aa280f6e-b0f1-47ec-b301-e3b127241495" class="numbered-list" start="3"><li>248,000/월, 월간 50장 제한 (4960)</li></ol><ol type="a" id="dfe55c98-8fbc-489b-b32a-4e92e114e5be" class="numbered-list" start="4"><li>420,000/월, 월간 750장 제한 (560)</li></ol></li></ol><ol type="1" id="bc5732f9-51aa-4e33-bf8d-a9575c7847a8" class="numbered-list" start="3"><li>모든 이미지, 비디오 및 음악 트랙<ol type="a" id="02838e01-c514-409f-acfd-0cd96aa2dd0e" class="numbered-list" start="1"><li>164,000 → 130,000/월, 월간 10장 제한 (13000)</li></ol><ol type="a" id="34f6a587-c3b8-48cb-9fa6-9e856b38e2ad" class="numbered-list" start="2"><li>269,000 → 217,000/월, 월간 25장 제한 (8680)</li></ol><ol type="a" id="fb251282-7fdb-4d8b-8ac2-6d5f952d5770" class="numbered-list" start="3"><li>437,000 → 347,500/월, 월간 50장 제한 (6950)</li></ol></li></ol></details></li></ul></li></ul><ul id="90af8b79-582a-4725-8870-bebdc8e810a8" class="bulleted-list"><li style="list-style-type:disc">adobe stock 개인 3740원/장, 기업고객 <span style="border-bottom:0.05em solid">2800~3400</span>원/장, 단 월 231,000원으로 750 애셋 ( = 308원/장)<ul id="8a9225e4-ee66-4703-8992-54ffc6aca5c9" class="toggle"><li><details open=""><summary>adobe stock</summary><ol type="1" id="d7296b9c-cb79-45c4-b398-13469ad3b000" class="numbered-list" start="1"><li>개인<p id="52aeff2f-57f5-4199-83a0-846a2bec3117" class="">37400/월에 10개 에셋 </p></li></ol><ol type="1" id="b74b01a9-1742-4d3c-b4e7-7d228fb18169" class="numbered-list" start="2"><li>기업<p id="4355028f-b947-4a58-aa13-f712094bbffb" class="">34000/월에 10개 에셋 (부가세 별도) (3400)</p><p id="9ceb776a-1b86-4ee9-b48b-fd0bf5ceada8" class="">92000/월에 40개 애셋 (2300)</p><p id="c7cb894c-cd35-4335-a3dc-48916c99a74d" class=""><span style="border-bottom:0.05em solid">231,000/월에 750개 애셋 (308)</span></p></li></ol></details></li></ul></li></ul><ul id="ad7d2641-d105-4676-8029-5cf4dd391e30" class="bulleted-list"><li style="list-style-type:disc">shutterstock 10명 팀 라이선스, 약 64만원에 750장 ( = 약 853원/장)<figure id="c5614ee9-9560-405b-917b-f826574d4e91" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/image.png"><img style="width:1092px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/image.png"/></a></figure></li></ul></div><h3 id="9f13bfca-2def-44ef-9814-b8e5ae8ad8e9" class="">Adobe Photoshop</h3><div><ul id="4bfeccc5-cfef-496e-8628-fd4ca90ab3dd" class="bulleted-list"><li style="list-style-type:disc">어도비 개인 <span style="border-bottom:0.05em solid">24,000</span>/월 (부가세 포함)</li></ul></div><ul id="58d7a44d-f4c5-4d14-8382-969da3c002ed" class="bulleted-list"><li style="list-style-type:disc">기업 <span style="border-bottom:0.05em solid">39,000</span>/월 (부가세 미포함)</li></ul><p id="127c4e75-966c-4d65-aa72-cad865d87b84" class="">
+</p><figure id="6205ebc2-d8e3-4c84-b86d-3fc7728daf15"><a href="https://ai-designer-allan.tistory.com/entry/AI-그림-사이트-총정리-종류-가격-비교" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">AI 그림 사이트 총정리: 종류, 가격, 비교</div><div class="bookmark-description">최근 생성 AI가 쏟아져 나오고 있습니다. 그중 괜찮은 퀄리티의 AI가 그림 그려주는 사이트 추천 및 가격에 대해 정리해 드리겠습니다. Ⅰ. AI 그림 그려주는 사이트 요약정리 AI 그림 사이트 8개 특징 무료? 유료? 미드저니(MIdjourney) AI 반실사, 만화, 로고, 캐릭터, 패턴 등 유료 달리 2(DALL-E 2) 미술, 패션, 건축, 실사 무료 + 유료 스테이블 디퓨전(Stable Diffusion) : Web UI AI 그림 실사, 반실사, 애니 등 무료 노벨 AI 만화풍 일러스트 유료 고갱 2(Gaugan 2) 풍경화 무료 네이버 AI 페인터 채색 무료 Draw Things 모바일 앱 기반 프로그램 무료 + 유료 Dream by Wombo 일러스트, 캐릭터 등 디지털 아트 느낌 무료 +..</div></div><div class="bookmark-href"><img src="https://tistory1.daumcdn.net/tistory/6173914/skin/images/allan.ico" class="icon bookmark-icon"/>https://ai-designer-allan.tistory.com/entry/AI-그림-사이트-총정리-종류-가격-비교</div></div><img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbbQUUF%2Fbtr5fl6rj6B%2FIaSonp0nN7hGJ031vDqzI1%2Fimg.webp" class="bookmark-image"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">기업 측 지불 용의 가격</summary><div class="indented"><h3 id="f5834ccc-3f7a-4b0d-8285-eb484ec9f3ce" class="">실제 AI를 이용해 비슷한 서비스를 제공하는 사례</h3><ul id="3338fb91-2493-420c-b94e-25f40e6ab4a2" class="bulleted-list"><li style="list-style-type:disc">20~30% 완성된 작품(콘티+스케치 작업)을 받아서 회당 <span style="border-bottom:0.05em solid">50~150</span>만원에 제작. (사람이 작업시 통상 회당 <span style="border-bottom:0.05em solid">300~50</span>0만원 소요)<ul id="0e0815b8-e8c7-4651-8b8b-04e91734b288" class="toggle"><li><details open=""><summary>출처</summary><div><ul id="e45014a4-188e-4c03-8757-d79dfb43d630" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">생성AI를 활용한 웹툰제작 업체</span>를 만났었는데 20~30% 완성된 작품(콘티+스케치 작업)을 받아서 <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">회당 50~150만원에 제작. (사람이 작업시 통상 회당 300~500만원 소요)</span></mark></li></ul></div></details></li></ul></li></ul><ul id="bf42722d-2823-4da7-b874-40635311bca0" class="bulleted-list"><li style="list-style-type:disc">지정된 캐릭터, 지정된 옷차림, 지정된 표정, 지정된 액세서리, 지정된 포즈 등을 조합하여 캐릭터가 들어간 홍보용 이미지를 만드는 툴을 제공. 스마트 캐릭터 16종과 AI가 결합된 상업용 요금제 <span style="border-bottom:0.05em solid">12000</span>원/월, 전용 캐릭터 등록해주는 기업용 요금제는 별도 문의<ul id="ac7030e9-2283-4efa-b3a8-134719ba9e72" class="toggle"><li><details open=""><summary>출처</summary><figure id="4b3d374a-adeb-49ab-95fa-b5425be3be33"><a href="https://tooning.io/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">웹툰 콘텐츠 제작의 터닝 포인트,투닝</div><div class="bookmark-description">클릭만으로 완성되는 웹툰형 콘텐츠</div></div><div class="bookmark-href"><img src="https://tooning.io/assets/favicon/android-icon-192x192.png" class="icon bookmark-icon"/>https://tooning.io/</div></div><img src="https://tooning.io/assets/kakao/tooning2.png" class="bookmark-image"/></a></figure></details></li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">작가들의 지불 용의 가격</summary><div class="indented"><h3 id="05cfd8a7-6d16-4a01-a8a1-a75229676856" class="">웹소설 표지</h3><ul id="eedb6333-5c76-4070-8f03-a3b5b9834946" class="bulleted-list"><li style="list-style-type:disc">웹소설 표지 솔루션 장당 <span style="border-bottom:0.05em solid">99,000</span>원 또는 월 <span style="border-bottom:0.05em solid">26,000</span>원 <ul id="655dffb2-2d41-4ba4-8d9c-8dcbe586fda5" class="toggle"><li><details open=""><summary>구독 서비스에 후한 예비 유저</summary><ol type="1" id="3fdc42ea-4802-412c-99d9-5f0e7b945733" class="numbered-list" start="1"><li>웹소설 표지<ol type="a" id="36989ce6-b755-45d8-a94b-359c795700cc" class="numbered-list" start="1"><li>채은님: 완성된, 만족스러운 표지 장당 99,000원</li></ol><ol type="a" id="a48e04c5-ddd8-445d-aec4-ff095853002e" class="numbered-list" start="2"><li>채은님: 구독 서비스, 월 26,000원 (구독 서비스에 후한 편)</li></ol></li></ol></details></li></ul></li></ul><ul id="91797669-dc9e-43b9-b850-ef4ae6504fed" class="bulleted-list"><li style="list-style-type:disc">작품 완성 이후 의뢰자의 요구 등이 들어오는 경우 시안을 벗어날 정도로 수정해주는 서비스<p id="d5e81a11-e89f-40e9-a08f-ed037723096c" class="">무제한 라이센스 <span style="border-bottom:0.05em solid">100</span>만원, 월구독 <span style="border-bottom:0.05em solid">2만원</span> <a href="20230315%20%E1%84%8F%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B5%E1%84%89%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2036fc15aa26a94a9f943c1d9e136e5e0e.html">20230315 캔디스 작가님의 이야기</a> </p></li></ul><ul id="83f4c7e7-9392-4b00-9b7b-927cad40256e" class="bulleted-list"><li style="list-style-type:disc">저작권 문제를 해결해주는 레퍼런스 이미지 재생성 서비스<p id="e40e89c0-ca36-4f3a-a978-76366564645e" class="">무제한 라이선스 <span style="border-bottom:0.05em solid">50만원</span>, 월 구독 <span style="border-bottom:0.05em solid">1만원</span> (단, UI가 편리해야) <a href="20230315%20%E1%84%8F%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B5%E1%84%89%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2036fc15aa26a94a9f943c1d9e136e5e0e.html">20230315 캔디스 작가님의 이야기</a> </p></li></ul><ul id="49db87cc-e12b-40a7-80c6-f355582317ed" class="bulleted-list"><li style="list-style-type:disc">자신의 그림체를 학습하여 그림체대로 그림을 그려주는 서비스<p id="55f0d5a6-b467-4f12-b315-dfa8b7488a76" class="">무제한 라이선스 <span style="border-bottom:0.05em solid">200~300</span>만원, 월 구독제의 경우 Adobe Photoshop 수준으로 지불</p><p id="7dfa319d-931b-4787-a6ae-5092af0ecf15" class="">Adobe Photoshop 개인 라이선스 기준 <span style="border-bottom:0.05em solid">24,000</span>/월</p></li></ul><ul id="ebccb169-71e9-4518-ba22-10cf64e79d1e" class="bulleted-list"><li style="list-style-type:disc">마스킹 서비스 <p id="a7ce5a8d-49f5-46d3-979e-90e05f313849" class="">영구 구매 2만원 (실현 가능성에 대한 기대가 낮음) <a href="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f.html">20230330 크레노 작가님의 이야기</a> </p></li></ul><ul id="fb91a505-9190-4f51-9e5c-b57f32856856" class="bulleted-list"><li style="list-style-type:disc">배경 생성 서비스 <p id="d587231c-f0a6-48dc-b5bb-17d0461b3146" class="">연간 5~10만원 <a href="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f.html">20230330 크레노 작가님의 이야기</a> </p></li></ul><h3 id="49047c7d-4b78-41ca-8712-543567d8a435" class="">웹툰</h3><ul id="7e8c7c46-7fc9-4ab2-9abd-46a5343b318c" class="bulleted-list"><li style="list-style-type:disc">스케치 채색 서비스<p id="a5e1a754-c2f8-4944-afdf-e37dcfe29096" class="">무제한 라이센스 50만원, 월 구독 5,000~10,000원 <a href="20230315%20%E1%84%8F%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B5%E1%84%89%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2036fc15aa26a94a9f943c1d9e136e5e0e.html">20230315 캔디스 작가님의 이야기</a> </p></li></ul><ul id="812d6262-ee1c-4fcf-8644-bf18d3f037d6" class="bulleted-list"><li style="list-style-type:disc">작품 완성 이후 의뢰자의 요구 등이 들어오는 경우 시안을 벗어날 정도로 수정해주는 서비스<p id="4325075c-7b9f-4d53-8d0c-bc2f02e81f3c" class="">무제한 라이센스 100만원, 월구독 2만원 <a href="20230315%20%E1%84%8F%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B5%E1%84%89%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2036fc15aa26a94a9f943c1d9e136e5e0e.html">20230315 캔디스 작가님의 이야기</a> </p></li></ul><ul id="f07336f8-dd26-4542-afd1-65c186a2bebf" class="bulleted-list"><li style="list-style-type:disc">저작권 문제를 해결해주는 레퍼런스 이미지 재생성 서비스<p id="266b38b1-d6d6-42fe-8504-7d9478e2c7fa" class="">무제한 라이선스 50만원, 월 구독 1만원 (단, UI가 편리해야) <a href="20230315%20%E1%84%8F%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B5%E1%84%89%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2036fc15aa26a94a9f943c1d9e136e5e0e.html">20230315 캔디스 작가님의 이야기</a> </p></li></ul><div><ul id="698e0e4a-c193-4234-b303-46ec798c770d" class="bulleted-list"><li style="list-style-type:disc">자신의 그림체를 학습하여 그림체대로 그림을 그려주는 서비스<p id="1b19349b-3e4e-4762-a299-fe3bb68acd8c" class="">무제한 라이선스 200~300만원, 월 구독제의 경우 Adobe Photoshop 수준으로 지불</p><p id="82574374-529d-4d61-bd80-5e25e2cf3d3c" class="">Adobe Photoshop 개인 라이선스 기준 24,000/월</p></li></ul></div><ul id="3738e212-e79d-4afd-a9ce-23ad397ddfb3" class="bulleted-list"><li style="list-style-type:disc">마스킹 서비스 <p id="53a845a3-e1fd-4764-b3a3-5b5cc6149c8a" class="">영구 구매 2만원 (실현 가능성에 대한 기대가 낮음) <a href="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f.html">20230330 크레노 작가님의 이야기</a> </p></li></ul><ul id="2bee627f-45ec-40be-b2e4-403c0d61ba2c" class="bulleted-list"><li style="list-style-type:disc">배경 생성 서비스 <p id="b90afbab-69d8-4de0-a2a7-72e4044da117" class="">연간 5~10만원 <a href="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f.html">20230330 크레노 작가님의 이야기</a> </p></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">웹소설 표지 프리랜서 작업 내용에 따른 금액</summary><div class="indented"><p id="48ebea69-7f7c-45d6-aafc-323632f51e9f" class="">변수: </p><ul id="3ddb20ad-1b82-4748-b492-2480cc22233b" class="bulleted-list"><li style="list-style-type:disc">타이포 유무</li></ul><ul id="8a695de8-0fd8-4643-b34f-5eb317574198" class="bulleted-list"><li style="list-style-type:disc">전신샷, 반싯샷, 복수 인물</li></ul><ul id="504eeb6d-682d-41e5-9f73-7f4d545dd4e7" class="bulleted-list"><li style="list-style-type:disc">시안 개수</li></ul><ul id="4815bd30-2708-4016-ae45-96c6a9cd53d5" class="bulleted-list"><li style="list-style-type:disc">수정 의뢰 횟수</li></ul><figure id="5bfd4834-fe7c-4ddf-a171-4a1f578876f9"><div class="source"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/%25E1%2584%2592%25E1%2585%25A6%25E1%2584%2583%25E1%2585%25A9%25E1%2584%2582%25E1%2585%25B5%25E1%2586%25A8%25E1%2584%2591%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25A1%25E1%2584%258B%25E1%2585%25B5%25E1%2584%2589%25E1%2585%25B5%25E1%2586%25BC.xlsx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/44c7ef31-f1bd-46ac-8fbf-57c71a073f72/%E1%84%92%E1%85%A6%E1%84%83%E1%85%A9%E1%84%82%E1%85%B5%E1%86%A8%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B5%E1%86%BC.xlsx</a></div></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">크몽 웹소설 표지 tier</summary><div class="indented"><h3 id="d7428388-5281-47df-a1d2-eee68ebfb98c" class="">상위 </h3><p id="003e90d2-cf6b-4f55-8d25-bee7c8d6e717" class="">61만원~</p><table id="219a507a-4924-418c-b407-162676c78336" class="simple-table"><tbody><tr id="a94554ea-6fbe-4946-85e6-eead3751d605"><td id="|D&lt;C" class="">이름</td><td id="uzWh" class="">가격</td><td id="P|l=" class="">원본 파일 제공</td><td id="rc@?" class="" style="width:123.46875px">고해상도 파일 제공</td><td id="rMNa" class="">채색</td><td id="eUYQ" class="">상업적 이용 가능</td><td id="~aCl" class="">피사체 개수</td><td id="s]~S" class="">시안개수</td><td id="=[ip" class="">작업일</td><td id="JIAw" class="">수정 횟수</td></tr><tr id="4daf5927-eb36-4454-b512-860e8404b825"><td id="|D&lt;C" class="">밤초</td><td id="uzWh" class="">1,500,000</td><td id="P|l=" class="">o</td><td id="rc@?" class="" style="width:123.46875px">o</td><td id="rMNa" class="">o</td><td id="eUYQ" class="">o</td><td id="~aCl" class="">2</td><td id="s]~S" class="">1</td><td id="=[ip" class="">30</td><td id="JIAw" class="">제한없음</td></tr><tr id="3de4c3ec-93ea-42ba-a90e-06514eb93727"><td id="|D&lt;C" class="">오이구</td><td id="uzWh" class="">850,000</td><td id="P|l=" class="">o</td><td id="rc@?" class="" style="width:123.46875px">o</td><td id="rMNa" class="">o</td><td id="eUYQ" class="">o</td><td id="~aCl" class="">1</td><td id="s]~S" class="">1</td><td id="=[ip" class="">20</td><td id="JIAw" class="">5</td></tr><tr id="5fd95405-4b2b-4c53-8a68-a57f1f0a67e9"><td id="|D&lt;C" class="">onpu</td><td id="uzWh" class="">700,000</td><td id="P|l=" class="">x</td><td id="rc@?" class="" style="width:123.46875px">o</td><td id="rMNa" class="">o</td><td id="eUYQ" class="">o</td><td id="~aCl" class="">1</td><td id="s]~S" class="">1</td><td id="=[ip" class="">25</td><td id="JIAw" class="">1</td></tr><tr id="2df44183-8a61-4660-a902-bb24ba2ba0c4"><td id="|D&lt;C" class="">sinok</td><td id="uzWh" class="">650,000</td><td id="P|l=" class="">o</td><td id="rc@?" class="" style="width:123.46875px">o</td><td id="rMNa" class="">o</td><td id="eUYQ" class="">o</td><td id="~aCl" class="">2</td><td id="s]~S" class="">2</td><td id="=[ip" class="">7</td><td id="JIAw" class="">4</td></tr></tbody></table><ul id="15a7bb36-01b5-4d29-9d20-38fd77e5823a" class="toggle"><li><details open=""><summary>밤초</summary><div id="bac5440b-0e4d-432a-b08d-dd4c9bf58a41" class="column-list"><div id="ea75ff12-6a78-42b8-b1c4-9d86d79ba39d" style="width:33.33333333333333%" class="column"><figure id="a40fce48-d4e4-42f2-b81a-76b901891983" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled.png"><img style="width:240px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled.png"/></a></figure></div><div id="94dd0352-0734-41bd-b6ac-997162b96af1" style="width:33.333333333333336%" class="column"><figure id="9b00532f-4e97-49e1-8b5f-079049397adc" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%201.png"><img style="width:800px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%201.png"/></a></figure><p id="854bf4d5-53b9-47f6-acfa-3f12ab211bd0" class="">
+</p></div><div id="b8ff45a3-082a-47d2-a7d1-649122616184" style="width:33.333333333333336%" class="column"><figure id="a5b4c2cd-23c6-4bf3-baaf-6ce25ae7ac52" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%202.png"><img style="width:1343px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%202.png"/></a></figure></div></div></details></li></ul><ul id="a3c392a8-b2c6-4508-a025-d3df1dd8b132" class="toggle"><li><details open=""><summary>오이구</summary><div id="6903ed6e-8cf8-4b2b-8f08-192eeff5b425" class="column-list"><div id="ccd2ac7d-f37d-414b-ae45-7dda0d9505c1" style="width:46.666666666666664%" class="column"><figure id="83f67459-98e3-47f5-879a-f829b6dadc9c" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%203.png"><img style="width:1555px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%203.png"/></a></figure></div><div id="9248b239-d6c9-4c85-b50c-f2b8a4bf76f0" style="width:53.333333333333336%" class="column"><figure id="fe94073f-0d4d-451d-96db-b68989472b86" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%204.png"><img style="width:1500px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%204.png"/></a></figure></div></div><figure id="276b959d-40a1-4333-aed6-0592a71dae64" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%205.png"><img style="width:2133px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%205.png"/></a></figure></details></li></ul><ul id="670124fb-c88d-4e7c-8926-725ae3e5390e" class="toggle"><li><details open=""><summary>onpu</summary><div id="1213e5f6-ba9a-4b4e-9574-b437bab3146b" class="column-list"><div id="bc208589-b61c-4f8f-8f75-11681a3f4b07" style="width:33.33333333333334%" class="column"><figure id="4cf27622-4134-44f5-9268-9623e5673a32" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%206.png"><img style="width:1000px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%206.png"/></a></figure></div><div id="730a7101-8768-4c1a-b6d3-fb7cdf8d99a3" style="width:33.333333333333336%" class="column"><figure id="5456ff30-432b-44f5-9fa3-91253c48b618" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%207.png"><img style="width:1000px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%207.png"/></a></figure></div><div id="641d06a6-475f-41c9-b91e-57378ea86c0d" style="width:33.33333333333333%" class="column"><figure id="8eee45f2-882f-4590-9583-a0c2054af910" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%208.png"><img style="width:2364px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%208.png"/></a></figure></div></div><p id="149cd1c4-2e2f-491d-a702-83c74d4f9184" class="">
+</p></details></li></ul><ul id="d82da470-837c-4297-97ba-8b204ff36561" class="toggle"><li><details open=""><summary>sinok</summary><div id="c684c86c-7ee6-47ea-8d3c-6ee2ad234c49" class="column-list"><div id="13938f98-5742-422b-89e5-3c57e753dba3" style="width:33.33333333333333%" class="column"><figure id="a3ca1aee-70b5-4bc9-8963-be98b9c22ddd" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%209.png"><img style="width:1800px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%209.png"/></a></figure></div><div id="154fe972-45aa-4faa-87d8-9d4c50d43710" style="width:33.333333333333336%" class="column"><figure id="769dfbaf-85fa-4dc1-b384-2a24e3e9f11c" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2010.png"><img style="width:1000px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2010.png"/></a></figure></div><div id="1aa7e876-44d6-4cca-8ccc-8be6caeca535" style="width:33.333333333333336%" class="column"><figure id="9e477353-cd2a-4a66-84f0-5ee7ea875158" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2011.png"><img style="width:1894px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2011.png"/></a></figure></div></div></details></li></ul><h3 id="2d9e2ce4-1862-4d97-aafc-34cf0546f9be" class="">중위</h3><p id="723ca943-51e1-4e81-bfe0-dec30da58139" class="">31~60만원</p><table id="d512d3a2-b92c-4e55-879d-4e5a3d940bdd" class="simple-table"><tbody><tr id="abd8c4ea-b55b-44fe-858b-d7852311cf9b"><td id="|D&lt;C" class="">이름</td><td id="uzWh" class="">가격</td><td id="wd~S" class="">원본 파일 제공</td><td id="rc@?" class="" style="width:123.46875px">고해상도 파일 제공</td><td id="rMNa" class="">채색</td><td id="eUYQ" class="">상업적 이용 가능</td><td id="~aCl" class="">피사체 개수</td><td id="s]~S" class="">시안개수</td><td id="=[ip" class="">작업일</td><td id="JIAw" class="">수정 횟수</td></tr><tr id="a9191f6b-5571-43c4-a6e3-218006e3a927"><td id="|D&lt;C" class="">마고MAGO</td><td id="uzWh" class="">600,000</td><td id="wd~S" class="">o</td><td id="rc@?" class="" style="width:123.46875px">o</td><td id="rMNa" class="">o</td><td id="eUYQ" class="">o</td><td id="~aCl" class="">1</td><td id="s]~S" class="">1</td><td id="=[ip" class="">30</td><td id="JIAw" class="">3</td></tr><tr id="23b52633-83cc-484e-8245-d4321777c62c"><td id="|D&lt;C" class="">ihiri</td><td id="uzWh" class="">550,000</td><td id="wd~S" class="">o</td><td id="rc@?" class="" style="width:123.46875px">o</td><td id="rMNa" class="">o</td><td id="eUYQ" class="">o</td><td id="~aCl" class="">1</td><td id="s]~S" class="">1</td><td id="=[ip" class="">30</td><td id="JIAw" class="">5</td></tr><tr id="be03db74-2506-408b-a07d-99a076892a5a"><td id="|D&lt;C" class="">Meada</td><td id="uzWh" class="">520,000</td><td id="wd~S" class=""> x</td><td id="rc@?" class="" style="width:123.46875px">o</td><td id="rMNa" class="">o</td><td id="eUYQ" class="">o</td><td id="~aCl" class="">1</td><td id="s]~S" class="">3</td><td id="=[ip" class="">20</td><td id="JIAw" class="">2</td></tr></tbody></table><ul id="ea961fce-b7d1-4ddd-8836-d5165445454b" class="toggle"><li><details open=""><summary>마고MAGO</summary><div id="1502ca31-8e01-4079-a8b2-04481596b2bc" class="column-list"><div id="230f0b8e-768a-413b-bdda-fb8cc5f44bef" style="width:33.333333333333336%" class="column"><figure id="8ea9125a-dfd6-4c12-8eaf-fc208a62e583" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2012.png"><img style="width:1500px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2012.png"/></a></figure></div><div id="7607f4e8-f2a5-4498-9c52-4c4fe6981ada" style="width:33.333333333333336%" class="column"><figure id="c1b82330-0582-4f22-9222-67988bf21a93" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2013.png"><img style="width:1240px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2013.png"/></a></figure></div><div id="9e9e9329-7b29-4c61-b1ee-7213f4bedf11" style="width:33.33333333333333%" class="column"><figure id="ba8154e9-d369-42a2-958d-74e2be068ab5" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2014.png"><img style="width:1200px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2014.png"/></a></figure></div></div></details></li></ul><ul id="06962c5d-ab2e-41c0-b567-031aa9654ea6" class="toggle"><li><details open=""><summary>ihiri</summary><div id="15e56d62-2346-4cc0-8472-bba5afab3230" class="column-list"><div id="1f8c0183-90fa-4829-b66b-4bf34b23cf4f" style="width:33.333333333333336%" class="column"><figure id="2ae4f11e-6730-4f2a-973e-cefc94b267b0" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2015.png"><img style="width:1240px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2015.png"/></a></figure></div><div id="8784cf07-26c8-4fd3-8ed9-fe4faba7ca42" style="width:33.333333333333336%" class="column"><figure id="3de1d922-807b-4a30-83d7-ef24b8e173fa" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2016.png"><img style="width:2000px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2016.png"/></a></figure></div><div id="61e48cb0-bec4-4537-990a-0054a7ad669b" style="width:33.33333333333333%" class="column"><figure id="35967103-1782-4c7b-ae22-10333a702c2d" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2017.png"><img style="width:1170px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2017.png"/></a></figure></div></div></details></li></ul><ul id="2863c049-9182-4777-85da-046210359b96" class="toggle"><li><details open=""><summary>Meada</summary><div id="398cc78c-61c9-4885-b24a-552ee806e737" class="column-list"><div id="6e6e0369-280b-4309-b7ae-4d83d796f401" style="width:33.333333333333336%" class="column"><figure id="53db9d6a-a4cf-44fa-b0f9-2a3bfea4d94a" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2018.png"><img style="width:652px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2018.png"/></a></figure></div><div id="7bb0a0a5-1d7c-4c71-bc1d-b3ea654e237a" style="width:33.333333333333336%" class="column"><figure id="1287b4fc-1519-4b1e-b90f-ba6f1e52aecb" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2019.png"><img style="width:652px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2019.png"/></a></figure></div><div id="6b709d16-81fc-4979-b36b-aedad53a1586" style="width:33.33333333333333%" class="column"><figure id="b34e2663-90bd-417d-aedb-720173341970" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2020.png"><img style="width:652px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2020.png"/></a></figure></div></div></details></li></ul><h3 id="ed6bc513-2444-42ec-9856-873542ba3736" class="">하위</h3><p id="57903591-eeff-4a9c-9d38-1a50a9b2e541" class="">~30만원</p><table id="f9f301a3-82b2-4f8f-b888-e60f34163682" class="simple-table"><tbody><tr id="6d5b93db-7052-4b84-8e19-9256455f5784"><td id="IAjL" class="">이름</td><td id="OZvV" class="">가격</td><td id="Nb&gt;T" class="">원본 파일 제공</td><td id="r&lt;SV" class="">고해상도 파일 제공</td><td id="BvV{" class="">채색</td><td id="JXR~" class="">상업적 이용 가능</td><td id="TNWH" class="">피사체 개수</td><td id="B=R[" class="">시안개수</td><td id="|@^=" class="">작업일</td><td id="c?m?" class="">수정 횟수</td></tr><tr id="3d1a879b-c872-47b0-8a00-b4c0bfa2df40"><td id="IAjL" class="">다안</td><td id="OZvV" class="">220,000</td><td id="Nb&gt;T" class="">x</td><td id="r&lt;SV" class="">x</td><td id="BvV{" class="">o</td><td id="JXR~" class="">o</td><td id="TNWH" class="">1</td><td id="B=R[" class="">1</td><td id="|@^=" class="">20</td><td id="c?m?" class="">3</td></tr><tr id="8905e79f-8c32-4c51-816e-df4c37a6f2f9"><td id="IAjL" class="">무제MUZE</td><td id="OZvV" class="">150,000</td><td id="Nb&gt;T" class="">x</td><td id="r&lt;SV" class="">o</td><td id="BvV{" class="">o</td><td id="JXR~" class="">o</td><td id="TNWH" class="">1</td><td id="B=R[" class="">1</td><td id="|@^=" class="">15</td><td id="c?m?" class="">2</td></tr><tr id="a9dd631c-ee56-4889-9e7e-f1efd057ea48"><td id="IAjL" class="">포잉퐁</td><td id="OZvV" class="">120,000</td><td id="Nb&gt;T" class="">x</td><td id="r&lt;SV" class="">o</td><td id="BvV{" class="">o</td><td id="JXR~" class="">0</td><td id="TNWH" class="">1</td><td id="B=R[" class="">1</td><td id="|@^=" class="">30</td><td id="c?m?" class="">1</td></tr></tbody></table><ul id="f6ce3bc8-b4c4-4feb-8f33-c0d427e27b8c" class="toggle"><li><details open=""><summary>다안</summary><figure id="2b313bfa-e8b8-4fbc-9b08-00fa1f9ac4f2" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2021.png"><img style="width:2000px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2021.png"/></a></figure></details></li></ul><ul id="c9d583c1-0024-41bc-b910-f7cfa7011de0" class="toggle"><li><details open=""><summary>무제MUZE</summary><div id="2c8bdef8-a847-47d5-bbba-da09e5e81074" class="column-list"><div id="8c3fbe14-cf82-4329-ab42-e240e1151195" style="width:50%" class="column"><figure id="135a3e5f-bac4-4449-b4b5-b024d1e81355" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2022.png"><img style="width:652px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2022.png"/></a></figure></div><div id="fcb52336-fad2-40c7-9a26-568fb5af10ae" style="width:50%" class="column"><figure id="d5a75259-33a4-4a6c-9003-26c51afb8b98" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2023.png"><img style="width:652px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2023.png"/></a></figure></div></div></details></li></ul><ul id="5c8f4c73-c2b7-4ba4-9f24-a0e3dbb94061" class="toggle"><li><details open=""><summary>포잉퐁</summary><figure id="a094d9c9-9bd6-413b-a615-51d89512026a" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2024.png"><img style="width:652px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2024.png"/></a></figure></details></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">웹툰 기능별 시장가 및 개발 우선 순위</summary><div class="indented"><table id="7c55e331-87eb-42ca-a586-05860d7e77f1" class="simple-table"><tbody><tr id="5b1eaf6d-c508-4e5a-84bf-c4bb2e1ce194"><td id="IAjL" class="" style="width:135.859375px">웹툰 제작 단계 
+(시간순서)</td><td id="OZvV" class="" style="width:288px">소요 시간</td><td id="Nb&gt;T" class="" style="width:281px">추정 시장가</td><td id="JXR~" class="">개발 우선 순위</td></tr><tr id="1daac222-2f28-40d4-9e51-702a6c5c0d2f"><td id="IAjL" class="" style="width:135.859375px">콘티생성</td><td id="OZvV" class="" style="width:288px">전체 공정의 40% 차치  </td><td id="Nb&gt;T" class="" style="width:281px">100~500만원, 
+전체 프로세스 대비 소요 시간으로 환산 시
+160~200만원</td><td id="JXR~" class="">하</td></tr><tr id="4324423c-9905-4028-8fd9-0f2db4e71a0d"><td id="IAjL" class="" style="width:135.859375px"><mark class="highlight-gray">스케치 생성</mark></td><td id="OZvV" class="" style="width:288px"><mark class="highlight-gray">미지원</mark></td><td id="Nb&gt;T" class="" style="width:281px"><mark class="highlight-gray">미지원</mark></td><td id="JXR~" class=""><mark class="highlight-gray">미지원</mark></td></tr><tr id="a4188de2-b958-46d0-8eab-5a1b4286776b"><td id="IAjL" class="" style="width:135.859375px">펜터치 생성</td><td id="OZvV" class="" style="width:288px">일러스트 작업 기준 0.5~1일
+ <a href="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f.html">20230330 크레노 작가님의 이야기</a> </td><td id="Nb&gt;T" class="" style="width:281px">전체 프로세스 대비 소요 시간으로 환산 시
+400~500만원 x 1/23 = 약 17~22만원</td><td id="JXR~" class="">하</td></tr><tr id="07959ce6-4083-4356-b306-51d3d6985c87"><td id="IAjL" class="" style="width:135.859375px">밑색</td><td id="OZvV" class="" style="width:288px">일러스트 작업 기준 0.5~1일
+ <a href="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f.html">20230330 크레노 작가님의 이야기</a> </td><td id="Nb&gt;T" class="" style="width:281px">전체 프로세스 대비 소요 시간으로 환산 시
+400~500만원 x 1/23 = 약 17~22만원</td><td id="JXR~" class="">상</td></tr><tr id="fa05bd9f-1a5b-4ac5-ab93-2dfdb0e04381"><td id="IAjL" class="" style="width:135.859375px"><mark class="highlight-gray">채색</mark></td><td id="OZvV" class="" style="width:288px"><mark class="highlight-gray">미지원</mark></td><td id="Nb&gt;T" class="" style="width:281px"><mark class="highlight-gray">미지원</mark></td><td id="JXR~" class=""><mark class="highlight-gray">미지원</mark></td></tr><tr id="852df265-6fbc-4573-97c2-e8feb2cc5f0a"><td id="IAjL" class="" style="width:135.859375px">배경 생성</td><td id="OZvV" class="" style="width:288px"><mark class="highlight-red">? 
+</mark>→ 와이랩 미팅 기준 3~4일 소요
+ </td><td id="Nb&gt;T" class="" style="width:281px"></td><td id="JXR~" class="">상</td></tr><tr id="abbe2bdf-2bbd-4845-a47f-7f50ea4a4632"><td id="IAjL" class="" style="width:135.859375px">                        총계</td><td id="OZvV" class="" style="width:288px">일러스트 작가 인터뷰 기준 
+콘티 및 배경 제외 1~2주 소요 
+ <a href="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f.html">20230330 크레노 작가님의 이야기</a> 
+
+전체 공정의 40% 차지하는 콘티 작업 포함 시
+7~14일 x 10/6 = 12~23일 소요</td><td id="Nb&gt;T" class="" style="width:281px"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f.html">웹소설 웹툰화 편당 400~500만원</a></td><td id="JXR~" class=""></td></tr></tbody></table><p id="070ac775-1dba-4010-8c82-80f6c8dc3b90" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">웹툰 시장 정보</summary><div class="indented"><h3 id="f884d084-5938-42f2-90a7-808c0f73fc61" class="">산업 규모</h3><div><p id="1da68bf9-1680-4d51-93b0-a22f3a1169c3" class="">웹툰 산업 규모 → 8200억 또는 7400억 연간 → (연간 1850개 작품)</p><p id="88095b59-28a2-41ce-8cc8-5fe0e7c728c6" class="">승환님에 따르면 → 연간 37000편 (약 370개 작품)</p></div><h3 id="6c902ad9-58ba-4238-807a-7618bee83ae4" class="">웹툰 스튜디오 외주 가격 </h3><div><p id="a4ab19a6-170b-4c6f-9072-8dc5bee45e57" class="">선화 90, 채색 60, 배경을 채색 10</p><p id="ec283726-d311-40fc-95e2-2cf8cb88963e" class="">선화 + 배경 + 채색 170만원 Or 180만원 or 300만원</p></div></div></details><hr id="2c75e8f9-9a9f-4002-b5c6-d0912152277b"/><h1 id="3455aa85-1166-490f-a213-72a9039e8dc8" class="">원가(=C)</h1><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">과거 논의 내용</summary><div class="indented"><p id="625e483b-f1fb-4d3d-b508-383a8642cb39" class="">custom 모델 생성에 인건비 포함 500만원 정도 소요</p><ul id="b60039e6-5ac0-46bb-bc6f-6d2abb123dc8" class="toggle"><li><details open=""><summary>출처</summary><div><p id="d903ace1-ae50-4047-930e-a311e4a4208b" class="">리스테린처럼 - 근데 원가가 비쌈 (거의 500만원 정도의 우리 리소스가 들어감) </p><p id="dcfcefd5-c2ef-4a77-84b2-59e2ac6353f6" class="">커스텀 생성모델 공급가 500만원 ~  </p></div></details></li></ul><p id="13aa8ff2-1f28-4652-bfe6-7dc442e49f20" class="">
+</p></div></details><p id="bd53b279-6184-42cc-9499-64340368b2b9" class="">
+</p><hr id="e7755411-837c-4dc8-9c1a-a58b9243bad7"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">웹소설 표지 수요 업체 리스트업</summary><div class="indented"><table id="aefc0b85-b968-42a6-981e-ecdf7baeb041" class="simple-table"><tbody><tr id="e6e0bfc9-a8e3-4e47-a7d2-a253ba26a57a"><td id="ftOx" class="">No.</td><td id=";}C`" class="" style="width:154.1875px">업체명</td><td id=";chw" class="">브랜드/서비스명</td><td id="A?`g" class="" style="width:123.796875px">서비스 웹툰/웹소설</td><td id="_XR&lt;" class="">대표/담당</td><td id="]_=}" class="">이메일</td><td id="S&lt;fY" class="">전화번호</td><td id="[hf_" class="" style="width:175px">주소</td><td id="qyHd" class=""></td><td id="Qc?N" class=""></td><td id="?HsR" class=""></td></tr><tr id="b12a8a53-5bc7-456a-bbf4-f40d9e023928"><td id="ftOx" class="">1</td><td id=";}C`" class="" style="width:154.1875px">카카오엔터테인먼트</td><td id=";chw" class="">카카오페이지</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">이진수,김성수</td><td id="]_=}" class=""><a href="mailto:contact@kakaopage.com">contact@kakaopage.com</a></td><td id="S&lt;fY" class="">02-1644-4755</td><td id="[hf_" class="" style="width:175px"></td><td id="qyHd" class=""></td><td id="Qc?N" class=""></td><td id="?HsR" class=""></td></tr><tr id="9f0a772e-75c5-4079-97fe-6997660d88d8"><td id="ftOx" class="">2</td><td id=";}C`" class="" style="width:154.1875px">리디</td><td id=";chw" class="">리디북스</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">배기식</td><td id="]_=}" class=""><a href="mailto:help@ridi.com">help@ridi.com</a></td><td id="S&lt;fY" class="">02-1644-0331</td><td id="[hf_" class="" style="width:175px"><a href="mailto:biz@ridi.com">biz@ridi.com</a></td><td id="qyHd" class=""></td><td id="Qc?N" class=""></td><td id="?HsR" class=""></td></tr><tr id="1e63e5af-ee22-4249-9d45-8f8018719192"><td id="ftOx" class="">3</td><td id=";}C`" class="" style="width:154.1875px">네이버</td><td id=";chw" class="">네이버 웹소설</td><td id="A?`g" class="" style="width:123.796875px">웹소설</td><td id="_XR&lt;" class="">김준구</td><td id="]_=}" class=""><a href="mailto:ccnaver@naver.com">ccnaver@naver.com</a></td><td id="S&lt;fY" class="">02-1588-3820</td><td id="[hf_" class="" style="width:175px"><a href="https://novel.naver.com/webnovel/weekday">https://novel.naver.com/webnovel/weekday</a></td><td id="qyHd" class=""></td><td id="Qc?N" class=""></td><td id="?HsR" class=""></td></tr><tr id="f80e7b3c-096f-4ded-872e-0fe21ddba51e"><td id="ftOx" class="">4</td><td id=";}C`" class="" style="width:154.1875px">미툰앤노벨</td><td id=";chw" class="">미노벨</td><td id="A?`g" class="" style="width:123.796875px">웹소설</td><td id="_XR&lt;" class="">정현준</td><td id="]_=}" class=""><a href="mailto:menovel@me.co.kr">menovel@me.co.kr</a></td><td id="S&lt;fY" class="">070-8656-0099</td><td id="[hf_" class="" style="width:175px">홈피상담요망</td><td id="qyHd" class=""></td><td id="Qc?N" class=""></td><td id="?HsR" class=""></td></tr><tr id="81322a5f-1685-4fc8-87d6-9e81ce5f572d"><td id="ftOx" class="">5</td><td id=";}C`" class="" style="width:154.1875px">아이피프라임</td><td id=";chw" class="">와글</td><td id="A?`g" class="" style="width:123.796875px">웹소설</td><td id="_XR&lt;" class="">임재을</td><td id="]_=}" class=""><a href="mailto:wagl@ipprime.co.kr">wagl@ipprime.co.kr</a></td><td id="S&lt;fY" class="">032-623-0223</td><td id="[hf_" class="" style="width:175px"></td><td id="qyHd" class=""></td><td id="Qc?N" class=""></td><td id="?HsR" class=""></td></tr><tr id="91db764d-629d-4986-ba75-92af57e4feaa"><td id="ftOx" class="">6</td><td id=";}C`" class="" style="width:154.1875px">스토리위즈</td><td id=";chw" class="">블라이스</td><td id="A?`g" class="" style="width:123.796875px">웹소설</td><td id="_XR&lt;" class="">전대진</td><td id="]_=}" class=""><a href="mailto:storywiz@kt.com">storywiz@kt.com</a></td><td id="S&lt;fY" class="">02-745-1799</td><td id="[hf_" class="" style="width:175px"></td><td id="qyHd" class=""></td><td id="Qc?N" class=""></td><td id="?HsR" class=""></td></tr><tr id="9483c5e7-99b1-4402-baed-270579c0a34e"><td id="ftOx" class="">7</td><td id=";}C`" class="" style="width:154.1875px">예스이십사 주식회사</td><td id=";chw" class="">Yes24</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">김석환</td><td id="]_=}" class="">yes24help@yes24.com</td><td id="S&lt;fY" class="">02-3215-9110</td><td id="[hf_" class="" style="width:175px"></td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="6451a0f5-1f34-4d41-8f4e-fcce6db949f7"><td id="ftOx" class="">8</td><td id=";}C`" class="" style="width:154.1875px">(주)알라딘커뮤니케이션</td><td id=";chw" class="">알라딘</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">최우경</td><td id="]_=}" class="">general@aladin.co.kr</td><td id="S&lt;fY" class="">1544-2514</td><td id="[hf_" class="" style="width:175px">대상X</td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="5a082257-0e61-41b7-bb50-76717abf4bb8"><td id="ftOx" class="">9</td><td id=";}C`" class="" style="width:154.1875px">㈜메타크래프트</td><td id=";chw" class="">노벨피아</td><td id="A?`g" class="" style="width:123.796875px">웹소설</td><td id="_XR&lt;" class="">유정석</td><td id="]_=}" class="">help@novelpia.com</td><td id="S&lt;fY" class="">1588-3644</td><td id="[hf_" class="" style="width:175px"></td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="87e61275-52bd-47eb-94aa-6c189623f31c"><td id="ftOx" class="">10</td><td id=";}C`" class="" style="width:154.1875px">(주)키다리스튜디오</td><td id=";chw" class="">봄툰</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">김영훈</td><td id="]_=}" class="">accounting@kidaristudio.com</td><td id="S&lt;fY" class="">02-6320-8500</td><td id="[hf_" class="" style="width:175px"></td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="ad091945-1f1b-4f96-bbcd-ce5dd97bb685"><td id="ftOx" class="">11</td><td id=";}C`" class="" style="width:154.1875px">주식회사 테라핀</td><td id=";chw" class="">-</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">유영학</td><td id="]_=}" class="">copin@copin.co.kr</td><td id="S&lt;fY" class="">02-6406-7454</td><td id="[hf_" class="" style="width:175px"></td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="fed7827b-5f0e-46aa-a79c-5e0b0c1a35aa"><td id="ftOx" class="">12</td><td id=";}C`" class="" style="width:154.1875px">미스터블루 주식회사 (Mr. Blue Corporation)</td><td id=";chw" class="">미스터블루</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">조승진</td><td id="]_=}" class="">admin@mrblue.com</td><td id="S&lt;fY" class="">02-337-0610</td><td id="[hf_" class="" style="width:175px"></td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="9bf59966-079b-439d-b6b1-c905844a1753"><td id="ftOx" class="">13</td><td id=";}C`" class="" style="width:154.1875px">주식회사 문피아</td><td id=";chw" class="">문피아</td><td id="A?`g" class="" style="width:123.796875px">웹소설</td><td id="_XR&lt;" class="">손제호</td><td id="]_=}" class="">jeho.son@munpia.com</td><td id="S&lt;fY" class="">070-4693-6777</td><td id="[hf_" class="" style="width:175px">answer@munpia.com</td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="f532ea37-c27e-45dc-8e80-9503f9654bce"><td id="ftOx" class="">14</td><td id=";}C`" class="" style="width:154.1875px">콘텐츠퍼스트(주)</td><td id=";chw" class="">태피툰</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">방선영</td><td id="]_=}" class="">sun@contentsfirst.com</td><td id="S&lt;fY" class="">02-868-4452</td><td id="[hf_" class="" style="width:175px">담당이 회신??</td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="028f83ff-31b9-4536-8ef6-53ac54ecbb74"><td id="ftOx" class="">15</td><td id=";}C`" class="" style="width:154.1875px">(주)디앤씨미디어</td><td id=";chw" class="">-</td><td id="A?`g" class="" style="width:123.796875px">웹소설</td><td id="_XR&lt;" class="">신현호</td><td id="]_=}" class="">dncmedia2513@naver.com</td><td id="S&lt;fY" class="">02-333-2513</td><td id="[hf_" class="" style="width:175px">102번 영업부로~</td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="7a13a218-2b3e-4b71-9270-7a750313ee3c"><td id="ftOx" class="">16</td><td id=";}C`" class="" style="width:154.1875px">주식회사 바이포엠스튜디오</td><td id=";chw" class="">-</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">유귀선</td><td id="]_=}" class="">brand@by4m.co.kr</td><td id="S&lt;fY" class="">070-8874-9010</td><td id="[hf_" class="" style="width:175px"></td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="95e75d7c-b706-4006-bf87-88636378d784"><td id="ftOx" class="">17</td><td id=";}C`" class="" style="width:154.1875px">(주)조아라</td><td id=";chw" class="">조아라</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">이수희</td><td id="]_=}" class="">ad@joara.com</td><td id="S&lt;fY" class="">070-8676-8380</td><td id="[hf_" class="" style="width:175px"></td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="fe4e1851-3282-40c8-b174-5691344fad4e"><td id="ftOx" class="">18</td><td id=";}C`" class="" style="width:154.1875px">(주)북팔</td><td id=";chw" class="">북팔</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">김석환</td><td id="]_=}" class="">bookpal@bookpal.co.kr</td><td id="S&lt;fY" class="">02-2132-5177</td><td id="[hf_" class="" style="width:175px">통화안됨, 유비코스?</td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="5e346f81-2f69-4377-94b7-94d0fd1bd02c"><td id="ftOx" class="">19</td><td id=";}C`" class="" style="width:154.1875px">(주) 교보문고</td><td id=";chw" class="">톡소다</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">안병현</td><td id="]_=}" class="">gone72@kyobobook.co.kr</td><td id="S&lt;fY" class="">1544-1900</td><td id="[hf_" class="" style="width:175px"></td><td id="qyHd" class=""></td><td id="Qc?N" class="">교보문고 대표</td><td id="?HsR" class=""></td></tr><tr id="aa83d023-a245-478a-9dd7-34499f26610f"><td id="ftOx" class="">20</td><td id=";}C`" class="" style="width:154.1875px">주식회사 민음북스</td><td id=";chw" class="">브릿G</td><td id="A?`g" class="" style="width:123.796875px">웹소설</td><td id="_XR&lt;" class="">박상준</td><td id="]_=}" class="">webmaster@minumsa.com</td><td id="S&lt;fY" class="">515-2000</td><td id="[hf_" class="" style="width:175px"></td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class="">서울특별시 강남구 신사동 506번지 강남출판문화센타5층</td></tr><tr id="65d503e2-084d-42de-803c-0f2cdafe166c"><td id="ftOx" class="">21</td><td id=";}C`" class="" style="width:154.1875px">(주) 북큐브네트웍스</td><td id=";chw" class="">북큐브</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">유철종</td><td id="]_=}" class="">ycj@bookcube.com</td><td id="S&lt;fY" class="">02-864-7873</td><td id="[hf_" class="" style="width:175px">거절,홈피상담요망</td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="30c63489-4c56-4a9d-adeb-307b4f58d397"><td id="ftOx" class="">22</td><td id=";}C`" class="" style="width:154.1875px">주식회사 스토리위즈</td><td id=";chw" class="">케이툰</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">전대진</td><td id="]_=}" class="">ilovektf@kt.com</td><td id="S&lt;fY" class="">02-745-1799</td><td id="[hf_" class="" style="width:175px"></td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="e2e38662-f1fe-4aaa-a18b-b96d1eb17a6a"><td id="ftOx" class="">23</td><td id=";}C`" class="" style="width:154.1875px">(주) 폭스툰</td><td id=";chw" class="">폭스툰</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">박성호</td><td id="]_=}" class="">help@foxtoon.com</td><td id="S&lt;fY" class="">070 4102 1836</td><td id="[hf_" class="" style="width:175px">결번</td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="46a97eb8-b914-48e1-a383-7b9dbd376428"><td id="ftOx" class="">24</td><td id=";}C`" class="" style="width:154.1875px">주식회사 피너툰</td><td id=";chw" class="">피너툰</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">최신혜</td><td id="]_=}" class="">help@peanutoon.com</td><td id="S&lt;fY" class="">02 - 511 - 6267</td><td id="[hf_" class="" style="width:175px">business@peanutoon.com</td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="e3bee3fa-22d6-4ce6-8426-d9fc2eac7994"><td id="ftOx" class="">25</td><td id=";}C`" class="" style="width:154.1875px">레알코믹스</td><td id=";chw" class="">레알코믹스</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">-</td><td id="]_=}" class="">-</td><td id="S&lt;fY" class="">-</td><td id="[hf_" class="" style="width:175px"></td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="835df2ae-93ef-480b-95db-4c21eab4c2c0"><td id="ftOx" class="">26</td><td id=";}C`" class="" style="width:154.1875px">진엔터테인먼트</td><td id=";chw" class="">진코믹스</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">진기민</td><td id="]_=}" class="">gaariboy@naver.com</td><td id="S&lt;fY" class="">051-610-1406</td><td id="[hf_" class="" style="width:175px">부산소재</td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="826547c4-e987-4e34-8d41-375aa76cf525"><td id="ftOx" class="">27</td><td id=";}C`" class="" style="width:154.1875px">(주)서울미디어코믹스</td><td id=";chw" class="">마녀코믹스</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">오태엽</td><td id="]_=}" class="">smc@seoulmedia.co.kr</td><td id="S&lt;fY" class="">02-799-9114</td><td id="[hf_" class="" style="width:175px">통화X, 3/13재통화예정</td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="5ae45214-a1a4-4e8d-b25b-19ee4fe7e1ba"><td id="ftOx" class="">28</td><td id=";}C`" class="" style="width:154.1875px">주식회사 애니툰</td><td id=";chw" class="">애니툰</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">김영익</td><td id="]_=}" class="">anytoon@anytoon.co.kr</td><td id="S&lt;fY" class="">02-6478-8616</td><td id="[hf_" class="" style="width:175px"></td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="2f6facd3-f4d0-41f5-abf1-112b9dcfe353"><td id="ftOx" class="">29</td><td id=";}C`" class="" style="width:154.1875px">갓피아</td><td id=";chw" class="">-</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">-</td><td id="]_=}" class="">-</td><td id="S&lt;fY" class="">-</td><td id="[hf_" class="" style="width:175px">-</td><td id="qyHd" class=""></td><td id="Qc?N" class=""></td><td id="?HsR" class=""></td></tr><tr id="fbceb7be-900b-407e-906a-b5742ddfd1e2"><td id="ftOx" class="">30</td><td id=";}C`" class="" style="width:154.1875px">주식회사 핑거스토리</td><td id=";chw" class="">무툰</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">라현성</td><td id="]_=}" class="">ajw@fingerstory.com</td><td id="S&lt;fY" class="">02-6271-1512</td><td id="[hf_" class="" style="width:175px"></td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="18f7ce91-37a8-4cdd-8602-edeecc78641f"><td id="ftOx" class="">31</td><td id=";}C`" class="" style="width:154.1875px">웬스토어</td><td id=";chw" class="">-</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">-</td><td id="]_=}" class="">-</td><td id="S&lt;fY" class="">-</td><td id="[hf_" class="" style="width:175px">-</td><td id="qyHd" class=""></td><td id="Qc?N" class=""></td><td id="?HsR" class=""></td></tr><tr id="28da7eff-d21d-4f48-8fa8-5cc038cf1941"><td id="ftOx" class="">32</td><td id=";}C`" class="" style="width:154.1875px">(주)위즈덤하우스 웹툰웹소설</td><td id=";chw" class="">위즈덤하우스</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">이승현</td><td id="]_=}" class="">rhee@wisdomhouse.co.kr</td><td id="S&lt;fY" class="">031-936-4188</td><td id="[hf_" class="" style="width:175px"></td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="9c827c24-baf5-46f6-ba27-6af65aecdd31"><td id="ftOx" class="">33</td><td id=";}C`" class="" style="width:154.1875px">(주)엔씨소프트</td><td id=";chw" class="">버프툰</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">김택진</td><td id="]_=}" class="">credit@ncsoft.com</td><td id="S&lt;fY" class="">1600-0020</td><td id="[hf_" class="" style="width:175px"></td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="a527227e-751f-4b56-83cd-278cf7cfc042"><td id="ftOx" class="">34</td><td id=";}C`" class="" style="width:154.1875px">넥스츄어코리아 주식회사</td><td id=";chw" class="">스푼코믹스</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">이상원</td><td id="]_=}" class="">leesw@spooncomics.kr</td><td id="S&lt;fY" class="">02-566-2730</td><td id="[hf_" class="" style="width:175px"></td><td id="qyHd" class=""></td><td id="Qc?N" class="">대표</td><td id="?HsR" class=""></td></tr><tr id="4c286bef-cb38-44db-91d6-77f396be8ef0"><td id="ftOx" class="">35</td><td id=";}C`" class="" style="width:154.1875px">피플앤스토리</td><td id=";chw" class="">SW개발, 공급, 작가매니지먼트, 전자출판, 만화/음반/비디오물 도소매</td><td id="A?`g" class="" style="width:123.796875px">웹툰 + 웹소설</td><td id="_XR&lt;" class="">박태훈이사</td><td id="]_=}" class=""><a href="mailto:thpark@novelpia.co.kr">thpark@novelpia.co.kr</a></td><td id="S&lt;fY" class="">010-9726-4668</td><td id="[hf_" class="" style="width:175px">서울 마포구 월드컵북로 19 대상빌딩 4층</td><td id="qyHd" class=""></td><td id="Qc?N" class=""></td><td id="?HsR" class=""></td></tr></tbody></table><p id="06fc98e6-0579-4119-a907-6bc01b57d845" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">라이트 노벨 표지 수요 업체 리스트업</summary><div class="indented"><table id="c0cd8188-32f3-4b37-b8e7-2d3a84dad5dd" class="simple-table"><tbody><tr id="ee681ff3-df7a-4e70-bd1c-45e06d5c49f6"><td id="ieY[" class="" style="width:41.234375px">No.</td><td id="]JmL" class="" style="width:135.578125px">라이트 노벨 레이블명</td><td id="F@`&gt;" class="">소속 출판사명</td><td id="KeG@" class="">취급 작품 분야</td><td id="i=BG" class="">출판사 대표</td><td id="hnoC" class="" style="width:143.546875px">출판사 이메일</td><td id="=IJM" class="">출판사 전화번호</td><td id="T\v{" class="">레이블 대표/담당</td><td id="s~W`" class="">레이블 이메일</td><td id="YqxY" class="">레이블 전화번호</td></tr><tr id="742af1c4-4575-4f84-ae36-3d3ea2e501f5"><td id="ieY[" class="" style="width:41.234375px">1</td><td id="]JmL" class="" style="width:135.578125px">NT노벨</td><td id="F@`&gt;" class="">대원씨아이</td><td id="KeG@" class="">일본 라이트 노벨</td><td id="i=BG" class="">대표이사 황민호</td><td id="hnoC" class="" style="width:143.546875px"><a href="mailto:gureh3@dwci.co.kr">gureh3@dwci.co.kr</a></td><td id="=IJM" class="">02)2071-2000</td><td id="T\v{" class="">-</td><td id="s~W`" class="">-</td><td id="YqxY" class="">-</td></tr><tr id="4d46021d-0687-40ab-b36c-117af2257d7a"><td id="ieY[" class="" style="width:41.234375px">2</td><td id="]JmL" class="" style="width:135.578125px"><a href="https://namu.wiki/w/%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%A6%BC%20%EB%85%B8%EB%B2%A8"><strong><strong>익스트림 노벨</strong></strong></a></td><td id="F@`&gt;" class=""><a href="https://namu.wiki/w/%ED%95%99%EC%82%B0%EB%AC%B8%ED%99%94%EC%82%AC">학산문화사</a></td><td id="KeG@" class="">한국/일본 라이트 노벨</td><td id="i=BG" class="">대표 정동훈</td><td id="hnoC" class="" style="width:143.546875px"><a href="mailto:jeon@haksanpub.co.kr">jeon@haksanpub.co.kr</a></td><td id="=IJM" class="">02-828-8988</td><td id="T\v{" class="">-</td><td id="s~W`" class="">-</td><td id="YqxY" class="">-</td></tr><tr id="700537f2-101c-4653-8474-1c5c01f1f6cb"><td id="ieY[" class="" style="width:41.234375px">3</td><td id="]JmL" class="" style="width:135.578125px"><a href="https://namu.wiki/w/%ED%8C%8C%EC%9A%B0%EC%8A%A4%ED%8A%B8%EB%85%B8%EB%B2%A8%EC%A6%88"><strong><strong>파우스트노벨즈</strong></strong></a></td><td id="F@`&gt;" class=""><a href="https://namu.wiki/w/%ED%95%99%EC%82%B0%EB%AC%B8%ED%99%94%EC%82%AC">학산문화사</a></td><td id="KeG@" class="">한국/일본 라이트 노벨</td><td id="i=BG" class="">대표 정동훈</td><td id="hnoC" class="" style="width:143.546875px"><a href="mailto:jeon@haksanpub.co.kr">jeon@haksanpub.co.kr</a></td><td id="=IJM" class="">02-828-8988</td><td id="T\v{" class="">-</td><td id="s~W`" class="">-</td><td id="YqxY" class="">-</td></tr><tr id="a01d1045-a08d-4c00-9696-86ec3d08f2b4"><td id="ieY[" class="" style="width:41.234375px">4</td><td id="]JmL" class="" style="width:135.578125px"><a href="https://namu.wiki/w/%EC%A0%9C%EC%9D%B4%EB%85%B8%EB%B8%94"><strong><strong>제이노블</strong></strong></a></td><td id="F@`&gt;" class=""><a href="https://namu.wiki/w/%EC%84%9C%EC%9A%B8%EB%AC%B8%ED%99%94%EC%82%AC"><strong>서울문화사</strong></a></td><td id="KeG@" class="">한국/일본 라이트 노벨</td><td id="i=BG" class="">대표 심정섭</td><td id="hnoC" class="" style="width:143.546875px"><a href="mailto:sjs7881@seoulmedia.co.kr">sjs7881@seoulmedia.co.kr</a></td><td id="=IJM" class="">02-799-9249</td><td id="T\v{" class="">-</td><td id="s~W`" class="">-</td><td id="YqxY" class="">-</td></tr><tr id="1dd835fd-2c2b-45ed-bf1b-63f6fcf04f45"><td id="ieY[" class="" style="width:41.234375px">5</td><td id="]JmL" class="" style="width:135.578125px"><a href="https://namu.wiki/w/%EC%8B%9C%EB%93%9C%EB%85%B8%EB%B2%A8"><strong><strong>시드노벨</strong></strong></a></td><td id="F@`&gt;" class=""><a href="https://namu.wiki/w/%EB%94%94%EC%95%A4%EC%94%A8%EB%AF%B8%EB%94%94%EC%96%B4"><strong><strong>디앤씨미디어</strong></strong></a></td><td id="KeG@" class="">한국 라이트 노벨</td><td id="i=BG" class="">대표 신현호</td><td id="hnoC" class="" style="width:143.546875px"><a href="mailto:dncmedia2513@naver.com">dncmedia2513@naver.com</a></td><td id="=IJM" class="">02-333-2513</td><td id="T\v{" class="">-</td><td id="s~W`" class="">-</td><td id="YqxY" class="">-</td></tr><tr id="ed40c92b-3171-4f96-9f0a-bb21ec1e5fcb"><td id="ieY[" class="" style="width:41.234375px">6</td><td id="]JmL" class="" style="width:135.578125px"><a href="https://namu.wiki/w/L%EB%85%B8%EB%B2%A8"><strong><strong>L노벨</strong></strong></a></td><td id="F@`&gt;" class=""><a href="https://namu.wiki/w/%EB%94%94%EC%95%A4%EC%94%A8%EB%AF%B8%EB%94%94%EC%96%B4"><strong><strong>디앤씨미디어</strong></strong></a></td><td id="KeG@" class="">일본 라이트 노벨</td><td id="i=BG" class="">대표 신현호</td><td id="hnoC" class="" style="width:143.546875px"><a href="mailto:dncmedia2513@naver.com">dncmedia2513@naver.com</a></td><td id="=IJM" class="">02-333-2513</td><td id="T\v{" class="">-</td><td id="s~W`" class="">-</td><td id="YqxY" class="">-</td></tr><tr id="20ba3e03-a9ce-4e2f-b9e1-3775049ef7e2"><td id="ieY[" class="" style="width:41.234375px">7</td><td id="]JmL" class="" style="width:135.578125px"><a href="https://namu.wiki/w/AK%EB%85%B8%EB%B2%A8"><strong><strong>AK노벨</strong></strong></a></td><td id="F@`&gt;" class=""><a href="https://namu.wiki/w/AK%20%EC%BB%A4%EB%AE%A4%EB%8B%88%EC%BC%80%EC%9D%B4%EC%85%98%EC%A6%88"><strong><strong>AK 커뮤니케이션즈</strong></strong></a></td><td id="KeG@" class="">일본 라이트 노벨</td><td id="i=BG" class="">대표이사 이동섭</td><td id="hnoC" class="" style="width:143.546875px"><a href="mailto:ak@amusementkorea.co.kr">ak@amusementkorea.co.kr</a></td><td id="=IJM" class="">02-702-7963~4</td><td id="T\v{" class="">-</td><td id="s~W`" class="">-</td><td id="YqxY" class="">-</td></tr><tr id="cbcc6593-73d2-4ad4-a477-b80899d6648c"><td id="ieY[" class="" style="width:41.234375px">8</td><td id="]JmL" class="" style="width:135.578125px"><a href="https://namu.wiki/w/%EB%85%B8%EB%B8%94%EC%97%94%EC%A7%84"><strong><strong>노블엔진</strong></strong></a></td><td id="F@`&gt;" class=""><a href="https://namu.wiki/w/%EC%98%81%EC%83%81%EC%B6%9C%ED%8C%90%EB%AF%B8%EB%94%94%EC%96%B4"><strong><strong>영상출판미디어</strong></strong></a></td><td id="KeG@" class="">한국/일본 라이트 노벨</td><td id="i=BG" class="">대표 조승진</td><td id="hnoC" class="" style="width:143.546875px"><a href="mailto:ysnt2000@hanmail.net">ysnt2000@hanmail.net</a></td><td id="=IJM" class="">070-8826-4613</td><td id="T\v{" class="">대표 조승진</td><td id="s~W`" class=""><a href="mailto:novelengine@naver.com">novelengine@naver.com</a></td><td id="YqxY" class="">070-8826-4662</td></tr><tr id="35edad09-f894-43ec-af93-1a52dccbc5b9"><td id="ieY[" class="" style="width:41.234375px">9</td><td id="]JmL" class="" style="width:135.578125px"><a href="https://namu.wiki/w/S%EB%85%B8%EB%B2%A8"><strong><strong>S노벨</strong></strong></a></td><td id="F@`&gt;" class=""><a href="https://namu.wiki/w/%EC%86%8C%EB%AF%B8%EB%AF%B8%EB%94%94%EC%96%B4"><strong><strong>소미미디어</strong></strong></a></td><td id="KeG@" class="">일본 라이트 노벨</td><td id="i=BG" class="">대표 유재옥</td><td id="hnoC" class="" style="width:143.546875px"><a href="mailto:yoojo24@hotmail.com">yoojo24@hotmail.com</a></td><td id="=IJM" class="">070-4165-6888</td><td id="T\v{" class="">-</td><td id="s~W`" class="">-</td><td id="YqxY" class="">-</td></tr><tr id="7211b087-9013-4c75-893c-b456c04ac666"><td id="ieY[" class="" style="width:41.234375px">10</td><td id="]JmL" class="" style="width:135.578125px"><a href="https://namu.wiki/w/V%EB%85%B8%EB%B8%94"><strong><strong>V노블</strong></strong></a></td><td id="F@`&gt;" class=""><a href="https://namu.wiki/w/%EB%B8%94%EB%A3%A8%ED%94%BD"><strong><strong>블루픽</strong></strong></a></td><td id="KeG@" class="">한국 라이트 노벨</td><td id="i=BG" class="">대표 원종우</td><td id="hnoC" class="" style="width:143.546875px"><a href="mailto:bluepic@bluepic.kr">bluepic@bluepic.kr</a></td><td id="=IJM" class="">02-6447-9000</td><td id="T\v{" class="">-</td><td id="s~W`" class="">-</td><td id="YqxY" class="">-</td></tr><tr id="a2e92405-f963-41ba-ad59-b34c55319c3d"><td id="ieY[" class="" style="width:41.234375px">11</td><td id="]JmL" class="" style="width:135.578125px"><strong>JM북스</strong></td><td id="F@`&gt;" class=""><a href="https://namu.wiki/w/%EC%A0%9C%EC%9A%B0%EB%AF%B8%EB%94%94%EC%96%B4"><strong><strong>제우미디어</strong></strong></a></td><td id="KeG@" class="">일본 라이트 노벨</td><td id="i=BG" class="">대표 서인석</td><td id="hnoC" class="" style="width:143.546875px"><a href="mailto:webmaster@jeumedia.com">webmaster@jeumedia.com</a></td><td id="=IJM" class="">(02) 3142-6841</td><td id="T\v{" class="">-</td><td id="s~W`" class="">-</td><td id="YqxY" class="">-</td></tr><tr id="98dcbbbf-0f41-4a51-96d7-672b1b226c32"><td id="ieY[" class="" style="width:41.234375px">12</td><td id="]JmL" class="" style="width:135.578125px"><strong>시프트노벨</strong></td><td id="F@`&gt;" class=""><a href="https://namu.wiki/w/YNK%EB%AF%B8%EB%94%94%EC%96%B4"><strong><strong>YNK미디어</strong></strong></a></td><td id="KeG@" class="">일본 라이트 노벨</td><td id="i=BG" class="">대표 김석환</td><td id="hnoC" class="" style="width:143.546875px"><a href="mailto:invoice24@yes24.com">invoice24@yes24.com</a></td><td id="=IJM" class="">02-3215-9144</td><td id="T\v{" class=""></td><td id="s~W`" class=""></td><td id="YqxY" class=""></td></tr></tbody></table><ul id="e19468c2-9eae-414e-a0ef-1810413914bf" class="toggle"><li><details open=""><summary>참고</summary><p id="dcba8e09-8a70-4b69-9137-091c926aa0e8" class=""><a href="https://namu.wiki/w/라이트%20노벨%20레이블">한국 라이트노벨 레이블</a></p></details></li></ul><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">라이트노벨 시장 현황</summary><div class="indented"><ul id="5e2e79a4-0017-4dfe-b3e8-d5db7fc84a28" class="bulleted-list"><li style="list-style-type:disc">기존 라이트노벨 작품의 몰락<ul id="1630d29f-8094-4b97-883d-a185eebc9efc" class="bulleted-list"><li style="list-style-type:circle">P2P 사이트를 통해 퍼진 불법 스캔본이 공유되어 큰 피해를 입음</li></ul><ul id="fad27561-6c2f-4d65-bfb3-5c5c3a1be0de" class="bulleted-list"><li style="list-style-type:circle">구매하지 않아도 이미 스토리의 흐름을 대강 아는 사람들이 생겨남</li></ul></li></ul><ul id="75d192ad-5f33-48ec-a9fc-c849ff580117" class="bulleted-list"><li style="list-style-type:disc">신작 발행 감소<ul id="322ae2da-083a-4d03-8802-3cd16d90dd31" class="bulleted-list"><li style="list-style-type:circle">한국 라이트노벨의 대표주자이던 NT에서도 1년에 1~2권정도 발매</li></ul><ul id="81f96e34-d59d-4ba4-9268-894ae5e15b72" class="bulleted-list"><li style="list-style-type:circle">흥행작조차 예고없이 정발이 장기간 정지</li></ul></li></ul><ul id="7315ce81-fcba-45e8-b4ed-a9def064e54b" class="bulleted-list"><li style="list-style-type:disc">다른 형식의 컨텐츠로의 이동<ul id="7b0037b0-e757-48c3-83db-5ea00760765c" class="bulleted-list"><li style="list-style-type:circle">라이트노벨 주된 독자층인 서브컬쳐 마니아들을 대상으로 라이트노벨이 모바일 게임과의 경쟁에서 밀림</li></ul><ul id="5fb295c9-7113-478c-bfbe-db34df990aff" class="bulleted-list"><li style="list-style-type:circle">라이트노벨 시장이 2010년 하반기에 쇠락을 겪은 반면 <a href="https://youtu.be/exYneQokTyY?t=142">웹소설 장르는 가파르게 성장</a></li></ul><ul id="05b3e0cd-acef-46a8-9a43-ca4df1c6b3b1" class="bulleted-list"><li style="list-style-type:circle">국내에 활성화된 라이트노벨 관련 커뮤니티도 <a href="https://cafe.naver.com/lnovel11">한 군데</a> 제외하고 거의 없음</li></ul></li></ul><ul id="4d74e651-9331-4484-921d-e186bdcf421a" class="bulleted-list"><li style="list-style-type:disc">기존 라이트노벨 작가들의 이적 및 흡수<ul id="e2952b5d-5feb-45a8-b5dc-b6e3c254c47f" class="bulleted-list"><li style="list-style-type:circle">라이트노벨 시장이 2010년 하반기에 쇠락을 겪으면서 기존 라이트노벨 작가들은 <a href="https://youtu.be/exYneQokTyY?t=142">대거 웹소설 장르로 이동</a></li></ul><ul id="ac072180-8624-4dbb-ab39-e4bbe4524359" class="bulleted-list"><li style="list-style-type:circle">웹소설 플랫폼에서 라이트노벨 장르의 특징을 적절히 섞어 <a href="https://youtu.be/h8CeCS8aF5U?t=140">새로운 장르의 소설</a>을 창작하는 추세</li></ul></li></ul></div></details><div id="c9430ee0-dc4f-4480-a8f7-336775d1cc83" class="column-list"><div id="c07a9454-a07c-472c-98fc-08730db637c4" style="width:75%" class="column"><figure id="cefc9d8a-8915-4105-8845-1d1d7ce7975a" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Screenshot_2023-04-27_at_4.59.19_PM.png"><img style="width:480px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Screenshot_2023-04-27_at_4.59.19_PM.png"/></a><figcaption>한국 라이트노벨의 중심인 시드노벨의 월평균 신권 발매 권수
+<a href="https://www.notion.so/952e5891d4fd40fe84c6b495418e8746?pvs=21">현재 사이트 </a>폐쇄된 것으로 추정
+<a href="https://youtu.be/exYneQokTyY?t=115">출처</a></figcaption></figure></div><div id="b58c2f2b-292f-47c7-8853-4e087808126b" style="width:25%" class="column"><figure id="54ac3436-d415-48aa-a4f3-1b5fc90a9d0f" class="image"><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2025.png"><img style="width:570px" src="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f/Untitled%2025.png"/></a><figcaption><a href="https://www.greened.kr/news/articleView.html?idxno=295125">출처</a>: 한국콘텐츠진흥원</figcaption></figure></div></div></div></details><p id="d8d577ae-37d7-4a89-8dc9-dc9720adf4cd" class="">
+</p><hr id="f74502f5-bf69-41b5-9431-365274679549"/><h1 id="5c357087-bed7-4daa-af3c-63ce0fd4ec3f" class="">가격 전략 for 콜드메일</h1><figure id="a49c683d-474d-4172-8d4c-406fb3cb2dad"><div class="source">https://lionrocket.slack.com/archives/C05457W2KJN/p1683096428550879</div></figure><div><ul id="3c73d765-e1ab-449c-8c00-f9d5d1706511" class="bulleted-list"><li style="list-style-type:disc">가격정책 (근데 이거는 관심을 보였을 때 제시)<ul id="4f7acae3-9518-44f3-882d-3f65165b6968" class="bulleted-list"><li style="list-style-type:circle">이원화정책으로 타겟별 프라이싱<ul id="38a26d3d-274e-44e7-8841-ee6139fd9389" class="bulleted-list"><li style="list-style-type:square"><span style="border-bottom:0.05em solid">웹툰/웹소설업체(35개사) : 40만원</span></li></ul><ul id="4dbfed8f-05a3-4312-bcab-2d9e0f0508e9" class="bulleted-list"><li style="list-style-type:square"><span style="border-bottom:0.05em solid">라이트노벨 레이블(4개사) : 30만원</span></li></ul><ul id="bb8c7206-b009-4e6a-8db0-2bd63fe212a9" class="toggle"><li><details open=""><summary>정책수립배경</summary><ul id="f753ac91-f147-413c-92d3-81e9dfb5d026" class="bulleted-list"><li style="list-style-type:disc">웝툰/웹소설 업체는 <span style="border-bottom:0.05em solid">할인 없이</span> ListPrice(40만원)로 제공하되 <span style="border-bottom:0.05em solid">AI가 강점인 부가서비스로 메리트를 주는 방식 채택 (넉넉한 시안, 수정횟수, 삽화 제공 등)</span></li></ul><ul id="4f89f4b2-3161-4a15-8d18-e6aa375fc639" class="bulleted-list"><li style="list-style-type:disc">라이트노벨은 R/S방식도 검토했으나<ul id="8190a93e-c739-4ea4-844c-f99a7c93d482" class="bulleted-list"><li style="list-style-type:circle">업계에서 <span style="border-bottom:0.05em solid">R/S방식을 지양</span>하는 점</li></ul><ul id="96a05c7c-8a69-4c47-bed0-3e83c919a79f" class="bulleted-list"><li style="list-style-type:circle">과다 제작 의뢰 및 흥행 가능성이 낮은 작품에만 활용 우려로 정가로 책정</li></ul></li></ul></details></li></ul></li></ul></li></ul><ul id="bb6725b0-204f-43d3-97c3-24ceae7b017c" class="bulleted-list"><li style="list-style-type:disc">초기 프로모션도 있음 (근데 이거는 관심을 보였을 때 제시)<ul id="e4b7c45a-0539-4800-9020-45cbbd3dc18c" class="bulleted-list"><li style="list-style-type:circle">최초 5개사에게 최초 1회 표지 제작 무상 지원 </li></ul><ul id="9cc6f9b6-2a9b-48c4-978a-d850b1dc7cf1" class="bulleted-list"><li style="list-style-type:circle">최초 5개사 한정 1년간 표지제작비 20% 지원 → 기간을 줄이고 할인폭을 늘리는 게 좋을 듯</li></ul></li></ul></div><hr id="44393dd9-acbc-42f4-a2e3-4b56465a8b2c"/><ul id="d553fe02-a46f-4e6e-9b39-74b959487e7b" class="toggle"><li><details open=""><summary>finished</summary><h3 id="47820d96-5ace-44c1-af70-5bf03eefa725" class="">스포키의 B2B향 가격 책정을 위한 시장가격조사</h3><ul id="58f2ebf9-5152-4b3a-853f-4efff79209ae" class="bulleted-list"><li style="list-style-type:disc">그 작업에 드는 비용을 고려</li></ul><ul id="b61340a6-f3eb-4c87-9b31-b9666e083797" class="bulleted-list"><li style="list-style-type:disc">우리가 절감해줄 수 있는 비용을 고려</li></ul><p id="9cbca223-9b6d-4f78-ac3a-01a5c3c3ee4c" class="">
+</p><ul id="8c7d1c31-fceb-43a0-be8b-ed09be9afea3" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">실무 프로세스별로 정리하기</span><div class="indented"></div></li></ul><ul id="c7d82d41-a9a1-4e80-a6f4-439bd819bfb2" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">어도비 툴을 참고하자 / 학생 인증이 가능하지만 4년동안 기간 제한이 있음</span><div class="indented"><ul id="e255aaa1-3a47-46be-a073-84fd17194fac" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">포토샵</span><div class="indented"></div></li></ul><ul id="f12174d8-5016-4eff-b0f5-c1969ea1eeff" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">어도비 일러스트</span><div class="indented"></div></li></ul><ul id="f182768e-0418-4f7c-815f-dc9659efb1d9" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">인디자인</span><div class="indented"></div></li></ul></div></li></ul><ul id="e7a4f7cb-c717-49b3-b323-04438faedb16" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">캔바 - 미리캔버스랑 비슷한 거임. 준 디자이너들이 많이 사용함</span><div class="indented"></div></li></ul><ul id="4c099720-697b-4694-afd9-1b78f93bc8bb" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">작가들이 많이 사용하는 프로그램들의 가격</span><div class="indented"><ul id="cd141a3a-82e6-44c0-9037-a71e1fb09467" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">SketchUp</span><div class="indented"></div></li></ul><ul id="b48956f3-2f21-4239-9a7c-9f0edc77c1ab" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">AutoCad</span><div class="indented"></div></li></ul><ul id="17f35f7b-6603-41d9-8b1b-190d6fb664c7" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Autodesk 3ds Max</span><div class="indented"></div></li></ul></div></li></ul><ul id="63cb7442-affb-4eb2-8ce0-d60ac57578fd" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">레퍼런스 페이지들 가격</span><div class="indented"><ul id="7d7c0b43-dfed-433b-8af7-5320ce7e9d74" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">아이스탁</span><div class="indented"></div></li></ul><ul id="18316321-57ba-49da-a4ec-eb1afc0e12e9" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">어도비 스탁</span><div class="indented"></div></li></ul></div></li></ul><ul id="70243e27-b05b-4971-9378-330fc8c1247a" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">노션 내용</span><div class="indented"></div></li></ul><ul id="c6025a48-274c-43e5-b9c0-fed808bb246a" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">인터뷰 내용</span><div class="indented"></div></li></ul><ul id="3d057af4-89c9-4eb7-a64c-816f835599f1" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">경쟁자 리서치 내용</span><div class="indented"></div></li></ul><div><ul id="8b63f72b-b541-4b23-8154-ee9e6ab7ec44" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">쭉 훑으면서 정리</span><div class="indented"></div></li></ul><ul id="a65f3ef4-7a97-4edf-bcbe-09c3d05c80fa" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">PRICING ↔ 스토리작 대응</span><div class="indented"></div></li></ul></div></details></li></ul><ul id="597b0a43-eaa1-4697-a455-788a0df42c92" class="toggle"><li><details open=""><summary>other references</summary><ol type="1" id="996b819d-d38c-4c01-943b-12a6605d5397" class="numbered-list" start="1"><li>Adobe Creative Cloud 모든 앱 레퍼런스<ol type="a" id="5e57d200-a1af-41d6-8013-cc7c9b242c9d" class="numbered-list" start="1"><li>개인<p id="b47597d3-9669-4253-a546-64e55024a649" class="">61,600원/월  (Adobe Stock 별도) (부가세 포함)</p></li></ol><ol type="a" id="c71780ae-e5bb-4144-9318-c4b0955aeee5" class="numbered-list" start="2"><li>기업<p id="e4a6c484-c0a0-41f6-8f3a-7efe80f9a54b" class="">라이선스당 92,000/월 (Adobe Stock 별도) (부가세 별도)</p></li></ol><ol type="a" id="e21087f5-f1ed-4e35-8e26-b95e0515ff69" class="numbered-list" start="3"><li>초중고 및 대학교<p id="bb4b2a74-edb0-4c9a-8e60-c5f4602bc547" class="">라이선스당 40,000/월 (부가세 별도)</p></li></ol></li></ol><ol type="1" id="65338bea-3d11-4a8d-98b5-51da96ffbd3b" class="numbered-list" start="2"><li>Canva<ol type="a" id="e86da7dd-b1d3-4ca6-bd9b-b0a673a4e2a8" class="numbered-list" start="1"><li>5명: 16,600/월, 166,000/년</li></ol><ol type="a" id="bd7ffb0f-6648-4300-8eab-db2e3017c79f" class="numbered-list" start="2"><li>10명: 96,600/월, 966,000/년</li></ol><ol type="a" id="8fa984fa-e9e6-4041-b7d5-f52f64747dd3" class="numbered-list" start="3"><li>25명: 336,600/월, 3,366,000/년</li></ol><ol type="a" id="80450989-f3ab-47d1-853f-885e0749b3bc" class="numbered-list" start="4"><li>50명: 708,600/월, 7,086,000/년</li></ol></li></ol><ol type="1" id="f4e006bc-7573-4f66-8be1-d2490fa372bf" class="numbered-list" start="3"><li>SketchUp<ol type="a" id="e4cce94f-efb1-489b-ace1-0ee43d4255ee" class="numbered-list" start="1"><li>Go (웹브라우저, iPad) 156,000/년</li></ol><ol type="a" id="32d011c1-5936-431c-8568-ee4ad0db7bbf" class="numbered-list" start="2"><li>Pro (데스크탑, 웹브라우저, iPad) 400,000/년</li></ol><ol type="a" id="42cf8f54-e6a5-4357-ad87-9a0b3b97170d" class="numbered-list" start="3"><li>Studio (데스크탑, 웹브라우저, iPad) 920,000/년</li></ol></li></ol><ol type="1" id="01ed80ad-db10-41e8-86ca-c8789b42f7cd" class="numbered-list" start="4"><li>AutoDesk AutoCAD<ol type="a" id="aece5862-93f8-4e54-ad55-d2b4e953965a" class="numbered-list" start="1"><li>320,180/월</li></ol><ol type="a" id="3c010f1e-1253-46ea-9358-df720d2bf5b8" class="numbered-list" start="2"><li>2,583,275/년</li></ol><ol type="a" id="ed701507-242e-4a5f-bf7a-a590e4318d81" class="numbered-list" start="3"><li>7,749,825/3년</li></ol></li></ol><ol type="1" id="cd60a923-2af2-4655-8546-afde4406d38b" class="numbered-list" start="5"><li>AutoDesk 3ds Max<ol type="a" id="49e7293c-4be7-4e77-9bfa-04e3873f32d0" class="numbered-list" start="1"><li>312,904/년</li></ol><ol type="a" id="6cf7b988-eb99-4376-98e4-9d3be5b01601" class="numbered-list" start="2"><li>2,474,122/년</li></ol><ol type="a" id="b1a81fba-1948-4769-adfe-c9548359c418" class="numbered-list" start="3"><li>7,422,367/년</li></ol></li></ol><ol type="1" id="cbaec067-21ea-4df5-9809-7de5bc24d90f" class="numbered-list" start="6"><li>AI products<ol type="a" id="89a5a32a-ad99-4977-98b9-2fbbbf0bfd9f" class="numbered-list" start="1"><li><a href="http://Novelai.net">Novelai.net</a><ol type="i" id="6e241a95-e607-4459-bc0e-3ca1253f5ff4" class="numbered-list" start="1"><li>13,000/월 (1024 tokens of memory)</li></ol><ol type="i" id="da4cf8ab-e15c-4cfb-acd5-bdcbece848a8" class="numbered-list" start="2"><li>20,000/월 (2048 tokens of memory)</li></ol><ol type="i" id="c02e3d05-95b5-4b95-9970-936a1d02f5cf" class="numbered-list" start="3"><li>32,800/월 (unlimited image generation)</li></ol></li></ol></li></ol><p id="4429241e-15a2-48f9-b5fd-95ee2b5f2db2" class="">
+</p><p id="34b2ccd6-7565-4d02-8154-6df92b0a2789" class="">
+</p><div><h3 id="71edb1f3-df48-4cbd-a9f9-ffdc5ca8de01" class="">타겟</h3><p id="22aa1141-013a-4d3e-bcb1-e9ec33285f34" class="">주요 타겟고객은</p><ul id="b766fe15-79ba-4773-8a97-78f53da1b2a2" class="bulleted-list"><li style="list-style-type:disc">각 기업의 <strong>인하우스 디자인 담당자</strong></li></ul><ul id="f384d739-098d-48a7-916f-0cb19ba37421" class="bulleted-list"><li style="list-style-type:disc"><strong>프리랜서 디자이너</strong></li></ul><p id="c80121d7-10ce-439e-9a8b-14fadee96222" class="">타겟고객의 소속 기업(시장)은</p><ul id="94f70c55-2fd9-4828-9da4-bcb81abd5bab" class="bulleted-list"><li style="list-style-type:disc">수백~수천만원 규모의 외주 브랜딩을 의뢰하는 기업(시장)</li></ul><ul id="5feacdbd-ee06-4670-916e-0ff624b1583a" class="bulleted-list"><li style="list-style-type:disc">수천~수억 외주규모의 시장은 대규모 에이전시 시장으로 진입장벽은 높지만 현재 생성AI가 침범할 수 있는 영역은 중소 외주 규모 시장과 크게 차이가 없을 것.</li></ul><p id="0426819f-3546-4bcf-953c-49155010dca6" class="">
+</p></div></details></li></ul><p id="62960ba6-f313-46de-8765-e764a17ca8f5" class="">
+</p></div></article></body></html>

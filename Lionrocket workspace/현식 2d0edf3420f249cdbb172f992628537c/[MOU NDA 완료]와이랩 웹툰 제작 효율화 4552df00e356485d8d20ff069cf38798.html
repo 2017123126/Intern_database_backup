@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>[MOU/NDA 완료]와이랩 웹툰 제작 효율화</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="4552df00-e356-485d-8d20-ff069cf38798" class="page sans"><header><h1 class="page-title">[MOU/NDA 완료]와이랩 웹툰 제작 효율화</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-green">COLABORATION</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230421 준형 <a href="https://www.notion.so/230424_-6bb2651bfba444eb8bd55440f37f1270?pvs=21">230424_와이랩 미팅</a> </summary><div class="indented"><ol type="1" id="40d5c24e-704e-4a9f-bbb4-2c2a8740693c" class="numbered-list" start="1"><li>(니즈)<span style="border-bottom:0.05em solid">글 콘티에서 스케치</span>로 변화시켜 주는 게 가장 필요하다</li></ol><ol type="1" id="e319be07-a277-410d-9e08-6ae9b55c7805" class="numbered-list" start="2"><li>(협력)<span style="border-bottom:0.05em solid">웹툰 제작 공정 중에 AI 로 효율화 할 수 있는지 검증</span><ol type="a" id="8f7a477e-eefc-4f75-9b87-94ee17eb0d28" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid">5화 분량의 웹툰 데이터셋 제공</span> 예정</li></ol><ol type="a" id="2af4abab-cef4-413c-b6e7-1638cbd2d3b2" class="numbered-list" start="2"><li><span style="border-bottom:0.05em solid">웹툰 제작 공정을 테스트 할 수 있는 데이터셋</span> 제공 예정<ol type="i" id="381deb3a-d3ed-4bce-a977-0044c8a141bf" class="numbered-list" start="1"><li>콘티, 스케치, 펜터치, 채색 등</li></ol></li></ol></li></ol><ol type="1" id="31729124-7794-4849-a209-4eb6368c971e" class="numbered-list" start="3"><li>(소통채널)<ol type="a" id="6b6f2d96-82b9-46be-ad67-45b0d0f1856b" class="numbered-list" start="1"><li>Poc 관련 계약은 <span style="border-bottom:0.05em solid">와이랩 이사랑 승환님이 직접 소통</span></li></ol><ol type="a" id="f1d42969-ec07-49f1-b8bd-ba1aa7019f2e" class="numbered-list" start="2"><li>실무 소통은 제( = 박준형)가 진행</li></ol><p id="6af62ca6-c2ff-4b32-a2ae-0247e86b80d7" class="">
+</p></li></ol><ul id="530436dd-5688-4471-9f1c-39b5deaed25f" class="toggle"><li><details open=""><summary>detail</summary><p id="12273ad5-632b-4c7b-8d65-3cabe74a7d0b" class="">PoC 진행방식</p><ul id="b95b0605-6a6f-4642-a142-1c72eea3a813" class="bulleted-list"><li style="list-style-type:disc">목적<ul id="4cc82113-389e-4740-8a70-4b2f68849082" class="bulleted-list"><li style="list-style-type:circle">완성된 작품으로 테스트</li></ul><ul id="63ecbfec-387a-4bb2-a4fa-7668e30d1d2f" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">AI의 한계와 어디까지 표현이 가능하면 상용화 가능한지 양사간에 파악</span></li></ul><ul id="d8dfc264-dd11-4cb5-9789-d2cf906a5c7d" class="bulleted-list"><li style="list-style-type:circle">이후 신작에 적용</li></ul></li></ul><ul id="e0a0ffb5-8e28-467e-aad1-cc2d3bbd28ef" class="bulleted-list"><li style="list-style-type:disc">제안<ul id="700981ae-9d55-469c-94ab-a28970e5df87" class="bulleted-list"><li style="list-style-type:circle">와이랩<ul id="6b036f73-8d3a-46c1-be00-dead321ca6fb" class="bulleted-list"><li style="list-style-type:square"><span style="border-bottom:0.05em solid">완성된 레이어가 분리된 완성 원고 5화 제공</span></li></ul><ul id="6eb4b37c-47ac-4f38-ad21-c491ab22f1b0" class="bulleted-list"><li style="list-style-type:square">6화째 콘티 제공하면 6화 제작</li></ul><ul id="657ecc86-99e1-44e4-a574-529b7834b4b1" class="bulleted-list"><li style="list-style-type:square">아니면 1화 콘티로 테스트를 해보는 것이 좋은지?</li></ul></li></ul><ul id="1477a8e0-b6ff-40e1-820c-4fab5c7e935d" class="bulleted-list"><li style="list-style-type:circle">라로<ul id="53eb7931-c5ca-4215-bcad-a1e870844d96" class="bulleted-list"><li style="list-style-type:square">상관없음, 잘만들어서 결과물이 마음에 드는 것이 중요</li></ul><ul id="bb39e51d-db88-46ca-8773-88ef5f36f423" class="bulleted-list"><li style="list-style-type:square">결과물은 최종 그림이다.</li></ul><ul id="89bf2506-ee81-4118-b7ad-8c4e2b9ff07d" class="bulleted-list"><li style="list-style-type:square">단계별로 샘플을 주시면 라로 기술을 적용한 결과물을 함께 보면서 어느 단계에서 부터 상용화 가능한지 판단하는 방법도 좋을 거 같다</li></ul><ul id="4140468d-5a6f-4de7-afb3-a30650ca2532" class="bulleted-list"><li style="list-style-type:square">콘티to스케치, 스케치to펜터치, 펜터치to채색</li></ul></li></ul><ul id="6b645965-5ce2-4651-bb9a-a1102389c97b" class="bulleted-list"><li style="list-style-type:circle">와이랩<ul id="b1190694-c9fa-4cec-8028-4138823fd0ac" class="bulleted-list"><li style="list-style-type:square">전체데이터는 디테일하게 나눠져있지 않다. 펜선, 채색정도</li></ul><ul id="c1017725-0493-4ad4-a5a0-f6aaea28c345" class="bulleted-list"><li style="list-style-type:square">스케치 콘티가 안들어가있다.</li></ul><ul id="99e1fef4-97cb-49c5-986c-9ade63835eba" class="bulleted-list"><li style="list-style-type:square">단계별로 나눠져 있는 건 장수가 많지가 않다.</li></ul></li></ul><ul id="ef9a6be3-ce65-4cb0-8ab0-0e995f6f99d6" class="bulleted-list"><li style="list-style-type:circle">라로<ul id="b5ec4120-ecae-418f-b2a3-9ea1986c4826" class="bulleted-list"><li style="list-style-type:square">한두장만 줘도 된다.</li></ul><ul id="f1b36834-c667-4a80-9537-e5cda384d61e" class="bulleted-list"><li style="list-style-type:square">전체원고 배경, 캐릭터 학습은 50장 이상 필요</li></ul></li></ul></li></ul><ul id="1805894f-fc3a-4264-bfd9-39afe4652a47" class="bulleted-list"><li style="list-style-type:disc">기타<ul id="d6260d73-9e35-40bd-9ff5-7df03d9cfa8a" class="bulleted-list"><li style="list-style-type:circle">와이랩 (니즈)<ul id="50196a42-44c7-45aa-b9a5-cd27b3026aaa" class="bulleted-list"><li style="list-style-type:square"><mark class="highlight-yellow_background">AI 배경을 영역을 지정해서 생성할 수 있다면 </mark><mark class="highlight-yellow_background"><span style="border-bottom:0.05em solid">도시 전경씬 등 3~4일 걸리는데 1~2시간 안에 그 씬이 나온다면 제작 입장에서 대박</span></mark></li></ul><ul id="2a9f6299-32d0-4e85-861a-a7f293c65bf1" class="bulleted-list"><li style="list-style-type:square"><mark class="highlight-yellow_background"><span style="border-bottom:0.05em solid">시점 변화에 따른 배경 생성 및 디테일 고정</span></mark><mark class="highlight-yellow_background">이 필요하다.</mark></li></ul><ul id="812a1bd8-e687-44af-8573-83d7b193e225" class="bulleted-list"><li style="list-style-type:square"><mark class="highlight-yellow_background">현재 </mark><mark class="highlight-yellow_background"><span style="border-bottom:0.05em solid">웹툰에 바로 적용 가능</span></mark><mark class="highlight-yellow_background">한 소스이다. 바로 매출 가능할 듯</mark></li></ul><ul id="e6f944d5-d614-4159-a27e-bb917299589d" class="bulleted-list"><li style="list-style-type:square"><mark class="highlight-yellow_background"><span style="border-bottom:0.05em solid">독자들의 비난이 없는 영역</span></mark><mark class="highlight-yellow_background">이라 우선 적용에 관심이 많다</mark></li></ul></li></ul><ul id="a975ee11-e715-4056-a18d-21dab1069ddd" class="bulleted-list"><li style="list-style-type:circle">라로<ul id="cf634230-18f3-4722-a5ff-4be962e2b830" class="bulleted-list"><li style="list-style-type:square">배경전용 컨트롤넷 활용하면 윤곽은 유지가능</li></ul><ul id="be422fe9-3aad-4335-8675-f9f712310d92" class="bulleted-list"><li style="list-style-type:square">시점에 따른 배경은 연구 중인데 가능할 것으로 판단</li></ul></li></ul></li></ul></details></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230425 승환 <a href="https://lionrocket.slack.com/archives/C05457W2KJN/p1682407192553479?thread_ts=1682407190.442669&amp;cid=C05457W2KJN">https://lionrocket.slack.com/archives/C05457W2KJN/p1682407192553479?thread_ts=1682407190.442669&amp;cid=C05457W2KJN</a> (솔직히 뭔 소리인지 모르겠음…)</summary><div class="indented"><p id="aa667b48-5fa6-4dad-a28c-cd34410e0085" class=""><strong>시트랑 5화 원고</strong></p><p id="8c041038-a5d6-435d-9b9f-1deaa3f68d22" class="">(1) control net은 완료<div class="indented"><ul id="c0a4fc9f-508d-4feb-9cfc-12cbf5599998" class="bulleted-list"><li style="list-style-type:disc">배경은 안되어도 됨</li></ul></div></p><p id="ed32c10e-8765-4873-9164-eaff089248ab" class="">(2-1) 그림 콘티, 스케치를 드렸을 때 그거를 가장 깔끔하게 펜선으로 아웃풋 해주었다</p><p id="0ba6e0a8-8609-4f05-b94e-90fed7af6b11" class="">(2-2) 펜선 원고를 드렸을 때 밑색 채색</p><p id="cd4e3959-1921-4800-9a00-e7a59d0a81fe" class="">
+</p><p id="6b57eb1d-2923-49ae-bb31-17898ab0350b" class=""><strong>같이 작업 → 자료 전달 일정? 꼼꼼하게 자료 검토</strong><div class="indented"><ul id="84fb9c41-6148-41c3-9808-abbaa98d3f97" class="bulleted-list"><li style="list-style-type:disc">NDA, MOU 이거 저희가 준비해서 전달</li></ul><ul id="2965f512-c9fe-475c-b624-c863372afcf3" class="bulleted-list"><li style="list-style-type:disc">자료 전달 받는 것(고민의 요소가 있음, -&gt; 잘 된다고 하면 연재중인 작품에 하고싶음</li></ul><ul id="6672bf94-ef96-42f6-8908-90414c18eb86" class="bulleted-list"><li style="list-style-type:disc">회사가 저작권을 가지고 있음, 법적 이슈는 없음. 작가분들의 동기부여, 참여하실수작품 위주로.</li></ul></div></p><p id="912fc9b6-c921-454c-914f-cac7aa00c3bc" class="">
+</p><p id="2817aa8f-1c48-472c-821c-f676076352fb" class="">선호도 조사 : 장르, 그림체 중에서</p><p id="91d5655c-f327-4576-bd58-b315c1aa1514" class="">장르, 현대, 이세계물, 판타지 물=&gt; 현대 출발</p><p id="7ff8f510-b14c-4cd5-afbc-b234053f41d4" class=""><span style="border-bottom:0.05em solid">원고자료 PSD 포토샵 확장자, 펜션 채색 분리된 것으로 전달</span><div class="indented"><p id="ff2ee8e0-78cc-4ece-a576-da2ea5f08f19" class="">(1) 원고 레이어가 많기는 많은데 펜선 레이어가 하나 있고</p><p id="9632a26a-7d37-4483-95fe-1876ea572941" class="">(2) 또 하나는 채색 레이어내일 그 업체랑 미팅, 금액을 정확히 못받음</p></div></p><p id="1b4ceac4-bb03-4229-a375-2b5b08c161a2" class="">
+</p><p id="0ea9957e-67ce-4487-89a7-f88578202066" class="">제안 내용: 블러핑 내용은?</p><p id="82837917-6542-4082-8415-b27495f2dcf4" class="">
+</p><p id="786a95fe-7400-483a-8a6c-b8b9e062b7ce" class=""><span style="border-bottom:0.05em solid">기업마다 적합하게 변형,</span></p><p id="809b6e7b-ba0c-414f-aa0d-6da5b5fdfabf" class=""><span style="border-bottom:0.05em solid">웹툰 제작사마다 프로그램이 다를 거기 때문.</span></p><p id="86800df2-fa68-41bd-bdf6-25c59ffcfb03" class="">
+</p><p id="804d6963-50bf-4952-a8ef-363402cc01bb" class=""><span style="border-bottom:0.05em solid">다음주 초에 체결가능</span>. (5.1~5.5)</p><p id="1240f8ae-61bc-4c2a-bda4-82ae7768a705" class="">*궁금한 것 : 와이랩의 제작 방식을 다른 것을 모름.=&gt; 다른 곳의 제작 방식을 차용해서라도 AI</p><p id="d4dc6e94-1492-4291-894b-d340b4bc769d" class="">
+</p><p id="ef252234-a406-42fb-a7b8-d4c695c252c6" class="">*한달정도 테스트</p><p id="0b9df5b6-dd54-43e0-a4a5-2ef9662e90d1" class="">
+</p><p id="cb4d7109-97bc-45af-ad6d-6e604ed3e24c" class="">1) 저는 어떤 PoC가 가장 도움이 되실 것 같으신지?</p><p id="36e0d747-c4b2-49f1-8559-6079a642bb6d" class="">2) 제안오셨던 비싼 업체 가격이 어느정도셨는지?</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230425 준형 전략 <a href="https://lionrocket.slack.com/archives/C05457W2KJN/p1682412847840989?thread_ts=1682412835.670429&amp;cid=C05457W2KJN">https://lionrocket.slack.com/archives/C05457W2KJN/p1682412847840989?thread_ts=1682412835.670429&amp;cid=C05457W2KJN</a></summary><div class="indented"><p id="f1829b3f-2ffa-46db-aa60-bc964d261f7d" class=""><strong>&lt;상황&gt;</strong></p><ol type="1" id="2865b94e-6c38-4911-8ea3-2bbe3261b2c6" class="numbered-list" start="1"><li>와이랩 poc 는 <span style="border-bottom:0.05em solid">오로지 웹툰</span>에 초점을 맞춰야 하는 상황(웹소설 표지 X)</li></ol><ol type="1" id="6aaf6726-6a6b-4f6e-89ef-e4473105373f" class="numbered-list" start="2"><li>웹소설 표지에 비해 웹툰 제작 쪽 기술은 성숙도가 부족한 상황<ol type="a" id="517a8ea2-e453-495d-bf18-4a455805c37d" class="numbered-list" start="1"><li>현재 가능성 확인하고 디벨롭 단계(ex 밑색 자동화)</li></ol></li></ol><ol type="1" id="ac69fedc-3555-4b78-8637-724054d50176" class="numbered-list" start="3"><li>웹툰 제작 공정 단계마다 테스트할 수 있는<span style="border-bottom:0.05em solid"> 데이터를 전달 </span>받고, AI 로<span style="border-bottom:0.05em solid"> 대체할 수 있는 부분이 어느 단계일 지 기술 실증(poc) 진행</span>하는 방향으로 1차 미팅 완료(구두 기반)<ol type="a" id="557ea732-8d1a-4796-a6d2-d1dd58be5b7f" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid">5화 분량의 만화 데이터</span> 받기로 함</li></ol><ol type="a" id="7fa6f294-1d0c-4606-994e-4ba4cfdd0f0c" class="numbered-list" start="2"><li><span style="border-bottom:0.05em solid">웹툰 제작 공정 단계를 테스트 할 수 있는 데이터</span> 받기로 함(ex 스케치, 펜터치 등)</li></ol></li></ol><p id="d0d4dd40-30bb-4933-a79e-368b574094b1" class=""><strong>&lt;전략 및 프로세스&gt; : “paid poc 빠르게 이끌어 낼 수 있는 방향으로”</strong></p><ul id="590b8266-527b-4138-8ab6-84548bef6287" class="bulleted-list"><li style="list-style-type:disc"><strong>1단계 :Non-paid poc 확보하기</strong><ol type="1" id="e502f976-b08e-4540-997e-a472cb05daf4" class="numbered-list" start="1"><li>우선 1차 미팅이 poc 진행하자는 식으로 이야기를 나누었기 때문에, “<span style="border-bottom:0.05em solid">poc 를 맺은 뒤 데이터 전달 해달라. 그후 기술 실증 진행해 보자“</span>고 이야기 나누기</li></ol><ol type="1" id="4e4d0203-ce3b-4793-9d4e-71d89c74cc6b" class="numbered-list" start="2"><li>이 단계에서 돈 받고 하면 베스트인데 어려울 듯</li></ol></li></ul><ul id="f327fec7-a72b-4734-aa9d-7bd47ce8172c" class="bulleted-list"><li style="list-style-type:disc"><strong>2단계</strong> : <strong>paid poc 이끌어 내기</strong><p id="c5be9f3c-dacc-4b71-bffe-6e427a124beb" class="">기술 실증 하면서 바로 현업에 적용가능한 <span style="border-bottom:0.05em solid">기술들 성숙도 올려서</span>, paid poc를 이끌어 내기</p><p id="978adb22-2b65-4888-9d5f-1fa9733efa30" class="">현재 가능성 가장 높은 것은 아래 두 가지<div class="indented"><ol type="1" id="41a3be76-6b6f-4917-b182-ae4d84c31641" class="numbered-list" start="1"><li>배경 생성</li></ol><ol type="1" id="744da7b8-b090-4e0e-a236-031ae91dbc16" class="numbered-list" start="2"><li>밑색 자동화</li></ol></div></p></li></ul><p id="fd3e0e72-4e48-4d73-b4ca-94f89ed17061" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230512 승환님 <a href="https://lionrocket.slack.com/archives/C05457W2KJN/p1683888922338649">https://lionrocket.slack.com/archives/C05457W2KJN/p1683888922338649</a></summary><div class="indented"><figure id="174e9e98-add6-47b2-98fa-1c12f3e62dfa"><div class="source"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%8B%E1%85%AA%E1%84%8B%E1%85%B5%E1%84%85%E1%85%A2%E1%86%B8%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%AB%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%92%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%AF%E1%84%92%E1%85%AA%204552df00e356485d8d20ff069cf38798/%25EC%2599%2580%25EC%259D%25B4%25EB%259E%25A9-%25EB%259D%25BC%25EC%259D%25B4%25EC%2596%25B8%25EB%25A1%259C%25EC%25BC%2593_%25EC%2596%2591%25ED%2595%25B4%25EA%25B0%2581%25EC%2584%259C(MOU)_230425.docx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/927f06a9-ea93-436f-8cd9-bea47df44040/%EC%99%80%EC%9D%B4%EB%9E%A9-%EB%9D%BC%EC%9D%B4%EC%96%B8%EB%A1%9C%EC%BC%93_%EC%96%91%ED%95%B4%EA%B0%81%EC%84%9C(MOU)_230425.docx</a></div></figure><figure id="030d0a70-7eac-4429-8fea-47f7aa9ccdbd"><div class="source"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%8B%E1%85%AA%E1%84%8B%E1%85%B5%E1%84%85%E1%85%A2%E1%86%B8%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%AB%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%92%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%AF%E1%84%92%E1%85%AA%204552df00e356485d8d20ff069cf38798/230425_NDA_(%25EC%25A3%25BC)%25EB%259D%25BC%25EC%259D%25B4%25EC%2596%25B8%25EB%25A1%259C%25EC%25BC%2593.docx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/57521ca6-367b-4d1e-bc2c-15eae1cb12a4/230425_NDA_(%EC%A3%BC)%EB%9D%BC%EC%9D%B4%EC%96%B8%EB%A1%9C%EC%BC%93.docx</a></div></figure><ul id="84aa3d98-18c3-4741-9afa-a99838bac1be" class="bulleted-list"><li style="list-style-type:disc">목적<ul id="35963896-8cd7-4a9c-bc9a-ff81275e786c" class="bulleted-list"><li style="list-style-type:circle">잠재적인 사업기회를 발굴함과 동시에 이를 실현하고, 확대하기 위한 상호협력 의사 명문화</li></ul></li></ul><ul id="26befc22-965b-4066-bc8c-2427cf176cdd" class="bulleted-list"><li style="list-style-type:disc">기간: 1년</li></ul><ul id="c94561be-f9cb-458d-9ebc-123be99c037d" class="bulleted-list"><li style="list-style-type:disc">라이언로켓과 와이랩의 의무사항<ul id="19e65c93-e2e9-4cf4-80c1-212a35d2e49f" class="bulleted-list"><li style="list-style-type:circle">웹툰제작지원솔루션 최적화 실증 및 도입을 위한 방법에 대해 <span style="border-bottom:0.05em solid">상호 논의</span>를 적극적으로 진행</li></ul><ul id="fdcc2a6c-1a0d-4bc5-8a28-06c139268053" class="bulleted-list"><li style="list-style-type:circle">웹툰제작지원솔루션 최적화 실증 및 도입 과정에서 발생하는 <span style="border-bottom:0.05em solid">문제에 대한 해결 </span>또한 적극적으로 진행</li></ul></li></ul><ul id="8db97cf6-1f91-4ebf-97ab-a19b889270de" class="bulleted-list"><li style="list-style-type:disc">라이언로켓과 와이랩의 권리<ul id="657fdc95-9a02-4d24-a575-fa55f7e0a082" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">홍보</span> 목적으로 보도하거나 대외 공표</li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://mail.google.com/mail/u/2/#inbox/FMfcgzGsmhSGJVLJrxjghpbtfdMXVxnJ">20230516 웹툰 제작 효율화 단기 목표 선정을 위한 줌미팅 일정 확정</a> 및 웹툰 데이터셋 전달</summary><div class="indented"><p id="1be65324-a415-4b18-8e1d-5490f71c59c9" class="">미팅은 이번주 목요일 11시로 희망합니다. (5.18) → 승제님과 나도 참여  </p><p id="cfaa4c83-7cb6-4172-8f3f-1ca5e76a8e2b" class=""><a href="https://drive.google.com/drive/u/0/folders/1KxRor3gnMEfCqGmfZLyKLZ84MFfKOaZJ">https://drive.google.com/</a><a href="https://drive.google.com/drive/u/0/folders/1KxRor3gnMEfCqGmfZLyKLZ84MFfKOaZJ">drive/u/0/folders/</a><a href="https://drive.google.com/drive/u/0/folders/1KxRor3gnMEfCqGmfZLyKLZ84MFfKOaZJ">1KxRor3gnMEfCqGmfZLyKLZ84MFfKO</a><a href="https://drive.google.com/drive/u/0/folders/1KxRor3gnMEfCqGmfZLyKLZ84MFfKOaZJ">aZJ</a>구글 계정으로 접속 권한 요청주시면 승인드리겠습니다.<div class="indented"><p id="465bc27b-ee86-403a-af7a-4609812258bf" class=""><span style="border-bottom:0.05em solid">연재중 또는 연재예정 작품으로 자료의 보안을 유의 부탁드립니다!!</span></p></div></p><ul id="674aa684-054f-4b2c-a389-8b7ed372440a" class="bulleted-list"><li style="list-style-type:disc"><strong>절대검감</strong><ul id="b6b0715b-2bb6-4c2d-9c49-ac108b11b0eb" class="bulleted-list"><li style="list-style-type:circle">콘티 1~31화</li></ul><ul id="8d7b604a-ba8b-4013-ab9f-4d45e25bb5da" class="bulleted-list"><li style="list-style-type:circle">스케치 또는 선화 1화, 19~30화</li></ul><ul id="dd5a06b0-015a-4efa-96c4-d3b93a77d72e" class="bulleted-list"><li style="list-style-type:circle">원고(채색 레이어 분리) 1~30화</li></ul></li></ul><ul id="0678bbab-1d23-4b59-9f2d-329d0d971d9e" class="bulleted-list"><li style="list-style-type:disc"><strong>다크판타지 속 성기사</strong><ul id="6cdc037d-3306-43ad-8b1c-08e7254251d0" class="bulleted-list"><li style="list-style-type:circle">캐릭터시트</li></ul><ul id="135acd2d-00a6-46d0-b1cb-7834ba23fa89" class="bulleted-list"><li style="list-style-type:circle">콘티 1~3화</li></ul><ul id="07cb8b8e-259d-4795-8d25-add442203a59" class="bulleted-list"><li style="list-style-type:circle">스케치 1~3화</li></ul><ul id="d404c611-b7cb-482b-9956-d906d8342d85" class="bulleted-list"><li style="list-style-type:circle">펜선 1, 2화</li></ul><ul id="5af63713-f5e5-4444-8b94-0d6babc80d9d" class="bulleted-list"><li style="list-style-type:circle">원고 1화, 2화</li></ul></li></ul><p id="c94dc6f5-7b76-4284-869f-2184b96031c5" class="">
+</p><p id="11edd4ad-14e9-4a63-8611-42a6efc29ab7" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://lionrocket.slack.com/archives/C02GN0KUW6N/p1684378112437049">20230517 단기 목표 설정 미팅</a></summary><div class="indented"><p id="f8e63412-4d51-48f2-8cc8-49ae35c3c25b" class="">&lt;진행 우선순위&gt;</p><ul id="c28aa03f-9110-4477-9b47-86b29e18c023" class="bulleted-list"><li style="list-style-type:disc">1순위 : 펜터치 to 밑색</li></ul><ul id="8965a0a2-7409-4821-850d-50e3f3e1e58a" class="bulleted-list"><li style="list-style-type:disc">2순위 : 콘티 to 펜터치(선화)</li></ul><p id="0ac558da-9aea-4289-8841-dc0448add20d" class="">--------</p><p id="d28a400e-61fb-4266-887d-0134a9c00573" class="">Q1) 기존에 우리가 알고 있는 스케치 to 펜터치랑 다른 배경은?</p><ul id="0594b570-e88a-4f4d-a9ad-610a4dd4b5a9" class="bulleted-list"><li style="list-style-type:disc">와이랩 내 웹툰을 제작 하는 방식은 작가마다 다른 경우가 대부분인데, 해당 작가님의 스케치 스타일이다(펜터치에 가까운 스케치인데, 디테일한 부분을 보면 부족한 부분이 있다)</li></ul><ul id="af5a624c-2145-4aaa-9a26-62be5c8cac8a" class="bulleted-list"><li style="list-style-type:disc">그러나 라이언로켓이 생각하는 스케치 형태로 작업하시는 분도 있기는 하다</li></ul><div><p id="75464bfa-91fb-402e-91fd-72b20f7ed9f9" class="">Q2) 와이랩에서는  펜터치 to 밑색 어떤 식으로 작업을 맡기는지?</p><ul id="29720311-4e12-4f01-8397-46c1de73cdb9" class="bulleted-list"><li style="list-style-type:disc">캐릭터에 대한 색을 팔레트로 지정해 주고 펜터치 결과물을 전달하는 식으로 한다</li></ul><p id="4ddc73c0-f9bb-4fd1-b478-b02618776a9f" class="">Q3) 정확한 펜터치 to 밑색의 input 과 output 은? (더블 체크 차원)</p><ul id="9e7d72c8-40c4-4728-b243-1f14e814566e" class="bulleted-list"><li style="list-style-type:disc">우리가 보낸 데이터 중에 펜터치가 input 이고</li></ul><ul id="786cde7b-891c-4afa-a001-291fd68a2d57" class="bulleted-list"><li style="list-style-type:disc">원고에서 명암 및 후보정이 빠진 밑색 상태가 output 이다 (레이어 제거하면 보일 것이다)</li></ul><p id="31419dfc-90f3-4add-8e0c-e5b9b05085c9" class="">Q4) 와이랩에서 생각하는 펜터치 to 밑색의 요구조건은?</p><ul id="9c41804d-b7d1-432e-9715-8e9ff8523f53" class="bulleted-list"><li style="list-style-type:disc">보통 1시간 걸리는 것은 15 분 정도 걸리게 해줘도 우리에게 효용이 있을 것 같다.(생산성 기준)<ul id="a054f8bc-1471-4d41-8ea9-e2d3ee64b196" class="bulleted-list"><li style="list-style-type:circle">인공지능 결과물에서 후보정 때문에 1시간이 넘어버리면 효용 X</li></ul></li></ul><ul id="a402b637-eaf0-4654-8c63-763b0544cca0" class="bulleted-list"><li style="list-style-type:disc">컷마다 색의 일관성이 무조건 동일해야 한다(이거는 필수중의 필수)<ul id="33df6c1a-6160-4315-a032-af67153cd8d0" class="bulleted-list"><li style="list-style-type:circle">위 컷과 아래컷의 얼굴 색이 바뀌면 X</li></ul></li></ul><ul id="77af0812-e107-447c-9e18-8484dff52c6c" class="bulleted-list"><li style="list-style-type:disc">밑색이 들어가면 머리, 피부, 옷 등으로 레이어가 분리되어야 한다.<ul id="8534bc9f-6916-421e-96cf-d56350990e36" class="bulleted-list"><li style="list-style-type:circle">그래야 명암/후보정 작업 때 용이하다.</li></ul></li></ul><ul id="9adda0de-c8ca-4799-b2c6-f980e8d992f5" class="bulleted-list"><li style="list-style-type:disc">각 색의 경계가 명확히 구분되어야 한다(침범 X)<ul id="762506a5-2178-4632-af3f-65876b4ef23c" class="bulleted-list"><li style="list-style-type:circle">어려울 것 같지만 눈의 흰자 부분 같이 디테일한 것도 되면 좋을 것 같다.</li></ul></li></ul></div><p id="49bd7972-6e02-4f7c-99c5-ef99600e9394" class="">(디테일한 조건들은 중간 샘플 기반으로 1-2 주 단위로 소통/미팅하는 식으로 이야기 나눔)</p><p id="0a4d6202-79e1-4897-84c6-3b224da02741" class="">Q5) 우선순위에 대한 생각은?</p><ul id="d6053e55-0866-4726-bca1-bdae95242dbd" class="bulleted-list"><li style="list-style-type:disc">좋다 해당 방향성 대로 진행하자. 중간 중간 소통 자주 하면서</li></ul><ul id="d6c4308a-f45f-41af-a317-cb7ae4bf216e" class="bulleted-list"><li style="list-style-type:disc">그러나 우리 입장에서는 콘티 to 선화가 더 매력적인 기술이다.</li></ul><ul id="3a44673d-ce8a-4763-996e-1708cb10896d" class="bulleted-list"><li style="list-style-type:disc">(콘티에 대한 ‘룰’이 추가 될 수 있다는 점은 전달)</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://lionrocket.slack.com/archives/CNC6V20P6/p1686232433441849">20230608 와이랩 왈 현재 수준으로는 쓰기 어렵다</a></summary><div class="indented"><ol type="1" id="d4e96964-cb9b-4c77-ae48-b1e3dc8b5582" class="numbered-list" start="1"><li>한 줄 요약 : 현재 수준으로는 쓰기 어렵다</li></ol><ol type="1" id="e9703064-a523-41ba-ab1e-7c4572c866d0" class="numbered-list" start="2"><li>피드백 상세</li></ol><ul id="9d84cea0-b598-435a-b376-1610cb89529b" class="bulleted-list"><li style="list-style-type:disc">영역에 맞는 색이 들어가지 않는 점<ul id="68805dd5-7530-4076-bb40-72f2c76d0de3" class="bulleted-list"><li style="list-style-type:circle">“당연히 쓸 수 없다”</li></ul></li></ul><ul id="fba3136a-dbbc-47da-b05b-8886c5d40d5f" class="bulleted-list"><li style="list-style-type:disc">펜터치에서 밑색을 거치면서 얼굴/디테일한 부분에 왜곡이 발생하는 점<ul id="2a7db446-a6e9-4770-9b69-fd51b8d6a593" class="bulleted-list"><li style="list-style-type:circle">“인상이 다 바뀌었다”</li></ul><ul id="3a14b78f-e63a-4b5f-9656-3fd43e2c5617" class="bulleted-list"><li style="list-style-type:circle">“펜터치랑 밑색 결과 겹처서 보면, 선 다 튀어나오는 상황이다”</li></ul><ul id="2e9540fd-8f8d-46d2-859a-9a1416e443ec" class="bulleted-list"><li style="list-style-type:circle">“해당 부분이 개선되지 않으면 쓸 수 없을 것 같다”</li></ul></li></ul><p id="10be6320-9181-46a2-ac71-3def25efa950" class="">3. 추가 요구사항</p><ul id="22039cc8-770f-46cc-bbb8-f6fc07689d11" class="bulleted-list"><li style="list-style-type:disc">밑색으로 변환한 결과물에 펜터치 선이 제거된 레이어를 전달 받기를 원한다<ul id="97502e29-48c5-45a5-9766-5f351ca5b66f" class="bulleted-list"><li style="list-style-type:circle">“그러면 후보정해서 쓸 수 있는 가능성이 올라갈 수도 있다고 생각한다”</li></ul></li></ul><ul id="bb112319-a78f-4735-8b91-ba43840884a0" class="bulleted-list"><li style="list-style-type:disc">나중에 전달받을 때 1200x3600 사이즈로 받고 싶다</li></ul><ul id="6f08a695-77c2-407e-9ee2-4abf6f0d8b01" class="bulleted-list"><li style="list-style-type:disc">하나의 긴 세로 형태로 전달 받고 싶다(우리가 전달 받은 데이터의 세로 형식 그대로를 의미하는 듯)</li></ul><ul id="59d2cde9-c2d3-4dd7-9f10-5f56cd711178" class="bulleted-list"><li style="list-style-type:disc">생성 프로세스를 알 수 있는 소개영상이 있다면 좋을 것 같다(어떤 식으로 작동하는 지 궁금해 하는 듯)</li></ul><p id="c2f38653-4727-43bf-beae-9fdae245c97a" class="">
+</p></div></details></div></article></body></html>

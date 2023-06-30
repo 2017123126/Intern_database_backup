@@ -1,0 +1,678 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>20230512 all-hands</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="27db5a05-6240-46b3-8a20-adbbac410289" class="page sans"><header><h1 class="page-title">20230512 all-hands</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-green">dailyscrum/meeting</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3">전사 방향성 “웹툰 더 나아가 애니메이션 시장으로의 집중”</summary><div class="indented"><h3 id="90b67151-5f56-4fe0-945c-c37983062c38" class="">근거</h3><ol type="1" id="ff9d4866-497f-4d01-b511-09ca163325b9" class="numbered-list" start="1"><li>확실한 니즈 <ul id="9ba9d92a-8ff2-41fb-aa61-ea9be431eff7" class="bulleted-list"><li style="list-style-type:disc">웹툰 1화 제작에 500만원 듦</li></ul><ul id="e4f3c87d-ea12-4dc7-b829-e26444992d80" class="bulleted-list"><li style="list-style-type:disc">애니메이터 하루에 열심히 만들어봐야 4초 만듦</li></ul></li></ol><ol type="1" id="997c032e-e349-4a7a-a7ec-78d388cf3c07" class="numbered-list" start="2"><li>몰리는 돈<ul id="f10dfc06-311e-4b08-8a66-ec105deda904" class="bulleted-list"><li style="list-style-type:disc">컨텐츠, IP의 가치가 엄청남</li></ul><ul id="bb57cb91-25f2-43a0-aa2e-7ffa3d531553" class="bulleted-list"><li style="list-style-type:disc">애플도 뛰어들라고 함</li></ul></li></ol><ol type="1" id="f1b8db99-7678-43db-88af-bd1ae1bb8c8b" class="numbered-list" start="3"><li>다른 니즈 종류 대비 충분한 기술 수준<ul id="f6121373-9af6-44f9-b0b1-0c94206a60ed" class="bulleted-list"><li style="list-style-type:disc">승환님 피셜 고객이 바라는 수준 대비 70% 정도 갖췄다</li></ul></li></ol><h3 id="7892ade4-0b03-4218-80f1-ad51679d49da" class="">지금 필요한 건</h3><ol type="1" id="248e59ab-49a1-4b62-83cd-fab2fc92ba3c" class="numbered-list" start="1"><li>돈 벌 수 있느냐를 보여줘야<ul id="4a95ce27-26c6-4d30-8988-aac0bbbb1454" class="bulleted-list"><li style="list-style-type:disc">지금 IR들을 설득하기 위해서 돈 벌 수 있는지를 보여줘야 함</li></ul><ul id="ee12b3e8-9b22-404e-a10b-5f80d10c2e7e" class="bulleted-list"><li style="list-style-type:disc">이 돈을 갖다가 웹툰 고도화, 마케팅으로 사용할 것</li></ul></li></ol><ol type="1" id="db08cd1e-aa9b-4890-9fa7-4ecc6dbe3ea9" class="numbered-list" start="2"><li>시장의 반감 극복<ul id="39d1dcba-c37d-41f9-ae1c-bab5283d1184" class="bulleted-list"><li style="list-style-type:disc">생각보다 진짜 중요한 요소</li></ul><ul id="3cd199b6-ec42-4c49-aee7-b09947ddd147" class="bulleted-list"><li style="list-style-type:disc">네이버 같이 쟁쟁한 기업들도 극복 못한 요소일 것으로 보임</li></ul><ul id="ca193cce-771c-4b99-bc6c-b4bb1a2bc28b" class="bulleted-list"><li style="list-style-type:disc">고객사 미팅, 작가 인터뷰 마다 들어오는 얘기</li></ul></li></ol><p id="0ff515f9-6681-45c1-9eae-5bacd775c42b" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3">B2B 길드 </summary><div class="indented"><div><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">4월 회고</summary><div class="indented"><h3 id="ba494455-97c0-4845-84a6-6b1c9360dc69" class="">4월 목표 60퍼센트 달성</h3><p id="68d29c57-435a-471c-9b5e-e676e233ea6c" class="">생성 AI <span style="border-bottom:0.05em solid">POC 및 MOU 3건 이상 추진</span>으로 성장 모멘텀을 만들고 투자 유치에 기여</p><ul id="fb385f9a-0318-4b1e-ac15-b72d7dbb11b3" class="bulleted-list"><li style="list-style-type:disc">웹소설 표지 및 웹툰 제작 지원솔루션 최적화 사업 <span style="border-bottom:0.05em solid">MOU 2건</span> 체결 (<span style="border-bottom:0.05em solid">스토리작, 크릭앤리버</span>)</li></ul><ul id="983168f3-3283-4357-9512-e8897903d5c3" class="bulleted-list"><li style="list-style-type:disc">와이랩, 청강대와 AI 웹툰 공동제작을 위한 POC 및 MOU 체결 협의 중</li></ul><h3 id="cbd574de-b39c-4ccb-94dd-7ad6984ba900" class="">기대효과</h3><ul id="018472d7-9a61-42e6-86c6-390fd4a641e5" class="bulleted-list"><li style="list-style-type:disc">스튜디오와의 웹툰 제작 공정 효율화 POC를 통해 라로의 기술을 현장에서 빠르게 검증</li></ul><ul id="abb17b02-1501-496c-b71f-524ce2015983" class="bulleted-list"><li style="list-style-type:disc">스튜디오와의 웹툰 제작 공정 효율화 POC를 통해 사용성과 퀄리티를 충족하는 솔루션으로 고도화</li></ul><ul id="0efbae7e-8119-41d3-ab91-0b613696b689" class="bulleted-list"><li style="list-style-type:disc">웹소설 PaidPOC를 통한 수익화 모델 가능성 검증</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">5월 목표</summary><div class="indented"><h3 id="19aa7190-e77c-4a0c-b055-8ec9fb1fb6f2" class="">웹툰 AI assist 모델 Paid POC 의향 발굴</h3><ul id="cd84180e-f305-446b-9bd4-53095976143b" class="bulleted-list"><li style="list-style-type:disc">웹툰 AI assist 모델의 Paid POC 의향 3건 이상 발굴 (현재 진행 중인 협력사 중에서)</li></ul><ul id="3bdd020f-719c-4641-b272-efabdbad263f" class="bulleted-list"><li style="list-style-type:disc">6월 Paid POC 진행을 위한 선제적 수요 발굴</li></ul><ul id="0b2bf5a6-35ee-4064-9eb4-a99b25f6d702" class="toggle"><li><details open=""><summary><strong>현재(5/12) 기술 로드맵</strong></summary><ol type="1" id="fa97634a-44b0-4f23-8c95-7e647fe3de97" class="numbered-list" start="1"><li>윕툰 AI 어시스트 모델<ul id="b811cab3-73e4-4980-9797-9185595da787" class="bulleted-list"><li style="list-style-type:disc">기존 인간 작가의 프로세스를 그대로 모방</li></ul><ul id="6485cbd3-d438-410f-9676-7405ee36cd71" class="bulleted-list"><li style="list-style-type:disc">핵심 기능<ul id="5dadf203-9dfe-4e36-a22d-877f348e1cba" class="bulleted-list"><li style="list-style-type:circle">스케치 투 선화</li></ul><ul id="f8d97138-7c5a-40fb-8793-339236d88548" class="bulleted-list"><li style="list-style-type:circle">선화 투 밑색</li></ul></li></ul><ul id="b90442db-45f9-484e-a52c-5038d89431d3" class="bulleted-list"><li style="list-style-type:disc">Timeline<ul id="74e24edb-e76c-4919-b635-87ba84f2fe9d" class="bulleted-list"><li style="list-style-type:circle">5월 말까지 데모 (패키징 제외)</li></ul><ul id="090a2eb1-bf91-4880-b768-a64fae323ed2" class="bulleted-list"><li style="list-style-type:circle">5월 말에 만들어지기 전까지 MOU 협력사를 대상으로 paidPOC 의향 고객을 만들어내자</li></ul></li></ul></li></ol><ol type="1" id="95bfc794-fb45-4e90-858f-d51aaf5bb36d" class="numbered-list" start="2"><li>제너레이션 모델<ul id="a75ce3ff-df5d-4f51-a815-acc4b8286c15" class="bulleted-list"><li style="list-style-type:disc">기존 인간 작가의 프로세스를 벗어나 새로운 프로세스를 제아</li></ul><ul id="36441dd0-5962-4d45-9611-84b4319353bd" class="bulleted-list"><li style="list-style-type:disc">종류<ul id="873c063d-2427-4065-b8ca-a81a08118a8d" class="bulleted-list"><li style="list-style-type:circle">인물</li></ul><ul id="141971d2-2282-47f8-80b3-9790d0ba4da0" class="bulleted-list"><li style="list-style-type:circle">인물 외</li></ul></li></ul><ul id="35da56cd-25cf-483d-8553-0b104df99ec4" class="bulleted-list"><li style="list-style-type:disc">Timeline<ul id="b5bde0c0-bc7d-44b4-9d5b-e84d8e302600" class="bulleted-list"><li style="list-style-type:circle">데모 만들기까지 6월 중순 (패키징 제외)</li></ul></li></ul></li></ol></details></li></ul><h3 id="63efdba9-f1fb-4df7-899f-99caa4926678" class="">웹소설 AI 표지제작 수요개발 프로모션 진행 (레퍼런스 5개 이상 확보)</h3><p id="a515c3d3-799e-4171-b651-12214a9b418e" class="">시장에서의 목소리</p><ul id="cfb82788-fb1e-460b-9549-451cdb585d8a" class="bulleted-list"><li style="list-style-type:disc">흔히 웹소설 표지에 이용되는 생성 AI의 사용성 및 생선성/퀄리티가 떨어진다</li></ul><p id="72e10f5c-7582-424c-a3b9-db187874031e" class="">해결방안:</p><ul id="3b4f6573-cdea-49b8-a2fa-1efb6c1485be" class="bulleted-list"><li style="list-style-type:disc">라이언로켓의 축적된 노하우료 생산성 향상</li></ul><ul id="0fe1f621-aabd-4bdd-9f5a-4df9640fbc3f" class="bulleted-list"><li style="list-style-type:disc">다양한 시안과 손쉬운 수정으로 고객 만족도 향상</li></ul><ul id="b9817726-08e9-4dbe-82cb-5a6b9b47e089" class="bulleted-list"><li style="list-style-type:disc">장르별 포트폴리오 준비로 커뮤니케이션 코스트 절감</li></ul><ul id="67f15172-8967-4184-82de-7b4b80195a4a" class="bulleted-list"><li style="list-style-type:disc">AI 작가 준비, 플랫폼(크몽)을 통해 수요층을 직접 공략하여 저변 확대 → 이걸 내가 맡음<div></div></li></ul></div></details></div><ul id="dc7d0f45-0d0a-4832-a57c-cb2f362c38f4" class="bulleted-list"><li style="list-style-type:disc">꼭 웹소설 표지 최종 도착지가 B2B, 그러니까 5개 사와의 웹소설 AI 표지제작 수요개발 프로모션 진행이어야 할까? → 그럴 필요 없음 <p id="6fd06eb3-7a65-4a98-a5bc-9ff1978b49f8" class=""><a href="20230512%20343a65a712874b61b9c049ae23b378a8.html">https://www.notion.so/343a65a712874b61b9c049ae23b378a8#3b9be1db5bcf461aa67d4e6b9dcc9f60</a></p></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3">프로덕션 길드</summary><div class="indented"><h2 id="aaa0170e-cc72-46cf-819d-8bc1e7ca5370" class="">5월 목표</h2><h3 id="3d7c4292-712a-496f-9c22-9f9e07e6870b" class="">웹툰 제작 프로세스 효율화를 위한 데이터셋 확보</h3><div><ul id="c6225154-e5f6-43e9-b7a7-d584ab520ec9" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">그럼 프로덕션 길드랑 테크 길드랑 하는 일이 뭐가 다른 거지?</span><div class="indented"></div></li></ul></div><ul id="378c9984-e188-484f-bb4c-db69f1667ba6" class="bulleted-list"><li style="list-style-type:disc">스케치 to 펜터치</li></ul><ul id="1344d841-aee0-406a-b80d-58463de09eaf" class="bulleted-list"><li style="list-style-type:disc">펜터치 to 밑색</li></ul><ul id="584cdcc3-e080-4973-8104-9df2a9ddedd4" class="bulleted-list"><li style="list-style-type:disc">캐릭터 고정</li></ul><h3 id="c173b248-f4e8-47af-8df6-06dba99d2a1d" class="">생성 AI 로 매출을 발생시킬 수 있는 웹소설 표지 제작 시스템을 구축한다</h3><div><ul id="d574c5b6-b59c-485b-a861-052a355f450f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">이미 완성형인 게 아님?</span><div class="indented"></div></li></ul></div><ul id="a88487c5-0b73-4087-b9d0-92be2258af02" class="bulleted-list"><li style="list-style-type:disc">웹소설 표지 제작 시스템 도식화 및 문서화</li></ul><ul id="3999ea40-188a-4bf4-b7f1-816902507756" class="bulleted-list"><li style="list-style-type:disc">웹소설 표지 1장 당 제작 시간을 n% 감소시킨다</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3">테크 길드</summary><div class="indented"><h2 id="9e649112-b27b-4784-8daf-dbc2c4a238ba" class="">5월 목표</h2><h3 id="35be79ec-9b31-48c6-a3e1-1b8a01ee3520" class="">웹툰 제작 효율화 Paid POC 유도, 지원</h3><p id="4165b3f6-b765-4cfb-a588-cefe3ae0203d" class="">효율화 프로세스 구성</p><ul id="f0bc8e93-d02d-437c-9fae-1e785174d8d4" class="bulleted-list"><li style="list-style-type:disc">스케치 to 선화</li></ul><ul id="f216423b-2b5a-4118-b42c-5d82f7141f6e" class="bulleted-list"><li style="list-style-type:disc">선화 to 밑색</li></ul><p id="6975c594-f1bf-49b4-b1af-50bf8a71f49a" class="">자동화 기초 기술 개발</p><ul id="0f2bfffd-6bb8-451c-b6df-08844554242d" class="bulleted-list"><li style="list-style-type:disc">웹툰 이미지를 위한 캐릭터 고정 기술</li></ul><div><ul id="ba893fd8-3008-4bc9-b128-e88b9b6c962c" class="bulleted-list"><li style="list-style-type:disc">글 콘티 혹은 3D 구도에서 이미지 생성 자동화<ul id="aab4a01e-884a-4e75-a514-4ed138f08167" class="toggle"><li><details open=""><summary>easyposer</summary><figure id="3e02d2c8-0043-4a3e-8920-962b654afa3e"><a href="https://lionrocket.slack.com/files/UBQD0SB0E/F0575UKTYS1/image.png" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://lionrocket.slack.com/files/UBQD0SB0E/F0575UKTYS1/image.png</div></div></a></figure></details></li></ul></li></ul></div></div></details><p id="47fe7e55-2057-44a8-a9ee-4afc10c6a03d" class="">
+</p></div></article></body></html>

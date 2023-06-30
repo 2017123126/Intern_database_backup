@@ -1,0 +1,696 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>[MOU/NDA 완료]크릭앤리버 웹소설 표지 및 웹툰 제작 솔루션</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e5c17ce6-32e3-4196-91f3-4ba5896f4378" class="page sans"><header><h1 class="page-title">[MOU/NDA 완료]크릭앤리버 웹소설 표지 및 웹툰 제작 솔루션</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-green">COLABORATION</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><figure id="0330971c-2a7a-411d-a501-e33517c668bd"><div class="source"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%85%E1%85%B5%E1%84%87%E1%85%A5%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%20e5c17ce632e3419691f34ba5896f4378/%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25A8%25E1%2584%258B%25E1%2585%25A2%25E1%2586%25AB%25E1%2584%2585%25E1%2585%25B5%25E1%2584%2587%25E1%2585%25A5-%25E1%2584%2585%25E1%2585%25A1%25E1%2584%258B%25E1%2585%25B5%25E1%2584%258B%25E1%2585%25A5%25E1%2586%25AB%25E1%2584%2585%25E1%2585%25A9%25E1%2584%258F%25E1%2585%25A6%25E1%2586%25BA_%25E1%2584%258B%25E1%2585%25A3%25E1%2586%25BC%25E1%2584%2592%25E1%2585%25A2%25E1%2584%2580%25E1%2585%25A1%25E1%2586%25A8%25E1%2584%2589%25E1%2585%25A5(MOU)_230424.docx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b4761dfc-b4f1-429e-bfd9-2a5b0837a32d/%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%85%E1%85%B5%E1%84%87%E1%85%A5-%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AB%E1%84%85%E1%85%A9%E1%84%8F%E1%85%A6%E1%86%BA_%E1%84%8B%E1%85%A3%E1%86%BC%E1%84%92%E1%85%A2%E1%84%80%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5(MOU)_230424.docx</a></div></figure><figure id="859726af-ada7-4f8e-ad00-ffd373df2dd6"><div class="source"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%85%E1%85%B5%E1%84%87%E1%85%A5%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%20e5c17ce632e3419691f34ba5896f4378/%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25A8%25E1%2584%258B%25E1%2585%25A2%25E1%2586%25AB%25E1%2584%2585%25E1%2585%25B5%25E1%2584%2587%25E1%2585%25A5-%25E1%2584%2585%25E1%2585%25A1%25E1%2584%258B%25E1%2585%25B5%25E1%2584%258B%25E1%2585%25A5%25E1%2586%25AB%25E1%2584%2585%25E1%2585%25A9%25E1%2584%258F%25E1%2585%25A6%25E1%2586%25BA_NDA_230424.docx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/538b15d1-3b77-489f-8088-ade7524829da/%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%85%E1%85%B5%E1%84%87%E1%85%A5-%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AB%E1%84%85%E1%85%A9%E1%84%8F%E1%85%A6%E1%86%BA_NDA_230424.docx</a></div></figure><p id="ae6b405c-3e57-4220-9b55-8861926d1817" class="">
+</p><p id="13986792-4d2a-4c8e-a5ba-d98118acd9b3" class=""><a href="https://www.notion.so/1e163a981b8a43d49466db83724946bd?pvs=21">크릭앤리버</a> </p><ul id="a34d11f5-407e-4085-9584-b6527389f427" class="bulleted-list"><li style="list-style-type:disc"><strong>업종</strong> : 웹툰, 웹소설 제작 및 전자출판 외</li></ul><ul id="f102885e-783c-44f9-ac9d-a5bb67a49b8d" class="bulleted-list"><li style="list-style-type:disc"><strong>기업개요</strong>
+ - 일본 C&amp;R그룹 한국지사(2001년 설립), 
+ - 방송인력 파견 및 방송제작 사업으로 시작, 
+ - 영화/게임/웹툰/웹소설 제작 등 사업 확장. 
+ - 이현세작가 및 허영만작가 외 다수의 작가 및 감독과 에이전트 계약.</li></ul><ul id="00173879-4c19-4d9b-99d0-308a25df1898" class="bulleted-list"><li style="list-style-type:disc"><strong>니즈 및 페인포인트</strong>
+ - 생성AI를 활용한<span style="border-bottom:0.05em solid"> 웹툰 제작 효율화에</span> 관심이 있으나 실제 사용해보거나 검토하지는 않은 상황, 콘텐츠 제작 팀장도 AI활용에 적극적인 관심 표명<p id="ff5f8710-ca5c-4d80-a591-904eefb473ac" class="">- 콘티생성모델에 관심 많음</p></li></ul><ul id="fe47c57a-b715-442c-8614-c59a5a0dd340" class="bulleted-list"><li style="list-style-type:disc"><strong>상담 및 제안</strong>
+ - 회사 및 솔루션 소개 및 LRSD PoC 시연
+ - 솔루션 최적화 실증을 위한 협업체결 협의 및 MOU, NDA 전달</li></ul><ul id="f2a98ea5-11d6-4c0a-b723-845e8440750e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple"><strong>Action Item</strong></mark><mark class="highlight-purple">
+ - 육연식대표 미팅(4/24)
+ - 협업 방식 및 MOU 체결일정 협의</mark><p id="2b71a2c0-f4b5-41b0-ad85-5001ff4e70fc" class="">- MOU 체결후, 스토리작향으로 준비한 LRSD 제공 <a href="https://www.notion.so/1e163a981b8a43d49466db83724946bd?pvs=21">크릭앤리버</a> </p><p id="1b311e43-e263-403d-a8f6-6be3ef5ef9fa" class="">
+</p></li></ul><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230502 양승제</summary><div class="indented"><p id="e86beebe-72c2-470f-8886-7919bf1ae12e" class="">금주 목요일(5/4) 11시에 저희 회사에서 대표님간 미팅 및 업무제휴 체결식이 있으니</p><p id="4654f749-16ed-4be1-9119-f0e99f5fcf58" class="">가능하시면 내일까지는 날인본을 받아보았으면 합니다.</p><p id="bff9080a-cfac-49ed-ac3d-0871a715dcf9" class="">확인부탁드립니다.</p><p id="8dbca928-09d4-4c89-b260-1474ec65f6c6" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230504 크릭엔리버 미팅 요약</summary><div class="indented"><ul id="937625e2-35ff-435d-8899-121329d47537" class="bulleted-list"><li style="list-style-type:disc">참석자 : 크릭앤리버 육연식대표,라이언로켓 정승환대표, 양승제이사</li></ul><ul id="b839211c-afef-4a66-9f60-d7b914239e0d" class="bulleted-list"><li style="list-style-type:disc">회사소개<ul id="57cf9435-2002-4ed2-911f-770555ef0468" class="bulleted-list"><li style="list-style-type:circle">초기 두가지 사업을 해옴<ul id="21b679ab-7263-4b01-b351-6ad94a396193" class="bulleted-list"><li style="list-style-type:square">방송 제작 스탭 에이전시 : 방송 3사 외 거의 모든 방송사에 외주 직원 공급</li></ul><ul id="cffa4022-a4d3-4b32-b377-26dfbde54ca3" class="bulleted-list"><li style="list-style-type:square">방송 제작 : 다큐, 특종 전문 프로덕션 (아프간 내전, 이라크, 소말리아 북한 현장 촬영 등) , 채널A 보도국 외주 운영</li></ul></li></ul><ul id="760d5bca-b98d-446a-a3c8-b3f9425f7591" class="bulleted-list"><li style="list-style-type:circle">웹툰 시작은 2018년 부터<ul id="433e84dc-4ab8-445d-9bf3-0905e23765d6" class="bulleted-list"><li style="list-style-type:square">후발 주자라서 웹툰작가 에이전시 사업을 했었는데 네이버가 계약금 지불하면서 전부 뺏어감.</li></ul><ul id="9e02084d-9cb7-404b-b283-803ba7442a27" class="bulleted-list"><li style="list-style-type:square">현재 두가지 방식으로 웹툰 제작<ul id="94f04961-f5c8-4b55-9d3b-28342451c0ae" class="bulleted-list"><li style="list-style-type:disc">스튜디오 제작</li></ul><ul id="6c2d90c0-35da-48bc-8491-3ab13485f655" class="bulleted-list"><li style="list-style-type:disc">외부작가 선투자 후 수익 쉐어</li></ul><ul id="91e6f235-187a-40cb-911a-f13b9798c65a" class="bulleted-list"><li style="list-style-type:disc">그 밖에 일본 작품 수입하여 국내 런칭</li></ul></li></ul></li></ul></li></ul><ul id="9f42ecd8-f9f2-4883-a441-f69c29eebe73" class="bulleted-list"><li style="list-style-type:disc">미팅내용<ul id="642984a5-69f8-423c-915e-9a7234e92301" class="bulleted-list"><li style="list-style-type:circle">웹툰은 한두개 작품이 전체를 먹여 살리는 구조, 히트작이 중요</li></ul><ul id="56559456-9153-48f7-a44b-79cc78a6a0b7" class="bulleted-list"><li style="list-style-type:circle">AI활용에 대해서 오래전 부터 검토<ul id="be543881-889d-4602-8592-4c325c4ddf5a" class="bulleted-list"><li style="list-style-type:square">펄스나인과도 공동 사업을 했었으나 결과X</li></ul><ul id="402a29ee-69d0-4327-83de-f64d6d933dcc" class="bulleted-list"><li style="list-style-type:square">당시 펄스나인은 웹툰 AI개발이 사업성이 없다고 판단했던 거 같다.</li></ul></li></ul><ul id="1d08e884-f4d5-4631-a6e4-5eb97060cb65" class="bulleted-list"><li style="list-style-type:circle">작가 출신의 AI개발사에 웹툰 제작 의뢰 했었음<ul id="381fe607-4eba-4129-9a43-f204d0b9cc11" class="bulleted-list"><li style="list-style-type:square">콘티, 시나리오 줬으나 3달이 지나도 못 만들더라</li></ul><ul id="5069911d-a336-46fa-a01d-816b005a9197" class="bulleted-list"><li style="list-style-type:square">어딘지 오픈은 못해줌, 작가가 비밀리에 AI를 활용하여 연재 중</li></ul></li></ul><ul id="d3d0c95e-98f8-403b-a704-6d77483afab8" class="bulleted-list"><li style="list-style-type:circle">웹툰시장 현황 및 근로 현황<div><ul id="520d671a-16e2-4984-95b0-a354f3d419d1" class="bulleted-list"><li style="list-style-type:disc">네이버 및 카카오 연재 작품수가 약 1600작품<ul id="7d3fa9af-f4b8-4411-bdca-8aa324b28303" class="bulleted-list"><li style="list-style-type:circle">이중 돈을 버는 작품은 약 100여 작품, 대형 제작사도 매출 200억 수준임, 이익률 50%(?)</li></ul><ul id="d89e2823-67cf-49b5-9922-a4ece35972cd" class="bulleted-list"><li style="list-style-type:circle">여기에 연관된 작가수가 약 10만명</li></ul></li></ul></div><ul id="41f35d69-4b5b-4221-aa39-874df284a65d" class="bulleted-list"><li style="list-style-type:square">경쟁 심화로 화당 100컷이 되어가고 있다.<ul id="28da56d2-3a62-4f6a-8465-d196c6e569e3" class="bulleted-list"><li style="list-style-type:disc">일주일 풀로 해야 하루 15컷, 주말도 쉬지 못함 (통상은 하루 종일 4~5컷 나왔었음)</li></ul><ul id="4c581748-17b7-4190-9e8d-417d981df0bc" class="bulleted-list"><li style="list-style-type:disc">초기 1~3화는 130컷 이상으로 만들어야 함. 이것도 경쟁</li></ul><ul id="00202b67-7b88-4b87-bd1e-f7aec4ee6365" class="bulleted-list"><li style="list-style-type:disc">휴재는 죽음 = 1회(한주) 휴재를 했더니 10위 하던 웹툰이 150등으로 떨어짐, 이후 회복 어려움</li></ul></li></ul></li></ul><ul id="129e0f7a-3fb1-4187-a1e0-e155aa707bde" class="bulleted-list"><li style="list-style-type:circle"><strong>니즈</strong><div><ul id="b3c233b2-6992-43c7-929f-54279c8f0943" class="bulleted-list"><li style="list-style-type:disc"><strong>각</strong><span style="border-bottom:0.05em solid"><strong> 공정중 클리어 되는 부분이 있으면, 그래서 공수를 30~50%만 줄여줘도 좋겠음</strong></span></li></ul><ul id="dfbc3efb-a645-4c82-a31d-f0f1e73814be" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">스토리 넣고 콘티 생성하는 것 매우 매력적이라고 생각됨 (선화 수준이면 더 좋음)</span></li></ul><ul id="78a980a3-ca40-47a5-b61b-eacf67926150" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">선화 작업, 채색도 AI가 가능하지 않을까?</span></li></ul><ul id="2166c680-864a-47d3-a5e6-f026520286b0" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">다만 누군가의 밥벌이를 뺏지 않는 조건이어야 (예: 일러작가의 AI표지 제작 강력 반대)</span></li></ul><ul id="7e9d0588-a93e-4424-8574-42cc67dd2236" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid"><strong>제작 공정을 개선하고 단계를 줄여주는 방향으로 접근 필요</strong></span></li></ul></div></li></ul><ul id="191a7261-0845-42dd-abde-26f132d53fba" class="bulleted-list"><li style="list-style-type:circle"><strong>크릭앤리버 현황 및 협업 방향</strong><ul id="7e3e97f7-76ab-4f93-a5ee-ac1b3c25a51a" class="bulleted-list"><li style="list-style-type:square">연재중인 작품 2편, 스튜디오 제작중인 작품 3편, 2편 대기 중</li></ul><ul id="6b5adc8c-ea24-4152-8307-fb7c3ed10ef3" class="bulleted-list"><li style="list-style-type:square"><span style="border-bottom:0.05em solid">내부 직원들이 제작 중, 50화 이상 연재중으로 톤앤무드를 참고하여 테스트 가능</span></li></ul><ul id="41bd3e9e-9347-40c7-abda-d4ecfe5eaa23" class="bulleted-list"><li style="list-style-type:square">기존 대비 <span style="border-bottom:0.05em solid">컬러감이나 톤앤무드가 커버 된다면 이 부분의 공수를 줄일 수 있음</span></li></ul><ul id="e9ae7fa4-68f9-4eb7-98a7-591a13fb03f4" class="bulleted-list"><li style="list-style-type:square">후보정 부분도 디렉션이 있으니 가능하지 않을까?</li></ul><ul id="c7e7ef18-056c-442b-8e34-3e5adf61e012" class="bulleted-list"><li style="list-style-type:square"><span style="border-bottom:0.05em solid"><strong>콘티/선화/배경/채색/후보정 단계별로 비교 테스트</strong></span><ul id="657b012c-a340-4f64-b222-fb2863fb80df" class="bulleted-list"><li style="list-style-type:disc">비슷한 수준, 약간의 리터치만 필요한 수준이면 적용 가능하다고 판단됨</li></ul></li></ul></li></ul></li></ul><ul id="5d4e1011-e423-4b4c-b499-a3a0b784caa6" class="bulleted-list"><li style="list-style-type:disc">Next Plan<ul id="908c9ecb-6dfd-40be-b976-fa281362aba5" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">차주 실무진 미팅하여 실제 니즈 청취 및 협업방식 논의</span></li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230510 크릭앤리버 요청</summary><div class="indented"><div><ul id="3f5bb38f-e21a-4642-a59f-258c735ef3d8" class="bulleted-list"><li style="list-style-type:disc">크릭엔리버 요청 → pose 컨트롤에서 선화 추출 가능하냐? 조연정도만 자연스러워도 될 듯 → 준형님하고 얘기해서 준비하고 계심</li></ul></div><p id="b77ac2d8-0f90-400d-96e6-8094435b103f" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230512 크릭앤리버 미팅</summary><div class="indented"><p id="b4cba3cf-009c-480d-8517-5d9a2fbf6999" class=""><strong>승제님 발표</strong></p><ul id="2f6e753f-451b-4eeb-9cb0-be6f13198661" class="bulleted-list"><li style="list-style-type:disc">김민철 상무 이사님이 이번 미팅에 새로 들어오셔서 회사 소개와 웹툰 솔루션 소개(스토리작 버전 - 문제to해결책) 드림 <a href="https://www.canva.com/design/DAFgXc6yQ-A/MJzK4tbgugQ4G7kp4rlRcQ/edit?utm_content=DAFgXc6yQ-A&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton">canva 발표 자료</a></li></ul><ul id="a5216d6e-9fa9-4c9c-9b05-4160195d18ec" class="bulleted-list"><li style="list-style-type:disc">웹툰 로드맵 1. 어시스트 기반 2. 제너레이션 기반 설명 드림 <a href="20230512%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%B5%E1%84%89%E1%85%AE%E1%86%AF%20%E1%84%85%E1%85%A9%E1%84%83%E1%85%B3%E1%84%86%E1%85%A2%E1%86%B8%20e9c01f48e55245f0a4f450764cff6b04.html">웹툰 로드맵 설명 자료</a></li></ul><ul id="43616246-ddfd-4857-a567-ccbf1cc3b714" class="bulleted-list"><li style="list-style-type:disc">웹소설 표지 비즈니스 설명도 드림<a href="%5B%E1%84%8F%E1%85%A9%E1%86%AF%E1%84%83%E1%85%B3%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%5D%5BPaid%20POC%5D%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%20ccb8844d283247d0a840bbd8bfd14261.html"> 웹소설 표지 비즈니스 설명 자료</a></li></ul><div><ul id="8829c30c-2c98-4c33-be89-e1f590f1b1ca" class="bulleted-list"><li style="list-style-type:disc">3D 투 선화 레퍼런스도 보여드림. 화풍이 적용 안된 점이 커뮤니케이션 미스가 있었다는 점은 서로 이해한 상황임</li></ul></div><p id="a0bc591c-2274-40d6-97b2-35caecd902b2" class="">
+</p><p id="0e561ef6-4260-476d-9774-2a5a6d98c140" class=""><strong>협력 방식에 대한 논의</strong></p><ul id="9333c480-a770-4474-837b-943427c1d5fe" class="bulleted-list"><li style="list-style-type:disc">실제 연재중인 웹툰을 가지고 테스트를 네개에서 다섯개의 화를 데모를 돌려보는 건 어떨까?<p id="862480f6-3067-4527-a900-c9f9aeaccd70" class="">이미 작업된 거를 다시 만들어보든 없던 거를 만들어서 바로 적용을 하든</p></li></ul><ul id="5b7406b9-035a-4d08-be5c-1f07d0f89a8b" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">데이터 제공</span><p id="66cae7ed-d7ef-4b2d-83e4-0cbe6a4bb850" class="">크릭엔리버에서는 10화보다는 더 많은 거를 드리려고 함</p><p id="9aec4227-5213-420e-b9f5-beeeb0d41f71" class="">“realm of queen” (3D to 스케치를 원함, 스케치에서 선화 만드는 어시가 있는데 작가가 스케치를 못 만들어서 이 어시를 활용을 지금 못하고 있으니까)</p><p id="4772b9f6-95b9-4d28-9333-d38bf606e245" class="">“뉴비가 너무 강함” (3D to 선화를 원함)</p><p id="00f0b730-ed4e-45be-ae3b-2f74a8762b62" class="">요즘은 데포르메가 강한 편임</p></li></ul><ul id="5e10ac7f-5053-47f7-92c9-777ac816e0a2" class="bulleted-list"><li style="list-style-type:disc">어느 정도 시점에 실제 쓸 수 있을지 판단을 할 수 있을지<p id="31516f33-4424-4636-9e98-4faf5854e169" class="">마일스톤상으로는 6월 말 정도로, 패키징 제외</p></li></ul><p id="0e32a635-e47c-4b36-bd1b-617a95a12f00" class="">
+</p><p id="c1ce21f5-9794-455c-b8f4-24e5949d54e2" class=""><strong>니즈</strong></p><ul id="26f74145-4488-41e0-8436-963cbc6326a2" class="bulleted-list"><li style="list-style-type:disc">스케치가 안나오는 게 문제임. 지금은 임시방편적으로 복붙을 하든 해결을 하는 식임<p id="5a58f469-1f9f-445e-adc9-4d7f6bab6a0b" class="">스케치를 건너뛰고 바로 콘티에서 펜터치</p></li></ul><ul id="d87de6fa-4948-40a2-a919-411ca6105b9b" class="bulleted-list"><li style="list-style-type:disc">리소스 부족 문제<p id="8788b75e-2b0a-4835-8dbd-c2087847eadc" class="">정식 연재 전에 3화정도를 시험적으로 올려놓음</p><p id="0f6ebfbc-ddc8-4160-94b6-a8e6f99ee7cd" class="">그리고 정식 연재가 되면 기다무로 20화정도를 올려놓음</p><p id="d82d7afd-66b5-45ee-bb96-0c5ba5d3be76" class="">근데 20화가 끝나가면 계속 올려야 되는데<div class="indented"><p id="684a7571-ab15-4e6a-b089-0267b009275a" class="">최선을 다해도 1.5주에 한 편 정도</p><p id="e2036df1-d429-4433-96a3-8e9356179f05" class="">정식 연재 후 잘 되면 동기부여라도 돼서 좋은데 </p><p id="c0698987-af89-4e64-9dc7-d2808a02c83d" class="">잘 안되면 일단 계약한 게 있으니 도살장 끌려가듯이 억지로 해야</p></div></p></li></ul><ul id="60f4e8b5-a85a-4f5d-8863-109d22269e95" class="bulleted-list"><li style="list-style-type:disc">웹소설 표지<p id="de61824e-a149-468f-a124-6bb989e73d71" class="">지금 안그래도 작품 하나를 표지를 다시 그리고 있는 상황임 (단 이슈가 생기는 경우만 바뀌는 거지 보통은 안 바뀜)</p></li></ul><ul id="7ba1d69c-69e9-49ea-8b25-98ea5bdc8a19" class="bulleted-list"><li style="list-style-type:disc">단가<p id="03caa192-8540-452a-88b3-b155eef55da4" class="">웹툰 공정<div class="indented"><p id="27c67cad-8137-4386-a9dc-50ece93473eb" class="">스케치를 만드는 게 거의 7~8배 값이 들고 작가를 계속 써야 하는 문제가 있음</p><p id="b247b954-bf65-4311-82e5-812a0307c6ad" class="">어시스트로 선화(편당 10만원~20만원) </p><p id="67767c85-279b-4570-bfa4-7f208e09ed8b" class="">밑색(편당 10만원~20만원)</p></div></p><p id="2457c741-2e58-4a52-a48a-5e6c5fa9eeb3" class="">웹소설 표지 <div class="indented"><p id="d07fe519-390b-4045-b6ea-c8d8ce66699f" class="">평균가는 70~100만원</p><p id="0243a2f2-5027-46f2-945b-27f1d3f6fcc6" class="">신인이면 20만원~ 꽤 많이 쓰는 편</p><p id="e4976de2-9374-4159-9bdb-7635b39f25b3" class="">해봤다 50만원~  </p><p id="f795429b-255e-48e6-aa7a-0423e9012d85" class="">많이 해봤다 100만원~</p><p id="2c6e3f2e-8d07-4b06-b9f5-ec390bc5aeda" class="">비싸면 값이 천정부지, 스케줄도 꽉 차 있고</p></div></p></li></ul><ul id="e89f4985-45e3-4451-bbd3-029b63d76640" class="bulleted-list"><li style="list-style-type:disc">배경<p id="f3dc1631-78a9-4b13-b273-83fe4ad3454a" class="">배경 니즈가 더 많음. </p><p id="84793b23-daad-4896-9fe2-bdd497fb395d" class="">특정 장르가 아니라 정말 다양한 웹툰에 걸쳐 배경 생성 니즈가 있음</p></li></ul><p id="37f5c13c-c941-43d7-9e31-223018e47359" class="">
+</p><p id="9830ff12-5664-4138-bd99-1c4f7f014e90" class=""><strong>시장 상황에 대한 정보</strong></p><ul id="fa921308-9368-4220-8ced-3def7402c4b7" class="bulleted-list"><li style="list-style-type:disc">스튜디오의 입장 vs 작가의 입장<p id="5ddcbdc8-757e-4a6a-b902-9b02345d518a" class="">스튜디오의 입장은 효율화 좋음</p><p id="b69d83db-7b23-486a-a906-52f157021db2" class="">스튜디오 방식이라면 우리가 조금 포스를 할 수 있지만</p><div><p id="2ec35a22-9b36-44d9-b0cf-f5d3f47e4c0e" class="">작가의 협조는 사업자 마인드나 경영자 마인드가 아닌 이상 대부분 민감하고 비협조적임</p></div></li></ul><ul id="784ae76c-395d-4a9d-baaf-aa801a3e35e6" class="bulleted-list"><li style="list-style-type:disc">웹소설 표지<p id="c6bacdfd-7a7d-479c-856b-9eadf61e62dd" class="">채색 방법이 티가 남</p><p id="ee92173a-d0d3-4009-94aa-221c903f82e3" class="">우리 것도 채색 방법이 티가 남 </p><p id="b000333c-e4f2-48f4-913b-66e094f545c4" class="">대부분 독자나 작가들이 꺼려함<div class="indented"><p id="41197dd3-b69e-4181-b06e-ff9aa208ef6a" class="">일부 독자들이 정말 세세히 관찰하고 AI임을 끄집어내어 퍼뜨림</p><p id="3082aad1-f25c-4fde-993b-31115e024fce" class="">작가들도 본인이 (고작) AI 표지를 통해 대우받는 방식이 불쾌함</p></div></p></li></ul><p id="dffdb34c-e126-4b55-9689-ca7abf9f56b4" class="">
+</p><p id="b6ca331b-1fc8-421c-bfb4-5ebe6aec5419" class=""><strong>제안</strong><div class="indented"><p id="2770f544-ec64-4d4b-919e-da41567e7836" class="">무빙툰 → 그냥 그랬음</p></div></p><p id="534f9b35-b39c-4bbc-b1ef-092bf386125e" class="">
+</p><ul id="d657111e-5adb-4db3-86f0-a8f8fa17377e" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">파견? 유기적인 협력</span><div class="indented"></div></li></ul><ul id="867cdd88-5a1f-4de3-92ba-eb4af949d201" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">단톡이라도 파기</span><div class="indented"></div></li></ul><div><ul id="521eb2ad-27e9-4d3c-8aff-175af077b6bc" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">발표 자료좀 주세용</span><div class="indented"><ul id="259b708b-44dc-473b-bb55-77bb695f5549" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">캔바 (스토리작 꺼 찾아보시오)</span><div class="indented"></div></li></ul><ul id="bbb319eb-fdd4-4f45-a355-8f069802fb6e" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">웹툰 로드맵 이미지 (내가 찾음)</span><div class="indented"></div></li></ul></div></li></ul></div><div><div><ul id="8829c30c-2c98-4c33-be89-e1f590f1b1ca" class="bulleted-list"><li style="list-style-type:disc">3D 투 선화 레퍼런스도 보여드림. 화풍이 적용 안된 점이 커뮤니케이션 미스가 있었다는 점은 서로 이해한 상황임</li></ul></div><ul id="3af9ebac-5992-42c0-af47-a871a7c1bddf" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">3D 모델링에 우리의 화풍을 입혀달라가 맞는 거? 스케치를 만드는 게 맞다 → 우리가 무슨 작업한지도 모르는 상황이므로 우리가 무슨 작업한지를 일단 알아야 함</span><div class="indented"></div></li></ul></div><p id="a98be2ea-f6a6-44d1-8951-e026850f2226" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://mail.google.com/mail/u/1/popout?ver=1bp2t077ut57p&amp;search=inbox&amp;th=%23thread-f:1766235894838052225&amp;cvid=2">20230518 크릭앤리버 선화, 채색 파일 전달</a></summary><div class="indented"><p id="6604589e-37b5-42e1-bc05-e35a4532bc66" class=""><a href="https://drive.google.com/drive/folders/1Ybhz1ppDbEMWyzDFqUZCnyjFEl2V0BaA?usp=sharing">뉴비가 너무 강함 5회차 분량 선화 파일 </a></p><figure id="b468afb2-3ede-4bf4-b351-f1cb8454ef2c"><div class="source"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%85%E1%85%B5%E1%84%87%E1%85%A5%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%20e5c17ce632e3419691f34ba5896f4378/02._%25EC%2584%25A0%25ED%2599%2594-20230519T031640Z-001.zip">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/15600ff2-7aab-4665-88bd-71275e51809f/02._%EC%84%A0%ED%99%94-20230519T031640Z-001.zip</a></div></figure><figure id="e465b7ee-9d76-4701-b98b-25c29f2ec5dc"><div class="source"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%85%E1%85%B5%E1%84%87%E1%85%A5%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%20e5c17ce632e3419691f34ba5896f4378/02._%25EC%2584%25A0%25ED%2599%2594-20230519T031640Z-002.zip">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a49e099d-7978-464a-a2e3-abaf139f46f0/02._%EC%84%A0%ED%99%94-20230519T031640Z-002.zip</a></div></figure><figure id="2c64b189-0670-4276-8ba7-a1078393b6c8"><div class="source"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%85%E1%85%B5%E1%84%87%E1%85%A5%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%20e5c17ce632e3419691f34ba5896f4378/02._%25EC%2584%25A0%25ED%2599%2594-20230519T031640Z-003.zip">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fb3240d9-7750-4393-a6d9-dba6e56714fb/02._%EC%84%A0%ED%99%94-20230519T031640Z-003.zip</a></div></figure><figure id="0c67fed7-4c8f-428b-8539-66acdd5965c0"><div class="source"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%85%E1%85%B5%E1%84%87%E1%85%A5%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%20e5c17ce632e3419691f34ba5896f4378/02._%25EC%2584%25A0%25ED%2599%2594-20230519T031640Z-004.zip">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6b98e191-36f6-49b8-9ae4-de5298bfaaad/02._%EC%84%A0%ED%99%94-20230519T031640Z-004.zip</a></div></figure><figure id="c0b2db80-f1b4-4c2c-968e-d82edb6a27a5"><div class="source"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%85%E1%85%B5%E1%84%87%E1%85%A5%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%20e5c17ce632e3419691f34ba5896f4378/02._%25EC%2584%25A0%25ED%2599%2594-20230519T031640Z-005.zip">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2ed9d9fb-cea6-4e8d-a31d-cd1bd9b96689/02._%EC%84%A0%ED%99%94-20230519T031640Z-005.zip</a></div></figure><figure id="e7862bb2-0b28-4120-81f7-375d9ac00767"><div class="source"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%85%E1%85%B5%E1%84%87%E1%85%A5%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%20e5c17ce632e3419691f34ba5896f4378/02._%25EC%2584%25A0%25ED%2599%2594-20230519T031640Z-006.zip">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b3b6595e-1aec-45a2-96e0-47fe7110a767/02._%EC%84%A0%ED%99%94-20230519T031640Z-006.zip</a></div></figure><p id="b1def2f7-0a9f-4d10-86ff-6c13ff2dcfa9" class="">
+</p><p id="7eb1a6ec-71bf-40b7-b954-54c88b107ec4" class=""><a href="https://drive.google.com/drive/folders/1frkVnH9jXX3JAepGi8v1Nmqe2LMQ1e7R?usp=sharing">뉴비가 너무 강함 5회차 분량 채색 파일</a></p><figure id="c06f9e66-783e-455a-9503-35ae470c411e"><div class="source"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%85%E1%85%B5%E1%84%87%E1%85%A5%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%20e5c17ce632e3419691f34ba5896f4378/03.%25EC%25B1%2584%25EC%2583%2589-20230519T031642Z-001.zip">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7b82770d-0a1d-4363-a79e-34201ab53f0f/03.%EC%B1%84%EC%83%89-20230519T031642Z-001.zip</a></div></figure><figure id="b15576d5-fc01-4648-abfb-fdb7d702b010"><div class="source"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%85%E1%85%B5%E1%84%87%E1%85%A5%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%20e5c17ce632e3419691f34ba5896f4378/03.%25EC%25B1%2584%25EC%2583%2589-20230519T031642Z-002.zip">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ffa77907-bb55-44a4-bb62-664f6ca6df32/03.%EC%B1%84%EC%83%89-20230519T031642Z-002.zip</a></div></figure><figure id="48f53adf-8e70-4c69-b99c-7c5ffc2eb04d"><div class="source"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%85%E1%85%B5%E1%84%87%E1%85%A5%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%20e5c17ce632e3419691f34ba5896f4378/03.%25EC%25B1%2584%25EC%2583%2589-20230519T031642Z-003.zip">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5c751ad6-f9ae-4138-8440-7f285294b828/03.%EC%B1%84%EC%83%89-20230519T031642Z-003.zip</a></div></figure><figure id="5f5fb6e2-70d7-4052-8803-f6064c8bfaa8"><div class="source"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%85%E1%85%B5%E1%84%87%E1%85%A5%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%20e5c17ce632e3419691f34ba5896f4378/03.%25EC%25B1%2584%25EC%2583%2589-20230519T031642Z-004.zip">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a385b4dd-d76b-495d-8aa6-794b53b518bc/03.%EC%B1%84%EC%83%89-20230519T031642Z-004.zip</a></div></figure><figure id="21ee627f-9422-4da3-b13b-99815b98e2a8"><div class="source"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%85%E1%85%B5%E1%84%87%E1%85%A5%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%20e5c17ce632e3419691f34ba5896f4378/03.%25EC%25B1%2584%25EC%2583%2589-20230519T031642Z-005.zip">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1fbd2060-5253-4ab5-ba94-3b605a8f79c4/03.%EC%B1%84%EC%83%89-20230519T031642Z-005.zip</a></div></figure><figure id="5b668cc8-24aa-45b5-8742-bdcbb7577f5b"><div class="source"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%85%E1%85%B5%E1%84%87%E1%85%A5%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%20e5c17ce632e3419691f34ba5896f4378/03.%25EC%25B1%2584%25EC%2583%2589-20230519T031642Z-006.zip">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/624e2339-d8a5-4f57-88a5-bb0d6c1a9111/03.%EC%B1%84%EC%83%89-20230519T031642Z-006.zip</a></div></figure><figure id="978bafd1-52c8-4325-a922-ba331d9092a1"><div class="source"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%85%E1%85%B5%E1%84%87%E1%85%A5%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%20e5c17ce632e3419691f34ba5896f4378/03.%25EC%25B1%2584%25EC%2583%2589-20230519T031642Z-007.zip">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bcd8f48c-e716-4097-9516-c3b95468a8d5/03.%EC%B1%84%EC%83%89-20230519T031642Z-007.zip</a></div></figure><figure id="5152b6b5-72d9-4aee-bb34-703dc86405ab"><div class="source"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%85%E1%85%B5%E1%84%87%E1%85%A5%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%20e5c17ce632e3419691f34ba5896f4378/03.%25EC%25B1%2584%25EC%2583%2589-20230519T031642Z-008.zip">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/64a6af43-fd55-4bdd-b4e1-6f165bad5db9/03.%EC%B1%84%EC%83%89-20230519T031642Z-008.zip</a></div></figure></div></details></div></article></body></html>

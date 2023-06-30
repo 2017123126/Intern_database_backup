@@ -1,0 +1,693 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>16주차 KPT / 주간보고서</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b18f4495-5393-4c79-816e-0798ea5bcd84" class="page sans"><header><h1 class="page-title">16주차 KPT / 주간보고서</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-blue">연세대학교</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><ul id="c54f4136-1f50-4cf4-9840-f02fcbe852d5" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">오늘 회의</span><div class="indented"></div></li></ul><ul id="e4630ddf-8356-4bd5-9f12-51feff865b48" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Todo 리스트</span><div class="indented"></div></li></ul><p id="deee90e8-c999-4f87-912a-8752be06c6eb" class="">
+</p><p id="70472fcf-9d60-4c50-9168-88ca754c3a67" class="">
+</p><h3 id="966c267a-fbdf-402c-8b3e-273273953330" class="">보고용 K</h3><p id="0c157853-938d-4de0-b385-22b78d48d8e6" class="">금주는 GENVAS 판매 전략을 수립했습니다.</p><ul id="ea77dd99-3080-4b9c-8efc-2eaf37208eb1" class="bulleted-list"><li style="list-style-type:disc">유사 서비스 및 경쟁사 조사 (제품 기능, 제품 가격 등)</li></ul><ul id="e6d0868e-bd0c-43fe-9187-e7e2a9ddab22" class="bulleted-list"><li style="list-style-type:disc">제품 가격 설정을 위한 기초 자료 마련</li></ul><ul id="9f30e209-8720-448e-bafa-35ca668911ee" class="bulleted-list"><li style="list-style-type:disc">제안서 이미지 수집, 디자인</li></ul><ul id="2c3889b6-e850-493c-823b-0239dcb5719f" class="bulleted-list"><li style="list-style-type:disc">제안서 구성</li></ul><ul id="184de957-1db3-4a18-bd94-32bbd1222123" class="bulleted-list"><li style="list-style-type:disc">잠재 B2B 고객 연락처 조사</li></ul><p id="26a000a6-8e2f-4897-ad50-a12a7664d7a3" class="">
+</p><h3 id="87ef435f-61d1-4c5e-96f8-7f10ea4f7470" class="">진짜 K</h3><p id="4f4d24d0-cd49-479f-81f1-224b54052515" class="">금주는 GENVAS 판매 전략 수립했습니다.</p><ul id="c63d1797-0c3b-4794-aa77-c8091a7014fe" class="bulleted-list"><li style="list-style-type:disc">유사 서비스 및 경쟁사 조사 (제품 기능, 제품 가격 등)</li></ul><ul id="4189c0bc-d57f-454d-be32-501d20fc0d41" class="bulleted-list"><li style="list-style-type:disc">제품 가격 설정을 위한 기초 자료 마련</li></ul><ul id="1cb02d21-6eae-4ad5-8f37-ae740ec88f12" class="bulleted-list"><li style="list-style-type:disc">제안서 이미지 수집, 디자인<ul id="774dbe05-bc48-4d9a-a1c2-08b6f68147fb" class="bulleted-list"><li style="list-style-type:circle">채은님을 통해 제안서 이미지 디자인</li></ul><ul id="1ba94c47-dd70-4f7c-841a-6bb203b9bf85" class="bulleted-list"><li style="list-style-type:circle">일부 수정사항 직접 수정</li></ul></li></ul><ul id="f825bed2-922e-4458-9099-5ee0dfd1e982" class="bulleted-list"><li style="list-style-type:disc">제안서 구성</li></ul><ul id="da604da2-3f02-4b37-b4d1-261556b7ca61" class="bulleted-list"><li style="list-style-type:disc">잠재 B2B 고객 연락처 조사<ul id="ca08e923-ed1e-4119-a602-bf724dd50eca" class="bulleted-list"><li style="list-style-type:circle">군소 CP사 (연매출 10억 미만) 회사 연락처 등 정보 조사</li></ul><ul id="0c33443d-20f9-44c3-81a2-896f8f4ab941" class="bulleted-list"><li style="list-style-type:circle">중견 이상 CP사 (연매출 10억 이상) 리스트 정리</li></ul></li></ul><ul id="816a383f-7c96-4208-ac23-4a761a3545e7" class="bulleted-list"><li style="list-style-type:disc">DM 발송 준비<ul id="46b0fa35-d7aa-47bb-86be-c0f824b61157" class="bulleted-list"><li style="list-style-type:circle">DM 연결 링크 설문 페이지 (리드 수집 페이지) 작성</li></ul></li></ul><p id="c30cfb57-6ddb-4653-9094-5a82aa715662" class="">
+</p><p id="a90d91b8-7ee8-476d-bc7b-f548ff1a2736" class="">웹소설 </p><ul id="d8c9223a-adde-4a99-b013-165d0c1dc436" class="bulleted-list"><li style="list-style-type:disc">B2C 측 웹소설 진행사항 공유</li></ul><ul id="881de26e-857f-4c0d-8d0d-6c1e75b332bb" class="bulleted-list"><li style="list-style-type:disc">이지아트 작가용 툴 기능 업데이트 전달</li></ul><hr id="f4d91807-7c28-49a9-aa80-157dc2956e43"/><p id="67f033c8-3ba2-4b88-a5a9-4373e98064fb" class="">
+</p><h3 id="6cb57a89-589a-463d-aa29-78e1db385791" class="">보고용 P </h3><ul id="7b5b3c79-6ce9-4510-8f48-6e0d2fe4a6fd" class="bulleted-list"><li style="list-style-type:disc">작가 고객을 대상으로 초점을 맞춰 기업 고객에 대한 고민이 부족했음</li></ul><ul id="8dfb0978-234c-4c80-8a19-14628e0e6221" class="bulleted-list"><li style="list-style-type:disc">최초 제안 시 완성 제품의 예상 가격을 공개하지 않기로 하여 완성 제품의 가격에 대한 충분한 고려를 하지 않고 넘어감</li></ul><ul id="5fc46157-e8d3-4bf3-8746-be1f0bedfe72" class="bulleted-list"><li style="list-style-type:disc">작가 고객에 어떻게 접근할지에 대한 고민이 충분하지 않았음</li></ul><h3 id="74698534-eedf-44a5-a2f8-2c9f7988bf1c" class="">내가 생각하는 진짜 P</h3><p id="7a2401b6-d391-411a-94c4-ebcddb99a135" class="">
+</p><p id="ecd2c6c1-ec02-4227-81a5-538ea894b973" class="">제안서의 문제 </p><ul id="a05faba6-2cc8-4e82-b509-294dd0853b1f" class="bulleted-list"><li style="list-style-type:disc">피상적 문제<ul id="cef4eb47-3e7f-4396-8ef4-ad7c34c2df85" class="bulleted-list"><li style="list-style-type:circle">제안서의 예상 독자인 고객사 대표의 관심사, 고객사 담당자의 관심사에 대한 고려가 부족했음</li></ul></li></ul><ul id="cdc4c75d-ee5f-420f-9d49-d1ed7a16a2c9" class="bulleted-list"><li style="list-style-type:disc">구체적 문제<ul id="2bd72404-4b22-4426-9dcf-9c2c21f2cc70" class="bulleted-list"><li style="list-style-type:circle">기업 고객 입장에서의 도입 효과에 대한 부분이 들어있지 않았음 <p id="b1761836-c145-4339-9ade-94d694e860ad" class="">→ 비용/얼마만큼의 부가가치를 제공하는지에 대한 분석이 포함되어야 함. 제공하는 편익을 비용으로 수치화<div class="indented"><p id="c18e6b65-cd04-4586-8a44-3132397c2b5f" class="">→ <strong>제품이 없었음</strong><div class="indented"><p id="701c5b3c-73c2-478b-8bf8-911134622091" class=""><strong>→</strong><strong><span style="border-bottom:0.05em solid"> 누가 교통정리를 하느냐</span></strong></p></div></p></div></p><p id="cf019092-a79d-47f2-832e-b7c702c4c335" class="">→ 작가 고객을 대상으로 초점을 맞춰 기업 고객에 대한 고민이 부족했음<div class="indented"><p id="6df76428-e96a-41a3-bd2a-fecb8c75eb48" class="">→ <span style="border-bottom:0.05em solid">체계적으로 과업이 관리되지 않음</span></p></div></p></li></ul></li></ul><p id="c3815c9d-a58c-44a6-a04f-04746f71a273" class="">
+</p><p id="44205982-56f4-4df3-b168-d63882ec99b0" class="">피드백의 문제</p><ul id="b0411102-4c3c-445c-a5cb-b6756720ec30" class="bulleted-list"><li style="list-style-type:disc">타게팅 다시 설득, B2C면 Place에 대한 고민이 필요하다는 식의 방향성 있는 피드백이 없었음<p id="d988ecda-ed6d-4051-ad2e-589c492bbeae" class="">→ 근본적 문제 해결에 초점을 맞추지 않음<div class="indented"><p id="3c88008b-be40-4cbf-a0ad-73ab83babbe2" class="">→ <span style="border-bottom:0.05em solid">근본적 문제 해결에 이르기까지 의사소통이 이어지지 않음</span></p></div></p></li></ul><p id="c9465d1b-a043-43d5-8f41-407fae096815" class="">
+</p><p id="94975644-7c95-4a0b-9744-98e96dd71f09" class="">가격전략 전면수정 (PaidPoC) </p><ul id="79adba23-f0c2-4d65-8933-b1a733e73378" class="bulleted-list"><li style="list-style-type:disc">피상적 문제<ul id="a3f1c22c-5d66-40de-af4b-d02bdceea731" class="bulleted-list"><li style="list-style-type:circle">고객사 입장에서의 편익이 고려되어 있지 않음<ul id="bf04a0e1-5d76-4f6b-9953-a51326f6f4bf" class="bulleted-list"><li style="list-style-type:square">198천원 X 426명 → 너무 싸다</li></ul><ul id="671a8df5-d7a9-4f8b-8b09-58f314873ef7" class="bulleted-list"><li style="list-style-type:square">3만3천원, 전체의 20퍼센트 → 너무 싸다</li></ul></li></ul></li></ul><ul id="60289b7d-9dd4-495d-adbf-babd7a37b64c" class="bulleted-list"><li style="list-style-type:disc">구체적 문제<ul id="9f4465de-1cc6-4151-bb19-b93d55ccc26d" class="bulleted-list"><li style="list-style-type:circle">기업 고객 입장에서의 도입 효과에 대한 부분이 들어있지 않았음 <p id="0962952f-332a-4adb-a75e-c329efa592c3" class="">→ 비용/얼마만큼의 부가가치를 제공하는지에 대한 분석이 포함되어야 함. 제공하는 편익을 비용으로 수치화<div class="indented"><p id="a45bbf1f-d898-432b-aa29-de667c65b8bb" class="">→ <strong>제품이 없었음</strong><div class="indented"><p id="14b89489-5ff2-4e8a-9811-bb674b480a60" class=""><strong>→</strong><strong><span style="border-bottom:0.05em solid"> 누가 교통정리를 하느냐</span></strong></p></div></p></div></p><p id="53ad5bf2-ea61-4cca-bdb8-a3d2cd6eb3f0" class="">→ 작가 고객을 대상으로 초점을 맞춰 기업 고객에 대한 고민이 부족했음<div class="indented"><p id="325521d2-2131-4525-9ed5-a968e5c9a3fc" class="">→ <span style="border-bottom:0.05em solid">체계적으로 과업이 관리되지 않음</span></p></div></p></li></ul><ul id="bb2f4d26-d936-475d-952d-a1e2935b07b1" class="bulleted-list"><li style="list-style-type:circle">최초 제안 시 완성 제품의 예상 가격을 공개하지 않기로 하여 완성 제품의 가격에 대한 충분한 고려를 하지 않고 넘어감<ul id="7e0afd81-c733-4fb3-b221-3e114b7981d4" class="bulleted-list"><li style="list-style-type:square"><span style="border-bottom:0.05em solid">고려가격 전략이 지금 필요한 이유: PaidPoC → PaidPoC를 위한 가격 수립 전략이 필요</span></li></ul></li></ul></li></ul><p id="028b6ac2-e176-4523-821f-da106f7e1dbf" class="">
+</p><p id="81210833-c106-4de6-9185-a00b95c49ea0" class="">426명에게 어떻게 팔건지?  가능할거 같지 않다.</p><ul id="760e495a-3397-44b4-9649-1b579d719d2f" class="bulleted-list"><li style="list-style-type:disc">피상적 문제<ul id="7441476a-b271-423e-81fb-4292413e206d" class="bulleted-list"><li style="list-style-type:circle">각각의 고객에 어떻게 접근할지에 대한 고민이 충분하지 않았음</li></ul></li></ul><ul id="732ab7cf-679b-43ca-84d1-843d06874302" class="bulleted-list"><li style="list-style-type:disc">근본적 문제<ul id="ebdbe629-f236-4d49-95e4-ab0f1a7b2a1f" class="bulleted-list"><li style="list-style-type:circle">B2C면 Place에 대한 고려가 부족했음<p id="45310c7f-469c-404d-bea5-83758c489fb4" class="">→ <span style="border-bottom:0.05em solid">타임라인 스케줄에 명시적으로 반영되어 있지 않았음</span></p></li></ul></li></ul><p id="27665535-0f54-4cbd-a44e-ff7b0abe6d1d" class="">
+</p><hr id="f571d487-a28f-45c6-937c-23ff4f2067d2"/><p id="c8b14ec1-5522-4c3b-8b17-b6daa10fb89a" class="">
+</p><h3 id="727627bd-bcf8-400b-8461-0715736c495c" class="">보고용 T</h3><p id="402fff65-1e17-4a64-9206-011be8ebe8b3" class="">다음주 GENVAS 판매 전략 실행 계획</p><ul id="ec0450b6-2a91-4550-885c-3c9ee7b2679c" class="bulleted-list"><li style="list-style-type:disc">작가고객(글작가 및 그림작가) 98명을 대상으로 DM 발송</li></ul><p id="08c30b20-62b2-4751-a471-4fc6f014562e" class="">금주의 GENVAS 판매 전략 문제점 보완 방법</p><ul id="ab096a79-b7d3-417d-b179-ccab91d28ae1" class="bulleted-list"><li style="list-style-type:disc">가격에 대한 충분한 고려를 하지 않고 넘어감 → PaidPoC 가격 제안 메커니즘 수립<ul id="053496be-1037-49e7-808b-d42668978583" class="bulleted-list"><li style="list-style-type:circle">고객사의 편익과 그 편익을 얻기까지의 리스크 등을 종합적으로 계산하여 수치화</li></ul></li></ul><ul id="72f6f149-25fd-4223-89bf-5b6ad6d2afd9" class="bulleted-list"><li style="list-style-type:disc">작가 고객을 대상으로 초점을 맞춰 기업 고객에 대한 고민이 부족했음 → 앞으로 판매 전략 수립 시 모든 타겟 고객 세그먼트에 대한 고려를 놓치지 않도록 해야 함</li></ul><ul id="7e9f92a9-071b-40d4-8af3-011a129d7e74" class="bulleted-list"><li style="list-style-type:disc">작가 고객에 어떻게 접근할지에 대한 고민이 충분하지 않았음 → 앞으로 판매 전략 수립 시 STP, 4P 전략에 맞춰 Place에 대한 고민을 빠뜨르지 않도록 해야 함</li></ul><p id="e2f8f13f-2cef-450b-b768-0c03235959f4" class="">
+</p><p id="bcc65c28-8dc5-44ee-8805-d8f8465c870d" class="">
+</p><h3 id="fba35edb-0d6b-47c3-b212-1fb622bfa92a" class="">진짜 T</h3><p id="c030767e-88de-4044-907d-b4a1db91c3b4" class="">다음주 GENVAS 판매 전략 실행 계획</p><ul id="870ef686-3836-411f-b58e-d547a6dd3210" class="bulleted-list"><li style="list-style-type:disc">작가고객(글작가 및 그림작가) 98명을 대상으로 DM 발송<div><ul id="5e43f672-212a-42f8-8e98-8ffe7c2ec6b9" class="bulleted-list"><li style="list-style-type:disc">작가 고객 대상 판매 여부 결정</li></ul><ul id="58f18611-708b-40a4-971f-3c5bd67b7aa0" class="bulleted-list"><li style="list-style-type:disc">발송제한으로 인해 하루에 정해진 수량만큼 전송</li></ul></div></li></ul><p id="1c8c721a-3e04-4fe1-a0c0-bba89b885613" class="">
+</p><p id="4ef81c3f-4a6f-4602-a579-ccbfdb0444c5" class="">금주의 GENVAS 판매 전략 문제점 보완 방법</p><ul id="2aa35411-3990-47a3-a097-e3911be413fe" class="bulleted-list"><li style="list-style-type:disc">가격에 대한 충분한 고려를 하지 않고 넘어감 → PaidPoC 가격 제안 메커니즘 수립<div><ul id="f0ce0a1a-5998-40b5-a218-dc0673ae83dc" class="bulleted-list"><li style="list-style-type:disc">고객사의 편익과 아래의 수치들을 종합적으로 계산하여 수치화<ul id="9dbc46b2-0739-42a0-a4fd-2f637ebf5ad4" class="bulleted-list"><li style="list-style-type:circle">각 고객이 최종적으로 얻을 수 있을 것으로 예상하는 편익 </li></ul><ul id="0d7f24e6-0311-435e-b514-23ccafbea2c4" class="bulleted-list"><li style="list-style-type:circle">각 고객이 그 편익을 얻기까지의 리스크에 대한 인식</li></ul><ul id="49b1b3c5-465c-4460-8654-54e297bf7a77" class="bulleted-list"><li style="list-style-type:circle">PaidPoC를 통해 유용성 입증을 통한 리스크의 감소분</li></ul></li></ul></div></li></ul><ul id="3bcabe15-f2f5-430b-ba84-a55afd1739e4" class="bulleted-list"><li style="list-style-type:disc">작가 고객을 대상으로 초점을 맞춰 기업 고객에 대한 고민이 부족했음 → 앞으로 판매 전략 수립 시 모든 타겟 고객 세그먼트에 대한 고려를 놓치지 않도록 해야 함</li></ul><ul id="24e6774f-1d21-4bd3-be3b-05aa0a377bce" class="bulleted-list"><li style="list-style-type:disc">작가 고객에 어떻게 접근할지에 대한 고민이 충분하지 않았음 → 앞으로 판매 전략 수립 시 STP, 4P 전략에 맞춰 Place에 대한 고민을 빠뜨르지 않도록 해야 함</li></ul><p id="8f929a36-ce1d-4f4f-9b6b-1b45f154278f" class="">
+</p><p id="0a2769c9-95b8-4554-bb81-e9b07d7acb02" class="">그 외에도 해결되야 하지만 해결될 기미가 보이지 않는 문제들</p><ul id="4e57376c-f406-4b66-89f9-cb42f63b2ee9" class="bulleted-list"><li style="list-style-type:disc">누가 교통정리를 하느냐</li></ul><ul id="cf3ee6bf-b40a-4e1e-befe-e605ef04b0f7" class="bulleted-list"><li style="list-style-type:disc">체계적으로 과업이 관리되지 않음</li></ul><ul id="f449145b-760c-4934-9a7b-d4e58f104f3d" class="bulleted-list"><li style="list-style-type:disc">근본적 문제 해결에 이르기까지 의사소통이 이어지지 않음</li></ul><ul id="c792fcb0-dd5a-4bd3-8ba0-cd3930018ae0" class="bulleted-list"><li style="list-style-type:disc">타임라인 스케줄에 명시적으로 반영되어 있지 않았음</li></ul><p id="feb8ac6c-9589-436e-9f9d-d8803c58ce0b" class="">
+</p><p id="f2342350-3b2f-4459-b0ff-f80e8810cae7" class="">
+</p><figure id="0de0efcf-2067-4649-818e-ac7cede08aa6" class="link-to-page"><a href="16%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%20KPT%20%E1%84%8C%E1%85%AE%E1%84%80%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A9%E1%84%80%E1%85%A9%E1%84%89%E1%85%A5%20b18f449553934c79816e0798ea5bcd84/%E1%84%8C%E1%85%AE%E1%84%80%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A9%E1%84%80%E1%85%A9%E1%84%89%E1%85%A5%200de0efcf20674649818eac7cede08aa6.html">주간보고서</a></figure></div></article></body></html>

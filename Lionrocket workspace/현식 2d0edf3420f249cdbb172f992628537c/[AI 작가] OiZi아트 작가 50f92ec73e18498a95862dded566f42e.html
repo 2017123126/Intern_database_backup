@@ -1,0 +1,695 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>[AI 작가] OiZi아트 작가</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="50f92ec7-3e18-498a-9586-2dded566f42e" class="page sans"><header><h1 class="page-title">[AI 작가] OiZi아트 작가</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-green">COLABORATION</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><ul id="4fe36914-78a3-4bb3-adcd-fa605f54d7dc" class="toggle"><li><details open=""><summary>in use</summary><figure id="66d73990-f222-4f8f-9de2-2fe0b5dc35ae" class="link-to-page"><a href="%5BAI%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%5D%20OiZi%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%2050f92ec73e18498a95862dded566f42e/OlZl%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%20%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD!%2066d73990f2224f8f9de22fe0b5dc35ae.html"><span class="icon">👩‍🎨</span>OlZl아트 작가님 안녕하세요!</a></figure><figure id="09050108-40d8-4379-b147-9e45d7a66086" class="link-to-page"><a href="%5BAI%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%5D%20OiZi%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%2050f92ec73e18498a95862dded566f42e/%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%20%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%200905010840d84379b1479e45d7a66086.html"><span class="icon">📊</span>이지아트 작가님 데이터</a></figure></details></li></ul><ul id="f596c8a4-df2a-4b45-80f5-54c92087387c" class="toggle"><li><details open=""><summary>backup</summary><figure id="a3792277-335c-4412-b00a-b52f790e68fe" class="link-to-page"><a href="%5BAI%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%5D%20OiZi%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%2050f92ec73e18498a95862dded566f42e/OlZl%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%20%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD!%20(1)%20a3792277335c4412b00ab52f790e68fe.html"><span class="icon">👩‍🎨</span>OlZl아트 작가님 안녕하세요! (1)</a></figure><figure id="3b11f08e-a8f2-4ead-98bc-ba6a694ef584" class="link-to-page"><a href="%5BAI%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%5D%20OiZi%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%2050f92ec73e18498a95862dded566f42e/%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%20%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%20(1)%203b11f08ea8f24ead98bcba6a694ef584.html"><span class="icon">📊</span>이지아트 작가님 데이터 (1)</a></figure></details></li></ul><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">크몽을 통한 최초 반응 이후 연락 내용</summary><div class="indented"><p id="2d27a193-3d43-4a06-815c-87c3c33ca983" class="">다름이 아니라 저희가 메시지를 보내게 된 부분은 스포키(또는 포킷)과는 별개로 창작자(특히 웹소설 표지 작가님)들을 돕기 위한 AI 개발 프로젝트입니다</p><p id="9080539a-bdfd-4ad8-a2c2-40f3326d07ef" class="">혹시 최근에도 AI를 이용한 일러스트 작업을 지속적으로 하고 계신 거 맞으실까요?</p><p id="d3e65cab-a80a-4c7f-8bed-e903dcb9b36d" class="">저희가 이번에 OiZi아트 작가님께 제공해드리려는 솔루션은 개인화된 맞춤형 AI 솔루션이에요.</p><p id="bccbd605-0a70-4c15-9565-89dd02fe30da" class="">미드저니도 그렇고 포킷도 그렇고 사실 그림을 만들 때 텍스트를 넣어서 만들게 되는데</p><p id="1da295fc-9499-49ba-876b-7225ce501e91" class="">텍스트만으로 원하는 구도, 포즈, 인물 표정 등 세세한 부분까지 컨트롤하기에는 힘든 부분이 있는 걸로 알고 있어요</p><p id="d0f4a8dc-9292-48e8-8254-ea2c407905b5" class="">또 작가님 개개인의 워크플로우에 맞춰져 있지 않다보니 원하는 그림이 나오도록 프롬프트 엔지니어링도 해야 하고 또 리터칭도 해야하고.. 그런 번거로움이 있을 것 같아요</p><p id="9da26c74-c62d-4a4a-8e42-6ac945324c68" class="">포킷이 이 세상에 그림을 만들고자 하는 대다수의 일반인을 위한 오픈된 서비스였다면</p><p id="fd26560d-82c8-408f-8393-057d2c097bd3" class="">이번에 저희가 제공해드리려는 맞춤형 그림 AI는 작가님이 머릿속에 그리고 있는 그림의 디테일한 부분까지 구현할 수 있도록 개인화된 AI 툴입니다.</p><p id="ffefa055-b23f-43c3-a63b-57af37bcc4b5" class="">이를 통해서 AI를 통한 그림 생성 외에 리터칭 시간에 드는 시간과 노력을 획기적으로 줄이실 수 있을것이라고 보고 있어요</p><p id="86844756-674b-4128-9084-a69f0a766302" class="">혹시 괜찮으시다면 줌이나 대면 미팅을 가졌으면 하는데 혹시 시간이 괜찮으실까요?</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"> 상호 요구사항 교환</summary><div class="indented"><p id="b6cadb4c-dc0b-4e73-86de-20e729fb9933" class="">안녕하세요 작가님. 내부적인 검토를 통해 (주)라이언로켓 측에서 협조 요청드릴 부분 및 작가님을 권리를 위해 지켜야 할 부분을 정리했습니다. 아래 리스트를 확인해주시길 바랍니다. </p><p id="a3a8fb2b-c836-49d6-9ebb-5df50a998b2c" class="">
+</p><p id="ba9ca024-9acc-4753-8fd8-f89ccaa4198b" class="">(주)라이언로켓 측 협조 요청 사항 </p><ul id="c8d45b08-2aaf-4b0a-897b-531b0ed766a8" class="bulleted-list"><li style="list-style-type:disc">협력 과정에서 만든 작품을 통해 발생한 매출액을 라이언로켓의 홍보 목적으로 보도하거나 대외적으로 공표</li></ul><ul id="1f4ddcd5-086d-48f2-bdb0-b305f9dceb60" class="bulleted-list"><li style="list-style-type:disc">크몽을 통한 의뢰내역, 가격 책정 내역, 옵션 내역 수시 공유</li></ul><ul id="e676ea46-01dc-4f1e-a352-b14d07fa08af" class="bulleted-list"><li style="list-style-type:disc"><a href="https://slack.com/">슬랙</a> 채널 운영하여 협력 사항 공유 / 필요시 discord 미팅 진행</li></ul><ul id="2ff04898-114d-4888-a8ea-26cc48bdce1e" class="bulleted-list"><li style="list-style-type:disc">공유 드라이브에 프로세스에 따른 단계별 작업 결과물 업로드</li></ul><p id="d9407cbb-1c2c-42f0-a856-e5ee0d107d5f" class="">
+</p><p id="c7b17efb-2d78-4754-99b5-1d3b4b3efaa8" class="">OiZi아트 작가님의 권리 </p><ul id="8ca033f3-7e2b-48d4-ad9e-cad92f1c9e16" class="bulleted-list"><li style="list-style-type:disc">개발 과정에서 이용된 작가님의 창작물 및 그림체를 어떠한 방식으로든 OiZi아트 작가의 허락 없이 유출 및 이용하지 않을 것</li></ul><ul id="1eaba1d8-72ea-46f8-af01-957fe095129d" class="bulleted-list"><li style="list-style-type:disc">개발 과정에서의 모든 창작물의 저작권은 OiZi아트 작가에게 귀속될 것</li></ul><ul id="21f7e7ba-3bdb-4949-97a1-f7d6fc8150ec" class="bulleted-list"><li style="list-style-type:disc">OiZi아트 작가의 허락 없이 (주)라이언로켓과의 협업 내용을 유출하지 않을 것</li></ul><p id="ffaae80c-3730-4c88-b5db-3500b301e28c" class="">
+</p><p id="470c433f-742a-47a4-a899-d9aea85b178c" class="">자세한 이야기는 유선 상으로 나누고자 합니다. 혹시 지금 잠시 통화 가능하실까요?</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">MOU 체결</summary><div class="indented"><figure id="9f4f264a-bcb6-4d41-9b6d-bf377a791f0a"><div class="source"><a href="%5BAI%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%5D%20OiZi%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%2050f92ec73e18498a95862dded566f42e/%25E1%2584%258B%25E1%2585%25A1%25E1%2586%25AB%25E1%2584%258B%25E1%2585%25A7%25E1%2586%25BC%25E1%2584%2586%25E1%2585%25B5-%25E1%2584%2585%25E1%2585%25A1%25E1%2584%258B%25E1%2585%25B5%25E1%2584%258B%25E1%2585%25A5%25E1%2586%25AB%25E1%2584%2585%25E1%2585%25A9%25E1%2584%258F%25E1%2585%25A6%25E1%2586%25BA_%25E1%2584%258B%25E1%2585%25A3%25E1%2586%25BC%25E1%2584%2592%25E1%2585%25A2%25E1%2584%2580%25E1%2585%25A1%25E1%2586%25A8%25E1%2584%2589%25E1%2585%25A5(MOU)_230526.docx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/00ebe9de-4e54-4bb3-a93e-3f9ce82260a6/%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%86%E1%85%B5-%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AB%E1%84%85%E1%85%A9%E1%84%8F%E1%85%A6%E1%86%BA_%E1%84%8B%E1%85%A3%E1%86%BC%E1%84%92%E1%85%A2%E1%84%80%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5(MOU)_230526.docx</a></div></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">주의사항 전달</summary><div class="indented"><p id="15bc6314-c89f-4780-83e7-7c48b58ba7c3" class="">전달 메시지:<div class="indented"><p id="1e497343-817b-4dad-a9e4-4f817aee1727" class="">이지아트님 안녕하세요~ 이지아트님을 위한 툴을 저희가 드디어 공유해드릴 수 있게 되었습니다. 핵심기능은 일전에 화상 미팅을 통해 말씀드린대로 다음 세 가지이며, 작가님의 편의를 위해 다른 기능도 추가해드렸습니다.</p><ol type="1" id="d16eff66-0aba-47a1-9061-e601d8d4305b" class="numbered-list" start="1"><li>구도를 통한 이미지 생성</li></ol><ol type="1" id="36ffe85e-9337-4eaa-afe0-81f53dad1a93" class="numbered-list" start="2"><li>포즈를 통한 이미지 생성</li></ol><ol type="1" id="0884fce3-c221-45dd-acdb-6368e955ca6f" class="numbered-list" start="3"><li>한복 로라</li></ol><p id="6aaedd51-09bd-4c5c-a574-15cfff575360" class="">사용 시 몇 가지 주의사항이 있어 전달드리려고 합니다. </p><p id="2c60933a-f94d-4c1e-9ab5-fc6b663c01ff" class="">우선 저희가 전달해드리는 이 링크는 오직 이지아트님과 저희 라이언로켓 사이에서만 사용 가능합니다. 라이언로켓 및 이지아트님 외에 제 3자가 링크에 접속하는 일이 없도록 조심해주시기 바랍니다…!</p><p id="33faf7e1-c529-4808-bdbd-67cae5e1ef50" class="">또 한 가지 주의해주실 점은 출력 이미지의 너비(width)와 높이(height)를 설정하실 때 두 값 중 어느 하나가 768을 넘어가면 간헐적으로 에러가 발생합니다. 따라서 768 픽셀을 넘어가는 고화질 이미지가 필요하신 경우 내장된 후보정 기능을 통해 화질을 높이시면 됩니다. </p><p id="fa6568c6-db61-48a2-8b93-6a90efbfd367" class="">혹시 사용에 있어 궁금하시거나 어려운 점이 있으시면 이 번호(010-2922-3016)로 편하게 연락주시기 바랍니다! 감사합니다 :)</p><figure id="692da81c-10c9-4441-ae06-4f2ee7843249" class="image"><a href="%5BAI%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%5D%20OiZi%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%2050f92ec73e18498a95862dded566f42e/Screenshot_2023-06-05_at_6.43.21_PM.png"><img style="width:551px" src="%5BAI%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%5D%20OiZi%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%2050f92ec73e18498a95862dded566f42e/Screenshot_2023-06-05_at_6.43.21_PM.png"/></a></figure><p id="b08cc005-2fc1-4deb-9167-532d57a351db" class="">
+</p><p id="d3d6f6e1-d7bb-40c0-8fae-43e29ee52ac4" class="">추후 의뢰 내역, 가격 책정 내역과 작업 시 중간과정을 공유하실 수 있는 공유 파일과 양식을 만들어서 공유해드리겠습니다!</p><p id="dbc0152f-5666-4eec-b90d-27781aad8616" class="">
+</p><p id="1b896422-455b-48e7-9d0d-0d52b1c96d3d" class="">이지아트님 저희 내부적으로 검토가 진행 결과 라이언로켓이라는 상호를 특정할 수 없도록 &quot;stable diffusion custom web UI&quot;로 작성하시면 되겠습니다. 혹시 또 문제점이나 궁금하신 점 있으시면 언제든지 연락해주세요:)</p></div></p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230608 피드백 및 정보 공유 양식 노션 페이지 안내  </summary><div class="indented"><h3 id="1bd9eb28-95bf-489d-b343-e2b552b5f23f" class="">에러 여부</h3><p id="ad63f454-9e54-4a88-a2a9-af0f245f3dd0" class="">그림이 흐리게 나온다 → VAE를 조절하는 것으로 안내</p><p id="280610a9-58a8-45dc-80b3-1c576275af82" class="">(확인해보니 VAE 조절 말고는 지금 할 수 있는 거는 없음. 그나마 AnyLORA vae가 가장 덜 흐릿할 것임)</p><p id="b126238a-94bc-4b97-8e0c-f79765d2f5e4" class="">
+</p><h3 id="8b0687ac-b4f3-476b-bd54-e30417e86f8a" class="">추가 니즈</h3><p id="303c236d-a0fe-46fd-b68e-7f0222d0ef5f" class=""><strong>한글화</strong></p><ul id="8ab238eb-ed92-41fc-a5c2-7fb9c0418f9c" class="bulleted-list"><li style="list-style-type:disc">한글화 필요</li></ul><p id="6e3c7a66-e916-451a-9b0c-bed82c9c4d51" class=""><strong>실사 그림체</strong></p><ul id="297fb2e9-3ac9-4c96-a730-f1ff07cc2608" class="bulleted-list"><li style="list-style-type:disc">고객: 일반인, 기업체, 홈쇼핑, 광고 이미지 등 다양하게 많이 들어오는 중</li></ul><ul id="19fa91f8-ce9e-4b91-8c52-f9ea68cf090b" class="bulleted-list"><li style="list-style-type:disc">현재 제작 방식과 그 한계<ul id="b51af202-208e-461c-bfa2-5f461834d3c1" class="bulleted-list"><li style="list-style-type:circle">미드저니를 통해 실사 이미지 작업 중. 그러나 미드저니에서 한계가 있는 부분이 있음<ul id="c2d0a758-eb5d-4733-aa5f-8d4c972d43e3" class="bulleted-list"><li style="list-style-type:square">구도 조절 불가 (Only text)</li></ul><ul id="66092283-8e24-49c7-b987-72b9610ac83c" class="bulleted-list"><li style="list-style-type:square">외국인은 잘 나오는데 한국인 이미지는 잘 안나옴</li></ul><ul id="2d81fb42-ca78-472b-9f74-219566e82c12" class="bulleted-list"><li style="list-style-type:square">stable diffusion에서만 작업이 가능한 실사 이미지 스타일에 대한 의뢰가 들어옴. <p id="cbfba4a6-ef98-4f19-92c1-151af19f4e42" class="">“이런 그림체로 해달라”는 경우가 있는데 알고보니 stable diffusion으로만 가능하더라</p></li></ul></li></ul><ul id="855459df-4e68-49c2-bbef-ac0fa3114708" class="bulleted-list"><li style="list-style-type:circle">stable diffusion에서만 작업이 가능한 실사 이미지의 스타일 탐색<ul id="939e7dc3-1d69-4184-a800-9137c75fa295" class="bulleted-list"><li style="list-style-type:square">OIZI아트 작가님은 딱 보면 어떤 툴을 이용해 구현할 수 있는 그림체인지 파악할 수 있음</li></ul><ul id="9f66b6f6-6460-41ed-bea6-c8a761e19f9d" class="bulleted-list"><li style="list-style-type:square">보니까 거의 모두 <a href="https://civitai.com/?id=43331&amp;slug=majicmix-realistic&amp;query=Lora&amp;view=feed">civitai</a>에서 찾을 수 있더라</li></ul></li></ul></li></ul><ul id="a443791f-e23f-41c3-8a51-16e6dba713f7" class="bulleted-list"><li style="list-style-type:disc">대응: civitai의 그림체를 쉽게 받아서 사용할 수 있도록 UI 개선<ul id="2338065e-9e7c-40b6-b788-15b667dced90" class="bulleted-list"><li style="list-style-type:circle">현재 이미 주소와 이름만 받아서 다운로드 가능 (유지)</li></ul><ul id="e6b21d45-dd39-4812-96f6-baec2b19b22a" class="bulleted-list"><li style="list-style-type:circle">현재 civitai에서 LoRA만 가능한 상태(유지) → 추후 다른 타입도 필요하면 전달</li></ul><ul id="a53abfee-02d9-4c0b-aa60-c6989e3d900d" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">dropdown에 다운받은 그림체가 나타나도록 (</span>개발)</li></ul></li></ul><p id="ab4de1f3-759d-4662-a9bf-e9117aaef5c8" class="">
+</p><h3 id="a54a51b6-881f-457a-93f3-427e4f04fd5a" class="">필요 없는 니즈</h3><p id="e4bd480e-6c05-42d0-97ec-4fe336b91693" class=""><strong>포킷 그림체</strong></p><ul id="2a9d4aa2-998b-4a4a-9f72-c1e30752a959" class="bulleted-list"><li style="list-style-type:disc">애니나 만화체 그림체는 잘뽑음</li></ul><ul id="53883840-e660-4b9d-84e5-688fbac32120" class="bulleted-list"><li style="list-style-type:disc">그런데 실사는 한계가 있어서 지금 필요가 없음. 사진처럼 보여야 하는데 그렇지 못함</li></ul><p id="2f8e3aab-c0b7-421d-88ab-1342857bc53b" class=""><strong>NSFW 필터 스위치</strong></p><ul id="21138fad-365b-4f75-9a45-10ebc7d7851b" class="bulleted-list"><li style="list-style-type:disc">추가적으로 필요한 기능이나 개선사항 없는지 재차 물었으나 따로 언급이 없었음</li></ul><p id="942ee6ed-d1be-47e0-a95f-4dccf5d43c96" class="">
+</p><h3 id="aa2c17fc-27cb-4d4a-8a5f-168a604808de" class="">작업 프로세스 <a href="%5BAI%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%5D%20OiZi%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%2050f92ec73e18498a95862dded566f42e/%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%20%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%200905010840d84379b1479e45d7a66086/AI%20%E1%84%80%E1%85%B3%E1%84%85%E1%85%B5%E1%86%B7%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8%20%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%92%E1%85%A2%E1%86%BC%20%E1%84%92%E1%85%A7%E1%86%AB%E1%84%92%E1%85%AA%E1%86%BC%20ae27b0c6af4248eca12c9c1cf7267852/%E1%84%8B%E1%85%A8%E1%84%89%E1%85%B5)%20a089ca74000f437a9a3a8aa84dd4aa11.html">예시)</a> </h3><p id="3cf7d05c-b29c-45b0-aa60-cc42c70e5edd" class=""><strong>초안</strong><div class="indented"><p id="a42ad994-5e7f-40a1-ab9b-0930d9da7e4f" class="">구도 / 포즈 이미지 찾기 → 프롬프트 작업 → ai 생성 결과물 → 포토샵 또는 클립스튜디오를 통한 보정</p></div></p><p id="83a2389c-156d-41e6-b3be-2754eeb19b35" class=""><strong>수정(만약 필요한 경우)</strong><div class="indented"><p id="c17f16bf-df6a-4035-abbe-a0cbff899acd" class="">구도 / 포즈 이미지 찾기(필요한 경우) → 프롬프트 작업(필요한 경우) → ai 생성 결과물(필요한 경우) → 포토샵 또는 클립스튜디오를 통한 보정(필요한 경우)</p></div></p><p id="34e77e47-9c00-4d38-820b-a0e59fb507ca" class=""><strong>최종 전달</strong></p><p id="588f3328-a9d6-40d4-b9a1-ad627e5c37a7" class="">
+</p><h3 id="93ef3676-8743-4aef-b5e4-5df86de6ce22" class="">추후 작가님에게 확인할 것</h3><ul id="a0bae29f-6c18-4ffd-a406-1ab2d9cc8d30" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="https://civitai.com/?id=43331&amp;slug=majicmix-realistic&amp;query=Lora&amp;view=feed">civitai</a>에서 LoRA 말고 다른 타입도 필요?  </span><div class="indented"></div></li></ul><p id="ad8bb293-cb01-4fcf-8f30-01952eccaa18" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">이번 디벨롭 데드라인</summary><div class="indented"><ol type="1" id="bd7e9e61-6e8b-436a-9943-06ac971cf97a" class="numbered-list" start="1"><li>[완료][나] <code>노션 문서 전달</code>은 오늘(6/9)까지 </li></ol><ol type="1" id="50b07fcd-798b-497e-99b0-e43ebef67989" class="numbered-list" start="2"><li>[장훈, 영중]<code>업로드 후 dropdown 추가</code>는 다음주 수요일 (6/14)까지 → 금요일 (6/16)로 연기<p id="6310ebf5-c657-4a88-a467-8af988149e72" class="">(작가님께는 다음주 금요일(6/16)로 전달)</p></li></ol><ol type="1" id="177d2f6c-a0f9-4027-96e2-04faf26e6f5f" class="numbered-list" start="3"><li>[장훈, 영중]<code>한글화</code>는 다다음주 수요일(6/21)까지<p id="ecd89a5c-234a-4dfd-8212-dccb16f0bf57" class="">(작가님께는 다다음주 금요일(6/23)로 전달)</p></li></ol><figure id="17916ec3-704a-4d13-b4b7-41cc25330687"><div class="source">https://lionrocket.slack.com/archives/C02GN0KUW6N/p1686196808844899?thread_ts=1685466825.618599&amp;cid=C02GN0KUW6N</div></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230612 문의</summary><div class="indented"><ul id="70230528-53fc-4aed-9d35-93331786479f" class="bulleted-list"><li style="list-style-type:disc">모델 선택 중 어떤 거는 생성이 되고 어떤 거는 에러가 나옴 → 어떤 게 에러가 나오는지? 간헐적으로 에러가 나오는 경우가 있다. 우리도 파악중이다. 저희 내부적으로 개발 일정이 촉박한 관계로 이번주 내에 파악해서 전달드리기는 어려울 듯. <p id="602e2e5a-d2d4-483d-9efc-da3adf05dec6" class="">이지아트님, 안녕하세요. </p><p id="c87bd24d-bb24-46ba-bf57-d73fa61e06c8" class="">“이미지 합성이 이뤄지지 않았습니다” 에러가 간헐적으로 나오는 문제를 저희도 파악하여 원인을 찾고 있는 중입니다. 관련하여 정확한 원인을 찾아 다음주 수요일까지 해결해드리도록 하겠습니다. 이용에 불편을 드려 죄송합니다.</p></li></ul><ul id="2efaf954-8aa4-4575-9104-df72d8ad189f" class="bulleted-list"><li style="list-style-type:disc">drag and drop해봤는데 안된 듯 → 지금 보니까 제대로 써도 에러가 뜨네<p id="c5726e96-612e-4e9b-b36e-1495ad833a8c" class="">→ 업로드는 되는데 사용을 하려면 로라를 쓰기 위한 프롬프트를 따로 작성해야 하는 등 번거롭다. 그래서 로라를 좀 더 편하게 받아서 사용하실 수 있도록 금요일까지 준비해드리겠다</p><p id="f4ec9cf1-c4ec-4818-a46d-27300ff701c7" class="">LORA 사용의 경우 현재 업로드 기능 자체는 마련되어 있습니다만 LORA 사용을 위해 전용 프롬프트를 작성하셔야 하는 등 번거로운 상황입니다. 관련해서 로라를 좀 더 편하게 사용하실 수 있도록 금요일까지 준비드리도록 하겠습니다.</p></li></ul><ul id="5adf1044-add9-44e0-bf6f-a8c790abc1de" class="bulleted-list"><li style="list-style-type:disc">생성한 결과를 큰 사이즈로 새창에서 볼 수 있는 방법? → 마우스 우클릭, 새창에서 보기 누르시면 됨<p id="4ce851e3-6d44-4e07-82ce-d13d7f3c85be" class="">→ 생성한 결과를 큰 사이즈로 새 창에서 볼 수 있는 방법은 현재도 가능합니다. 마우스 우측 버튼을 클릭하신 이후 새 창에서 보기 메뉴를 선택하시면 됩니다. </p><p id="9ad7b28a-c6d7-4149-9cc1-7cd9c58e1eeb" class="">이외에도 문제나 궁금증이 있으시다면 연락주세요~</p></li></ul><p id="c517c6dc-2f3d-47be-a4d8-8196585a3500" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230616 툴 전달</summary><div class="indented"><p id="92456bf1-a458-45b6-918f-f75e1c139a34" class="">이지아트님, 안녕하세요.</p><p id="be279619-9112-4ea7-b98f-47b9d985153b" class="">LoRA의 편리한 사용을 위해서 UI 및 기능을 소소하게나마 업데이트했습니다. </p><p id="085c7d75-77e6-4927-adac-6b58036ebe32" class="">이에 따른 LoRA 업로드 방법을 안내해드리겠습니다 :) 아래의 링크를 통해 LoRA 업로드 방법을 확인해보시면 좋겠습니다.</p><p id="29859675-b0f7-4f0f-8142-39712668eba1" class="">접속 방법은 일전에 전달드린 링크 그대로 접속하시면 업데이트된 툴을 이용하실 수 있습니다!</p><p id="2f368507-16b7-4b27-9d2c-96385e9eeabe" class="">감사합니다!</p><p id="244975c2-5cfe-42d9-a69d-5fbe543ff7b7" class=""><a href="%5BAI%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%5D%20OiZi%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%2050f92ec73e18498a95862dded566f42e/OlZl%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%20%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD!%2066d73990f2224f8f9de22fe0b5dc35ae/%E1%84%89%E1%85%A1%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%86%E1%85%A2%E1%84%82%E1%85%B2%E1%84%8B%E1%85%A5%E1%86%AF%20(20230616%20updated)%2037df989ce8004033bce23f1e80690268.html">https://lionrocket0813.notion.site/20230616-updated-37df989ce8004033bce23f1e80690268?pvs=4</a></p><p id="80cf799a-644d-41d7-a73f-ae143e253922" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230619 주의사항 업데이트</summary><div class="indented"><p id="ff4990cf-d1f6-4dea-a5b2-a4626cbd5a98" class="">이지아트님, 안녕하세요:)</p><p id="8101b0b3-1803-4f29-bb7c-c03573d541c4" class="">
+</p><p id="4a8d8e97-c7f8-4037-9ac6-f65d0d2fcabd" class="">업데이트 후 작업에 유용하게 사용하고 계신가요?</p><p id="e038a171-d4ab-4c27-a585-5e357fe6d621" class="">
+</p><p id="ee6be31b-ca94-43d6-b741-974b39bd58d6" class="">저희 툴 업데이트 후 원활한 사용을 위해 두 가지 주의사항을 전달드리고자 합니다.</p><p id="a6535493-2baa-429a-97a4-d7effa6acbd2" class="">
+</p><ol type="1" id="70bff46a-2dad-4546-8dc9-e63cc9bb46a9" class="numbered-list" start="1"><li>Model Name 이름 입력 시 띄어쓰기가 포함되지 않도록 해주세요. 띄어쓰기가 포함된 경우 모델 업로드가 이뤄지지 않습니다 ㅠㅠㅠ<p id="b0291763-bfaa-4b2d-919e-02607e820f45" class="">Ex. 3D_렌더링 (O), 3D 렌더링 (X)</p></li></ol><ol type="1" id="7579e423-2c37-42be-9a57-712266314808" class="numbered-list" start="2"><li>LoRA 파일을 업로드하는 경우, 업로드가 완료된 이후에 RUN 버튼을 눌러주세요. 업로드 도중에 RUN을 누르는 경우 모델 업로드가 정상적으로 이뤄지지 않습니다 ㅠㅠㅠ</li></ol><p id="b3b8d43e-0c58-4e69-9aea-b50d65199010" class="">
+</p><p id="386be1a5-063b-4ea5-96fe-279a05f05691" class="">위 주의사항들을 반영하여 <a href="%5BAI%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%5D%20OiZi%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%2050f92ec73e18498a95862dded566f42e/OlZl%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%20%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD!%2066d73990f2224f8f9de22fe0b5dc35ae/%E1%84%89%E1%85%A1%E1%84%8B%E1%85%AD%E1%86%BC%20%E1%84%86%E1%85%A2%E1%84%82%E1%85%B2%E1%84%8B%E1%85%A5%E1%86%AF%20(20230616%20updated)%2037df989ce8004033bce23f1e80690268.html">사용 메뉴얼</a>을 업데이트 하였습니다. 사용법을 참고하고 싶으실 때 확인해주시면 감사하겠습니다:)</p><p id="05c3c726-0860-416e-8c02-57d337dfd9a5" class="">
+</p><p id="d3732e6c-5045-4c4c-b689-3b91398aedd6" class="">마지막으로 저희 툴을 작업에 사용하시는대로 <a href="%5BAI%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%5D%20OiZi%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%2050f92ec73e18498a95862dded566f42e/OlZl%E1%84%8B%E1%85%A1%E1%84%90%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%20%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD!%2066d73990f2224f8f9de22fe0b5dc35ae.html">전달드린 노션 페이지</a>에도 올려주시는 점 잊지 말아주세요!</p><p id="09213887-9e34-44f1-a3de-e0f017bd497c" class="">
+</p><p id="003f69dc-c005-4407-b712-37c753f111a2" class="">감사합니다!</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230619 피드백 수용</summary><div class="indented"><p id="607eecca-2da5-4706-b09d-1344230aaa1e" class="">이지아트: </p><p id="e78ab6b5-bfc4-48f5-b72f-f5140980674d" class="">네 안그래도 여쭤 보려구 했는데 잠깐 잊었었네요.
+제가 테스트로 전에 갖고있던 로라 업로드 했는데 안되는거같아 여러번 시도해서 잘못 올려졌는데 삭제를 못하겠더라구요. <span style="border-bottom:0.05em solid">올려진 로라는 삭제가 불가능 할까요</span>~? 이미지 만드는것은 많이 연습하고 있습니다. 제가 완전히 오류없이 사용할수 있어야 의뢰를 받아 작업할수 있을듯 하여 지금은 익히는 연습을 많이 하고 있습니다.</p><p id="ba054981-609a-490f-a533-ccece61ce7fc" class="">현식: </p><p id="13a87182-1ce7-4eda-827a-661a981f9118" class="">현재 삭제 기능은 아직 지원되지 않는 상태입니다. 이로 인해 불편을 드려서 죄송합니다 ㅠㅠ</p><p id="08d91e78-f9f4-4da8-a106-a6327649c03e" class="">삭제 기능에 대한 업데이트는 유관부서와 상의 후 진행 상황에 대해서 다시 말씀드릴 수 있도록 하겠습니다!</p></div></details></div></article></body></html>

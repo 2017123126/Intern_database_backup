@@ -1,0 +1,677 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>20230510</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="bac18444-d256-4704-88da-bd4a9d17e95d" class="page sans"><header><h1 class="page-title">20230510</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-green">dailyscrum/meeting</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><div><p id="0484b492-3b58-42d3-8e86-1946a2a0bfec" class="">[승제님께 전달 또는 질문] </p><ul id="f4882e91-d5f3-4372-ab76-930f175f242b" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">오늘 할 일 전달</span><div class="indented"></div></li></ul><ul id="bc52a795-ce2e-49f5-bbd5-77af541af9e5" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">직무 타겟한 설문 진행은 어려울 듯 → 우리가 하는 거랑 다를 게 없으니까 의미 없음<a href="https://mail.google.com/mail/u/1/#inbox/FMfcgzGsmWvglwJrPsSQFnKPnJsKJwhN">https://mail.google.com/mail/u/1/#inbox/FMfcgzGsmWvglwJrPsSQFnKPnJsKJwhN</a></span><div class="indented"></div></li></ul><ul id="6d099f73-a87c-435e-a898-5b2090680f72" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">PaidPOC의 목적/이유? 그저 돈 벌 기회를 놓치지 않기 위해? 아니면 IR을 위해?</span><div class="indented"><ul id="ea4818d9-cbaa-4d71-b473-1785f302e205" class="toggle"><li><details open=""><summary>detail</summary><p id="b8edb036-d6fb-419e-9a46-aeae92281674" class="">돈 벌 기회를 잡음과 동시에 IR도 해결</p><p id="40500099-970f-4302-97cc-1eae981c1256" class="">결국 매출 창출 할라다 보니 지금 진짜 필요한 제품 고도화를 계속 못하게 되는 듯 → 둘 다 가능함 → 근데 아닌 거 같음 → 제품고도화는 전혀 이뤄지지 않고 있는 상태 / 들이는 시간과 노력에 비해 리드는 안나오고 → 어차피 하기는 해야 한다</p><p id="bcd31e37-26d9-49a1-85ed-09da319b4c4c" class="">승환님이 미음이 급하다는 것도 이거인건지? → 맞음 IR 때문임</p><p id="bb6f1cf2-3e4f-4207-8a53-e1eedf9f6400" class="">근데 IR에 들어갈 수치로는 너무 빈약하지 않나?  → 일단 있느냐 없느냐가 중요함</p></details></li></ul></div></li></ul><ul id="081661e5-4819-4236-82eb-518a3c73906b" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">canva 구독 취소 ID:  PW: </span><div class="indented"></div></li></ul><ul id="3e708ba1-55f4-470c-98f3-fd1508401192" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">이거 설명 부탁</span><div class="indented"><p id="25d3b4a4-3551-4c48-b69a-6a57cdba640e" class=""><a href="Pricing%20strategy%2017295d8505ce4f07b32a6a8344fbfb5f.html">https://www.notion.so/17295d8505ce4f07b32a6a8344fbfb5f#4f89f4b231614a158d18e6aa375fc639</a></p><ul id="18ca4031-d7e6-4e3b-9dd8-cea7ded1f4c6" class="bulleted-list"><li style="list-style-type:disc">라이트노벨은 R/S방식도 검토했으나<ul id="e820dd29-b3cd-470d-8dfe-1e47a005d88a" class="bulleted-list"><li style="list-style-type:circle">업계에서 <span style="border-bottom:0.05em solid">R/S방식을 지양</span>하는 점</li></ul><ul id="40e991c9-19ec-430d-9fc5-9cd347d23058" class="bulleted-list"><li style="list-style-type:circle">과다 제작 의뢰 및 흥행 가능성이 낮은 작품에만 활용 우려로 정가로 책정</li></ul></li></ul></div></li></ul><ul id="b6185771-990f-4709-9a82-4f3387677389" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">보고서 제작 업체 컨택 → 모집단 CP 리스트 → 내일 연락하기</span><div class="indented"><div><figure id="df1385ab-721e-4d8c-8daf-d5964657569a"><div class="source"><a href="Conjoint%20Analysis%20%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%92%E1%85%A2%E1%86%BC%2002deb95d3a5b4c83a3177a7bee8b074e/(%25E1%2584%2587%25E1%2585%25A9%25E1%2584%2580%25E1%2585%25A9%25E1%2584%2589%25E1%2585%25A5)2022%25E1%2584%2582%25E1%2585%25A7%25E1%2586%25AB%25E1%2584%258B%25E1%2585%25B0%25E1%2586%25B8%25E1%2584%2590%25E1%2585%25AE%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A1%25E1%2584%258B%25E1%2585%25A5%25E1%2586%25B8%25E1%2584%258E%25E1%2585%25A6%25E1%2584%2589%25E1%2585%25B5%25E1%2586%25AF%25E1%2584%2590%25E1%2585%25A2%25E1%2584%258C%25E1%2585%25A9%25E1%2584%2589%25E1%2585%25A1%25E1%2584%2587%25E1%2585%25A9%25E1%2584%2580%25E1%2585%25A9%25E1%2584%2589%25E1%2585%25A5(%25E1%2584%258E%25E1%2585%25AC%25E1%2584%258C%25E1%2585%25A9%25E1%2586%25BC).pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/769349aa-5c06-4721-a983-0476b5b69ab0/(%E1%84%87%E1%85%A9%E1%84%80%E1%85%A9%E1%84%89%E1%85%A5)2022%E1%84%82%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%8E%E1%85%A6%E1%84%89%E1%85%B5%E1%86%AF%E1%84%90%E1%85%A2%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%84%80%E1%85%A9%E1%84%89%E1%85%A5(%E1%84%8E%E1%85%AC%E1%84%8C%E1%85%A9%E1%86%BC).pdf</a></div></figure></div><p id="a9134f45-8c93-4a9c-911a-79a93acd8557" class=""><a href="http://w3.randr.co.kr">리서치앤리서치</a>에 연락 02-3484-3000 (<strong>3067)</strong></p><p id="7aee7991-a007-4fa8-ba4a-cb3ecdf9d93b" class="">061-900-6555 전지호 대리. 공공데이터관리</p><p id="70d19c4c-726c-41b6-8335-87e3fa75ec7e" class="">총 모집단 821개 업체 이름 리스트 → 없음 / 법률상 어려움 (법인 개인정보 영업정보임) </p><p id="4d74a27a-dd49-47cb-b583-6a1f7d2ea139" class="">위 보고서 95 페이지 768개 업체 및 개인 이름 리스트 → 없음 / 법률상 어려움 (법인 개인정보 영업정보임)</p><p id="1b176c43-979e-456e-bd43-81fbd3341968" class="">또는 위 보고서 95 페이지에서 설문에 답변한 106개사 또는 매출이 확인된 총 136개 사 이름 리스트 → 없음 / 법률상 어려움 (법인 개인정보 영업정보임)</p><p id="c9774574-d040-4e46-a97e-8855e9152eeb" class="">네이버시리즈 및 카카오페이지 768개 (합집합) 중소기업현황정보시스템 만화출판업 → 총 모집단 821개임 확인</p></div></li></ul><ul id="62b82b2e-1434-423b-a19f-50ccddcf4d67" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">설문 견적</span><div class="indented"><ul id="93640183-0780-4eb7-bb8c-cc49dfeb45d8" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">업체 리스트 전달하기</span><div class="indented"></div></li></ul><ul id="077ea2cf-1a8a-44b9-8469-708d1322b0e8" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">직책 리스트 달라고 하기 + 리스트별 몇 명 있는지까지 달라고 하기</span><div class="indented"><p id="b4810e75-6e61-45be-b16f-888b13b01388" class="">→ 어려울 듯 <a href="https://mail.google.com/mail/u/1/#inbox/FMfcgzGsmWvglwJrPsSQFnKPnJsKJwhN">https://mail.google.com/mail/u/1/#inbox/FMfcgzGsmWvglwJrPsSQFnKPnJsKJwhN</a></p></div></li></ul><ul id="80d7ae8f-0603-407d-b8ad-f0fce89712c1" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">견적이 뿌리는 사람 수? 아니면 수집된 응답의 수? </span><div class="indented"><p id="25935d96-e37f-41d7-8147-ab0566e9fced" class="">→ 후자임. 개런티 Base </p></div></li></ul><ul id="820c029f-0be1-429b-b472-d0c49839867c" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">업체 연락처 줄 수 있음? →  </span><div class="indented"><p id="353ae408-e9b9-403d-adb8-285c07026d1e" class="">→ 서칭이 필요한데 견적 따로 필요합니다 / 리드같은 경우에는 연락처, 이메일, 성함 한 5만원 게런티 안되고 있습니다. </p></div></li></ul><figure id="11454054-c4a3-42aa-9203-0f97fad4e832"><div class="source"><a href="Conjoint%20Analysis%20%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%92%E1%85%A2%E1%86%BC%2002deb95d3a5b4c83a3177a7bee8b074e/%25E1%2584%2585%25E1%2585%25B5%25E1%2584%2586%25E1%2585%25A6%25E1%2586%25B7%25E1%2584%2587%25E1%2585%25A5_%25E1%2584%2585%25E1%2585%25B5%25E1%2584%2589%25E1%2585%25A5%25E1%2584%258E%25E1%2585%25B5_%25E1%2584%2589%25E1%2585%25A5%25E1%2584%2587%25E1%2585%25B5%25E1%2584%2589%25E1%2585%25B3_%25E1%2584%2589%25E1%2585%25A9%25E1%2584%2580%25E1%2585%25A2%25E1%2584%2589%25E1%2585%25A5.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4665920f-b653-46f7-b088-92d0c43469ec/%E1%84%85%E1%85%B5%E1%84%86%E1%85%A6%E1%86%B7%E1%84%87%E1%85%A5_%E1%84%85%E1%85%B5%E1%84%89%E1%85%A5%E1%84%8E%E1%85%B5_%E1%84%89%E1%85%A5%E1%84%87%E1%85%B5%E1%84%89%E1%85%B3_%E1%84%89%E1%85%A9%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5.pdf</a></div></figure><figure id="5b499dfe-31fb-4b14-8c24-33916afa770d"><div class="source"><a href="Conjoint%20Analysis%20%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%92%E1%85%A2%E1%86%BC%2002deb95d3a5b4c83a3177a7bee8b074e/%25E1%2584%258B%25E1%2585%25B0%25E1%2586%25B8%25E1%2584%2590%25E1%2585%25AE%25E1%2586%25ABCP%25E1%2584%2585%25E1%2585%25B5%25E1%2584%2589%25E1%2585%25B3%25E1%2584%2590%25E1%2585%25B3.xlsx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2ae11523-780d-4669-baba-e84da720ae7b/%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%ABCP%E1%84%85%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3.xlsx</a></div></figure></div></li></ul></div><div><ul id="38b8be95-3bb9-4eec-b7a1-38c0ad697843" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">콜드콜 콜드메일 말고 더 ‘세련된’ 벙법 없나 → 그냥 크몽으로 돌리자 / 일단 나는 크몽에 전념해보겠다 → 크몽으로 뭘 만들지 구체화 / 트위터 / 픽시브 (~금)</span><div class="indented"></div></li></ul></div><div><ul id="379b9638-847b-48e3-a26e-ec838d7bb266" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">지금 단계에서 CA 해서 충분히 결과가 나올까? → 애초에 설문조사가 지금 우리가 하는거랑 다를 바가 없음</span><div class="indented"></div></li></ul></div><hr id="540236e4-d61a-47fc-b580-27bd87ed9b78"/><h1 id="09f77bec-8440-4e27-a074-14e383f0dde7" class="">리더회의 내용</h1><p id="c30712d6-b95b-4bda-99a0-401349316e34" class="">브레인싱크 미팅 요약본 참고</p><h2 id="e5336ace-e677-4535-94cb-cfea52d1427e" class="">조아라 미팅</h2><ul id="de1ad4ff-a01d-4b15-9772-e03d80468d56" class="bulleted-list"><li style="list-style-type:disc">AI 사용 의혹이 있어 난처했었다 → 대응 방안을 체계화할 필요가 있음<div><ul id="e596b234-ac57-4728-9751-58d964bd5da4" class="bulleted-list"><li style="list-style-type:disc">문제 원인<ul id="7c513cd6-84a5-44c2-820e-0b17d9c7e140" class="bulleted-list"><li style="list-style-type:circle">일부 작가이면서 독자인 사람들, 현업 관계자들, 즉 AI로 인해 밥그릇이 걱정되는 사람들이 목소리를 크게 내는 중일 것</li></ul><ul id="2839ff80-2382-465d-9fb8-854e1b7b612d" class="bulleted-list"><li style="list-style-type:circle">순수 독자들은 그냥 무지성으로 동조하거나 목소리를 안내는 중일 것. 일부 CP(메타크래프트)는 예쁘기만 하면 됐지라고 말하기도 함</li></ul></li></ul></div><ul id="47019714-c49f-4241-a2d9-00117b9b5413" class="bulleted-list"><li style="list-style-type:circle">해결방향<ul id="5ba6eff9-1650-43f4-a0c5-609bf2772ca3" class="bulleted-list"><li style="list-style-type:square">현업자 설득 논리 체계화 <ul id="77c25705-1d30-4299-980b-a9b7987393d0" class="bulleted-list"><li style="list-style-type:disc">현업자만 설득하면 됨</li></ul><ul id="b8a14a3c-076f-40e2-87f9-d435bcae1b50" class="bulleted-list"><li style="list-style-type:disc">스토리작이 비슷한 우려를 제기했을 때 “우리는 작가를 위한 솔루션이에요”라고 했음</li></ul><ul id="5c972cf0-2430-4199-8d2a-4a1a54288d2d" class="bulleted-list"><li style="list-style-type:disc">디지털라이선스 + NFT</li></ul></li></ul><ul id="77918cbb-e62b-4402-8b7e-947856c1c901" class="bulleted-list"><li style="list-style-type:square">애초에 반발 안할 거 같은 신규 글작가, 신규 PD를 타겟<ul id="0eb4d158-70fe-459d-95b3-af6dbcc17db0" class="bulleted-list"><li style="list-style-type:disc">글작가가 표지를 직접 구매하는 경우가 어떤 경우가 있을까? (어쩌면 공모전? 어쩌면 크몽?)</li></ul><ul id="443e578d-d30e-4f20-b1a5-b22f6c3c785c" class="bulleted-list"><li style="list-style-type:disc">근데 원래도 스튜디오도 이렇게 하려고 할 것임</li></ul></li></ul><ul id="a6fd4369-d1eb-441c-804d-a754b1d6ba84" class="bulleted-list"><li style="list-style-type:square">제품전략<ul id="f6444b8d-7523-4f1a-9d74-1697c0269b4c" class="bulleted-list"><li style="list-style-type:disc">디지털라이선스 + NFT</li></ul></li></ul></li></ul></li></ul><ul id="a7ec44d0-d697-4100-8699-86e6a3baa610" class="bulleted-list"><li style="list-style-type:disc">마케팅 툴(비용절감 + 매출 극대화)로 제안 아이디어가 있었음</li></ul><div><ul id="3f5bb38f-e21a-4642-a59f-258c735ef3d8" class="bulleted-list"><li style="list-style-type:disc">크릭엔리버 요청 → pose 컨트롤에서 선화 추출 가능하냐? 조연정도만 자연스러워도 될 듯 → 준형님하고 얘기해서 준비하고 계심</li></ul></div><p id="0d86938f-f6f1-40a6-8b5f-a799d224c94a" class="">
+</p></div></article></body></html>

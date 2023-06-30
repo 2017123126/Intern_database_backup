@@ -1,0 +1,695 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>23.04.18. 3D 인하우스 모델러 인터뷰</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="784bf112-13f3-497b-b357-e1bc01f0241e" class="page sans"><header><h1 class="page-title">23.04.18. 3D 인하우스 모델러 인터뷰</h1><p class="page-description"></p></header><div class="page-body"><hr id="01f2b00c-1edb-4bc0-843b-4268511017a9"/><p id="9857db30-97e5-48b4-b71a-ed46d2df730d" class="">작성자: 김영중</p><p id="23b684b2-c19c-4d85-be8e-b9e32cd0705b" class="">작성일: 23.04.19.</p><p id="247d3f80-d1b1-41ad-9375-d772b91fa8a4" class="">정리본</p><hr id="77c2e30f-6048-4f22-9bf4-d275a810fcbf"/><h2 id="d8a8449b-3d90-4596-98e1-44f307630358" class="block-color-yellow_background">인터뷰 대상</h2><p id="a78b4210-2441-455a-b1eb-e45f4954f5eb" class="">
+</p><p id="9c6799ad-c777-4369-8ab4-54334e3da9fe" class="">[성함]: 3D 모델러, 33세, 경력 5년차<div class="indented"><ul id="0a03d324-1db8-4e1e-9bc3-dcfa8de0a953" class="bulleted-list"><li style="list-style-type:disc">3D 기반 영상 제작 학원 강사</li></ul><ul id="33849231-a6b5-4f58-9541-824e0ba124ad" class="bulleted-list"><li style="list-style-type:disc">현 넷마블 3D 게임 캐릭터 모델러 (Sculpt + Texture)<p id="3a54cc47-986a-43ab-adf4-dec30631ed34" class="">: 아스달 연대기(드라마 IP 기반 MMORPG) 프로젝트 참여 중</p></li></ul><p id="2582671b-51fd-4fd9-877d-565665963a5c" class="">
+</p></div></p><p id="b79d7f6a-34f8-456a-b844-f63a5a8db7cb" class="">하주호: Technical Artist, 31세, 경력 7년차<div class="indented"><ul id="2a473bd0-6871-4baf-a95c-f258921bce45" class="bulleted-list"><li style="list-style-type:disc">Post Production 3D Modeling 업무 수행, 광고 CG 제작 부서</li></ul><ul id="f735b3e3-10a5-4c2e-9d16-6c73899dc24d" class="bulleted-list"><li style="list-style-type:disc">(주)룩댓[<a href="https://www.nicebizinfo.com/ep/EP0100M002GE.nice?kiscode=OT6907">page</a>]에서 텍스처, 라이팅 작업 수행</li></ul><ul id="03953948-231f-4590-9e8c-e52f5c5cdd2f" class="bulleted-list"><li style="list-style-type:disc">모 게임 회사에서 Unreal 기반 3D Effect 제작 (게임 사업 철수로 퇴사)</li></ul><ul id="48914d49-a152-41e7-818f-2b787edbb6da" class="bulleted-list"><li style="list-style-type:disc">현 넷마블 TA (3년차)<p id="c43107b6-77ff-4509-9a09-6d72755c0d7a" class="">(TA: 예술과 기술을 접목하는 역할, 모델링 관련 자동화 플러그인 제작 등 업무 수행)</p></li></ul></div></p><p id="db973f4b-8b4e-4ba2-8956-2887d5390311" class="">
+</p><hr id="ed5d980b-a20d-4e19-b0c2-1981ddff03d0"/><h2 id="9838b270-aaa0-4418-8d9e-3b538fcec8ac" class="block-color-yellow_background">업무 프로세스</h2><p id="afc559b0-8146-4239-887c-ef309e7f285e" class="">
+</p><p id="73d4958d-f3bf-4095-9cd1-fc705b6896a1" class="">Redmine[<a href="https://www.redmine.org/">page</a>] 프로젝트 관리 도구를 통해 팀장에게 업무를 전달 받아 수행하는 방식<div class="indented"><p id="1f7f70fd-32f5-41a7-9be9-e7734a5c90fc" class="">: 모델러는 맡은 업무 위주로 수행하기에, 이슈가 없을 경우 다른 일거리가 있지는 않음</p><p id="f82fde2a-1072-4bdc-8c03-352429719013" class=""><mark class="highlight-red">⇒ 개인주의적 업무 성향을 가질 가능성이 존재</mark></p></div></p><p id="3ec45e21-a9aa-46a2-9b53-04569542524c" class="">
+</p><p id="d5a42bfa-2f0d-4f22-b4c3-bcb5dd87bd16" class="">넷마블의 모델러는 <mark class="highlight-red">모형 주물, 텍스처 작업, 렌더링을 1인이 모두 커버</mark><div class="indented"><p id="704acdbb-9b4c-480c-b4c9-4a1e55f4baf2" class="">: 렌더링의 경우 정해진 게임 환경에 업로드한 장면을 보고하는 정도</p><p id="5ddb1314-fbaf-4f87-b7de-7869f49eee8c" class="">, 대부분의 시간을 모형 주물과 텍스처 작업에 활용</p><p id="dcc35b72-d869-4b7b-a6af-8d7a5827d217" class="">(Shifter라는 회사는 각 프로세스를 나눠 담당하기도 한다고)</p></div></p><p id="6c59100b-5521-49e7-9f6d-90f4f27e00d3" class="">
+</p><p id="fa4abf66-7cf2-46b2-a45b-b410d317866d" class="">영상은 업계는 Maya[<a href="https://www.autodesk.co.kr/products/maya/overview">page</a>], <mark class="highlight-red">게임은 3ds Max[</mark><mark class="highlight-red"><a href="https://www.autodesk.co.kr/products/3ds-max/overview">page</a></mark><mark class="highlight-red">]를 주로 사용</mark><div class="indented"><p id="bd31336b-900c-4c73-9bf6-98669afe85fa" class="">폴리곤의 수를 제외하고는 큰 차이는 없음</p></div></p><p id="788d1edc-f1a3-4367-a968-4b97ec63d811" class="">
+</p><p id="aa9f5508-60c2-47e0-9fce-94b907f064f0" class="">가장 기본적인 프로세스<div class="indented"><p id="97f619a8-69e8-4928-8f1e-e2b33713761b" class="">아래 프로세스에서 다른 툴을 더 쓰기도 하고, 여러 방향을 가지기도</p></div></p><ol type="1" id="a69b2aa9-666c-41c7-bbe5-2c4f7b55d825" class="numbered-list" start="1"><li><mark class="highlight-red">[50%~60%] </mark>ZBrush[<a href="https://pixologic.com/">page</a>]로 모형 주물(Sculpting) 수행</li></ol><ol type="1" id="101499d9-6ab3-40ee-9759-9c67e7908345" class="numbered-list" start="2"><li>[10~15%] 3ds Max[<a href="https://www.autodesk.co.kr/products/3ds-max/overview">page</a>]로 모델을 가져와 Retopology, UV map 작성</li></ol><ol type="1" id="8051465b-2eef-4d38-b198-f01a3219c2f9" class="numbered-list" start="3"><li>[10~15%] Adobe Substance 3D Painter[<a href="https://www.adobe.com/products/substance3d-painter.html">page</a>]을 통해 텍스처 제작</li></ol><ol type="1" id="7959dcd6-292e-4a15-8951-cefb91908725" class="numbered-list" start="4"><li>[10%] 게임 엔진으로 업로드 하여 렌더링 테스트</li></ol><p id="cae9ac0e-6fda-4dc0-be04-5ed5cb5670e1" class="">
+</p><hr id="aa88a91f-5cab-47f3-b23a-c00522d1a14a"/><h2 id="b4fc929a-7c2a-4c7d-9868-26fe80e9e788" class="block-color-yellow_background">고충</h2><p id="0b335604-b696-47fe-ad9e-cc1456740d24" class="">
+</p><ol type="1" id="8ee1ea76-c00a-4602-8743-580556f6cbcd" class="numbered-list" start="1"><li>Sculpting 후 애니메이션이 들어갈 수 있도록, <mark class="highlight-red">retopology 작업을 수행, 이 작업에 피로감이 발생</mark><p id="92fc1429-5275-44a2-94d7-aaba4dd5c6a1" class="">(retopology: rigged mesh로 폴리곤을 다시 짜맞추는 작업)</p><p id="fa8338c5-9500-4e04-a10b-810aee215135" class="">게임 캐릭터의 경우 <mark class="highlight-red">관절에 따라 메쉬가 맞아 떨어져야 하는데, 자동화 도구는 아직 관절의 엣지 라인을 잘 못 맞춤</mark><div class="indented"><p id="3b80993c-12fc-4a6e-acf7-8c0dff673d03" class="">관절의 움직임을 이해하고 retopology하는 자동화 도구는 아직 존재하지 않는다고</p></div></p><hr id="de8a5ae1-6958-48a4-85b8-880d3e3ea8c2"/><p id="e1c2c098-89d3-4db5-9352-34a1e413e4d8" class="">현황<div class="indented"><ol type="a" id="0570283f-992e-40f7-ad63-0d9044e21458" class="numbered-list" start="1"><li>움직이지 않는 파츠에 대해서는 자동화하지만, 그 외 부분은 여전히 수작업</li></ol><ol type="a" id="bf9009f7-20bd-4eaa-bf43-95b692338c7c" class="numbered-list" start="2"><li>ZBrush의 ZRemesher 빌트인을 통해 Retopology 초벌 작업을 하고, 이후에 리터칭을 수작업으로 하는 경우도 있음<p id="ae1ea60e-e5b8-4d06-a1bf-57a306b32073" class="">: 외부 툴로도 많이 나왔으나, <mark class="highlight-red">빌트인의 성능이 점점 좋아지면서, 대부분 빌트인 retopology 도구로 넘어가는 추세</mark></p></li></ol></div></p></li></ol><p id="f494df28-fc64-4a44-88e5-852e2f881885" class="">
+</p><ol type="1" id="7afca017-ff4c-4dcd-9e2c-b7a014c66e6b" class="numbered-list" start="2"><li>UV Map 작성<p id="8c5e4e25-182f-4cfa-a64d-8cfedcfd54e9" class="">게임의 경우 유저 컴퓨터의 스펙이 다양하기에, 최대한 용량을 최적화 해야 함</p><p id="d73cb740-b69d-458d-8ca1-6c8105df777b" class=""><mark class="highlight-red">자동화 도구를 통해 UV Map을 최적화할 경우 미감이 떨어지거나, 정확도가 떨어지는</mark> 문제가 발생</p><hr id="56020d3e-0f2a-41f0-8313-7dfd8e3ed35b"/><p id="33519145-536c-449b-9ec1-df501bf75668" class="">현황<div class="indented"><ol type="a" id="bbcf0968-336f-4681-8e33-10e77573783c" class="numbered-list" start="1"><li>초창기에는 ZBrush의 UV Master나 Topogun[<a href="http://www.topogun.com/">page</a>]의 자동화 도구를 사용<p id="a2464ea1-27ed-4b1f-b87d-f4780cebfe50" class="">현재는 <mark class="highlight-red">3ds Max의 builtin을 사용하는 추세</mark></p></li></ol></div></p></li></ol><p id="87799c1b-b706-4a09-afea-f5961c44fba4" class="">
+</p><ol type="1" id="8fa13bf6-3f7c-4f32-8e1b-7ab3bf418ed7" class="numbered-list" start="3"><li>머리카락 폴리곤<p id="34fe5bff-ae59-4de1-8800-1de5ce8b7efa" class=""><mark class="highlight-red">머리카락의 경우 하나 하나 폴리곤을 작성하고</mark>, 움직임을 루프로 구성하여 입력, <mark class="highlight-red">이 모든 작업이 수작업</mark></p><p id="605049eb-8567-4401-bd7c-7032cfc08689" class="">Spline 방식으로 머리카락을 구성하는 경우, 머리카락의 움직임을 랜덤으로 생성할 수 있는데<div class="indented"><p id="5b188877-36b5-4fe9-875c-518f8c2a03bf" class="">폴리곤 방식의 경우 텍스처까지 하나 하나 뽑아야 하기에 리소스가 많이 투입됨</p><p id="d29ee7cf-5ada-4b3b-8c1c-bf6d4bf710b7" class=""><mark class="highlight-red">가장 자동화 되었으면 좋겠다고 언급한 부분, 하지만 가장 나중에 자동화 될 것이라고 추측하는 부분</mark></p></div></p><hr id="c4270701-3832-4a83-b6e2-a266b2881c3c"/><p id="d5532a24-3278-42f4-9f5f-4e82fbddcf06" class="">현황<div class="indented"><ol type="a" id="fb9ed4ac-15f5-42f1-b7ce-9b0272720ef0" class="numbered-list" start="1"><li>Maya의 XGen[<a href="https://www.autodesk.co.kr/products/maya/features/dynamics-and-effects/faster-easier-to-use-xgen">page</a>]를 써서 머리카락의 초안을 뽑더라도, 게임에서의 <mark class="highlight-red">UV Map 최적화 문제로, 결국 사람 손이 타게됨</mark></li></ol></div></p></li></ol><p id="088dd9c1-7cd6-4350-9c8f-53d638035389" class="">
+</p><ol type="1" id="ea67c458-59df-43ed-bb69-39cfd08427cc" class="numbered-list" start="4"><li>패턴화되거나, <mark class="highlight-red">반복적인 모델링을 수작업할 때 피로감 발생</mark><p id="7d7581e2-fc71-498a-bcc1-9da69e917b41" class="">대체로 모델러들은 <mark class="highlight-red">인터넷에서 유사한 모델을 찾아, 거기서부터 수정을 시작하곤 함</mark><div class="indented"><p id="f4a477f8-d245-4b12-a461-fa165bf12162" class="">그렇지 않으면 인체 비율을 맞추는 것에도 시간이 많이 소요되기 때문</p><p id="c4dabb14-470d-427f-a1de-e836a7253cbf" class="">데이터베이스가 있어 검색이 가능하거나, <mark class="highlight-red">프로토타입만 자동화되어도 충분한 상황</mark></p><ul id="cd746654-d4d4-46ef-a98a-7f298251030d" class="toggle"><li><details open=""><summary>프로토타입 예시</summary><figure id="3f88c5b7-af77-4157-a4fa-9d938300dd4b" class="image"><a href="Untitled.png"><img style="width:384px" src="Untitled.png"/></a></figure><figure id="09f2f4ef-f91c-427a-a2d1-570768e2fcf5" class="image"><a href="Untitled%201.png"><img style="width:384px" src="Untitled%201.png"/></a></figure></details></li></ul></div></p><hr id="d9346d9c-dc35-4ec8-a53a-715568740940"/><p id="c933bbda-d5f8-45dd-bf23-7bdbed1e3011" class="">현황<div class="indented"><ol type="a" id="9b56bcf4-4f40-4305-87d7-05af98c929ee" class="numbered-list" start="1"><li>3ds Max에 ChatGPT 플러그인을 붙여 자동으로 Sculpting하는 기능이 베타로 공개되어 점검 중</li></ol></div></p></li></ol><p id="785e9d7e-6306-40b1-ab76-baa3ca643f54" class="">
+</p><ol type="1" id="29778311-31f9-4f76-97e6-113e83e711d8" class="numbered-list" start="5"><li>매니저와 모델러의 아트 스타일이 다를 경우,<mark class="highlight-red"> 니즈와 결과물이 매칭되지 않는 경우가 발생</mark><p id="700e0728-f636-494b-a918-58efae1dfa31" class="">가장 이상적인 것은 <mark class="highlight-red">원화팀에서 명확한 컨셉을 제시</mark>하고, 중간 컨펌을 자주 받는 것<div class="indented"><p id="143dda13-7567-4f40-875f-0fb5e491377d" class="">하지만 업무가 많다 보면, 소통이 충분히 이뤄지지 않아 매칭되지 않는 경우가 종종 발생함</p></div></p><hr id="fcd4d5f5-bb8d-44bf-a312-1c2ca9d19a1e"/><p id="7d482ab7-4b33-4d0b-b9f4-f158b3bbc4bd" class="">현황<div class="indented"><ol type="a" id="b283dfff-21d5-4c6c-ab8c-d19470a20d22" class="numbered-list" start="1"><li>요즘은 디렉터들이 Midjourney를 통해 컨셉 이미지를 제작하여 공유하는 편<p id="5327fe48-f293-4fd4-b605-774cfc651449" class="">실제로 도움이 많이 되고 있고, 레퍼런스를 참조하니 니즈의 전달이 명확해짐</p></li></ol></div></p></li></ol><p id="27f1a3a6-429c-4a81-9116-105bfcf85af6" class="">
+</p><hr id="b6d5cbc4-28f4-469e-b0fc-4e89aa69379e"/><h2 id="e51c9e64-797b-41b2-a82a-0de7a43cd6e0" class="block-color-yellow_background">그들이 보는 AI의 미래</h2><p id="6a350385-00f1-48ad-b789-a87ad8b862bb" class="">
+</p><p id="6b7c139e-f333-4bc1-b7ea-2b726d7d563f" class="">완벽한 End-to-End 모델링 자동화 보다는, <mark class="highlight-red">프리셋이 많이 출현할 것으로 예상</mark><div class="indented"><p id="70f2413f-d7c3-4500-93ac-641c0e83bc03" class="">프리셋 조합, 변형 및 조작을 통해 아트 스타일을 반영, 완성하는 방식이 될 것</p><p id="e18094f5-5510-4b78-89b7-fad9e850cded" class="">이는 AI가 아니더라도, 데이터가 쌓이고 나면 충분히 가능한 미래일 것이라고</p><p id="03e8d0db-3d56-4be0-a4d1-91217f983f3f" class="">Ex. 언리얼의 메타 휴먼</p><p id="57468b45-0637-4f4d-b4ca-b50bd6eb8fb5" class="">이미 <mark class="highlight-red">프리셋으로 모두 존재한다면, 더 이상 Retopology에 대한 니즈도 사라질 것 (이미 완성형이니)</mark></p></div></p><p id="e3f55014-f8a5-472e-9058-10673be8793f" class="">
+</p><p id="66e270f0-14de-49aa-9157-4796ae5cb47c" class=""><mark class="highlight-red">배경 및 기타 에셋이 가장 먼저 자동화 될 것</mark>이고, 이후 캐릭터가 모델링 될 것<div class="indented"><p id="001f32b0-6028-496a-8ec7-a5e8d3fb59a7" class="">영상이 먼저 자동화 되고, 게임이 자동화 될 것</p><p id="e6ddd5be-8287-4a4b-aacc-93b7510e1ce7" class="">영상은 조금만 더 있으면 어느 정도 퀄리티는 자동으로 보장될 것으로 예상 중</p><p id="44846071-d969-4c98-b5bb-ea26f8a6ec7d" class="">영상은 이미지의 연속이고, 현재 이미지는 대량으로 합성되어 지고 있기에, 영상 자동화가 더 먼저 올 것</p></div></p><p id="70a5340a-9a42-4dc6-b8cd-cf6f9bd5f7df" class="">
+</p><p id="6ba5a9f7-dadc-4bdc-b218-ee04b9222bae" class="">Sculpting에 절반 이상의 업무 시간을 활용 중<div class="indented"><p id="b9554bf0-e67c-43a1-87ee-6289d9df69c5" class="">현재도 <mark class="highlight-red">기본적인 뼈대는 ChatGPT + 3ds Max를 통해 제작 중</mark></p><p id="f79056be-b939-4340-ab0f-96b9a1a48344" class="">NVIDIA와 Microsoft에서도 모델링 관련 AI를 구현하고 있고, 머지 않은 미래에 High polygon 작업을 다 해줄 것 같음</p></div></p><p id="9c98d62f-58d0-4f21-8a58-f1a7fea4cc3b" class="">
+</p><p id="8a2ce763-83b3-48cb-a9b4-632a271a2362" class="">
+</p></div></article></body></html>

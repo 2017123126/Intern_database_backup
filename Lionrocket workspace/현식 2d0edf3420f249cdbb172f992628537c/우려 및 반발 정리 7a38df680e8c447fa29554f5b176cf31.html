@@ -1,0 +1,735 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>우려 및 반발 정리</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7a38df68-0e8c-447f-a295-54f5b176cf31" class="page sans"><header><h1 class="page-title">우려 및 반발 정리</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-pink">routine</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><h1 id="b6a86ffb-7972-4305-a9df-ade243e07c20" class="">웹소설 표지 및 일러스트</h1><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">AI 웹소설 표지에 대한 고객 및 파트너의 반발</summary><div class="indented"><div><p id="c40cdbf4-8ce5-4e32-80c8-54b5d63b174e" class=""> </p><ul id="ea6e9d82-cfae-4eea-b3b3-a9595dac17d8" class="bulleted-list"><li style="list-style-type:disc">그림작가 반응<ul id="99cce3f8-fced-41de-ab62-2fe79d122acf" class="bulleted-list"><li style="list-style-type:circle">많은 그림작가들의 거부 반응 보임</li></ul><ul id="8ec43fc3-1aa6-4946-8eab-e8d9051c25e2" class="bulleted-list"><li style="list-style-type:circle">크릭앤리버가 너무 AI에 앞장선다는 느낌이 향후 작가 섭외시 부작용으로 작용할거라는 부담감 (이건 영업기획 김민철상무님이 별도로 연락주셔서 걱정한 내용)</li></ul></li></ul><ul id="7ae7c52a-6cdf-4a24-8fa8-8c100add7fba" class="bulleted-list"><li style="list-style-type:disc">글작가 반응<ul id="3d8017e5-3521-481e-9f65-54968ea62802" class="bulleted-list"><li style="list-style-type:circle">작가들도 본인이 (고작) AI 표지를 통해 대우받는 방식이 불쾌함</li></ul></li></ul><ul id="8cc3e66e-9e86-4138-bf8f-2952b8c9d457" class="bulleted-list"><li style="list-style-type:disc">독자 반응<ul id="51750318-3ad9-426b-800d-ffa8fb32d9be" class="bulleted-list"><li style="list-style-type:circle">독자들 중 일부는 정말 세세히 관찰하고 AI임을 끄집어내어 퍼뜨림</li></ul></li></ul></div><p id="7182b329-43ef-420a-9615-3286bb9d9d84" class="">
+</p><div><ul id="7428a1bd-73a9-4cf8-8846-f739ac753146" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">웹소설 표지제작은 작가와 독자의 반대로 어려움</span></li></ul></div><p id="997d5d58-ec33-4b39-8fa5-1d440932285f" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">취업 지원 사업에 SD가 들어간 일에 대한 반발</summary><div class="indented"><figure id="9f8015fe-33b9-4460-b9b1-b402186cb00d"><div class="source"><a href="https://twitter.com/MM_YUmami/status/1658745214687911936">https://twitter.com/MM_YUmami/status/1658745214687911936</a></div></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">네이버 시리즈 로판 웹소설 표지 AI 사건 “누가 AI를 썼느냐”</summary><div class="indented"><p id="eb99203e-7614-47ea-8914-efff0ada6163" class="">출판사가 준비한 표지가 있었는데 이를 작가가 쓰지 않고 개인적으로 일러스트레이터를 통해서 준비한 표지와 삽화를 사용. </p><p id="fc1b4415-8946-4d05-8a44-8557bb84a0f2" class="">알고보니 작가가 개인적으로 일러스트레이터를 통해 준비한 이 표지와 삽화가 AI를 이용한 그림이었음이 밝혀짐. </p><p id="13ec2e42-d406-4801-a0ca-ff41ed264aa8" class="">런칭 1주일 전 마감 당일에 가져와서 출판사에서 검증 못하고 그냥 올림</p><figure id="940ec2e4-957a-4ec7-9f70-b89552127639"><a href="https://bbs.ruliweb.com/community/board/300143/read/61504061" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">지금 사태 더 커지고 있다는 로판 웹소설 AI 표지 사건 | 유머 게시판 | 루리웹</div><div class="bookmark-description">+지금 작가가 아예 일러레 이름을밝히지 않고 있어서 독자들 반응이 안 좋은 거라고 함</div></div><div class="bookmark-href"><img src="https://img.ruliweb.com/img/2016/icon/ruliweb_icon_144_144.png" class="icon bookmark-icon"/>https://bbs.ruliweb.com/community/board/300143/read/61504061</div></div><img src="https://i1.ruliweb.com/thumb/23/05/17/1882902946756cc7a.jpg" class="bookmark-image"/></a></figure><p id="3ebd32a6-8300-40c1-b00f-a4640666ac33" class="">근데 솔직히 퀄 좋은 거 같은데…이걸 골라내네…</p><p id="2dc3fe88-e2fd-45f9-8101-a3627e470841" class="">
+</p><p id="7fc5a49e-6c8e-4d9f-a503-efaac34eb8a7" class="">출판사(<a href="https://twitter.com/shinyoung_books">신영미디어</a>) 측 입장문</p><figure id="7a14e8d6-47b5-4da2-b343-5a594c4a125e" class="image"><a href="%E1%84%8B%E1%85%AE%E1%84%85%E1%85%A7%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A1%E1%86%AF%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%207a38df680e8c447fa29554f5b176cf31/image.png"><img style="width:1344px" src="%E1%84%8B%E1%85%AE%E1%84%85%E1%85%A7%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A1%E1%86%AF%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%207a38df680e8c447fa29554f5b176cf31/image.png"/></a></figure><p id="1890c2d4-6956-44ae-a14d-5e00c12729e2" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">사람이 그렸는데 AI가 그렸다고 의심받은 웹소설 표지</summary><div class="indented"><p id="41f25528-d1e2-408f-856b-cbc3d8eadac5" class="">특유의 인삐(인체 비례 삐꾸) 등 이유로 인해 의심받은 듯</p><p id="b8bc6386-19e0-476d-8d59-19062c74af11" class="">그러나 이 사람이 그린 거임 → 제타필드</p><figure id="e218f7fa-b0a2-4cf6-bb40-050b4082db6e" class="image"><a href="%E1%84%8B%E1%85%AE%E1%84%85%E1%85%A7%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A1%E1%86%AF%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%207a38df680e8c447fa29554f5b176cf31/wYSpAE.jpg.webp"><img style="width:503px" src="%E1%84%8B%E1%85%AE%E1%84%85%E1%85%A7%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%87%E1%85%A1%E1%86%AB%E1%84%87%E1%85%A1%E1%86%AF%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%B5%207a38df680e8c447fa29554f5b176cf31/wYSpAE.jpg.webp"/></a></figure><figure id="81ef7365-39b9-44f5-85ce-c226e6431eb5"><a href="https://theqoo.net/square/2771965405" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">AI가 그린거 아니냐고 논란중인 BL웹소설 표지 - 스퀘어 카테고리</div><div class="bookmark-description">리디북스에 새로 런칭한 BL소설임 문제는 소설이 아니고 표지 AI가 그린거 아니냐고 덧글 계속 달리는 중... 근데 AI가 그린거 아니고 사람이 그린거임 심지어 원래 그림은 존잘인데 저 표지 때문에 AI 소리 듣는 중</div></div><div class="bookmark-href"><img src="https://theqoo.net/apple-touch-icon.png" class="icon bookmark-icon"/>https://theqoo.net/square/2771965405</div></div></a></figure><p id="30ed15e0-8390-4f9d-b66b-13536f8df685" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://n.news.naver.com/article/008/0004889895?ntype=RANKING&amp;mibextid=Zxz2cZ">머니투데이 기사, 반발의 이유는 생성 AI의 저작권 이슈 때문</a></summary><div class="indented"><p id="79c94cca-f1d0-42af-b46e-3ff3817e790d" class="">반발의 이유는 생성 AI의 저작권 이슈 때문<div class="indented"><p id="7d977071-76c9-41c4-b5a5-d253514fbbde" class="">“생성형 AI 대부분이 저작권자 허락 없이 기존 저작물을 학습용 데이터로 활용하는 점을 꼬집었다.”</p></div></p></div></details><h1 id="cb22d50b-e01a-494b-96ad-a5d52102892b" class="">웹툰 제작</h1><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">스튜디오의 경우 작가들의 힘이 쎄서 작가들의 반발을 이겨내기 힘들더라</summary><div class="indented"><figure id="f4202a5f-bb89-4ddb-9bfa-06b0f1aee00f"><div class="source">https://lionrocket.slack.com/archives/C02GN0KUW6N/p1684330932969289?thread_ts=1684324852.282909&amp;cid=C02GN0KUW6N</div></figure><p id="a0b6c5cb-e963-48b8-b5a7-600d38ea4d96" class="">실제로 웹툰 작업 방식이 단독 창작 방식이 가장 많음…</p><ul id="1cfb853f-d55d-45d3-af8f-f1701e9ce24d" class="toggle"><li><details open=""><summary>detail   </summary><ul id="429c2ea3-5fca-4ba7-a135-346fc2139ca9" class="bulleted-list"><li style="list-style-type:disc">창작 작업 방식으로는 ‘단독창작’ 방식이 35.1%로 가장 많았고,</li></ul><ul id="2bf2b0a7-f660-481e-92f0-cb819662925a" class="bulleted-list"><li style="list-style-type:disc">그 다음으로는 ‘단독창작(보조작가 있음)’(31.7%)</li></ul><ul id="d108bec4-1421-407e-8005-2d11df059dd7" class="bulleted-list"><li style="list-style-type:disc">‘CP사 소속’(16.2%), ‘작가와 공동 작업’(12.6%) 등의 순으로 나타남.</li></ul></details></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://lionrocket.slack.com/archives/C058N600H3R/p1684900873265369">CP사는 작가를 붙잡는 것이 가장 중요</a></summary><div class="indented"><p id="6ca407d4-ec21-410b-ae7a-56cae3bf2d94" class="">CP사의 가장 큰 관심은 소속 작가그룹의 이탈을 막고자 하는 것</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">클립 스튜디오 AI 기능 못넣게 된 일</summary><div class="indented"><div><p id="f72b4473-20d6-4db7-88d6-a041c96d9a01" class="">“향후 이러한 우려가 있는 이미지 생성 AI를 이용한 기능을 CLIP STUDIO PAINT에 탑재하지 않겠습니다” → <a href="https://www.clipstudio.net/kr/news/202212/02_01/">링크</a></p><ul id="cc97bc34-a5a1-4533-a41b-57923a56e9ac" class="bulleted-list"><li style="list-style-type:disc">현 상황의 이미지 생성 AI 방식이 저작권을 침해하지 않아도 <span style="border-bottom:0.05em solid">누군가의 저작물을 이용하여 이미지가 생성</span>되고 있어 그 출처가 불분명한 앱은 사용하고 싶지 않다.</li></ul><ul id="db22d44c-f216-4e50-a04b-67c2f243a6ad" class="bulleted-list"><li style="list-style-type:disc">아티스트를 위한 도구라고 해도 이미지 생성 AI 기능은 오히려 아티스트를 곤경에 몰아넣고 그 활동을 저해한다.</li></ul><ul id="8dcbfde5-f9ae-4384-bc2b-a408667770d0" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">윤리적으로 문제가 없는 방법으로 수집된 데이터를 이용하지 않는다면 사용할 수 없다</span>.</li></ul><ul id="68fce30a-6152-46d1-b072-9f7d3a256e08" class="bulleted-list"><li style="list-style-type:disc">CLIP STUDIO PAINT를 사용했다는 이유만으로 이미지 생성 AI로 만들었다고 의심받는다.</li></ul><ul id="2f4d6fa8-f45c-4b7f-a619-8fe31ebe2d12" class="bulleted-list"><li style="list-style-type:disc">왜 요청이 많은 기능 개선에 주력하지 않고, 문제시되고 있는 기능을 추가하는지 이해할 수 없다.</li></ul><ul id="e964eaad-862f-41ec-954b-61f1048a41be" class="bulleted-list"><li style="list-style-type:disc">신용할 수 없는 기능이 탑재되어 있는 도구는 창작 파트너로서 받아들일 수 없다.</li></ul><ul id="742e73b8-9e98-4deb-8497-f061d2d05c57" class="bulleted-list"><li style="list-style-type:disc">타인의 권리가 침해될 가능성이 있는 이미지가 생성될 수 있는 기능을 제공해 놓고 그렇게 되지 않도록 스스로 유의해 주길 바란다는 셀시스의 자세는 무책임하다.</li></ul></div><p id="4ea1b99c-9c7c-4701-969a-b97dd1226f82" class="">
+</p><p id="6ef563f0-9e8f-45e8-b9e4-ca0be268f614" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">작가의 입장 vs 스튜디오의 입장</summary><div class="indented"><div><p id="2ec35a22-9b36-44d9-b0cf-f5d3f47e4c0e" class="">작가의 협조는 사업자 마인드나 경영자 마인드가 아닌 이상 대부분 민감하고 비협조적임</p></div><p id="a8748654-7edc-4cbe-8f8e-91ecac1672de" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">AI 그림체가 반영된 웹툰에 대한 독자의 거부감</summary><div class="indented"><figure id="f1d335e6-1801-4282-bdf2-7b5e72a7c869"><a href="https://www.mbn.co.kr/news/society/4931857" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">AI가 그리는 웹툰…작가는 마우스 클릭하는 &#x27;딸깍이&#x27;?</div><div class="bookmark-description">현재 네이버웹툰에서 연재 중인 요일 웹툰 약 600여 편 가운데 가장 낮은 점수를 기록한 신작 &#x27;신과함께 ...</div></div><div class="bookmark-href"><img src="https://img.mbn.co.kr/etc/images/banner/main_banner/mbn.ico" class="icon bookmark-icon"/>https://www.mbn.co.kr/news/society/4931857</div></div><img src="http://img.mbn.co.kr/filewww/news/2023/05/24/1684893197646d6e0dd932e.jpg" class="bookmark-image"/></a></figure><figure id="31e3f821-bab9-49f3-bd04-45c16908bf13"><a href="https://www.chosun.com/economy/tech_it/2023/05/30/7FPPG3NDLBCGNLG5COBW43IERA/?utm_source=naver&amp;utm_medium=referral&amp;utm_campaign=naver-news" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">“주인공이 왼발만 2개… AI로 만든 게임·웹툰 안 사겠다”</div><div class="bookmark-description">주인공이 왼발만 2개 AI로 만든 게임·웹툰 안 사겠다 이용자들 AI 창작물 거센 반발</div></div><div class="bookmark-href"><img src="https://www.chosun.com/pf/resources/icons/favicon_chosun.png?d=1116" class="icon bookmark-icon"/>https://www.chosun.com/economy/tech_it/2023/05/30/7FPPG3NDLBCGNLG5COBW43IERA/?utm_source=naver&amp;utm_medium=referral&amp;utm_campaign=naver-news</div></div><img src="https://images.chosun.com/resizer/jB4hO6ol3By-HphabtZDZZP70Yk=/1200x630/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/KTQPJNGUDFDUNJ6I5WAANAM4EA.png" class="bookmark-image"/></a></figure><p id="88c98e17-b3ea-4027-9ee3-c4c23431b25d" class="">가장 낮은 점수를 기록한 신작 &#x27;신과함께 돌아온 기사왕님&#x27;, 이유는 &#x27;생성형 AI&#x27;로 제작됐다는 의혹에 휩싸여 독자들로부터 비난받고 있기 때문입니다. 웹툰 독자들은 생성형 AI 활용에 강한 거부감을 드러내고 있습니다. 독자들은 사물이나 옷의 세부적인 모양, 화풍이 컷마다 조금씩 변하고 인물의 손가락 등이 어색하다는 점 등을 들어 작품 전반에 생성형 AI가 상당 부분 활용했다고 의혹을 제기했습니다. 작가가 손으로 공들여 그리지 않고 명령어와 마우스 클릭을 통해 제작한 웹툰을 상업적으로 판매한다는 데 마우스 클릭을 뜻하는 &#x27;딸깍이&#x27;라는 표현을 쓰며 거부감을 표하고 있습니다.</p><p id="bbfa1fc4-bb63-41b7-b776-a0b2198fd5f0" class="">AI로 후보정 작업을 했을 뿐이라고 해명을 내놨습니다. &quot;3D모델과 각종 소재들을 사용하면서 웹툰에서 느껴지는 위화감을 줄여보고자 작업의 마지막 단계에서 AI를 이용한 보정작업을 했다&quot;고 설명</p><p id="8224fbdf-7872-4aaf-9055-42b7f3277a9d" class="">
+</p><p id="3bd0d3ef-d03d-4c36-88db-0a1f40935f8d" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202305310274&amp;t=NN">AI 웹툰 금지한 네이버 웹툰 공모전 → 대기업도 눈치보는 상황임</a></summary><div class="indented"><p id="0546dee6-31ec-4462-9318-bcbea863583f" class="">네이버웹툰이 지상최대공모전에서 명령어만 입력하면 자동으로 그림을 그려주는 <span style="border-bottom:0.05em solid">생성형 AI 기술 활용을 막기로 했다.</span></p><p id="6c99aafb-17e9-4861-a412-647b036a2574" class=""><span style="border-bottom:0.05em solid">1차 접수 단계에서 AI 활용 관련 제한을 두지 않았다. 하지만 31일 현재 진행 중인 2차 접수 단계부터는 생성형 AI 기술을 사용할 수 없다고 밝혔다.</span></p><p id="995f0d61-29d8-44c5-af2f-275535e92de9" class="">1차 접수 당시 제출한 1화 분량에 AI를 활용했더라도 베스트도전 승격 이후 2화, 3화는 직접 그려서 낸다면 접수할 수 있다.</p><p id="bda3a4cb-a35f-416b-9c5d-aa307ce2abb6" class="">생성형 AI를 활용한 작품에 대한 사회적 합의가 마련되지 않은 상황&quot;이라며 &quot;정식 연재를 염두에 두고 진행하는 지상최대공모전 2차 접수 작품에는 생성형 AI의 활용이 불가하다&quot;고 설명했다.</p><p id="c28e95d9-02cf-45b3-8d2f-df47895f33e7" class="">“<span style="border-bottom:0.05em solid">현재 공모전 출품작과 도전만화를 AI 학습에 활용하고 있지 않고 앞으로도 활용하지 않을 것</span>&quot;이라고 말했다.</p><p id="b2a3a79f-4448-489e-89e3-740a1f6fb336" class="">(<a href="https://www.fnnews.com/news/202306031322165184">관련된 다른 기사</a>)</p><ul id="93074fc6-c19f-4a1e-994b-8955bf66bcfb" class="toggle"><li><details open=""><summary>심지어 &quot;웹툰 제작 과정에서 생성형 AI 사용을 지양하자&quot;는 내용의 &#x27;AI 사용 가이드라인&#x27;을 네이버웹툰이 웹툰 작가들과 협의 중 → 근데 이거는 다분한 언론 플레이라고 함 (<a href="https://www.inews24.com/view/1600536">기사</a>)</summary><figure id="58480f0e-d326-457d-b0dc-90a33cc9624a"><div class="source">https://lionrocket.slack.com/archives/C058N600H3R/p1686290101642889?thread_ts=1686288321.648069&amp;cid=C058N600H3R</div></figure></details></li></ul><p id="e24b99a8-ecfb-4c27-bf50-7c1412ce0a52" class="">
+</p></div></details><div><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">광범위한 우려와 반발에 봉착한 상황 (20230605)</summary><div class="indented"><p id="44b23feb-e6d5-4181-9c1b-1513ac1e422b" class="">“4일 오후 네이버웹툰의 ‘도전만화’ 코너는 ‘AI웹툰 보이콧’이라는 제목의 게시글이 여러 건 올라와 ‘도배’된 상태” (기사 <a href="https://www.donga.com/news/Economy/article/all/20230605/119619926/1">링크</a>) (<a href="https://comic.naver.com/challenge/list?titleId=811519">도전만화 AI 보이콧 예시 링크</a>) (<a href="https://youtu.be/bdy6oDok1t0">JTBC 뉴스</a>)</p><p id="4f037f42-4161-4cf6-8aa8-deb40d2bdea0" class="">근본적인 문제 해결 방안에 대한 고민이 필요 ← 제품 전략이 반드시 뒷받침되어야 함</p><ul id="7d96d130-2035-41f3-b678-4eb52c02e9ce" class="bulleted-list"><li style="list-style-type:disc">작가들의 의견과 노하우를 듣는 것이 중요함<p id="aed8e86d-0bcc-4252-af65-61cf80496ee2" class="">“특히 웹툰 작가들 의견과 노하우를 반영한 제작 프로그램을 개발하면, 국내 웹툰 산업은 더 성숙하고 발전될 것” (<a href="https://www.ddaily.co.kr/page/view/2023060217443250741">기사</a>)</p></li></ul><figure id="2b50c33b-4bc1-4314-8479-af250fd47f3e"><div class="source">https://lionrocket.slack.com/archives/C058N600H3R/p1685943597704529</div></figure></div></details></div><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><code>다만</code> AI로 생성된 이미지를 기반으로 2차 창작물을 만든다면 그에 대해서는 저작권을 인정</summary><div class="indented"><p id="73038c0a-1068-406a-8571-10cf3950be5d" class="">“이미지 자체는 저작권이 없지만 이를 바탕으로 2차 창작물을 만든다면 그에 대해서는 인정한다는 뜻이다.”</p><p id="52b667e4-b6e0-4a81-9867-7b406edd1900" class=""><a href="http://news.heraldcorp.com/view.php?ud=20230601000360">링크</a></p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">우리나라는 생성 AI를 고려한 저작권법 가이드라인을 9월까지 만든다고 함</summary><div class="indented"><p id="69546513-2f8e-4585-b098-10d9fd460e79" class="">그때까지는 버텨야 함…</p><p id="5d9b3f7b-0247-4896-a696-ae2fba3549e2" class="">“문화체육관광부는 지난 2월 ‘AI 저작권법 제도개선 워킹그룹’을 발족하고 9월까지 저작권법 가이드라인을 만들 계획이다.”</p><p id="8ec23467-88f6-497a-83db-0367aebf1464" class=""><a href="http://news.heraldcorp.com/view.php?ud=20230601000360">링크</a></p></div></details><h2 id="2f4714dd-794d-4bd7-9c75-d5a15a8fd473" class="">다른 산업군</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="http://news.heraldcorp.com/view.php?ud=20230531000621">영화계도 마찬가지임</a></summary><div class="indented"><p id="c2ab3059-11fa-429a-9eb5-a651e1a410a3" class="">영화계의 상황도 크게 다르지 않다. 미국 할리우드에선 최근 AI 사용이 주요 화두로 떠올랐다. 할리우드 작가 1만1500여명으로 구성된 미국작가조합(WGA)은 지난 2일부터 보수 체계 개편과 관련한 파업에 돌입했는데, 파업 철회 조건 중 하나로 AI 사용 제한을 내걸었다. 이들은 AI를 활용한 대본 작성은 물론, 수정과 재작성을 금지하고, 저작권을 지켜줄 안전장치를 마련해줄 것을 요구하고 있다.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">일반 직군도 마찬가지임</summary><div class="indented"><p id="4dc1a428-f799-4a11-bb85-681bebbdf4d6" class="">미국 기업 5월 감원 원인 중 5%가 인공지능</p><figure id="5a0a16ed-ea06-4823-bc6f-e5dc5b823a25"><a href="https://youtu.be/ysx8H66pp2E" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">[심층인터뷰] ‘AI 침공’ 시작됐나? / KBS  2023.06.02.</div><div class="bookmark-description">주식 시장에서도 고용 시장에서도 인공지능 AI가 단연 화둡니다. 미국에선 기업들의  직원 해고 사유에 AI가 처음으로 등장했습니다. 김덕진 미래사회IT연구소장 나오셨습니다.챗 GPT 등 AI 발전 속도가 너무 빠릅니다. IT전문가로서 어떻게 체감하고 계십니까?
+
+ [앵커] 
+
+ 챗GPT가 홈런을 쳤다면. 
+
+그 다음 타자는 누굽니까?
+
+ [앵커] 
+
+코파일럿, 부기장이라는 뜻인데. 
+
+이 정도의 발전 속도면 기장의 자리 넘보게 되지 않을까요?
+
+ [앵커] 
+
+실제로 미국에서는 직원 4천 명 해고 사유에 처음으로 AI가 등장했습니다.
+
+ AI의 일자리 공습 시작된 겁니까?
+
+ [앵커] 
+
+4차 산업혁명 얘기가 막 나오기 시작했을 땐 노동직 ‘블루칼라’의 일자리가 위험하다 그랬잖아요. 
+
+그런데 정작 예술이나 사무직종에 더 큰 영향을 미치게 된 거네요?
+
+ [앵커] 
+
+그런데 반대로 인공지능을 더 잘 활용하는 사람에게는 기회가 될 수도 있지 않을까요?
+
+ [앵커] 
+
+인공지능이 새로운 산업이나 비즈니스를 만들어 낼 가능성은 어떻게 보십니까?
+
+ [앵커] 
+
+인공지능이 일자리, 나아가 산업의 구조를 바꾸는 출발선에 서있습니다.
+
+ 우리는 어떤 대비가 필요할까요?
+
+▣ KBS 기사 원문보기 : http://news.kbs.co.kr/news/view.do?ncd=7690833
+
+▣ 제보 하기
+◇ 카카오톡 : &#x27;KBS제보&#x27; 검색
+◇ 전화 : 02-781-1234
+◇ 홈페이지 : https://goo.gl/4bWbkG
+◇ 이메일 : kbs1234@kbs.co.kr
+
+#AI  #인공지능 #미국</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/339bae71/img/favicon_144x144.png" class="icon bookmark-icon"/>https://youtu.be/ysx8H66pp2E</div></div><img src="https://i.ytimg.com/vi/ysx8H66pp2E/maxresdefault.jpg" class="bookmark-image"/></a></figure></div></details></div></article></body></html>

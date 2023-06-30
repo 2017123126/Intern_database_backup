@@ -1,0 +1,680 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>생성 AI, 인공지능의 한계를 극복하다</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="49b2a3dc-1098-424d-93b0-eb260068040f" class="page sans"><header><h1 class="page-title">생성 AI, 인공지능의 한계를 극복하다</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-purple">article/lecture</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AATXAJyqLbmCwuQjRWK_G_jiIWd-GM6Mc8GN76HcF98B=s100" class="icon user-icon"/>김현식</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><figure id="93127ad0-925a-4eeb-89e0-5f42c3f4553a"><div class="source"><a href="%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BC%20AI,%20%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8C%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%E1%84%8B%E1%85%B4%20%E1%84%92%E1%85%A1%E1%86%AB%E1%84%80%E1%85%A8%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%80%E1%85%B3%E1%86%A8%E1%84%87%E1%85%A9%E1%86%A8%E1%84%92%E1%85%A1%E1%84%83%E1%85%A1%2049b2a3dc1098424d93b0eb260068040f/%25E1%2584%2589%25E1%2585%25A2%25E1%2586%25BC%25E1%2584%2589%25E1%2585%25A5%25E1%2586%25BCAI%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2580%25E1%2585%25A9%25E1%2586%25BC%25E1%2584%258C%25E1%2585%25B5%25E1%2584%2582%25E1%2585%25B3%25E1%2586%25BC%25E1%2584%258B%25E1%2585%25B4%25E1%2584%2592%25E1%2585%25A1%25E1%2586%25AB%25E1%2584%2580%25E1%2585%25A8%25E1%2584%2585%25E1%2585%25B3%25E1%2586%25AF%25E1%2584%2580%25E1%2585%25B3%25E1%2586%25A8%25E1%2584%2587%25E1%2585%25A9%25E1%2586%25A8%25E1%2584%2592%25E1%2585%25A1%25E1%2584%2583%25E1%2585%25A1.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4a442078-83d4-4886-97f1-1fc7bd53058d/%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%E1%86%BCAI%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8C%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC%E1%84%8B%E1%85%B4%E1%84%92%E1%85%A1%E1%86%AB%E1%84%80%E1%85%A8%E1%84%85%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B3%E1%86%A8%E1%84%87%E1%85%A9%E1%86%A8%E1%84%92%E1%85%A1%E1%84%83%E1%85%A1.pdf</a></div></figure><h2 id="f635320f-4be0-4d77-abc0-7a57673ee714" class="">밑줄들</h2><ul id="f12614ab-a0ba-421b-8d07-7bf5a093d023" class="bulleted-list"><li style="list-style-type:disc">폭발적인 성장<ul id="f7bc14f1-1799-49d6-b6a7-1814e057c378" class="bulleted-list"><li style="list-style-type:circle">chatGPT 5일만에 100만 사용자를 돌파했으며 현재 월간 사용자는 1억명에 이른다</li></ul><ul id="7c51b108-a487-44d2-afbe-a437a396537f" class="bulleted-list"><li style="list-style-type:circle">전체 VC 투자는 감소하고 있음에도 불구하고 생성 AI 관련 VC 투자금액은 2022년 기준 약 21억달러로 2020년 이후 무려 425퍼센트 증가했다</li></ul><ul id="da95cc5d-e645-465b-b229-05292f79e8bd" class="bulleted-list"><li style="list-style-type:circle">최근에는 chatGPT가 돌풍을 일으키며 텍스트, 이미지 관련 생성 AI가 주목받았지만 향후 영상부문에 대한 관심도가 높아질 것으로 예상. 트랜스포머 기반 모델들이 궁극적으로 멀티모달을 지향하고 있는 만큼 최후의 승자가 되기 위한 필수 영역이기 때문</li></ul></li></ul><ul id="369f6596-9eb6-454f-ba9d-502bbd7464e7" class="bulleted-list"><li style="list-style-type:disc">초거대 AI는 범용 인공지능과 다르다<ul id="4a5697bf-ba2b-4498-8043-d3da0f37dcd7" class="bulleted-list"><li style="list-style-type:circle">초거대 AI 는 범용 인공지능과 같지 않다. 현재의 AI 챗봇들은 아직까지는 범용 인공지능보다는 초거대 AI에 가깝다</li></ul><ul id="d88f624a-779c-45e5-8b7b-04733ff58120" class="bulleted-list"><li style="list-style-type:circle">생각의 연결고리 알고리즘을 통해 현재 인공지능의 한계를 극복하려는 시도가 계속되는 중이다.</li></ul></li></ul><ul id="2e769e57-571b-44e2-9147-5a7f1e85e94f" class="bulleted-list"><li style="list-style-type:disc">생성 AI의 미래는 너무 매우 밝다. 대중화되기에 너무 쉽다 (도표 13pg)<ul id="ea59c256-9897-4c44-94bb-6a30e2a15a15" class="bulleted-list"><li style="list-style-type:circle">높은 수준의 결과물을 즉각 산출하는 <strong><span style="border-bottom:0.05em solid">생산성</span></strong></li></ul><ul id="d008838b-c06a-413f-a840-99e7d59aef71" class="bulleted-list"><li style="list-style-type:circle">자연어로 상호작용하는 <span style="border-bottom:0.05em solid"><strong>편의성</strong></span>. 심지어 시니어 친화적인 <strong><span style="border-bottom:0.05em solid">접근성</span></strong>까지</li></ul><ul id="9a66cd49-06d5-4b92-8729-7962dcc5d305" class="bulleted-list"><li style="list-style-type:circle">글쓰기, 그림, 코딩 등 다양한 서비스를 제공하는 범용성</li></ul><ul id="7a0b204a-98c2-49ef-b9b1-3b033c388644" class="bulleted-list"><li style="list-style-type:circle">특히 결과물에 대한 검증이 가능한 전문가 집단의 경우에는 특히 효용이 큼 </li></ul><ul id="02a7865a-236b-43b3-b098-54a95d9ccbb9" class="bulleted-list"><li style="list-style-type:circle">생성 AI의 발전 속도를 감안하면 보상이 위험보다 비대칭적으로 크다</li></ul><ul id="b38e2f54-fc44-47a6-82ea-d20f6795e913" class="bulleted-list"><li style="list-style-type:circle">앞으로 온라인 컨텐츠 중 생성형 AI의 비율은 10년 내 66퍼센트를 침투할 것으로 기대 (도표 13pg)</li></ul><ul id="333cd9dd-ebf9-49d5-914e-ae962050030f" class="bulleted-list"><li style="list-style-type:circle">전 세계 AI 시장 성장률은 2022년부터 2030년까지 연평균 34.6퍼센트의 성장을 기록할 것으로 전망됨</li></ul></li></ul><ul id="3e93e107-b980-4973-b683-ae367539a01c" class="bulleted-list"><li style="list-style-type:disc">특히 기대되는 점: 개인화에 유리 <ul id="79c0e796-8e25-4e98-98fd-06f7cc5ed106" class="bulleted-list"><li style="list-style-type:circle">개별 사용자의 특성이 반영된 데이터셋을 활용할 수 있다는 점은 큰 장점임. 마치 아마존의 케이스와 유사</li></ul><ul id="34cea58e-3825-499e-802b-3332e268f82b" class="bulleted-list"><li style="list-style-type:circle">사용자 인터렉션 뿐만 아니라 개인화 능력이 부족한 기존의 서비스들이 한 순간에 구식으로 전락할 것</li></ul></li></ul><p id="60645c71-a85b-477c-b158-0e492f458aa6" class="">
+</p><ul id="01d6a99a-03f1-4a71-a529-39b342b18b97" class="bulleted-list"><li style="list-style-type:disc"> 생성 AI 밸류체인(도표 16 페이지)<ol type="1" id="4d653fdf-4259-4c7f-b091-554f94c3f02a" class="numbered-list" start="1"><li>파운데이션 모델<ul id="4b608f82-f73a-46f8-a70c-574c6d8d6dab" class="bulleted-list"><li style="list-style-type:disc">어플리케이션 기업들에게 AI 서비스를 만들기 위한 API를 제공하는 비즈니스 모델</li></ul><ul id="3ea2a38f-20cc-424d-8263-99ffcc3aa563" class="bulleted-list"><li style="list-style-type:disc">SOTA 모델을 기반으로 생태계를 확장하는 것이 관건</li></ul><ul id="5b50f592-8281-48fb-957a-67dfc655370f" class="bulleted-list"><li style="list-style-type:disc">엄청난 개발 비용 필요 → 높은 진입 장벽으로 작용 (그림 18, 19페이지)<ul id="8d66ecff-ca70-4d7a-a1e1-2c8ef697b479" class="bulleted-list"><li style="list-style-type:circle">특히 사람처럼 작동하는 고성능의 LLM은 훨씬 어렵고 비싸다</li></ul><ul id="9cdbd92e-4aca-46bd-9070-9afe2c8cfd13" class="bulleted-list"><li style="list-style-type:circle">각종 오남용 가능성을 차단함과 동시에 고성능을 유지하는 것은 특히 어려움</li></ul><ul id="1c6cdfaa-f4fc-4c4b-be5f-a052cee381ac" class="bulleted-list"><li style="list-style-type:circle">범용성 및 확장성을 기반으로 고비용 커버가 가능한 구조에서 경쟁력이 나옴</li></ul><ul id="2e959197-1ed2-4eb9-87e6-77f6e5bab018" class="bulleted-list"><li style="list-style-type:circle">가장 똑똑하고 다재다능한 인공지능 몇몇만 살아남을 것, 마치 검색엔진 시장처럼</li></ul></li></ul></li></ol><ol type="1" id="812a62b4-e72a-406f-802a-e3521944c703" class="numbered-list" start="2"><li>파생 서비스(어플리케이션)<ul id="29d39cf5-abfb-406e-8763-460c6ddb87ca" class="bulleted-list"><li style="list-style-type:disc">인프라를 이용해 빠르고 저렴하게 서비스를 구축 가능 → 낮은 진입장벽</li></ul><ul id="af3ae67d-d7e6-4130-81bd-c2bc00dbedf1" class="bulleted-list"><li style="list-style-type:disc">경쟁강도가 높기 때문에 기술력에 따른 차별화보다는 선점효과가 큼</li></ul><ul id="8f1c4599-6eb9-46d8-a2d5-93186a77930a" class="bulleted-list"><li style="list-style-type:disc">기업 내부 자체 파인 튜닝을 통해 소비자의 니즈를 충족시키는 앱 서비스가 경쟁력이자 핵심<ul id="64f8c712-ea2c-42a8-9caf-fee74803ad4b" class="bulleted-list"><li style="list-style-type:circle">자체 데이터를 활용하고 이를 통해 다시 성능을 높이는 선순환 고리를 만들어야 →  데이터를 진입 장벽으로 만들 수 있음</li></ul></li></ul><ul id="43047592-445a-4e79-bbd6-f6597f2a2b36" class="bulleted-list"><li style="list-style-type:disc">서비스 유료화를 진행할 경우 정말로 소비자의 니즈를 만족시키고 수익창출이 가능한지  여부에 대해서 검증하는 것이 필요</li></ul><ul id="caeea565-a27f-4191-af84-6673f7e0168e" class="bulleted-list"><li style="list-style-type:disc">사용자 친화적인 서비스와 마케팅을 통해 강력한 브랜드 구축도 필수</li></ul><ul id="fac13237-19d7-4f14-b0c3-2f4da5b164d1" class="bulleted-list"><li style="list-style-type:disc">텍스트, 동영상, 음악 등 다양한 산업에 적용 중<ul id="8547afdb-5bba-4d88-b76e-deddcda5f656" class="bulleted-list"><li style="list-style-type:circle">비디오 영역의 서비스들 (딥브레인, 웨인힐스브라이언트, 보이저엑스)</li></ul><ul id="27e659ed-41ec-49ed-84ee-3f6a428d3d84" class="bulleted-list"><li style="list-style-type:circle">버추얼 휴면 서비스 (플립션코리아)</li></ul></li></ul></li></ol><ol type="1" id="ed48dc29-0d01-4a42-8cb2-375d56a5d551" class="numbered-list" start="3"><li>클라우드 API 서비스<ul id="060fd47d-6f95-4d2c-90ad-1614b345edcd" class="bulleted-list"><li style="list-style-type:disc">하드웨어와 소프트웨어가 결합된 천문학적인 인프라를 구축해야 → 빅테크 기업의 전유물</li></ul><ul id="22d94f9a-0749-4400-8c73-d6d4a885dbb5" class="bulleted-list"><li style="list-style-type:disc">컴퓨팅 파워, 오케스트레이션 등 서비스를 제공하며 지속적인 수익 창출 → 벨류체인 내에서 비교적 안전하지만 짜릿하지는 않은 베팅 방법</li></ul><ul id="1bb1b8ef-8e87-4512-965f-bb8220bf9877" class="bulleted-list"><li style="list-style-type:disc">생태계 확장 측면에서 파운데이션 모델 내재화를 포기하기 힘듦 ← 리스크가 크기 때문</li></ul></li></ol><ol type="1" id="47a59e03-12be-4d31-b179-8103a0f38caf" class="numbered-list" start="4"><li>검색엔진 연계한 생태계의 지배자<ul id="5e05e917-a46d-4579-a378-3fc85ed4ed00" class="bulleted-list"><li style="list-style-type:disc">챗봇 고도화에 있어 검색엔진을 보유한 기업의 경쟁력은 그렇지 못한 기업에 비교할 수 없을 정도로 강력함 ← 실시간 데이터를 활용가능 </li></ul><ul id="9e2b2170-1ad5-4d8c-b6bd-7d54a938ee4a" class="bulleted-list"><li style="list-style-type:disc">검색엔진을 활용해 만들어진 고성능 AI 챗봇을 다양한 서비스에 결합할 수 있다면 새로운 생태계의 지배자가 될 수 있음 (마치 챗봇이 web 긁어다가 PPT를 뚝딱 만들어주는 것처럼)</li></ul></li></ol><ol type="1" id="f439bdfe-ff5b-425c-b1c0-3a3f0be078ae" class="numbered-list" start="5"><li>반도체<ul id="c6ceb417-c2c7-421d-987a-052eba24e452" class="bulleted-list"><li style="list-style-type:disc">비메모리 반도체<ul id="aa944c5c-2705-42fe-86a4-c87357ad06b0" class="bulleted-list"><li style="list-style-type:circle">AI 모델에 쓰이는 솔루션(반도체) 시장은 2019년에서 2024사이 연 평균 58퍼센트 증가할 것으로 예상</li></ul><ul id="219065ca-5d89-491b-a6ec-f8641fe6c0e7" class="bulleted-list"><li style="list-style-type:circle">현재는 NVDIA GPU가 대세가 되어있으며 이외에도 기존에 없었던 새로운 AI 전용 반도체 등장 중 (표4, 26페이지)</li></ul><ul id="dd25ec56-210b-4942-a0b1-cbf798a2e41b" class="bulleted-list"><li style="list-style-type:circle">애플리케이션 별로 강점과 효율성을 보이는 반도체는 모두 다름. 반도체의 연산 능력이나 전성비가 우수해도, 이를 이용할 수 있는 소프트웨어와 개발자가 없는 한 NVDIA GPU에 대한 선호도가 지속될 것으로 예상</li></ul></li></ul><ul id="b1b4c95c-5188-491d-9a57-d09766e3ad72" class="bulleted-list"><li style="list-style-type:disc">메모리 반도체<ul id="eaeb38e6-ffd6-4229-aba1-43c23fcbae07" class="bulleted-list"><li style="list-style-type:circle">일반 DRAM 대비 3-5배 비싸도 고용량화, 고대역폭을 요구</li></ul></li></ul></li></ol><ol type="1" id="23fdb6b7-64bd-47da-a135-ecf40f7d5c24" class="numbered-list" start="6"><li>툴링 컴퍼니<ul id="bb276b96-3551-44f5-9558-c481de8e2e95" class="bulleted-list"><li style="list-style-type:disc">어플리케이션 개발을 위한 지원을 수행<ul id="fabe2336-7620-4c94-92c6-f70a4b09491d" class="bulleted-list"><li style="list-style-type:circle">라벨링, 트레이닝 인프라, 추론 인프라 등</li></ul></li></ul><ul id="058cb4af-181a-4337-ac71-67bd7226c255" class="bulleted-list"><li style="list-style-type:disc">독자적인 기술력이 뒷받침될 경우 매력적인 M&amp;A 대상</li></ul></li></ol></li></ul><p id="bbaf87b5-e390-410a-9a40-cc8172990001" class="">
+</p><ul id="53cbb319-f75f-4e1d-b3e0-2a1a057ad068" class="bulleted-list"><li style="list-style-type:disc">각 산업에 미칠 영향<ol type="1" id="b7bd84f4-7ca2-40a4-bb59-e37bcad3d88e" class="numbered-list" start="1"><li><strong><span style="border-bottom:0.05em solid">게임 산업에 미칠 영향</span></strong><ul id="786746fe-ae3e-48ae-972c-97cc7edc27c8" class="bulleted-list"><li style="list-style-type:disc"><strong><span style="border-bottom:0.05em solid">가장 큰 파급효과를 낼 수 있는 시장</span></strong> ← 게임 제작 비용의 혁신을 가져올 수 있음</li></ul><ul id="d845c60d-b011-453c-aca0-9f43ad5c445e" class="bulleted-list"><li style="list-style-type:disc">게임 자체가 캐릭터, 영상, 음악, 스토리 등 다양한 포멧의 창작물들이 모여 만들어진 종합 엔터테인먼트이기 때문</li></ul><ul id="3479bed4-da43-42d9-8f68-38b51efabd49" class="bulleted-list"><li style="list-style-type:disc">기획(언어모델), 디자인(이미지 생성 모델), 프로그래밍(코드생성 및 검토) 세 과정 모두 빠르게 수행 가능</li></ul><ul id="e626b568-bfd2-4c0e-a94e-6748c405ba27" class="bulleted-list"><li style="list-style-type:disc">기대<ul id="36004258-6e55-4152-a32f-8000f36687a9" class="bulleted-list"><li style="list-style-type:circle">콘텐츠 제작 비용 하락으로 마이크로 게임 스튜디오의 증가 예상</li></ul><ul id="ae779526-6f92-4845-ad1d-7c4fa85b8ca7" class="bulleted-list"><li style="list-style-type:circle">전에 없던 방대한 규모의 게임 개발 가능 예상</li></ul><ul id="0d2636d4-9368-4f4d-992e-cec74f1f94d0" class="bulleted-list"><li style="list-style-type:circle">개발자와 이용자의 경계도 허물 수 있을 것으로 예상</li></ul></li></ul><ul id="74c24a84-8bfd-44b9-b77e-266d8971b583" class="bulleted-list"><li style="list-style-type:disc">주의<ul id="0ea26b11-1175-4e50-b8e2-1c74567e0c21" class="bulleted-list"><li style="list-style-type:circle">완전하지 못한 그래픽 품질</li></ul><ul id="059694d2-fbf2-4d23-b6d1-b8ecedfd51cf" class="bulleted-list"><li style="list-style-type:circle">통제 불가능한 스토리</li></ul><ul id="2fd7749f-414f-492d-af14-a085b9494c0f" class="bulleted-list"><li style="list-style-type:circle">느린 대화 속도와 비용</li></ul></li></ul></li></ol><ol type="1" id="0ea32ebf-11fd-41aa-821a-9b4c92ada991" class="numbered-list" start="2"><li>인터넷<ul id="2aa02875-310b-45c4-ac84-dfdd241a0d6b" class="bulleted-list"><li style="list-style-type:disc">물어보면 사람처럼 완성된 문장으로 알려주는 챗GPT의 등장으로 시장의 균열이 전망<ul id="e211b1fc-91b9-4294-a5d0-6f63a2365b2b" class="bulleted-list"><li style="list-style-type:circle">빙 점유율 3퍼센트임에도 불구하고 빙홈페이지에 프로메테우스를 결합할 계획을 발표하자 신규 다운로드 수치가 구글의 80퍼센트에 달함. 이렇게 새로운 형태의 검색에 대한 사람들의 높은 관심과 수요를 보여줌 </li></ul></li></ul><ul id="cdf47b96-db42-4f91-8063-a4743c8872d5" class="bulleted-list"><li style="list-style-type:disc">신뢰성과 즉시성의 문제를 보완하고자 기존 검색 결과를 함께 제공하여 즉시성의 문제를 보완하고, 정보의 출처를 밝히고 링크를 제공하는 방식으로 신뢰성도 해소하려는 중</li></ul><ul id="36a761b1-1d9d-453d-a4ec-b8d15f6b9ac2" class="bulleted-list"><li style="list-style-type:disc">검색 광고를 대체할 새로운 수익 모델 확보 과제<ul id="9eea021a-ac81-4588-ad14-9893fdc250ca" class="bulleted-list"><li style="list-style-type:circle">원하는 대답이 완성형 대답으로 대체되는 경우 일반 검색 결과에 클릭이 줄어 핵심 매출 감소로 이어질 수 있음</li></ul><ul id="d4275cb0-de8e-417b-b7a6-2556676bc9b8" class="bulleted-list"><li style="list-style-type:circle">광고주의 사이트를 우선적으로 문장에 포함시키고 소스 링크를 포함시켜 클릭 시 과금을 하는 식의 수익모델 검토 가능</li></ul></li></ul></li></ol><ol type="1" id="288ce840-3507-4d11-a477-a783f47c5be5" class="numbered-list" start="3"><li>통신<ul id="2bf16d1d-d0c2-463a-8e37-38a643941a70" class="bulleted-list"><li style="list-style-type:disc">인공지능 콜센터에 주목<ul id="57388848-e154-426a-ab40-dc54d7a50f80" class="bulleted-list"><li style="list-style-type:circle">대기업, 금융권에서 공공부문, 중소기업, 소상공인까지 고객대상이 확대되는 추세</li></ul><ul id="8562eb0f-5024-468c-92dd-2259c0562131" class="bulleted-list"><li style="list-style-type:circle">부분 유료화 등을 통해 당장 생성 AI 수익화가 가능한 모델을 이미 확보 중</li></ul></li></ul><ul id="11791865-1dae-4d26-b559-65979d7eec06" class="bulleted-list"><li style="list-style-type:disc">초거대 AI를 활용한 서비스 선점 경쟁<ul id="5323183a-15bb-45b7-9f9c-714ed93f5ec0" class="bulleted-list"><li style="list-style-type:circle">SK 텔레콤의 대화형 AI 서비스 에이닷, KT의 B2B 특화 초거대 AI 믿음, LG 유플러스의 초거대 AI 엑사원</li></ul><ul id="4990f0e2-0496-4411-8829-dddc32cba768" class="bulleted-list"><li style="list-style-type:circle">가입 고객들의 방대한 데이터를 이미 확보하고 있으므로 AI 서비스 구축 및 상품 출시에 용이</li></ul><ul id="5e997e19-7def-4caf-9e92-282f6432fdd6" class="bulleted-list"><li style="list-style-type:circle">초개인화된 마케팅 툴, 비즈니스 컨설팅 툴 등으로 플랫폼을 창조, 진화시켜 나갈 계획을 가지고 있음</li></ul></li></ul></li></ol><ol type="1" id="57c2c6c1-3a92-4b9a-b60f-3d365636a324" class="numbered-list" start="4"><li>미디어, 엔터<ul id="4d336cd8-0378-4401-ac7d-532800bf35c0" class="bulleted-list"><li style="list-style-type:disc"><strong><span style="border-bottom:0.05em solid">콘텐츠 퀄리티는 올리고 제작 비용과 시간은 줄이기 가능</span></strong><ul id="4b3aa792-5100-4b81-a737-0aefeb00b29b" class="bulleted-list"><li style="list-style-type:circle">글로벌 제작사들은 영화의 흥행 확률을 높이고 제작비를 절감하기 AI로 흥행 수준을 예측하고 최적의 조합 결정</li></ul><ul id="18a86c03-e5d2-4abc-bf62-9b1252a084bc" class="bulleted-list"><li style="list-style-type:circle">편집, 시각 효과 등 특수 효과 작업에 AI를 적극 활용하면서 영상 퀄리티 향상과 제작 기간 단축, 비용 절감이 나타나는 중 </li></ul><ul id="4711b8c8-44a0-45de-8661-50a5fd0607b7" class="bulleted-list"><li style="list-style-type:circle">향후 10년 간 AI를 통해 디지털 이미지 생성 비용은 10분의 1로 줄어들고 제작 속도는 100배 이상 높아질 것</li></ul><ul id="f6466dc6-d220-444e-8925-8696310d7990" class="bulleted-list"><li style="list-style-type:circle">현재 생성 AI 기술과 콘텐츠 증가율은 기하급수적으로 2년 후인 2025년에는 인터넷에 돌아다니는 콘텐츠 중 90%를 AI가 만들어낸 작품일 것임</li></ul></li></ul><ul id="9f190e59-94a6-43e3-be85-0f2b5525f45b" class="bulleted-list"><li style="list-style-type:disc">버츄얼 휴먼 활약 증가<ul id="11441ed2-59b5-4035-93c7-f25ef573b731" class="bulleted-list"><li style="list-style-type:circle">TV 광고, 엔터테인먼트 시장 등에서 등장하는 중</li></ul><ul id="61d82cd7-4f2f-4e23-9b44-0408186f2e36" class="bulleted-list"><li style="list-style-type:circle">외관상 인간과 유사해지며 버츄얼 휴먼의 진화 속도 가팔라지는 중(그림 51, 47 페이지)</li></ul></li></ul></li></ol><ol type="1" id="0f97e9e6-f101-4a65-a5fe-23b58d9c896e" class="numbered-list" start="5"><li>금융<ul id="eeaf1cb8-f6a6-4f3f-b008-bfc44a706235" class="bulleted-list"><li style="list-style-type:disc">자연어처리를 통한 챗봇 업그레이트 금융 비서로 연결<ul id="c9ebc33d-9336-42e3-bf48-95da56cfaf88" class="bulleted-list"><li style="list-style-type:circle">현재의 챗봇 기능을 업그레이드시켜줄 것으로 기대됨에 따라 카드사들이 적극적으로 나서고 있음</li></ul><ul id="f7b028ed-5d04-4dce-bd94-870e828ff0d0" class="bulleted-list"><li style="list-style-type:circle">모바일 금융앱의 성능 향상</li></ul><ul id="8efa21dd-f6ee-4fc1-b623-3c4ef4dc79d9" class="bulleted-list"><li style="list-style-type:circle">기능 확대를 넘어 중장년층까지 아우르는 고객 군의 확대로 </li></ul><ul id="d89963b0-dc05-4348-884f-1b75084f8ce3" class="bulleted-list"><li style="list-style-type:circle">궁극적으로는 AI 금융 비서를 지향</li></ul></li></ul><ul id="57eb2beb-429e-4d43-a5d9-a797e30f802b" class="bulleted-list"><li style="list-style-type:disc">full-suite 금융 솔루션을 제공하면서 시장에서 높은 기대를 받기도<ul id="a33a5b43-4f93-4538-90c3-b339943d6c56" class="bulleted-list"><li style="list-style-type:circle">특히 금융 사업에서 고객과의 접점이 온라인으로, 플랫폼으로 이동하는 추세</li></ul><ul id="d0f8a154-94f5-4647-afa0-6932fbfcd9c4" class="bulleted-list"><li style="list-style-type:circle">금융사들의 비용 절감을 통한 수익성 제고에도 기여할 것으로 기대</li></ul></li></ul></li></ol></li></ul><p id="3fb5525d-0818-4684-81b2-ddba9cfce1f4" class="">
+</p><ul id="d58ffdce-c8a4-4f21-8013-2ed3edb8cdfc" class="bulleted-list"><li style="list-style-type:disc">이슈들<ol type="1" id="6af3a362-c478-4bd7-be67-36ad84bc3494" class="numbered-list" start="1"><li>부정확한 정보</li></ol><ol type="1" id="7c82ba26-0ca8-4191-90ef-b07b61c600b7" class="numbered-list" start="2"><li>편향성</li></ol><ol type="1" id="c05fa4a7-8331-4d18-bc6a-0a9a11ceac12" class="numbered-list" start="3"><li>저작권 논란</li></ol><ol type="1" id="dbb90cbc-9991-4e85-8456-08e7bd04dc4e" class="numbered-list" start="4"><li>경쟁 심화에 따른 우려되는 수익성 (본질적으로 플랫폼 비즈니스임)</li></ol><p id="5a5f69fb-158d-4690-9a35-8ba34c16444e" class="">
+</p></li></ul><ul id="24456c47-ada0-4e65-82e5-98185366d911" class="bulleted-list"><li style="list-style-type:disc">기업사례</li></ul><ol type="1" id="95965968-98c2-4610-a409-2f8216adb3de" class="numbered-list" start="1"><li>OpenAI<ul id="666b7f78-80b0-4acc-9e4b-bb0a4e2e8137" class="bulleted-list"><li style="list-style-type:disc">DALL-E<ul id="a05ce8bc-a1fc-4528-9651-83871db18d7e" class="bulleted-list"><li style="list-style-type:circle">자연어명령을 통해 이미지를 생성</li></ul><ul id="bd41b221-4067-4622-a38c-2278bd76cf1d" class="bulleted-list"><li style="list-style-type:circle">이미지 내부 수정, 이미지 확장 생성, 유사 이미지 생성 기능 제공</li></ul><ul id="833e0390-146c-4c44-b70a-546753a1482a" class="bulleted-list"><li style="list-style-type:circle">100만명 유저 가입에 걸린 기간은 Copilot보다 빠른 2.5개월</li></ul></li></ul><ul id="d649dd20-733e-4241-ba97-b06e44a1ac5f" class="bulleted-list"><li style="list-style-type:disc">GPT-3 business 플랜<ul id="4ccc1fe7-18cd-4c72-8271-3bb3fd328bed" class="bulleted-list"><li style="list-style-type:circle">5명 이상 유저 동시 접속</li></ul><ul id="c46685ad-17d6-4d8b-9385-1ddbf3e0c5e9" class="bulleted-list"><li style="list-style-type:circle">월간 크레딧 자유 설정</li></ul><ul id="87a20f26-0353-4209-87b9-1279db72c562" class="bulleted-list"><li style="list-style-type:circle">문서 공유</li></ul><ul id="38e5eb36-caf8-4bfd-a37e-24e5484c655e" class="bulleted-list"><li style="list-style-type:circle">멤버당 사용량 할당</li></ul></li></ul></li></ol><ol type="1" id="da99859a-6f5c-4bc6-842d-80efb6c2f823" class="numbered-list" start="2"><li>Microsoft<ul id="8ec7712e-be70-4a50-bfea-222dedba3377" class="bulleted-list"><li style="list-style-type:disc">Visual studio + Copilot<ul id="d5e5bb64-a32c-4248-a62a-c12383c2df69" class="bulleted-list"><li style="list-style-type:circle">Copilot 사용에 따라 작업 완료율은 8퍼센트 증가, 작업 시간은 절반으로 감소 (그림 4, 76페이지)</li></ul></li></ul><ul id="da07b4ba-e65e-42b7-adfb-bd8de4a8480e" class="bulleted-list"><li style="list-style-type:disc">Microsoft Designer + DALL-E </li></ul><ul id="9bd1b3fa-68be-4008-9043-95b6b2e09868" class="bulleted-list"><li style="list-style-type:disc">알파벳과 달리 자체 애플리케이션 서비스가 적어 고객의 이익을 침해할 여지가 적음</li></ul></li></ol><ol type="1" id="0891a9d8-46f0-4d12-82a5-e5ae96b4f853" class="numbered-list" start="3"><li>알파벳<ul id="db162269-66e5-49bf-a494-3958f438437c" class="bulleted-list"><li style="list-style-type:disc">머신러닝 프레임워크인 텐서플로우, 머신러닝 전용 하드웨어인 TPU를 개발하고 이를 클라우드로 운영할 수 있는 기술력을 모두 보유한 몇 안 되는 기업임</li></ul><ul id="31f52054-a514-4c7c-be88-aa4e8e1fad7b" class="bulleted-list"><li style="list-style-type:disc">본질적으로 플랫폼은 머릿수가 중요하기 때문에 구글의 검색 엔진은 Bing에 쉽게 꺾이지 않을 것</li></ul><ul id="9c4da7e7-2ce5-4ee5-b7bf-9ff942419e97" class="bulleted-list"><li style="list-style-type:disc">동영상 분야의 준비된 강자는 유튜브를 보유한 알파벳이 모델 구축이나 데이터셋 확보 측면에서 유리</li></ul></li></ol><ol type="1" id="af4d208c-26b5-421d-bf83-56e55842d7be" class="numbered-list" start="4"><li>엔비디아<ul id="1d29e4ce-b138-46a3-b1c0-520b3a5cba15" class="bulleted-list"><li style="list-style-type:disc">생태계 선점을 통해 이미 높은 해자를 구축. 설령 GPU보다 더 우수한 성능의 반도체 출연에도 엔비디아를 대체하기는 어려울 것</li></ul></li></ol><ol type="1" id="d5ea28d2-85ad-42ab-9a5c-85c69f9f69bb" class="numbered-list" start="5"><li>네이버<ul id="93f57a5b-74e0-4dba-8ef5-8f8671cc0181" class="bulleted-list"><li style="list-style-type:disc">하이퍼클로바는 국내 대표 생성 AI로, 압도적인 한국어 데이터 차이로 인해 한국에서는 하이퍼클로바의 성능이 챗GPT를 앞서는 것으로 평가(직접적인 비교는 어려움)</li></ul><ul id="882a8a44-30e4-4182-b27a-dc2fde927ac0" class="bulleted-list"><li style="list-style-type:disc">콘텐츠 분야에서는 스케치에 채색을 자동으로 해줘 작가들의 창작시간을 줄여주는 ‘웹툰 AI 페인터’가 있음 (그림 6, 130pg)</li></ul></li></ol><ol type="1" id="5db6402a-a4ce-4652-b7a0-5346475e882d" class="numbered-list" start="6"><li>카카오<ul id="9194ef77-102d-40d9-83b6-162aac8c796f" class="bulleted-list"><li style="list-style-type:disc">효율성 측면에서 효용성이 좋을 수 있는 멀티모달 모델에 역량을 쏟는 중</li></ul><ul id="66ca7b5f-83c1-47f8-accf-08d438e3666f" class="bulleted-list"><li style="list-style-type:disc">자동으로 웹툰 그림을 그려주거나, 게임 케릭터의 모션을 만들어내는 등 웹툰, 엔터테인먼트, 게임 등 다양한 서비스에 접목시킬 것</li></ul><ul id="8a961041-ec88-433d-9cf5-7271e295c686" class="bulleted-list"><li style="list-style-type:disc">카카오엔터프라이즈에서는 마이크로소프트가 그랬던 것처럼 업무형 협업툴에 적용하여 시너지를 발생시킬 것으로 기대</li></ul></li></ol><p id="8548dacf-077d-465b-ae94-d7f3a8d39720" class="">9. 스테빌리티 AI<div class="indented"><ul id="e8b0da0b-64e5-4c9c-a6cb-c92ade41c0e3" class="bulleted-list"><li style="list-style-type:disc">스테이블 디퓨전 개발 및 배포에 참여한 기업</li></ul><ul id="4663ff3e-4d39-4c3e-89e2-55f9692076ab" class="bulleted-list"><li style="list-style-type:disc">스테이블 디퓨전은 데이터에 노이즈를 가하여 학습시키고 이후 노이즈를 복원하여 데이터를 생성하는 diffusion모델 기반. <ul id="a7da0654-d735-4501-a3ea-de3765727419" class="bulleted-list"><li style="list-style-type:circle">텍스트 명령어로 이미지를 생성하는 기능</li></ul><ul id="b7db5980-f0ae-4f0f-8c6c-e528531f4286" class="bulleted-list"><li style="list-style-type:circle">여러 이미지 수정 기능</li></ul></li></ul></div></p><ol type="1" id="91e1ec5f-4f11-4b85-88aa-08eae8945607" class="numbered-list" start="10"><li>웨인필즈브라이언트 AI<ul id="5e4d5a01-6fde-46fa-aa1a-cb4cdeb8fb1e" class="bulleted-list"><li style="list-style-type:disc">TTV/STV 서비스</li></ul><ul id="0b801e7f-0482-4bbb-8f1a-6e6b252e5bd2" class="bulleted-list"><li style="list-style-type:disc">텍스트 데이터의 영상화 수요가 존재하는 제작사, 출판사 등 대기업을 대상으로 서비스 제공중</li></ul><ul id="99279eea-3b43-4235-be02-d2ca16fff811" class="bulleted-list"><li style="list-style-type:disc">매일경제, 삼성증권 등과 협업을 통해 22년 기준 50억원의 매출액을 기록</li></ul><ul id="d179d664-e03d-40ee-8afa-37214e52bbe2" class="bulleted-list"><li style="list-style-type:disc">기존 B2B 서비스에 더해 향후 B2C를 대상으로 영상화 서비스를 확대할 계획. <ul id="51ea51c2-7aef-4a3d-b1f5-c175816fb8cf" class="bulleted-list"><li style="list-style-type:circle">최근 인터넷 블로그 사용자를 비롯해 유튜브와 같은 영상 컨텐츠 플랫폼의 크리에이터 대상 서비스 확대를 목표로 하는 중</li></ul><ul id="669f11bc-9f41-44d2-a7c2-4d911e6b5ae6" class="bulleted-list"><li style="list-style-type:circle">전 세계적으로 많은 텍스트 및 도서가 계속해서 디지털 영상 컨텐츠 형태로 전환됨에 따라 향후 수요는 지속적으로 증가할 것으로 판단</li></ul></li></ul><ul id="7b0b5a7e-1f3c-4425-8649-82bbc78a83a6" class="bulleted-list"><li style="list-style-type:disc">B2B 고객을 대상으로 장기계약 기반 구독 서비스를 제공 중</li></ul><ul id="77d63e97-139e-4362-953e-59e43cb061da" class="bulleted-list"><li style="list-style-type:disc">B2C 고객을 대상으로 1개월 단위의 구독 모델 도입할 예정</li></ul></li></ol></div></article></body></html>

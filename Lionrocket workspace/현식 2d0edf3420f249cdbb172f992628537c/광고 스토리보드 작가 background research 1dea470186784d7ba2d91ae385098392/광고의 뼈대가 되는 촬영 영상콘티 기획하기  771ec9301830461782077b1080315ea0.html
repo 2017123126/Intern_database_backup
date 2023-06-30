@@ -1,0 +1,678 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>광고의 뼈대가 되는 촬영 영상콘티 기획하기 : 네이버 블로그</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="771ec930-1830-4617-8207-7b1080315ea0" class="page sans"><header><h1 class="page-title">광고의 뼈대가 되는 촬영 영상콘티 기획하기 : 네이버 블로그</h1><p class="page-description"></p></header><div class="page-body"><figure id="6e861a00-ea09-4987-a54a-fe6237a96033" class="image"><a href="%E1%84%80%E1%85%AA%E1%86%BC%E1%84%80%E1%85%A9%E1%84%8B%E1%85%B4%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%E1%84%80%E1%85%A1%20%E1%84%83%E1%85%AC%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%8E%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%A7%E1%86%BC%20%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8F%E1%85%A9%E1%86%AB%E1%84%90%E1%85%B5%20%E1%84%80%E1%85%B5%E1%84%92%E1%85%AC%E1%86%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%20%20771ec9301830461782077b1080315ea0/EBB984EC84ACEC8DB8EB84A4EC9DBC_EC96B4ECA98CEB8BA4EC8B9CEBA6ACECA688_EBB095EBA09BEC849C.jpg"><img style="width:600px" src="%E1%84%80%E1%85%AA%E1%86%BC%E1%84%80%E1%85%A9%E1%84%8B%E1%85%B4%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%E1%84%80%E1%85%A1%20%E1%84%83%E1%85%AC%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%8E%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%A7%E1%86%BC%20%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8F%E1%85%A9%E1%86%AB%E1%84%90%E1%85%B5%20%E1%84%80%E1%85%B5%E1%84%92%E1%85%AC%E1%86%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%20%20771ec9301830461782077b1080315ea0/EBB984EC84ACEC8DB8EB84A4EC9DBC_EC96B4ECA98CEB8BA4EC8B9CEBA6ACECA688_EBB095EBA09BEC849C.jpg"/></a></figure><p id="979da80b-758a-497f-acdd-01db70e67951" class="">언제였더라. 언젠가 떠났던 여행지에서 문득 영상을 찍고 싶다는 생각을 했다. 바야흐로 브이로그 전성기 때라 나 역시 나만의 <strong>&#x27;여행 V-log&#x27;를</strong> 만들고 싶었고 여행 도중 틈틈이 영상을 찍었다. 원래도 지극히 즉흥적인 성향인지라 어떤 장면을 담아야지 보다 <strong>정말 찍고 싶을 때 찍었다.</strong> 비행기 탑승 전 여권을 손에 들고 흔들거리는 모습을 담기도, 인테리어가 예뻤던 어느 카페의 화장실에서 거울 샷을 찍기도, 숙소에서 친구들과 술 한잔하는 모습을 타임랩스로 길게 담기도 했다.</p><figure id="148efe1e-04ee-4c65-ba45-ddfe3c095fc0" class="image"><a href="%E1%84%80%E1%85%AA%E1%86%BC%E1%84%80%E1%85%A9%E1%84%8B%E1%85%B4%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%E1%84%80%E1%85%A1%20%E1%84%83%E1%85%AC%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%8E%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%A7%E1%86%BC%20%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8F%E1%85%A9%E1%86%AB%E1%84%90%E1%85%B5%20%E1%84%80%E1%85%B5%E1%84%92%E1%85%AC%E1%86%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%20%20771ec9301830461782077b1080315ea0/CK_tica034s18020045.jpg"><img style="width:700px" src="%E1%84%80%E1%85%AA%E1%86%BC%E1%84%80%E1%85%A9%E1%84%8B%E1%85%B4%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%E1%84%80%E1%85%A1%20%E1%84%83%E1%85%AC%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%8E%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%A7%E1%86%BC%20%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8F%E1%85%A9%E1%86%AB%E1%84%90%E1%85%B5%20%E1%84%80%E1%85%B5%E1%84%92%E1%85%AC%E1%86%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%20%20771ec9301830461782077b1080315ea0/CK_tica034s18020045.jpg"/></a></figure><p id="c3c8e70f-d3ad-4341-864c-75a4502ee20c" class="">브이로그 영상 찍기라는 야심찬 목표를 수행하고 영상으로 가득 찬 핸드폰 갤러리를 보며 내심 뿌듯했다. 여행의 여운이 가시지 않을 때쯤, 본격적으로 브이로그 영상 제작에 들어갔다. 그런데 <strong>아뿔싸. 전문가가 아닌 내가 봐도 영상이 이상한 거다.</strong> 개별영상으로 봤을 때는 문제가 없었지만 <span style="border-bottom:0.05em solid"><em>영상을 이어서 스토리를 만들려고 하니 이상했다.</em></span></p><p id="f8273fcb-947e-45e5-82ba-b0fcb92ef450" class="">시간 순으로 영상을 나열해 보니, <span style="border-bottom:0.05em solid"><em>나는 여권을 들고 설레하다가 갑자기 화장실에서 거울을 보고 있다. 그리고 차를 타고 이동하다가 밤이 되고 숙소에서 술을 마시다가 나무가 우거진 숲속으로 간다(?)</em></span> <strong>마치 공포영화의 도입부를 연상시키는 전개</strong>가 아닌가... 그렇다. 이것은 계획하지 않은 자의 최후이다. 이때 절실하게 느꼈다. 미리 <strong>어떤 장면을 찍을지 정하고 갔더라면 적어도 흐름이 자연스러웠을 텐데</strong> 말이다.</p><blockquote id="3f2a56ea-8532-4694-9972-89306981285b" class=""><p id="af71367b-4f7b-4656-8b19-2993154f14b5" class="">콘티 작성 어렵지 않아요! 함께 차근차근 알아봐요.</p></blockquote><p id="ff95d554-93a2-488b-b466-c457383a6d47" class=""><strong>콘티? 스토리보드? 그게 뭐죠?</strong></p><p id="61b9681d-b71b-41ab-8b5e-672809be7abf" class="">소소한 개인 일상을 담는 브이로그라도 &#x27;계획&#x27;이 필요한데 무려 광고주의 의뢰를 받아 돈과 신뢰와.. 기타 등등 많은 것들이 오가는 광고 영상에서는 얼마나 더 <strong>철저한 계획</strong>이 필요할지 예상이 가는가. 이전에 기획했던 브리프는 가장 초반에 필요한 것이라면 다음으로는 기획 중인 영상을 구체화하는 단계가 필요하다. 이 단계의 작업을 <strong>&#x27;콘티&#x27;또는 &#x27;스토리보드&#x27;</strong>라고 부른다.</p><p id="ab933d33-58df-4ec4-82bf-8f5a759b8f1e" class="">굳이 나누자면 <span style="border-bottom:0.05em solid"><em>투자자 혹은 광고주에게 브리핑이 목적인 것을</em></span> <strong>스토리보드</strong>, <span style="border-bottom:0.05em solid"><em>제작진들에게 촬영 시 이해를 돕기 위한 것을</em></span> <strong>콘티</strong>라고 하지만, 둘 다 영상 제작 전 흐름을 설명하기 위한 단계로 여겨 구분 짓지 않는다. 나는 앞으로 설명을 할 때 좀 더 입에 붙은 &#x27;콘티&#x27;로 부르겠다. 콘티의 개념은 이쯤으로 하고 콘티 제작법에 대한 설명으로 넘어가 볼까.</p><p id="023aaf3f-839b-40fa-b51a-ddf631f6bd4c" class="">※ 실제 상업적인 목적으로 제작된 작업이며, 무단 배포 및 도용 시 법적인 처벌을 받을 수 있습니다. ※</p><figure id="dbdbd470-bdcc-40d5-9719-7d86c499ea84" class="image"><a href="%E1%84%80%E1%85%AA%E1%86%BC%E1%84%80%E1%85%A9%E1%84%8B%E1%85%B4%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%E1%84%80%E1%85%A1%20%E1%84%83%E1%85%AC%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%8E%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%A7%E1%86%BC%20%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8F%E1%85%A9%E1%86%AB%E1%84%90%E1%85%B5%20%E1%84%80%E1%85%B5%E1%84%92%E1%85%AC%E1%86%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%20%20771ec9301830461782077b1080315ea0/image.png"><img style="width:624px" src="%E1%84%80%E1%85%AA%E1%86%BC%E1%84%80%E1%85%A9%E1%84%8B%E1%85%B4%20%E1%84%88%E1%85%A7%E1%84%83%E1%85%A2%E1%84%80%E1%85%A1%20%E1%84%83%E1%85%AC%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%8E%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%A7%E1%86%BC%20%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%89%E1%85%A1%E1%86%BC%E1%84%8F%E1%85%A9%E1%86%AB%E1%84%90%E1%85%B5%20%E1%84%80%E1%85%B5%E1%84%92%E1%85%AC%E1%86%A8%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%20%20771ec9301830461782077b1080315ea0/image.png"/></a></figure><p id="6b3a54ac-5fd5-4b1f-b792-b4d542f7ebab" class="">위의 예시는 처음 총괄이 되어 진행했던 광고의 콘티 일부이다. 양식은 <strong>cut, video, context, audio, time</strong>(컷, 비디오, 내용, 오디오, 시간)으로 구성했다. <strong>cut</strong>은 <strong>컷번호</strong>를 매겨주면 되고<strong> video</strong>는 영상을 촬영할 때 참고할 수 있도록 <strong>장면을 그림으로 그리거나 혹은 사진</strong>을 넣어준다. <strong>context</strong>는 <strong>장면에 대한 설명과 함께 샷, 구도, 카메라 이동 </strong>등 표기해 주고 <strong>audio</strong>는 장면마다 들어갈 <strong>사운드(노래 or 대사 등)</strong>를, <strong>time</strong>은 <strong>해당 장면을 편집 시 몇 시간 정도</strong> 구성할 건지에 대해 대략적으로 적어준다.</p><p id="68e31065-8700-46a7-bc5b-edaa4784140a" class="">예시 콘티의 video 란에는 실제 광고 장면을 캡처해 넣었으나, 촬영전 사용된 실제 콘티에는 내가 원하는 장면과 비슷한 느낌의 사진을 첨부했었다.(혹시 저작권 문제가 생길까 조심하기 위해) audio란은 장면에 들어가는 대사가 없어서 비워뒀다. 배경음으로만 사용될 경우</p><p id="b8eed248-ea0c-4cf8-b00f-ce75d3fa94e4" class=""><strong>&#x27;BGM&#x27;</strong>이라고 따로 표기해도 좋다. context에는 앞서 설명했던 것처럼, 장면 설명과 함께 샷과 카메라 이동에 대해 적었다.</p><p id="bf778074-f4cb-4e0e-a490-44cd289ddc46" class="">이때의 <strong>샷 사이즈, 카메라 이동 등 촬영과 관련된 용어와 개념 정리는</strong> 다음에 본격적으로 다뤄보겠으니 <span style="border-bottom:0.05em solid"><em>오늘은 콘티에 대한 이해부터 하자.</em></span></p><p id="7839946e-d2f8-4583-a956-89c83a78c864" class="">&lt;콘티 양식 파일&gt;</p><p id="009a7b13-3d46-44fc-9e43-abb44f8e020a" class=""><strong>콘티 어디서부터 어떻게 시작해야 할지...</strong></p><p id="a37b4026-e6fa-4698-8453-710eedc4732b" class="">콘티 제작이 처음이라면 양식이나 예시를 보아도 막막할 수 있다. 우선은 <strong>&#x27;컷&#x27;</strong>에 대한 이해가 필요하다. 컷은 영상의 단위이다. 개념적으로 설명하자면 <strong>영상의 가장 작은 단위</strong>이고 좀 더 쉽게 설명하자면 영상을 찍을 때 녹화 버튼을 눌러 시작했을 때부터 종료할 때까지의 연속되는 영상이다. 컷과 함께 알아둬야 할 개념인 <strong>&#x27;씬&#x27;</strong>은 <strong>컷이 모여 구성되는 장면인데 장소에 따라 구분</strong>된다.</p><p id="4472dd75-eb2a-447e-bfc8-853647bfc097" class=""><strong>&lt;가제 : 렛서의 행운 편지&gt;</strong></p><table id="df845750-4245-4cd5-b586-043bda5075c4" class="simple-table"><tbody><tr id="b6385ba1-2fba-4a28-8abc-4c95bb68fde8"><td id="}OmP" class="">1씬(탕비실)</td><td id="arY&lt;" class="">1컷</td><td id="q{TN" class="">렛서가 탕비실 커피 머신 앞에 서있다.</td></tr><tr id="5a634efe-6d46-460f-993b-3ec737fe80c6"><td id="}OmP" class="">2컷</td><td id="arY&lt;" class="">커피 머신 버튼을 누르는 렛서의 손</td><td id="q{TN" class=""></td></tr><tr id="e9cb20fd-08c8-4afd-8d28-2ffb3a758deb"><td id="}OmP" class="">3컷</td><td id="arY&lt;" class="">커피잔을 들고 탕비실을 나가는 렛서의 뒷모습</td><td id="q{TN" class=""></td></tr><tr id="9c541301-7eb5-4bf8-be49-6aa6ddfd2cad"><td id="}OmP" class="">2씬(사무실)</td><td id="arY&lt;" class="">1컷</td><td id="q{TN" class="">책상에 놓인 커피잔 </td></tr><tr id="9f0cad6e-1730-4bc3-a204-eb8fa06ddc08"><td id="}OmP" class="">2컷</td><td id="arY&lt;" class="">컴퓨터 앞에 앉아 커피를 마시는 렛서</td><td id="q{TN" class=""></td></tr><tr id="e0e1d8f2-c349-4e1d-904f-d4ef703ba26b"><td id="}OmP" class="">3컷</td><td id="arY&lt;" class="">PC 화면 속 (알 수 없음)이라는 사람으로부터 온 카톡 알림이 뜬다.</td><td id="q{TN" class=""></td></tr></tbody></table><p id="c90b48b7-4702-4dc2-89af-a079aeb1e696" class="">예시를 보면 이해가 훨씬 쉬울 것이다. <strong>1씬은 탕비실</strong>에서 진행되는 장면, <strong>2씬은 사무실</strong>에서 진행되는 장면이다. 이렇게 <strong>장소에 따라 씬을 구분 짓고 각 씬들은 컷이라는 장면들로 구성된다.</strong> (동일한 장소이지만 장면 배치가 다르고 시간대가 다를 경우에도 구분 짓는다.)이 전 글에서 소개했던 스토리라인을 짤 때, 이런 식으로 씬,컷을 나누어 기획한다.</p><p id="0e21971c-f31a-4a3c-addc-d64429bfdb72" class="">컷에 대한 감이 잘 오지 않거나 장면구성이 막막하다면 <strong>레퍼런스 영상</strong>을 많이 보길 추천한다. 그리고 <strong>영상을 보며 씬과 컷 나누기 연습</strong>을 해보면 감잡기가 훨씬 쉽다. 최근 &#x27;잘 뽑은&#x27; 광고 중 하나였던 현대자동차 캐스퍼 광고로 연습해보자. 우선 영상을 보고 이야기를 나누도록 하자. (30초밖에 안되니 귀찮아도 보도록)</p><p id="c1fc0f71-782d-4c96-99d5-4f2c96c5f760" class="">이 광고는 총 12컷으로 이루어졌다. 씬은 19초에서 25초까지를 제외하고 개별 씬으로 짜여있다. 이해를 돕기 위해 아래에 정리된 표로 정리해 봤으니 참고하길 바란다. 구분을 위해 10씬까지 나누었으나 실제 촬영은 8씬까지 이루어지며 9,10씬 즉 11컷과 12컷은 후반 편집 작업에서 작업된다.</p><table id="b59b799b-2b54-4693-8b8f-cf25a6742c35" class="simple-table"><tbody><tr id="36ccc422-0945-4af9-bf22-239799745d92"><td id="KA&lt;t" class=""><strong>씬</strong></td><td id="rAry" class=""><strong>컷</strong></td><td id="gI`s" class=""><strong>장면 설명</strong></td></tr><tr id="499578d0-c25a-4641-9d32-f6b87594097c"><td id="KA&lt;t" class=""><strong>1씬(미니풀장)</strong></td><td id="rAry" class="">1</td><td id="gI`s" class="">미니 풀장에 발을 담근 남자가 한 손에 핸드폰을 들고 앉아 있다. </td></tr><tr id="537556c9-1503-4ecb-8ea7-bc0e4f15a65a"><td id="KA&lt;t" class=""><strong>2씬(취미방)</strong></td><td id="rAry" class="">2</td><td id="gI`s" class="">쇼파에 앉아 악기를 닦고 있는 사람 주변으로 다양한 취미를 나타내는 도구가 널브러져 있다</td></tr><tr id="590ec57d-d88d-407e-a641-29ca2d595813"><td id="KA&lt;t" class=""><strong>3씬(아기방)</strong></td><td id="rAry" class="">3</td><td id="gI`s" class="">기저귀를 찬 아이가 넘어진다.</td></tr><tr id="e657b4bc-3252-4338-8ee4-2bf43f1d9f11"><td id="KA&lt;t" class=""><strong>4씬(차안)</strong></td><td id="rAry" class="">4</td><td id="gI`s" class="">차 안에 강아지가 누워있고 밖에 다른 강아지들이 내부를 들여다보고 있다.</td></tr><tr id="89f4669c-1160-44fc-a53d-ba39846bef0c"><td id="KA&lt;t" class=""><strong>5씬(주차장)</strong></td><td id="rAry" class="">5</td><td id="gI`s" class="">주차장에 차를 주차한 여자가 차 문을 열기 힘들어한다.</td></tr><tr id="6188c356-b6bd-4638-8c6b-f2d6d01a3849"><td id="KA&lt;t" class=""><strong>6씬(밖)</strong></td><td id="rAry" class="">6</td><td id="gI`s" class="">차위에 짐가방이 올라가있다.</td></tr><tr id="e5ed14a5-23bd-4c64-974e-2147c27c5ad6"><td id="KA&lt;t" class=""><strong>7씬(벽)</strong></td><td id="rAry" class="">7</td><td id="gI`s" class="">벽에 영수증이 잔뜩 붙여져있다.</td></tr><tr id="28818c68-b0ec-4ac8-be00-8773737d8a56"><td id="KA&lt;t" class=""><strong>8씬(컨테이너앞)</strong></td><td id="rAry" class="">8</td><td id="gI`s" class="">차의 앞모습이 보인다.</td></tr><tr id="30aa502b-a03f-4f3d-adb8-9554d5e0db2f"><td id="KA&lt;t" class="">9</td><td id="rAry" class="">차의 전체 모습을 보여준다.</td><td id="gI`s" class=""></td></tr><tr id="aa41d73e-062e-4286-81d2-3af69cc3e780"><td id="KA&lt;t" class="">10</td><td id="rAry" class="">차의 헤드라이트 부분을 클로즈업해서 보여준다.</td><td id="gI`s" class=""></td></tr><tr id="121b35fd-fb0f-4c21-9ead-c5607e12ca7a"><td id="KA&lt;t" class=""><strong>9씬</strong></td><td id="rAry" class="">11</td><td id="gI`s" class="">파란 화면에 텍스트</td></tr><tr id="7c07ceab-29c8-4a84-8bba-ebcdd2a11e21"><td id="KA&lt;t" class=""><strong>10씬</strong></td><td id="rAry" class="">12</td><td id="gI`s" class="">흰 화면 회사 로고</td></tr></tbody></table><p id="a35af417-e67f-4272-8801-17961728e231" class="">콘티라는 큰 산을 넘었다면, 이제 거의 다 왔다. <strong>촬영의 가장 큰 틀이 되는 콘티</strong>가 만들어지면 광고주, 촬영팀과 함께 콘티에 대한 논의를 거친 후 <strong>수정, 보완 작업</strong>을 하게 될 것이다. <span style="border-bottom:0.05em solid"><em>경험상 최초의 콘티가 한 번에 통과되는 경우는 없었다...</em></span></p><p id="b7737e33-e203-491f-b352-4945222d0138" class="">그렇게 콘티 작업이 마무리되면 본격적으로 촬영 현장에 가기 위한 준비를 하면 되는데, 그 준비를 위해 <strong>키보드 위에 다시 손을 곱게 올려두자.</strong> (촬영 전날까지도 PC 앞에 앉아 있어야 하지만..) 그리고 테이블 한쪽에는 충전선이 꽂힌 <strong>핸드폰</strong>을 준비해두자. 다음 단계에서는 여기저기 전화할 일도 많아진다.</p><p id="4f78446d-90e1-4347-9574-fdbeb281f2d3" class="">다시 한번 심기일전한 후에... 일일 촬영 계획표를 세우러 가도록 하겠다. 이상! 이번 편은 여기까지!</p><p id="636a5351-b770-439c-bb89-c42871c9dbe4" class="">
+</p><hr id="9e144785-0d7d-41d0-ace0-38d2b106e0cc"/><h1 id="1987888c-0229-4ae5-8b18-2fa2fac52a43" class="">AI 요약</h1><p id="7a632998-2d8c-4252-b1c6-4ddeb416c73d" class="">이 아티클에서는 광고 제작 시 중요한 역할을 하는 촬영 영상 콘티(스토리보드에 대해 설명합니다.</p><p id="3b70f667-81ea-4abb-ae02-4d9c869930d6" class="">먼저, 콘티는 <strong>cut, video, context, audio, time</strong> 다섯 가지 요소로 구성됩니다. <strong>cut</strong>은 영상의 가장 작은 단위를 의미하며, <strong>video</strong>는 영상 촬영 시 참고할 수 있는 장면을 그림이나 사진으로 넣어줍니다. <strong>context</strong>는 장면에 대한 설명과 함께 샷, 구도, 카메라 이동 등을 표기하며, <strong>audio</strong>는 장면마다 들어갈 사운드(노래, 대사 등)를, <strong>time</strong>은 해당 장면을 편집 시 몇 시간 정도 구성할 것인지 대략적으로 적어줍니다.</p><p id="efacbad8-62ec-4f5a-a519-61158395bfb7" class="">콘티 작성 시, 먼저 개별 컷을 나누어 <strong>씬</strong>으로 구분합니다. 씬은 장소에 따라 구분되며, 컷이 모여 구성되는 장면입니다. 각 씬들은 컷으로 구성되며, 동일한 장소이지만 장면 배치가 다르고 시간대가 다를 경우에도 구분 짓습니다. 촬영 시에는 이러한 씬과 컷을 기반으로 일일 촬영 계획표를 작성하여 준비해야 합니다.</p><p id="05116b78-c81b-436d-987c-8fab21df82e3" class="">콘티 작성이 처음이라면 양식이나 예시를 참고하는 것이 도움이 됩니다. 컷에 대한 이해가 필요한데, 컷은 영상의 가장 작은 단위이며, 영상을 찍을 때 녹화 버튼을 눌러 시작했을 때부터 종료할 때까지의 연속된 영상입니다. 이를 기반으로 씬과 컷을 나누어 기획하며, 레퍼런스 영상을 보며 씬과 컷 나누기 연습을 하는 것이 도움이 됩니다.</p><p id="5ce40271-b7ea-4b0b-9618-1ab9af6d67aa" class="">콘티 작업이 마무리되면 광고주와 촬영팀과 함께 콘티에 대한 논의를 거친 후, 수정 및 보완 작업을 거쳐 촬영 현장에 가기 위한 준비를 합니다. 촬영 전날까지도 PC 앞에 앉아 있어야 하므로 일일 촬영 계획표를 세우고 준비해 두는 것이 좋습니다.</p><p id="bdbae891-2edd-4d38-aedb-b1197c9175ad" class="">
+</p></div></article></body></html>

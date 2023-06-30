@@ -1,0 +1,682 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>경쟁사 리서치</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="d8167e24-6a98-492f-bf4f-ed2b3f41880d" class="page sans"><header><h1 class="page-title">경쟁사 리서치</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-pink">routine</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230420 현황</summary><div class="indented"><ol type="1" id="873b48e4-0fce-4d93-bcf9-2247dd9e3007" class="numbered-list" start="1"><li>딥툰(드리머스)<ol type="a" id="cfde65f2-68fb-4728-8085-437562a35a23" class="numbered-list" start="1"><li>웹소설 Three Kingdoms 을 이용해 웹툰, 영화, 게임 등의 콘텐츠로 확장 시키고 있음 -&gt; 슈퍼 IP 프로젝트</li></ol><ol type="a" id="50584eb8-469c-424b-b777-c7910d6526f6" class="numbered-list" start="2"><li>뭔가 눈에 띄는 활동은 안 보임(뉴스 기사나 관련 글이 최근 올라오지 않음)</li></ol></li></ol><ol type="1" id="39428a05-b16d-4ad7-92b1-3a9622dff909" class="numbered-list" start="2"><li>투닝<ol type="a" id="0d1a5a50-e1c8-4fef-bbb8-3fc9b1d943a9" class="numbered-list" start="1"><li>캐릭터 마케팅 분야 공략 중<ol type="i" id="8410ca01-06cf-4ac6-816b-0613785e5872" class="numbered-list" start="1"><li>자체 템플릿 이용해야함</li></ol><ol type="i" id="f2f0ec12-b141-4e52-8421-d18d85dd18cb" class="numbered-list" start="2"><li>t2i 방식</li></ol><ol type="i" id="e0f13220-1c3a-4caf-8094-b0df04188ef1" class="numbered-list" start="3"><li>로라 12개</li></ol></li></ol><ol type="a" id="3108cda0-dd57-4a3f-8267-2f33630e4ce2" class="numbered-list" start="2"><li>다른 캐릭터 마케팅 서비스와 차별점으로 두고 있는 것은<ol type="i" id="f6832de8-4030-45a0-93bc-59733ab60c17" class="numbered-list" start="1"><li>MD, 굿즈 제작, 웹툰 공모전까지 친절히 도와준다 -&gt; 초보도 할 수 있다</li></ol></li></ol><ol type="a" id="39d2ee4b-f661-459a-8f70-3747312f55ec" class="numbered-list" start="3"><li>기업에 최적화된 서비스 제공</li></ol></li></ol><ol type="1" id="c99fd815-1b07-4e1e-8993-21abb2b67ea7" class="numbered-list" start="3"><li>투툰<ol type="a" id="c4df6d76-96ba-49da-9b8d-fd68ba117ba9" class="numbered-list" start="1"><li>스토리도 필요없음<ol type="i" id="225057ef-0059-4e98-9868-115f28f95115" class="numbered-list" start="1"><li>소재만 넣어주면 -&gt; gpt가 스토리 만듬 -&gt; 만들어진 스토리 기반으로 스케치 기반 이미지 생성 -&gt; 영상 제작</li></ol></li></ol><ol type="a" id="ad31bccf-80e7-47aa-a5b4-20f308b8266e" class="numbered-list" start="2"><li>웹툰 비디오를 사용자들끼리 공유하는 플랫폼화 작업 진행중</li></ol><ol type="a" id="d4d286f6-0f92-453f-a1ec-f495edcda4e4" class="numbered-list" start="3"><li>사용자는 투툰으로 스케치만 뽑아내서 채색 -&gt; 만화 제작 형태로 활용하는 듯</li></ol></li></ol><ol type="1" id="1dd656a3-cf11-4f45-9e55-e080ecd4d683" class="numbered-list" start="4"><li>네이버 웹툰미<ol type="a" id="649d6efe-3233-419c-877b-f2119d294d33" class="numbered-list" start="1"><li>웹툰 속 주인공이 되어 웹툰 안으로 들어간다는 컨셉 (사람 -&gt; 웹툰)</li></ol><ol type="a" id="5ab50291-070a-45e1-b06e-fd9609ad7376" class="numbered-list" start="2"><li>고품질의 데이터로 간단한 모델을 학습시키는 방식</li></ol><ol type="a" id="c15dadd3-9d4d-4752-bf7b-0990499e410d" class="numbered-list" start="3"><li>메모리에 텐서RT 상주시킴 -&gt; 추론 속도 개선 (이미지 1장 변환하는데 1초도 안 걸린다고 함)</li></ol><ol type="a" id="be697736-acb9-4625-a744-051c4c6fd924" class="numbered-list" start="4"><li>“내 얼굴이 이말년 씨리즈에?” (이거 최근에 진행한 삼성화재 건과 비슷한 듯) <a href="https://www.hankyung.com/it/article/202302287257i">https://www.hankyung.com/it/article/202302287257i</a></li></ol></li></ol><ol type="1" id="41d6fe60-39ce-4a15-b811-421d0bc4489d" class="numbered-list" start="5"><li>니지저니<ol type="a" id="2f9c2816-4643-4e54-96c6-4cd569a3ed73" class="numbered-list" start="1"><li>니지저니5 - expressive 업데이트됨<ol type="i" id="57089ecb-0355-4704-b180-bd39e5e0c8ef" class="numbered-list" start="1"><li>새롭고 높은 퀄리티를 보장</li></ol><ol type="i" id="b859cc9d-4721-421e-a9b6-125cf26ca23f" class="numbered-list" start="2"><li>더 다양한 그림체 구현</li></ol></li></ol></li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230425 현황</summary><div class="indented"><ul id="cfd84097-ccd5-4ff9-9cff-0128177ecb87" class="toggle"><li><details open=""><summary>딥툰(드리머스)</summary><ol type="1" id="1a3b061e-4f6f-42f1-a216-daceb9519ae9" class="numbered-list" start="1"><li>핵심 가치: “웹툰 제작 효율화”<ol type="a" id="a70b268c-a70f-4cff-aa86-474450ec011e" class="numbered-list" start="1"><li>“딥툰은 시나리오를 만화를 만드는 데에 도움을 주는 플랫폼” <a href="https://www.deeptoon.com/forum/ai-webtoon/dibtuniran">딥툰 소개</a></li></ol><ol type="a" id="afaf99b7-1856-4ec2-a893-545d4ed5632d" class="numbered-list" start="2"><li>그림 선 다듬기, 채색, 배경 그리기 등 비교적 단순하지만, 시간과 노동력이 많이 소요되는 작업을 컴퓨터가 수행토록 해 생산성을 높이는 기술 <a href="https://www.yna.co.kr/view/AKR20220228110900065">기사 링크</a></li></ol></li></ol><ol type="1" id="b2e5b000-d7f7-49b6-8d4c-6771b8d2b2d6" class="numbered-list" start="2"><li>제품의 형태<p id="022d8e75-53a4-4bcb-a15d-b0f089a08452" class="">[아직 파악되지 않음]</p></li></ol><ol type="1" id="7ffd0f9f-d101-47b8-b0b5-c9ceb0f0b796" class="numbered-list" start="3"><li>pricing<p id="2456d7b3-2e76-49e9-9285-b05213aebc4a" class="">[아직 파악되지 않음]</p></li></ol><ol type="1" id="11dde8e1-77e3-4c4a-8d7e-9b049b04e8a8" class="numbered-list" start="4"><li>행보 및 방향성<ol type="a" id="67f9c5b1-7758-4109-a7f4-ad22bcef61bc" class="numbered-list" start="1"><li>웹소설 Three Kingdoms 을 이용해 웹툰, 영화, 게임 등의 콘텐츠로 확장 시키고 있음 -&gt; 슈퍼 IP 프로젝트</li></ol></li></ol><ol type="1" id="157a1912-7c76-4237-b6d1-10d39737b2d9" class="numbered-list" start="5"><li>PR<ol type="a" id="da2daf1d-6424-4bb0-8c9f-04e0ce6fccc3" class="numbered-list" start="1"><li>뭔가 눈에 띄는 활동은 안 보임(뉴스 기사나 관련 글이 최근 올라오지 않음)</li></ol></li></ol></details></li></ul><ul id="c8b21f85-ebb6-4ca2-aa2e-302abfa7cdc6" class="toggle"><li><details open=""><summary>투닝</summary><ol type="1" id="bf8f7222-ac3b-4601-b6b2-36a4ff9f7a11" class="numbered-list" start="1"><li>핵심가치: “누구나 쉽고 빠르게 애셋을 만들 수 있다”<ol type="a" id="8c25a8a0-5c62-4cf4-84a9-9abc107d93b1" class="numbered-list" start="1"><li>캐릭터가 들어간 이미지, gif, 동영상 홍보용 애셋 제작</li></ol><ol type="a" id="af52d212-1fa7-463f-8c96-6a5b43cbaab7" class="numbered-list" start="2"><li>비전문가도 쉽고 빠르게 제작</li></ol></li></ol><ol type="1" id="1f8023e1-e4d8-46fd-90a0-a3b914b35da3" class="numbered-list" start="2"><li>제품의 형태 “마우스 클릭 및 드래그를 통한 포스터 이미지, gif, 동영상 편집 툴”<ol type="a" id="677b1c42-2fb1-4157-acf5-192495d7e98b" class="numbered-list" start="1"><li>스마트 캐릭터<ol type="i" id="250cdda7-a516-45a7-bb5a-fcaec7d7de57" class="numbered-list" start="1"><li>40만가지 이상의 자세 연출</li></ol><ol type="i" id="62958f8e-358e-4890-9037-00e051696a78" class="numbered-list" start="2"><li>다양한 표정 및 스타일(헤어스타일, 악세사리 등) 연출</li></ol><ol type="i" id="3b3f3ed0-4c0c-4ddb-9071-2188316780c5" class="numbered-list" start="3"><li>식자의 내용에 따른 AI 감정 연출 적용</li></ol></li></ol><ol type="a" id="1e87a122-407c-49e3-9e14-c1303ebf8dc9" class="numbered-list" start="2"><li>AI 자동 생성 캐릭터<ol type="i" id="d33bdc1a-bccb-4135-bf6d-9b028cf3aa7a" class="numbered-list" start="1"><li>얼굴 이미지 및 영상을 업로드하여 생성</li></ol></li></ol><ol type="a" id="15c4bb8c-03ac-43ab-b804-40f09fd23c97" class="numbered-list" start="3"><li>식자 및 배경<ol type="i" id="c9e837cc-5935-4aad-b55e-12167cb5bae1" class="numbered-list" start="1"><li>식자 삽입 및 로고 수동 배치(새로운 로고 생성은 X)</li></ol><ol type="i" id="05a30983-b46b-4833-bdf9-0c097f8e0161" class="numbered-list" start="2"><li>AI를 통해 웹툰 컷을 설명하는 문장 입력하여 식자, 배경, 캐릭터, 오브제 자동으로 배치한 컷 생성</li></ol></li></ol><ol type="a" id="26431ffd-1552-4e28-8a9e-1c19d5c09e80" class="numbered-list" start="4"><li>스케치<p id="98308fc9-bf9f-4ecd-90f2-d16464e1a7b4" class="">사용자가 스케치한 그림에 알맞은 이미지 요소 자동 탐색</p></li></ol><ol type="a" id="3c562eee-17ae-482e-bcab-faffcf20e8f5" class="numbered-list" start="5"><li>템플릿<p id="425e671b-6465-4d52-8b89-aa816ae0e008" class="">포스터, 메시지 카드, 소셜 미디어 등 템플릿을 통한 빠른 애셋 제작</p></li></ol></li></ol><ol type="1" id="1d1527ba-baf2-441e-8823-5ce2441bad80" class="numbered-list" start="3"><li>Pricing<ol type="a" id="dc8ec353-8073-40fe-9f95-b027d90a6dbc" class="numbered-list" start="1"><li>무료 <ol type="i" id="fc1bd283-1149-4a7a-bd4b-2735c4b5c6b7" class="numbered-list" start="1"><li>스마트 캐릭터 4종 + 기본 리소스</li></ol><ol type="i" id="c8d6dbd9-e09c-4fc1-86e0-65ff8f3391fd" class="numbered-list" start="2"><li>1천 가지 이미지 요소 및 배경 이미지</li></ol></li></ol><ol type="a" id="6311f2db-fe93-46ff-90c1-777e3cba0f6b" class="numbered-list" start="2"><li>프로 12,000원/월<ol type="i" id="9071709e-9ca5-4341-9215-ddf42b621be6" class="numbered-list" start="1"><li>스마트 캐릭터 16종</li></ol><ol type="i" id="14ee421b-2235-41d4-94cc-eaa24dc7c615" class="numbered-list" start="2"><li>1만가지 이미지 요소 및 배경 이미지</li></ol><ol type="i" id="c9b87390-dd55-49d4-888c-6a4c4fc582d8" class="numbered-list" start="3"><li>AI 기능 포함 (문장으로 툰 생성, 그림으로 요소 검색, 사진/동영상으로 캐릭터 생성, 글로 캐릭터 연출)</li></ol></li></ol><ol type="a" id="80c2ed0b-f50b-4234-89da-4b8b9ae8d6e1" class="numbered-list" start="3"><li>기업 (별도 견적 진행)<ol type="i" id="f87964a6-d5e9-4412-b958-dbb63381191e" class="numbered-list" start="1"><li>전용 스마트 캐릭터 제작/등록</li></ol><ol type="i" id="5330150a-5ddd-4c11-ad37-71176b8e056c" class="numbered-list" start="2"><li>전용 템플릿 제공</li></ol><ol type="i" id="1b641301-aa46-4c5c-8b98-a49f93668978" class="numbered-list" start="3"><li>GIF 이모티콘 세트 제공</li></ol></li></ol></li></ol><ol type="1" id="ab3d62c7-f46f-4f00-89d5-6989fea0c7a7" class="numbered-list" start="4"><li>행보 및 방향성<ol type="a" id="d4ab94f7-b41c-43bb-9f53-cf6f6c17a817" class="numbered-list" start="1"><li>캐릭터 마케팅 분야 공략 중</li></ol><ol type="a" id="1aa3d010-af1a-4b50-8ca6-f0c5191d963b" class="numbered-list" start="2"><li>다른 캐릭터 마케팅 서비스와 차별점으로 두고 있는 것은<p id="1c2d7d96-4893-4486-8e20-0937d2fa4b69" class="">MD, 굿즈 제작, 웹툰 공모전까지 친절히 도와준다 -&gt; 초보도 할 수 있다</p></li></ol><ol type="a" id="7ffb7353-1e2a-46fe-bdce-6ee4ae497083" class="numbered-list" start="3"><li>기업에 최적화된 서비스 제공</li></ol></li></ol></details></li></ul><ul id="d31846e3-2c20-4f0d-b195-df59f2c41794" class="toggle"><li><details open=""><summary>투툰</summary><ol type="1" id="656d3342-e114-4a62-a05a-e05cd338227c" class="numbered-list" start="1"><li>핵심가치 “누구나 가능한 웹툰 제작”<ol type="a" id="d3318f22-32d4-46f4-9a8b-7a4b50fca5e4" class="numbered-list" start="1"><li>“그림실력은 없지만 아이디어가 뛰어난 잠재적 작가들의 꿈을 현실화해주는 도구”<p id="932ad648-f5b9-416f-a317-c7a5c0f3f444" class="">출처 : 시사저널(http://www.sisajournal.com)</p></li></ol></li></ol><ol type="1" id="4cf7a9d0-2c5b-4545-9884-dac62b59ae2b" class="numbered-list" start="2"><li>제품의 형태<ol type="a" id="9169db83-62ac-4a8d-aa5f-65cf0074aff8" class="numbered-list" start="1"><li>아이디어와 스토리만 제시하면 웹툰으로 제작되는 모습을 기자 앞에서 통해 시연<ol type="i" id="67d4520a-9d3c-48b6-b405-82975c168a9d" class="numbered-list" start="1"><li>스케치 생성</li></ol><ol type="i" id="6c7e094e-595e-46a1-9b2e-44cb75c092bd" class="numbered-list" start="2"><li>배경 생성</li></ol><ol type="i" id="e5a74390-c7c3-44c8-9c95-5ddd8841278e" class="numbered-list" start="3"><li>배경이나 표정 수정</li></ol><ol type="i" id="f07ce463-a56e-4135-8336-f48dffdffed5" class="numbered-list" start="4"><li>자동 채색</li></ol></li></ol><ol type="a" id="b5e90188-a3af-4504-be90-0f7af60940ca" class="numbered-list" start="2"><li>전용 화풍 생성<p id="26c90c97-63e7-4671-adb9-ee70b76e74dc" class="">“여러 각도의 샘플 이미지를 20~100장 정도만 입력하면 공통된 화풍을 추출해 그에 맞는 이미지를 만들어낼 수 있다”<div class="indented"><p id="57fc2f8c-bbb6-41f3-8fa2-9733fe49761c" class="">출처 : 시사저널(http://www.sisajournal.com)</p><p id="ba22e7a0-258f-4270-967f-4c1167f9de55" class="">실제 상품화 단계인지는 미지수</p></div></p></li></ol><ol type="a" id="bb65ce85-06d5-4b92-8865-81b64a28e3da" class="numbered-list" start="3"><li>웹툰 공정 40% 차지하는 콘티 자동 제작 (<a href="https://www.notion.sogpt.tootoon.ai">투툰</a>gpt)<p id="39d3ad50-fd13-491e-97ac-70eb8ad25b71" class="">한 문장으로 된 간단한 시놉시스를 넣어주면 -&gt; gpt가 몇 문장으로 된 스토리 만듬 -&gt; 만들어진 스토리 기반으로 스케치 기반 이미지 생성 -&gt; 영상 제작</p></li></ol></li></ol><ol type="1" id="d93cd09e-f5ab-4aff-9437-f2e3d676779a" class="numbered-list" start="3"><li>pricing <p id="a3a1a877-46f4-4fdc-816a-4e347e803331" class="">[아직 파악되지 않음]</p></li></ol><ol type="1" id="2111b1f3-1cfb-424f-893a-0d64febd9f8d" class="numbered-list" start="4"><li>행보 및 방향성<ol type="a" id="55fc9030-266c-4697-8f57-3cf05c868851" class="numbered-list" start="1"><li><a href="https://www.mk.co.kr/news/it/10702819">2023.04 초에 투툰 프로그램과 이를 이용해 만든 웹툰 샘플 공개</a> (<a href="https://www.notion.sogpt.tootoon.ai">투툰gpt</a>)</li></ol><ol type="a" id="86d61e7a-f1e9-410c-a2fc-1081ad04e843" class="numbered-list" start="2"><li>웹툰 비디오를 사용자들끼리 공유하는 플랫폼화 진행중  (<a href="https://www.notion.sogpt.tootoon.ai">투툰gpt</a>)</li></ol><ol type="a" id="1e6b2f21-21f6-4be8-8ec5-ef9a63f28d53" class="numbered-list" start="3"><li>추후 움직이는 애니메이션 생성 기능 개발 계획 예정</li></ol></li></ol><ol type="1" id="e4f97ca8-4947-4dff-aeb9-6628a8d3928f" class="numbered-list" start="5"><li>출처<p id="fd26f538-37b7-4bdf-a466-a790d2abd439" class=""><a href="https://www.sisajournal.com/news/articleView.html?idxno=260299">시사저널 기사 </a></p><p id="924d48f9-ec58-4851-9992-9d008ca74f22" class=""><a href="https://www.gpt.tootoon.ai/">https://www.gpt.tootoon.ai</a></p></li></ol></details></li></ul><ul id="55404f39-33f2-4905-b613-0dfda9287f94" class="toggle"><li><details open=""><summary>네이버 웹툰미</summary><ol type="1" id="144e4b87-8db4-477f-9d64-3b48dc9b1037" class="numbered-list" start="1"><li>핵심 가치<ol type="a" id="a0f3db7a-4a9a-4fbf-bcd9-cc82d1587cd2" class="numbered-list" start="1"><li>웹툰 속 주인공이 되어 웹툰 안으로 들어간다는 컨셉 (사람 -&gt; 웹툰)</li></ol></li></ol><ol type="1" id="ab47f496-4a81-41d2-a49c-89a7c649a3a6" class="numbered-list" start="2"><li>프로젝트의 형태<ol type="a" id="cc5276f5-ac17-459b-9412-c672131c7b52" class="numbered-list" start="1"><li>실사 이미지를 “여신강림”, “복학왕”과 같은 웹툰 캐릭터와 배경으로 변환 (<a href="https://zdnet.co.kr/view/?no=20230228125137">아티클</a>) (<a href="https://www.donga.com/news/Economy/article/all/20230228/118108765/1">아티클</a>)</li></ol></li></ol><ol type="1" id="a0acc61d-60f8-485e-83d7-d07d208041fa" class="numbered-list" start="3"><li>기술적 차별성<ol type="a" id="1c7f26af-6a84-48fd-99af-ebda65790657" class="numbered-list" start="1"><li>고성능 AI 모델을 활용해 고품질의 데이터를 만들어, 가볍고 간단한 모델을 학습시키는 방식 (<a href="https://zdnet.co.kr/view/?no=20230228125137">아티클</a>)</li></ol><ol type="a" id="d1d638b8-023f-4df7-bc66-a1525239c0ce" class="numbered-list" start="2"><li>메모리에 텐서RT 상주시킴 -&gt; 추론 속도 개선 (이미지 1장 변환하는데 1초도 안 걸린다고 함)</li></ol></li></ol><ol type="1" id="6dc7de47-43cf-482a-8c67-17b5495c0210" class="numbered-list" start="4"><li>pricing<p id="22cde8fe-33e3-47a9-9a02-da366afd5094" class="">[아직 파악되지 않음]</p></li></ol><ol type="1" id="02c19f2e-7e2b-46a5-b4fa-eccd78bb4e6d" class="numbered-list" start="5"><li>행보 및 방향성<ol type="a" id="1263f7b3-39d5-4df0-b8da-714a72937aa5" class="numbered-list" start="1"><li>2022년 네이버 쇼핑 라이브에 이 기술을 접목해 진행자 얼굴을 웹툰 캐릭터로 변환하여 시청자로부터 호응을 이끎 (<a href="https://zdnet.co.kr/view/?no=20230228125137">아티클</a>)</li></ol><ol type="a" id="6ae30312-a729-4e41-b7f9-0a39c246a28d" class="numbered-list" start="2"><li>2023.02.27~28 “데뷰2023”에서 웹툰미 프로젝트를 소개, ‘여신강림’, ‘팔이피플’, ’이말년 씨리즈’, ‘복학왕’, ‘호랑이형님’ 등 인기 작품 속 캐릭터로 변신해 네 컷 사진을 찍을 수 있는 부스를 선보임 (<a href="https://www.donga.com/news/Economy/article/all/20230228/118108765/1">아티클</a>)</li></ol><ol type="a" id="bdbc1696-1822-4e55-8d68-e1dd3e274f70" class="numbered-list" start="3"><li>다양한 웹툰 캐릭터 지원 등 기술 고도화를 진행할 예정 (<a href="https://www.donga.com/news/Economy/article/all/20230228/118108765/1">아티클</a>)</li></ol></li></ol><p id="6577cb33-ed7d-4728-bb82-c33e1ef56069" class="">
+</p></details></li></ul><ul id="9b4ad539-aede-4392-9246-8b82e5b2f56d" class="toggle"><li><details open=""><summary>니지저니</summary><ol type="1" id="3d01af17-17c5-4489-a349-0c5319bbd62d" class="numbered-list" start="1"><li>핵심가치<p id="20a2115a-00ba-4f33-b47b-b0989aa3f2f3" class="">midjourney의 애니메이션 만화 캐릭터 그림체 (애니풍 그림체) 특화 모델</p></li></ol><ol type="1" id="9899bd8b-a07c-4152-84d1-edaae3273c2f" class="numbered-list" start="2"><li>제품의 형태<ol type="a" id="b47b5b03-52f3-44e8-b2e2-925bc6a40a55" class="numbered-list" start="1"><li>미드저니와 spellbrush 사가 협업하여 만든 서비스</li></ol><ol type="a" id="2660ff85-aeb8-479b-881c-b0301e584e65" class="numbered-list" start="2"><li>사용 방법  (Midjourney와 동일)<ol type="i" id="a54d2a06-cc96-4396-8d67-3735f1e08017" class="numbered-list" start="1"><li>Discord 서버스를 통해 경험</li></ol><ol type="i" id="89d128e9-fd21-4d8d-bcbe-b4be8e2905cf" class="numbered-list" start="2"><li>Discord에서 이미지 생성 채널에서 /imagine 명령 뒤에 프롬프트 입력</li></ol><ol type="i" id="45137813-e721-4e4b-a77a-8e22e1a4fac6" class="numbered-list" start="3"><li>프롬프트에 따라 4개의 이미지로 생성</li></ol><ol type="i" id="a06ffbd5-2b27-4159-bdf8-9305b6d24401" class="numbered-list" start="4"><li>4개 이미지 중 하나를 골라 이미지를 확대하거나 변형</li></ol></li></ol></li></ol><ol type="1" id="ee68a4c9-255e-4423-841d-73820198319b" class="numbered-list" start="3"><li>경쟁력<ol type="a" id="6edd758d-1654-41e6-85a7-82d314d924d5" class="numbered-list" start="1"><li>애니메이션 그림체 캐릭터 퀄리티가 좋다고 알려진 novelai보다도 압도적으로 높은 퀄리티 <a href="https://dingdo.tistory.com/1273">(블로그</a>)</li></ol><ol type="a" id="de0259cc-0436-4fa5-96be-6f09b1cdeef7" class="numbered-list" start="2"><li>다양한 그림체 지원 (<a href="https://dingdo.tistory.com/1273">블로그</a>)</li></ol></li></ol><ol type="1" id="9f276e7b-2798-4de7-9485-32507d145e2f" class="numbered-list" start="4"><li>Pricing<ol type="a" id="614b8364-6ed9-4e4b-be6f-39e727808225" class="numbered-list" start="1"><li>무료 요금제<ol type="i" id="103d96f9-30c8-46d9-b441-f328841745c8" class="numbered-list" start="1"><li>수요가 너무 많이 몰리는 경우 사용할 수 없음 (<a href="https://wjdqhzld.com/niji-journey/">블로그</a>)</li></ol></li></ol><ol type="a" id="effbc74a-332d-42a8-8218-84396a067d52" class="numbered-list" start="2"><li>유료 요금제 (<a href="https://nijijourney.com/ko/checkout/plans/?hash=6c9bd07bb01bcb8c17267842ec777cce4b7d971de236bc5731907a60938c87b3a68fafaa30b131c77526caa2267ae685AS2TmQ6b+KpAbb4E5LizeM5kH3wbkhoW3GrZLKMhSqY+b3xV0o87rhN1yHBOmxRrERgd6LQCgX8b1cvtKK9T18bNyfslUDKM/tWHgdlyYEtnca+U59QvdVra3JQLhrwqbAv3LSrdi/oybkV3uAIwt7AHJkTCY4Z0KWnVAa5ImuY5lKfT76Skv+zb6wxDtufmFhiixS1S/g9rbNoXfYjASNStjstk+pMP2YwhApUs6qU=">nijijourney page</a>)<ol type="i" id="12147746-7f83-4a65-bbda-87db3f36a89f" class="numbered-list" start="1"><li>10달러/월<ol type="1" id="e55edcea-8f80-4dce-b05d-b6877d715d01" class="numbered-list" start="1"><li>200장/월 생성</li></ol></li></ol><ol type="i" id="ca6f5d86-f8ab-48ea-a39e-9fbae06439d6" class="numbered-list" start="2"><li>30달러/월<ol type="1" id="97a97ae7-176d-4640-8c60-1a763872c42e" class="numbered-list" start="1"><li>월 15시간 동안 즉시 생성 모드</li></ol><ol type="1" id="88295aee-f691-4ae1-9a75-0074837881dc" class="numbered-list" start="2"><li>이미지 생성 장수 제한 없음</li></ol></li></ol><ol type="i" id="99da13d1-4ce9-4a06-b93a-97fce49a1412" class="numbered-list" start="3"><li>60달러/월<ol type="1" id="57c1c122-9028-4961-a575-25b1a4231fed" class="numbered-list" start="1"><li>월 30시간 동안 즉시 생성 모드</li></ol><ol type="1" id="12e40768-1158-4aec-b89f-34848d5f3452" class="numbered-list" start="2"><li>이미지 생성 장수 제한 없음</li></ol></li></ol></li></ol></li></ol><ol type="1" id="70171b45-ad64-4314-9df8-1bfdbe8e447a" class="numbered-list" start="5"><li>행보 및 방향성<ol type="a" id="370fe5fb-11a1-4abf-85a8-04789b916e57" class="numbered-list" start="1"><li>니지저니 v5 - expressive 업데이트<ol type="i" id="5ca94e00-dadd-4884-867b-117975fe81a0" class="numbered-list" start="1"><li>새롭고 높은 퀄리티를 보장</li></ol><ol type="i" id="a7cbd562-f302-490c-aae0-5a52544b7f69" class="numbered-list" start="2"><li>더 다양한 그림체 구현</li></ol></li></ol></li></ol></details></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230427 현황</summary><div class="indented"><ul id="5917d7c6-b1af-4863-abcd-49cfe253fe60" class="toggle"><li><details open=""><summary>딥툰(드리머스)</summary><ol type="1" id="883e7058-774f-4664-b6dc-2e41edd055eb" class="numbered-list" start="1"><li>핵심 가치: “웹툰 제작 효율화”<ol type="a" id="c00ae9e0-9ab3-42e0-b9c2-e00e55db6de9" class="numbered-list" start="1"><li>“딥툰은 시나리오에서 만화를 만드는 데에 도움을 주는 플랫폼” <a href="https://www.deeptoon.com/forum/ai-webtoon/dibtuniran">딥툰 소개</a></li></ol><ol type="a" id="d850b390-ae2b-4744-8f3b-fc46c92d2e7d" class="numbered-list" start="2"><li>그림 선 다듬기, 채색, 배경 그리기 등 비교적 단순하지만, 시간과 노동력이 많이 소요되는 작업을 컴퓨터가 수행토록 해 생산성을 높이는 기술 <a href="https://www.yna.co.kr/view/AKR20220228110900065">기사 링크</a></li></ol></li></ol><ol type="1" id="054c05c8-d1aa-42ec-a0e7-6ffbcc23e67d" class="numbered-list" start="2"><li>제품의 형태<p id="0f1ab342-991c-4281-8eff-054aa435fbb8" class="">[아직 파악되지 않음]</p></li></ol><ol type="1" id="093a27bf-dcd7-4564-b3a9-82a11df5c7b6" class="numbered-list" start="3"><li>pricing<p id="f2db79d5-793c-435c-96a5-a5cb7dd2df68" class="">[아직 파악되지 않음]</p></li></ol><ol type="1" id="00d5fbfe-871e-4971-8887-d4e99f37d145" class="numbered-list" start="4"><li>행보 및 방향성<ol type="a" id="42a16ca3-6b98-4d99-8c94-496e809b7867" class="numbered-list" start="1"><li>웹소설 Three Kingdoms 을 이용해 웹툰, 영화, 게임 등의 콘텐츠로 확장 시키고 있음 -&gt; 슈퍼 IP 프로젝트<ol type="i" id="52eb5a10-f5ae-431e-8790-01c59ab12500" class="numbered-list" start="1"><li><code>4화까지는 작가가 직접 그리고 5화부터 딥툰으로 제작됨</code></li></ol><ol type="i" id="438e2a1d-aef5-4416-8216-03c4914efe94" class="numbered-list" start="2"><li><code>20230427 현재 3화까지 진행</code></li></ol></li></ol></li></ol><ol type="1" id="70cae83f-cd2d-4e76-a00a-1ff6f69ada13" class="numbered-list" start="5"><li>PR<ol type="a" id="0ed9771b-2128-4f71-8d9a-aa937f8b754d" class="numbered-list" start="1"><li>뭔가 눈에 띄는 활동은 안 보임(뉴스 기사나 관련 글이 최근 올라오지 않음)</li></ol></li></ol></details></li></ul><ul id="b1c7acb6-1725-4854-8517-1591170871ca" class="toggle"><li><details open=""><summary>투닝</summary><ol type="1" id="1fb129d4-49e7-4a05-a4a5-bc8bc8c1e488" class="numbered-list" start="1"><li>핵심가치: “누구나 쉽고 빠르게 애셋을 만들 수 있다”<ol type="a" id="2db7df45-e15d-45e4-be35-45f44a038eb4" class="numbered-list" start="1"><li>캐릭터가 들어간 이미지, gif, 동영상 홍보용 애셋 제작</li></ol><ol type="a" id="2971b293-d99d-489a-835c-e5dd016f7518" class="numbered-list" start="2"><li>비전문가도 쉽고 빠르게 제작</li></ol></li></ol><ol type="1" id="b113ba5d-896e-4c87-9b59-93c9f5317344" class="numbered-list" start="2"><li>제품의 형태 “마우스 클릭 및 드래그를 통한 포스터 이미지, gif, 동영상 편집 툴”<ol type="a" id="aed45e84-5a59-41f5-9cd3-ec274b987477" class="numbered-list" start="1"><li>스마트 캐릭터<ol type="i" id="0dd5cf86-0dda-4da3-98d9-484f2d995e8c" class="numbered-list" start="1"><li><a href="https://tooning.io/tooning-landing-main">40만가지 이상</a>의 자세 연출</li></ol><ol type="i" id="201e08a1-8859-45b6-89a2-eb2baeba9257" class="numbered-list" start="2"><li>다양한 표정 및 스타일(헤어스타일, 악세사리 등) 연출</li></ol><ol type="i" id="05ee591f-5001-4257-88d4-7c9bd0fe4bd1" class="numbered-list" start="3"><li><a href="https://youtu.be/QjaXK9V-2sY?t=66">식자의 내용에 따른 AI 감정 연출 적용</a></li></ol></li></ol><ol type="a" id="9d68a3ce-440b-490e-aa46-e3d21035a5d1" class="numbered-list" start="2"><li>AI 자동 생성 캐릭터<ol type="i" id="7ce33196-ee0d-489b-a576-3cfdef19955b" class="numbered-list" start="1"><li><a href="https://youtu.be/QjaXK9V-2sY?t=24">얼굴 이미지 및 영상을 업로드</a>하여 생성</li></ol></li></ol><ol type="a" id="8a7d4163-d798-4d18-9b3d-d33ed0ba31e2" class="numbered-list" start="3"><li>식자 및 배경<ol type="i" id="5e25f29c-33f7-4c0a-bc16-676886915fd9" class="numbered-list" start="1"><li>식자 삽입 및 로고 수동 배치(새로운 로고 생성은 X)</li></ol><ol type="i" id="90aff680-3ae1-4b3f-bed6-cf0c3dee0984" class="numbered-list" start="2"><li>AI를 통해 웹툰 컷을 설명하는 문장 입력하여 <a href="https://youtu.be/QjaXK9V-2sY?t=94">식자, 배경, 캐릭터, 오브제 자동으로 배치한 컷 생성</a></li></ol></li></ol><ol type="a" id="9ebd713d-fa74-46dc-aa97-79775ef46a4c" class="numbered-list" start="4"><li>스케치<p id="dff7d91b-defe-4343-98b9-0af7dc636077" class="">사용자가 <a href="https://youtu.be/wdj583fRYyE?t=98">스케치한 그림에 알맞은 이미지 요소 자동 탐색</a></p></li></ol><ol type="a" id="d0a5a81a-4c93-40b0-a486-71194ad49c5a" class="numbered-list" start="5"><li>템플릿<p id="62717230-06f3-461f-9f59-5cf7bcd4153c" class="">포스터, 메시지 카드, 소셜 미디어 등 템플릿을 통한 빠른 애셋 제작</p></li></ol><ol type="a" id="275b8dda-c2b8-428f-99d2-9431045e6f68" class="numbered-list" start="6"><li><code>Text2Image를 통한 이미지 생성 </code>→ <a href="https://www.youtube.com/watch?v=pH8zH66Yy6o">youtube 영상</a></li></ol><ol type="a" id="66716083-45cd-42b8-bdef-5dbc86089620" class="numbered-list" start="7"><li>응용<ol type="a" id="d593a19d-c72f-42fe-a815-92b07783073a" class="numbered-list" start="1"><li><code>웹툰 만들기</code> → <a href="https://www.youtube.com/watch?v=WfgRplhMuH4">youtube 영상</a></li></ol></li></ol></li></ol><ol type="1" id="6465d296-2335-4f61-9fc2-1d0dae0745f4" class="numbered-list" start="3"><li><a href="https://tooning.io/payment-system">Pricing</a><ol type="a" id="78353c7c-b056-446a-a2d3-2d9be9cc8058" class="numbered-list" start="1"><li>무료 <ol type="i" id="f85a4a89-84b9-47d6-a513-b72b30af0da3" class="numbered-list" start="1"><li>스마트 캐릭터 4종 + 기본 리소스</li></ol><ol type="i" id="bdfb04e8-1879-41d4-a887-f96c51f86a76" class="numbered-list" start="2"><li>1천 가지 이미지 요소 및 배경 이미지</li></ol></li></ol><ol type="a" id="224a8ace-c964-4e0a-ac81-a2a44426971e" class="numbered-list" start="2"><li>프로 12,000원/월<ol type="i" id="534354e1-9d5f-4863-b669-5fc318bfe0e8" class="numbered-list" start="1"><li>스마트 캐릭터 16종</li></ol><ol type="i" id="f50bdc39-9752-4d37-b8b5-30db4b79a09b" class="numbered-list" start="2"><li>1만가지 이미지 요소 및 배경 이미지</li></ol><ol type="i" id="ccb0e683-e338-4a6d-a841-4c57cd97a404" class="numbered-list" start="3"><li>AI 기능 포함 (<a href="https://youtu.be/QjaXK9V-2sY?t=94">문장으로 툰 생성</a>, <a href="https://youtu.be/wdj583fRYyE?t=98">그림으로 요소 검색</a>, <a href="https://youtu.be/QjaXK9V-2sY?t=24">사진/동영상으로 캐릭터 생성</a>, <a href="https://youtu.be/QjaXK9V-2sY?t=66">글로 캐릭터 연출</a>)</li></ol></li></ol><ol type="a" id="c22b3450-d9a2-4057-a0d5-449dd1b244a4" class="numbered-list" start="3"><li>기업 (별도 견적 진행)<ol type="i" id="661a5a7f-9cd7-4294-95df-2ae47685b691" class="numbered-list" start="1"><li>전용 스마트 캐릭터 제작/등록</li></ol><ol type="i" id="41a8a245-ef5a-4470-b6bd-5188aaa817e2" class="numbered-list" start="2"><li>전용 템플릿 제공</li></ol><ol type="i" id="0e1ba6e3-3ac2-46f4-93bb-7d87544cf6f4" class="numbered-list" start="3"><li>GIF 이모티콘 세트 제공</li></ol></li></ol></li></ol><ol type="1" id="46697440-d68a-48f7-b125-f4d8bc2bc0ee" class="numbered-list" start="4"><li>행보 및 방향성<ol type="a" id="2e8f0794-dcd5-46f9-a899-06f101064d9f" class="numbered-list" start="1"><li>캐릭터 마케팅 분야 공략 중 ← <a href="https://tooning.io/payment-system">홈페이지</a></li></ol><ol type="a" id="4eec9b51-9fa0-4d82-ae5c-d6d685704ef5" class="numbered-list" start="2"><li>다른 캐릭터 마케팅 서비스와 차별점으로 두고 있는 것은<p id="06812dc4-edce-41d3-adcd-8e5a3ea5f1c8" class="">MD, 굿즈 제작, 웹툰 공모전까지 친절히 도와준다 -&gt; 초보도 할 수 있다 ← <a href="https://tooning.io/payment-system">홈페이지</a></p></li></ol><ol type="a" id="ed2be492-ba63-4f10-ab3e-a24560689e79" class="numbered-list" start="3"><li>기업에 최적화된 서비스 제공 ← <a href="https://mascot-branding.tooning.io">기업 서비스 소개서</a></li></ol></li></ol></details></li></ul><ul id="671d46a9-424e-4301-993b-1030e83e84f1" class="toggle"><li><details open=""><summary>투툰</summary><ol type="1" id="96f2d2ce-ad51-46ac-b206-d130e11ac913" class="numbered-list" start="1"><li>핵심가치 “누구나 가능한 웹툰 제작”<ol type="a" id="cc36e76a-3bf0-4475-8beb-8ef6d6b80e85" class="numbered-list" start="1"><li>“그림실력은 없지만 아이디어가 뛰어난 잠재적 작가들의 꿈을 현실화해주는 도구” → <a href="https://www.sisajournal.com/news/articleView.html?idxno=260299">기사</a></li></ol></li></ol><ol type="1" id="dbf91ed8-8142-480c-b2c4-86e1278e2707" class="numbered-list" start="2"><li>제품의 형태<ol type="a" id="36cbfd32-a96c-4346-99b9-f1ab4fee5cd3" class="numbered-list" start="1"><li>아이디어와 스토리만 제시하면 웹툰으로 제작되는 모습을 기자 앞에서 통해 시연 → <a href="https://www.sisajournal.com/news/articleView.html?idxno=260299">기사</a><ol type="i" id="e942ddb4-75d7-472c-8318-43b38dedac8c" class="numbered-list" start="1"><li>스케치 생성</li></ol><ol type="i" id="17096b30-f2ef-44ac-990f-35d57307feb4" class="numbered-list" start="2"><li>배경 생성</li></ol><ol type="i" id="90be74fd-0cc0-46e9-8956-d47075dbaf63" class="numbered-list" start="3"><li>배경이나 표정 수정</li></ol><ol type="i" id="ced06552-f667-4ea3-83e9-6ca3f0dc614a" class="numbered-list" start="4"><li>자동 채색</li></ol></li></ol><ol type="a" id="baa1a7e2-e4ef-4e3b-9c19-a65a7929af27" class="numbered-list" start="2"><li>전용 화풍 생성<p id="1fcb4594-94ba-4ceb-859c-0045cb63c68d" class="">“여러 각도의 샘플 이미지를 20~100장 정도만 입력하면 공통된 화풍을 추출해 그에 맞는 이미지를 만들어낼 수 있다” → <a href="https://www.sisajournal.com/news/articleView.html?idxno=260299">기사</a></p><p id="05a76c47-6e3a-4552-9033-75aaa8fe2fe5" class="">단, 실제 상품화 단계인지는 미지수</p></li></ol><ol type="a" id="944c6b5b-a309-4da4-8811-ef1c1b6fe622" class="numbered-list" start="3"><li>웹툰 공정 40% 차지하는 콘티 자동 제작 (<a href="https://www.notion.sogpt.tootoon.ai">투툰</a>gpt)<p id="4d0be975-ca6e-4304-9922-dbdf3e03126e" class="">한 문장으로 된 간단한 시놉시스를 넣어주면 -&gt; gpt가 몇 문장으로 된 스토리 만듬 -&gt; 만들어진 스토리 기반으로 스케치 기반 이미지 생성 -&gt; 영상 제작</p></li></ol></li></ol><ol type="1" id="b7c7df5f-f466-4a44-9dc8-220df126180c" class="numbered-list" start="3"><li>pricing <p id="9c405cb3-0353-45d6-871e-95655092828c" class="">[아직 파악되지 않음]</p></li></ol><ol type="1" id="9429cbb9-2521-4432-9f50-63d94e44cf66" class="numbered-list" start="4"><li>행보 및 방향성<ol type="a" id="5265a3bc-058a-45cf-870f-7e09d7860327" class="numbered-list" start="1"><li><a href="https://www.mk.co.kr/news/it/10702819">2023.04 초에 투툰 프로그램과 이를 이용해 만든 웹툰 샘플 공개</a> (<a href="https://www.notion.sogpt.tootoon.ai">투툰gpt</a>)</li></ol><ol type="a" id="6f19ae1e-313d-44ab-ae4a-837708b6586e" class="numbered-list" start="2"><li>웹툰 비디오를 사용자들끼리 공유하는 플랫폼화 진행중  (<a href="https://www.notion.sogpt.tootoon.ai">투툰gpt</a>)</li></ol><ol type="a" id="cefd0b7b-4d60-490e-b8f5-6cc52258610a" class="numbered-list" start="3"><li>추후 움직이는 애니메이션 생성 기능 개발 계획 예정  → <a href="https://www.sisajournal.com/news/articleView.html?idxno=260299">기사</a></li></ol></li></ol></details></li></ul><ul id="4c6bb5ac-fec6-47dc-8748-bc46e69c4e4c" class="toggle"><li><details open=""><summary>네이버 웹툰미</summary><ol type="1" id="8f1cfa8b-0366-482c-8139-e61949f85925" class="numbered-list" start="1"><li>핵심 가치<ol type="a" id="64dbd46e-9039-4083-8b3f-9b008ce642ce" class="numbered-list" start="1"><li>웹툰 속 주인공이 되어 웹툰 안으로 들어간다는 컨셉 (사람 -&gt; 웹툰)</li></ol></li></ol><ol type="1" id="544d61fd-83bd-46d8-9601-50f9cae5c691" class="numbered-list" start="2"><li>프로젝트의 형태<ol type="a" id="94e5018a-288f-4b94-a627-f651c083051c" class="numbered-list" start="1"><li>실사 이미지를 “여신강림”, “복학왕”과 같은 웹툰 캐릭터와 배경으로 변환 (<a href="https://zdnet.co.kr/view/?no=20230228125137">아티클</a>) (<a href="https://www.donga.com/news/Economy/article/all/20230228/118108765/1">아티클</a>)</li></ol></li></ol><ol type="1" id="328a9471-0cdd-44b1-8c7c-1e139bfdcabe" class="numbered-list" start="3"><li>기술적 차별성<ol type="a" id="58dde297-08f7-4523-8031-91c8efee3084" class="numbered-list" start="1"><li>고성능 AI 모델을 활용해 고품질의 데이터를 만들어, 가볍고 간단한 모델을 학습시키는 방식 (<a href="https://zdnet.co.kr/view/?no=20230228125137">아티클</a>)</li></ol><ol type="a" id="04ffe9f2-18e3-4f98-99a9-6fa90d1b1eaf" class="numbered-list" start="2"><li>메모리에 텐서RT 상주시킴 -&gt; 추론 속도 개선 (이미지 1장 변환하는데 1초도 안 걸린다고 함)</li></ol></li></ol><ol type="1" id="e26c02dc-743a-4907-abff-638e0fada9e6" class="numbered-list" start="4"><li>pricing<p id="b4777eed-cf65-4b6a-b7a6-a6b4d923963c" class="">[아직 파악되지 않음]</p></li></ol><ol type="1" id="469bd285-9325-4e25-aee2-fe3eb4afdd03" class="numbered-list" start="5"><li>행보 및 방향성<ol type="a" id="6ad6ab98-af20-4897-ac67-415b44cc2aed" class="numbered-list" start="1"><li>2022년 네이버 쇼핑 라이브에 이 기술을 접목해 진행자 얼굴을 웹툰 캐릭터로 변환하여 시청자로부터 호응을 이끎 (<a href="https://zdnet.co.kr/view/?no=20230228125137">아티클</a>)</li></ol><ol type="a" id="8756f1cd-a56e-4aed-bed7-20b89ebd08a7" class="numbered-list" start="2"><li>2023.02.27~28 “데뷰2023”에서 웹툰미 프로젝트를 소개, ‘여신강림’, ‘팔이피플’, ’이말년 씨리즈’, ‘복학왕’, ‘호랑이형님’ 등 인기 작품 속 캐릭터로 변신해 네 컷 사진을 찍을 수 있는 부스를 선보임 (<a href="https://www.donga.com/news/Economy/article/all/20230228/118108765/1">아티클</a>)</li></ol><ol type="a" id="dc5eb411-dcaf-4120-8b4c-5db8ae081fba" class="numbered-list" start="3"><li>다양한 웹툰 캐릭터 지원 등 기술 고도화를 진행할 예정 (<a href="https://www.donga.com/news/Economy/article/all/20230228/118108765/1">아티클</a>)</li></ol></li></ol><p id="fd62db45-5e43-465e-8971-c0852f6efebe" class="">
+</p></details></li></ul><ul id="8a0a599d-e5f0-47b9-b3e5-1d3b38e74ec7" class="toggle"><li><details open=""><summary>니지저니</summary><ol type="1" id="e5baa5ff-0d0d-42fc-bb41-ef30e7e31d5f" class="numbered-list" start="1"><li>핵심가치<p id="f6d213db-9d24-4e24-b95f-df84d65ec241" class="">midjourney의 애니메이션 만화 캐릭터 그림체 (애니풍 그림체) 특화 모델</p></li></ol><ol type="1" id="584b7df2-b56c-4fd0-8b0c-1c3787eedde2" class="numbered-list" start="2"><li>제품의 형태<ol type="a" id="0e164f35-ae8c-4a9d-9db5-025b77c4c72e" class="numbered-list" start="1"><li>미드저니와 spellbrush 사가 협업하여 만든 서비스</li></ol><ol type="a" id="e7fa5431-df88-42a8-b8ad-3d6304f10395" class="numbered-list" start="2"><li>사용 방법  (Midjourney와 동일)<ol type="i" id="adb77fef-2064-40c8-a911-11ce0c7bb4ee" class="numbered-list" start="1"><li>Discord 서버스를 통해 경험</li></ol><ol type="i" id="7c47cee6-ff73-4b5f-ac41-3c2e12d8d0e3" class="numbered-list" start="2"><li>Discord에서 이미지 생성 채널에서 /imagine 명령 뒤에 프롬프트 입력</li></ol><ol type="i" id="9c0505ea-d65e-4e8b-bec9-df4506be47e4" class="numbered-list" start="3"><li>프롬프트에 따라 4개의 이미지로 생성</li></ol><ol type="i" id="09090be5-edc5-4f06-b640-f9e2a6ef1f60" class="numbered-list" start="4"><li>4개 이미지 중 하나를 골라 이미지를 확대하거나 변형</li></ol></li></ol></li></ol><ol type="1" id="498b6a31-3c48-480d-a8ae-4e6cc6332dbb" class="numbered-list" start="3"><li>경쟁력<ol type="a" id="6c31d3b9-1b82-4c65-94c7-c8a8e58044a6" class="numbered-list" start="1"><li>애니메이션 그림체 캐릭터 퀄리티가 좋다고 알려진 novelai보다도 압도적으로 높은 퀄리티 <a href="https://dingdo.tistory.com/1273">(블로그</a>)</li></ol><ol type="a" id="14e6d98e-c9a6-4f28-8565-2eb53e3e8a77" class="numbered-list" start="2"><li>다양한 그림체 지원 (<a href="https://dingdo.tistory.com/1273">블로그</a>)</li></ol></li></ol><ol type="1" id="2c8f41a9-e2b9-4718-bb23-7e325e0a4728" class="numbered-list" start="4"><li>Pricing<ol type="a" id="ea3fb41c-2e2e-421a-9c39-bb9bc1bd842a" class="numbered-list" start="1"><li>무료 요금제<ol type="i" id="064e7f3a-5f9c-4d4d-b2ff-77f1be2e1ffb" class="numbered-list" start="1"><li>수요가 너무 많이 몰리는 경우 사용할 수 없음 (<a href="https://wjdqhzld.com/niji-journey/">블로그</a>)</li></ol></li></ol><ol type="a" id="295facfc-152c-4028-8e3b-3cb3a2823971" class="numbered-list" start="2"><li>유료 요금제 (<a href="https://nijijourney.com/ko/checkout/plans/?hash=6c9bd07bb01bcb8c17267842ec777cce4b7d971de236bc5731907a60938c87b3a68fafaa30b131c77526caa2267ae685AS2TmQ6b+KpAbb4E5LizeM5kH3wbkhoW3GrZLKMhSqY+b3xV0o87rhN1yHBOmxRrERgd6LQCgX8b1cvtKK9T18bNyfslUDKM/tWHgdlyYEtnca+U59QvdVra3JQLhrwqbAv3LSrdi/oybkV3uAIwt7AHJkTCY4Z0KWnVAa5ImuY5lKfT76Skv+zb6wxDtufmFhiixS1S/g9rbNoXfYjASNStjstk+pMP2YwhApUs6qU=">nijijourney page</a>)<ol type="i" id="21f3e2db-5a4e-4e8e-bbee-4d3825cab24e" class="numbered-list" start="1"><li><code>연간 구독 시</code>10달러/월, <code>월 구독 시 8달러/월</code><ol type="1" id="06a4cf16-d22b-409d-81de-d5818ecdbf3d" class="numbered-list" start="1"><li>200장/월 생성</li></ol></li></ol><ol type="i" id="01ad044a-4e97-4a62-bd30-d2cf36d0392b" class="numbered-list" start="2"><li><code>연간 구독 시</code>30달러/월, <code>월 구독 시 24달러/월</code><ol type="1" id="93d413de-d94d-413b-85ed-0b39687a213c" class="numbered-list" start="1"><li>월 15시간 동안 즉시 생성 모드</li></ol><ol type="1" id="d5a757a9-f035-47ec-a35c-53e203a93b01" class="numbered-list" start="2"><li>이미지 생성 장수 제한 없음</li></ol></li></ol><ol type="i" id="654e693d-3f2f-4a16-8b47-53add08a632e" class="numbered-list" start="3"><li><code>연간 구독 시</code>60달러/월, <code>월 구독 시 48달러/월</code><ol type="1" id="75e9ee9e-c2a2-40c7-8391-266ad30e887f" class="numbered-list" start="1"><li>월 30시간 동안 즉시 생성 모드</li></ol><ol type="1" id="d90a2a32-2d9f-4b43-8380-c6f611007e42" class="numbered-list" start="2"><li>이미지 생성 장수 제한 없음</li></ol></li></ol></li></ol></li></ol><ol type="1" id="b3b4b698-5911-40c1-beea-7dd6375137f3" class="numbered-list" start="5"><li>행보 및 방향성<ol type="a" id="2a3c3182-eb24-4c68-b721-92a239848fcc" class="numbered-list" start="1"><li>니지저니 v5 - expressive 업데이트<ol type="i" id="e36f0c0f-9f62-42f1-84d7-3dc73e564767" class="numbered-list" start="1"><li>새롭고 높은 퀄리티를 보장</li></ol><ol type="i" id="f73fe14e-ce8c-44d4-97a7-05a6aa4efe69" class="numbered-list" start="2"><li>더 다양한 그림체 구현</li></ol></li></ol></li></ol></details></li></ul><ul id="6e799c04-fa8d-474e-b9a0-ba2f67ef43f5" class="toggle"><li><details open=""><summary><code>Plask</code></summary><ol type="1" id="46c80a87-de21-4a2c-a595-17d08699ebc7" class="numbered-list" start="1"><li>핵심가치<p id="dddbc403-a65c-4a25-a395-83debd4eae94" class="">“You frame it AI creates it” → <a href="https://plask.ai">홈페이지</a></p><p id="dd229d21-b68c-418c-8b69-34f44d104df8" class="">3D mesh를 통해 포즈, 시점을 제어하여 인물 이미지를 생성하는 커뮤니티 서비스</p></li></ol><ol type="1" id="36e7f29d-e885-4b10-a84f-fbbfa06e2264" class="numbered-list" start="2"><li>제품의 형태<ol type="a" id="8c37a336-3503-4c46-88e5-cccb940297c9" class="numbered-list" start="1"><li>web-based image generator/editor → <a href="https://plask.ai">홈페이지</a></li></ol><ol type="a" id="c7b19cb9-504d-4fb7-9b5d-df4b0e28e2e7" class="numbered-list" start="2"><li>input/output → <a href="https://www.youtube.com/watch?v=59QaaD1JFRA&amp;t=19s">tutorial</a><ol type="i" id="69999b6f-eb1b-4b44-bd66-9d9b30c70ed1" class="numbered-list" start="1"><li>input: 3D mesh, text prompt</li></ol><ol type="i" id="956dd5c3-4192-461a-8bcd-609cf2f664f4" class="numbered-list" start="2"><li>output: image</li></ol></li></ol><ol type="a" id="a2b2432e-9830-4ef5-9d0a-54bd687f113d" class="numbered-list" start="3"><li>기능 → <a href="https://www.youtube.com/watch?v=59QaaD1JFRA&amp;t=19s">tutorial</a><ol type="i" id="56dead5e-0855-489a-868a-a1fa2e3ecd1c" class="numbered-list" start="1"><li>community 기능: 다른 사람이 만든 작업을 이어서 만들기</li></ol><ol type="i" id="247e2859-32a4-4de8-ad30-d61a259b172e" class="numbered-list" start="2"><li>image23D: 이미지 업로드해서 포즈가 가미된 3D mesh 만들기</li></ol><ol type="i" id="cfbb0fde-a066-41b6-b2f0-f3375fd1a993" class="numbered-list" start="3"><li>3D mesh male/female option</li></ol><ol type="i" id="9ef110cc-3744-4e9f-81bb-70e85f2ee54b" class="numbered-list" start="4"><li>3D mesh 포즈, 시점 제어</li></ol><ol type="i" id="727bed0c-5c50-4327-b967-f462d540a27e" class="numbered-list" start="5"><li>스타일 옵션: realistic | anime</li></ol></li></ol></li></ol><ol type="1" id="83333cf3-41b0-4d04-81eb-9f38c7ef6f72" class="numbered-list" start="3"><li>pricing<p id="30655e98-1340-4033-8f4e-5880e1d0d53d" class="">무료</p></li></ol><ol type="1" id="274f5fe2-c087-4b0b-bc05-c622a8b8a7b0" class="numbered-list" start="4"><li>행보 및 방향성<ul id="568854bf-c825-4bb3-94db-240a6eba8f81" class="bulleted-list"><li style="list-style-type:disc">이미지 생성 서비스 나흘 만에 2만여명의 사용자 확보 → <a href="https://www.yna.co.kr/view/AKR20230410061700017">기사</a></li></ul><ul id="fba8c16f-6617-43cc-a545-f770989a25ce" class="bulleted-list"><li style="list-style-type:disc">별도로 모션 캡처 에니메이션 솔루션을 판매중 → <a href="https://motion.plask.ai">홈페이지</a><ul id="6ab2b408-3351-4fd0-9f51-8bad88ee14c8" class="bulleted-list"><li style="list-style-type:circle">모션 캡쳐 애니메이션 프로그램 → <a href="https://motion.plask.ai/pricing">pricing</a></li></ul><ul id="493a54d7-b2e5-476e-8c35-1fbaac583206" class="bulleted-list"><li style="list-style-type:circle"><del>B2B 솔루션: 모션 캡쳐 애니메이션 API → </del><del><a href="https://motions.plask.ai/products-api">홈페이지</a></del></li></ul><ul id="fbf9a1a7-9714-4438-90b6-4d57a2f577fd" class="bulleted-list"><li style="list-style-type:circle">B2B 솔루션: 모션 캡쳐 모바일 SDK → <a href="https://www.modif.app/sdk">홈페이지</a></li></ul></li></ul><ul id="d665f35e-a35a-4e48-b125-4ebec96373f3" class="bulleted-list"><li style="list-style-type:disc">투자 → <a href="https://thevc.kr/plask">더브이씨</a><ul id="74cd78f0-7e01-4b00-ae25-856d202caf9a" class="bulleted-list"><li style="list-style-type:circle">현재 Pre-A round </li></ul><ul id="10c570ae-bf3a-4946-a680-b740ffa81e1b" class="bulleted-list"><li style="list-style-type:circle">총 30억 유지</li></ul></li></ul><ul id="dca82146-1845-492e-a27b-89c1ebd39377" class="bulleted-list"><li style="list-style-type:disc">이준호 대표의 말 “웹툰 및 만화 작가, 마케터, 게임 제작자 등 유저들이 AI 기반 이미지 생성 기술을 더욱 쉽게 활용할 수 있도록 지원할 것” → <a href="https://www.yna.co.kr/view/AKR20230410061700017">기사</a></li></ul></li></ol><ol type="1" id="bd65e5ec-8b75-4cd4-8100-aa895c30f9e1" class="numbered-list" start="5"><li>PR<ul id="453c79c6-c26d-455a-995b-14f9ef243b39" class="bulleted-list"><li style="list-style-type:disc">“AI 기반 애니메이션 자동화 솔루션 통했다!”  → <a href="https://kr.aving.net/news/articleView.html?idxno=1774256">기사</a></li></ul><ul id="e56e60b2-8f20-4495-b97c-adcb76f186c9" class="bulleted-list"><li style="list-style-type:disc">“네이버 투자받은 플라스크” → <a href="https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=AKR20230410061700017">기사</a></li></ul><ul id="e87c6fa0-d1a9-4729-9f0a-72309ab8a467" class="bulleted-list"><li style="list-style-type:disc">“AI 이미지 생성 도구 출시...美·日 2만명 몰려” → <a href="https://www.techm.kr/news/articleView.html?idxno=108959">기사</a></li></ul><p id="8b3f586d-a816-421a-aced-154a3add0055" class="">
+</p></li></ol></details></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">202306XX 현황</summary><div class="indented"><ul id="4c6f25ca-01cc-4ce7-9ec0-a4dadaa3e356" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">newsletter check</span><div class="indented"></div></li></ul><ul id="f769c799-647e-47e7-a102-fb8374010376" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"> 이거 참고하기</span><div class="indented"><ul id="cad3d6a3-909a-4e35-9bd4-6004d22e99bf" class="bulleted-list"><li style="list-style-type:disc">업체별 현황<ul id="af6c800e-5238-415e-833c-fead6b45bce6" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><a href="https://conist.co.kr">코니스트</a></span><div class="indented"><ul id="79828712-d425-4b9f-abd2-0d009acb7727" class="bulleted-list"><li style="list-style-type:disc">웹툰 제작 자동화 서비스</li></ul><ul id="01ce94dd-9b40-4076-a15b-c6531d602f60" class="bulleted-list"><li style="list-style-type:disc">서버비용 1,000만원(무제한 사용) + 하나의 캐릭터 생성할 때마다 100만원</li></ul><ul id="a9c96223-1a60-4d35-bc88-0817e44346fe" class="bulleted-list"><li style="list-style-type:disc">비싸서 아무도 안쓰지만 이해는 됨. 시장 조사 결과 CP대상 사업이 수익성이 떨어진다고 나와서 비싸게 팔아야 함.</li></ul></div></li></ul><ul id="1546434b-1485-441a-8657-9067e94e9caa" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">딥툰</span><div class="indented"><ul id="43aa0401-1704-42c7-b2de-85449e34ba42" class="bulleted-list"><li style="list-style-type:disc">쓰리킹덤으로 AI 개발중, 본인(김동훈 대표) 작품인데 작가 입장에서 아직 퀄리티가 낮다. 후보정 할 것이 많음</li></ul></div></li></ul><ul id="8e50a030-8d00-44de-8799-e23e2ff95e6c" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">콘파파</span><div class="indented"><ul id="ad3e1f63-941b-413a-b3cb-7e7f2093ca48" class="bulleted-list"><li style="list-style-type:disc">콘티만 하는 회사이다. 웹툰 형식으로 길게 세로형으로 제작, 호환성이 좋아 많이 쓴다</li></ul></div></li></ul><ul id="4fd1b169-b9f4-421b-b441-5a14368ab540" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">툰스퀘어의 투닝</span><div class="indented"><ul id="65640871-aefe-4e1e-9199-5ae9a1f7d1fb" class="bulleted-list"><li style="list-style-type:disc">박태준만화회사(더그림엔터테인먼트, “외모지상주의” 박태준 작가)와 AI웹툰 제작 기술 개발 협업중인데 박태준 대표에게 어떤 상황인지 물어보면 얘기를 않해 줌. 결과 별로인 듯</li></ul><figure id="e25e2a2f-74a5-4e5d-9156-9335c7f3150a"><a href="https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202306010309&amp;t=NN" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">웹툰 제작 SW의 진정한 초격차툰스퀘어 매직 AI 글로벌 선보여</div><div class="bookmark-description">인공지능(AI) 기술 및 콘텐츠 기업 툰스퀘어가  스테이블 디퓨전(Stable Diffusion) 을 활용한  투닝 매직 AI(TOONING MAGIC AI) 의 글로벌 출시를 알렸다.   스테이블 디퓨전(Stable Diffusion) 은 글(prompt) 를 ...</div></div><div class="bookmark-href"><img src="https://www.wowtv.co.kr/favicon.ico" class="icon bookmark-icon"/>https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A202306010309&amp;t=NN</div></div><img src="https://img.wowtv.co.kr/wowtv_news/dnrs/20230601/B20230601174416610.jpg" class="bookmark-image"/></a></figure></div></li></ul></li></ul></div></li></ul><ul id="9786932e-9feb-413a-b391-aa2fc58138c9" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">드리머스</span><div class="indented"><figure id="c7be4e2b-b47a-4c22-ad1d-0be1ebd16b86"><div class="source">https://lionrocket.slack.com/archives/C05457W2KJN/p1685616069006739?thread_ts=1684502126.118839&amp;cid=C05457W2KJN</div></figure></div></li></ul><ul id="6202d1af-8b3c-44f1-9408-d13c84a05a40" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">JL_ai웹툰제작 </span><div class="indented"><figure id="b33b30e8-9591-4bb6-bc43-0136970f42a0"><div class="source"><a href="%E1%84%80%E1%85%A7%E1%86%BC%E1%84%8C%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A1%20%E1%84%85%E1%85%B5%E1%84%89%E1%85%A5%E1%84%8E%E1%85%B5%20d8167e246a98492fbf4fed2b3f41880d/JL_ai%25E1%2584%258B%25E1%2585%25B0%25E1%2586%25B8%25E1%2584%2590%25E1%2585%25AE%25E1%2586%25AB%25E1%2584%258C%25E1%2585%25A6%25E1%2584%258C%25E1%2585%25A1%25E1%2586%25A8.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3af910f0-5b42-455b-8663-6cf7e57eb478/JL_ai%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8.pdf</a></div></figure></div></li></ul><ul id="3bcfc440-a012-432f-892d-3c5c5dd73b6e" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">업웍스 <a href="https://lionrocket.slack.com/archives/C05457W2KJN/p1682407743034569">https://lionrocket.slack.com/archives/C05457W2KJN/p1682407743034569</a></span><div class="indented"><figure id="812cd0c8-f299-4cb3-8409-1ba079b8e827"><a href="http://www.upworks.co.kr/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">http://www.upworks.co.kr/</div></div></a></figure></div></li></ul><ul id="29f95d9c-3a96-4621-b515-d43a67b99835" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="%E1%84%8B%E1%85%B2%E1%84%91%E1%85%B5%E1%84%8B%E1%85%AF%E1%86%A8%E1%84%89%E1%85%B3%20by%20%E1%84%89%E1%85%B3%E1%86%BC%E1%84%8C%E1%85%A6,%E1%84%8C%E1%85%AE%E1%86%AB%E1%84%92%E1%85%A7%E1%86%BC%20e09ae667684046139fbd88cb2bbfc1ef.html">유피웍스 by 승제,준형</a> </span><div class="indented"></div></li></ul><ul id="c63f8cd1-abc6-4e24-92ff-7ee03f78215e" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="https://medium.com/@luke.yang.belivvr/ai웹툰은-오픈소스-스테이블디퓨전-로-만든다-eedbaf2f463a">빌리버</a> <a href="https://lionrocket.slack.com/archives/C05457W2KJN/p1685754986670859">https://lionrocket.slack.com/archives/C05457W2KJN/p1685754986670859</a></span><div class="indented"></div></li></ul><ul id="4c38e437-285d-4970-abcf-d66ab8e86335" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">예도 체크. 경쟁사 조사의 방향성 + 경쟁사 리스트</span><div class="indented"><figure id="75466923-b3a0-47fc-990a-e74645398d71"><a href="https://miro.com/app/board/uXjVMMJaGqk=/?moveToWidget=3458764553462535051&amp;cot=14" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">A private Miro board</div><div class="bookmark-description">Scalable, secure, cross-device and enterprise-ready team collaboration whiteboard for distributed teams. Join 35M+ users from around the world</div></div><div class="bookmark-href"><img src="https://static-website.miro.com/static/favicons/android-chrome-192x192.png?version=1.1038.0" class="icon bookmark-icon"/>https://miro.com/app/board/uXjVMMJaGqk=/?moveToWidget=3458764553462535051&amp;cot=14</div></div><img src="https://miro.com/static/images/share/miro.png?00002" class="bookmark-image"/></a></figure></div></li></ul><ul id="66481140-3dcd-47f3-8585-d0d4583ff5f4" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="https://aigreem.com">AI GREEM</a> </span><div class="indented"><figure id="4d1d79cd-d9b7-43d7-b68a-b52f37e122f3"><a href="https://novelpia.com/novel/181061" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">노벨피아 - 웹소설로 꿈꾸는 세상! - 꽃집 여자</div><div class="bookmark-description">뛰어난 잠재력이 있는 아마추어 화가 주인공은, 본인에게 영감을 주는 대상을 발견한다.             표지 출처 : AI Greem을 통하여 제작되었고</div></div><div class="bookmark-href"><img src="https://image.novelpia.com/img/favicon/android-icon-192x192.png" class="icon bookmark-icon"/>https://novelpia.com/novel/181061</div></div><img src="https://novelpia.com/img/novelpia2.png" class="bookmark-image"/></a></figure></div></li></ul><ul id="251c9f17-44bd-4683-aee1-6c75236f102f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="https://lionrocket.slack.com/archives/C058N600H3R/p1686636347739919">원스토어가 투자한 AI 웹툰 회사</a></span><div class="indented"><ul id="00fc0349-5601-4439-bb5f-e2afab48791c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">@생성 AI BD</span><div class="indented"></div></li></ul><ul id="9bbf5c2c-a078-4b4a-8a70-87659d5328c6" class="bulleted-list"><li style="list-style-type:disc">화당 120만원</li></ul><ul id="fe038a93-3b9a-411f-8ba0-489b6b56cfa6" class="bulleted-list"><li style="list-style-type:disc">콘티를 전달받아서 AI로 제작</li></ul></div></li></ul><ul id="a70129e9-f0e5-4d2c-ac68-9c3a60a02d2b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="https://lionrocket.slack.com/archives/C058N600H3R/p1686636347739919">루덴스 웹툰</a></span><div class="indented"><figure id="46148730-b7fc-4f17-9163-799d060b5283"><a href="https://www.ludenswebtoon.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">루덴스웹툰 주식회사</div><div class="bookmark-description">컨텐츠와 기술로 완성되는 High-Quality 웹툰의 시작! 루덴스웹툰 주식회사는 지금껏 구현되지 못하였던 고도화 된 자체 기술력을 바탕으로 체계적이며 완전히 시스템화 된 ​매스 프로덕션을 지향합니다.</div></div><div class="bookmark-href"><img src="https://static.wixstatic.com/media/a82cd5_153f68e36835430fa9bb79b55343efef%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/a82cd5_153f68e36835430fa9bb79b55343efef%7Emv2.png" class="icon bookmark-icon"/>https://www.ludenswebtoon.com/</div></div></a></figure><ul id="864dda94-9ccb-41fa-98e6-51ac9a414c7c" class="bulleted-list"><li style="list-style-type:disc">화당 220만원 (계약금 1,000만원)</li></ul><ul id="775d9bae-c51c-41eb-862b-d632b4820110" class="bulleted-list"><li style="list-style-type:disc">3D 샘플링 만들고 AI가 웹툰 제작</li></ul></div></li></ul><ul id="b2a0e5fb-dba5-4801-9869-9f389a089245" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">기타 유사 서비스 </span><div class="indented"><ul id="cf79d545-c5d0-4788-87e4-6c8cc551e032" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="https://plumed.kr/index.php#section-3">플룸디</a></span><div class="indented"></div></li></ul><ul id="b77af948-02e5-4902-8022-77bcfff980ac" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="https://www.acon3d.com/ko/toon?gclid=CjwKCAjw9pGjBhB-EiwAa5jl3Lt4dGsnpHNaIqITNNb2RIHwGxc7zaDJdiMnP5ZpCYXa4v1JK2rDTRoC1q0QAvD_BwE">ACON</a></span><div class="indented"></div></li></ul><ul id="50308c54-bc7c-4425-8a4a-80c703ef4720" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="https://www.digidog3d.com">디지독3D</a></span><div class="indented"></div></li></ul></div></li></ul><ul id="3eda9bf6-d391-4149-a963-6298ee68e3df" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">기 파악된 경쟁사 동향</span><div class="indented"></div></li></ul><ul id="9a0273da-e15c-41a0-8f6b-2650debf71c6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">“웹툰 AI”</span><div class="indented"></div></li></ul><ul id="577f40e0-c3ab-4eb2-88e0-12f8a3c06be1" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">“웹소설 AI”</span><div class="indented"></div></li></ul><ul id="f4ee78da-679e-4263-9ea0-44a13aa15e30" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">과연 여기는 어딜까?</span><div class="indented"><figure id="31592e1a-c3b6-4dfc-8b57-cd947f5c72a2"><div class="source"><a href="https://twitter.com/yyy_cmac/status/1655116725116092416">https://twitter.com/yyy_cmac/status/1655116725116092416</a></div></figure></div></li></ul><ul id="4b5cbb27-8915-4f98-af98-a4cd16f0be98" class="toggle"><li><details open=""><summary>딥툰(드리머스, 한국만화영상진흥원, 한국전자통신연구원)</summary><ol type="1" id="0cf5a2c9-d2a0-4b94-8819-5d74332788ed" class="numbered-list" start="1"><li>핵심 가치: “웹툰 제작 효율화”<ol type="a" id="99d98118-937b-47dd-9c80-4f09d8c55812" class="numbered-list" start="1"><li>“딥툰은 시나리오에서 만화를 만드는 데에 도움을 주는 플랫폼” <a href="https://www.deeptoon.com/forum/ai-webtoon/dibtuniran">딥툰 소개</a></li></ol><ol type="a" id="3de43ec9-3e6b-4e3b-bfc9-d51dbbba638e" class="numbered-list" start="2"><li>그림 선 다듬기, 채색, 배경 그리기 등 비교적 단순하지만, 시간과 노동력이 많이 소요되는 작업을 컴퓨터가 수행토록 해 생산성을 높이는 기술 <a href="https://www.yna.co.kr/view/AKR20220228110900065">기사 링크</a></li></ol></li></ol><ol type="1" id="33a184bb-543e-456c-a81c-9f2e55a0ab46" class="numbered-list" start="2"><li>제품의 형태<p id="4694099b-d04f-400a-b483-6b8e74bdd330" class="">선 다듬기, 채색, 배경 그리기 등을 자동으로 해주는 ‘딥툰’ <a href="https://m.hani.co.kr/arti/culture/culture_general/1091749.html#cb">기사링크</a></p></li></ol><ol type="1" id="6579167f-d7e6-40ef-9f16-b35427956898" class="numbered-list" start="3"><li>pricing<p id="49bcf43c-b54b-450a-a615-8c0fbb126dc3" class="">[아직 파악되지 않음]</p></li></ol><ol type="1" id="2fe4c911-3d8e-485b-8588-6a612d21dd17" class="numbered-list" start="4"><li>행보 및 방향성<ol type="a" id="392b89e0-3a88-4c7f-bf19-e34c7bf10098" class="numbered-list" start="1"><li>김동훈 대표 본인 작품인 웹소설 Three Kingdoms 을 이용해 웹툰, 영화, 게임 등의 콘텐츠로 확장 시키고 있음 -&gt; 슈퍼 IP 프로젝트<ol type="i" id="57fa8719-be09-4449-915a-6ac88d94143f" class="numbered-list" start="1"><li>4화까지는 작가가 직접 그리고 5화부터 딥툰으로 제작됨</li></ol><ol type="i" id="60b30e31-5050-4f15-b91f-eb959a0a082c" class="numbered-list" start="2"><li>20230427 현재 3화까지 진행</li></ol><ol type="i" id="939897b9-1722-47d8-9ac8-0bdc3dd9f01b" class="numbered-list" start="3"><li>본인(김동훈 대표) 작품인데 작가 입장에서 아직 퀄리티가 낮다. 후보정 할 것이 많음   </li></ol></li></ol></li></ol><ol type="1" id="62b4bb80-c9fb-4dd2-9df0-6e654393cca7" class="numbered-list" start="5"><li>PR<ol type="a" id="88bd0cd2-348b-4da1-8825-77e64cee69c8" class="numbered-list" start="1"><li>뭔가 눈에 띄는 활동은 안 보임(뉴스 기사나 관련 글이 최근 올라오지 않음)</li></ol></li></ol></details></li></ul><ul id="ee207be5-00a0-4cb7-a600-15725541bdee" class="toggle"><li><details open=""><summary>투닝(툰스퀘어)</summary><ol type="1" id="98ef5157-1208-4f9a-bfd0-93b6278eccfd" class="numbered-list" start="1"><li>핵심가치: “누구나 쉽고 빠르게 애셋을 만들 수 있다”<ol type="a" id="0e6055a2-f702-4c8d-95bb-66e7da26ac80" class="numbered-list" start="1"><li>캐릭터가 들어간 이미지, gif, 동영상 홍보용 애셋 제작</li></ol><ol type="a" id="ad9163e9-e627-419f-9000-f1cc9a761003" class="numbered-list" start="2"><li>비전문가도 쉽고 빠르게 제작</li></ol></li></ol><ol type="1" id="98baaa22-e1d7-4c86-aa87-f46e235ab18a" class="numbered-list" start="2"><li>제품의 형태<ol type="a" id="43feb698-b585-4c80-bbe0-d382333fe10b" class="numbered-list" start="1"><li>Tooning 에디터 “마우스 클릭 및 드래그를 통한 포스터 이미지, gif, 동영상 편집 툴”<ol type="i" id="2b15bcbd-1798-412b-8f2a-5d62f8ee393c" class="numbered-list" start="1"><li>스마트 캐릭터<ol type="1" id="dabf3ea8-efc0-4895-b11c-de76c19ae0c5" class="numbered-list" start="1"><li><a href="https://tooning.io/tooning-landing-main">40만가지 이상</a>의 자세 연출</li></ol><ol type="1" id="e2166e03-083d-4288-8763-5d40ab18f5c9" class="numbered-list" start="2"><li>다양한 표정 및 스타일(헤어스타일, 악세사리 등) 연출</li></ol><ol type="1" id="d76e3f32-6bf5-48c7-a23e-408befd2a7f9" class="numbered-list" start="3"><li><a href="https://youtu.be/QjaXK9V-2sY?t=66">식자의 내용에 따른 AI 감정 연출 적용</a></li></ol></li></ol><ol type="i" id="20f0c31b-188e-42de-82ae-a2824130c17c" class="numbered-list" start="2"><li>AI 자동 생성 캐릭터<ol type="1" id="2815baa8-c66b-4b00-8065-cda9194a8235" class="numbered-list" start="1"><li><a href="https://youtu.be/QjaXK9V-2sY?t=24">얼굴 이미지 및 영상을 업로드</a>하여 생성</li></ol></li></ol><ol type="i" id="813de0e7-15ba-4287-adad-c51363812bf1" class="numbered-list" start="3"><li>식자 및 배경<ol type="1" id="2cf724ec-c335-4c42-a561-a6a39d51198f" class="numbered-list" start="1"><li>식자 삽입 및 로고 수동 배치(새로운 로고 생성은 X)</li></ol><ol type="1" id="ca29def9-251c-406d-ad5c-88fd57c6d103" class="numbered-list" start="2"><li>AI를 통해 웹툰 컷을 설명하는 문장 입력하여 <a href="https://youtu.be/QjaXK9V-2sY?t=94">식자, 배경, 캐릭터, 오브제 자동으로 배치한 컷 생성</a></li></ol></li></ol><ol type="i" id="6618ac76-4160-4347-bf3a-2adc1e2f61c5" class="numbered-list" start="4"><li>스케치<p id="1036f40d-afe9-4de0-8919-a858e367c67f" class="">사용자가 <a href="https://youtu.be/wdj583fRYyE?t=98">스케치한 그림에 알맞은 이미지 요소 자동 탐색</a></p></li></ol><ol type="i" id="f152eff8-1da7-404c-8496-421d7224e8ac" class="numbered-list" start="5"><li>템플릿<p id="48a80116-faad-4f26-8911-5a2b7c92d0d8" class="">포스터, 메시지 카드, 소셜 미디어 등 템플릿을 통한 빠른 애셋 제작</p></li></ol><ol type="a" id="22c40cd1-c5fa-4911-a020-053566f4c747" class="numbered-list" start="6"><li>Text2Image를 통한 이미지 생성 → <a href="https://www.youtube.com/watch?v=pH8zH66Yy6o">youtube 영상</a></li></ol><ol type="a" id="06ad0d1e-b61b-4bfa-a20e-b87c7675b48c" class="numbered-list" start="7"><li>응용<ol type="a" id="5c3b484f-2a23-4e0e-852b-fd9b002fdbfe" class="numbered-list" start="1"><li>웹툰 만들기 → <a href="https://www.youtube.com/watch?v=WfgRplhMuH4">youtube 영상</a></li></ol></li></ol><ol type="a" id="74bd771d-991f-40af-93a1-4e8a3429e7f8" class="numbered-list" start="8"><li><a href="https://tooning.io/payment-system">가격</a><ol type="a" id="e25f9cb5-b4c1-4cb3-afac-bfa9115efc18" class="numbered-list" start="1"><li>무료 <ol type="a" id="ab2ddfd8-384e-472c-a635-23f34645b666" class="numbered-list" start="1"><li>스마트 캐릭터 4종 + 기본 리소스</li></ol><ol type="a" id="507363f8-b1a2-47f7-9de6-66001ed7d2ff" class="numbered-list" start="2"><li>1천 가지 이미지 요소 및 배경 이미지</li></ol></li></ol><ol type="a" id="7340a7f8-f271-4a87-a7c8-f7e7a8465364" class="numbered-list" start="2"><li>프로 12,000원/월<ol type="a" id="ee82edc7-cd0a-47d6-b408-206f69d85544" class="numbered-list" start="1"><li>스마트 캐릭터 16종</li></ol><ol type="a" id="c547cd12-6f41-4c3d-bcac-242584b09005" class="numbered-list" start="2"><li>1만가지 이미지 요소 및 배경 이미지</li></ol><ol type="a" id="918da0d9-3a37-4ca7-9a66-824a941a0e23" class="numbered-list" start="3"><li>AI 기능 포함 (<a href="https://youtu.be/QjaXK9V-2sY?t=94">문장으로 툰 생성</a>, <a href="https://youtu.be/wdj583fRYyE?t=98">그림으로 요소 검색</a>, <a href="https://youtu.be/QjaXK9V-2sY?t=24">사진/동영상으로 캐릭터 생성</a>, <a href="https://youtu.be/QjaXK9V-2sY?t=66">글로 캐릭터 연출</a>)</li></ol></li></ol><ol type="a" id="85167f99-b226-4997-80c1-9aaa6a936cb4" class="numbered-list" start="3"><li>기업 (별도 견적 진행)<ol type="a" id="dc72296a-d42b-48a9-bbf9-50ef062aed91" class="numbered-list" start="1"><li>전용 스마트 캐릭터 제작/등록</li></ol><ol type="a" id="cde0c0a8-e47b-4d92-b967-7d2363c7537f" class="numbered-list" start="2"><li>전용 템플릿 제공</li></ol><ol type="a" id="3c8aa915-ddf1-4cd6-aa1d-348c6df9cd3e" class="numbered-list" start="3"><li>GIF 이모티콘 세트 제공</li></ol></li></ol></li></ol></li></ol><ol type="a" id="d32a9aeb-679b-421f-b988-0ede80f17cd7" class="numbered-list" start="2"><li><code>Tooning 매직 “이미지 생성 툴”</code><ol type="i" id="d7029b00-ecb7-446c-8cd2-c08089b55927" class="numbered-list" start="1"><li>반실사 및 웹툰 그림체의 이미지 생성<p id="94c13a33-2de7-4939-93fd-e9efdbbfa457" class="">선화 및 삽화도 제공 예정</p></li></ol><ol type="i" id="5dab386b-3617-4398-83e7-2224bd923eee" class="numbered-list" start="2"><li>매우 디테일한 옵션들 제공<ul id="a3122b72-7f59-4c79-b3bd-d52cb270eeff" class="bulleted-list"><li style="list-style-type:disc">캐릭터<p id="96d85b04-9ec7-4823-ac1a-82e40d656c34" class="">인물 수, 캐릭터, 표정, 동작, 헤어스타일, 상의, 하의, 신발, 원피스, 특수 복장, 종족, 직업, 행동, 눈모양, 입모양, 귀모양, 피부, 장신구, 각도, 초점</p></li></ul><ul id="9c9e0036-50ef-4544-b141-7eb7cc2e6160" class="bulleted-list"><li style="list-style-type:disc">배경<p id="aef9272f-d6e6-4663-aa24-9f40ddb6f6a9" class="">학교, 회사, 판타지, 자연, 실내, 공상과학, 분위기, 날씨, 도심, 추상, 연구소, 사이버펑크, 스팀펑크, 스포츠, 기본, 장소, 여행</p></li></ul><ul id="b7f1f8f3-3585-494a-bf15-5de0e1e6a636" class="bulleted-list"><li style="list-style-type:disc">요소<p id="819e3c51-eb45-4595-98c4-1134d5be355a" class="">효과, 소품, 의상, 가전제품, 가구, 문화, 스포츠, 식음료, 미용, 유아용품, 애완용품, 문구, 여행, 교육용품, 공구, 동물</p></li></ul></li></ol><ol type="i" id="c6a2cc0c-d15a-4c9d-84ae-d4d5f09292da" class="numbered-list" start="3"><li>3D 포즈를 적용한 이미지 생성</li></ol><ol type="i" id="83e62c8f-3487-48d3-a0c8-aafda5beab29" class="numbered-list" start="4"><li>image2image, inpainting</li></ol><ol type="i" id="a3ba8942-a6c8-4607-b782-6a93eaad9fc7" class="numbered-list" start="5"><li><a href="https://magic-info.tooning.io/pricing-kr">가격은 미정 </a></li></ol></li></ol></li></ol><ol type="1" id="0b44e62f-2524-4d15-b51c-83a9463ae7ac" class="numbered-list" start="3"><li>행보 및 방향성<ol type="a" id="8004c9e9-7ce8-425f-8da1-b4fc56559032" class="numbered-list" start="1"><li>캐릭터 마케팅 분야 공략 중 ← <a href="https://tooning.io/payment-system">홈페이지</a></li></ol><ol type="a" id="18ede843-a0af-416f-80d7-28deb203f103" class="numbered-list" start="2"><li>다른 캐릭터 마케팅 서비스와 차별점으로 두고 있는 것은<p id="83020f2f-85a0-4e17-b16c-d0b5d45cd8c0" class="">MD, 굿즈 제작, 웹툰 공모전까지 친절히 도와준다 -&gt; 초보도 할 수 있다 ← <a href="https://tooning.io/payment-system">홈페이지</a></p></li></ol><ol type="a" id="a90604e5-c4c6-449f-aa7f-14cb4644232d" class="numbered-list" start="3"><li>기업에 최적화된 서비스 제공 ← <a href="https://mascot-branding.tooning.io">기업 서비스 소개서</a></li></ol><ol type="a" id="aed577a6-6a41-41e7-b50f-e2b73c731e34" class="numbered-list" start="4"><li>박태준만화회사(더그림엔터테인먼트, “외모지상주의” 박태준 작가)와 AI웹툰 제작 기술 개발 협업중인데 박태준 대표에게 어떤 상황인지 물어보면 얘기를 않해 줌. 결과 별로인 듯  </li></ol></li></ol></details></li></ul><ul id="5d525a67-9045-4a44-b5e3-a928c59125fc" class="toggle"><li><details open=""><summary>투툰(오노마에이아이)</summary><ol type="1" id="038aae97-d26e-4892-8853-a17d30b691a3" class="numbered-list" start="1"><li>핵심가치 “누구나 가능한 웹툰 제작”<ol type="a" id="3626b80a-f051-4c77-bca9-ce06d58056e5" class="numbered-list" start="1"><li>“그림실력은 없지만 아이디어가 뛰어난 잠재적 작가들의 꿈을 현실화해주는 도구” → <a href="https://www.sisajournal.com/news/articleView.html?idxno=260299">기사</a></li></ol></li></ol><ol type="1" id="598833ba-bea4-46c2-9c39-6161c330cbb0" class="numbered-list" start="2"><li>제품의 형태<ol type="a" id="ea89e573-213a-4137-983f-99963037f59c" class="numbered-list" start="1"><li>아이디어와 스토리만 제시하면 웹툰으로 제작되는 모습을 기자 앞에서 통해 시연 → <a href="https://www.sisajournal.com/news/articleView.html?idxno=260299">기사</a><ol type="i" id="2a84e66d-ae99-448f-a750-67b71de38c34" class="numbered-list" start="1"><li>스케치 생성</li></ol><ol type="i" id="a55f775c-7793-4279-bae6-e5b20d670bbe" class="numbered-list" start="2"><li>배경 생성</li></ol><ol type="i" id="62a32926-f059-4216-bf71-809d9da2cf6f" class="numbered-list" start="3"><li>배경이나 표정 수정</li></ol><ol type="i" id="66477c7d-2172-4d72-88fb-027bf75b2aef" class="numbered-list" start="4"><li>자동 채색</li></ol></li></ol><ol type="a" id="19eaad16-8e9f-49b4-b3db-85413e847b36" class="numbered-list" start="2"><li>전용 화풍 생성<p id="9c3aa05d-409d-4192-9dd4-ec8521325174" class="">“여러 각도의 샘플 이미지를 20~100장 정도만 입력하면 공통된 화풍을 추출해 그에 맞는 이미지를 만들어낼 수 있다” → <a href="https://www.sisajournal.com/news/articleView.html?idxno=260299">기사</a></p><p id="b36f3e35-70f6-4556-b5ba-3cf3aac02b64" class="">단, 실제 상품화 단계인지는 미지수</p></li></ol><ol type="a" id="27539f5c-5101-4ff6-95c3-aec6d04c6df9" class="numbered-list" start="3"><li>웹툰 공정 40% 차지하는 콘티 자동 제작 (<a href="https://www.notion.sogpt.tootoon.ai">투툰</a>gpt)<p id="f28803f5-2fb4-4363-b257-71777cb0db7a" class="">한 문장으로 된 간단한 시놉시스를 넣어주면 -&gt; gpt가 몇 문장으로 된 스토리 만듬 -&gt; 만들어진 스토리 기반으로 스케치 기반 이미지 생성 -&gt; 영상 제작</p></li></ol></li></ol><ol type="1" id="1e176146-bfc7-446e-bf40-15fa38640af4" class="numbered-list" start="3"><li>pricing <p id="886f899e-c16e-4c08-a146-d8eebb17fe43" class="">[아직 파악되지 않음]</p></li></ol><ol type="1" id="2492b460-f916-46ce-8a38-989559ac1812" class="numbered-list" start="4"><li>행보 및 방향성<ol type="a" id="e9496870-da67-44de-85e1-d2168820f650" class="numbered-list" start="1"><li><a href="https://www.mk.co.kr/news/it/10702819">2023.04 초에 투툰 프로그램과 이를 이용해 만든 웹툰 샘플 공개</a> (<a href="https://www.notion.sogpt.tootoon.ai">투툰gpt</a>)</li></ol><ol type="a" id="cf631cd5-0fa2-4147-8360-eb83bff1eb4a" class="numbered-list" start="2"><li>웹툰 비디오를 사용자들끼리 공유하는 플랫폼화 진행중  (<a href="https://www.notion.sogpt.tootoon.ai">투툰gpt</a>)</li></ol><ol type="a" id="c0d4eba8-1ef0-4f75-808a-dca620e05919" class="numbered-list" start="3"><li>추후 움직이는 애니메이션 생성 기능 개발 계획 예정  → <a href="https://www.sisajournal.com/news/articleView.html?idxno=260299">기사</a></li></ol></li></ol></details></li></ul><ul id="641d4aa8-dc98-4a0c-9b8f-3fbb56511f00" class="toggle"><li><details open=""><summary>네이버 웹툰미</summary><ol type="1" id="28e9b87f-6edf-4418-8327-493196740cc0" class="numbered-list" start="1"><li>핵심 가치<ol type="a" id="790ac726-56e0-4308-b9e8-8977b0792d85" class="numbered-list" start="1"><li>웹툰 속 주인공이 되어 웹툰 안으로 들어간다는 컨셉 (사람 -&gt; 웹툰)</li></ol></li></ol><ol type="1" id="9539a8fd-abaa-4516-9415-951466c17186" class="numbered-list" start="2"><li>프로젝트의 형태<ol type="a" id="29ce119d-c1c9-473c-ae98-e8a7c09c6de8" class="numbered-list" start="1"><li>실사 이미지를 “여신강림”, “복학왕”과 같은 웹툰 캐릭터와 배경으로 변환 (<a href="https://zdnet.co.kr/view/?no=20230228125137">아티클</a>) (<a href="https://www.donga.com/news/Economy/article/all/20230228/118108765/1">아티클</a>)</li></ol></li></ol><ol type="1" id="97c0ea61-3a42-4c37-977a-f86d226a844d" class="numbered-list" start="3"><li>기술적 차별성<ol type="a" id="60deefa9-9235-4ba1-9a1a-928e074f2099" class="numbered-list" start="1"><li>고성능 AI 모델을 활용해 고품질의 데이터를 만들어, 가볍고 간단한 모델을 학습시키는 방식 (<a href="https://zdnet.co.kr/view/?no=20230228125137">아티클</a>)</li></ol><ol type="a" id="d9112e5d-3928-4cd6-81b5-a2f572f2182c" class="numbered-list" start="2"><li>메모리에 텐서RT 상주시킴 -&gt; 추론 속도 개선 (이미지 1장 변환하는데 1초도 안 걸린다고 함)</li></ol></li></ol><ol type="1" id="1478f0c0-9542-4ba2-af42-b66f3cfbbe14" class="numbered-list" start="4"><li>pricing<p id="86f420f6-ba85-4510-8e4b-2553c372936a" class="">[아직 파악되지 않음]</p></li></ol><ol type="1" id="0ec1c68e-7cff-4bd0-b279-f6bf911cc454" class="numbered-list" start="5"><li>행보 및 방향성<ol type="a" id="b8e9f28b-0803-4c56-a295-76e31c9fbd7a" class="numbered-list" start="1"><li>2022년 네이버 쇼핑 라이브에 이 기술을 접목해 진행자 얼굴을 웹툰 캐릭터로 변환하여 시청자로부터 호응을 이끎 (<a href="https://zdnet.co.kr/view/?no=20230228125137">아티클</a>)</li></ol><ol type="a" id="d89ff92a-dc83-47a9-aa3a-763b8659fda2" class="numbered-list" start="2"><li>2023.02.27~28 “데뷰2023”에서 웹툰미 프로젝트를 소개, ‘여신강림’, ‘팔이피플’, ’이말년 씨리즈’, ‘복학왕’, ‘호랑이형님’ 등 인기 작품 속 캐릭터로 변신해 네 컷 사진을 찍을 수 있는 부스를 선보임 (<a href="https://www.donga.com/news/Economy/article/all/20230228/118108765/1">아티클</a>)</li></ol><ol type="a" id="09a07a3e-fb79-446a-b5fc-04bff879e519" class="numbered-list" start="3"><li>다양한 웹툰 캐릭터 지원 등 기술 고도화를 진행할 예정 (<a href="https://www.donga.com/news/Economy/article/all/20230228/118108765/1">아티클</a>)</li></ol></li></ol><p id="da5c0889-7ec4-4933-b6b3-811e8491235a" class="">
+</p></details></li></ul><ul id="27ef7906-f895-4089-b5c5-d3beccfaba80" class="toggle"><li><details open=""><summary>니지저니</summary><ol type="1" id="f619b2e3-b4bc-4f3b-a4f0-5aabf0fe49b9" class="numbered-list" start="1"><li>핵심가치<p id="e0363da0-5ef6-4d8c-af86-43e0c938c3d1" class="">midjourney의 애니메이션 만화 캐릭터 그림체 (애니풍 그림체) 특화 모델</p></li></ol><ol type="1" id="7a0495bd-d6ff-49d1-809f-9eea8d4c20a3" class="numbered-list" start="2"><li>제품의 형태<ol type="a" id="109b40a3-8a2a-45dc-ab31-86e4a1ed1c63" class="numbered-list" start="1"><li>미드저니와 spellbrush 사가 협업하여 만든 서비스</li></ol><ol type="a" id="550a9932-143f-47ab-8da6-3ee6ad4dc7ea" class="numbered-list" start="2"><li>사용 방법  (Midjourney와 동일)<ol type="i" id="9ec23004-2137-4f18-8fbe-ba6c23ea0d8b" class="numbered-list" start="1"><li>Discord 서버스를 통해 경험</li></ol><ol type="i" id="fcce3a77-ef33-4a07-9eaa-5895c04c0b56" class="numbered-list" start="2"><li>Discord에서 이미지 생성 채널에서 /imagine 명령 뒤에 프롬프트 입력</li></ol><ol type="i" id="af08f069-de41-4aa4-bda0-1ed4582be4c6" class="numbered-list" start="3"><li>프롬프트에 따라 4개의 이미지로 생성</li></ol><ol type="i" id="1bac490e-e03d-46cc-abdf-0ad7e077e425" class="numbered-list" start="4"><li>4개 이미지 중 하나를 골라 이미지를 확대하거나 변형</li></ol></li></ol></li></ol><ol type="1" id="9265cd05-1e04-4d60-aabd-ea7ca2923b37" class="numbered-list" start="3"><li>경쟁력<ol type="a" id="a775225f-b33f-447a-874c-3fdf80bd25f5" class="numbered-list" start="1"><li>애니메이션 그림체 캐릭터 퀄리티가 좋다고 알려진 novelai보다도 압도적으로 높은 퀄리티 <a href="https://dingdo.tistory.com/1273">(블로그</a>)</li></ol><ol type="a" id="3e6c70a6-e31b-48b4-97c3-2f798320c1ec" class="numbered-list" start="2"><li>다양한 그림체 지원 (<a href="https://dingdo.tistory.com/1273">블로그</a>)</li></ol></li></ol><ol type="1" id="83dad0c3-d2c2-4bbb-b2d4-14e367c314e9" class="numbered-list" start="4"><li>Pricing<ol type="a" id="dd9ba846-7c83-4937-99e6-9b2aea32f5a1" class="numbered-list" start="1"><li>무료 요금제<ol type="i" id="84a2391e-a7e0-49aa-adab-9c5f625356a2" class="numbered-list" start="1"><li>수요가 너무 많이 몰리는 경우 사용할 수 없음 (<a href="https://wjdqhzld.com/niji-journey/">블로그</a>)</li></ol></li></ol><ol type="a" id="fd84a460-1ce1-46d2-b6e5-151a71e0fea9" class="numbered-list" start="2"><li>유료 요금제 (<a href="https://nijijourney.com/ko/checkout/plans/?hash=6c9bd07bb01bcb8c17267842ec777cce4b7d971de236bc5731907a60938c87b3a68fafaa30b131c77526caa2267ae685AS2TmQ6b+KpAbb4E5LizeM5kH3wbkhoW3GrZLKMhSqY+b3xV0o87rhN1yHBOmxRrERgd6LQCgX8b1cvtKK9T18bNyfslUDKM/tWHgdlyYEtnca+U59QvdVra3JQLhrwqbAv3LSrdi/oybkV3uAIwt7AHJkTCY4Z0KWnVAa5ImuY5lKfT76Skv+zb6wxDtufmFhiixS1S/g9rbNoXfYjASNStjstk+pMP2YwhApUs6qU=">nijijourney page</a>)<ol type="i" id="a40ed5d0-3891-4fa5-bc6a-ea5ba94b8507" class="numbered-list" start="1"><li>연간 구독 시10달러/월, 월 구독 시 8달러/월<ol type="1" id="d2eaf8e0-0489-43c6-8d42-7ab17e45cf94" class="numbered-list" start="1"><li>200장/월 생성</li></ol></li></ol><ol type="i" id="7488377f-c3c8-46db-8123-56a28edf1632" class="numbered-list" start="2"><li>연간 구독 시30달러/월, 월 구독 시 24달러/월<ol type="1" id="f5a9c678-43e8-4a7f-b622-0373d3fed151" class="numbered-list" start="1"><li>월 15시간 동안 즉시 생성 모드</li></ol><ol type="1" id="487a351b-0e1d-4c40-a38b-5665edde5e75" class="numbered-list" start="2"><li>이미지 생성 장수 제한 없음</li></ol></li></ol><ol type="i" id="0984f07e-db47-4434-9d3f-101deb65c771" class="numbered-list" start="3"><li>연간 구독 시60달러/월, 월 구독 시 48달러/월<ol type="1" id="d7ad72e8-d275-45d9-a860-cb7f46c13e61" class="numbered-list" start="1"><li>월 30시간 동안 즉시 생성 모드</li></ol><ol type="1" id="0c2b8b02-0fd9-4993-98a8-69cfab747395" class="numbered-list" start="2"><li>이미지 생성 장수 제한 없음</li></ol></li></ol></li></ol></li></ol><ol type="1" id="f53ae8c5-7c97-40b3-9e7b-57f29df68759" class="numbered-list" start="5"><li>행보 및 방향성<ol type="a" id="a294c394-82f5-4f4d-883b-a78064147f68" class="numbered-list" start="1"><li>니지저니 v5 - expressive 업데이트<ol type="i" id="62210259-693d-456d-a9a3-016cf5de84ce" class="numbered-list" start="1"><li>새롭고 높은 퀄리티를 보장</li></ol><ol type="i" id="1a9b59df-9edb-4051-a457-d9d48294473b" class="numbered-list" start="2"><li>더 다양한 그림체 구현</li></ol></li></ol></li></ol></details></li></ul><ul id="2f1f1dba-95dd-4d74-9104-fcbf64c9c8e0" class="toggle"><li><details open=""><summary>Plask</summary><ol type="1" id="4415c692-64a6-4e4b-8848-c3e9bbf201df" class="numbered-list" start="1"><li>핵심가치<p id="2eb3984c-8f42-4233-894e-3dabbae09897" class="">“You frame it AI creates it” → <a href="https://plask.ai">홈페이지</a></p><p id="f080a706-c255-469c-bf44-18c9e9692afb" class="">3D mesh를 통해 포즈, 시점을 제어하여 인물 이미지를 생성하는 커뮤니티 서비스</p></li></ol><ol type="1" id="0050959e-26e5-4db3-8c28-be224f07e973" class="numbered-list" start="2"><li>제품의 형태<ol type="a" id="9bfba63d-4e02-48d7-90b3-5a317eb42076" class="numbered-list" start="1"><li>web-based image generator/editor → <a href="https://plask.ai">홈페이지</a></li></ol><ol type="a" id="10934db8-c927-4394-82b8-bda65b81735e" class="numbered-list" start="2"><li>input/output → <a href="https://www.youtube.com/watch?v=59QaaD1JFRA&amp;t=19s">tutorial</a><ol type="i" id="0b2dff7d-ad68-49e1-923a-3983271edc7d" class="numbered-list" start="1"><li>input: 3D mesh, text prompt</li></ol><ol type="i" id="e17c9cd1-e1d9-4942-9aab-422adbe26eb4" class="numbered-list" start="2"><li>output: image</li></ol></li></ol><ol type="a" id="afa8a703-5484-4bf1-bf24-b2786cf0b53b" class="numbered-list" start="3"><li>기능 → <a href="https://www.youtube.com/watch?v=59QaaD1JFRA&amp;t=19s">tutorial</a><ol type="i" id="39438b0e-fe61-420c-b59f-ea1bf695ab65" class="numbered-list" start="1"><li>community 기능: 다른 사람이 만든 작업을 이어서 만들기</li></ol><ol type="i" id="9d631a00-1415-4e56-bf7a-17232452b926" class="numbered-list" start="2"><li>image23D: 이미지 업로드해서 포즈가 가미된 3D mesh 만들기</li></ol><ol type="i" id="ae245eee-4176-4118-bfd5-f7c8d48d621c" class="numbered-list" start="3"><li>3D mesh male/female option</li></ol><ol type="i" id="6754bd10-67ec-442f-b9e7-b738053008ef" class="numbered-list" start="4"><li>3D mesh 포즈, 시점 제어</li></ol><ol type="i" id="bc714055-0bf2-40ce-93a7-4472eaf0ec71" class="numbered-list" start="5"><li>스타일 옵션: realistic | anime</li></ol></li></ol></li></ol><ol type="1" id="5bcc6247-030a-4973-8266-0bd21851f837" class="numbered-list" start="3"><li>pricing<p id="748ea5f1-e6c2-485d-b690-7f373a3c6581" class="">무료</p></li></ol><ol type="1" id="4d941cab-5572-4d1f-bdef-902bb5ef0c2e" class="numbered-list" start="4"><li>행보 및 방향성<ul id="b0dc364b-092c-4259-afb3-a0d8f64613b3" class="bulleted-list"><li style="list-style-type:disc">이미지 생성 서비스 나흘 만에 2만여명의 사용자 확보 → <a href="https://www.yna.co.kr/view/AKR20230410061700017">기사</a></li></ul><ul id="b440101e-27bd-4994-be89-279d39277148" class="bulleted-list"><li style="list-style-type:disc">별도로 모션 캡처 에니메이션 솔루션을 판매중 → <a href="https://motion.plask.ai">홈페이지</a><ul id="e1daf923-21c4-43ce-950c-c47ba38ec74a" class="bulleted-list"><li style="list-style-type:circle">모션 캡쳐 애니메이션 프로그램 → <a href="https://motion.plask.ai/pricing">pricing</a></li></ul><ul id="6cdefd21-d618-4607-93bf-804be7ffebb0" class="bulleted-list"><li style="list-style-type:circle"><del>B2B 솔루션: 모션 캡쳐 애니메이션 API → </del><del><a href="https://motions.plask.ai/products-api">홈페이지</a></del></li></ul><ul id="e9b47be3-01a4-400d-b7fc-5b710449437a" class="bulleted-list"><li style="list-style-type:circle">B2B 솔루션: 모션 캡쳐 모바일 SDK → <a href="https://www.modif.app/sdk">홈페이지</a></li></ul></li></ul><ul id="748578f8-56de-4ef3-af61-b85b2558d40a" class="bulleted-list"><li style="list-style-type:disc">투자 → <a href="https://thevc.kr/plask">더브이씨</a><ul id="30f8cd15-ea03-4eb3-8504-8e96617bd966" class="bulleted-list"><li style="list-style-type:circle">현재 Pre-A round </li></ul><ul id="e31461f0-d322-46f4-a3f1-ff991b444339" class="bulleted-list"><li style="list-style-type:circle">총 30억 유지</li></ul></li></ul><ul id="668ed7b2-a221-44d7-a273-c185e99f721d" class="bulleted-list"><li style="list-style-type:disc">이준호 대표의 말 “웹툰 및 만화 작가, 마케터, 게임 제작자 등 유저들이 AI 기반 이미지 생성 기술을 더욱 쉽게 활용할 수 있도록 지원할 것” → <a href="https://www.yna.co.kr/view/AKR20230410061700017">기사</a></li></ul></li></ol><ol type="1" id="83d8ca83-2f01-479f-8387-e6f63d58e7ce" class="numbered-list" start="5"><li>PR<ul id="e94f8a11-51e2-4054-836f-d8ad69b845b1" class="bulleted-list"><li style="list-style-type:disc">“AI 기반 애니메이션 자동화 솔루션 통했다!”  → <a href="https://kr.aving.net/news/articleView.html?idxno=1774256">기사</a></li></ul><ul id="cdd63af4-8839-46c7-8414-f137573f360c" class="bulleted-list"><li style="list-style-type:disc">“네이버 투자받은 플라스크” → <a href="https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=AKR20230410061700017">기사</a></li></ul><ul id="b22fd287-4b10-4454-a1a4-991beb6ecd8d" class="bulleted-list"><li style="list-style-type:disc">“AI 이미지 생성 도구 출시...美·日 2만명 몰려” → <a href="https://www.techm.kr/news/articleView.html?idxno=108959">기사</a></li></ul><p id="7f6fffba-d22e-4be4-81f9-c78c90902fa0" class="">
+</p></li></ol></details></li></ul><ul id="778a3063-06f8-4a05-9c61-b2078bf6bbd0" class="toggle"><li><details open=""><summary><code>코니스트의 웹툰 제작 자동화 서비스</code></summary><ol type="1" id="bd7fbb2c-0465-44f1-bb73-7c3a69dda647" class="numbered-list" start="1"><li>핵심가치<p id="6ea4978a-a272-4434-aa01-507b46bb62c2" class="">[파악되지 않음]</p></li></ol><ol type="1" id="2875c01a-5eaa-4f13-9639-5dcd131dd025" class="numbered-list" start="2"><li>제품의 형태<p id="0e6b16d8-5abd-4e3f-bfca-18a021f7b2a0" class="">[파악되지 않음]</p></li></ol><ol type="1" id="03def5a5-b131-4924-8a23-4843d7b61d11" class="numbered-list" start="3"><li>경쟁력<p id="e399b844-b86c-4922-8db2-e383b9a5749d" class="">글로벌 콘텐츠 데이터 보유 선두</p><p id="1f60e4a0-7b59-4fe3-9407-c68ddcbd50aa" class="">국내 유일의 웹툰 &amp; 웹소설 상업 데이터베이스 서비스</p><p id="38d1da04-c126-4f07-9728-652fe4375981" class="">웹툰 DB 정보 제공 서비스 이미 진행 중</p><p id="12b8017b-ff11-4139-a795-ddc9683a9046" class="">플랫폼 및 제작사 80여 개 사 이용 중</p></li></ol><ol type="1" id="26d74dd2-5ae0-4e27-8799-cf7dccd593f2" class="numbered-list" start="4"><li>Pricing<p id="0304774e-07af-4982-a99d-c5bd14423fc3" class="">서버비용 1,000만원(무제한 사용) + 하나의 캐릭터 생성할 때마다 100만원 <a href="https://www.notion.so/by-5c0740def42e4176b8e7c0a63d8a82be?pvs=21">출처</a></p></li></ol><ol type="1" id="54bbe956-52e7-42a9-a9c6-cfc8885b85e0" class="numbered-list" start="5"><li>행보 및 방향성<p id="9e9f0d13-fae5-42af-a0ea-7d34bdd2551c" class="">시장 조사 결과 CP대상 사업이 수익성이 떨어진다고 나와서 비싸게 팔아야 하는 중 <a href="https://www.notion.so/by-5c0740def42e4176b8e7c0a63d8a82be?pvs=21">출처</a></p></li></ol></details></li></ul><ul id="fb2608e1-5c7c-4605-aebc-18f28e4964a5" class="toggle"><li><details open=""><summary><code>콘파파</code></summary><ol type="1" id="faebf4a8-0ebe-4324-a50f-95123a690f68" class="numbered-list" start="1"><li>핵심가치<p id="9c201df6-5508-4736-9a7b-fa108732fc97" class="">사람들이 각자의 마음 속에 지닌 흥미롭고 매력적인 이야기들을 전세계 사람들이 경험할 수 있는 다양한 컨텐츠로 쉽게 만들 수 있도록 도와주는 것이 vision임 <a href="https://www.conpapa.co">링크</a></p></li></ol><ol type="1" id="ea81f77a-6b98-447f-a7fd-89b67a92e9dd" class="numbered-list" start="2"><li>제품의 형태<p id="fdeb1029-723b-45c6-af4b-c142f88b8452" class="">“웹툰 창작 플랫폼”</p><ul id="52a7b625-5feb-4157-a6f4-26672676c8ba" class="bulleted-list"><li style="list-style-type:disc">방향성<ul id="3bd7d32e-62e3-4a5f-9576-e673d3922df2" class="bulleted-list"><li style="list-style-type:circle">“현재의 프로세스와는 다른, 훨씬 효율적인 창작 프로세스를 통해 그들에게 잃어버린 삶을 되돌려 주고 싶습니다.” <a href="https://www.conpapa.co">링크</a></li></ul><ul id="8689d1b5-62fa-48ff-99da-02a34c06340b" class="bulleted-list"><li style="list-style-type:circle">“효율과 작가의 개성의 밸런스를 추구하는 프로덕트” <a href="https://www.conpapa.co">링크</a></li></ul><ul id="a12ef087-45d6-41ec-bb4e-edd19f0dd472" class="bulleted-list"><li style="list-style-type:circle">“누구나 쉽고 재미있게 웹툰을 창작할 수 있도록” <a href="https://www.conpapa.co">링크</a></li></ul></li></ul><ul id="f66c164e-57a8-4735-ad9d-852537ebc5ad" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">콘티만</span> 하는 회사이다. 웹툰 형식으로 길게 세로형으로 제작, 호환성이 좋아 많이 쓴다 <a href="https://www.notion.so/by-5c0740def42e4176b8e7c0a63d8a82be?pvs=21">출처</a></li></ul><ul id="b315614f-ffe1-4a68-978e-2ba6a15b31a5" class="bulleted-list"><li style="list-style-type:disc">기능 <a href="https://www.nextunicorn.kr/company/7cfb03b4d276a88b">출처</a><ul id="5559e9c9-4a57-4808-8009-39b2506461a9" class="bulleted-list"><li style="list-style-type:circle">핵심 3D 기술과 직관적인 UX를 기반으로 창작 단계를 간소화</li></ul><ul id="8f169bc6-7147-4aa8-925a-f606c1e3b247" class="bulleted-list"><li style="list-style-type:circle">소재 재사용의 범위를 확장하여 반복 작업을 줄이는 데에 집중</li></ul><ul id="bce8d8b4-653a-45f6-aa83-3ff76be5c091" class="bulleted-list"><li style="list-style-type:circle">캐릭터 모델의 포즈를 손쉽게 잡고 이를 배경에 바로 넣어 가상카메라를 통해 원하는 장면을 바로 구현할 수 있도록</li></ul><ul id="29538cbc-d8d8-401f-81b6-bfabd9602f81" class="bulleted-list"><li style="list-style-type:circle">한번의 클릭으로 구현된 장면을 펜작업으로 전환</li></ul></li></ul></li></ol><ol type="1" id="3f7fd125-34d0-44ab-8fed-aa39fd94c4b9" class="numbered-list" start="3"><li>경쟁력<p id="493a83cd-fe42-4629-a57f-9f176fcaa2b6" class="">[미파악]</p></li></ol><ol type="1" id="974c50b6-4312-4dd1-a99c-03660aaa7dbe" class="numbered-list" start="4"><li>Pricing<p id="ccf48520-226b-47fb-8e4d-fdb2330ac872" class="">[미파악]</p></li></ol><ol type="1" id="f28e4d11-44fa-419e-aa8c-d1f47bdead3c" class="numbered-list" start="5"><li>행보 및 방향성<ul id="68aca787-99f0-4000-ba53-36c8d17f1a7b" class="bulleted-list"><li style="list-style-type:disc">2022 설립</li></ul><ul id="bd17b20e-46d0-4ffe-b188-867fa6981e6f" class="bulleted-list"><li style="list-style-type:disc">2022.08 시드 투자 4억원 유치 <a href="https://news.mt.co.kr/mtview.php?no=2022081009522017359">뉴스</a></li></ul><p id="a7ab8615-039b-4dae-9398-098e87d3d2e2" class="">
+</p></li></ol></details></li></ul></div></details></div></article></body></html>

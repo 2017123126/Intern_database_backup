@@ -1,0 +1,679 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>네이버 웹툰 AI 페인터</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="f4041b1e-7476-45b1-a07e-d4205b1ecb63" class="page sans"><header><h1 class="page-title">네이버 웹툰 AI 페인터</h1><p class="page-description"></p></header><div class="page-body"><div><ul id="09549640-4055-4e97-8b0c-b17ece439d03" class="toggle"><li><details open=""><summary>그림작가 유정환님이 네이버 웹툰 AI 페인터 안쓰시는 이유 </summary><p id="edd335ea-3239-4212-b265-54d9e4bbe515" class="">네이버 웹툰 안쓰는 이유는 두 가지다</p><ol type="1" id="838d4624-6d9d-44de-97c3-f7bc1e5be8f8" class="numbered-list" start="1"><li>퀄이 떨어져서(원하는 색 표현, 영역을 잘 못채운다)</li></ol><ol type="1" id="d0c2bc95-bf8a-4b42-b2a8-12ba00fa726a" class="numbered-list" start="2"><li>클립스튜디오도 지원하기 때문에 굳이x(툴을 한 번 더 거치는 행위X)</li></ol><figure id="f936318e-9d0c-47b1-9fc3-5cc8381f45d8"><div class="source">https://lionrocket.slack.com/archives/C05457W2KJN/p1684139032325159</div></figure></details></li></ul></div><ul id="cb5d277b-3ef9-483e-ba5a-f3adba4e6167" class="toggle"><li><details open=""><summary>네이버 및 일반적인 채색 모델의 문제점</summary><ol type="1" id="eb5b5ffc-0294-422e-b615-5030cec8330f" class="numbered-list" start="1"><li>색칠된 결과가 화사하지 않음<ol type="a" id="fb7d9419-1365-4d5b-b2fd-2dc2f48b1a2c" class="numbered-list" start="1"><li>수채화 그림마냥 색상이 명료하지가 않거나</li></ol><ol type="a" id="71022399-87f6-4e5d-9dec-62779741d982" class="numbered-list" start="2"><li>반대로 색상이 너무 명료해서 화사한 그림이 나오지가 않음</li></ol></li></ol><ol type="1" id="c4492da1-4383-41f7-ac88-fb5dd3d9aa1d" class="numbered-list" start="2"><li>색칠된 결과가 서로 영역을 침범함<ol type="a" id="578a8619-fbe5-4580-b34b-d530adead922" class="numbered-list" start="1"><li>딥러닝 기반의 자동채색에서 가장 골치아픈 문제</li></ol><ol type="a" id="bcf9dcc2-a697-449d-831e-39dfcc88af65" class="numbered-list" start="2"><li>광원이 일정치 않다던가 같은 허벅지인데 피부톤이 다르다던가 하다더라</li></ol></li></ol><ol type="1" id="d4377fd8-834b-4e44-a89d-5be15185bf1d" class="numbered-list" start="3"><li>클립스튜디오에서도 비슷한 기능이 있기 때문에, 굳이 네이버 채색 쓸 이유가 없다. 성능이 더 나은 것도 아니고. 다른 툴을 거칠 이유가 없다</li></ol><ol type="1" id="cae7ca97-1fcd-46db-be42-2cb381cf74bd" class="numbered-list" start="4"><li>네이버 께 사실상 가장 진보한 기술임<p id="aebc81c1-32bf-4c15-b966-96289f56805e" class="">네이버 자동채색은 이러한 색깔 오염침범 측면에서 가장 개선된 모델인 것이라 느꼈음. 결과물 퀄리티도 Paint Chainer에 비하면 훨씬 뛰어난 것같다</p><p id="6ac90844-e491-478b-8a5b-50702b7d521e" class="">사실 네이버 AI랩쪽에서 낸 논문 중에는 이런 색깔침범 문제를 줄이는 걸 주제로 삼은 논문도 있었다</p></li></ol><ol type="1" id="3bac7f70-025b-4991-b1cf-59d78990d44b" class="numbered-list" start="5"><li>네이버 채색 AI 는 선화 데이터를 모으기 위한 수단이다<p id="67e286f7-0ff1-4489-8907-678688cc5510" class="">네이버 자동채색은 개인정보 수집 이슈가 있어…</p></li></ol><figure id="df006e9d-b95d-4013-9b40-cbe3da24702d"><div class="source">https://lionrocket.slack.com/archives/C02GN0KUW6N/p1684135223500799</div></figure><figure id="ec574995-fae6-4179-a610-aa33bfffa901"><a href="https://itmii.tistory.com/2215" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">그림 자동채색의 현재 기술</div><div class="bookmark-description">어제 네이버에서 자동채색 서비스를 시작해서 화제가 되고 있는데 사실 자동채색 자체는 예전에도 알을알음 연구되던 분야임 이건 2016년 ECCV에 Colorful Image Colorization이라는 논문인데, 그림에서 보이듯이 회색 이미지에 자동으로 색을 입혀주는 모델임 딥러닝 기반이고, 스케치 이미지에 대해서는 적용 불가능하지만 당시에는 꽤나 인정받은 논문이다. 뭐 이게 구체적으로 어떤 원리로 돌아가는지는 설명해봤자 의미가 없을테니 넘어가고, 위 논문을 비롯해서 딥러닝 기반의 자동채색 모델이 다수 나오게 됐는데 그중에는 스케치 이미지를 칼라 이미지로 바꿔주는 모델도 연구되기 시작함. 아마 누군가는 알고 있을 자동 채색 모델인 Paint Chainer도 한 종류인데, 큰 틀에서보면 Colorful Im..</div></div><div class="bookmark-href"><img src="https://t1.daumcdn.net/tistory_admin/favicon/tistory_favicon_32x32.ico" class="icon bookmark-icon"/>https://itmii.tistory.com/2215</div></div><img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkTqv0%2FbtriCFKBGCO%2FZZSnnUZBK1kLceSk7xcbzK%2Fimg.webp" class="bookmark-image"/></a></figure></details></li></ul><div><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="223be7db-1755-46de-8e53-e86c60378416"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">네이버 웹툰 AI 페인터의 보완점</div></figure><p id="dbf407b1-496f-40d1-8c38-d2bf3eb8d1e3" class="">아래의 세 형태의 오류들이 빈번히 발생하여 수십개의 채색 힌트를 적용해야 의도대로 채색이 가능함</p><h2 id="aefcc142-70ab-4225-8fb3-251b8631738a" class="">채색 범위의 구분</h2><ul id="f74315d2-f9bb-4d67-b8fa-e20039e8ae3a" class="bulleted-list"><li style="list-style-type:disc">펜터치를 통해 구획이 제대로 정돈(=같은 색깔이 칠해지는 영역마다 선으로 끊기지 않고 둘러싸인 경우)되지 않은 경우 다른 구획임에도 불구하고 같은 색이 칠해지는 문제</li></ul><ul id="b0de7858-a73d-45cf-b318-274de62e2cc2" class="bulleted-list"><li style="list-style-type:disc">펜터치를 통해 제대로 구획이 정돈됐음에도 불구하고 인접한 구획의 색깔이 번지는 문제</li></ul><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">예시</summary><div class="indented"><div id="26e7b04f-ac48-413a-98e2-709dcf8ad30a" class="column-list"><div id="80ea9dd8-0d66-4ac8-9a97-90af8c09dacf" style="width:43.75%" class="column"><figure id="922f3718-810b-429e-aa0e-b52ead324484" class="image"><a href="../useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-04_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.46.43.png"><img style="width:715px" src="../useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-04_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.46.43.png"/></a><figcaption>네이버 웹툰 AI 페인터에 최초 업로드한 이미지</figcaption></figure></div><div id="64ea20e8-aa8e-47bf-9664-dc7c76df48a9" style="width:56.25%" class="column"><figure id="e5f75429-4ee1-4406-8b0f-4bd724edc66e" class="image"><a href="../useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/Screenshot_2023-05-09_at_8.20.31_PM.png"><img style="width:336px" src="../useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/Screenshot_2023-05-09_at_8.20.31_PM.png"/></a><figcaption>네이버 웹툰 AI 페인터가 채색해준 결과물</figcaption></figure></div></div><ul id="e6384d7e-6345-44ac-bc33-39e3f375db3a" class="bulleted-list"><li style="list-style-type:disc">사용자 입력<ul id="b3128398-dc8c-46d6-83cf-b57381e60521" class="bulleted-list"><li style="list-style-type:circle">최초 업로드한 이미지는 펜터치 이미지로 구획이 비교적 잘 정돈된 결과물</li></ul><ul id="0684c1c6-acfe-4bfe-b33c-c82908cf9ff8" class="bulleted-list"><li style="list-style-type:circle">머리카락 영역에 분홍색으로 채색 힌트 단 하나만 적용한 상황</li></ul></li></ul><ul id="128b605f-e16c-4ecc-a790-4efa9b95e441" class="bulleted-list"><li style="list-style-type:disc">결과<ul id="d16cd3be-cec9-42d7-adea-dd7495006121" class="bulleted-list"><li style="list-style-type:circle">붉은색 넥타이가 아래로 갈수록 푸른색으로 변함</li></ul><ul id="29af1f3f-635f-425d-9111-f68281bf5ac7" class="bulleted-list"><li style="list-style-type:circle">셔츠의 오른쪽 부분의 푸른색이 넥타이의 아래쪽에 번져 넥타이의 색깔을 서서히 변하게 만든 것을 확인할 수 있음</li></ul></li></ul><p id="03488d98-d5c2-4054-8e2d-ca2df5386b08" class="">
+</p></div></details><h2 id="08a149bd-61d5-4a87-9e50-1d60ecfdb516" class="">채색 일관성</h2><p id="7b4c93ed-c8fd-4e8e-8f6f-2e272230b17c" class="">같은 물체임에도 다른 색깔로 칠하는 문제</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">예시</summary><div class="indented"><div id="ff0d7044-e088-42ca-9c20-93e8b31ec245" class="column-list"><div id="b7543839-978b-4242-9444-162acbe92917" style="width:62.5%" class="column"><ul id="06b07682-dede-4f0b-8e3c-f5a3bc9f5627" class="bulleted-list"><li style="list-style-type:disc">사용자 입력<ul id="3516ec9b-0a08-4cfc-8dfa-690f8d2b7971" class="bulleted-list"><li style="list-style-type:circle">머리카락 영역에 분홍색으로 채색 힌트 단 하나만 적용한 상황</li></ul></li></ul><ul id="5e0fd912-7b13-4d94-972e-a5aa870c9dd7" class="bulleted-list"><li style="list-style-type:disc">자동 채색 결과<ul id="c73b1d28-15ed-4254-b1be-eac43743f44b" class="bulleted-list"><li style="list-style-type:circle">[문제]<span style="border-bottom:0.05em solid">넥타이를 가운데에 두고 셔츠의 양옆 색깔이 다르게 채색됨</span></li></ul></li></ul></div><div id="e9b04ddd-a361-4914-9063-0dc5b7c34e1d" style="width:37.49999999999999%" class="column"><figure id="31827ab8-d103-44d6-8bd8-23ec22e5fe6e" class="image"><a href="../useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/Screenshot_2023-05-09_at_8.20.31_PM.png"><img style="width:336px" src="../useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/Screenshot_2023-05-09_at_8.20.31_PM.png"/></a></figure></div></div></div></details><h2 id="8eb725e0-5709-4e5f-9905-2bdb36788f8f" class="">색 조합 선택</h2><p id="979c568b-acb4-4da3-84ed-d36f1cbd5b7e" class="">채색 힌트를 주지 않은 다른 영역의 색깔까지 추론하여 색깔을 입히는데, 추론을 통해 입힌 색깔들이 서로 어울리지 않음</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">예시</summary><div class="indented"><div id="a3b334a4-3264-4420-9602-3eed6dc98615" class="column-list"><div id="e796de8b-d5cf-48fd-9e05-04ebfe681740" style="width:37.5%" class="column"><figure id="4748c417-3d3f-4e5f-bfe3-f40deb7443a5" class="image"><a href="../useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-04_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.46.20.png"><img style="width:567px" src="../useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-04_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.46.20.png"/></a><figcaption>인간 작가가 선택한 색 조합</figcaption></figure></div><div id="3591a264-1e52-4dc0-bb59-62a9636cb0ee" style="width:62.5%" class="column"><figure id="3f3692e0-6760-4369-b4a4-8a05c2e4bbf4" class="image"><a href="../useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/Screenshot_2023-05-09_at_8.46.17_PM.png"><img style="width:796px" src="../useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/Screenshot_2023-05-09_at_8.46.17_PM.png"/></a><figcaption>네이버 웹툰 AI 페인터가 선택한 색 조합(셔츠, 머리색깔 제외)</figcaption></figure></div></div><ul id="ba15fe21-02d7-4804-9560-64da806f3ee0" class="bulleted-list"><li style="list-style-type:disc">사용자 입력<ul id="91cd8b87-d32a-492e-8964-22402fb69c8a" class="bulleted-list"><li style="list-style-type:circle">머리카락과 셔츠에 채색 힌트를 적용</li></ul></li></ul><ul id="99e3acee-137c-497c-a845-05054cc0d6a5" class="bulleted-list"><li style="list-style-type:disc">자동 채색 결과<p id="504ee86e-0ce1-4f09-bc08-5cebf52d266b" class="">인간 작가</p><ul id="5d0e71d6-b796-4b4d-a235-d248fdc573f3" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">분홍, 청록색, 네이비</span> 색의 조합</li></ul><ul id="10dae372-028d-46c8-9c52-fb9358452ad7" class="bulleted-list"><li style="list-style-type:circle">청록색 넥타이로 포인트를 주고 나머지 셔츠와 치마, 가방끈, 허리띠는 무채색 계열로 처리하여 균형감을 줌</li></ul><p id="81055bec-9b3d-4e6b-807b-fe1b188ed02c" class="">네이버 웹툰 </p><ul id="0288e017-18a6-4f5d-a68f-6c6d244d1816" class="bulleted-list"><li style="list-style-type:circle">AI 페인터는 <span style="border-bottom:0.05em solid">분홍, 다홍, 노랑, 청록색</span>의 조합</li></ul><ul id="d905f0d8-38cb-46cb-b00a-bbf5b13f651f" class="bulleted-list"><li style="list-style-type:circle">옷 색깔로 다홍색, 노랑색, 청록색이 모두 적용되어 하나의 영역에 포인트를 주지 못하고 시선이 분산되어 불균형함</li></ul><ul id="22109a92-d016-4549-a782-d7b198063643" class="bulleted-list"><li style="list-style-type:circle">머리 색깔과 비슷한 다홍색 넥타이를 선택하여 포인트를 주지 못함</li></ul><ul id="32da9570-37f7-42de-8441-1d70c233e5d6" class="bulleted-list"><li style="list-style-type:circle">가방끈, 허리띠를 셔츠 색깔 비슷한 옅은 색깔을 주어 셔츠와 구분되지 못함</li></ul></li></ul></div></details></div><p id="7c588a07-8226-4b5a-941e-637cd45c87df" class="">
+</p><p id="e4834029-6154-46b8-bbf5-2e5b9d7eddaf" class="">
+</p></div></article></body></html>

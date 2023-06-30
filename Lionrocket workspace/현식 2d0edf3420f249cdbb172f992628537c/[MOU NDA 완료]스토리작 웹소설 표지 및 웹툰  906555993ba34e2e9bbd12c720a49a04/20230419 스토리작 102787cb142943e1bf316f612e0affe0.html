@@ -1,0 +1,697 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>20230419 스토리작</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="102787cb-1429-43e1-bf31-6f612e0affe0" class="page sans"><header><h1 class="page-title">20230419 스토리작</h1><p class="page-description"></p></header><div class="page-body"><p id="acc9634c-143e-4fc4-8de3-031fb2bd5f80" class="">CCO 김항주 이사님</p><p id="46a2b2e7-4ae8-427d-b78e-ebb90ca62796" class="">CFO 조형인 CFO님</p><p id="89a41ce6-cdee-4eb8-8fac-01a24388d40f" class="">길새나래 팀장님</p><p id="66733c81-f9e8-44cf-9332-79c734214576" class="">황교승 팀장님 </p><p id="9f37147c-d783-43b6-b273-7483416226be" class="">
+</p><p id="6bf911ac-be0f-4838-8432-4b409bf5cc3d" class="">작가들의 압박감, 스트레스, 압박감, 일자리를 이해한다.</p><p id="b558d9b4-7fa6-479d-9ee7-e047afc867fe" class="">제작 효율화를 통해 도와주겠다</p><p id="dda29f61-5154-431c-b630-7ee9cd42cd6e" class="">단계별 실증 및 도입 방식을 제안</p><p id="ab4038df-8f91-47ce-b88f-54cd8e7fe10a" class="">삽화 제작 프로세스 설명</p><p id="18020c01-9cb2-4a69-a651-ef307f522559" class="">페러 → 화풍 → 화질 → 얼굴 화질 → 디테일<div class="indented"><p id="efdc654b-f972-4a32-920c-88fad6919a93" class="">화풍 예시</p><p id="2db00409-40d7-4b11-bdfb-6bbc1efc1562" class="">프롬프트 가이드북을 통한 창의적 영감과 창작활동 지원</p><p id="d9498bbd-8d10-4d86-b249-148019c115f2" class="">콘티 생성</p><p id="ed80a877-e119-45dd-8b53-237e38bde4c3" class="">캐릭터 유지</p><p id="788a4d77-ca27-452f-ae7b-e16de0c88058" class="">그림체 변경</p><p id="531b87f3-71b6-4a79-a905-7bf3cce53d2f" class="">채색</p><p id="4bca34eb-e2e6-4edd-969c-de2096878fe9" class="">새로운 그림체 생성</p><p id="91a40706-e0a5-46ba-9650-f422d7e61912" class="">각도 변환</p><p id="60fd1ca5-53e3-4e6a-af20-27cf819797da" class="">시점 변환</p><p id="d019ae84-eab9-43f5-a8ae-2d731d3be997" class="">표정 생성</p><p id="5bcf44b3-e3f6-4a29-89e3-8a73d8c2b23b" class="">스케치 투 펜터치</p></div></p><p id="93830085-0bcf-448f-b830-b9af99b93d73" class="">PoC 진행으로 인한 업무 가중, QA 부담, 개발 장기화 우려 → 전담팀과 전용 채널, 단계별 진행, 이미 우리가 QA 가능</p><p id="44e51869-0e10-4fa0-af0b-5744020f83a4" class="">타사 대비 높은 수준</p><p id="1c081ae2-dceb-4387-bec0-805f8612b3b9" class="">작가님들을 위한 툴, 작가님과 함께하는 툴<div class="indented"><p id="63854714-7a77-4a50-a284-cf4ff37aa827" class="">초개인화 서비스, 2차 수익창출<div class="indented"><p id="8c97cbd3-c2f7-4cda-9ca0-a0188dd78c37" class="">라이언로켓 스톡 이미지 DB, 디자인 에셋을 작가들의 화풍으로 바꿔서 제공</p><p id="fa8024d8-4a1d-4faf-9709-8248cef46b30" class="">객체 고정 + 화풍 제공을 통한 PPL 자동화</p><p id="f0a3d4da-b35e-4dba-8dc4-aa4abbedd189" class="">자동 번역 지원을 통한 헤외시장</p><p id="28747eb5-49b6-4183-8395-4419e9462bdd" class="">굿즈, 이모티콘</p></div></p></div></p><p id="cb868571-fddb-45f6-a544-c2c989e49af8" class="">생성 AI는 큰 흐름임</p><p id="8a7dbefc-fddc-4ebc-8317-877912bc8b1c" class="">
+</p><hr id="ff9715db-0439-4c5f-848b-7cddec3a452e"/><p id="a2943215-3eed-4f50-8eeb-e2e573176128" class="">웹소설 표지 데모 페이지.</p><p id="c809f1dc-37d0-42e9-8c2b-33c0a9f871e3" class="">아직 쓰기 편한 상태는 아님</p><p id="36d01ea9-d577-4cee-8969-aafe51425bc2" class="">협업 과정에서 니즈를 듣고 더 다듬으려고 함</p><p id="9c4c55e0-e76c-4f35-8bf9-a0519a131f86" class="">현재는 기능 위주<div class="indented"><p id="2a436eaf-6ccb-4ee3-a978-6c1326fbdda1" class="">콘티 생성</p><p id="554b91f3-5328-4f5a-999c-7fe877880050" class="">배치/구도</p><p id="675a0c30-bfc5-457f-874c-7f24adce9db1" class="">그림체 변환기</p><p id="9a431cd6-ecd1-46d7-bcb1-ee8b7d262e8c" class="">얼굴 신체 후보정</p></div></p><p id="6024757a-97d7-41d2-80ae-f861c53f0ef1" class="">프롬프트 가이드<div class="indented"><p id="f6267bd0-aeb0-40fb-b650-c96af8a08a57" class="">스포키는 실 사례의 가이드임</p></div></p><p id="216908e6-ec80-4b7b-8eeb-c69d13240a3f" class="">
+</p><hr id="754e7c44-6188-4099-9b65-b1d0bb512222"/><p id="f42a65db-77af-407b-8eda-f650d61694cd" class="">갑자기 발생한 저작권 문제로 인해 수정해야 하는 경우 대응 → 오히려 빠름</p><p id="1514fb93-3673-44f6-8386-35471909ca45" class="">저작권이 뒤늦게 문제가 되는 경우는 수익 관련해서 더 큰 문제가 발생 → 저작권 워싱이 AI의 강점임</p><p id="818f3fc3-f4c9-40ba-8c7d-681e6768ec88" class="">이미지 타격으로 인해서 화풍을 제거해야 하는 경우 → 근데 저작권은 AI로 인해서 새롭게 생긴 문제는 아님</p><p id="73488b87-7e5e-426f-b9fd-792f6374f14b" class="">저작권의 문제 → 오히려 인공지능이 유사한 이미지를 대조하는 등 더 쉽게 해결 가능</p><p id="aa77b8b6-278f-4910-bb4d-1875816b5be3" class="">
+</p><p id="ca72442b-6e18-41af-a973-d90dfc2b618e" class="">스케치to펜터치, 채색 자동화가 실제 작가들이 필요하냐</p><p id="7e51ad71-12e1-45b1-85a1-ba0eb8c90fea" class="">작가님들마다 다르다, 근데 방향성은 맞는 듯</p><p id="129dbde8-ab9e-4757-945c-0c75ac535872" class="">후보정도 매 컷마다가 아니라 중요한 컷마다</p><p id="eba1020b-96fc-424c-aaae-92fb4175654f" class="">디테일을 올리는 과정은 빠르게 진행될 것</p><p id="f6401540-8bc2-4635-ab28-b74017d66e86" class="">
+</p><p id="cbcdd2cd-333d-4405-988e-e922ff4baf6f" class="">기능은 이미 준비, UI에서 사용성과 구체적인 기능이 필요함</p><p id="40f78f20-cf61-4e27-8b7e-e947b7d58d34" class="">
+</p><p id="e36ee57c-cca0-4261-b733-d3ff4dd9cbde" class="">QA까지 포함해서 실무에 적용할 수 있는 예상 기간</p><p id="426f00f7-c097-4ffe-89bc-7b04b142806e" class="">
+</p><p id="cd794c7d-d4b2-4cfa-8574-414c093d96e7" class="">전적으로 작화가가 동의한 부분에서만 그림체 학습임</p><p id="4f8897e3-f538-4149-a398-4976b6b14c53" class="">존재하지 않던 그림체를 만들어낸다</p><p id="aaa97fec-80cd-4202-82b4-0f688f003d6e" class="">
+</p><p id="609b9da1-abc4-4c7e-8b83-91db3c3b0cbc" class="">사용화 시 비용</p><p id="43dc62f5-b8f8-4ad3-8e36-1a621529667c" class="">얼마라고 말하기는 좀 뭐함. 다만 다작이 가능 → 많이 만들 수록 값이 낮아지는 </p><p id="cf618830-0681-4bde-8ca0-26b90843a53e" class="">
+</p><p id="9222de4f-faac-4bbf-8b6e-4e00fff75818" class="">오히려 구독보다 종량제가 좋음</p><p id="57c9d8d1-3cfe-40f4-bb98-e262e27d4c3b" class="">구독료로 진행하면 기존 비용 절감 차원에서 못했던 것들에 적용 가능</p><p id="c016ff03-4f79-4180-8656-da08ffec7643" class="">
+</p><p id="3cec921e-25ae-4adc-8eb5-e1d5d85fafce" class="">웹소설 표지 의뢰 시 한 번에 끝남 → 결국 작가의 후보정이 필요함, typo는 또 의뢰해야 함 </p><p id="b0ba01d9-625f-4a77-8d96-4862c7e3a4d7" class="">50% 줄어드는 게 고려해서 줄어드는 것으로 말씀드린 거</p><p id="d1e43e5d-e616-473d-87b1-b45441603c8c" class="">
+</p><p id="3aa2b689-ece2-4abd-93d6-0a3342f63fb3" class="">다양한 그림체 포트폴리오를 준비하는 중</p><p id="65b50b76-074b-4a5b-ac30-4562849d97d5" class="">
+</p><p id="9f3ffcab-3361-40ae-aa5a-14ced55879a9" class="">우려: 우리에게 소속된 작가의 DB를 가져가는 건 아님</p><p id="3d1871bd-3139-4fb2-885d-64d3dca9a227" class="">오히려 유명 작가들이 너무 좋아할 것임</p><p id="fd1cbb95-e1f8-412d-99d0-bcf4307bf393" class="">
+</p><p id="bc27f9c2-05f0-4858-84c7-40e7e87f6b5e" class="">수용할 수 있는 계층이 늘어나는 가능성</p><p id="622c3fe9-6013-456b-8701-0308e098c9d3" class="">웹소설 표지 제공을 조건으로 제안할 수 있는 범위가 넓어짐</p><p id="7d685c35-5ed9-4f17-a662-df7c6a7a7332" class="">
+</p><p id="a8bd7e5a-57b7-46a0-925c-c5073a304de8" class="">웹툰 툴은 아까 보여드렸던 거에 웹툰에 적합한 모델을 넣는 거</p><p id="2aa8097b-923d-4514-8e53-b014cfaa7d1d" class="">단계별 제안</p><p id="0365efb8-5d67-46cb-9ec3-e23c7b2e7980" class="">
+</p><p id="50329afa-a6a8-44ff-b136-41252285ac18" class="">저작권 보유를 위한 리터칭 → 운영 노하우 </p><p id="9793ad51-b185-482e-a8d1-6904d8b4caeb" class="">
+</p><p id="042a6e3e-8f27-4d1c-a555-28982730c082" class="">외모지상주의는 실제로 사용중임. </p><p id="85805784-b9be-4228-8d51-d81d84448665" class="">실제 유명한 작가의 레퍼런스를 만들어나가거나 덜 유명한 작가들의 풀을 넓혀서 저변을 넓히거나</p><p id="2cb379eb-5239-428d-8021-6203c02a38b2" class="">
+</p><p id="ac742397-177e-41e1-b262-47fc3f9f7b9f" class="">작가를 양성하고 있는 기업임</p><p id="1f77b9ae-8562-4f34-8f40-1392c107390b" class="">저작권 문제에 대해 누구보다 예민함</p><p id="2a127a37-7e93-4b28-ba84-6593d980b5e0" class="">기술적 툴에 대한 지원은 나쁘지 않음</p><p id="182db50b-37ea-4909-aa1a-76718df686eb" class="">여론 재판이 강하고 심한 시장임 (독자의 절반이 작가임)</p><p id="c7f04c58-43af-444d-bd0a-dd5aa2973378" class="">
+</p><p id="957f0b33-1781-490c-8459-616f94d13f97" class="">객체고정 니즈는 확실함</p><p id="1d6a6b99-d11f-4e7c-bfe0-22d377fdc379" class="">로판, 갑옷, 칼, 계속 나오는데 좋음</p><p id="57374510-c46f-4e60-a0cc-69147c397cda" class="">
+</p><p id="a8ba69a9-0ea9-4a7b-9326-9221b111616f" class="">웹툰 툴의 상용화 기간?</p><p id="9899d42f-338f-42bd-bb0a-94e6555457e8" class="">기능 자체의 개발 목표는 두 달 이내임. 그러나 해내겠다에 가까움. </p><p id="7ece6584-a4a1-40f1-9783-b891ed08a90c" class="">지금 발전속도가 너무 빠름</p><p id="767d6aa2-fb97-47e2-b1fe-b9411d43ca4a" class="">기능 개발과 UI까지는 좀 더 걸림</p><p id="6c802c67-1e5e-4838-ae64-5f39feee48ed" class="">
+</p><p id="4c54cfdb-88ec-4794-adac-fd51356d04a2" class="">MOU를 하게 되면 스토리작이 궁금한 사항들에 대한 협조. 웹툰 작업에 대한 이해도가 적은 직원?</p><p id="e123d902-5e7b-4e4e-a8e8-1e9757a38634" class="">웹툰 전문 관련해서 잠시 채용하려고까지 보고 있음</p><p id="a5ac4f51-6210-42eb-8f76-d0f35af92000" class="">청강대와 함께 협업도 생각 중임</p><p id="e62c78ea-f86a-4ade-982f-0d54c0f5ac17" class="">
+</p><p id="e51b5e3d-3925-48a9-83ae-ce94ad2421ee" class="">회사의 큰 고민 중 하나가 생산성임</p></div></article></body></html>

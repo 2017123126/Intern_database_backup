@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>디자이너 배경조사</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ac90efdd-ba0e-48d9-8869-6f63ae8e4cce" class="page sans"><header><h1 class="page-title">디자이너 배경조사</h1><p class="page-description"></p></header><div class="page-body"><ul id="564e5137-7f9d-4bc4-af63-e38265b5eea6" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Pricing</span><div class="indented"><ul id="de6cfe2c-fb4c-4f54-b9dd-db6b4eae2305" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">어도비 툴을 참고하자 / 학생 인증이 가능하지만 4년동안 기간 제한이 있음</span><div class="indented"></div></li></ul><ul id="b9dddbd6-7ce7-4df6-a928-6d4e172e8a92" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">캔바 - 미리캔버스랑 비슷한 거임. 준 디자이너들이 많이 사용함</span><div class="indented"></div></li></ul></div></li></ul><p id="512cb3cb-ce36-4810-be3b-c526a836f82f" class="">
+</p><hr id="a516ed88-9e0a-4be3-9a5b-446c13956d45"/><h1 id="541368f8-6017-4842-97fc-ad57f18ae2c7" class="">그래픽 디자이너</h1><p id="20d972bf-eb02-4a70-83e5-cb94cd89bd5c" class="">사물이 아닌 눈에 보이는 평면적인 것을 디자인</p><p id="c423a05d-2ffd-4a1c-9e18-730b5c38be8e" class="">
+</p><h3 id="853ef337-3fa1-496b-9465-7013a585c492" class="">그래픽 디자이너의 종류</h3><ol type="1" id="6ab852e5-5075-4a27-956d-3f2253ae0717" class="numbered-list" start="1"><li>광고 디자이너<ul id="1972e57b-38e6-4952-9c07-febc11190d60" class="bulleted-list"><li style="list-style-type:disc">관련 업계: 광고</li></ul></li></ol><ol type="1" id="748c98bd-4c3f-412e-ae61-0ab3aaad3a71" class="numbered-list" start="2"><li>영상 디자이너<ul id="52435843-4143-4405-b390-0dbd8afe7e0f" class="bulleted-list"><li style="list-style-type:disc">관련 업계: 광고/교육</li></ul></li></ol><ol type="1" id="4f7190ca-52e8-4407-b6ba-6f3081480a52" class="numbered-list" start="3"><li>일러스트레이터<ul id="dc27e3cc-d966-4973-82ed-00aa5825673f" class="bulleted-list"><li style="list-style-type:disc">관련 업계: 웹툰/웹소설</li></ul></li></ol><ol type="1" id="9f62aeb0-ab64-43ab-bf8f-87c6acd86183" class="numbered-list" start="4"><li>캐릭터 디자이너<ul id="af87fcf1-ca90-4bb6-8c40-91069b458873" class="bulleted-list"><li style="list-style-type:disc">관련 업계: 교육/웹툰/웹소설</li></ul></li></ol><ol type="1" id="44b9d118-4ea4-4778-9030-5c64dcab48af" class="numbered-list" start="5"><li>편집 디자이너<p id="cadbe18c-dfbc-472a-8889-4667d6c9d6d6" class="">인쇄물의 레이아웃 디자인</p><ul id="51dba095-34d1-4b61-b497-f2c944a4d266" class="bulleted-list"><li style="list-style-type:disc">관련 업계: 광고/교육 </li></ul></li></ol><p id="94b80b80-0330-41d4-b8b0-a366fda5ba59" class="">
+</p><h3 id="fd66e97c-038f-4173-8c32-e266bb9be96c" class="">자주 사용하는 프로그램</h3><p id="eda184c3-eccc-4b32-8481-f754dde16c7c" class=""><code>어도비 일러스트, 포토샵</code>은 기본</p><p id="b93a585f-acc1-498d-9550-ead1db3a4848" class="">출판 쪽의 경우 <code>인디자인</code> 필수</p><ol type="1" id="07ca648c-6d17-404c-a198-70fa3b8016dd" class="numbered-list" start="1"><li>포저 <ol type="a" id="87659011-4812-4f07-b13b-90b356deb6cc" class="numbered-list" start="1"><li>용도<ul id="25e2c70f-1079-4db5-8e91-771c5b08b55b" class="bulleted-list"><li style="list-style-type:disc">외부에서 제작된 오브젝트를 리깅 </li></ul><ul id="64817e58-9648-4b5e-956b-71f8184583d1" class="bulleted-list"><li style="list-style-type:disc">외부에서 제작된 오브젝트를 가지고 scene 연출</li></ul><ul id="fa6bdd60-dbc1-4a75-80ab-8b5bf6a6c43c" class="bulleted-list"><li style="list-style-type:disc">외부에서 제작된 오브젝트를 가지고 동작 구성</li></ul><ul id="afc81eb2-6962-470e-bb86-605413f01ce9" class="bulleted-list"><li style="list-style-type:disc">외부에서 제작된 오브젝트를 가지고 애니메이션</li></ul><ul id="ba88540f-1490-496a-80f2-b3f11365472b" class="bulleted-list"><li style="list-style-type:disc">외부에서 제작된 오브젝트를 가지고 렌더링</li></ul></li></ol></li></ol><ol type="1" id="847e99f4-7b11-4e93-b48c-c735326d0778" class="numbered-list" start="2"><li>다즈<ol type="a" id="cdf10cb9-e440-443f-afdd-551b0b843ffd" class="numbered-list" start="1"><li>용도<ul id="d6aa49bd-9592-4d0a-a4c7-a559303913dd" class="bulleted-list"><li style="list-style-type:disc">외부에서 제작된 오브젝트를 리깅 </li></ul><ul id="07d705f9-798c-4d6d-99c2-dfb16f98c351" class="bulleted-list"><li style="list-style-type:disc">외부에서 제작된 오브젝트를 가지고 scene 연출</li></ul><ul id="27957416-9158-4f09-8a12-7b749d8080ae" class="bulleted-list"><li style="list-style-type:disc">외부에서 제작된 오브젝트를 가지고 동작 구성</li></ul><ul id="a9456cc7-958e-4ae4-bc53-bf845ebd153d" class="bulleted-list"><li style="list-style-type:disc">외부에서 제작된 오브젝트를 가지고 애니메이션</li></ul><ul id="19bfc020-103a-42ae-bd94-6e4ad23b6bf7" class="bulleted-list"><li style="list-style-type:disc">외부에서 제작된 오브젝트를 가지고 렌더링</li></ul></li></ol><ol type="a" id="32c21b72-aed6-4743-aa51-ad090d4cc1b0" class="numbered-list" start="2"><li>가격<ul id="a49be942-387d-441c-9c3f-7a94d9f77cb6" class="bulleted-list"><li style="list-style-type:disc"></li></ul></li></ol></li></ol><ol type="1" id="eb4f85a0-ceec-4d5f-938a-12de567864a2" class="numbered-list" start="3"><li></li></ol><p id="60bd3777-eb8a-4323-a276-ad5fe46d069f" class="">
+</p><h3 id="c2af883d-67df-43ee-9726-33a5b670fbab" class="">“관련 전공을 졸업한다” 같은 뻔한 방법 말고 비전공자가 하려면?</h3><ol type="1" id="3e239441-67e0-4b30-a8f8-fbf0e4295ddc" class="numbered-list" start="1"><li>디자인 작업물 수집으로 감각 키우기<p id="17fbad8a-fd1a-4a44-aef9-2a117091c2be" class="">초보자들이 가장 접근하기 쉬운 곳은 <code><a href="https://www.pinterest.co.kr/">핀터레스트</a></code>. 핀터레스트에서 콘텐츠 디자인, BX 디자인, 편집 디자인 등 본인이 관심 있는 분야의 디자인을 검색해 매일 10분만이라도 꾸준히 들여다보면 도움이 된다.</p></li></ol><ol type="1" id="69658b28-6790-4461-b53b-ec3d676a51ac" class="numbered-list" start="2"><li>책 혹은 강의로 기본 다지기<p id="6ec0d738-0c01-4f68-9702-4c43b7eef808" class="">그래픽 디자인의 기초를 다지기 좋은 기본서들:</p><p id="dde846e3-d215-4780-beb8-f939e06e86cf" class="">새로운 편집 디자인(임헌우) / 이것이 편집 디자인이다(김덕희) / 좋아 보이는 것들의 비밀 시리즈 / 디자인을 완성하는 레이아웃과 그리드(홍영일) / 얀치홀트 저서들 / 좋은 디자인을 만드는 서체 33가지 이야기(김현미) / 섞어짜기(마켓히읗에서 판매 중) / 글짜씨 시리즈</p><p id="88114c11-9b46-45d5-9685-bd45b003e1cd" class="">여기에 내가 구상한 것을 표현할 수 있도록 포토샵, 일러스트, 인디자인 등 디자인 툴을 다루는 능력을 익혀야</p></li></ol><ol type="1" id="866c51cc-83f1-41a0-a1eb-0a3650522cac" class="numbered-list" start="3"><li>모방으로 스킬 업그레이드하기<p id="ca355f3f-ab4b-4980-a704-c1ecff38c533" class="">레이아웃과 그리드는 디자인 작업을 하기 위한 가이드 라인으로 디자인에서 빠질 수 없는 부분입니다. 잘 되었다고 생각하는 디자인 작업물 위에 파워포인트나 포토샵으로 격자를 그려 각각의 요소가 어떤 크기로 어디에 배치되어 있는지, 또 여백 공간은 어느 정도인지 분석하고 따라해 보세요.</p><p id="2343dd51-b939-4800-bc1c-3063a8d58ab1" class="">색 조합도 중요합니다. 여러분이 수집한 디자인은 어떤 색의 조합으로 이루어져 있는지 분석해보고, 내 디자인에도 적용해 보세요. 그래도 어떤 색을 써야 할지 감이 오지 않는다면, <code><a href="https://colorhunt.co/">Color Hunt</a></code> 사이트에 등록된 예시를 보며 아이디어를 얻는 방법도 있습니다.</p></li></ol><p id="7104e08c-ddf0-443a-9d6d-acb961a2f5ee" class="">
+</p><h3 id="ce9147a6-5c23-480a-b292-5574d38217b8" class="">업무 프로세스</h3><ul id="ebb28ffa-6b8a-4ec8-8cd8-8d7bd319f083" class="bulleted-list"><li style="list-style-type:disc"><a href="https://brunch.co.kr/@anotherbranding/51">(광고) 디자이너의 업무 프로세스</a><p id="b35e9d59-05b5-4baf-9a16-74d151276ee9" class=""><code>컨택</code> &gt; <code>컨셉 설정 제안</code> &gt; <code>컨셉 설정</code> &gt; <code>디자인 시안 제작</code> &gt; <code>광고주 디렉터 컨펌</code> &gt; <code>수정</code> &gt; <code>제작</code></p><ol type="1" id="5ca740bc-3a22-4b73-b8f6-32b64cb584bf" class="numbered-list" start="1"><li>컨셉 설정 제안<p id="59b7d11b-c8c9-4dc6-b4f2-9fb21a127c75" class="">광고주와 디렉터, 디자이너가 모두 참가하여 컨셉에 대한 설계를 함께 협의하는 단계.이 초기 단계에서는 컨셉 확정단계가 아니며, 어떤 방향으로 나가야 할지 서로 이해관계의 합의점을 찾는다</p></li></ol><ol type="1" id="804de735-0b32-4a14-9b54-cf3414ca412a" class="numbered-list" start="2"><li>컨셉 설정<p id="d65f27e9-c667-4806-aec3-5cacde2b12b2" class="">1단계에서 도출한 컨셉을 구체적인 제안서로 제안하는 단계. 디자인에 대한 구체적인 분위기와, 여러 가지 시각적 효과들에 대한 컨셉을 구체적으로 정리하여 광고주에게 제시한다. </p></li></ol><ol type="1" id="b036a6b8-215f-4340-8620-3379085334e6" class="numbered-list" start="3"><li>디자인 시안 제작<p id="3f459bdd-55c8-4f42-adfc-fe14ba806636" class="">광고주는 컨셉안을 받아보고 디자인으로 보고 싶은 컨셉을 디자이너에게 전달한다. 디자이너는 광고주가 말한 컨셉으로 디자인 시안을 여러 개 제작한다. </p></li></ol><ol type="1" id="c549e739-c800-4376-ab1b-371fb3afa1ed" class="numbered-list" start="4"><li>광고주 디렉터 컨펌<p id="5b8181e7-c7cb-483d-9c90-939271fc15e8" class="">시안을 받아본 광고주가 앞으로 더 디밸롭 시켜야 하는 시안을 채택하는 단계. 컨셉을 정해주지 않거나 마음에 들지 않으면 디자인 시안을 추가하여 진행한다. 마음에 드는 시안을 채택하면 이제 이 시안으로 디테일적인 요소를 더 디밸롭 시켜서 다시 제안한다. </p></li></ol><ol type="1" id="cdd14fb7-1110-4f68-8baf-4472c43dac4f" class="numbered-list" start="5"><li><span style="border-bottom:0.05em solid">수정</span><p id="e101e7ec-0be6-4e23-9de5-88e0fac9e828" class=""><span style="border-bottom:0.05em solid">전체의 맥락 아래에서만 수정이 되어야 한다. 만약에 이 단계에서 광고주의 마음이 달라져 최초의 기획과 달리 요청하거나, 컨셉이 달라지는 요청을 하면 또 다른 시안을 제작해야 하기 때문에 작업시간이 더욱 딜레이가 되며 서로 감정적으로도 힘들어지게 된다. </span></p></li></ol><ol type="1" id="65acca2b-452f-45a3-a5f2-c92907d319f9" class="numbered-list" start="6"><li>제작<p id="687cb957-f695-4477-9ddb-17ee5edeb295" class="">디테일 수정이 완료가 되면, 오탈자 및 최종 확인 후 최종 아웃풋 작업을 진행하여 마무리한다</p></li></ol></li></ul><p id="05588c94-bfff-4c50-8083-a745bb1cb167" class="">
+</p><ul id="8f4ca598-f2cc-4303-ac21-18d4ed6b4a1a" class="bulleted-list"><li style="list-style-type:disc"><a href="https://ji-ya.tistory.com/1">편집 디자인 실무 프로세스</a><ol type="1" id="e7c0d9dd-8803-4cfb-a541-d9c18fd5ed7f" class="numbered-list" start="1"><li>기획<p id="bade7453-f2eb-4aa6-a4c6-21c0a4808f75" class="">목적이 무엇인지, 독자층 고객층은 누구인지, 디자인 방향과 컨셉은 무엇인지, 예산과 수량, 유통은 어떻게 할 것인지에 대해 기획자, 디자이너 등 프로젝트에 관련된 모든 이가 참여해 논의한다. 만약 의뢰자가 비전문가일 경우 ‘시각적 참고 자료’가 필요할 수도 있으니 자료를 준비하는 것도 좋고, 미심쩍거나 애매한 부분이 있다면 그 자리에서 확실히 짚고 넘어가는 것이 좋다.</p></li></ol><ol type="1" id="75a72a4f-9cb3-496c-8d67-f8aa0ed47a36" class="numbered-list" start="2"><li>원고 작성</li></ol><ol type="1" id="68aa2a11-759f-46ea-bdd3-4ff6f8f40705" class="numbered-list" start="3"><li>디자인<p id="65c1aada-aa3b-4565-ad37-be567143f062" class="">충분한 회의를 거친 후 알맞은 이미지와 일러스트를 사용해 레이아웃을 구성하는 단계이다. <span style="border-bottom:0.05em solid">일부의 사람들은 자신의 제안이 시각적 완성도가 얼마나 떨어지는지 모르며 직접 보지 않고는 납득하지 않는다. 완성도가 떨어지는 디자인을 보고도 고집을 꺾지 않는다면 그들과 디자이너가 중요하게 여기는 부분이 달라 생기는 것일 가능성이 높기에 소통으로 문제를 해결해야 한다.</span></p></li></ol><ol type="1" id="745bd237-1c1f-4650-8212-fa13dea12cd3" class="numbered-list" start="4"><li>교정<p id="b1c2c00b-1527-4f6e-85b6-04f5329108dc" class="">저자, 기획자, 편집자가 오탈자나 잘못 들어간 이미지 같은 잘못된 부분을 체크하는 원고 교정을 먼저 진행한다. 디자이너는 교정 내용을 수정하고 수정과정에서 레이아웃이나 디자인이 틀어질 수 있기 때문에 틀어진 디자인도 수정해야 한다. </p><p id="8ea57329-2231-4997-8fc0-c88563873207" class="">원고 교정이 끝나면 인쇄 교정으로 넘어가는데 상황에 따라 생략하는 경우도 있으나 완성도 높은 인쇄물을 원한다면 진행하는 것이 좋다. 인쇄 교정을 통해 인쇄물의 색감과 질감을 예상할 수 있고, 생각했던 색감과 인쇄 교정지의 색감이 다르다면 데이터 파일을 수정할 수 있다.</p></li></ol><ol type="1" id="9f3f028d-9abf-4711-8d9d-f243673fe1d9" class="numbered-list" start="5"><li>인쇄 및 제작<p id="fd844ad6-3816-4e88-9e39-92ec9b324119" class="">빠른 속도로 진행돼 한번에 몇 백 장씩 나오기 때문에 수정 작업이 굉장히 어렵다. 잘못된 부분이 있을 경우 반드시 수정을 해야 하지만 이 단계부터는 금전적인 손실이 발생하므로 이 단계에선 수정을 신중하게 결정해야 한다.</p></li></ol><ol type="1" id="17bcf82d-aafc-4491-9053-f5cc90ea6a59" class="numbered-list" start="6"><li>유통 및 판매<p id="712567e9-b4ca-4b3c-ba89-933924a5c37d" class="">의뢰자가 승인한 디자인일지라도 유통된 후 인쇄 및 후가공을 거친 최종 결과물로서 또 다른 피드백을 받기도 한다. 실수가 있더라도 자신의 입장을 논리적으로 설명해야 하지만 핑계를 대는 것은 좋지 않다. 실수를 빠르게 인정하고 같은 실수를 반복하지 않도록 주의해야 한다.</p><p id="2128d636-6e68-4bb3-ada0-bd2792bac80f" class="">
+</p></li></ol></li></ul><ul id="8c4d0468-51f1-4f43-b6fd-ce63688b8063" class="bulleted-list"><li style="list-style-type:disc">(프리렌서) <a href="https://m.blog.naver.com/xeros007/222073601574">게임원화가의 실무 프로세스 </a><p id="7595bcc7-5bc0-42f7-bb78-5ebfda31a796" class="">기획 문서 확인 &gt; <span style="border-bottom:0.05em solid">러프 스케치 &gt; 컨펌 및 피드백 &gt; 스케치 정리 &gt; 컬러 바레이션 &gt; 컨펌 및 피드백</span> &gt; 완성</p></li></ul><p id="bc709731-5f95-440c-a551-10639b5ceb65" class="">
+</p><ul id="9de09766-0ce9-4268-b90b-7bcc7c99f6f8" class="bulleted-list"><li style="list-style-type:disc">BX 디자이너의 홈페이지 디자인 프로세스<p id="262c7081-4ce4-48f6-b244-2db80ff185bb" class=""><code>서칭</code> &gt; <code>무드보드</code> (이런톤, 이런이미지, 이런 느낌) &gt; <code>관계들과 협의, PT</code> &gt; <code>로고, 서체, 이미지 레퍼런스 서치</code> &gt; <code>순차적 시각화</code></p><p id="a69064be-2458-4c48-b45c-71a085f20b26" class="">레퍼런스 서치 : 구글링, 비핸스(실제 디자이너들의 실제작업물, 보기 좋게 되어있다.  포트폴리오 플랫폼, 세계적인 깔), 핀터레스트, 노트폴리오 (notefolio = 비핸스 한국 버전)</p><p id="4ffebca6-cb1c-4bde-8da3-95f65b4e52f2" class="">무료이미지 사이트 : Unsplash<div class="indented"><p id="25efa26e-9e4f-418b-b7ff-91c0f5a990b0" class="">무료라 이미지가 많지는 않다. 3d랜더링 소스가 있다.</p><p id="7070a119-6f0a-4be6-9923-11d19184c92e" class="">장점 : 유료이미지도 있다. 맘에 들먼 구매가능, 아이스탁, 어도비스탁 연동</p><p id="18338b30-1f07-4418-bb47-729707a7b5df" class="">
+</p></div></p></li></ul><h1 id="3aa6956b-ed9f-43c4-9000-89ec78e99f65" class="">인테리어 디자이너</h1><p id="08992e5d-12e3-457f-9289-5c39d54429af" class="">공간의 구조적인 것을 파악하여 전체적인 틀을 잡고 배치 및 어떤 재질로 시공할지 디자인</p><ul id="1cd0c616-c211-4e09-b6e7-f01010af8b7f" class="bulleted-list"><li style="list-style-type:disc">관련 업계: 인테리어</li></ul><p id="45729795-9320-400d-993d-6e1be274c94f" class="">
+</p><h3 id="d3da13ae-b0f5-4dfa-87c5-55898c9a06f7" class="">자주 사용하는 프로그램</h3><div id="54ea9c2d-d692-43a7-9548-3b21dc29a179" class="column-list"><div id="0fafb43a-28a8-4f57-b200-7b954bcfe95e" style="width:81.25%" class="column"><p id="93833943-3a90-4fcf-bc0d-b5812004517e" class=""><code>CAD</code> 수작업으로 진행되는 제도를 자동화된 프로세스로 대체하는 프로그램</p><p id="a01ad68d-8783-4117-aff1-2d2cb6a3a22f" class=""><code>Autodesk 3ds Max</code> 3차원 컴퓨터 그래픽스를 위한 디자인 소프트웨어</p><p id="09134d19-985a-4968-a5d6-9d678dc49160" class=""><code>SketchUp</code> 트림블사의 3D 모델링 프로그램. 3ds Max보다 많이 사용되는 추세</p><p id="b07f198b-f4ee-4a83-b881-ade8140fc5d3" class=""><code>어도비 일러스트, 포토샵</code> 등을 보정 정도의 용도로 사용</p><p id="3743c26d-0d01-48b0-af8a-ae88562f7a63" class="">
+</p></div><div id="1dbfaf93-c6e9-4d6f-953e-36584c29feec" style="width:18.75%" class="column"><figure id="5fc97c53-d97e-498e-929e-98330f730ae8" class="image"><a href="%E1%84%83%E1%85%B5%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5%20%E1%84%87%E1%85%A2%E1%84%80%E1%85%A7%E1%86%BC%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20ac90efddba0e48d988696f63ae8e4cce/Untitled.png"><img style="width:220px" src="%E1%84%83%E1%85%B5%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5%20%E1%84%87%E1%85%A2%E1%84%80%E1%85%A7%E1%86%BC%E1%84%8C%E1%85%A9%E1%84%89%E1%85%A1%20ac90efddba0e48d988696f63ae8e4cce/Untitled.png"/></a><figcaption>3ds max로 만든 사과</figcaption></figure></div></div><h3 id="994b4a3a-bdba-4409-aed8-6101c8e9da5e" class="">“관련 전공을 졸업한다” 같은 뻔한 방법 말고 비전공자가 하려면?</h3><ol type="1" id="195bf47c-eace-4163-ace6-2c85f15039a1" class="numbered-list" start="1"><li>실무 역량을 갖추기<p id="5d10f308-6ed9-49aa-9707-80427ccddf2d" class="">도면, 모델링 프로그램의 사용은 최소한의 역량</p><p id="83a69d0e-fcf3-48f1-8f17-4a8fb4042a4c" class="">여기에 <code>수작업 스케치 / 드로잉</code> 기술과 <code>수정 프로그램</code>의 실무역량이 있는 걸 추천</p><p id="eaef95dd-95de-4ffe-817e-34849f258c77" class="">특히 수작업 스케치는 클라이언트와 소통할 때의 기본 소양으로 작용</p></li></ol><ol type="1" id="fc9f0dc3-31b9-4efd-88d8-b1e4b162b709" class="numbered-list" start="2"><li>자격증<p id="156abd83-ae25-43c7-97f0-ca674207d538" class="">필수는 아니고 선택. 다만 자격증이 유무에 따라 시작 연봉에 큰 차이가 생김</p><p id="c8410b25-a415-4e1d-9672-102afb444aaa" class="">주로 준비하는 자격증은 도면 관련 자격증, <code>실내건축기사/전산응용건축제도기능사</code></p><p id="debaffcf-ff8a-4f9f-8e8f-216c1e4e5360" class="">이 중 실내건축기사는 꼭 준비해야 한다고 함</p></li></ol><ol type="1" id="20810570-e9a1-424c-806a-4f4934852e83" class="numbered-list" start="3"><li>포트폴리오<p id="65ee2a7a-111a-40c9-a914-530b3968f343" class="">포트폴리오가 경쟁력을 좌우함 </p><p id="55048ad4-6706-494c-a0ce-8f4e9ff8f9f5" class="">포트폴리오 퀄리티만 높으면 비전공자도 취업하는 데에 큰 문제는 없을 정도</p><p id="703644c0-8820-46ab-ae50-4f8d0adf0d11" class="">
+</p></li></ol></div></article></body></html>

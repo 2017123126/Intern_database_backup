@@ -1,0 +1,691 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>20230330 크레노 작가님의 이야기</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="65f41e20-f7c6-494f-b0d0-49a941cf648f" class="page sans"><header><h1 class="page-title">20230330 크레노 작가님의 이야기</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-brown">인터뷰/외부미팅</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td><a href="https://docs.google.com/spreadsheets/d/1RLFImhCIKGXbOD41IMIdZxXrhgXxP6mZbZHOkKuFEYc/edit#gid=0" class="url-value">https://docs.google.com/spreadsheets/d/1RLFImhCIKGXbOD41IMIdZxXrhgXxP6mZbZHOkKuFEYc/edit#gid=0</a></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><figure id="45a17b0a-8c85-4abe-8564-81fc6857a538" class="image"><a href="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f/%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25A6%25E1%2584%2582%25E1%2585%25A9_%25E1%2584%258B%25E1%2585%25A8%25E1%2584%2589%25E1%2585%25B5.jpg"><img style="width:1716px" src="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f/%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25A6%25E1%2584%2582%25E1%2585%25A9_%25E1%2584%258B%25E1%2585%25A8%25E1%2584%2589%25E1%2585%25B5.jpg"/></a></figure><h1 id="c67aa50c-c1a3-49ec-8a12-5459f438042d" class="">Summary</h1><h3 id="a6ff0007-9941-4f1b-86d3-516675b5858e" class="">크레노 님의 업무 프로세스</h3><ol type="1" id="5ed96e41-83bf-40ae-9d06-d03575a10bf4" class="numbered-list" start="1"><li>1차 시안 (= 스케치 단계에 포함)<ol type="a" id="4971c801-08fa-4a80-bc66-9334c6204bf5" class="numbered-list" start="1"><li>포즈 및 구도</li></ol><ol type="a" id="255f5c0c-7f77-455e-93b5-bd38224741d9" class="numbered-list" start="2"><li>의상</li></ol><ol type="a" id="240f3a2b-242d-47a8-a051-b1cad1749d74" class="numbered-list" start="3"><li>기타 오브제</li></ol></li></ol><ol type="1" id="5b30c051-fe30-4b42-b5dd-fdf67feb2ed2" class="numbered-list" start="2"><li>2차 시안 (= 스케치 단계에 포함)<p id="7d49f6c2-85a9-4a5f-9d61-a09ad60444e7" class="">(1차 시안과 동일)</p></li></ol><ol type="1" id="63a961b9-5776-452b-8b19-67a1d0eebe9a" class="numbered-list" start="3"><li>완성본 작업<ol type="a" id="1fd01336-99e0-42f1-b13f-38a50d4c7d44" class="numbered-list" start="1"><li>구체화 (= 여기까지 스케치 단계에 포함)</li></ol><ol type="a" id="8c0bf706-a9b7-41bb-8bd9-23d88f291ab4" class="numbered-list" start="2"><li>선화 (= 펜터치 단계)</li></ol><ol type="a" id="0a7245d4-51f3-4d15-a39f-a09d74d9c586" class="numbered-list" start="3"><li>마스킹 및 밑색 (= 펜터치 단계 마지막과 채색 단계)</li></ol><ol type="a" id="be787322-6255-4e10-be0d-794291f80cd1" class="numbered-list" start="4"><li>빛 설계 (라이언로켓 워크플로우에 포함되지 않으나 광원조절 기능으로 해결이 용이할 것으로 기대되는 단계)</li></ol><ol type="a" id="0c70d96a-7909-4f7d-94e8-72376c665484" class="numbered-list" start="5"><li>질감처리 (라이언로켓 워크플로우에 포함되지 않음)</li></ol><ol type="a" id="33818478-a238-4c5b-95e7-be70057375a4" class="numbered-list" start="6"><li>주제/부주제 설정 (라이언로켓 워크플로우에 포함되지 않음)<ol type="i" id="336e5ebf-6775-46bf-884b-f0f6dc1b3f66" class="numbered-list" start="1"><li>원근 처리</li></ol><ol type="i" id="c47c0563-9516-4adf-9bbb-dd1897f45247" class="numbered-list" start="2"><li>디테일 처리</li></ol></li></ol></li></ol><p id="ee08cb88-98c9-48a3-b172-36b83f723977" class="">
+</p><h3 id="ad05c839-a6b6-4985-aee8-99a696687748" class="">세부 기능에 따른 크레노 님의 니즈 및 반응</h3><p id="42aeb3b7-85cc-434e-9da4-5a255bf8629b" class="">크레노 님을 포함하여, 기본적으로 AI에 대한 대부분 작가들의 <strong>반응은 부정적</strong>이다. 다만 AI가 이미 코앞에 다가왔기 때문에 기술의 흐름에 뒤쳐지지 않기 위해 AI를 받아들이는 것 뿐이다. 복수의 인물이 등장하는 이미지는 직업 특성 상 크게 필요하지 않은 기능이다. 화풍생성(개별 작가에 대한 화풍 모방)은 작가의 아이덴티티를 훔치는 것으로 간주할 정도로 부정적인 반응이다. 다만 아웃페인팅을 통한 일러스트 배경 생성, 의상 및 악세사리 생성, 그리고 레이어 분리를 통한 선화 및 밑색 단계 해결은 긍정적 반응을 보였다. </p><p id="e3c802d3-8e91-4529-8b33-4fd8737bcba7" class="">
+</p><hr id="78420858-da19-4e78-a333-c71c979854da"/><h1 id="c44986a5-5127-491d-8d26-51ea8bf82ef4" class="">interview</h1><p id="29daf7e1-68d4-4a6d-8ef8-f53c76bb7540" class=""><mark class="highlight-yellow_background">**모든 주장과 정보는 인터뷰 당사자로부터 나온 것임을 밝힙니다**</mark></p><p id="49a56914-6f07-4b1d-a34d-4457211cfed0" class="">
+</p><h3 id="5d674348-bf69-49bf-a563-ac54a414e638" class=""><strong>나이, 성별</strong></h3><p id="b72ee3fb-1a6f-4397-b5d4-387db99505bc" class="">35세 (89년 생), 남자</p><p id="0055bc87-ba48-46dd-b798-a2751e166a49" class="">
+</p><h3 id="1d507969-bfa0-4eac-b0d4-67fb32cdb5e4" class=""><strong>크레노 님의 일상</strong></h3><p id="8836c19a-93c5-4b79-b46e-db8533e10419" class="">서울 오류동에 거주하는 크레노 님은 하루에 5시간씩은 그림을 그리며 시간을 보낸다. 오늘도 몇 개 끄적거리다가 왔다. 어릴 적부터 게임을 좋아했다. 걸음마보다 게임을 먼저 시작했다고 하실정도로 게임에 대한 애착을 거리낌없이 보여주셨다. 중고등학교 내내 게임 하다가 게임을 업으로 삼고 싶다는 생각이 들어서 게임 일러스트레이터의 길을 걷기 시작하셨다고.</p><p id="061fec87-f70d-40ae-b076-85ffaaf5c8df" class="">원래는 게임 회사에 소속되어 캐릭터 일러스트를 그렸다. 회사에서 정해진 역할대로만 그림을 그리다가 코로나가 터지면서 회사를 나오게 되셨다고 한다. 지금은 프리랜서로 개인, 소규모 게임 개발 프로젝트 등으로부터 작업을 받는 중이다. 최근에는 League of Legends Champions Korea에서 이모티콘 작업을 받았다. 현재는 프리랜서로 소규모 작업물들을 수주하면서 포트폴리오를 쌓으며 다시 입사할 준비를 하고 있다.</p><p id="f19e9a6b-4781-4d6e-b8e7-a9778fece201" class="">
+</p><h3 id="e90bcfd6-8247-4a53-b7a4-b90b0a787a75" class=""><strong>크레노 님의 업무 프로세스</strong></h3><p id="609f1b2f-e1d6-4416-884c-d1e89170ce0e" class="">업무 프로세스는 크게 <strong>기획서 수령 → 1차 시안 3개 → 2차 시안 3개 → 세부적 묘사 및 완성본 제작</strong>으로 이루어진다. 기획서 수령 이후 러프한 스케치와 채색으로 이뤄진 시안을 세 개 보여주고 의뢰인으로부터 그 중 하나를 선정한다. 선정된 1차 시안을 가지고 바리레이션(변주, variation)을 주어 2차 시안을 3개 만든다. 그 중 최종 선정된 러프 시안으로 완성본을 만들게 된다. </p><p id="503baffd-f102-4cb1-aaa6-7c8ba9c6cc57" class="">
+</p><p id="7698dffa-44b6-4724-964a-08635f780720" class=""><strong>시안 제작</strong></p><p id="81df0202-c913-43bb-8155-e7a0c84f2b93" class="">첫 단계로 캐릭터의 설정을 담은 기획서를 토대로 시안을 몇 개 그려서 컨펌을 받는다. 기획서는 보통 텍스트로 이뤄져 있으며 종종 참고할 이미지를 첨부해 보내주기도 한다. 시안은 완성 시 그 결과물이 어떻게 나올지 대강 알아볼 수 있도록 그리는 러프한 이미지이다. 아래의 예시 이미지의 경우 채색이 안 되어 있지만 많은 경우 시안 단계에서 색을 정하면서 대강 색을 ‘부어서’ 느낌을 잡는다. 보통 하나의 레이어에 스케치를 그리고 채색을 하기 때문에 선도 정리가 안되어 있고 색깔도 삐죽삐죽 튀어나와 있다. </p><div id="e77c88fc-c3f0-41cc-b0f9-2021a8887403" class="column-list"><div id="0f65debe-eedb-4974-90fc-a847bdda6aba" style="width:37.5%" class="column"><figure id="2e4cf537-ba33-4289-be22-744a52ee57ac" class="image"><a href="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f/%25E1%2584%258C%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%258D%25E1%2585%25A1%25E1%2584%2585%25E1%2585%25A5%25E1%2584%2591%25E1%2585%25B3%25E1%2584%2592%25E1%2585%25A1%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25B5%25E1%2584%258B%25E1%2585%25A1%25E1%2586%25AB.jpg"><img style="width:1520px" src="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f/%25E1%2584%258C%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%258D%25E1%2585%25A1%25E1%2584%2585%25E1%2585%25A5%25E1%2584%2591%25E1%2585%25B3%25E1%2584%2592%25E1%2585%25A1%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25B5%25E1%2584%258B%25E1%2585%25A1%25E1%2586%25AB.jpg"/></a><figcaption>크레노 님이 인터뷰 당시 즉석에서 매우 빠르게 그려낸 시안 초기 과정</figcaption></figure></div><div id="06cd6ef8-cb0c-4220-8735-cad49972e4dd" style="width:62.5%" class="column"><figure id="763fa72a-2c58-4a0e-80b2-2c1cf7b59861" class="image"><a href="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f/Screenshot_2023-04-03_at_1.30.48_PM.png"><img style="width:1260px" src="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f/Screenshot_2023-04-03_at_1.30.48_PM.png"/></a><figcaption>완성된 1차 시안 4종(좌) 중 선정된 1차 시안(우)</figcaption></figure></div></div><p id="5a1e72ce-7e03-4d52-9b0b-939271dc1a0f" class="">시안 단계의 경우 위의 왼쪽 이미지처럼 마치 크로키를 그리듯이 포즈를 전체적으로 잡는 것으로부터 시작한다. 우선적으로 인체의 형태(몸매, 머리카락)와 구도를 반영해 대강 그린 후 그 위에 갑옷과 같은 의상을 그 위에 그린다. 그 후 칼이나 방패 같은 기타 오브제를 그리고 대강 채색을 한다. 이렇게 시안을 3개 그리면 보통 반나절에서 하루 안에 시안 단계가 완성된다.</p><figure id="d2c1eb4f-c6f0-4b60-939e-65d3fcc18efd" class="image"><a href="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f/Screenshot_2023-04-03_at_1.34.49_PM.png"><img style="width:480px" src="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f/Screenshot_2023-04-03_at_1.34.49_PM.png"/></a><figcaption>1차 시안을 바탕으로 동세를 보강한 2차 시안</figcaption></figure><p id="71a44e06-4ab9-451d-8985-c77608f0de4a" class="">
+</p><p id="36eff5a9-51c6-4d5c-be8b-4c82b750d55a" class="">2차 시안의 경우 1차 시안에서 선정된 시안을 바탕으로 제작한다. 이 때 얼굴이 삐뚤어져 있는 등 디테일을 조금씩 수정하기도 한다. 때에 따라서 수정 이외에도 명암과 같은 일부 디테일을 그려넣기도 한다. 위의 예시의 경우 캐릭터의 움직임과 포즈를 보강하여 다듬었다. 일반적으로 동세 표현(움직임 표현과 포즈 잡기)은 캐릭터 디자인과 동시에 이뤄지지 않으므로 2차 시안 과정에서 다듬게 된다. 2차 시안에서 최종 선정된 시안을 바탕으로 본 작업에 들어가는데, 이렇게 선정된 시안은 이후에 변경이 불가능하며 시안을 벗어나는 변경 사항을 요구하지 않겠다는 의뢰인과 작가 사이의 일종의 합의 사항으로 작용한다.</p><p id="3dd39f42-619c-41c9-aa36-25adfdc34214" class="">시안 단계에서 특히 한국 일러스트 업계의 문제점인데, 많은 경우 한국의 게임 캐릭터 일러스트는 뻔한 패턴이 존재한다. 캐릭터 팔, 다리, 몸통 등 파트 별로 비슷하게 생겨서 다른 어디에선가 이미 존재하는 경우도 있다고 한다. 실제로 다른 게임들의 일러스트를 서로 놓고 비교하면 서로 같은 게임에 속하는지 아닌지 구분이 어려울 정도이다. 때문에 크레노 님은 이미 한국의 게임 캐릭터들의 모습이 정형화되어 있기 때문에 <strong>시안을 생성하는 것은 AI가 충분히 대체</strong>할 수 있을 것이라고 생각한다.</p><p id="caa351df-f3f8-4daa-aacc-4e5222e8275c" class="">
+</p><p id="bfcd7709-665f-4a85-b957-67052430a0aa" class=""><strong>크세노 님의 업무 프로세스 (완성본 제작)</strong></p><p id="fdcbaf35-3631-4db9-b454-0868bcaf24db" class="">이렇게 합의된 시안을 가지고 완성본을 만들어가는 작업이 이어진다. 이 단계는 <strong>구체화 → 선화 → 밑색 → 빛 설계 → 질감 처리 → 주제/부주제 설정</strong>으로 이어진다. 이렇게 완성본을 만들어가는 과정은 보통 1~2주가 걸리며 완성된 결과물은 기존의 시안과 다르게 많은 레이어로 구성되어 있다. </p><p id="0e6ca63a-8d07-4dc0-894d-ca61bd9c2473" class="">첫 번째로 구체화 단계는 선화를 하기에 앞서 캐릭터, 의상 및 오브제의 디테일을 잡는 과정으로 2~3일 정도 걸린다. 기존에 신경쓰지 않았던 갑옷의 부품, 허리띠 등과 같은 디테일을 전체 맥락에 맞게 구체적으로 만들어낸다. </p><div id="9d16de24-8ed0-453b-8514-eb98988e0b30" class="column-list"><div id="07c318d9-27da-453e-b616-ec8d30413730" style="width:50%" class="column"><figure id="216ffd5c-50e8-49f3-8b23-e0415ca3d969" class="image"><a href="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f/Untitled.png"><img style="width:528px" src="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f/Untitled.png"/></a><figcaption>선화를 마친 결과물</figcaption></figure></div><div id="3f9d83fe-e737-4b45-8b67-a95b85cf923a" style="width:50%" class="column"><figure id="c200ebde-61d8-423e-8245-e11ac23bef5e" class="image"><a href="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f/Untitled%201.png"><img style="width:528px" src="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f/Untitled%201.png"/></a><figcaption>밑색을 마친 결과물</figcaption></figure></div></div><p id="4c5f669f-1ce0-48a5-835d-376cd42c27bd" class="">두 번째로 선화 단계는 밑그림을 그리는 단계로 기존에 대강 스케치의 형태로 그려졌던 자질구레한 라인을 정리하고 다듬는다. 이 과정은 이후 밑색의 마스킹을 위해 채색의 구획을 나누는 단계로 보통 반나절에서 하루의 시간이 걸린다. 단순하고 반복적인 작업이 많은 단계로 AI 대체의 니즈가  존재했다. 다만 선화의 경우 AI가 살려야 할 선과 지워야 할 선을 스스로 판단할 수 있을지에 대한 의구심이 있었다.</p><p id="ade71c78-c088-4147-94ad-d79e46577996" class="">세 번째로 밑색 단계는 본격적인 채색이 시작되는 단계로 보통 반나절에서 하루의 시간이 걸린다. 디테일한 명암, 음영, 빛 처리를 하기 전에 바탕이 되는 색깔(=고유색)을 우선 채워넣는 작업이다. 색깔을 채워넣기 전에 선화 단계에서 완성한 구획 안에서 색깔이 벗어나지 않도록 마스킹이라는 작업을 한다. 마스킹 작업이 완료되면 브러쉬가 테두리를 벗어나지 않기 때문에 채색을 깔끔하게 마무리할 수 있다. 단순하고 반복적인 작업이 많은 단계로 AI 대체의 니즈가 존재했다. 3D 모델 생성의 바탕이 되는 게임 원화를 그리는 경우에는 보통 이 단계에서 완성이 된다. 그러나 실제 마케팅이나 게임 로딩 화면 등에 이용되는 일러스트를 그리는 경우에는 다음 단계들이 추가적으로 진행된다.</p><figure id="30f5bce8-0aa1-4338-acd2-863f03c7f897" class="image"><a href="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f/Untitled%202.png"><img style="width:528px" src="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f/Untitled%202.png"/></a><figcaption>완성된 결과물</figcaption></figure><p id="501dd6cd-c444-4638-84da-32b151c405cf" class="">네 번째로 빛 설계와 질감처리 단계이다. 밑색을 가지고 표면의 반짝이는 효과와 거칠거칠한 질감 등을 표현하기 위해 세밀하게 브러쉬를 칠하는 단계이다. 크레노 님은 AI가 가장 잘할 수 있는 단계로 빛 설계를 골랐다. 실제로 AI가 광원의 이동에 따른 빛 처리를 매우 잘해주기 때문에 실력이 다소 부족한 아마추어들은 실제로 AI 소프트웨어를 이용해 빛 설계 단계를 해결한다고 한다. 그러나 전문 작업자들은 AI를 통한 광원처리 결과물만으로는 부족하고 일부 디테일 처리를 추가해 완성도를 높힌다고 한다. </p><p id="eafec2ff-31d2-4652-a8dc-b81bdac728eb" class="">마지막 단계는 원근 처리와 주제/부주제 설정을 통한 시선 유도이다. 작품 안에 여러 개의 오브제가 앞뒤로 존재하는 경우 앞에 있는 물체의 디테일을 살려 원근감을 더한다. 또 작품을 바라보았을 때 중요한 부분의 디테일을 추가하여 덜 중요한 부분 대비 주목을 끌 수 있도록 사람의 시선을 유도한다. 실제로 캐릭터의 얼굴과 표정이 작품의 주제가 되는 일러스트의 경우 얼굴 근방의 디테일 표현은 사실적인 반면 팔, 다리, 및 기타 오브제에 해당하는 부분들은 세부적인 표현이 적은 것을 볼 수 있었다.</p><p id="512de117-c65a-44ef-9b12-399eaaac0711" class="">
+</p><h3 id="ae5f4b2d-6777-47b2-90ab-398207281140" class="">세부 기능에 따른 크레노 님의 니즈 및 반응</h3><p id="839c0c27-8240-46d6-bbc1-6bc7e3539d5b" class=""><strong>복수의 인물이 등장하는 이미지 생성</strong></p><p id="290db56e-5a9d-4130-8b1f-188e7d13f69d" class="">복수의 인물이 등장하는 일러스트를 그릴 때 필요한 시간과 노력은 인물의 숫자에 반드시 비례해서 늘어나지 않는다. <strong>두 인물이 등장하는 경우 두 인물 사이의 행동이 드러나도록 구성해야 하기 때문에 두 배 이상 걸린다. </strong>하지만 크레노 님은 복수의 인물이 등장하는 이미지에 대한 니즈가 적은 편이다. 게임 원화를 그리는 경우, 각각의 캐릭터 및 애셋의 3D 모델링 업무를 위한 밑바탕이 되어야 하기 때문에 복수의 인물이 등장하는 그림을 그릴 필요가 없다. 게임 일러스트의 경우는 경우에 따라 다르지만 두 명 이상의 인물이 등장하는 일러스트에 대한 수요는 크지 않다. </p><p id="fe13144d-cd48-463a-8881-c9714fbe854c" class="">
+</p><p id="2ff7d05d-4238-496a-a11a-f1eef5e3c956" class=""><strong>화풍 생성에 대한 부정적 인식</strong></p><p id="923d16d3-bbb1-401c-8e4d-dff285d2b5c4" class="">작가들은 그림체를 자신의 분신으로 여긴다. 특정 작가에게 그림을 요구하는 것은 곧 작가의 그림체대로 그려진 그림을 원하는 것으로 여겨진다. 때문에 갑자기 작가에게 다른 그림체로 그려달라고 요구하는 경우는 거의 없다. 만약 자신의 그림체와 똑같이 그림을 그려줄 수 있는 다른 존재가 있다면 그 그림체를 소유한 작가는 존재 의미가 없어지는 것과 마찬가지로 받아들인다. 더군다나 그게 자신의 허락없이 자신의 그림들을 학습시켜 만든 AI라면 그 반감은 더 크다. 크레노 님은 자기 자신은 물론이고 어느 작가든 자신의 그림체를 복사한 AI는 개발되지 않았으면 한다고 말했다.</p><p id="0ff5d0dd-185d-4b6d-b54d-94188994d52d" class="">
+</p><p id="6076d0cc-f7cf-469e-aaee-770f65456185" class=""><strong>아웃페인팅</strong></p><p id="77ce913d-711f-4ad7-9705-e29e1cdb274a" class="">크레노 님은 캐릭터 전문 일러스트레이터이다. 때문에 <strong>자신의 작품에 지금껏 배경을 그린 적은 없었다. </strong>하지만 배경을 그릴 수 있는 능력에 대한 니즈가 있는 상황이며 현재 배경을 그릴 수 있도록 학습을 하는 중이다. 만약 자신이 그리지 못하는 배경을 아웃페인팅을 통해 그릴 수 있다면 좋을 것 같다고 했다. 만약 이러한 프로그램이 있다면 자신이 Adobe Photoshop에 들이는 연간 12만원의 비용을 고려할 때 연간 5~10만원을 지불할 의사가 있다고 말했다.</p><p id="c31f301b-4bb1-4e75-ac87-0b0f0a3ed63c" class="">
+</p><p id="bdf2dc3e-ea01-4b64-a8d1-4e1b19076964" class=""><strong>의상 및 악세사리 생성</strong></p><p id="593d17e6-3766-4974-a76e-c060c4396657" class="">기존의 단계에서는 시안 단계에서부터 의상을 그려서 단계별로 구체적으로 묘사를 하기 때문에 의상을 따로 입히는 단계는 존재하지 않았다. 하지만 만약 의상의 경우 세부적인 디테일 처리가 까다로운 오브제가 많기 때문에 이를 생성해 따로 입힐 수 있다면 좋을 것 같다고 한다. 특히 의상 전체가 아닌 갑옷의 어깨 부분, 팔목 부분, 무릎 부분, 벨트의 버클 부분 처럼 부품을 따로따로 입힐 수 있으면 좋을 것 같다고 한다. 또 AI를 통해 기본 부품들을 신체의 형상에 맞게 변형해서 입힐 수 있는 기능에 대한 니즈도 있었다. 다만 의상 및 악세사리 형성의 경우 원본을 그린 작가들의 저작권에 대한 논란이 없도록 구현했으면 하는 바람을 드러냈다.</p><p id="9127fe32-4f29-4fcf-be0a-9130362aaeeb" class="">
+</p><p id="08eecb80-8c61-476d-99c0-f5dbecca4812" class=""><strong>레이어 분리</strong></p><p id="ac13d499-7a0e-456e-8e70-10df8ce57ee7" class="">기존 작업 과정에서 레이어 분리에 해당하는 프로세스는 선화와 밑색 단계 중 마스킹 단계에 해당한다. 보통 선화와 밑색을 인간이 수행하기 위해서는 하루를 꼬박 들여야 한다. 이 중 특히 마스킹 단계의 경우 아티스트의 창작 능력이라기보다는 단순 작업에 가깝기 때문에 이를 자동화하기 위한 니즈가 있는 편이다. 다만 선화의 경우 어떤 선을 살리고 없앨 것인지에 대한 판단을 AI가 하기 힘들 것이라고 판단하는 등 이 기능의 실현 가능성에 대한 기대 정도가 낮음을 드러내었다. 이렇게 낮은 기대감을 모두 반영한 지불 용의 가격은 영구 구매로 2만원이었다. </p><p id="ef47e504-5984-4f8b-a568-bffbbbe0a3e3" class="">
+</p><p id="d639cb09-742e-4f5c-91d8-cb6adaacaf62" class="">
+</p></div></article></body></html>

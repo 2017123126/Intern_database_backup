@@ -1,0 +1,676 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>게임 개발 프로세스 : 네이버 블로그</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="26e7485e-b491-4dea-ab3b-d0b50116851e" class="page sans"><header><h1 class="page-title">게임 개발 프로세스 : 네이버 블로그</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-gray">protected</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td><a href="https://m.blog.naver.com/elemable/20194531422" class="url-value">https://m.blog.naver.com/elemable/20194531422</a></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><p id="e48ca7e3-aa8d-458e-b54e-19f2e84ad891" class="">본격적인 개발 과정을 이해하는 것도 게임 디자이너의 의무이다. 개발 과정을 이해해야 디자이너 자신이 현재 프로젝트의 어떤 단계에 위치해있는지 알고 그에 적합한 업무를 수행할 수 있기 때문이다.</p><p id="f2bb979e-ddec-4fac-a0ff-3f44381add0c" class="">게임 개발 과정은 크게 <strong>&#x27;Pre-Production&#x27; - &#x27;Production&#x27; - &#x27;Post Production&#x27;</strong>으로 나뉜다. 각각의 단계별로 수행하는 업무가 다르며 전 단계에서의 업무가 제대로 되지 않는다면 다음 단계로의 업무또한 지장이 생기게 된다. 이러한 세가지 큰 이음고리를 잘 이어야 좋은 결과물이 완성된다.</p><p id="46dd4eae-0746-4969-b251-5c7fe470c19f" class=""><strong>Pre-Production : 사전 제작단계. 프로토 타입(Alpha)</strong></p><p id="a73b8f7a-6c26-4fe1-bdad-01f3bab0deb8" class=""><strong>Production : 제작단계(본격). 제작 마일스톤(Milestone), FGT(Focus Group Test), CBT(Close Beta Test)</strong></p><p id="b2283df3-b7b6-4567-8e1a-9c0977dfd960" class=""><strong>Post-Production : 제작이 완료된 단계. 런칭(OBT-Open Beta Test), 업데이트/버그수정, 라이브 서비스.</strong></p><ul id="853ed985-120a-4f32-bb1d-50a6df3949e3" class="bulleted-list"><li style="list-style-type:disc"><strong>마일스톤(Milestone) </strong>이란?</li></ul><p id="374c33d8-539f-403b-93ae-4bf4d29ffac2" class=""><strong>특정 콘텐츠 또는 단위의 제작하는 기간 혹은 단계</strong>를 뜻하며, <strong>단기적으로 만들 수 있는 요소</strong>에 한한다. <strong>허들(Hurdle)</strong>이라고 표현되기도 한다. 마일스톤을 제작한 후엔 반드시 테스트를 거치는 것이 좋다. (클로즈 베타테스트를 거듭하는 것이 이러한 마일스톤 테스트의 대표적인 예이다.)</p><p id="551f2518-a97f-4d6a-add7-7d54dc9eb723" class="">ex) 만약 게임에 &#x27;공성전&#x27;요소를 만들어 넣는다고 한다면, &#x27;공성전&#x27;은 하나의 마일스톤이 되며, 그 개발기간 또한 마일스톤으로 취급된다. 그리고 &#x27;공성전&#x27;개발이 완료되고 나서 &#x27;공성전&#x27;을 테스트하는 것을 마일스톤 테스트라고 하는 것이다. (주로 베타테스트를 통해 시험된다.)</p><ul id="7fe69f40-2ed3-4469-a965-81452e338f0f" class="bulleted-list"><li style="list-style-type:disc"><strong>프리 프로덕션(Pre Production)의 이해</strong></li></ul><ul id="268751e3-7ac1-4ef8-8215-8eae48bce81a" class="bulleted-list"><li style="list-style-type:disc"><strong>게임의 전체적인 방향과 키를 설정</strong></li></ul><p id="4359f2fe-7cd0-40b1-b7de-ef9a828b987c" class="">마치 배에 비유가 가능한데, 배가 방향성을 놓치면 표류하듯 게임 개발도 방향과 키를 제대로 잡지 설정하지 못하면 개발에 난항을 겪게된다.</p><ul id="390c55fd-b423-404e-a885-af49b14035e3" class="bulleted-list"><li style="list-style-type:disc"><strong>어떤 유저에게 어떤 경험을 줄 지 생각</strong></li></ul><p id="09e268e7-076e-448d-a5e6-d9c1fefacf42" class="">이는 제안서 제작단계에서도 중요한 요소로, 전달하고 픈 경험의 구체화를 잘 해내야 한다.</p><ul id="43f02d5c-824d-46e8-b7b6-b15f4de1b835" class="bulleted-list"><li style="list-style-type:disc"><strong>게임에 대한 정의를 계속해서 만들어낸다.</strong></li></ul><p id="264215df-7837-4ec6-8b65-2be6cbf4ffe3" class="">이는 포지셔닝(Positioning) 구호와도 맞물린다. 진행하면서 핵심을 계속 짚어줘야 한다.</p><ul id="0377e674-8dc4-4bda-83b9-cfa0d8999d53" class="bulleted-list"><li style="list-style-type:disc"><strong>트렌드(Trend) vs 매니아(Mania)</strong></li></ul><p id="6053b68c-3f4a-4e70-bfeb-c2eaef461648" class="">게임의 타겟층을 정하는 일이다. 컨텐츠의 내용에 따라 혼합되기도, 구분되기도 한다.</p><ul id="3a62ca54-d015-4183-af1b-e7e1f4db96d3" class="bulleted-list"><li style="list-style-type:disc"><strong>디렉팅(Directing)과 주도 개발자의 시간</strong></li></ul><p id="01aae5b5-b3da-4d55-bf71-922fa4a0d3bf" class="">리더격의 개발자들이 주로 이 부분을 이끈다고 할 수 있다. 신입이거나 경력이 짧은 기획자의 경우 아이디어 뱅커(Idea Banker - 갖가지 자료를 찾고 조사하는 일)을 주로 수행하게 된다.</p><ul id="c128dbeb-3933-4496-900f-0080c6416d77" class="bulleted-list"><li style="list-style-type:disc"><strong>어떤 형태로 서비스를 만들 것인가</strong></li></ul><p id="db8b673b-168e-4afb-a839-b2ef942baaac" class="">유료화/부분유료화/무료화 등 어떠한 수익모델을 만들 것인가를 결정한다.</p><ul id="06c6401e-8877-4ab0-9d1e-fef433b1e2ff" class="bulleted-list"><li style="list-style-type:disc"><strong>공급은 어떻게 할 것인가</strong></li></ul><p id="2b5d7862-30ad-4040-bd78-fbf0387d93b7" class="">자체적으로 서비스를 할 것인지 혹은 전문 퍼블리싱 업체와 계약할 것인지 결정한다. 한국의 경우 퍼블리싱 업체의 비중이 매우 높은편이며(넥슨,한게임 등) 보통 수익구조는 퍼블리싱 8/9 : 개발 2/1 정도로 나눠가진다.</p><ul id="36851e55-02ae-4df5-861f-deec8e70f716" class="bulleted-list"><li style="list-style-type:disc"><strong>오픈시기 조율</strong></li></ul><p id="4522c2c2-6ee5-4f92-8239-39a513b4ecbc" class="">게임의 오픈시기를 조절한다. 이때엔 여러가지 요건이 고려되는데, 계절에 따른 오픈시기, 특수일에 따른 오픈시기, 타 게임들의 출시시기와 비교한 시기 등등 여러가지 요인들을 고려하여 결정한다.</p><ul id="e7fb1b7b-74d2-4f11-ae7a-de2159b03f8f" class="bulleted-list"><li style="list-style-type:disc"><strong>주요 타겟시장 선출</strong></li></ul><p id="e20277fd-3f66-490a-aec5-a5432ff09d5b" class="">이는 게임타겟층 선정과 비슷한 맥락인데, 게이머층이 아닌 시장층을 고려하기 때문에 더 폭넓은 사회읽기가 필요하다. 예를 들어 음식과 관련된 게임이라면 음식상품에 관련된 시장을 타깃으로 삼아 시너지 및 홍보 효과를 누리는 식이다.</p><ul id="dae0cdd3-81a8-4576-b447-7e3224f4e160" class="bulleted-list"><li style="list-style-type:disc"><strong>마케팅, 이익과 수익배분</strong></li></ul><p id="f2255cb5-55b2-415d-b38a-ec04981585b1" class="">자금적인 문제가 직결되므로 신중한 결정이 필요하다. 특히 마케팅의 경우 소모되는 자금이 개발비와 준하게 소모되기 때문에 개발에 들어가는 노력 못지않은 신중함이 요구된다.</p><ul id="1705dbc8-4651-46cd-9cd5-8a00f03bdd62" class="bulleted-list"><li style="list-style-type:disc"><strong>프로듀싱(Producing)과 경영진의 시간</strong></li></ul><p id="3a81a9f9-6993-4741-8182-4bffbc6e116f" class="">디렉팅과 개발자가 개발부문에서의 주도권을 가진다면, 자금조절 및 전체적인 개발 프로토타이팅(Prototyping)에는 개발 관리자인 프로듀서와 경영진이 주도권을 가진다.</p><ul id="91ab9969-d32d-4e60-bb65-23dc6435d28d" class="bulleted-list"><li style="list-style-type:disc"><strong>마일스톤(Milestone)과 테스트 일정 세우기</strong></li></ul><p id="dc7942d0-0857-4bb3-b4aa-9b9770b06771" class="">컨텐츠를 뜻하는 마일스톤 계획과 그를 시험하는 각종 테스트의 일정등을 조정한다. 보통 마일스톤 하나를 제작한 뒤 그 마일스톤을 시험해보기 위한 테스트를 순차적으로 진행한다.(마일스톤 개발 - 테스트 - 피드백 - 마일스톤 수정/개발 - 테스트 의 사이클)</p><p id="ac1613fe-cea0-4510-9b20-e32919851ce5" class="">시행되는 테스트의 명칭은 순서대로 <strong>FGT</strong>(Focus Group Test - 사내 테스트/알파테스트) <strong>- CBT</strong>(Close Beta Test - 클로즈베타 테스트,소수 지원자를 통한 테스트) <strong>- OBT</strong>(Open Beta Test - 오픈베타 테스트,다수 지원자를 통한 최종 테스트)<strong> - 상용화</strong></p><ul id="7f836883-484c-453d-bbb0-c4058f94aada" class="bulleted-list"><li style="list-style-type:disc"><strong>리스크(Risk) 대응은 자유롭게</strong></li></ul><p id="c019bc92-7a60-499a-8889-84750068a194" class="">리스크라 함은 <strong>개발단계에서 빚어질 수 있는 모든 종류의 차질</strong>을 뜻한다. 가장 대표적인 리스크는 &#x27;일정이 밀리는 것&#x27;이 될 수 있고, 그 요인으로는 퀄리티에 집착하는 그래픽 아티스트 혹은 프로그램을 개발하지 못하는 프로그래머 등 이러한 요인들이 모두 하나의 리스크인 것이다. 그러나 개발 초기단계이므로 어떠한 문제나 위험성에 대해서는 최대한 가볍고 자유롭게 대응하도록 한다.</p><ul id="9b1b2296-c4ac-4913-9125-c5dda613075b" class="bulleted-list"><li style="list-style-type:disc"><strong>인력 충원 계획 수립</strong></li></ul><p id="245b5088-7356-4acb-b3dc-508f6f724101" class="">개발진행에 따라 얼마나 인력을 충당할지에 대한 계획을 수립한다. 개발도중 빠지게 되는 인원의 보충이나 개발속도의 증진을 위한 추가 인력, 그리고 게임이 완성되었을때 서비스를 담당할 인원들의 추가 등 다양한 인력계획을 뜻한다. (보통 인원을 감축하는 계획은 포함되지 않는다.)</p><ul id="5ece78ac-d8be-4993-aac9-655de61b2a48" class="bulleted-list"><li style="list-style-type:disc"><strong>외주 개발 계획</strong></li></ul><p id="44d0e7dc-6428-4293-a7f0-bc70bedbe712" class="">사운드,그래픽 등 사내 개발력으론 한계가 있는 부분에 대해서는 외주를 의뢰함으로써 개발력을 충당하도록 한다. 외주계획시엔 개발하고자 하는 작품과의 조화를 우선적으로 고려해야 한다.</p><ul id="62e6827f-2f02-4eb2-bf49-833830c21093" class="bulleted-list"><li style="list-style-type:disc"><strong>개발 프로세스 확립</strong></li></ul><p id="49ccf044-e14a-45f0-8e43-d4ea7304e7d4" class="">이는 개발과정에 대한 &#x27;프로토타이핑(Prototyping)&#x27;을 뜻한다. 재미에 대한 프로토타이핑과는 다른 개념이며, 말그대로 모의 개발과정을 수립함으로써 개발기간/방법/소요경비 등 대략적인 수치를 정한다.</p><ul id="7e0cf929-29d0-421a-ac03-c9e7ef8c9c47" class="bulleted-list"><li style="list-style-type:disc"><strong>개발 툴 제작 / 필요 문서 명세</strong></li></ul><p id="9ca75389-07df-4e5e-bc7e-8f25902e9bf8" class="">개발에 필요한 도구(Tool)과 문서(Manual)를 마련해둠으로써 개발에 여러가지 도움을 줄 수 있도록 한다. 공을 많이 들일수록 본격 개발단계에서 더욱 많은 효율을 거둘 수 있다.</p><ul id="9177c06c-ac22-47bc-8e2e-79b2eed5ab51" class="bulleted-list"><li style="list-style-type:disc"><strong>소스 공유방법 협의</strong></li></ul><p id="13dee0da-50a6-4544-b8a8-c351570c7ce3" class="">각 부서간의 소스(Source)를 공유/교환 하는 법에 대해 확실한 협의를 거두어야 한다. 개발 도중 발생하는 문제인 &#x27;중복작업&#x27;을 방치하기 위한 문제이기도 하며, 더욱 원활한 커뮤니티를 위한 방법이기도 하다.</p><ul id="670acc41-cb50-4b6e-95d0-f741369568ab" class="bulleted-list"><li style="list-style-type:disc"><strong>브랜치(Branch - 나뭇가지) 구조 설정</strong></li></ul><p id="b23ad50a-1407-42fe-9cb0-1058f97a12ca" class="">개발루트의 가지구조라고 할 수 있는데, 이는 개발 계획 초기부터 구상해야 하는 부분이다. 가장 중요한 목적은 다양한 버젼으로 서비스를 하기 위해 <strong>미리 그 목적에 맞는 타입을 준비해두기 위함</strong>이다.</p><p id="447fab87-5966-4582-99ee-a89369946f59" class="">예를 들어, 시연용 게임버젼과 클로즈베타용 버젼, 그리고 해외진출용 버젼이 필요한 경우가 있을 때엔 미리 이 세 가지 버젼을 준비해두는 것이다. 원본 버젼과는 다른 버젼을 각 용도에 맞게 준비해두는 것인데, 이럴 경우 원본은 원본대로 개발을 진행가능하면서도 다른 세가지 버젼을 원본에 따라 맞춰가며 각기다른 용도로 변형시키기 쉽다는 것이 장점이다.</p><p id="6ca5ecc5-b9c0-43eb-a2e5-2db57cfe5b5f" class="">이러한 브랜치 구조를 설정해두지 않으면 차후 해외진출이나 시연용 버젼을 만들어야 할때 완전히 클라이언트를 뜯어 고쳐야하는 사태를 겪을 수 있으므로, <strong>반드시 개발 초기에 미리 구조를 짜두어야 한다.</strong></p><ul id="1ee4bdd6-d7da-4786-bd55-aa3b76cb9922" class="bulleted-list"><li style="list-style-type:disc"><strong>배포도구 및 통합도구 개발</strong></li></ul><p id="5f02c699-6701-43e0-97bf-7f83aee74295" class="">어떠한 식으로 게임 클라이언트를 배포할 수 있는지를 결정하는 단계이다. 패키지 형식이냐 혹은 패킷 다운로드 형식이느냐 등 배포에 관한 문제와 클라이언트 개발 및 보완 등 개발관련에 도움을 주는 통합도구 등 전체적인 툴(Tool)에 대한 개발을 뜻한다.</p><ul id="06fe34af-b9da-4515-be94-43ab8bdb61e0" class="bulleted-list"><li style="list-style-type:disc"><strong>개발시 발생하는 각종 이슈처리 (ITS - Issue Tracking System)</strong></li></ul><p id="12b544cf-9177-4a10-9ce6-89fcce518092" class="">이는 앞서 거론했던 &#x27;리스크에 대한 자유로운 대응&#x27;과 게임 디자이너로서의 소양인 &#x27;각종 문제해결&#x27;과 맥락을 같이한다고 볼 수 있다. 주로 게임개발 외적인 문제이며 언론,커뮤니티 등 사회적인 이슈(issue)를 함께 파악하여 확실하게 처리할 수 있도록 시스템을 마련해두어야 개발진행에 차질이 없을 것이다.</p><ul id="7e5dc4b0-2bee-495c-a8a6-f148cedd8efd" class="bulleted-list"><li style="list-style-type:disc"><strong>버그관리 (BTB - Bug Tracking System)</strong></li></ul><p id="fd935780-9c9d-46e7-bd24-879e5a202088" class="">게임내적으로 발생하는 문제이며, 이슈와 마찬가지로 재빠르게 처리해야 지장이 생기지 않는다. 버그의 규모가 크면 클수록 이슈화되는 경우가 많기 때문에 빠르게 파악하여 해결해야 한다. 따라서 미리 추적시스템을 마련해놓아야 개발단계에서 최대한 문제를 줄일 수가 있는 것이다.</p><ul id="b6704798-bbb3-4984-b0bd-971d8e7c88bf" class="bulleted-list"><li style="list-style-type:disc"><strong>필요한 재미요소에 대해 최소한의 원리만 구현</strong></li></ul><p id="ed4bd5b4-c50a-486e-83fb-65b9c19bd771" class="">핵심적인 마일스톤을 우선적으로 구현해야 게임의 특징을 살릴 수가 있는데, 이를 위해선 핵심을 위해 어떠한 원리를 적용시켜야 하는지가 중요하게 된다. 따라서 핵심을 구성하는 원리를 본격적인 개발에 앞서 최소한의 정도로 구현시켜 놓아야 개발단계의 가이드 역할을 할 수가 있다.</p><ul id="d9accb89-49b7-44d8-ade3-60d199bdf730" class="bulleted-list"><li style="list-style-type:disc"><strong>빠르게 만들어서 맛을 본다.</strong></li></ul><p id="82bf695f-2ed9-45fc-a41e-484e4477ff4a" class="">이는 &#x27;아이디어&#x27;와 비슷한 성질을 띄고 있는데, 다른 점이라면 아이디어는 &#x27;빠르게 만드는데&#x27; 핵심이 있다면 이것은 &#x27;맛을 본다&#x27;에 핵심이 있다. 빠른 구현과 테스트를 거쳐 개발단계의 뼈대를 만드는데 주력한다는 것이다.</p><ul id="d8fabc5a-9a57-4822-99b4-09abe781b049" class="bulleted-list"><li style="list-style-type:disc"><strong>버리는 것이 대부분이다.</strong></li></ul><p id="0f93c54f-5350-42d3-9f16-87e287960d3b" class="">맛을 보았지만 맛이 없다면 재빨리 버려야 한다. 이런 식으로 구현된 결과물이 의도와 다르게 나오면 빠르게 수정하여 구현해야 하는 실행력이 필요하다. 버리는 것을 아까워하지 말고 더 나은 결과물을 위해 끊임없이 버리고 만들어야한다는 것을 의미한다.</p><ul id="dde250eb-f06c-490f-9ebc-c466298e001e" class="bulleted-list"><li style="list-style-type:disc"><strong>작은 위험 여러개의 테스트보다는 큰 위험 하나의 테스트를 해본다.</strong></li></ul><p id="5f3d84b3-839d-417f-be82-1f24f6fefb32" class="">여러가지 마일스톤을 테스트하게 되는데, 자잘한 마일스톤의 테스트를 우선시하기보다는 가장 큰 뼈대를 구성하는 마일스톤을 우선적으로 해야한다. 바탕이 마련된 상황에서 브랜치(가지치기) 작업을 해야한다는 의미이다.</p><ul id="fe82e199-a7c9-4f39-b266-6bea61749cd2" class="bulleted-list"><li style="list-style-type:disc"><strong>프로덕션(Production)의 이해</strong></li></ul><ul id="7d4555ba-8d53-4ace-a08e-a684a04a2fc0" class="bulleted-list"><li style="list-style-type:disc"><strong>목표가 잘 달성되었는지 확인</strong></li></ul><p id="4e307e04-fa93-4771-88c9-dcde2150a441" class="">사전개발단계에서 수립하였던 목표가 잘 이루어졌는지를 돌아본다. 만약 목표가 달성되지 못한 부분이 있다면 즉각 해결하도록 해야한다. 본격적인 개발에 앞서 마지막 확인과정이라고 여기면 좋다.</p><ul id="5d1be513-4748-4379-9b2f-eb102325394e" class="bulleted-list"><li style="list-style-type:disc"><strong>목표 달성이 실패하면?</strong></li></ul><p id="8290f8bf-d0cc-42b6-9c08-8eb7d3623852" class="">다시 목표를 달성하기 위해 작업을 진행해야 한다. 다만 이러한 실패는 일정이 밀리거나 그에 따른 수정/보완 계획이 필요하게 된다. 이런 문제들은 악순환의 고리를 낳을 가능성이 크기 때문에, 최대한 개발단계에 들어가기전에 목표를 달성할 수 있어야 한다.</p><ul id="c18afa74-110f-44a2-bafd-1a85850bee87" class="bulleted-list"><li style="list-style-type:disc"><strong>꾸준히 개선을 해나가고 같은 실수는 안하도록</strong></li></ul><p id="ec2fcff7-0962-4630-8a65-1db6f89d77f2" class="">중요한 의미를 가진다. 프리-프로덕션 단계에서의 실수들은 이어지는 프로덕션 단계에서도 똑같이 저지를 확률이 높기 때문이다. 따라서 프리-프로덕션 단계에서의 실수들을 확실하게 인지해놓아야 프로덕션 단계에서도 같은 종류의 실수들을 미리 예방할 수 있다. 따라서 실수를 하면 그것을 해결하는 것도 중요하지만 기록해두는 것도 못지 않게 중요함을 시사한다.</p><ul id="38579942-1d76-4afb-a422-0d2f15ba3a68" class="bulleted-list"><li style="list-style-type:disc"><strong>제작 파이프 라인(Pipe Line)</strong></li></ul><figure id="66010db8-082c-463d-a0db-5fafe34ceb06" class="image"><a href="%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3%20%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A5%20%E1%84%87%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%2026e7485eb4914deaab3bd0b50116851e/C6C4C0CCC7C1B6F3C0CE.jpg"><img style="width:550px" src="%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%89%E1%85%A6%E1%84%89%E1%85%B3%20%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A5%20%E1%84%87%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%2026e7485eb4914deaab3bd0b50116851e/C6C4C0CCC7C1B6F3C0CE.jpg"/></a></figure><p id="297739aa-4c48-47d5-a6b7-c816024efcc5" class="">게임제작(동영상부문) 파이프라인의 예</p><p id="6c2b4da8-68e4-43d1-a568-9d7096490b36" class="">예시한 그림과 같이 각 파트별,요소별 관계도를 파이프 라인이라 칭한다. 파이프 라인은 명확할 수록 업무의 효율이 오른다. 즉, 파이프 라인의 가장 큰 핵심은 &#x27;효율적으로 제작하기 위함&#x27;이며, 프로젝트의 규모나 조직의 규모가 클수록 중요도가 점점 커진다.</p><ul id="00e43435-4ef1-4c00-8ed9-a601c907a8a0" class="bulleted-list"><li style="list-style-type:disc"><strong>계속해서 쌓아 올라간다.</strong></li></ul><p id="bcc41e92-cc40-45d7-8c6a-e66a135fd30d" class="">개발의 기본은 개발요소들을 계속 누적시켜 나가는 것이다. 개발과 테스트를 거쳐 완성된 마일스톤들이 쌓여나가야 단단한 게임 컨텐츠를 완성시키게 된다.</p><ul id="445696f7-eea6-4b3f-8eb3-2ed6598a9b3b" class="bulleted-list"><li style="list-style-type:disc"><strong>항상 실행될 수 있어야 한다.</strong></li></ul><p id="95f9ff81-242b-44f0-9e28-20a7a1548265" class="">언제든지 테스트될 수 있도록 준비가 되어있어야 한다는 것이다. 항시 테스트가 가능한 것은 수시로 아이디어가 추가될 수 있음을 의미하며, 또한 구체적인 추가 및 수정방안에 대해 확실한 의견제시가 가능토록 한다.</p><ul id="ed101473-8bce-4ffc-8c63-17ceea3fc7bf" class="bulleted-list"><li style="list-style-type:disc"><strong>복원 테스트를 시험해본다.</strong></li></ul><p id="c9d2e37a-953c-49e4-a412-ab4986eb187b" class="">이는 컴퓨터 복원과도 같은 의미이다. 롤백(rollback)이 대표적인 수단이며, 언제 발생할 지 모르는 버그 및 이슈에 대비하여 항상 원래의 데이터값으로 복원할 수 있도록 해야한다.</p><ul id="ad3133a2-2f37-43b8-ab0c-ddeda965e327" class="bulleted-list"><li style="list-style-type:disc"><strong>기획 -&gt; 작업 -&gt; 리소스 -&gt; 데이터 -&gt; 텍스트</strong></li></ul><p id="9e022ffb-f4dd-4ea2-a7ee-9d1dbe6c33d4" class="">기획 아이디어가 최종적인 텍스트로 출력되는 5과정이다. 텍스트는 단순힌 Text를 의미하는 것이 아닌 시각적으로 표출되는 요소를 의미하는 것이라 보면 된다.</p><ul id="e909d7e6-53d9-407c-9fcf-f1341ec39fc7" class="bulleted-list"><li style="list-style-type:disc"><strong>기획문서 품질에 너무 연연하지 말 것.</strong></li></ul><p id="adfa5adf-04d0-4538-86ad-9fd32c48f1ba" class="">개발과정에 이루어지는 문서를 통한 교류는 대개 간단하고 신속하게 이루어지는 경우가 많다. 따라서 교류의 <strong>속도</strong>와 <strong>정확도</strong>에 더 중점을 둘 필요가 있다. 다만, 확실하게 품질을 요구하는 기획서가 필요할 때엔 확실한 품질의 문서를 작성해야 한다.</p><ul id="57fc54f0-ad8b-4377-a804-69d4b9d1cec6" class="bulleted-list"><li style="list-style-type:disc"><strong>피드백 투 피드백 (Feedback to Feedback)</strong></li></ul><p id="a26f3920-2b7a-4857-87be-5e57a646d313" class="">각 파트별로 의견을 교환하는 것은 대개 이러한 피드백을 주고 받는 교류가 주를 이룬다. 원활한 피드백을 주고받음으로써 빠른 수정과 더 나은 사안을 만들 수 있게 된다. 커뮤니티의 일환이라고 여기고 익숙해지는 노력이 필요하다.</p><ul id="34d9b9b5-6b61-4f08-83cd-05e0542f90c9" class="bulleted-list"><li style="list-style-type:disc"><strong>개발하고자 하는 컨텐츠를 만들어주고 있다는 것은 좋은 기획이라는 것.</strong></li></ul><p id="ceddccfe-98be-4850-bee1-15da30741e95" class="">기획한 컨텐츠가 구현되고 있다는 것은 그만큼 &#x27;좋은 기획&#x27;이라는 얘기다. &#x27;좋다&#x27;는 의미는 확실하게 구현가능이 되는 컨텐츠를 기획했다는 의미이며, 이는 허무맹랑하거나 과다한 기획을 하지는 않았다는 것을 말해주기도 한다. 따라서 디자이너가 기획할때 중요하게 염두해두어야 할 것중 하나가 바로 이 <strong>&#x27;구현가능성&#x27;</strong>이기도 하다. 반대로 말하면 구현이 되지 않는 기획은 좋은 기획이라고 말할 수 없기 때문에 항상 이 점을 염두해두고 기획해야한다.</p><ul id="7f10406a-a29b-4753-a601-68369890d7d7" class="bulleted-list"><li style="list-style-type:disc"><strong>포스트 프로덕션(Post Production)의 이해</strong></li></ul><ul id="8880affd-2d67-48ba-9ae9-10bff3cd7a53" class="bulleted-list"><li style="list-style-type:disc"><strong>이제부터는 서비스업 종사자가 되야한다.</strong></li></ul><p id="51be86ac-acf2-4f8e-b6c0-d438993385b3" class="">개발이 완료되고 서비스가 시작되는 시점에서는 개발보다는 운영에 초점이 맞춰진다. 따라서 이때부터는 디자이너(기획자)로서의 업무보다는 서비스 종사자로서의 업무가 중시되는 것이다. 기획을 요하는 업무 또한 큰 틀로 보면 서비스의 일종이다.(예를 들어 업데이트 및 버그 수정또한 라이브 서비스의 일환이다.) 그렇기에 그 성격에 맞는 기획과 업무를 수행할 수 있도록 노력해야한다.</p><ul id="7bc81578-d4b2-4ee0-afd7-80bf8c1813b5" class="bulleted-list"><li style="list-style-type:disc"><strong>소규모 / 대규모 업데이트</strong></li></ul><p id="ae6eddc6-0ad6-4536-b2d1-1ce6904267a0" class="">기획력이 가장 요구되는 서비스 분야로, 게임이 오랫동안 서비스되기 위해 가장 중요한 요소중 하나라고 할 수 있다. 업데이트의 규모와 시기는 많은 요인들과 분위기를 파악해야 적절한 결정을 내릴 수 있으며, 이벤트 기획과 함께 기획되는 경우가 많다.</p><ul id="4be65d8b-de32-46f2-9bff-fe24c793f24f" class="bulleted-list"><li style="list-style-type:disc"><strong>이벤트를 예측 가능케 하라</strong></li></ul><p id="3267de31-a31e-4fcf-8861-61bb55b8a697" class="">가장 대표적인 예는 명절이나 연휴에 맞춰 이벤트를 계획하는 것이다. 이렇게 특수한 날에 맞추는 것 이외에도 주기적으로 이벤트 기획을 한다던가, 혹은 계절변화에 따라 기획하는 등 다양한 요인에 걸맞춰 이벤트를 구상해 즐거움을 줄 수 있도록 한다. <strong>유저가 예측가능한 </strong>이벤트라 함은 그만큼 좋은 이벤트가 된다. 굳이 홍보하지 않아도 알 수 있게 하는 이벤트는 개발자-게이머 양자간에 이득이 되기 때문이다.</p><ul id="545585be-1286-4358-a01d-79d1b162dab4" class="bulleted-list"><li style="list-style-type:disc"><strong> 브랜치에 따른 국가별, 버젼별 서비스에 주력한다.</strong></li></ul><p id="3d9c1a0a-2cd4-4eeb-b572-a298ee44f7a4" class="">프리 프로덕션 단계에서 브랜치 작업은 매우 중요하다고 언급하였다. 그리고 이 포스트 프로덕션 단계에선 그렇게 관리해둔 브랜치들을 운영하는 것이 중점이 된다. 이 브랜치들을 어떻게 운영하느냐에 따라 게임의 수명이나 서비스 방향이 매우 달라지게 된다.</p><ul id="67d2663b-dcab-438c-bb55-e6cf48e29049" class="bulleted-list"><li style="list-style-type:disc"><strong>반드시 되돌아보는 기간과 시간이 필요하다.</strong></li></ul><p id="c7a4dd24-2a79-480e-a9a8-f8c560a03d94" class="">이는 차기 서비스를 위한 발판이기도 하며, 더 나아가서는 <strong>&#x27;차기 프로젝트&#x27;</strong>를 위한 준비이기도 하다. 일련의 과정들과 상황들을 정리해보면서 다시금 소스를 모으는 발판이 될 수도 있고, 앞으로의 <strong>게임의 방향성</strong>과 <strong>비전(Vision)</strong>을 제시하는 일이 될 수도 있기 때문이다. 달린다는 것을 잘하기 위해서는 달리는 행위 자체보다도 호흡을 고르는 일이 더 중요하듯 게임 서비스 또한 숨을 고르는 일이 중요하다는 것을 알아야 한다.</p><p id="fff63d5c-7baa-4322-a72b-6b27c0125422" class="">이렇게 크게 3가지의 개발 프로세스와 개발단계에 따른 업무와 요령을 배웠다. 어찌보면 당연한 이야기들의 나열이지만, 다 알 수 있는 얘기를 못지키기 때문에 제대로 게임이 개발되지 못하는 경우가 분명히 존재한다. 그렇기 때문에<strong> &#x27;당연한 이야기일수록&#x27; </strong>더욱 되새김질을 많이 해야하는 것이 아닐까. 이론적인 부분을 항상 명심해두어야 그를 바탕으로 다른 발상을 할 수 있는것이리라 생각한다.</p><p id="7cbf15e2-2620-4051-a75d-9fe0eab198b3" class="">마지막으로 게임 개발 프로세스의 중점 3가지를 더 추가로 작성하자면</p><p id="202366a0-3f29-460e-bb58-85b8dbbc9dc7" class=""><strong>게임 개발은 대규모의 소프트웨어 개발</strong></p><p id="3bda1daf-3362-4eec-a9ac-fe05e80ea084" class=""><strong>다양한 사람과 부대끼면서 일하고 균형을 잡는 것은 어려운 일</strong></p><p id="0dc1c527-3684-4004-9f89-e9639fe2e8ac" class=""><strong>개발과 라이브를 모두 경험한 기획자는 정말 드물다</strong></p><p id="7e38ceac-f120-493f-a2c0-ff99f7c6511a" class="">결국 회사에서의 게임 개발이란 혼자 하는 것이 아니기 때문에 타인을 생각할 줄 아는 것이 중요한 것 같다. 마찬가지로 서비스를 해야할 때에도 게임만을 생각하는 것이 아니라 게임의 사용자인 게이머를 생각하는 일도 마찬가지로 중요하다. <strong>&#x27;다른 이를 생각해라.&#x27; </strong>어찌보면 그 어떤 사항보다도 게임개발에 있어 필요한 핵심이 아닐까 싶다..</p></div></article></body></html>

@@ -1,0 +1,703 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>B2B 현황</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="952e5891-d4fd-40fe-84c6-b495418e8746" class="page sans"><header><h1 class="page-title">B2B 현황</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-pink">routine</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><ul id="406a9652-941d-4c67-9c24-e7cfbc007163" class="toggle"><li><details open=""><summary>20230428</summary><figure id="16bbc80d-0abc-46e0-ac95-52b1b1ae363f" class="image"><a href="B2B%20%E1%84%92%E1%85%A7%E1%86%AB%E1%84%92%E1%85%AA%E1%86%BC%20952e5891d4fd40fe84c6b495418e8746/image_(41).png"><img style="width:528px" src="B2B%20%E1%84%92%E1%85%A7%E1%86%AB%E1%84%92%E1%85%AA%E1%86%BC%20952e5891d4fd40fe84c6b495418e8746/image_(41).png"/></a></figure></details></li></ul><p id="99768958-8ab4-46d3-8d84-cb0a07fe6c8f" class="">
+</p><h2 id="ad162820-d051-4cc2-9f71-58620dcee944" class="">목표 MOU 내용</h2><div><figure id="85d08498-c5fc-4d85-9cc3-d0b4bfb3d4be"><div class="source"><a href="B2B%20%E1%84%92%E1%85%A7%E1%86%AB%E1%84%92%E1%85%AA%E1%86%BC%20952e5891d4fd40fe84c6b495418e8746/%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25A8%25E1%2584%258B%25E1%2585%25A2%25E1%2586%25AB%25E1%2584%2585%25E1%2585%25B5%25E1%2584%2587%25E1%2585%25A5-%25E1%2584%2585%25E1%2585%25A1%25E1%2584%258B%25E1%2585%25B5%25E1%2584%258B%25E1%2585%25A5%25E1%2586%25AB%25E1%2584%2585%25E1%2585%25A9%25E1%2584%258F%25E1%2585%25A6%25E1%2586%25BA_%25E1%2584%258B%25E1%2585%25A3%25E1%2586%25BC%25E1%2584%2592%25E1%2585%25A2%25E1%2584%2580%25E1%2585%25A1%25E1%2586%25A8%25E1%2584%2589%25E1%2585%25A5(MOU)_230413.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/881567c2-1bc0-4ef4-9673-674284dca7b3/%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%85%E1%85%B5%E1%84%87%E1%85%A5-%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AB%E1%84%85%E1%85%A9%E1%84%8F%E1%85%A6%E1%86%BA_%E1%84%8B%E1%85%A3%E1%86%BC%E1%84%92%E1%85%A2%E1%84%80%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5(MOU)_230413.pdf</a></div></figure><figure id="9d595527-b381-448f-9e47-93f996ebc4c6"><div class="source"><a href="B2B%20%E1%84%92%E1%85%A7%E1%86%AB%E1%84%92%E1%85%AA%E1%86%BC%20952e5891d4fd40fe84c6b495418e8746/%25E1%2584%2585%25E1%2585%25A1%25E1%2584%258B%25E1%2585%25B5%25E1%2584%258B%25E1%2585%25A5%25E1%2586%25AB%25E1%2584%2585%25E1%2585%25A9%25E1%2584%258F%25E1%2585%25A6%25E1%2586%25BA_%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25A8%25E1%2584%258B%25E1%2585%25A2%25E1%2586%25AB%25E1%2584%2585%25E1%2585%25B5%25E1%2584%2587%25E1%2585%25A5_NDA_230413.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/16c973d4-cf53-4dd7-94ef-b328e955abab/%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AB%E1%84%85%E1%85%A9%E1%84%8F%E1%85%A6%E1%86%BA_%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%A8%E1%84%8B%E1%85%A2%E1%86%AB%E1%84%85%E1%85%B5%E1%84%87%E1%85%A5_NDA_230413.pdf</a></div></figure></div><ul id="f1768d5a-fb5c-40b6-b4df-315232db0433" class="bulleted-list"><li style="list-style-type:disc">목적<ul id="5a720365-28c3-4de0-b852-a6899b90d5b1" class="bulleted-list"><li style="list-style-type:circle">잠재적인 사업기회를 발굴함과 동시에 이를 실현하고, 확대하기 위한 상호협력 의사 명문화<div><p id="9c776834-e814-47c2-9dc8-3cd4ee1ce138" class="">웹툰/웹소설 솔루션을 실증하기 위한 MOU</p></div><div><p id="7e52fb62-e6dd-4f00-9fd4-2946efe9172c" class="">MOU + POC → IR</p></div></li></ul></li></ul><ul id="250d4b14-dabd-41b4-8b34-02d7fbdef95b" class="bulleted-list"><li style="list-style-type:disc">기간: 1년</li></ul><ul id="22843486-5183-494f-b9e6-da158e13f04f" class="bulleted-list"><li style="list-style-type:disc">라이언로켓 의무사항<ul id="b5986349-0c8f-4f2f-8220-73fa6920bc38" class="bulleted-list"><li style="list-style-type:circle">웹툰제작지원솔루션 최적화 실증 및 도입을 위한 방법에 대해 <span style="border-bottom:0.05em solid">상호 논의</span>를 적극적으로 진행</li></ul><ul id="9c176a1e-0dc6-4f6b-b7d9-626034c8b11c" class="bulleted-list"><li style="list-style-type:circle">웹툰제작지원솔루션 최적화 실증 및 도입 과정에서 발생하는 <span style="border-bottom:0.05em solid">문제에 대한 해결 </span>또한 적극적으로 진행</li></ul><ul id="3b67b3e4-f629-4a82-97f0-27893ad1afad" class="bulleted-list"><li style="list-style-type:circle">AI 생성기술을 활용한 신규 서비스의 타당성 확인을 위해, 컬러버스 플랫폼에 대한 생성 AI 기반의 맞춤형 이미지 제공 가능성 검토를 1 차 목표로 하고, 해당 결과물을 토대로 추가 모델 개발 및 사업 확대 여부를 결정</li></ul></li></ul><ul id="6931de7c-8665-49bb-bce9-bbd9937de844" class="bulleted-list"><li style="list-style-type:disc">협력사 측 의무사항<ul id="bc60a3fd-c7ba-4993-be52-fea3ba428874" class="bulleted-list"><li style="list-style-type:circle">웹툰제작지원솔루션 최적화 실증 및 도입을 위한 방법에 대해 <span style="border-bottom:0.05em solid">상호 논의</span>를 적극적으로 진행</li></ul><ul id="97f9870c-ab9a-4d76-bc77-2233c273bada" class="bulleted-list"><li style="list-style-type:circle">웹툰제작지원솔루션 최적화 실증 및 도입 과정에서 발생하는 <span style="border-bottom:0.05em solid">문제에 대한 해결</span> 또한 적극적으로 진행</li></ul></li></ul><ul id="1e2aefa7-5b8d-4981-8168-e1026d8a45a6" class="bulleted-list"><li style="list-style-type:disc">라이언로켓 권리<ul id="b0cf5bfe-23a6-4ac4-b8d3-b9c8997581e0" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">홍보</span> 목적으로 보도하거나 대외 공표</li></ul></li></ul><ul id="81216ed0-b654-49c4-82b2-5c9dadf4afce" class="bulleted-list"><li style="list-style-type:disc">협력사 측 권리<ul id="1737cc07-6e30-4e2b-9138-1dbdba4cf766" class="bulleted-list"><li style="list-style-type:circle">홍보 목적으로 보도하거나 대외 공표</li></ul></li></ul><h2 id="17a412b6-8d76-49f7-8a1e-4ed5c73d6e00" class="">협력사 측 MOU 체결의 전제조건</h2><p id="5b003af4-8faf-44d7-bbf0-6dfb3c9b1655" class="">위 MOU 내용에 따른 협력사 측 MOU 체결의 전제조건</p><ul id="5b710b67-344b-42af-bcd0-bf089c9f4dd8" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red">라이언 로켓에 대한 신뢰</mark><ul id="fe872518-0292-4ca1-9081-7dcd67ae73aa" class="bulleted-list"><li style="list-style-type:circle">실현 가능성<ul id="35c873c4-e3d9-443d-886d-255ebeb7078f" class="bulleted-list"><li style="list-style-type:square">라이언로켓의 기술력 → 시연 및 예시 이미지</li></ul><ul id="8ee46651-0947-4b66-b57c-dfdd490e8da2" class="bulleted-list"><li style="list-style-type:square">라이언로켓의 전반적 역량 → 시연 및 예시 이미지</li></ul></li></ul><ul id="78013a04-a24d-4138-96e0-327503d554fc" class="bulleted-list"><li style="list-style-type:circle">진행 과정의 리스크 해소 역량<ul id="4446a0e9-0c8b-47bb-96fd-0817382fb25c" class="bulleted-list"><li style="list-style-type:square">리소스 부담<ul id="7a978b18-f7cb-480f-8684-5d6a5f9ec7fc" class="bulleted-list"><li style="list-style-type:disc">개발 장기화 → 전담 팀과 전용 소통 채널</li></ul><ul id="5bce3a20-48fb-4dc0-9eb1-0fce7b85e4c8" class="bulleted-list"><li style="list-style-type:disc">POC 진행으로 인한 추가 업무량 → 전담 팀과 전용 소통 채널</li></ul><ul id="a2a383e9-62bb-462b-9182-f5d67a4e60f9" class="bulleted-list"><li style="list-style-type:disc">QA 업무 → 전담 팀과 전용 소통 채널, 라이언로켓 내부의 QA 역량</li></ul></li></ul><ul id="ba045850-d1f6-4537-b339-15afd043e977" class="bulleted-list"><li style="list-style-type:square">이용자의 이탈<ul id="8b9fa2b9-b625-4297-83fd-93729370f910" class="bulleted-list"><li style="list-style-type:disc">플랫포머의 이탈 → 라이언로켓 플러그인</li></ul><ul id="5aa574f1-7e72-4941-8ceb-11a896389932" class="bulleted-list"><li style="list-style-type:disc">고객의 이탈 → 라이언로켓 플러그인</li></ul></li></ul></li></ul></li></ul><h2 id="4821421b-79f1-4cfc-895c-9abcddcd90cb" class="">확률이 가장 높은 곳</h2><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">크릭앤리버 (기대)</summary><div class="indented"><p id="3624ef28-8657-4586-a18c-bf303ca956e9" class=""><a href="https://www.notion.so/1e163a981b8a43d49466db83724946bd?pvs=21">크릭앤리버</a> </p><p id="e0146b1d-4298-4b8d-9f13-5981850f48b5" class="">MOU 체결후, 스토리작향으로 준비한 LRSD 제공,  콘티생성모델에 관심 많음</p><p id="9e80feec-762a-4735-ae84-1fafa4feb4ee" class=""><a href="https://www.notion.so/99842dc0098e40e484085958f3298961?pvs=21">크릭앤리버엔터테인먼트</a> </p><ul id="96fd016f-c01e-43a3-bc09-6d50ad4c2c5b" class="bulleted-list"><li style="list-style-type:disc"><strong>업종</strong> : 웹툰, 웹소설 제작 및 전자출판 외</li></ul><ul id="208096f8-cbc2-42ec-a4ef-93bdeb148d64" class="bulleted-list"><li style="list-style-type:disc"><strong>기업개요</strong>
+ - 일본 C&amp;R그룹 한국지사(2001년 설립), 
+ - 방송인력 파견 및 방송제작 사업으로 시작, 
+ - 영화/게임/웹툰/웹소설 제작 등 사업 확장. 
+ - 이현세작가 및 허영만작가 외 다수의 작가 및 감독과 에이전트 계약.</li></ul><ul id="5a73e99d-fdec-406e-a9b5-e5750a0e280f" class="bulleted-list"><li style="list-style-type:disc"><strong>니즈 및 페인포인트</strong>
+ - 생성AI를 활용한 <span style="border-bottom:0.05em solid">웹툰 제작 효율화</span>에 관심이 있으나 실제 사용해보거나 검토하지는 않은 상황, 콘텐츠 제작 팀장도 AI활용에 적극적인 관심 표명</li></ul><ul id="8cd730c6-d1bb-4b6c-b654-8260a35a35be" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple"><strong>상담 및 제안</strong></mark><mark class="highlight-purple">
+ - 회사 및 솔루션 소개 및 LRSD PoC 시연
+ - 솔루션 최적화 실증을 위한 협업체결 협의 및 MOU, NDA 전달</mark></li></ul><ul id="028c6aa5-f5a5-4a30-84b8-1af07cbd20a5" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple"><strong>금주 Action Item</strong></mark><mark class="highlight-purple">
+ - 주초 MOU 및 NDA 내용 조율 및 금주중 협약체결
+ - 스토리작향 PoC 준비 후 솔루션 전달 및 실증 진행</mark></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">함파트너스 (기대)</summary></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">아톰 (기대)</summary><div class="indented"><p id="a68d1cf1-b015-4427-8235-f392626f979a" class=""><a href="https://www.notion.so/4-PoC-2b39a75289a247fb9476c1d9ac32c5af?pvs=21">4월 PoC를 위한 신규 디벨롭</a> </p><ul id="6856b3f3-8634-4488-a8c3-6d563e5740e9" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">뉴아톰”아스트로보이”와 생성AI를 접목한 다양한 이미지 생성 이벤트 협업 제안 준비</mark></li></ul><ul id="14ce5911-9deb-4179-b97e-cffe6bd0bd69" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">샘플이미지 입수 완료, 프러덕션 길드와 주후반 생성결과물 확인 및 제안 진행</mark></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">스토리작 (반반)</summary><div class="indented"><figure id="10c43569-4687-4724-b34a-5656c3f7838e"><div class="source"><a href="B2B%20%E1%84%92%E1%85%A7%E1%86%AB%E1%84%92%E1%85%AA%E1%86%BC%20952e5891d4fd40fe84c6b495418e8746/%25E1%2584%2585%25E1%2585%25A1%25E1%2584%258B%25E1%2585%25B5%25E1%2584%258B%25E1%2585%25A5%25E1%2586%25AB%25E1%2584%2585%25E1%2585%25A9%25E1%2584%258F%25E1%2585%25A6%25E1%2586%25BA_%25E1%2584%2589%25E1%2585%25B3%25E1%2584%2590%25E1%2585%25A9%25E1%2584%2585%25E1%2585%25B5%25E1%2584%258C%25E1%2585%25A1%25E1%2586%25A8NDA_230424.docx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/022fcb61-b879-41e6-9795-9de972ccea60/%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AB%E1%84%85%E1%85%A9%E1%84%8F%E1%85%A6%E1%86%BA_%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%A8NDA_230424.docx</a></div></figure><figure id="a17a18af-5a44-408c-b8a4-ce1c28107f16"><div class="source"><a href="B2B%20%E1%84%92%E1%85%A7%E1%86%AB%E1%84%92%E1%85%AA%E1%86%BC%20952e5891d4fd40fe84c6b495418e8746/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%2590%25E1%2585%25A9%25E1%2584%2585%25E1%2585%25B5%25E1%2584%258C%25E1%2585%25A1%25E1%2586%25A8-%25E1%2584%2585%25E1%2585%25A1%25E1%2584%258B%25E1%2585%25B5%25E1%2584%258B%25E1%2585%25A5%25E1%2586%25AB%25E1%2584%2585%25E1%2585%25A9%25E1%2584%258F%25E1%2585%25A6%25E1%2586%25BA_%25E1%2584%258B%25E1%2585%25A3%25E1%2586%25BC%25E1%2584%2592%25E1%2585%25A2%25E1%2584%2580%25E1%2585%25A1%25E1%2586%25A8%25E1%2584%2589%25E1%2585%25A5(MOU)_230424.docx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/76a5ead2-19f2-400c-849f-023cf0aa8718/%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%A8-%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AB%E1%84%85%E1%85%A9%E1%84%8F%E1%85%A6%E1%86%BA_%E1%84%8B%E1%85%A3%E1%86%BC%E1%84%92%E1%85%A2%E1%84%80%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5(MOU)_230424.docx</a></div></figure><ul id="ab8e54cb-8451-463f-bc21-40284ea4c53e" class="bulleted-list"><li style="list-style-type:disc">POC 진행의 스토리작 측 메리트<div><p id="300c99ca-60ea-4199-9ee1-51acc9b329c2" class="">유상 대신 무상으로 해주겠다</p><p id="51b97a38-dd0c-4cb4-bde7-73f5e8c80ba4" class="">추후 가격 discount</p></div></li></ul><ul id="763f6652-c514-4dc8-b1de-8b4cb7a34fce" class="bulleted-list"><li style="list-style-type:disc">POC 진행의 스토리작 cost<div><p id="87f3d35d-b68b-49ab-9cc9-7be794a5b7f9" class="">QA, 커뮤니케이션, 사용법 익히기 등등</p><p id="829c0408-67ba-4fcc-86c4-35c5648a806b" class="">AI 인식 문제</p></div></li></ul><ul id="c66573bb-081f-4748-9f24-5a3319d3aa88" class="bulleted-list"><li style="list-style-type:disc"><strong>업종</strong> : 콘텐츠제작, 유통(웹툰/웹소설)</li></ul><ul id="2cb39132-9fbe-46af-9da7-ba6140afffc0" class="bulleted-list"><li style="list-style-type:disc"><strong>기업개요</strong>
+ - 대원미디어 계열사, 22년 5월에 120억 VC 투자유치, 24~25 IPO준비 중.
+ - 카카오픽코마와 일본 현지에 “셰르파스튜디오” 합작 설립, 스토리작 보유 IP 작품 카카오픽코마 채널에서 프로모션 및 유통하는 구조. </li></ul><ul id="6998fc53-b287-4211-b29f-23263076eb7a" class="bulleted-list"><li style="list-style-type:disc"><strong>니즈 및 페인포인트</strong>
+ - 웹툰 제작 단가 상승 및 신규 웹소설 작가 발굴 추진에 따른 <span style="border-bottom:0.05em solid">웹툰제작 생산성 향상</span> 필요.
+ - <span style="border-bottom:0.05em solid">웹툰제작에 최적화된 AI솔루션 도입</span>에 관심</li></ul><ul id="716bb0cf-a0ae-4a65-91c9-0758c7fc2f52" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple"><strong>금주 Action item</strong></mark><mark class="highlight-purple">
+ - CCO 내방에 따른 데모 시연 및 생성 AI도입에 대한 조직 내부의 우려사항과 근본적인 문제로 인한 우려사항을 불식시킬 대응방안을 준비하여 도입을 주저하는 모든 이유에 대한 전방위적인 대응논리 준비를 목표</mark><ul id="bb3699a5-c4f9-4b32-bc84-f9dd4c597754" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-purple">조직내부의 우려사항
+      ㆍQA리소스부담
+      ㆍ개발일정지연 우려
+      ㆍ현재의 퀄리티에 대한 의구심
+      ㆍ라로의 경쟁력에 대한 불확신이 있고, 이번 건에 대하여 
+      ㆍ리소스를 집중한 라로의 대응 체계와 
+      ㆍ경쟁사와의 비교를 통한 기술력으로 신뢰감을 주고, 
+      ㆍ최대한 다양한 기능의 현장 시연을 준비 </mark></li></ul><ul id="6b9b49e7-787a-4a46-9ff1-0fced3753111" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-purple">근본적인 문제(작가들과의 관계 훼손)는 
+      ㆍ제작지원 툴로서의 솔루션 포지셔닝으로
+      ㆍ긍정적 도입효과를 어필
+      ㆍ로라플러그인 및 객체고정 PPL 등 부가가치 창출이 가능한 중장기 핵심전략을 비전으로 초기 동참을 유도 계획</mark></li></ul><ul id="27a13602-85e5-453b-86bb-53ab52adfe81" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-purple">이번 대응 논리 및 준비 자료는 웹툰/웹소설 업체 전반의 니즈와 우려사항을 담은 자료로 완성하여 세일즈 스케일아웃에 활용 예정 </mark></li></ul></li></ul><ul id="6e9ec8be-feee-4476-8a20-ee069d44db3e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple"><strong>관련부문 요청사항
+</strong></mark><mark class="highlight-purple">    - 프로덕션길드와 대응 공조 중</mark></li></ul></div></details><p id="26746d52-cb74-44ad-9b70-50824c1e9e4c" class="">
+</p></div></article></body></html>

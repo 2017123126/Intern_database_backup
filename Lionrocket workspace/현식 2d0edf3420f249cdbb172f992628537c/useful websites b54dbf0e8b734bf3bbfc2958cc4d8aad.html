@@ -1,0 +1,681 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>useful websites</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b54dbf0e-8b73-4bf3-bbfc-2958cc4d8aad" class="page sans"><header><h1 class="page-title">useful websites</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-yellow">knowledge base</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">image to sketch</summary><div class="indented"><p id="64559ee2-172f-4a47-bda2-46eccdb3bc6b" class=""><a href="https://photofunia.com/results/6450d01afe31e25b838b4576">https://photofunia.com/results/6450d01afe31e25b838b4576</a></p><p id="9296efd3-bc13-491b-8caf-e74e556fce97" class=""><a href="https://photofunia.com/effects/sketch">https://photofunia.com/effects/sketch</a></p><div id="54fd7b96-9f24-4f70-bec4-f3fba56ff929" class="column-list"><div id="1a934a00-6f3b-44dc-be1d-f15930c33b8e" style="width:50%" class="column"><figure id="3de158ab-51c8-4ba4-949c-df1f872d9d48" class="image"><a href="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-04_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.46.20.png"><img style="width:567px" src="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-04_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.46.20.png"/></a></figure></div><div id="982486fa-e629-4c68-ba13-fe3320173987" style="width:50%" class="column"><figure id="cf0f9779-36e7-4cfd-8715-509dc090b8ce" class="image"><a href="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/PhotoFunia-1683610538.jpg"><img style="width:523px" src="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/PhotoFunia-1683610538.jpg"/></a></figure></div></div><p id="b8e3e352-b5c6-4205-a820-26cc19cf21d4" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">image to 펜터치</summary><div class="indented"><p id="ae274c1d-5cd7-4504-8d24-346d4e7bb962" class=""><a href="https://sketchmypic.com/">https://sketchmypic.com</a></p><div id="7c67a865-bc06-45ee-8ebe-a651196757be" class="column-list"><div id="2204215a-584e-4bc1-b134-46e27d564f83" style="width:33.333333333333336%" class="column"><figure id="f5c64d05-0501-433a-a927-82d0b5c3048e" class="image"><a href="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-04_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.46.20%201.png"><img style="width:567px" src="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-04_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.46.20%201.png"/></a></figure></div><div id="eb0597d0-863f-42ac-b460-dcfd79b17402" style="width:33.33333333333333%" class="column"><figure id="7a8c38de-6173-44d7-b73b-434c9e99a3bc" class="image"><a href="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/download.png"><img style="width:567px" src="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/download.png"/></a></figure><p id="64e93634-f1fd-4b9e-a542-a54752f7d7f8" class="">예는 생성된 거</p></div><div id="8494008f-3bc9-4208-bba6-133543d98857" style="width:33.33333333333334%" class="column"><figure id="0a03372f-5179-41ea-8674-d6b9ecfa1fa3" class="image"><a href="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-04_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.46.43.png"><img style="width:715px" src="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-04_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.46.43.png"/></a></figure><p id="e6622d98-edd7-47ea-8a10-07046ff450f4" class="">예는 원래 펜터치</p></div></div><p id="58e6516d-9c9e-472a-bd3f-1a0d0ee9cf62" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">펜터치 to 밑색</summary><div class="indented"><p id="32f55081-f5d9-45e5-a691-98fe2ea0b5c8" class=""><a href="https://ai.webtoons.com/ko/painter/paint">https://ai.webtoons.com/ko/painter/paint</a></p><div id="6ae43873-306d-41f4-81c2-05926bffdb77" class="column-list"><div id="e5be1ae5-bb33-4b62-93bc-9ec1197ccc19" style="width:50%" class="column"><figure id="75f8152e-9eef-49a1-adba-2ccff0c98294" class="image"><a href="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-04_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.46.43.png"><img style="width:715px" src="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-04_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.46.43.png"/></a></figure></div><div id="3cd82798-e1be-4334-bd48-cd59af3290a0" style="width:50%" class="column"><figure id="dffdce42-eea7-4455-95da-dc6b2906dcf7" class="image"><a href="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-04_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.46.43_ai-painter.png"><img style="width:993px" src="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-04_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.46.43_ai-painter.png"/></a></figure></div></div><div><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="223be7db-1755-46de-8e53-e86c60378416"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">네이버 웹툰 AI 페인터의 보완점</div></figure><p id="dbf407b1-496f-40d1-8c38-d2bf3eb8d1e3" class="">아래의 세 형태의 오류들이 빈번히 발생하여 수십개의 채색 힌트를 적용해야 의도대로 채색이 가능함</p><h2 id="aefcc142-70ab-4225-8fb3-251b8631738a" class="">채색 범위의 구분</h2><ul id="f74315d2-f9bb-4d67-b8fa-e20039e8ae3a" class="bulleted-list"><li style="list-style-type:disc">펜터치를 통해 구획이 제대로 정돈(=같은 색깔이 칠해지는 영역마다 선으로 끊기지 않고 둘러싸인 경우)되지 않은 경우 다른 구획임에도 불구하고 같은 색이 칠해지는 문제</li></ul><ul id="b0de7858-a73d-45cf-b318-274de62e2cc2" class="bulleted-list"><li style="list-style-type:disc">펜터치를 통해 제대로 구획이 정돈됐음에도 불구하고 인접한 구획의 색깔이 번지는 문제</li></ul><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">예시</summary><div class="indented"><div id="26e7b04f-ac48-413a-98e2-709dcf8ad30a" class="column-list"><div id="80ea9dd8-0d66-4ac8-9a97-90af8c09dacf" style="width:43.75%" class="column"><figure id="922f3718-810b-429e-aa0e-b52ead324484" class="image"><a href="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-04_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.46.43.png"><img style="width:715px" src="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-04_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.46.43.png"/></a><figcaption>네이버 웹툰 AI 페인터에 최초 업로드한 이미지</figcaption></figure></div><div id="64ea20e8-aa8e-47bf-9664-dc7c76df48a9" style="width:56.25%" class="column"><figure id="e5f75429-4ee1-4406-8b0f-4bd724edc66e" class="image"><a href="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/Screenshot_2023-05-09_at_8.20.31_PM.png"><img style="width:336px" src="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/Screenshot_2023-05-09_at_8.20.31_PM.png"/></a><figcaption>네이버 웹툰 AI 페인터가 채색해준 결과물</figcaption></figure></div></div><ul id="e6384d7e-6345-44ac-bc33-39e3f375db3a" class="bulleted-list"><li style="list-style-type:disc">사용자 입력<ul id="b3128398-dc8c-46d6-83cf-b57381e60521" class="bulleted-list"><li style="list-style-type:circle">최초 업로드한 이미지는 펜터치 이미지로 구획이 비교적 잘 정돈된 결과물</li></ul><ul id="0684c1c6-acfe-4bfe-b33c-c82908cf9ff8" class="bulleted-list"><li style="list-style-type:circle">머리카락 영역에 분홍색으로 채색 힌트 단 하나만 적용한 상황</li></ul></li></ul><ul id="128b605f-e16c-4ecc-a790-4efa9b95e441" class="bulleted-list"><li style="list-style-type:disc">결과<ul id="d16cd3be-cec9-42d7-adea-dd7495006121" class="bulleted-list"><li style="list-style-type:circle">붉은색 넥타이가 아래로 갈수록 푸른색으로 변함</li></ul><ul id="29af1f3f-635f-425d-9111-f68281bf5ac7" class="bulleted-list"><li style="list-style-type:circle">셔츠의 오른쪽 부분의 푸른색이 넥타이의 아래쪽에 번져 넥타이의 색깔을 서서히 변하게 만든 것을 확인할 수 있음</li></ul></li></ul><p id="03488d98-d5c2-4054-8e2d-ca2df5386b08" class="">
+</p></div></details><h2 id="08a149bd-61d5-4a87-9e50-1d60ecfdb516" class="">채색 일관성</h2><p id="7b4c93ed-c8fd-4e8e-8f6f-2e272230b17c" class="">같은 물체임에도 다른 색깔로 칠하는 문제</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">예시</summary><div class="indented"><div id="ff0d7044-e088-42ca-9c20-93e8b31ec245" class="column-list"><div id="b7543839-978b-4242-9444-162acbe92917" style="width:62.5%" class="column"><ul id="06b07682-dede-4f0b-8e3c-f5a3bc9f5627" class="bulleted-list"><li style="list-style-type:disc">사용자 입력<ul id="3516ec9b-0a08-4cfc-8dfa-690f8d2b7971" class="bulleted-list"><li style="list-style-type:circle">머리카락 영역에 분홍색으로 채색 힌트 단 하나만 적용한 상황</li></ul></li></ul><ul id="5e0fd912-7b13-4d94-972e-a5aa870c9dd7" class="bulleted-list"><li style="list-style-type:disc">자동 채색 결과<ul id="c73b1d28-15ed-4254-b1be-eac43743f44b" class="bulleted-list"><li style="list-style-type:circle">[문제]<span style="border-bottom:0.05em solid">넥타이를 가운데에 두고 셔츠의 양옆 색깔이 다르게 채색됨</span></li></ul></li></ul></div><div id="e9b04ddd-a361-4914-9063-0dc5b7c34e1d" style="width:37.49999999999999%" class="column"><figure id="31827ab8-d103-44d6-8bd8-23ec22e5fe6e" class="image"><a href="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/Screenshot_2023-05-09_at_8.20.31_PM.png"><img style="width:336px" src="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/Screenshot_2023-05-09_at_8.20.31_PM.png"/></a></figure></div></div></div></details><h2 id="8eb725e0-5709-4e5f-9905-2bdb36788f8f" class="">색 조합 선택</h2><p id="979c568b-acb4-4da3-84ed-d36f1cbd5b7e" class="">채색 힌트를 주지 않은 다른 영역의 색깔까지 추론하여 색깔을 입히는데, 추론을 통해 입힌 색깔들이 서로 어울리지 않음</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">예시</summary><div class="indented"><div id="a3b334a4-3264-4420-9602-3eed6dc98615" class="column-list"><div id="e796de8b-d5cf-48fd-9e05-04ebfe681740" style="width:37.5%" class="column"><figure id="4748c417-3d3f-4e5f-bfe3-f40deb7443a5" class="image"><a href="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-04_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.46.20.png"><img style="width:567px" src="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-04_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.46.20.png"/></a><figcaption>인간 작가가 선택한 색 조합</figcaption></figure></div><div id="3591a264-1e52-4dc0-bb59-62a9636cb0ee" style="width:62.5%" class="column"><figure id="3f3692e0-6760-4369-b4a4-8a05c2e4bbf4" class="image"><a href="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/Screenshot_2023-05-09_at_8.46.17_PM.png"><img style="width:796px" src="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/Screenshot_2023-05-09_at_8.46.17_PM.png"/></a><figcaption>네이버 웹툰 AI 페인터가 선택한 색 조합(셔츠, 머리색깔 제외)</figcaption></figure></div></div><ul id="ba15fe21-02d7-4804-9560-64da806f3ee0" class="bulleted-list"><li style="list-style-type:disc">사용자 입력<ul id="91cd8b87-d32a-492e-8964-22402fb69c8a" class="bulleted-list"><li style="list-style-type:circle">머리카락과 셔츠에 채색 힌트를 적용</li></ul></li></ul><ul id="99e3acee-137c-497c-a845-05054cc0d6a5" class="bulleted-list"><li style="list-style-type:disc">자동 채색 결과<p id="504ee86e-0ce1-4f09-bc08-5cebf52d266b" class="">인간 작가</p><ul id="5d0e71d6-b796-4b4d-a235-d248fdc573f3" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">분홍, 청록색, 네이비</span> 색의 조합</li></ul><ul id="10dae372-028d-46c8-9c52-fb9358452ad7" class="bulleted-list"><li style="list-style-type:circle">청록색 넥타이로 포인트를 주고 나머지 셔츠와 치마, 가방끈, 허리띠는 무채색 계열로 처리하여 균형감을 줌</li></ul><p id="81055bec-9b3d-4e6b-807b-fe1b188ed02c" class="">네이버 웹툰 </p><ul id="0288e017-18a6-4f5d-a68f-6c6d244d1816" class="bulleted-list"><li style="list-style-type:circle">AI 페인터는 <span style="border-bottom:0.05em solid">분홍, 다홍, 노랑, 청록색</span>의 조합</li></ul><ul id="d905f0d8-38cb-46cb-b00a-bbf5b13f651f" class="bulleted-list"><li style="list-style-type:circle">옷 색깔로 다홍색, 노랑색, 청록색이 모두 적용되어 하나의 영역에 포인트를 주지 못하고 시선이 분산되어 불균형함</li></ul><ul id="22109a92-d016-4549-a782-d7b198063643" class="bulleted-list"><li style="list-style-type:circle">머리 색깔과 비슷한 다홍색 넥타이를 선택하여 포인트를 주지 못함</li></ul><ul id="32da9570-37f7-42de-8441-1d70c233e5d6" class="bulleted-list"><li style="list-style-type:circle">가방끈, 허리띠를 셔츠 색깔 비슷한 옅은 색깔을 주어 셔츠와 구분되지 못함</li></ul></li></ul></div></details></div></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">image to 콘티</summary><div class="indented"><p id="8e070654-a357-44b4-835f-8a440e7fc2e2" class=""><a href="http://160.202.162.195:19100/">http://160.202.162.195:19100</a></p><div id="e596bdd2-95fc-40e6-925c-32104fdbab4a" class="column-list"><div id="2bf511d9-54be-4b4e-839e-569da1215f6d" style="width:50%" class="column"><figure id="5d02e152-d515-4daa-9071-d9bf5da88e1c" class="image"><a href="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/download.png"><img style="width:567px" src="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/download.png"/></a></figure></div><div id="4be261e8-ab66-4fc4-b2fa-52e4517082a2" style="width:50%" class="column"><figure id="c2824d11-f3be-4733-bc49-897bc01164bf" class="image"><a href="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/tmptl7frb20.png"><img style="width:520px" src="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/tmptl7frb20.png"/></a></figure></div></div><p id="07ece9e9-8c9e-4c62-ac7a-26d4d3a345ea" class="">예는 생성된 거</p><p id="b8f7c586-84a2-4a9c-b1b5-1d03cfdba538" class="">
+</p><div id="6dab02b5-5ae4-4c9e-997f-e2af7c6cc782" class="column-list"><div id="e1ea3374-f6e6-482a-b203-d71fba21aafa" style="width:50%" class="column"><figure id="31a783e8-2140-4657-b09c-ff7add482ac1" class="image"><a href="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-04_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.46.43.png"><img style="width:715px" src="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-04-04_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25AE_3.46.43.png"/></a></figure></div><div id="4494be95-de54-4382-900e-75ab792e0b83" style="width:50%" class="column"><figure id="d7e2a44f-0e0e-4f2e-b720-3bd1a1d1cf29" class="image"><a href="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/tmpre0fkzgb.png"><img style="width:712px" src="useful%20websites%20b54dbf0e8b734bf3bbfc2958cc4d8aad/tmpre0fkzgb.png"/></a></figure></div></div><p id="1f1bf2fd-258e-4f20-97f2-33615fbb9f4b" class="">예는 원래 펜터치</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">pdf to word / ppt</summary><div class="indented"><p id="dca68c6d-761a-4eb5-9ec1-a449ddff9486" class=""><a href="https://smallpdf.com/kr">https://smallpdf.com/kr</a></p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://pokeit.ai">포킷 (전 스포키) </a></summary><div class="indented"><p id="82aaaacd-c4ab-42e7-87fe-229d5d468368" class="">ID: <a href="mailto:lionrocket2002@gmail.com">lionrocket2002@gmail.com</a></p><p id="31df2d2f-3dad-4868-8f53-a3b377878089" class="">PW: lr20022002</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="http://103.249.28.204:19100">이 이미지 만들 때 사용한 곳</a></summary><div class="indented"><div><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://lionrocket.slack.com/archives/C050R41UPGD/p1685524625875729?thread_ts=1683709732.699599&amp;cid=C050R41UPGD">웹소설 표지</a> 2차</summary><div class="indented"><div id="9f94c024-03a9-48cb-bd88-7c2d96230aa2" class="column-list"><div id="5950ac71-5b0f-463c-8bb6-39c0fa5ca1dd" style="width:50%" class="column"><figure id="68f069a1-c32f-48f4-bfcf-50f23f48577a" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%2580%25E1%2585%25A9%25E1%2586%25BC%25E1%2584%2591%25E1%2585%25A9%25E1%2584%2581%25E1%2585%25B3%25E1%2587%2580.png"><img style="width:1024px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%2580%25E1%2585%25A9%25E1%2586%25BC%25E1%2584%2591%25E1%2585%25A9%25E1%2584%2581%25E1%2585%25B3%25E1%2587%2580.png"/></a></figure></div><div id="21339b43-ec2b-46ad-8b04-be1fc97114bc" style="width:50%" class="column"><figure id="0dc11422-64fb-4a25-b74c-880a5d764c7b" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%2586%25E1%2585%25AE%25E1%2584%2592%25E1%2585%25A7%25E1%2586%25B8%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2591%25E1%2585%25A6.png"><img style="width:1024px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%2586%25E1%2585%25AE%25E1%2584%2592%25E1%2585%25A7%25E1%2586%25B8%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2591%25E1%2585%25A6.png"/></a></figure></div></div><div id="50e6a763-6cc0-4fc0-86a4-f0b854a39acd" class="column-list"><div id="a0da8f9e-fd5c-4ae0-9af5-41e310895391" style="width:50%" class="column"><figure id="31058c26-f6be-4718-84da-70ffae54ede6" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25AF%25E1%2584%2589%25E1%2585%25A1%25E1%2586%25BC222222.png"><img style="width:1024px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25AF%25E1%2584%2589%25E1%2585%25A1%25E1%2586%25BC222222.png"/></a></figure></div><div id="864f9ad2-1338-4d33-903c-91e20b0a1ce4" style="width:50%" class="column"><figure id="b95af253-8352-4b77-9569-c610d326dfed" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%258B%25E1%2585%25A7%25E1%2586%25AB%25E1%2584%258B%25E1%2585%25A2dd.png"><img style="width:1024px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%258B%25E1%2585%25A7%25E1%2586%25AB%25E1%2584%258B%25E1%2585%25A2dd.png"/></a></figure></div></div></div></details></div></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">AI 작가용 툴</summary><div class="indented"><figure id="39ee03a0-2597-4838-8974-2b7c04d83d62"><a href="https://oil-handbook2-emphasize.lionrocket.ai/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Gradio</div></div><div class="bookmark-href"><img src="https://oil-handbook2-emphasize.lionrocket.ai/favicon.ico" class="icon bookmark-icon"/>https://oil-handbook2-emphasize.lionrocket.ai/</div></div></a></figure><p id="64401ed4-c0a5-44eb-b8a6-41e7e51f072c" class=""><a href="https://www.notion.so/ver-1-0-6840199bff364f91bbbff2a9e0aee5ac?pvs=21"><img class="icon" src="https://www.notion.so/icons/cherries_red.svg"/>웹소설 표지 제작 키트 ver 1.0</a> </p><p id="1eaff8b1-ca61-491e-b870-67ceefbaf7d1" class="">사실 내부용으로 나중에 표지 대량 작업을 위한 온보딩 문서가 목적이긴 합니다!</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">앱 실사용자 분석 정보</summary><div class="indented"><p id="e7683118-c938-4124-8c1d-8e1a217e4004" class="">한국인이 많이 사용하는 8,000개 이상의 앱 데이터를 실시간으로 제공하며, 앱 사용 행태를 분석할 수 있도록 실사용자 분석 정보(앱 사용자, 설치자, 사용시간, 사용 일수, 실행횟수 등), 업종 내 유입 및 이탈 조회, 경쟁 앱 현황 비교 등 다양한 기능을 지원</p><figure id="60ef5018-d1a0-4741-8649-78476bd72f73"><a href="https://www.wiseapp.co.kr/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">와이즈앱/리테일/굿즈 - 실시간데이터 기반 기업/시장 분석</div><div class="bookmark-description">구글플레이/앱스토어 앱분석, 온라인/오프라인 리테일분석, 온라인 판매 분석, 이용자수, 사용시간, 결제자수, 결제금액, 구매금액, 판매량 등 실시간데이터 기반 기업/시장 분석</div></div><div class="bookmark-href"><img src="https://www.wiseapp.co.kr/resources/img/common/img_logo_mini.png" class="icon bookmark-icon"/>https://www.wiseapp.co.kr/</div></div></a></figure><p id="a1af6994-bdfa-42f6-9da1-85ed3b1ad358" class="">App Annie 인텔리전스는 전 세계 백만 명 이상의 사용자가 1400만 개 이상의 앱을 분석하기 위해 선택한, 가장 정확하고 포괄적인 모바일 시장 인사이트를 제공하는 솔루션입니다.</p><figure id="033b105b-9707-4b2a-b58b-ae1a925ebce3"><a href="https://go.appannie.com/THE_VC_KR.html?utm_source=the-vc&amp;utm_medium=partnership&amp;utm_campaign=apac-kr-partnerships-202107-the-vc-redirection&amp;utm_content=partner-&amp;sfdcid=7016F000002So9z" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://go.appannie.com/THE_VC_KR.html?utm_source=the-vc&amp;utm_medium=partnership&amp;utm_campaign=apac-kr-partnerships-202107-the-vc-redirection&amp;utm_content=partner-&amp;sfdcid=7016F000002So9z</div></div></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">웹사이트 트래픽 측정</summary><div class="indented"><figure id="d9bff461-121c-431f-8965-6538f6b05258"><a href="https://noa-xyz.tistory.com/48" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">웹사이트의 트래픽을 측정할 수 있는 무료 측정도구 11가지</div><div class="bookmark-description">웹사이트의 트래픽을 측정할 수 있는 무료 측정도구 11가지 - SEMrush - SimilarWeb - Ubersuggest - Serpstat - Ahrefs - MonsterInsights - Brand Overflow - Sitechecker - Website IQ - Fathom - Quantcast 자사뿐만 아니라 URL만 입력하면, 아무 웹사이트의 트래픽을 분석할 수 있는 측정도구들입니다. 대체로는 제한적으로나마 무료로 사용할 수 있습니다. 그 중에서 가장 많이 사용하는 측정도구는 - SEMrush(에스이엠러시) - SimilarWeb(시밀러웹) 두 가지입니다. 두 가지에 대해서는 무료로 사용할 수 있는 범위에 대해서 간략한 특징도 살펴보겠습니다. SEMrush - 제한적인 영역 내에서 계정 ..</div></div><div class="bookmark-href"><img src="https://t1.daumcdn.net/tistory_admin/favicon/tistory_favicon_32x32.ico" class="icon bookmark-icon"/>https://noa-xyz.tistory.com/48</div></div><img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FCk6bL%2Fbtrx0Xi9Iw7%2FJzRf2h8Ky0hmKbrxC1uFRK%2Fimg.png" class="bookmark-image"/></a></figure><p id="58db5752-425c-489e-9390-04cf00ec0b31" class="">THE VC 얘네도 있긴 한데 구독료가 좀 비쌈…</p><figure id="220c1163-452e-43ab-9db8-001d058dd18b"><a href="https://thevc.kr/kmong/products" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">크몽 - 제품/서비스 2개 - THE VC</div><div class="bookmark-description">크몽(Kmong)이 운영하는 크몽, 쑨에 대한 자세한 정보와 유사 제품/서비스를 확인하세요.</div></div><div class="bookmark-href"><img src="https://thevc.kr/android-icon-192x192.png" class="icon bookmark-icon"/>https://thevc.kr/kmong/products</div></div><img src="https://logo-resources.thevc.kr/organizations/banners/91a092d612e6f0184b452b869a259a0a39542e5200b0b998ee57253cfa8b4e0e_1484800051688918.jpg" class="bookmark-image"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">줌</summary><div class="indented"><figure id="d9d8cb7b-37c7-40db-97b2-da0da563bde3"><div class="source">https://lionrocket.slack.com/archives/D04TKJ2EQ79/p1686123549897459</div></figure><p id="188f6a16-3790-4d86-9f7a-6f1009e0e78c" class="">ID: <a href="mailto:zoom@lionrocket.ai">zoom@lionrocket.ai</a></p><p id="3bf49863-51c7-457d-9da9-300c6a1f9f80" class="">PW: lion0813!</p><p id="e9998448-6f39-4686-a02d-bd0dadc50d3b" class="">
+</p></div></details></div></article></body></html>

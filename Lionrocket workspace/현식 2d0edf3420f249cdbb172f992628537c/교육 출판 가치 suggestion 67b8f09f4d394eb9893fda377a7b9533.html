@@ -1,0 +1,708 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>교육 출판 가치 suggestion</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="67b8f09f-4d39-4eb9-893f-da377a7b9533" class="page sans"><header><h1 class="page-title">교육 출판 가치 suggestion</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-orange">suggestion</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AATXAJyqLbmCwuQjRWK_G_jiIWd-GM6Mc8GN76HcF98B=s100" class="icon user-icon"/>김현식</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><hr id="87203f1b-f4cf-4f6b-81c7-10887eb22f3d"/><p id="c4863d51-1c6a-410a-a0c8-ed8b0eda2d81" class="">
+</p><h2 id="da283541-96b6-494f-bd90-e88ccdfd0014" class="">교육 출판으로 바꾸기</h2><p id="44b66cd1-bae2-40db-94c4-7094d0adeb55" class="">
+</p><p id="2280ccc4-3743-4a3b-a035-f67b11202e4a" class="">아이템 + 근거 필요함</p><p id="4c8f9bd4-6247-4f4f-a9f9-f9ff13eb594d" class="">아마 레퍼는 찾기 힘들 거임</p><p id="e57166aa-7dd6-4583-b3f6-d90a2b0fcf91" class="">그렇다면 경험과 논리를 가지고 설득해야</p><p id="bdc272bc-f80c-428f-a054-2dc0f12072c2" class="">
+</p><h3 id="1f88cae1-3335-4606-ba35-7429637beb41" class="">기술 장점</h3><p id="90962ebd-69d8-48a6-b3cf-fb365c635bb2" class="">[???]</p><p id="6d02889e-6f86-4f93-93d6-b918cf92543b" class="">
+</p><h3 id="12aa482a-8355-4597-9986-89190099beb6" class="">적용 가능성</h3><p id="dd26a630-6f47-4b63-ab42-19b682dd1219" class="">
+</p><ol type="1" id="7b6cc8fb-38a5-4356-ad75-3364923d0066" class="numbered-list" start="1"><li>어학용 이미지 생성기<p id="2e4be367-83b3-4339-9ddd-4d8c38f5a3fa" class="">학생별로 취약한 표현들을 바탕으로 맞춤형 학습 가능<div class="indented"><ul id="004bd4f6-cb70-4a81-aa4f-7a76f173c4c9" class="bulleted-list"><li style="list-style-type:disc">이미지 게임 요소가 결합된 학습을 통해 학생 참여도 향상<ul id="dac9ad9e-975c-481f-8237-8e58b81a6434" class="bulleted-list"><li style="list-style-type:circle">A사는 학생 수업 참여를 높이기 위해 게임의 요소를 가미, 제시된 단어에 알맞은 그림을 고르는 등의 학습 활동을 진행</li></ul><ul id="bc3d44c5-7459-4a4c-a936-aba512b89c56" class="bulleted-list"><li style="list-style-type:circle">고정된 이미지 데이터셋이 아닌 학생별 맞춤형 데이터셋을 바탕으로 이미지 맞추기 게임 가능</li></ul></li></ul><ul id="349a2e4c-4ce4-4206-b9ca-4c39be8e58a2" class="bulleted-list"><li style="list-style-type:disc">학생별로 취약한 표현 위주로 이미지 문제를 생성, 학생 맞춤형 교육 가능<ul id="fd11eff9-7ae0-41a5-8d9c-72df001b92bc" class="bulleted-list"><li style="list-style-type:circle">미국 ETS 주관 공인영어시험TOEIC 듣기 파트 이미지 묘사 문제 지속적 출제</li></ul><ul id="f9d2fe6f-cc09-4b7e-8ab9-10921a847dde" class="bulleted-list"><li style="list-style-type:circle">학생별로 취약한 표현들을 바탕으로 이미지 묘사 문제 맞춤형 생성 가능</li></ul></li></ul></div></p><p id="b3ca6bd3-a88d-4b6c-9fa3-360c35f559c4" class="">
+</p><ul id="5fa0c832-5790-4c14-83fe-1c570eaaf1f4" class="bulleted-list"><li style="list-style-type:disc">[이미지와 우리 두뇌의 학습 절차와의 연관성과 관련된 논문]</li></ul><ul id="49f53670-0cfb-41b5-95e9-09f658f95508" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow_background">[이미지와 우리 두뇌의 학습 절차와의 연관성과 관련된 인터뷰]</mark></li></ul><p id="0fb6e541-e203-4278-905d-3c9cfef26d55" class="">
+</p></li></ol><ol type="1" id="bff6e6e4-4a28-419d-b829-83909b9db369" class="numbered-list" start="2"><li>이미지 기반 수학 <p id="e3c90100-b592-4b34-bf8a-af12e62bc8fd" class="">문장에서 그림으로 이어지는 수학적 연상능력 증진</p><ul id="531a84a2-4f29-4c0b-8f68-3ee323befc0d" class="bulleted-list"><li style="list-style-type:disc">문장 형태의 제시문에서 도형 또는 그래포로의 연상을 도와 기하적 상상력 향상<ul id="4250cbe8-fc16-4b73-8146-52b15e65a9bc" class="bulleted-list"><li style="list-style-type:circle">다양한 소프트웨어를 통해 도형 작도 및 그래프 탐구를 도와 교육 효과를 증진하려는 시도가 이어지는 중<ul id="6f5fbaf5-25b9-4e02-aa31-fad37629b367" class="bulleted-list"><li style="list-style-type:square"><strong>Algeomath</strong>는 탐구 중심의 수학 수업 활성화를 위한 목적 한정된 수학 수업 시간 안에서 학생들에게 더 많은 수학적 상황을 제공</li></ul><ul id="ebe3bafc-8ab1-482b-8fc1-9f07a52d430e" class="bulleted-list"><li style="list-style-type:square"><strong>Geometer&#x27;s Sketchpad</strong>는 전 학년의 학생들에게 시각적인 학습 방법을 제공하여 학생의 참여와 이해도 및 성취도를 높임</li></ul><ul id="d7726103-6bdb-49d8-a44f-6ec8cb8b8656" class="bulleted-list"><li style="list-style-type:square">연구에 따르면 <strong>Geometer&#x27;s Sketchpad</strong>를 이용한 학생들은 그렇지 않은 경우 대비 수학학업성취도 및 추론 능력이 높은 것으로 나타남</li></ul></li></ul></li></ul><ul id="b54c1b66-78b7-4926-91ef-724592ef6be3" class="bulleted-list"><li style="list-style-type:disc">학생별 맞춤형 교육 솔루션<ul id="7806b8d7-6a61-4b56-b464-45c38d3c4d85" class="bulleted-list"><li style="list-style-type:circle">학생이 스스로 구상한 이미지 생성을 도와 주도적 학습 능력 배양</li></ul><ul id="42e628e6-bfd4-4f32-89da-191383819cf0" class="bulleted-list"><li style="list-style-type:circle">학생별로 취약한 개념 위주로 도형 및 그래프를 통한 학생 맞춤형 교육</li></ul></li></ul><ul id="3de918c7-83f9-4eed-aedb-af02f60334c4" class="bulleted-list"><li style="list-style-type:disc">[기하 문제 도형화를 적용한 사례]<ul id="aa92da83-1fc8-4773-ad01-c32cae53e675" class="bulleted-list"><li style="list-style-type:circle"></li></ul></li></ul><ul id="00c94433-4558-4284-b087-91bfa5e56553" class="bulleted-list"><li style="list-style-type:disc">[기하 문제 도형화를 적용한 인터뷰]<p id="878817be-802d-49e5-b58c-95950cec8caa" class="">
+</p></li></ul></li></ol><ol type="1" id="5e9bb356-76f0-4ffc-9f57-f5bda442c57b" class="numbered-list" start="3"><li>출판사 삽화<p id="4e8e461c-d839-4563-8b8a-66845af1704a" class="">삽화 생성 생산성 향상</p><ul id="aade1508-51bf-4890-bc09-568847c38017" class="bulleted-list"><li style="list-style-type:disc">[삽화 생성에 생성 AI 이용하여 생산성 향상한 사례]</li></ul></li></ol><p id="06198b95-bb4f-4ef2-82fa-cb0c409b89f3" class="">
+</p><hr id="bad3ae09-8cc6-4fbe-a031-5e58b3442a8c"/><p id="a3ba9af6-e8ac-4e6b-a686-895ef1bc3ff2" class="">[참고]</p><p id="d179d08a-661a-4a60-9a9c-bf12366c736a" class="">
+</p><p id="38f1ef19-02cc-464b-ac71-b560c5e23b81" class="">프롬프트 입력하며 생성되는 이미지를 보며</p><p id="479c239a-162c-4e96-ace6-3e3e802e3b3b" class="">1)성장기 어린아이의 창의력, 인지력 향상</p><p id="f32c90c0-0db6-4567-8fb1-7a0ca8cfeead" class="">2)단어 및 어휘력 증가 (영어 &amp; 한글)<div class="indented"><p id="5b67ad56-62e8-4927-ab98-d41ca1938836" class="">특히 자연스럽게 영어와 친숙해지는 기능이 부각된다면 부모님은 지갑을 열것.</p></div></p><p id="460055d7-9aea-404b-8523-e6cb62c97d29" class="">3)앞으로 일상에서 함께 하게 될 AI와 친숙해지는 놀이  &quot;우리아이와 AI의 첫 만남!&quot;전용 테블릿 + 전용 생성AI 상품화<div class="indented"><p id="3950836e-f2c1-47cc-aeb3-1ff0eb643906" class="">← 이건 교원, 대교 급 정도와 논의 가능.웹방식의 글로벌 서비스화 된다면 전세계 어린이들과 다양한 언어를 이미지 생성과 함께 자연스럽게 학습.  ← 이건 나중 이야기.</p></div></p><p id="a0be992e-7fa7-4681-a994-4532a50f0368" class="">
+</p><p id="97350cad-cb1d-4a1e-9d2b-b91290e8ed7a" class="">유아 교육, 입시 교육, 성인 직무</p><ol type="1" id="53c23cf2-29a3-4b35-9fac-0f1eacc1c8e5" class="numbered-list" start="1"><li>유아들이 그린 그림을 가지고 디자인을 뽑아내기</li></ol><ol type="1" id="c101622f-fa4f-4a6b-a682-541d619c54a5" class="numbered-list" start="2"><li>수학문제와 매칭되는 도형 그려주는 서비스</li></ol><ol type="1" id="f03ebece-6a35-4b5e-a151-fbf9805b58ff" class="numbered-list" start="3"><li>동화를 가지고 그림을 그려주는 서비스</li></ol><p id="a6ed91cf-e76d-4633-a59e-e49ec2f6933f" class="">
+</p><hr id="1f7109ab-83d3-4def-bdb1-cbe8d4296916"/><p id="5d146bc6-3149-4ecd-9c12-2264dc3fca1e" class="">
+</p><nav id="5cc11ad7-cfea-44e6-91cc-6f527cda7e18" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#da283541-96b6-494f-bd90-e88ccdfd0014">교육 출판으로 바꾸기</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1f88cae1-3335-4606-ba35-7429637beb41">기술 장점</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#12aa482a-8355-4597-9986-89190099beb6">적용 가능성</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7c9cf7fb-6f5d-45d6-ae17-99d0536fa51c">생성 AI 소개</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7304881d-4436-4232-8b45-e40ec4199759">기술강점</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5b7d5c2b-d967-45c9-8a00-1331dc17d17b">적용예시</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8d868f81-6876-4cf8-a227-1eaf07a90fe1"><mark class="highlight-red">1. 이미지 생성 어학 맞춤형 교육</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f03bbf65-1dd7-4ead-95e2-eed1276a466f"><mark class="highlight-red">2. 반응형 생성 이미지 기반 수학 학습 효율화</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8528a85b-342f-49ce-a2bc-a3762bb708f1"><mark class="highlight-red">3. 연재 여부 결정을 위한 사전 테스트</mark></a></div></nav><p id="befb0a64-d0da-4a5e-8c7c-1c3ec716931f" class="">
+</p><h2 id="7c9cf7fb-6f5d-45d6-ae17-99d0536fa51c" class="">생성 AI 소개</h2><blockquote id="717d39af-34d2-4f25-8250-04ace9341645" class="">지난 해 스테이블 디퓨전(Stable Diffusion), 달리(DALL-E) 등의 등장과 함께 AI 이미지 생성에 대한 관심이 높아졌습니다. 하지만 아직까지는 사용자가 직관적으로, 또는 경험적으로 자신이 원하는 결과물을 생성하기까지 여러 개의 허들이 남아있는 상태였습니다.
+
+라이언로켓은 <strong>① 웹 UI + 클라우드의 형태로 코딩 및 로컬 PC의 GPU에 대한 제약을 없애고 ② 사용목적에 부합하는 생성 AI 모델을 추천</strong>해줄뿐만 아니라 <strong>③ 파인튜닝을 통해 개별 고객사의 필요에 따른 전용 이미지 생성 서비스를 제공</strong>하고 있습니다.
+
+이를 통해 사용자는 직관적으로 이미지 생성 결과를 예측할 수 있으며, 다양한 프롬프트(=텍스트)를 입력하고 조합하면서 결과물의 퀄리티를 점차 개선해나갈 수 있게 되었습니다. 창작자 입장에서 자신이 상상한 결과물까지 도달하는 경로를 획기적으로 단축시킬 수 있습니다. 
+
+누구보다 솜씨가 좋으면서도 3~5초면 결과물을 제공하는 원화가가 이제 모두에게 제공됩니다.</blockquote><p id="28211953-8a80-4552-b94f-a64a255a7b8f" class="">
+</p><h2 id="7304881d-4436-4232-8b45-e40ec4199759" class="">기술강점</h2><p id="d7c67f2c-7002-4951-886e-6d6d724d873d" class="">고정된 캐릭터의 표정, 행동, 소품, 배경 등을 간단한 프롬프트 입력만으로 변경 가능</p><div id="f6affb7b-a838-47e7-85ce-27654eb9b8f8" class="column-list"><div id="6ef44e82-8743-4600-94b5-f0fbc23110ac" style="width:25%" class="column"><figure id="c2393a23-f1ba-4977-a8d0-5907d6535248" class="image"><a href="%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8%20%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%91%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A1%E1%84%8E%E1%85%B5%20suggestion%2067b8f09f4d394eb9893fda377a7b9533/00144-478352256-((intricate_de___.png"><img style="width:512px" src="%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8%20%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%91%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A1%E1%84%8E%E1%85%B5%20suggestion%2067b8f09f4d394eb9893fda377a7b9533/00144-478352256-((intricate_de___.png"/></a></figure></div><div id="6cbb9c34-ec81-4f29-91dd-0ad5c365a442" style="width:25%" class="column"><figure id="1efce04e-af80-4e69-9779-15fd0f45680c" class="image"><a href="%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8%20%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%91%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A1%E1%84%8E%E1%85%B5%20suggestion%2067b8f09f4d394eb9893fda377a7b9533/00145-2005894523-((intricate_d___.png"><img style="width:512px" src="%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8%20%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%91%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A1%E1%84%8E%E1%85%B5%20suggestion%2067b8f09f4d394eb9893fda377a7b9533/00145-2005894523-((intricate_d___.png"/></a></figure></div><div id="97fa2dac-4b5e-4369-a3e7-295842123866" style="width:25%" class="column"><figure id="a56f57d7-e906-4245-963f-fe680f9e098f" class="image"><a href="%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8%20%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%91%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A1%E1%84%8E%E1%85%B5%20suggestion%2067b8f09f4d394eb9893fda377a7b9533/00147-1267412316-((intricate_d___.png"><img style="width:512px" src="%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8%20%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%91%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A1%E1%84%8E%E1%85%B5%20suggestion%2067b8f09f4d394eb9893fda377a7b9533/00147-1267412316-((intricate_d___.png"/></a></figure></div><div id="bddc7aa2-e77b-4038-8c0a-1eb8f480fe45" style="width:25%" class="column"><figure id="17efabec-4a66-47ea-8a02-c946a24a3aee" class="image"><a href="%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8%20%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%91%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A1%E1%84%8E%E1%85%B5%20suggestion%2067b8f09f4d394eb9893fda377a7b9533/00141-207311782-((intricate_de___.png"><img style="width:512px" src="%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8%20%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%91%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A1%E1%84%8E%E1%85%B5%20suggestion%2067b8f09f4d394eb9893fda377a7b9533/00141-207311782-((intricate_de___.png"/></a></figure></div></div><p id="ac5cc2ca-fa22-42a4-95e0-030483d1e0a2" class="">
+</p><h2 id="5b7d5c2b-d967-45c9-8a00-1331dc17d17b" class="">적용예시</h2><p id="2071b83f-593f-414c-b8a1-b099e53ab8f0" class="">
+</p><h3 id="8d868f81-6876-4cf8-a227-1eaf07a90fe1" class=""><mark class="highlight-red">1. 이미지 생성 어학 맞춤형 교육</mark></h3><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="97308b66-c173-4055-b966-822163905fdb"><div style="font-size:1.5em"><span class="icon">👨🏻‍🎨</span></div><div style="width:100%">학생별로 취약한 표현들을 바탕으로 맞춤형 이미지 연상 학습법 적용</div></figure><ul id="31a89177-a524-4879-bca2-78cc42c90c45" class="bulleted-list"><li style="list-style-type:disc">이미지 게임 요소가 결합된 학습을 통해 학생 참여도 향상<ul id="a29fee4a-925d-4413-9831-0a8ef8e98cbf" class="bulleted-list"><li style="list-style-type:circle">A사는 학생 수업 참여를 높이기 위해 게임의 요소를 가미, 제시된 단어에 알맞은 그림을 고르는 등의 학습 활동을 진행</li></ul><ul id="05138804-3548-415f-8609-bc85f8c9cc29" class="bulleted-list"><li style="list-style-type:circle">고정된 이미지 데이터셋이 아닌 <code>학생별 맞춤형 데이터셋을 바탕으로 이미지 맞추기 게임</code> 가능</li></ul></li></ul><ul id="2a4223ed-11d8-4be5-9e7e-8faf30cf7a58" class="bulleted-list"><li style="list-style-type:disc">학생별로 취약한 표현 위주로 이미지를 생성하는 학생 맞춤형 교육 가능<ul id="67bb590b-1842-4b9e-88a5-34ce29919500" class="bulleted-list"><li style="list-style-type:circle">미국 ETS 주관 어학공인인증시험 TOEIC 듣기 파트 이미지 묘사 문제 지속적 출제</li></ul><ul id="f80be8c8-d45b-403a-b6d2-ffd9c19e0699" class="bulleted-list"><li style="list-style-type:circle">학생별로 취약한 표현들을 바탕으로<code> 이미지 묘사 문제 맞춤형 생성 </code>가능</li></ul></li></ul><ul id="429b4549-13e8-4175-8c50-c3ea9560d2cb" class="toggle"><li><details open=""><summary>참고자료</summary><p id="1e80235e-d902-4f0a-b65b-a333c543061e" class="">이미지 학습을 통한 학습 효과 증진에 관련된 논문 (Dual Coding Theory)</p><figure id="d20b6dd9-c7d2-42c7-ab0c-f44cf3e7381a"><div class="source"><a href="%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8%20%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%91%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A1%E1%84%8E%E1%85%B5%20suggestion%2067b8f09f4d394eb9893fda377a7b9533/Dual_Coding_Theory_and_Education.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f903006a-a6bf-4f3f-ae17-4f386db5383f/Dual_Coding_Theory_and_Education.pdf</a></div></figure><p id="af355987-5d9f-4832-b0ba-28750c6706a9" class="">
+</p><p id="dea67f7c-f79e-4a5d-970c-f2cd6f89a131" class="">[70일 완성 이미지 영단어] <strong><strong>DAY 1 &#x27;0001 ~ 0020&#x27;</strong></strong></p><figure id="a73b6135-528a-4c55-8e52-44a150d31686"><div class="source"><a href="https://www.youtube.com/watch?v=Lqf2cxv4Zfw">https://www.youtube.com/watch?v=Lqf2cxv4Zfw</a></div></figure></details></li></ul><p id="7a28c928-454f-420d-8e0f-f5d604e8fdb7" class="">
+</p><p id="6faf319a-ca9a-4011-9b14-7ef617907e64" class="">
+</p><h3 id="f03bbf65-1dd7-4ead-95e2-eed1276a466f" class=""><mark class="highlight-red">2. 반응형 생성 이미지 기반 수학 학습 효율화</mark></h3><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="c93801b3-7682-4f03-9a8c-d2c8eec061d0"><div style="font-size:1.5em"><span class="icon">📐</span></div><div style="width:100%">문장에서 도형으로 이어지는 기하학적 연상능력 증진</div></figure><ul id="526c8238-9f7f-4127-8ae4-b0a944a34018" class="bulleted-list"><li style="list-style-type:disc">문장 형태의 제시문에서 도형 또는 그래프로의 연상을 도와 기하적 상상력 향상<ul id="180d7bed-3129-4b88-b652-45bd39aa575d" class="bulleted-list"><li style="list-style-type:circle">다양한 소프트웨어를 통해 도형 작도 및 그래프 탐구를 도와 교육 효과를 증진하려는 시도가 이어지는 중<ul id="2667795f-1ba3-4232-8e34-6f99aa567b57" class="bulleted-list"><li style="list-style-type:square"><strong>Algeomath</strong>는 탐구 중심의 수학 수업 활성화를 위한 목적 한정된 수학 수업 시간 안에서 학생들에게 더 많은 수학적 상황을 제공</li></ul><ul id="9ae2ae61-5031-42d1-b07b-fe1a3793b16f" class="bulleted-list"><li style="list-style-type:square"><strong>Geometer&#x27;s Sketchpad</strong>는 전 학년의 학생들에게 시각적인 학습 방법을 제공하여 학생의 참여와 이해도 및 성취도를 높임</li></ul><ul id="adbd07fb-1f24-4e3d-9d3a-43d55ff16f77" class="bulleted-list"><li style="list-style-type:square">연구에 따르면 <strong>Geometer&#x27;s Sketchpad</strong>를 이용한 학생들은 그렇지 않은 경우 대비 수학학업성취도 및 추론 능력이 높은 것으로 나타남</li></ul></li></ul></li></ul><ul id="5a29078c-14a3-4bdb-8a4e-5877338e13ee" class="bulleted-list"><li style="list-style-type:disc">학생별 맞춤형 교육 솔루션<ul id="e51fd3f0-8c53-4be7-840d-6df3377a4f72" class="bulleted-list"><li style="list-style-type:circle">학생이 스스로 구상한 이미지 생성을 도와 주도적 학습 능력 및 창의력 배양</li></ul><ul id="e77bba8d-bfff-4f41-ae99-7032724aac25" class="bulleted-list"><li style="list-style-type:circle">학생별로 취약한 개념 위주로 도형 및 그래프를 통한 학생 맞춤형 교육</li></ul></li></ul><ul id="ee1d0b66-19c9-40bf-a67e-8f8e8403a423" class="toggle"><li><details open=""><summary>참고자료</summary><p id="98cadb5a-1e27-40d5-86de-952a937a46a7" class=""><strong>Geometer&#x27;s Sketchpad</strong> 활용 학습과 수학학업성취도 및 추론 능력의 관계</p><figure id="cc77b02f-842c-42b6-a130-4ae95d4f4ff0"><div class="source"><a href="%E1%84%80%E1%85%AD%E1%84%8B%E1%85%B2%E1%86%A8%20%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%91%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A1%E1%84%8E%E1%85%B5%20suggestion%2067b8f09f4d394eb9893fda377a7b9533/GSP%25E1%2584%2585%25E1%2585%25B3%25E1%2586%25AF_%25E1%2584%2592%25E1%2585%25AA%25E1%2586%25AF%25E1%2584%258B%25E1%2585%25AD%25E1%2586%25BC%25E1%2584%2592%25E1%2585%25A1%25E1%2586%25AB_%25E1%2584%2583%25E1%2585%25A9%25E1%2584%2592%25E1%2585%25A7%25E1%2586%25BC%25E1%2584%2592%25E1%2585%25A1%25E1%2586%25A8%25E1%2584%2589%25E1%2585%25B3%25E1%2586%25B8%25E1%2584%258B%25E1%2585%25B5_%25E1%2584%2589%25E1%2585%25AE%25E1%2584%2592%25E1%2585%25A1%25E1%2586%25A8%25E1%2584%2592%25E1%2585%25A1%25E1%2586%25A8%25E1%2584%258B%25E1%2585%25A5%25E1%2586%25B8%25E1%2584%2589%25E1%2585%25A5%25E1%2586%25BC%25E1%2584%258E%25E1%2585%25B1%25E1%2584%2583%25E1%2585%25A9_%25E1%2584%2586%25E1%2585%25B5%25E1%2586%25BE_%25E1%2584%258E%25E1%2585%25AE%25E1%2584%2585%25E1%2585%25A9%25E1%2586%25AB_%25E1%2584%2582%25E1%2585%25B3%25E1%2586%25BC%25E1%2584%2585%25E1%2585%25A7%25E1%2586%25A8%25E1%2584%258B%25E1%2585%25A6_%25E1%2584%2586%25E1%2585%25B5%25E1%2584%258E%25E1%2585%25B5%25E1%2584%2582%25E1%2585%25B3%25E1%2586%25AB_%25E1%2584%258B%25E1%2585%25A7%25E1%2586%25BC%25E1%2584%2592%25E1%2585%25A3%25E1%2586%25BC.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9e6d961b-8641-4fe1-8d39-4f0353bd392c/GSP%E1%84%85%E1%85%B3%E1%86%AF_%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB_%E1%84%83%E1%85%A9%E1%84%92%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%86%A8%E1%84%89%E1%85%B3%E1%86%B8%E1%84%8B%E1%85%B5_%E1%84%89%E1%85%AE%E1%84%92%E1%85%A1%E1%86%A8%E1%84%92%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%89%E1%85%A5%E1%86%BC%E1%84%8E%E1%85%B1%E1%84%83%E1%85%A9_%E1%84%86%E1%85%B5%E1%86%BE_%E1%84%8E%E1%85%AE%E1%84%85%E1%85%A9%E1%86%AB_%E1%84%82%E1%85%B3%E1%86%BC%E1%84%85%E1%85%A7%E1%86%A8%E1%84%8B%E1%85%A6_%E1%84%86%E1%85%B5%E1%84%8E%E1%85%B5%E1%84%82%E1%85%B3%E1%86%AB_%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A3%E1%86%BC.pdf</a></div></figure><p id="4d8c63b5-ea9b-413f-8008-fd054daafcde" class="">
+</p><p id="f5d360c7-5122-4e5e-bc59-fb905fee85ca" class="">다양한 도형 작도 및 그래프 탐구 소프트웨어</p><figure id="f5f266a1-7f80-4ed2-afe4-d9fc4b2a4652"><a href="https://www.geogebra.org/?lang=ko" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">지오지브라 - 1억 명 이상의 학생과 교사가 사용하는 세계에서 가장 인기있는 무료 수학 학습 도구</div><div class="bookmark-description">클래스 활동, 그래프, 기하, 공동 화이트보드 등을 위한 무료 디지털 학습 도구</div></div><div class="bookmark-href"><img src="https://www.geogebra.org/favicon.ico" class="icon bookmark-icon"/>https://www.geogebra.org/?lang=ko</div></div></a></figure><figure id="d9bd7f94-1798-4541-bc8a-a2fe950f41e9"><a href="https://www.kofac.re.kr/cms/content/view/343" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">한국과학창의재단</div><div class="bookmark-description">한국과학창의재단은 과학중심 문화조성과 인재양성을 위한 현장정책 전문기관입니다.</div></div><div class="bookmark-href"><img src="https://www.kofac.re.kr/_static/kofac/img/common/favicon.ico" class="icon bookmark-icon"/>https://www.kofac.re.kr/cms/content/view/343</div></div></a></figure><figure id="d850e641-d4a5-41cc-a0b9-b4e2af463582"><a href="https://sketchpad.keycurriculum.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The Geometer&#x27;s Sketchpad</div><div class="bookmark-description">A front-end template that helps you build fast, modern mobile web apps.</div></div><div class="bookmark-href"><img src="https://sketchpad.keycurriculum.com/favicon.ico" class="icon bookmark-icon"/>https://sketchpad.keycurriculum.com/</div></div></a></figure><p id="36f01c1a-c13a-4a9b-9137-1b79e2b63ee6" class="">
+</p></details></li></ul><p id="870efb71-5647-4817-95af-06b018c579cf" class="">
+</p><h3 id="8528a85b-342f-49ce-a2bc-a3762bb708f1" class=""><mark class="highlight-red">3. 연재 여부 결정을 위한 사전 테스트</mark></h3><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="fba354be-d26a-4ff6-9423-0177a57c41d6"><div style="font-size:1.5em"><span class="icon">🔍</span></div><div style="width:100%">작품에 대한 선호도를 파악하기 위한 사전 테스트용 표지 제작</div></figure><ul id="6d8ae52e-931b-4edb-89a9-9ba103f14b3e" class="bulleted-list"><li style="list-style-type:disc">래디쉬 창업자 이승윤 대표 : 그는 &quot;<strong>소설이 만들어지기 전, 제목과 책 표지를 SNS에 선보여 호응도를 테스트했다</strong>&quot;며 &quot;이후 10~20회 파일럿 콘텐츠를 생산해 반응이 좋으면 연재를 거듭하면서 구독자 잔존율과 구매 전환율 등을 데이터화했다&quot;고 소개했다.</li></ul><figure id="5def4902-e03d-4a6d-a3ce-9f6c87556a05"><a href="https://www.yna.co.kr/view/AKR20211204042200005" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">래디쉬 창업자 이승윤 &quot;빠른 연재가 웹소설 플랫폼 핵심 가치&quot; | 연합뉴스</div><div class="bookmark-description">한국IT기자클럽 &#x27;구독 시대의 저널리즘 모델 연구&#x27; 세미나 (서울=연합뉴스) 이은정 기자 = &quot;연재를 굉장히 빠르게 하는 것이 플랫폼의 핵심 가치입니다.&quot; 모바일 특화 영문 웹소설 플랫폼 &#x27;래디쉬&#x27; 창업자인 이승윤 카카오엔터테인먼트 글로벌 전략 담당(GSO)은 4일 래디쉬의 성공 전략을 이렇게 짚었다. 그는 이날 한국IT기자클럽이 주최하고 뉴스통신진흥회·연합뉴스가 후원한 화상 세미나 &#x27;구독 경제 시대의 저널리즘 비즈니스 모델 연구&#x27;에서 &#x27;스토리 테크의 진화 방향&#x27;을 주제로 발표했다.</div></div><div class="bookmark-href"><img src="https://r.yna.co.kr/www/home_n/v02/img/favicon.ico" class="icon bookmark-icon"/>https://www.yna.co.kr/view/AKR20211204042200005</div></div><img src="https://img1.yna.co.kr/etc/inner/KR/2021/12/04/AKR20211204042200005_01_i_P4.jpg" class="bookmark-image"/></a></figure><p id="1e4f7ab4-58c5-410c-8638-778d213bbb94" class="">
+</p><p id="cf22067b-5ded-432b-bc5e-1d388cf52718" class="">
+</p><p id="8ac27135-d653-4878-8269-aba54b9a3b8e" class="">
+</p></div></article></body></html>

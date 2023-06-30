@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>[MOU/NDA 완료]스토리작 웹소설 표지 및 웹툰 제작 지원 솔루션</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="90655599-3ba3-4e2e-9bbd-12c720a49a04" class="page sans"><header><h1 class="page-title">[MOU/NDA 완료]스토리작 <strong>웹소설 표지 및 웹툰 제작 지원 솔루션</strong></h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-green">COLABORATION</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230417</summary><div class="indented"><p id="625732de-1d43-4346-a69a-b9c41250c25b" class=""><a href="20230417%20weekly%20meeting%203aea1787d4db4afca764b09b5b3a3b40.html">20230417 weekly meeting</a> </p><p id="e19ec3f4-e9b8-4579-a1b8-114149db25e3" class=""><a href="https://lionrocket.slack.com/archives/C0504LDVA0P/p1681661439535089">https://lionrocket.slack.com/archives/C0504LDVA0P/p1681661439535089</a></p><p id="abd63044-2e87-4ed0-8b90-8f51063675bb" class="">수요일 방문 시 스토리작 대응전략입니다.</p><p id="06436608-e070-40d7-b2b0-c0150c47273d" class="">
+</p><ol type="1" id="c936a071-5f0b-4776-98a9-40a663790b40" class="numbered-list" start="1"><li>스토리작 CCO 설득을 위한 전략 수립</li></ol><ul id="70090d92-a673-4e73-aab9-1538bac460f0" class="bulleted-list"><li style="list-style-type:disc">조직내부의 우려사항과 근본적인 문제점에 대한 해결방안을 제시</li></ul><ul id="8935afd9-11e1-4d34-a3ae-46b3bafaeded" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">솔루션 시연</span>을 통한 라로 기술력 어필 및 개발현황 공유</li></ul><ul id="0368ddf0-91cb-438f-b45a-608467972971" class="bulleted-list"><li style="list-style-type:disc">팩트 기반의 설득과 블러핑으로 <span style="border-bottom:0.05em solid">FOMO</span> 유발 전략</li></ul><p id="267bfeb8-f133-495b-9e67-d33b38d41368" class="">
+</p><ol type="1" id="31bb6860-1540-41b8-a926-ac4de813e6aa" class="numbered-list" start="2"><li>조직내부의 우려사항에 대한 대응방안</li></ol><ul id="02e3405f-0148-43c8-9940-0b2d8e40f0b1" class="bulleted-list"><li style="list-style-type:disc">우려사항1 : 현재 퀄리티에 대한 의구심<p id="74cf08b1-cbf4-492a-834f-72edb55232e9" class="">→ 가능한 기능 최대한 탑재한 <span style="border-bottom:0.05em solid">LRSD 시연 </span>      </p><p id="d287935e-a3f0-4945-bd0f-0ad215945a18" class="">→ 사<span style="border-bottom:0.05em solid">전에 고퀄의 표지샘플 제작하여 공개</span> or 가능하다면 제작 시연이 Best (제작 시연의 경우 사전 모델 튜닝 및 프롬프트 테스트)</p></li></ul><ul id="db45d025-3776-4d68-89c3-c4436d2bf44c" class="bulleted-list"><li style="list-style-type:disc">우려사항2 : 라로의 경쟁력에 대한 의구심<p id="7028d5ee-b7f7-4bfc-b6e9-1e159c3d11ec" class="">→ <span style="border-bottom:0.05em solid">경쟁사 분석 기반의 라로의 경쟁력 어필</span> @미로: AI그림문제해결구조 (결과물로 기술력 비교)       </p><p id="6956eb98-7217-438a-b064-1a9566d5b015" class="">→ 라로의 빠르고 전폭적인 지원 강조, <span style="border-bottom:0.05em solid">개발이사가 직접 참여</span>한 전담팀 운영</p></li></ul><ul id="1b947e61-d79b-4b7b-8c68-e9e450d9c4ec" class="bulleted-list"><li style="list-style-type:disc">우려사항3 : 개발일정의 장기화<p id="5203aa0f-ebe5-4155-a28f-34096a5c9034" class="">→ 단계별 실증으로 작업 결과 및 일정 명확화  (한 방에 1부터 10까지 하기보다는 일단은 1부터 하면 너무 오래 걸리지는 않을 것이다)     </p><p id="cc1b7b49-27fc-4bb9-b6ca-5d473381beee" class="">→ <span style="border-bottom:0.05em solid">탑재 기능을 구체화하여</span> 개발 공수에 대해 언제까지 가능할지 얘기하기 </p></li></ul><ul id="d5e7fa09-27c0-478d-8fc4-c97f1a2615b5" class="bulleted-list"><li style="list-style-type:disc">우려사항4 : 실증과정에서의 QA리소스 부담<p id="a057d6cb-3c41-448b-8145-e5d3250979ea" class="">→ <span style="border-bottom:0.05em solid">단계별</span> 실증 진행, 표지제작 부터 진행       </p><p id="ba9acc50-576b-42df-9941-7d85445f2648" class="">→ 초기 커뮤니케이션 이후 라로 자체적으로 진행   (우리 퀄리티를 시연이나 결과물 예시를 통해 보여줌으로써 일단 원하는 거를 알려주면 우리가 만들어서 줄 거다라고 확신을 주기)    </p><p id="935becbe-6214-4ff8-b6f3-6ef41c68985f" class="">→ <span style="border-bottom:0.05em solid">전담팀 소개</span>(개발이사( = 준형님)가 리더로 참여), 전용 채널 개설</p></li></ul><p id="9f41f738-03bd-4d34-9e67-0868ac74ce9c" class="">
+</p><ol type="1" id="70b9d89c-9ad3-47a9-8894-a99ee836dfe5" class="numbered-list" start="3"><li>근본적 문제에 대한 대응방안</li></ol><ul id="29f52d34-b048-4303-a3c8-b592e8beafd9" class="bulleted-list"><li style="list-style-type:disc">생성AI도입에 대한 작가들의 조직적인 반발 기조와 관계 훼손에 대한 불안감<p id="6181fbb1-fee7-467f-854f-03fcadd6c884" class="">→ <span style="border-bottom:0.05em solid">솔루션의 포지셔닝 명확화</span> : 제작지원툴임 </p><p id="5ec2d561-d797-4c2f-87c8-60cb91f36298" class="">→ 긍정적인 도입효과, 라로의 <span style="border-bottom:0.05em solid">핵심전략을</span> 살짝 공개, 비전에 동참하도록 <span style="border-bottom:0.05em solid">FOMO</span> 유발</p><ul id="6b54ac45-ca6b-4bbe-8bbd-967cfb7416cf" class="bulleted-list"><li style="list-style-type:circle">로라플러그인 전략의 기본적인 내용을 간략하게 소개</li></ul><ul id="24c416b5-020a-4d3b-bf05-369525c6a4a0" class="bulleted-list"><li style="list-style-type:circle">객체고정 PPL 전략 소개</li></ul><ul id="30ce597e-3f8d-4324-b367-a44b65d8193c" class="bulleted-list"><li style="list-style-type:circle">유력 업체들과 얘기 중임 언급(CEO, CFO에게는 이미 플랜B <span style="border-bottom:0.05em solid">블러핑</span>) creek&amp;river</li></ul><p id="fffcab8a-4f14-4709-abdc-4a32f8591854" class="">
+</p></li></ul><ol type="1" id="f432448d-21b6-4eed-810b-9cce9176ee79" class="numbered-list" start="4"><li>Action Item</li></ol><ul id="20bb8f90-9d6b-4e07-b225-2fe881e405b0" class="bulleted-list"><li style="list-style-type:disc">제안서준비<ul id="a37f19e3-e06a-4aab-935e-168ca205015d" class="bulleted-list"><li style="list-style-type:circle">제안 스토리라인에 따른 제안서 Draft 작성 및 프로덕션팀과 리뷰 (세일즈팀, 4/17)</li></ul><ul id="0fb7904c-fe83-4254-a3da-adb9e1d1d2b9" class="bulleted-list"><li style="list-style-type:circle">제안서 Draft에 따른 해당 이미지 최대한 미팅 전까지 준비 (프로덕션팀, 4/17)</li></ul></li></ul><ul id="7397a48a-dbfa-4d96-ac4d-e15be54372bb" class="bulleted-list"><li style="list-style-type:disc">시연준비<ul id="64afef03-fd43-4157-8daf-8ed6983b5535" class="bulleted-list"><li style="list-style-type:circle">LRSD 탑재 기능 6개 확정 (프로덕션팀-세일즈팀 논의 완료, 4/16)</li></ul><ul id="d4e19243-f746-4bec-ac95-1fd9ca937261" class="bulleted-list"><li style="list-style-type:circle">확정된 6개 기능 모두 할 수 있을지 4/17(월) 안에 전달<ul id="908f0bce-25e4-4262-994f-e624323855bd" class="bulleted-list"><li style="list-style-type:square">구도</li></ul><ul id="5959e618-bd3f-4aa5-9059-b91bd3f32ec1" class="bulleted-list"><li style="list-style-type:square">그림체</li></ul><ul id="28ad52b7-6392-426b-9580-87aae1c9b4e9" class="bulleted-list"><li style="list-style-type:square">화질개선 (얼굴디테일 포함)</li></ul><ul id="eaed2ee9-725f-4395-82a8-11ecede00ef4" class="bulleted-list"><li style="list-style-type:square">인페인팅</li></ul><ul id="261001f8-e7ab-432f-b7af-d02763fae99f" class="bulleted-list"><li style="list-style-type:square">콘티 (프롬프트로 제작)</li></ul><ul id="1e3e5ea0-6a90-4e8f-8b1d-bc73ae0e5404" class="bulleted-list"><li style="list-style-type:square">배경생성 (콘트롤넷 기반)</li></ul></li></ul></li></ul><ul id="3dbee11a-9a47-4be1-a374-843182ca7af7" class="bulleted-list"><li style="list-style-type:disc">기타준비<ul id="40478028-95ce-453a-9bd9-33a9f9434445" class="bulleted-list"><li style="list-style-type:circle">기능 디벨롭 전, 시연 때까지 준비 가능한 샘플 확인(4/17~18)</li></ul></li></ul><p id="9750996c-9d43-458f-b641-3c160e29f894" class="">
+</p></div></details><hr id="47273fa9-1d66-416a-bb3d-e5bf45da0598"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230418 스튜디오 작업 단계별 시간과 비용 절약 정도</summary><div class="indented"><ol type="1" id="f6242e4a-2402-4031-acd6-6f91ed050b2b" class="numbered-list" start="1"><li>전체 과정 가격<ol type="a" id="509c75a0-5598-4daf-b0ea-5b52dca0f688" class="numbered-list" start="1"><li>외주 작가들의 가격</li></ol><p id="d6640fbd-5911-4763-abda-7def4e5ef7f1" class="">실제 크몽 외주 작가들의 퀄리티만큼 우리가 만들 수 있다고 가정<div class="indented"><ol type="1" id="b77d3af1-06c3-490d-a684-581ef7f2b7dd" class="numbered-list" start="1"><li><a href="https://kmong.com/gig/290382">크레노</a>(게임일러스트)<ol type="a" id="7750469a-2e42-4dae-96f2-f1a307995a73" class="numbered-list" start="1"><li>고해상도 파일 제공, 채색, 전신, 피사체 개수 1개, 시안 개수 3개, 작업일 최대 14일, 수정횟수 3회<ol type="i" id="76c1ff80-e72b-49a2-be01-1d9a52dc8066" class="numbered-list" start="1"><li>흉상 16만원</li></ol><ol type="i" id="5fa3f220-c749-4257-b251-c692d404c34e" class="numbered-list" start="2"><li>상체 32만원</li></ol><ol type="i" id="fb2533b2-5247-4463-8c6d-4f9e6289be4e" class="numbered-list" start="3"><li>전신에 <span style="border-bottom:0.05em solid">45만원</span></li></ol></li></ol></li></ol><ol type="1" id="0be1cca2-b8bd-40b3-99b8-45d98926026f" class="numbered-list" start="2"><li><a href="https://kmong.com/gig/44420">캔디스</a>(웹툰 작가의 웹소설표지)<ol type="a" id="c1ccc4d6-0ec8-461f-a77f-09f1ce102c7a" class="numbered-list" start="1"><li>원본파일 제공, 채색, 피사체 1개, 시안 3개, 작업일 최대 15일, 수정횟수 3회<p id="b2aa9626-47fd-4fce-a570-9e7c39c1b2de" class="">15만원</p></li></ol></li></ol><ol type="1" id="df527f41-6714-4d65-861a-50131f6cf987" class="numbered-list" start="3"><li><a href="https://kmong.com/gig/435459">렛사</a> (미소녀 풍의 캐릭터 일러스트 / 웹소설 표지, 상업용)<ol type="a" id="ff9d60ce-c740-4c65-86e8-4e67fc5dcb7e" class="numbered-list" start="1"><li>고해상도 파일 제공, 채색, 원본파일 제공, 배경 작업, 상업적 이용 가능, 피사체 1개, 시안 2개, 작업일 최대 20일, 수정횟수 2회<p id="f5a9dfb4-3355-4e2b-9ebf-a70153991d54" class="">30만원</p></li></ol></li></ol><ol type="1" id="24f77bac-9f27-446e-9a8f-05c49f077e84" class="numbered-list" start="4"><li><a href="https://kmong.com/gig/278411">히피타</a> (반실사 웹소설 표지 및 삽화 일러스트)<ol type="a" id="6eff0567-877b-43ca-9263-915ca61eb6ca" class="numbered-list" start="1"><li>일반 퀄리티, 2000*3000<p id="65be01c1-8876-4205-bf74-d020a6db054e" class="">고해상도 파일 제공, 배경 작업, 채색, 상업적 이용 가능, 피사체 개수 1개, 시안개수 1개, 작업일 7일, 수정횟수 2회</p><p id="44c214d7-ac90-4209-b91d-1a69dda58608" class="">30만원</p></li></ol><ol type="a" id="fd01cbfa-5bb1-4917-84ba-cd166ee4da1a" class="numbered-list" start="2"><li>고급 퀄리티, 4000*5000, 섬세하고 복잡한 디테일<p id="4a26e732-3848-4354-a3fa-e19bdfc289b6" class="">고해상도 파일 제공, 배경 작업, 채색, 상업적 이용 가능, 피사체 개수 1개, 시안개수 1개, 작업일 9일, 수정횟수 3회</p><p id="645954b3-6966-4632-988b-ba9b81d1ae42" class=""><span style="border-bottom:0.05em solid">40만원</span></p></li></ol></li></ol><ol type="1" id="4d7d020a-a48d-4561-b8d6-45b2ed496750" class="numbered-list" start="5"><li><a href="20230314%20%E1%84%8E%E1%85%A2%E1%84%8B%E1%85%B3%E1%86%AB%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%201e0141379b82478794008b146e5c50ea.html">20230314 채은님의 이야기</a> 이러한 표지를 만들기 위해서는 기존 시장에서는 최소 <span style="border-bottom:0.05em solid">200만원에서 1000만원도</span> 넘는 비용을 지불해야 했다</li></ol></div></p><p id="480a2ca3-dcb1-4961-988f-9abd5f5fe996" class="">b. 업체 가격<div class="indented"><div><ol type="a" id="9a913302-29e7-4155-beb6-1db0497addc7" class="numbered-list" start="1"><li>조아라<div><ul id="bb4b7835-97ce-40fe-abd7-4b9acdeca33e" class="bulleted-list"><li style="list-style-type:disc">일러 비용 계속 증가한다.<ul id="0f9c7d12-d4ba-48bc-abfe-a8ba44e21d3d" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">A급: 300 ~ 400만원 </span>      <span style="border-bottom:0.05em solid">B급: 60 → 100만원</span></li></ul></li></ul></div></li></ol><ol type="a" id="ed7180e0-7f19-41b5-bdd8-77539d992fef" class="numbered-list" start="2"><li>메타크래프트<div><ul id="a4dc84f1-8d50-4b99-a92a-6ddfe6a5c980" class="bulleted-list"><li style="list-style-type:disc">웹소설 표지 제작의 <strong>비용이 크다</strong><ul id="9e8849bb-c7d5-4292-9bd5-e6edfe0822f3" class="bulleted-list"><li style="list-style-type:circle">1 장 만드는 데<span style="border-bottom:0.05em solid"> 200 만원 </span>정도 소요</li></ul></li></ul></div><div><blockquote id="f2ca0a86-280c-4f57-973c-adb76497b945" class=""><mark class="highlight-red">웹소설 표지의 90% 정도의 퀄리티를 원하고, 
+후보정이 거의 안들어가는 정도(1-2 시간?)의 품질을 원한다</mark></blockquote></div></li></ol></div><p id="d6c3ca6e-e462-4743-918f-b6d31d675497" class="">c. 스토리작</p><div><ul id="17208334-3a9a-49e4-9567-32fdf8cb28a3" class="bulleted-list"><li style="list-style-type:disc">IP확보 경쟁이 갈수록 치열해지며 글작가들의 몸값이 치솟고 있음. 네이버와 카카오가 될 성 싶은 웹소설 IP를 빨아들이고 있음. <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">스튜디오도 신인 글작가 발굴에 주력</span></mark>. <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">웹툰화를 위해서는 작품당 4~5억이 드는데 (100화 기준, 편당 4~500만원) 적은 금액이 아니라 AI로 생산성이 올라간다면 많은 작품들이 웹툰화 될 것</span></mark></li></ul></div></div></p></li></ol><p id="abc457c7-0f27-47ab-8307-76d772216aad" class="">
+</p><ol type="1" id="92377312-e290-4b56-96a7-0ef45def9909" class="numbered-list" start="2"><li>전체 과정 별 리소스 분배<ol type="a" id="38ca2ce8-549b-4570-9d63-e472188a4029" class="numbered-list" start="1"><li>(웹툰에 한해서) <span style="border-bottom:0.05em solid">콘티 제작 (이미 가능)</span><ol type="a" id="1ae5e6fa-f224-4bbb-980c-23812ba8625b" class="numbered-list" start="1"><li>소요 비용<div><ul id="1c4b7295-05d9-48c6-8592-f44b4eae26d1" class="bulleted-list"><li style="list-style-type:disc">기획서 또는 스크립트에서 콘티를 만들기 위해서는 최소 100만원, 많게는 500만원까지 외주 비용이 발생</li></ul></div></li></ol><p id="3dbfc2bb-d78f-4ed1-92d3-938309cb712c" class="">이하는 크레노를 기준으로 <a href="20230330%20%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A6%E1%84%82%E1%85%A9%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2065f41e20f7c6494fb0d049a941cf648f.html">20230330 크레노 작가님의 이야기</a> (웹소설 표지와 캐릭터 일러스트를 같이 하시는 경우가 많음)</p></li></ol><ol type="a" id="41bb7235-c227-4b0f-9a6e-4a08e1b5bc7b" class="numbered-list" start="2"><li>스케치 <ol type="i" id="385882e8-377e-4419-a4f8-d75c8ccb8eff" class="numbered-list" start="1"><li>걸리는 시간<ol type="1" id="60036d9e-4008-45cf-b443-9aa1cf6785e7" class="numbered-list" start="1"><li>세 개의 시안을 만드는 데에 반나절에서 하루 소요</li></ol><ol type="1" id="9e66d677-e548-4c7a-bdde-2345b9f86e1f" class="numbered-list" start="2"><li>만약 1~2차 시안이 필요하다면 하루에서 이틀 소요</li></ol></li></ol><ol type="i" id="43ec8e16-5cfb-454e-a438-257f6bb9b7dd" class="numbered-list" start="2"><li>디테일한 과정<ol type="1" id="0e3ed94e-c929-462a-bc28-bd94268357f2" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid">화풍을 적용한 스케치 생성(</span>이미가능<span style="border-bottom:0.05em solid">)</span></li></ol><ol type="1" id="404c9fae-721c-4bae-9600-b121e2c28cf6" class="numbered-list" start="2"><li><span style="border-bottom:0.05em solid">인물의 구도를 적용한 스케치 생성(</span>이미가능<span style="border-bottom:0.05em solid">)</span></li></ol><ol type="1" id="f8dfeb0c-cef1-47dc-b8ae-850628fb6779" class="numbered-list" start="3"><li><span style="border-bottom:0.05em solid">인물의 Pose, Hand control을 적용한 스케치 생성 또는 트레이싱을 통한 동작 표현(도입가능)</span></li></ol><ol type="1" id="6d36d9c9-b92a-4908-beb9-d0b85212ca59" class="numbered-list" start="4"><li><span style="border-bottom:0.05em solid">특정 캐릭터가 들어간 스케치 생성(도입가능)</span></li></ol><ol type="1" id="de2b8e3b-11cf-4c55-b037-f2c441602312" class="numbered-list" start="5"><li><span style="border-bottom:0.05em solid">등장 인물 수를 조절하여 스케치 생성(이미 가능</span>)</li></ol><ol type="1" id="18c65809-df90-4012-99fb-9c265f8d3cbe" class="numbered-list" start="6"><li><span style="border-bottom:0.05em solid">특정 의상, 장신구를 적용하여 스케치 생성 (로판, 역사물, SF)(도입가능)</span></li></ol><ol type="1" id="ce66291b-6192-4ded-98f1-5a179056ea83" class="numbered-list" start="7"><li><span style="border-bottom:0.05em solid">스케치에 채색 러프 (가능성)</span></li></ol></li></ol></li></ol><ol type="a" id="99776e77-ed00-48ce-8234-6ac56be8ffcc" class="numbered-list" start="3"><li>펜터치<ol type="i" id="b8dbb801-a61d-43b7-b574-9d8790839f74" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid">스케치 구체화 및 선 따기 (가능성)</span><ol type="1" id="b26d0de5-b13a-455c-a142-66fb57664683" class="numbered-list" start="1"><li>구체화 2~3일</li></ol><ol type="1" id="4af225a0-877a-445f-83b6-41aeaaa05fe0" class="numbered-list" start="2"><li>선 따기 반나절에서 하루</li></ol></li></ol><ol type="i" id="1c1d0aa2-35b2-40e1-8088-773d8aa7e2f6" class="numbered-list" start="2"><li><span style="border-bottom:0.05em solid">레이어분리(가능성)</span><ol type="1" id="4c442d34-93af-4de6-ad03-c4f1d01546a8" class="numbered-list" start="1"><li>채색과 함께 반나절에서 하루</li></ol></li></ol></li></ol><ol type="a" id="d5d77e7f-cf82-4754-8336-a343655c844a" class="numbered-list" start="4"><li>채색<ol type="i" id="0061935e-79cc-4b30-982b-9aca04426d52" class="numbered-list" start="1"><li>펜터치에 밑색<ol type="1" id="e5f50f61-569a-457b-9554-1808515850bd" class="numbered-list" start="1"><li>채색과 함께 반나절에서 하루</li></ol></li></ol></li></ol><ol type="a" id="d40a0867-1a9c-4873-9373-9639d15c04e9" class="numbered-list" start="5"><li>배경<ol type="i" id="9feae9e4-4d47-4f86-8917-83d572bd1730" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid">배경생성</span> (판타지물, 역사물, SF, 건물 등) (이미가능)</li></ol></li></ol></li></ol><ol type="1" id="4d389919-1104-43d4-b46d-bf89c65bd2db" class="numbered-list" start="3"><li>AI로 작업하는 경우의 값 reference<div><ul id="e45014a4-188e-4c03-8757-d79dfb43d630" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">생성AI를 활용한 웹툰제작 업체</span>를 만났었는데 20~30% 완성된 작품(콘티+스케치 작업)을 받아서 <mark class="highlight-orange_background"><span style="border-bottom:0.05em solid">회당 50~150만원에 제작. (사람이 작업시 통상 회당 300~500만원 소요)</span></mark></li></ul></div></li></ol><ol type="1" id="dbc9ed96-22e0-45c1-9859-9f4db225b5d1" class="numbered-list" start="4"><li>우리 측의 cost<div><p id="d903ace1-ae50-4047-930e-a311e4a4208b" class="">리스테린처럼 - 근데 원가가 비쌈 (거의 500만원 정도의 우리 리소스가 들어감) </p><p id="dcfcefd5-c2ef-4a77-84b2-59e2ac6353f6" class="">커스텀 생성모델 공급가 500만원 ~  </p></div><p id="8cf661a0-9450-449a-be49-ef215965951c" class="">
+</p><p id="3d5e9593-08b9-42f5-8888-672e7e727ec0" class="">
+</p></li></ol></div></details><hr id="da143326-93ea-4065-8754-dd4e803de753"/><figure id="102787cb-1429-43e1-bf31-6f612e0affe0" class="link-to-page"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%AB%20%20906555993ba34e2e9bbd12c720a49a04/20230419%20%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%A8%20102787cb142943e1bf316f612e0affe0.html">20230419 스토리작</a></figure><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230421</summary><div class="indented"><p id="7693f8f7-b0b4-45e8-9e72-8d7fc23411ce" class="">[스토리작 대응 정리]  </p><ol type="1" id="c0693901-218f-42d6-a25c-e4fe977beee7" class="numbered-list" start="1"><li><strong>목적 : 스토리작과 POC 이끌어 내기</strong></li></ol><ol type="1" id="e9cf7826-2969-410a-84ba-2b895c96ecdf" class="numbered-list" start="2"><li>단계 별 제안내용</li></ol><ul id="ccc1ce62-68de-4c6e-93df-8655f505c723" class="bulleted-list"><li style="list-style-type:disc">1단계 : 웹소설 표지 제작</li></ul><ul id="04225ea9-1afe-4c54-96d7-0adce384e0bc" class="bulleted-list"><li style="list-style-type:disc">2단계 : 웹툰 제작</li></ul><ol type="1" id="8e771b9d-36ae-40d0-86af-981257442677" class="numbered-list" start="3"><li>어떤 것들을 준비해야 하는가?<ol type="a" id="8a692f3b-6a3c-48eb-bd84-e9fdc42771b6" class="numbered-list" start="1"><li>스토리작이 우려하는 것들을 해소하는 논리가 담겨 있는 PPT 준비 <a href="https://lionrocket.slack.com/team/U03EK8EUXC2">@양승제(SJ)</a> <a href="https://lionrocket.slack.com/team/U04T3V6BTK8">@김현식</a> (세일즈 팀)<ol type="i" id="5b0788ee-5653-4ed2-be46-50143a85fb9a" class="numbered-list" start="1"><li>우려 사항 5가지<ol type="1" id="7a24b6e3-5dcf-4883-bc32-1a8b1b3ff0e7" class="numbered-list" start="1"><li>QA 리소스 할당 및 업무 가중</li></ol><ol type="1" id="6ac93e79-4ebb-4da4-bc92-a468e5e5f92b" class="numbered-list" start="2"><li>개발 장기화 우려</li></ol><ol type="1" id="325cfde3-c118-454e-8e5b-db432d9b6464" class="numbered-list" start="3"><li>솔루션 퀄리티</li></ol><ol type="1" id="2018c8f3-db18-4892-bd8b-ac63dc63a8b3" class="numbered-list" start="4"><li>lionrocket 실력에 대한 의구심</li></ol><ol type="1" id="d2594d6c-6abb-474b-9cef-24042a9c48ae" class="numbered-list" start="5"><li><strong>AI 도입에 작가들의 반발 </strong><code><strong>가장 큰 이유</strong></code></li></ol></li></ol></li></ol><ol type="a" id="b421fb36-3670-4c22-b068-1f63076b9d1d" class="numbered-list" start="2"><li>PPT 에 흐름에 맞는 관련 기술 및 샘플 준비 <a href="https://lionrocket.slack.com/admin/user_groups">@프로덕션길드</a> <a href="https://lionrocket.slack.com/admin/user_groups">@테크길드</a><ol type="i" id="a83a4cd3-ef7e-480d-a3e8-9f20c8314c87" class="numbered-list" start="1"><li>웹소설 표지 제작 관련 기술을 시연할 수 있는 툴 준비 <a href="https://lionrocket.slack.com/team/UMEGA5G7P">@김영중(Noah)</a> <a href="https://lionrocket.slack.com/team/U03UVHGAAQY">@유장훈</a><ol type="1" id="2b0bd0fb-a519-488b-8f6c-2f0202e363d9" class="numbered-list" start="1"><li>구도/그림체 변경</li></ol><ol type="1" id="6455bc86-1a56-4aa4-8547-1333405639cd" class="numbered-list" start="2"><li>화질 및 얼굴 디테일 개선</li></ol><ol type="1" id="b5886066-89ac-4bc6-92ce-e8ca046c87b5" class="numbered-list" start="3"><li>인페인팅 및 콘트롤넷 기반 배경생성(콘티 제작 모델 포함)</li></ol></li></ol><ol type="i" id="905c3d11-a92a-422a-b843-c426c7305b31" class="numbered-list" start="2"><li>웹소설 표지를 넘어 웹툰 제작까지 자동화를 보여줄 수 있는 샘플 준비(툴에 넣기에는 기술 성숙도 부족한)<ol type="1" id="4a07da63-1cb9-4a8a-8d80-ebba30225a4f" class="numbered-list" start="1"><li>캐릭터 고정 <a href="https://lionrocket.slack.com/team/U04FB8S7RGX">@황규홍</a><ol type="a" id="b35f4df0-a63c-4b18-871d-99f673c237cc" class="numbered-list" start="1"><li>동작 제어 및 의상 변경</li></ol><ol type="a" id="450fefb5-e010-4d1b-b403-b863c2f66935" class="numbered-list" start="2"><li>그림체 변경 및 팬아트 스타일</li></ol><ol type="a" id="147e4a1e-7723-4653-9526-244dd33656f8" class="numbered-list" start="3"><li>다양한 각도 파일 <a href="https://lionrocket.slack.com/team/U03UVHGAAQY">@유장훈</a></li></ol></li></ol><ol type="1" id="7c2ceb04-5c21-4312-b235-e89cb2efa78f" class="numbered-list" start="2"><li>새로운 그림체 <a href="https://lionrocket.slack.com/team/U02BRN16BPT">@오재환(mendel)</a><ol type="a" id="98f4d105-33d6-4d91-8083-72d53d878813" class="numbered-list" start="1"><li>저작권 걱정없는 그림체 3개 및 관련 샘플</li></ol></li></ol><ol type="1" id="7efafb14-56a6-45ce-b895-f0ad4e16ff25" class="numbered-list" start="3"><li>표정 콘트롤넷 <a href="https://lionrocket.slack.com/team/U04H5EY7XQD">@백설(Sugar)</a><ol type="a" id="6fc0d175-e43a-49db-b43c-a72979dd3cab" class="numbered-list" start="1"><li>다양한 감정 표현이 들어간 만화 캐릭터 샘플</li></ol></li></ol><ol type="1" id="fe79ff5c-f9d9-4c9b-8ed9-c386c109a9b2" class="numbered-list" start="4"><li>웹소설 표지 제작을 지원하는 프롬프트 북 <a href="https://lionrocket.slack.com/team/U03TW6A8ESK">@최윤서(Lily)</a> <a href="https://lionrocket.slack.com/team/U04H5EY7XQD">@백설(Sugar)</a><ol type="a" id="563739ec-53c1-4293-a7bb-6db37c393f69" class="numbered-list" start="1"><li>매력적인 파트 3개 스샷 파일</li></ol></li></ol><ol type="1" id="0caed468-4734-4c68-a049-c0f3e3648e3e" class="numbered-list" start="5"><li>자동 채색에 대한 가능성 샘플 <a href="https://lionrocket.slack.com/team/U02J4EQCUEQ">@이은종(silverbell)</a><ol type="a" id="b3aac6af-c517-4fc6-bebe-d60ef20582e6" class="numbered-list" start="1"><li>SAM text prompt 버전 기반</li></ol></li></ol><ol type="1" id="04f70729-e9f5-42ae-8996-dde00bc9fb15" class="numbered-list" start="6"><li>에렌예거 춤추는 영상 <a href="https://lionrocket.slack.com/team/U02GPVCPLCC">@박현(Leo)</a></li></ol><ol type="1" id="e3e92b3f-70f9-4db4-b565-aaca221943a4" class="numbered-list" start="7"><li>스토리작이 매력을 느낄만한 표지 4개 제작 <a href="https://lionrocket.slack.com/team/U027SHPPT4Z">@허진영(Rion)</a> <a href="https://lionrocket.slack.com/team/U04FB8S7RGX">@황규홍</a></li></ol></li></ol></li></ol></li></ol></div></details><hr id="be16094c-fbe8-4866-a9bf-1ae56162ed94"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">스토리작 내부 정보</summary><div class="indented"><figure id="30ccbc0d-96ae-4a47-9f10-bf88acc870d8"><div class="source">https://lionrocket.slack.com/archives/C05457W2KJN/p1682664086556949</div></figure><p id="c7932dfc-5a27-43ed-89cf-14615beab065" class="">※스토리작에 관한 내용으로 웹소설, 웹툰 업계의 전반적인 내용이 아닐 수 있음.</p><div><p id="7ba52671-d395-46c8-860a-62a5cc0612d8" class="">[60~80컷당 가격]</p><figure id="6a939d20-9cba-469f-b3e4-078627db6fa5" class="image"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%AB%20%20906555993ba34e2e9bbd12c720a49a04/image.png"><img style="width:746px" src="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%AB%20%20906555993ba34e2e9bbd12c720a49a04/image.png"/></a></figure></div><p id="f7a9d221-97e5-4fec-8621-8cd7808fe241" class="">[웹소설부문]</p><ol type="1" id="6034fad1-0f61-4e94-947d-51a28f08f8ef" class="numbered-list" start="1"><li>스토리작 웹소설 부문<ul id="394ec340-0e64-4b31-b949-d4415ddd0e70" class="bulleted-list"><li style="list-style-type:disc">PD 6명 있음</li></ul><ul id="69208ba0-ae82-4939-b7f9-ba53b7d14c06" class="bulleted-list"><li style="list-style-type:disc">1인당 1년에 약 15작품. 일일연재(?)</li></ul></li></ol><ol type="1" id="c8b589cf-65c5-4e87-8097-ce6db9671469" class="numbered-list" start="2"><li>글작가 운영, 관리 정책<ul id="0c085e12-b422-4683-8c13-b0518b0fdee1" class="bulleted-list"><li style="list-style-type:disc">작품 노출 프로모션이 기성 작가와의 주요 협상 카드<p id="8e496297-c474-44aa-bc14-5ceb7692cdb1" class="">예)플랫폼 상위 노출, 장기간 노출 등등</p></li></ul><ul id="7ee29a89-49df-4d9e-91c2-8bdc2949a147" class="bulleted-list"><li style="list-style-type:disc">유명작가에게는 댓글 프로모션 추가<p id="4baf3877-8453-4e6e-b4cc-0af198d5e94a" class="">예) 댓글 이벤트 실시 등</p></li></ul><ul id="b8a7949e-e817-4089-836a-9f6b22e22d7e" class="bulleted-list"><li style="list-style-type:disc">유명표지 붙혀주는 것도 협상카드, 특정 일러작가를 원하는 경우가 많음. 그래서 1년치 예약 마감인 일러작가들 있음.</li></ul></li></ol><p id="cda4df8f-a89b-46dc-9a9f-e5b23eebef68" class="">[웹툰부문]</p><ol type="1" id="08e04fac-1ca0-4682-b9b9-531aff3a715a" class="numbered-list" start="1"><li>웹툰제작방식 및 공수<ul id="4f71771f-20f9-430f-b411-ce8ed9d5caee" class="bulleted-list"><li style="list-style-type:disc">스튜디오방식</li></ul><div><ul id="f512d334-cd17-40c8-a82f-5ef1f6328f8b" class="bulleted-list"><li style="list-style-type:disc">소속 <span style="border-bottom:0.05em solid">그림작가 1명이 2년에 한 작품</span> 제작 (<span style="border-bottom:0.05em solid">100화 기준</span>)<p id="30d968f7-9c0b-42d9-9cd3-029d21d6782f" class="">예) 스튜디오그리핀 2년 동안 자체 제작 2작품 만들었음.</p></li></ul></div><ul id="7e62aca9-a523-41af-af30-703865e8f68f" class="bulleted-list"><li style="list-style-type:disc">에이전시방식</li></ul><div><ul id="fc8884f8-9229-4040-8bee-31e956970059" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">PD 1명당 년간 4~5개 작품</span>을 한다.</li></ul><ul id="1cf08de4-adef-4a42-a3ac-3033fdb18eb0" class="bulleted-list"><li style="list-style-type:disc">스튜디오 <span style="border-bottom:0.05em solid">1작품 + 3~4개 작품 외주 작가</span>와 에이전시 방식 작업.</li></ul></div></li></ol><ol type="1" id="1c77f9a5-895d-4e35-9be1-59c732303701" class="numbered-list" start="2"><li>제작방식의 변화<ul id="023fb0ab-51fe-42ee-b0f9-5dec41cc3225" class="bulleted-list"><li style="list-style-type:disc">유명 글작가가 자체 스튜디오 운영하면서 제작하는 방식에서</li></ul><ul id="f13bb864-8aef-40e5-a204-c860970805da" class="bulleted-list"><li style="list-style-type:disc">노블코믹스(기존 스토리가 있는) 방식이 증가하며 <span style="border-bottom:0.05em solid">PD의 역할이 점점 커졌다</span>.</li></ul></li></ol><p id="9f4a1899-806e-467c-b041-1fdf0c9b6f1a" class="">[3D 업체 투자]</p><figure id="20b16014-ccd7-4b1f-a5ad-999726910704"><div class="source">https://lionrocket.slack.com/archives/C05457W2KJN/p1683600455234429</div></figure></div></details><hr id="9c1ede0b-2b1e-41fb-8f8d-433ede904408"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">MOU / NDA</summary><div class="indented"><p id="385c862c-acfe-482b-9792-22d45e1d1ee5" class="">“<strong>웹소설 표지 및 웹툰 제작 지원솔루션</strong>”</p><figure id="87434337-3623-48ee-8318-8547794cf704"><div class="source"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%AB%20%20906555993ba34e2e9bbd12c720a49a04/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%2590%25E1%2585%25A9%25E1%2584%2585%25E1%2585%25B5%25E1%2584%258C%25E1%2585%25A1%25E1%2586%25A8-%25E1%2584%2585%25E1%2585%25A1%25E1%2584%258B%25E1%2585%25B5%25E1%2584%258B%25E1%2585%25A5%25E1%2586%25AB%25E1%2584%2585%25E1%2585%25A9%25E1%2584%258F%25E1%2585%25A6%25E1%2586%25BA_NDA_230428.docx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5043f551-8755-4b1b-9f6d-1cb45c722cb7/%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%A8-%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AB%E1%84%85%E1%85%A9%E1%84%8F%E1%85%A6%E1%86%BA_NDA_230428.docx</a></div></figure><figure id="be119c18-d279-49b8-b558-faa2c3878d84"><div class="source"><a href="%5BMOU%20NDA%20%E1%84%8B%E1%85%AA%E1%86%AB%E1%84%85%E1%85%AD%5D%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%A8%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%AB%20%20906555993ba34e2e9bbd12c720a49a04/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%2590%25E1%2585%25A9%25E1%2584%2585%25E1%2585%25B5%25E1%2584%258C%25E1%2585%25A1%25E1%2586%25A8-%25E1%2584%2585%25E1%2585%25A1%25E1%2584%258B%25E1%2585%25B5%25E1%2584%258B%25E1%2585%25A5%25E1%2586%25AB%25E1%2584%2585%25E1%2585%25A9%25E1%2584%258F%25E1%2585%25A6%25E1%2586%25BA_%25E1%2584%258B%25E1%2585%25A3%25E1%2586%25BC%25E1%2584%2592%25E1%2585%25A2%25E1%2584%2580%25E1%2585%25A1%25E1%2586%25A8%25E1%2584%2589%25E1%2585%25A5(MOU)_230428.docx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ce7d41a4-a565-4d3f-bdef-8850b0eac7af/%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%8C%E1%85%A1%E1%86%A8-%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AB%E1%84%85%E1%85%A9%E1%84%8F%E1%85%A6%E1%86%BA_%E1%84%8B%E1%85%A3%E1%86%BC%E1%84%92%E1%85%A2%E1%84%80%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5(MOU)_230428.docx</a></div></figure><p id="eae8a818-0367-4073-859a-5f43e85bb816" class="">
+</p></div></details><hr id="f671ec48-7ae1-4668-adc8-d7f28419080e"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230519 스토리작 미팅 “<span style="border-bottom:0.05em solid">실증을 위한 작품을 선정하겠다.</span>”</summary><div class="indented"><ul id="71087f55-8629-4d50-8cde-2640b4a05c93" class="bulleted-list"><li style="list-style-type:disc">참석자<ul id="9efe729e-47e8-4ebd-88b0-be23cdc7378c" class="bulleted-list"><li style="list-style-type:circle">스토리작 : 조형인CFO, 길새나래 팀장(웹툰PD), 황교승 팀장(웹툰PD), 이미희 팀장(웹소설PD)</li></ul><ul id="a0fcd431-98af-4329-8984-52f9604f2f6f" class="bulleted-list"><li style="list-style-type:circle">라이언로켓 : 박준형 이사, 양승제 이사</li></ul></li></ul><ul id="14b2f5c3-d15a-4c2e-8310-31921346eadc" class="bulleted-list"><li style="list-style-type:disc">action<ul id="b673b077-8fd1-4e8f-9fe6-e7c5c6bdf748" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">실증을 위한 작품을 선정하겠다.</span></li></ul></li></ul><ul id="6dff258d-e4fa-48b2-9a27-da2d6031dcee" class="bulleted-list"><li style="list-style-type:disc">needs<div><ul id="e4eb6821-5e57-4b9a-931c-c7d5b94548d3" class="bulleted-list"><li style="list-style-type:disc">웹툰 <span style="border-bottom:0.05em solid">밑색 자동화 및 선화 생성이 공정 효율화에 도움 됨.</span><ul id="e1088367-b8e7-47a4-8cdf-1d21afaa3673" class="bulleted-list"><li style="list-style-type:circle">스토리작 내부적으로 여성향 웹툰 PD를 채용중인데 AI를 전담 예정</li></ul></li></ul></div><div><ul id="733a3967-3834-467d-9ef5-ddc07af5015c" class="bulleted-list"><li style="list-style-type:disc">유니크한 배경 생성에 대한 니즈<ul id="a97decfc-5acf-4f5c-a85a-c99bb86aa1a8" class="bulleted-list"><li style="list-style-type:circle">현재 배경은 대부분 만들어진 에셋 위주로 쓰기 때문에 유니크함이 떨어진다</li></ul><ul id="38adc3a0-c811-4c95-bb99-f3b59bc99cfc" class="bulleted-list"><li style="list-style-type:circle">따라서 우주, 중세 같은 유니크한 배경이 있으면 좋을 것 같다</li></ul><ul id="57f71e72-596c-43e9-8dd0-29fe0b334ed2" class="bulleted-list"><li style="list-style-type:circle">사용 형태는 스케치업과 동일하게 3D 형태로 제공되면 좋을 것 같다(시점을 편하게 조정하기 위해서)</li></ul></li></ul></div><div><ul id="a7cc7498-447a-4aa9-a013-876d2dcf4654" class="bulleted-list"><li style="list-style-type:disc">정진님 아이디어인 마케팅 툴로서의 방향성<ul id="74af4ad2-1b54-416c-b8f2-fe27211cfc5a" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">마케팅 툴(A/B 테스트)로서는 큰 효용이 있을 것 같지는 않다</span><ul id="faa5d8c8-2850-4bc1-bd6f-8d9ffd3f2caf" class="bulleted-list"><li style="list-style-type:square">그러나 웹소설 표지는 기본적으로 상업적으로 효용이 있는지 여부만 PD 들이 검토하고 나머지는 글작가들의 니즈를 충족하는 게 최우선이다</li></ul></li></ul></li></ul></div><div><ul id="6883a43f-c1f3-4b2e-9b6b-f217e23259bb" class="bulleted-list"><li style="list-style-type:disc">웹소설 표지 제작을 위한 콘티 생성으로 접근 <code>약한 비타민이기는 함</code><ul id="05446919-8273-4149-8da4-ef52bd64bdc4" class="bulleted-list"><li style="list-style-type:circle">실제로 공개하는 게 아니기 때문에 기존의 우려점들을 신경 안써도 된다<ul id="1caf731f-03f3-47c8-ae9c-1f3705a93062" class="bulleted-list"><li style="list-style-type:square">스토리작: 웹소설 표지 제작 관련해서 우리는 관망하면서 시장의 추이를 보고 싶다. (먼저 나서고 싶지 않다)</li></ul></li></ul><ul id="b06d7085-4dfe-41b1-815e-54480717c376" class="bulleted-list"><li style="list-style-type:circle">“작가마다 표지의 기준을 전달하는 방식이 다른데, 구체적으로 전달하지 않는 작가들에게는 유용할 수도 있을 것 같다”<ul id="72a6d135-3fa0-4103-9647-5e6a4b635ab3" class="bulleted-list"><li style="list-style-type:square">“하지만 프로세스를 한 번 경험해봐야지 효용이 있을 지 없을지 가늠을 할 수 있을 것 같다. ”</li></ul><ul id="344e9dd8-0b05-41d0-9c81-04c162280ed3" class="bulleted-list"><li style="list-style-type:square">“따라서 관련 가이드 입고하면 전달해주겠다. (한 번 테스트 해보자)”</li></ul></li></ul><ul id="8a42bc1b-3fd8-493f-8bcb-fe18dc63c8fd" class="bulleted-list"><li style="list-style-type:circle"><code>해당 기능은 포킷 B2B 용도로 연결하면 괜찮은 그림 그릴 수 있을지도?</code><ul id="3f9b3da8-e74f-4ab3-bfb7-970468057834" class="bulleted-list"><li style="list-style-type:square">그림체 모델이나 특정 기능들 B2B 용으로 제공하면?</li></ul></li></ul><ul id="b645c156-27ff-4c6f-9deb-37ae9b804d34" class="bulleted-list"><li style="list-style-type:circle">공수 최소화를 위해 UX/UI는 포킷을 그대로 가져가기로 함</li></ul></li></ul></div></li></ul><ul id="a9be5e75-a26c-47b7-a12b-c950f1aad267" class="bulleted-list"><li style="list-style-type:disc">불안감<div><ul id="7428a1bd-73a9-4cf8-8846-f739ac753146" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">웹소설 표지제작은 작가와 독자의 반대로 어려움</span></li></ul></div></li></ul><ul id="d0c33abf-d642-44cf-a6e4-f5963a4997bc" class="bulleted-list"><li style="list-style-type:disc">미팅후 별도로 확인한 내부 분위기<ul id="7fd503b9-1ce8-4e8c-bacf-83795ff0ed11" class="bulleted-list"><li style="list-style-type:circle">조형인CFO : <span style="border-bottom:0.05em solid">스토리작에서 작품선정 늦어지면 학산 웹툰PD 연결해주겠음.</span></li></ul><ul id="71fe8614-b1db-4d96-86ae-07bb9e3b24d4" class="bulleted-list"><li style="list-style-type:circle">황교승 팀장(웹툰PD) : <span style="border-bottom:0.05em solid">하고 싶어함</span></li></ul><ul id="2b189165-10bf-4453-93e3-916435ae4dfc" class="bulleted-list"><li style="list-style-type:circle">길새나래 팀장(웹툰PD) : 기본적으로 <span style="border-bottom:0.05em solid">방어적인</span> 캐릭터, <span style="border-bottom:0.05em solid">불안감</span> 있음.</li></ul><ul id="e09ef087-854a-4e74-b055-fd662ba8f25d" class="bulleted-list"><li style="list-style-type:circle">이미희 팀장 : 실제 표지 제작 가이드 입고 후 선정하겠다.<p id="a48942ca-8442-4abf-a693-f96c3cac4e93" class="">
+</p></li></ul></li></ul></div></details><hr id="d38ce836-a0bc-44e5-98a6-4ac9d80bdeab"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230530 “예전에 전달한 것처럼 협력 진행하기 어렵다. 대신 학산문화사 웹툰 파트 소개해주겠다”</summary><div class="indented"><div><p id="a8e4ff40-bb23-4e14-b568-83ebb9b04bc4" class="">이번주 금요일까지 고객사 미팅 (승제님)</p><p id="e08b2062-d6ec-4b69-99d1-7af8e6a32a47" class="">스토리작 대신 학산문화사 웹툰 본부장 소개받기로 함</p><p id="26b7985a-c434-4786-b194-831651fb7b01" class=""> </p></div><p id="3b7523df-3eef-4d55-9a6d-770801ea5f9d" class="">
+</p></div></details></div></article></body></html>

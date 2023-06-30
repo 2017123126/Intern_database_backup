@@ -1,0 +1,743 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>20230417 김우석 님의 이야기 </title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="833ab7ac-9e71-43ec-9688-6dbdfdc2e9b2" class="page sans"><header><h1 class="page-title">20230417 김우석 님의 이야기 </h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-brown">인터뷰/외부미팅</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><hr id="9b726de4-01c7-4590-9404-af9a8da3bdb7"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">인터뷰 속기 by me</summary><div class="indented"><ol type="1" id="0d092da8-37f1-42e8-be98-29a82b34284b" class="numbered-list" start="1"><li>인사<p id="8808bc80-f842-4890-8014-d67d42e6cef5" class="">간단한 프로젝트 소개:<div class="indented"><p id="8017d28e-f20b-44e8-9335-41fb8d5c1b4a" class="">ChatGPT와 같이 생성형 AI가 콘텐츠 시장의 판도를 바꾸는 중</p><p id="157209a0-c3ed-482d-b2d5-3d6458641794" class="">프로젝트의 목적은 모델링 시장을 이해하고 최신 기술을 이용해서 더 나은 변화를 일으키는 것</p><p id="af6b46b9-8a3b-4acc-a790-9b0dd7dcd9ac" class="">그 첫 단계로 현직자분들의 이야기를 직접 청취</p></div></p><p id="ac50dcac-60b3-45bb-8962-e56118358f9d" class="">
+</p><p id="0319d9d3-05a9-4fa6-8f56-c5ea2f9b3c6b" class="">TA: technical artist</p><p id="e089c4ad-24bb-4e44-a397-94949b0be74a" class="">
+</p><p id="c54831dd-fb87-4bf7-816b-93c162f6b4ee" class="">인터뷰가 어떻게 진행될지 간단한 설명: <div class="indented"><p id="cc54f4b7-9a0f-4afa-b60d-42a2d7cf993e" class="">모델러님의 평소 생활과 경험에 대해</p><p id="e3fb216e-e272-4c9e-b22a-e7e72f46e940" class="">떠오르는대로 편하게 말씀</p><p id="fa459f03-eeb3-4379-8116-ee000c3f70d7" class="">
+</p></div></p></li></ol><ol type="1" id="67a5af69-88bc-4d52-8ccc-88c8173d4e85" class="numbered-list" start="2"><li>인구 통계학적 정보<p id="f80204f3-6dbc-4ab3-b012-36a14575e1dd" class="">나이 / 성별 / 경력연수 / (주관적)상위 __퍼센트</p><p id="4cf01140-7315-40cc-beff-129487ca0588" class="">33 / 5년차 / 영상 →게임 업계: 드라마 IP를 이용해서 MMORPG</p><p id="9087d472-723b-4d8a-aae6-e455d6c709bb" class="">31 / 7년차 / 영상 → 모델링 → 등등 → 이펙터 → TA 3년차 </p><p id="ae6da7d0-892a-4126-b7e7-de278706bc1b" class="">
+</p></li></ol><ol type="1" id="84e7fb0f-fab3-49ab-9a87-df67bcf01c89" class="numbered-list" start="3"><li>Painpoint 끄집어내기<p id="df5d1ca6-347f-4bf0-8a66-7cc92f0ee6f2" class="">커피, 자리, 주어진 업무, redmine, 점심, 오후에도 마찬가지, 이슈</p><p id="03058d6a-3364-46d6-99bb-f27c52c785f4" class="">스컬핑, texture, 렌더링, 보고</p><p id="5571ec6c-3708-487d-bb52-aa6b7f5b9a77" class="">어렸을 때부터 그림 관련된 것을 하고 싶었음. 어머니가 밥 벌어먹기 힘들다. 공대 진학. 몰래 학원을 다녔음. 조교 제의도 받음. 캐릭터 모델러. 주인공을 만드는 임무가 뿌듯할 것 같아서. 사용하는 툴의 차이. MAYA, </p><p id="3f69bbc5-994d-425b-a0bb-004a8396f4f0" class="">일상에 대한 이야기로 시작 / 어떻게 모델러가 되었는지 / 업무 프로세스 / 기억나는 작업물 </p><p id="2450a6eb-ffa3-4d38-9de0-eb34a8e1bdcb" class="">sculpting(5 → 3) → retopology(1) → UV map(1) → texture(2) → rendering(1)</p><ol type="1" id="b9e1f12f-8ae3-4834-843d-013ea60c1a79" class="numbered-list" start="1"><li>retopology, UV map, 패턴화된 모델링 → retopology 툴 반만, ZBrush에 ZRemesher, </li></ol><p id="23849c64-3423-483c-bc48-89de65c84de9" class="">retopology → </p><p id="7a744006-18e3-493e-9a94-5d6f75e95e12" class="">UV map → </p><p id="0ad551f9-f00d-4422-932d-b0aa53289470" class="">unreal 5의 meta human</p><p id="3af742a0-1f1a-40bf-9b27-4f0660af83e7" class="">패턴화된 sculpting → chatGPT 3DXMax에 접목 → 링크 [유튜브]</p><p id="e4daccad-cfa0-4154-81f3-539afbf2682c" class="">UV master, topogun 따로 쓴 적은 있는데 요즘은 워낙 빌트인이 좋아져서</p><p id="4d482fb8-4de5-469d-a44f-0f12dec3561f" class="">캐릭터 움직이는 라인에 맞춰서 edge line 맞춰주기 + UI</p><p id="e2569fce-99e5-4b5c-a2c4-368621f731bf" class="">팀 작업이라서 윗사람에게 인정 받고 싶은데 그게 아니라서, 세대 차이, 아트 스타일 → 명확한 컨셉</p><p id="1c6c936a-b687-4f71-87b1-ebfff9c254fe" class="">헤어작업 폴리곤으로 루프를 만들어서 이게 자동화할 수 있으면, 헤어 툴 XGEN, MONATOOL을 폴리곤화 시켜서 자동화하는 거는 부족한 경우가 많음, 영상이 되는데 게임이 안되는 이유, 잔 머리같은 거 </p><p id="0042c4c0-23c7-42d5-96f5-ec75a275abe2" class="">
+</p><p id="1b1bc1c5-8da6-40b9-b41f-1f50afb2ebcb" class="">자신의 경험 얘기하면서 힘든 점은 없었는지 / 근무하시면서 가장 불만이었던 점 / 그 문제에 대한 일반적 해결방안 </p><p id="af285f79-2f88-4c42-9883-5df968b7d405" class="">얼마나 반복적으로 나타나는지 / 문제들을 마주쳤을 때의 기분, 감정, 상태 / 문제를 해결하고자 하는 간절함의 크기 / 문제 이면의 욕구</p></li></ol><p id="7963664f-46ff-4756-9e6a-3b4756905c65" class=""><div class="indented"><p id="06b5531e-9314-4c13-b27e-2d339745b489" class="">근무하시면서 어떤 점이 가장 스스로 부족하다고 느끼는지</p><p id="74cee611-4e9b-403e-8689-ee4f16937397" class="">평소에 가장 관심을 갖고 찾아보는 주제가 어떻게 되는지</p><p id="4903f979-73b5-410f-823a-8e4e34ac24d5" class="">최근 모델러들의 업계에 대한 문제의식</p></div></p><p id="a7fb224e-ed77-4bd3-9ecc-2a24bdb1a23e" class="">
+</p><ol type="1" id="5ff49da1-8a43-4a4f-bfdc-c194a185ec30" class="numbered-list" start="4"><li>생성 AI에 대한 이야기<p id="ac7f8b59-3fa4-4779-ac5f-8e12eafa59ca" class="">얼마전부터 미드저니로 UI, 원화 작업 시도 → 시간 절약</p><p id="acb4e6da-6f64-473a-a1c8-1f32e111ea72" class="">AD → 말 대신 미드저니로 지시를 하는 상황</p><p id="56d186aa-747f-42d3-940b-1598cd0d6db5" class="">GPT 이용해서 아트 TA 파트가 스크립트나 엔진을 해결하는 것</p><p id="141b1c4f-3d24-4bc6-81a1-e3fa94d60ce9" class="">프로그래밍 GPT</p><p id="bc1a72ce-3365-46fd-894c-0be0154f1669" class="">파이프라인 내에서 AI를 쓰는 부분이 있는지 / 쓴다면 어떤 점이 부족한지 </p></li></ol><p id="81534a16-6ce8-482a-90ec-89f4d4990a04" class="">
+</p><ol type="1" id="a4ff6e41-fee2-460d-87d4-b13a187923bd" class="numbered-list" start="5"><li>구매 의지<p id="32225f0f-2e06-494c-bf99-418b215cb66f" class="">과금을 한다면 사용할 예정? / one-time payment이면 얼마나 낼 생각 / 구독한다면 얼마나 낼 생각?</p><p id="18f82c5a-d929-435a-ad96-fde8b1022e52" class="">기타 다른 문제들이나 다른 해결방안들은 없었는지</p><p id="b04917f1-af75-4afc-a84f-1cece35ef21a" class="">
+</p></li></ol><ol type="1" id="e333dc32-7219-4d9e-97d9-2fb2b3b9b12b" class="numbered-list" start="7"><li>우리가 생각한 painpoint 확인하기<ol type="a" id="4b2da198-45f0-4b64-a49a-f1ce2edd2397" class="numbered-list" start="1"><li>3D 모델링과, 텍스처를 제작하는 것 중 어떤 부분에 병목이 있는지<ol type="i" id="56c348ff-0671-4c51-ad64-8f25c543395b" class="numbered-list" start="1"><li>3D 모델링에 병목이 있다면 프로토타입을 만들어주는 것만으로도 도움이 될지 → 뼈대가 있으면 도움이 됨 → AI가 만들어주면 훨씬 빨라지는 것 → 찾아주니까 <p id="c9388fb0-addb-4301-8bc1-3e7fbf440f81" class="">NVDiA, 마소, ChatGPT</p></li></ol><ol type="i" id="dc816016-3083-422f-b7dc-ded6edfdb1e3" class="numbered-list" start="2"><li>그렇지 않다고 하면, 아예 엔드레벨 수준의 에셋이 필요한 것인지</li></ol><ol type="i" id="c803004c-1049-44be-86e2-8ee35b184352" class="numbered-list" start="3"><li>텍스처에 병목이 있다면, 어느 부분에 병목이 있는지</li></ol></li></ol><ol type="a" id="da5cec67-5a94-4c1b-b279-a6894f187f39" class="numbered-list" start="2"><li>이전 인터뷰에서는 UV map 분리 과정이 공수가 많이 든다는데, 실제 이부분에 병목이 큰지<ol type="i" id="b8eb7346-7642-427e-9a5f-f9f1c4b1844f" class="numbered-list" start="1"><li>시중에 있는 자동화 툴은 쓰시는지<p id="ca31283e-0905-4354-b837-6d9708575831" class="">캐릭터는 거의 안쓰는 추세임</p><p id="08e797fb-4a52-42db-9fce-acb519c1ad84" class="">배경이나 애셋 쪽은 쓰는 추세임</p></li></ol><ol type="i" id="68b1c87f-55ad-4a45-93c9-9eb60c754a10" class="numbered-list" start="2"><li>잘 안 쓰신다면 그 이유는 있는지<p id="9bae5e79-a550-4246-a1fc-6a1b41b4fafa" class="">retopology나 UV나 캐릭터 쪽에서 움직여야 하는 edge line이 얘쁘게 맞아떨어지지 않음</p><p id="a8a58bf6-8eb2-4ff4-a40c-3d2ffc555faf" class="">용량 최적화를 위해서 하는 게 </p></li></ol></li></ol></li></ol><p id="35702641-e5da-4726-aabf-cd7cb833c494" class=""><div class="indented"><p id="f8120ddf-dbb1-4014-aff2-f413166e40b5" class="">뼈대만 있어도, </p><p id="82ce21af-0474-4105-917c-aa8caa1d23d9" class="">
+</p></div></p><ol type="1" id="5916e040-57e8-4e63-a6b2-1b4986fde6a3" class="numbered-list" start="7"><li>마지막 인사<p id="0a013ad8-9237-4615-abab-7207bd25f9e6" class="">연락 적극적으로 해주시고 시간도 내주셔서 감사</p><p id="fbc418a7-369e-416a-bcad-9d0068a121e4" class="">혹시 다른 분들 소개 가능?</p><p id="725ddcbd-30ca-44f0-b606-75026e124fed" class="">
+</p></li></ol><p id="280a4f95-f84d-4a78-9129-8eb48bd2287d" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">인터뷰 속기 by 영중</summary><div class="indented"><hr id="9dccf192-571c-4d02-a672-90c0ed8af2ef"/><p id="0fd6faf8-7075-4245-8dd3-16504770aa14" class="">작성자: 김영중</p><p id="b85afe5d-c54d-4705-be01-f24490326f41" class="">작성일: 23.04.18.</p><p id="1478fd1e-e21a-41db-a430-5dd1eb1b5829" class="">정리본: <div class="indented"><figure id="784bf112-13f3-497b-b357-e1bc01f0241e" class="link-to-page"><a href="20230417%20%E1%84%80%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%AE%E1%84%89%E1%85%A5%E1%86%A8%20%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%20833ab7ac9e7143ec96886dbdfdc2e9b2/23%2004%2018%203D%20%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%92%E1%85%A1%E1%84%8B%E1%85%AE%E1%84%89%E1%85%B3%20%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%E1%84%85%E1%85%A5%20%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%90%E1%85%A5%E1%84%87%E1%85%B2%20784bf11213f3497bb357e1bc01f0241e.html">23.04.18. 3D 인하우스 모델러 인터뷰</a></figure></div></p><hr id="bbdaee2b-6c44-4001-8bb3-60c160756b88"/><p id="8f7d78d2-1b34-4183-ab2f-02003d9eaea5" class="">AI에서 어떤 것들이 필요한지 이야기 주실 예정</p><p id="770a3f56-5b0a-4ca4-808c-ef4d1c852e94" class="">모델러는 아니고, TA에 있는 하주호씨<div class="indented"><p id="452bfff5-3b4f-4419-99ca-24683a38b9c8" class="">techincal artist 프로그래밍 쪽과 아트를 연결시켜주는 그런 역할을 하고 있음</p><p id="da56c812-0ecd-478f-a84c-e9dd8959bdb6" class="">자동화 툴도 실제로 많이 시도를 하고 잇음</p><p id="3678d615-e8f7-4025-94c6-e2b72a17553f" class="">이후에 AI와의 연계가 많이 이뤄질 듯 함</p></div></p><p id="5a56aec3-7422-4966-b62c-62dd5da05d45" class="">
+</p><p id="171857c2-5088-478f-bb29-b3de004ec76a" class="">인터뷰다 보니까, 나이나 경력연수라던지, 모델러 직군에서 생각하시기에 위치라 생각하는지<div class="indented"><p id="7826b02d-87bd-4a1a-8059-05b1d2fb64b4" class="">모델러 경력 5년차, 회사는 2번째 회사, 영상 관련쪽에서 공부를 하기는 했는데, 그 쪽 보다는 게임 업계가 유망하다고 생각되어 옮기게 되었음</p><p id="b2de78b3-9c43-4ee6-a468-b47022e38b82" class="">참여한 프로젝트는 넷마블의 아스달 연대기 프로젝트, MMORPG 제작 프로젝트에 참여 중</p><p id="225564dd-dfe2-43ba-8815-e3b770eb1b76" class="">33살</p></div></p><p id="6efb5c67-b387-4b8a-9d13-5d7f94bce630" class="">
+</p><p id="5d83b933-cb89-4127-829a-152e14c28f7d" class="">31살 7년차 TA, 영상 쪽에서 모델링, 라이팅, 하다가, 게임 쪽으로 넘어와서, 이펙터 하다가, 현재는 TA 한지는 3년 정도 된 위치<div class="indented"><p id="9b1d7db4-139a-47b4-b800-d14fa7aa77a8" class="">전반적인 분야를 모두 경험해 보았다고 </p></div></p><p id="0bf7b7df-d489-4107-a519-c205c07183de" class="">
+</p><p id="39fb9aa4-6cc6-440d-96bd-6592d49c3e47" class="">오늘 일상은 어땠는지, 회사에 출근하면, 어떤 생활이 이뤄지는지가 궁금하다<div class="indented"><p id="1a628391-9261-4500-adda-7423910ab26f" class="">모델러 입장에서는 아침에 와서, 커피 한잔 타고, 자기 자리에 앉아서, 주어진 업무를 수행</p><p id="36693b5f-4e08-4863-9a73-850fa36697de" class="">레드마인 ? 활용해서 팀장이 일거리를 나눠주는데, 그걸 활용해서, 주어진 업무를 파악하고, 그거를 진행할 것</p><p id="29637922-277c-492b-a838-652cbdc2ec02" class="">아침에 보고, 아침부터 작업을 진행해서, 오전에는 그런식으로 지나가는 편</p><p id="3ad50183-053c-4d8d-b8d9-c7c213b012c2" class="">오후부터는 거의 마찬가지로 업무를 수행</p><p id="f245c728-9377-4c3c-b731-17145c2d3c84" class="">가끔씩 이슈가 있으면 회의를 하고, 그거에 대해서 이야기를 하기도 하는데</p><p id="893aaf2f-2bd4-407e-84e1-cb5973756aca" class="">, 모델러는 맡은 업무만 하면 되어서, 큰 다른 일거리가 있지는 않음</p></div></p><p id="9af93d72-5ca5-4517-b0b2-336f295a3f12" class="">
+</p><p id="21171da6-837c-457d-8eef-e84e893caae8" class="">모델러라는 직군이 맡는 업무가 조금씩 다른 것 같고. 어떤 모형을 주물하는 것도 있고, 텍스처를 입히는 것, 렌더링까지 하기도 하고. 세분화되어 있는 경우가 있기도 하고. 어디까지 레인지 ?<div class="indented"><p id="13736f30-2835-4720-b3a2-28fb95a13339" class="">sculpting 작업부터, 텍스처, 정해진 환경에서 렌더링(+ 샷)을 찍어서 위에 보고까지 마무리</p><p id="355f58db-34df-430a-a067-8c5b7092978f" class="">후자 같은 경우처럼 나눠서 하는 회사도 있기는 함</p><p id="8bf6cbc8-27fc-450e-9501-9fe3afc2cd86" class="">텍스처만 하는 사람도 있고</p><p id="fea6f143-1c66-40d9-883f-2adf649abf14" class="">shifter라는 회사는 sculpting만 하고, 스캔을 하는 작업을 하기도 함. 디지털화 하는 작업만 하시는 분들도 있고</p></div></p><p id="11dd81c4-b871-48d0-8f69-148f4e060f9f" class="">
+</p><p id="58d7d719-40f0-48cd-9a79-439b27d7a130" class="">어떻게 모델러가 되었는지 ? <div class="indented"><p id="0a68b8d2-78b9-4d05-a93a-d980a0cc5012" class="">딱히 큰 계기는 아니고, 어렸을 때 부터 그림 관련된 것들을 하고 싶었음</p><p id="ae258fc2-00bf-493f-8521-ff17bdec155f" class="">어머니께서 공대를 선호하셔서, 공대를 갔는데, 전자공학이 자신과 너무 다르다고 생각</p><p id="52d06a69-6181-4013-92f2-c7af41352fef" class="">제대를 하고 나서, 학원을 다니기 시작해서, 공부를 하고, 영상을 시작한게, 영상 학원이었음</p><p id="c98bc88e-8793-41df-b312-0de532d450af" class="">일을 강사로 하다가, 가족이 인정해주고 나서, 영상 보다는 게임이 유망하다고 판단외어서, 게임 업계로 이직</p><p id="10bb1688-467d-4658-bb10-63264781ec47" class="">
+</p><p id="60c91c34-f725-4a43-9a9a-a1744c829a55" class="">게임은 모델링도 캐릭터와 배경이 세분화 되어 있는데</p><p id="c707743a-392c-4fb9-a5f7-5660dd1c9ee1" class="">, 캐릭터를 만든다는 것은, 주인공을 만드는 일인데, 그런 포커스가 맞추어져 있는, 인물을 만드는게, 뿌듯할 것 같아서, 이 쪽으로 오게 되었음</p></div></p><p id="cfa75d5c-21f2-43c3-8f68-4dab86360796" class=""><div class="indented"><p id="43a952ea-7e6b-4d9e-a118-676740c0805b" class="">영상과 모델링은 사용하는 툴 차이가 큰데</p><p id="8b84a84a-2fc7-466d-b270-5dc9a39b7864" class="">, 영상은 크게 마야를 쓰고, 게임은 3DS Max를 써서 차이가 많이 나고</p><p id="6cdaabcf-d259-416a-945b-ac111c6c398e" class="">, 그 다음은 폴리곤의 갯수의 차이가 있고</p><p id="c088e456-534a-450b-a99a-91c98f219a55" class="">, 그 다음은 큰 차이는 없었음</p></div></p><p id="8e187f6f-0a4f-427e-b37f-89d482953b83" class="">
+</p><p id="a0e758f3-10e7-491d-a6e7-1ba558521f65" class="">TA는 미대를 나왔음<div class="indented"><p id="cf391590-9d74-4e78-aba7-58a253e6eed9" class="">유리공예랑 도자기 했음. 딱 1년 다니고, 너무 안 맞았음</p><p id="34cd6a30-8ae9-4014-b12d-e112007e991c" class="">작품을 만들면 가마에서 터지고, 되돌릴 수 없는게 스트레스를 많이 qkedkTdma</p><p id="b173d7ad-daf9-4650-8402-e19998df0859" class="">3D 인테리어를 접하게 되었는데, 캐릭터를 만들고 이런걸 유튜브에서 우연히 보고 너무 하고 싶어서 계속 하다가</p><p id="2761de9d-d071-4a3b-91bd-ccfefaf189d6" class="">한계가 와서 같이 학원에서 만나게 되었음</p><p id="9ae2cb7d-1112-43d0-a2f0-81abf132535f" class="">하다가, 조교 제의를 받고, 현업에서 뛰어야 할 것 같아서, 나와서 더 빨리 post-production (광고 CG) 모델러로 들어감</p><p id="3010ea39-67f9-48bb-b96c-b2bfb7c57fe1" class="">모델러를 한 3개월 했는데, 너무 노가다 작업이라 느껴서</p><p id="b89f310f-a836-4eaf-b574-f891bcf3719b" class="">텍스처랑 머테리얼을 하는 룩뎃?으로 가고, 라이팅도 하다가, 영상 업계 자체가 여건이 안 좋음</p><p id="950c1283-1488-48e3-b2ba-bc5fdbe07e21" class="">20시간 일하고 이정도 수준, 주6일 근무</p><p id="a40245c7-ed4c-4358-a997-1d9df349854e" class="">
+</p><p id="d1f716ba-0338-4610-976e-12a3e36ad692" class="">게임 쪽은 대우가 좋다고 하기도 하고, unreal 엔진이 뜰 때여서, 그 때 이펙터 준비를 좀 했음</p><p id="3e1da0af-6532-49b4-9cbf-39e10924abab" class="">취업을 좀 해서, 게임이 망해가지고, 현 회사에 이펙터로 지원을 했는데, 높으신 분이 너는 TA를 해라</p><p id="606935a5-41bc-4505-82c9-c70c4eedfb3d" class="">원래는 TA가 되려면 이펙터가 필요하데서 하다 가려고 했는데, </p></div></p><p id="b3c5cabf-b4b9-4abb-a4cd-330d30b323cc" class="">
+</p><p id="b9481248-256e-4be3-b8d5-87e68d96b4ce" class="">모델러에게 반복작업과 힘든 점 ?<div class="indented"><p id="23cc04fa-72dc-4233-b570-301739e31378" class="">아무래도 단순 작업들 ? 예를 들면 모델링해서는 sculpting한걸 애니메이션이 들어갈 수 있게, retoplogy라는 작업을 해주는데</p><p id="38c34a1c-527f-436d-a67e-3a75991aedb0" class="">, 이건 polygon을 다시 짜맞추는 작업</p><p id="6eb7734b-2438-4180-9e5e-7d0f8befcd14" class="">, 이걸 다시 하면 지루한데, 그런게 문제가 많음</p><p id="24a912e5-8528-47ed-9aa3-087f5c0072be" class="">
+</p><p id="193182a2-656c-412e-9d95-18eca9ac01fc" class="">UV라는 텍스처를 만들 수 있는 도화지를 짜는 작업이 있음</p><p id="d146cbef-ad92-480d-a7d1-3de828c10972" class="">어떤 패턴화된 모델링들, 반복해서 만드는 모델링을 자동화 하지 않고, 수작업으로 하시는 분들도 있는데, 그런 분들은 많이 불편해 보이기도 함</p></div></p><p id="f8b9a0cb-4b4f-43b6-83a9-80e1a592fd63" class="">
+</p><p id="e960219d-d7d7-46b3-bb93-13560f08db7f" class="">z-brush로 sculpting을 하고, max로 가져가서, retopology나 UV 작업을 함<div class="indented"><p id="749cd518-7d4c-4ef8-b470-5afe8c076f4d" class="">그거를 UV까지 하면, substance painter 같은 텍스처를 만들 수 있는 프로그램으로 넘어가서 텍스처 작업을 하고</p><p id="b859e60b-39c6-432c-8976-2a0fcf42479e" class="">토폴로지랑 텍스처를 가지고 넘어가서 렌더링을 함</p></div></p><p id="864ae7d0-540a-4031-a6f7-b29d7f6fcde8" class="">⇒ 거기서 가지치기를 해서 다른 툴을 더 쓰기도 하고, 여러 방향을 가지기도 함</p><p id="945d3452-ba8d-4c8a-9c8c-96a36e4ab385" class="">
+</p><p id="1a1b89ac-9c70-40d0-a8eb-d046560a8eab" class="">retopology나 UV 맵은 어느 정도 자동화된 툴이 있는데, 이걸 사용하는 부분 ?<div class="indented"><p id="ac6de794-586a-4b7f-99e9-3e4818bdaa67" class="">캐릭터 같은 것들은 관절에 따라 움직여야 하는데</p><p id="944d502f-4e3c-4e3e-ad46-2c03e1d2cea1" class="">, 그 때 엣지 라인이 움직이는 방향과 맞아 떨어져야 이쁘게 하는데, 그거를 자동으로 하는 툴들이</p><p id="1ac4e532-fb0b-44de-bbc2-2e69d37b52bd" class="">, 이해하고 짜지는 않음</p><p id="39c55dcf-bfe8-4817-864c-b1a5d8ce2776" class="">, 이거 같은 경우는 배경 모델에서는 자동으로 쓰는데, 유기체 모델링에서는 쓰기가 어려운 점들이 있음</p></div></p><p id="4fecdf85-a024-423d-9fed-125a27c90931" class=""><div class="indented"><p id="0973c3de-bbb6-4de2-8901-a4bd52194372" class="">UV는 영상 같은 경우는 낭비를 심하게 해서, 여러장을 써서 만들어도 되는데</p><p id="3e4ced5c-6835-4afc-a0ca-1aa1be9dee65" class="">, 게임은 용량을 최적화해야 하는데</p><p id="1afaf7d9-edc4-47e9-b7f8-7992b5790105" class="">, 해당 작업은 UV도 마찬가지로 아껴서 용량을 줄여야 하는데</p><p id="d8f7c66d-e78d-4b42-a048-db2af2eaf74f" class="">, 컴퓨터가 알아서 해주는 것 보다는 손으로 짜주는게 더 이쁘게 나옴</p><p id="f66fa0bb-433b-4c4c-a05b-5600ae07c465" class="">
+</p><p id="afbd304a-bed0-41db-8041-3b2c357741d7" class="">캐릭터 쪽에서는 아직 안 쓰는 추세</p><p id="91805fe9-d0c5-40e3-ad98-60be3e5e09a5" class="">, 러프하게, 움직이지 않는 파츠는 retopology를 자동으로 하기도 하는데</p></div></p><p id="1cbac504-ae24-4197-9a47-c48dd8f905c7" class="">
+</p><p id="d8711317-ed83-4ed6-a44f-e1975eae64a2" class="">공통되는 부분이 리깅 작업을 해야 하는데, 엣지 라인이 안 맞아 떨어져서 생기는 문제. 귀찮은 점도 나를 힘들게 만드는 요인은 귀찮음, 갈등, 내 스스로에 대한 기대는 불충족. 이런 부정적 감정을 느낀 경험<div class="indented"><p id="d5d62b30-74af-40dd-93bb-6d68961e6ccc" class="">사람들이 팀작업을 하는데, 공동 작업을 하는데</p><p id="51a8b3ea-c948-446f-95a2-7cbda0b68356" class="">어떨 때 윗사람한테 인정도 받고 싶고, 내가 만든 결과물이 맘에 들고 뿌듯한데, 뭔가 눈에 안 찬다 하면 실망을 하기도 함<div class="indented"><p id="948e43a6-c5fb-4879-b1bc-43a63e712b69" class="">서로 생각하는 니즈의 차이가 있음</p><p id="49f1cc13-2bbb-45e6-9fb1-c4f9a7eb7b5e" class="">서로 바라보는 방향이 다르다. 세대 차이라던가 그런게 있을 수도 있고, 추구하는 아트 스타일이 다를 수도 있고<div class="indented"><p id="9e79fd05-99c1-4e40-b0d4-3bcd010fec45" class="">가장 이상적인거는 대화를 많이 하고, 회의도 하고, 원화팀에서 명확한 컨셉을 제시해주면, 맞춰가기가 편한데, 이게 또 사람이 바쁘고 하다 보면 잘 안될 때도 있음</p><p id="059efaa0-655c-47ab-afac-7e52d795defe" class="">어떻게 바꿔가려고 했어었는데, 이제는 수긍해가는거 같음</p></div></p></div></p></div></p><p id="538d517f-0495-49b2-aaaf-cc41a2170100" class="">
+</p><p id="5b85ae92-4f08-4f97-9de1-a0c9b2735b35" class="">귀찮은 작업은 그냥 참고 하는 편인가 ?<div class="indented"><p id="a8667e51-0ed7-42fd-86a8-c41b2e9d2c20" class="">retopology 작업은 z-brush 자동화 툴을 쓰는데</p><p id="54911c2c-12d7-4b1d-a03c-31891a190dfb" class="">, 그걸로 선을 따서 자동화를 한다음에, 수작업을 하면 좀 편한 편</p><p id="bcf01067-444f-4ae2-b509-57defef9b4c6" class="">retopology는 반정도 자동화되고 있음</p><p id="c42746e2-f110-4cd1-8f5d-fa281ef1ad88" class="">예전에는 쓰나마나였는데, 버전이 높아지면서 좋아져서 쓰기 시작함 (z-mesher, builtin 기능)</p><p id="253982fc-8c25-43e6-aa71-5bda74eb780b" class="">요즘은 맥스나 마야에서도 기능이 추가되고 있음</p><p id="acd433bf-30e1-4dc9-ae5a-ef1e1d413285" class="">UI가 간편해지고, 기능이 간편해짐, 내부에 쓰던 툴 기능을 그냥 포함하고 있었음</p><p id="8e48de69-6417-4745-a146-ad6d6acb285b" class="">추가적인 스크립트를 그냥 쓰기도 하고, 마야나 맥스, 지브러시를 쓰는게 더 이득임</p></div></p><p id="bb975abb-9e68-49aa-bd24-9bab3a35039d" class=""><div class="indented"><p id="55b99c16-5683-4218-bfd5-568fed4f72c4" class="">UV 같은 경우는 정확하게 해주는 경우가 많지 않아서, 그냥 쓰는 편</p><p id="f2acea8b-bc7a-4870-be71-17fecf4e5c31" class="">UV meister나, topogun 같은걸 따로 많이 썼었는데, 요즘에는 builtin 기능들이 좋아져서 따로 필요가 없어짐</p></div></p><p id="2fe90740-6d7a-4383-b074-6e87cc88ea34" class="">
+</p><p id="333adb99-2eb4-42bc-9e9c-e2b35517d57e" class="">또 한가지 측면이, 나는 다른 사람들에 비해서 이게 잘 안된다, 아직 아쉬움을 느낀다 하는 부분이 있는가<div class="indented"><p id="b3012f3e-1941-469b-8050-391326ed87f6" class="">요새는 헤어 작업을 많이 하는데</p><p id="7b660722-46f7-49b3-bcc8-638f4fabb75c" class="">, 헤어를 폴리곤으로 다 루프를 짜서 만들어줘야 하는데, 그게 수동으로 해야 하는 일이 있어서</p><p id="f0c9d09c-f3b2-4ebb-9ff5-350cd51b35bc" class="">, 시간도 많이 들고, 비용적으로 어려워서, 자동화할 수 있는 기능이 있다면 좋을 것 같다</p></div></p><p id="248e66cc-6e15-4e25-a7c5-2d08b3c5c112" class=""><div class="indented"><p id="ca51293e-d0a1-45ae-959a-7509a1544636" class="">헤어를 따주는 기능들은 있는데, 그걸 폴리곤으로 잡고 루프를 돌리는데 한계가 있음</p><p id="61d6ea6c-31da-4848-ab54-8ac5f7c3c2b7" class="">디테일, 옆머리는 s-gen은 spline 헤어를 만들어서, 랜덤값으로 자동으로 만들어주는데</p><p id="042561cf-4b4c-4fc7-a248-8afafd2c2f21" class="">polygon으로 하면, 하나씩 텍스처를 뽑아줘야 해서 답이 없음</p><p id="63921c0e-d392-4e38-b747-1296a51cc067" class="">
+</p><p id="bd0a550a-9f8f-4555-ae47-731cecf320c2" class="">아직까지는 자동화될 방법은 없는 것 같음</p><p id="2345a966-0870-4c16-9eeb-840cac8eedb5" class="">, 앞서 retopology 작업처럼 x-gen이나 on-hotrics로 기초는 짜도, 결국 사람 손이 타야됨<div class="indented"><p id="98461dc1-9c85-4487-b3d8-209836162fe5" class="">결국은 최적화 문제로 갈 수 있음</p><p id="6c679850-1fbf-4083-abb2-573c90bf23d2" class="">게임은 사용자마자 디바이스가 다르고, 컴퓨터로 실시간으로 해야 하다 보니까, 힘든 부분이 있음</p><p id="44b55676-c28d-487d-b506-f16dab86533d" class="">되긴 되는데, 대체로 버벅인다고 이해하면 될 듯함</p></div></p><p id="957f6b7d-e96b-4c64-893b-c5dc40463d81" class="">털 관련된 나중에 될 것 같음</p></div></p><p id="1a5c37a8-c923-440a-8316-4c6213a96a68" class="">
+</p><p id="4413fbcb-e3e3-4702-806a-4c54bca22b6f" class="">패턴화된 모델링 같은 경우는, AI 공부를 많이 하다 보니까<div class="indented"><p id="3fb2bcac-6141-48b3-9faa-f3977e0321e3" class="">ChatGPT를 max에 접목하는 것을 보고, 패턴화된 모델링은 금방할 수도 있을 것 같음</p><p id="5734b068-6ea0-4bd0-b315-e319e6548091" class="">좀만 더 가면 바로 해결 가능할 것 같다는 생각이 들고</p><p id="e263602e-4462-45b4-bfed-f67bae8a1f2a" class="">
+</p><p id="4949bcf7-4f2e-4f68-8d7f-4cf9e162dc63" class="">retopology나 UV는 좀 더 시기를 봐야 할 것 같음</p><p id="4f35bcd9-1900-421f-89d4-ca798ddcc14c" class="">제가 기대했던 AI는 사람의 반복 작업을 해결해주길 바랬는데</p><p id="7ec0d50c-630e-46bf-8438-fd0ece7955e5" class="">, sculpting같은 고도화된 것들을 치고 나가는 듯 함</p><p id="558b8e1c-f329-4cfa-8455-97333c9aa9ed" class="">
+</p><p id="6c50db3b-2789-48c3-8c7b-214ea769409c" class="">사람이 오히려 반복을 하고, sculpting을 AI가 하는 상황이 지금 계속 진행될 수도 있을 것 같다</p></div></p><p id="4084a486-436d-4130-98b3-bba0a2212522" class="">
+</p><p id="c2857e42-fcc2-4a96-a719-3ba474f679cc" class="">3D MAX에 ChatGPT를 접목하면 자동으로 자주 쓰는 스컬팅이 제작될 것<div class="indented"><p id="6eb26b8c-ff17-4099-b260-acdcde109955" class="">유튜브로 찾아 봄</p><p id="92698fb9-ab03-4df6-a718-8ba80a9bbce1" class="">저것도 아직은 베타 작업 중인 것 같음</p><p id="ff76e991-97f9-4edd-99c5-d9a02d995a95" class="">
+</p><p id="40482b87-2f78-4cf7-9f19-93bf0dc4dfe1" class="">미드저니, 생성형 AI 그런식으로 모델링이 나올 것 같음</p></div></p><p id="69994a2c-463d-44d2-ab90-6d6c90df8f7d" class="">
+</p><p id="aa8c5d17-571e-4f68-93d1-eaa9b9256e6d" class="">나중에는 완벽히 모델링이 되는 것은 아니고, 프리셋이 많이 나올 것 같음<div class="indented"><p id="4993e1b0-a0ff-4267-84fa-601b5a85914f" class="">지금도 그런 것들이 많지만, 이거 조합하고, 저거 조합하고 하면 이미 만들어져 있는 것을 조합을 해서</p><p id="4afd9d86-cb56-4db7-a78f-f9ac2d75efdd" class="">, 변형을 해서 느낌을 내고</p><p id="9c6ac043-38d3-4f5e-a939-be4d0dafc19e" class="">, 조금만 고치면 되는 수준이 올 것</p><p id="521ec9d9-10b9-45d3-923a-35e1f7218d63" class="">, 제가 생각하는 나중은 다 할 수 있는 사람이 살아 남을 것</p><p id="e863094f-8b80-45a6-a9ac-cc87c6e33706" class="">, 조금씩 합쳐서 쓸 수 있는 사람들이 많이 필요할 것</p><p id="6b566a6f-5329-4df1-9068-454f0d16a08c" class="">, 소스 같은거는 준비가 다 외어 씨을 것</p><p id="a8c18123-3bf6-4995-99ba-b94304d6be5d" class="">데이터가 쌓이고, 뭐가 쌓이고 이러면 패턴도 어느 정도 있고</p><p id="42768b9a-db15-47c7-b651-60b47a3513ab" class="">, 사람이 특이한 것도 점차 조금씩 수정하는 느낌으로 많이 바뀔 것 같음</p><p id="612466ae-d0a6-4213-aa26-bb870dd81bbf" class="">, 정말 당장은 될 수 없지만</p><p id="8df4fced-e022-498a-add5-2cbfd51a916b" class="">, 옛날에도 안된다 했던 것들이 된게 많아서, 그런 것들을 봤을 때는 될 가능성이 높아 보인다.</p></div></p><p id="1eabd14a-2348-4ae9-9ef5-b1e9bee2a3b4" class="">
+</p><p id="dd59562c-f746-4f9a-b96a-8b767e8c7d74" class="">이거는 좀 더 미래고<div class="indented"><p id="8bf4fc6b-e3a2-4d55-94f5-28a7a1abdcce" class="">아이언맨1처럼 로다주가 자비스한테 말로만 이렇게 하는데</p><p id="bdd00acf-9ab5-4574-8f20-3d35ada5ab9f" class="">, 그런식으로 뭔가 조금씩 바꿔바, 이걸 할 수 있는 사람이 될 수 있을 것</p></div></p><p id="f6ae3b9b-79c9-4e79-95a7-3f71cfb0af85" class=""><div class="indented"><p id="a498a9df-770d-402e-a92c-98b1b5758e6e" class="">언리얼5 메타휴먼이라고, 만지면서 할 수 이쓴ㄴ게 나왔는데</p><p id="43868ecb-9129-465b-a566-64692014e459" class="">, 체형도 나올거고, 옷도 만드는 프로그램에서 이거 합치고, 저거 합치고 해서</p><p id="6c02c87d-b085-46c1-954d-0399dfef55f3" class="">, 자동으로 그 캐릭터에 한정되는 것들이 나올 수 있을 것 같음</p><p id="dfcbf25c-c2cf-4ca0-a91b-cf73f3ee64b3" class="">
+</p><p id="ad57fd34-2495-456b-b632-2e115f9d0148" class="">그런게 있으면 리토폴로지 이런게 필요가 없다, 이미 프리셋이 많이 만들어진다고 하면</p></div></p><p id="7b1dfa83-9587-4b60-9dee-8c08f380e6b2" class="">
+</p><p id="767ed045-1205-4b1e-8c01-bc7719091d29" class="">넷마블에서 AI를 쓰는 파트가 있는가 ?<div class="indented"><p id="3997132e-05e6-4fcf-8684-970e9ce3a5b6" class="">미드 저니 이용해서, 원화라던가, UI 컨셉 같은거를 간단히 AI를 통해서 만드는 시도들을 하고 있음</p><p id="b1ec1661-b8d2-4110-88cc-40aea4bb4dd8" class="">그게 실제로 도움이 많이 되고 있음</p><p id="d22d8412-7078-4b2c-b297-3da2d03a461f" class="">윗사람들 같은 경우는 아트 디렉터가 보통 원하는 컨셉을 말로 설명하다가</p><p id="1f3c7656-bcce-4e3e-8a7e-c09080586d5d" class="">, 이미지를 빠르게 만들어서 공유한다거나</p><p id="bf506dd6-52c2-44a8-904e-7e178f5d2b13" class="">, 빠르게 업무를 수행할 수 있게 됨</p><p id="9a944ba8-7cf3-4658-af38-b9a218a232ac" class="">, 레퍼런스 용</p></div></p><p id="324390b6-e90d-4b82-be65-68ba375dc91b" class="">
+</p><p id="a215195b-656a-420f-b9e3-f5a5ff433126" class="">GPT 이용해서 스크립트 이런 것도 만들고<div class="indented"><p id="7eb7c1d0-c96b-4cc1-aa0e-c6212751d9da" class="">물어보면 답을 해주니까, 그런것도 만드록</p><p id="fd23ccaa-589a-497b-b178-836975f39efa" class="">자동화할 때 이야기 하고</p><p id="6aab2126-4776-45a6-a507-16063d3db708" class="">프로그래밍 할 때도 많이 쓰고 있음</p><p id="dcefaac9-be0e-4563-9e46-2d2d4aede511" class="">그런 AI는 많이 사용하고 있음</p></div></p><p id="15a35d7b-1228-45bf-95eb-6859e64f99c2" class="">
+</p><p id="8a8d86a4-1037-4350-905b-93320bec9d91" class="">벡스라는 언어가 있는데, 파이썬 모델링을 하는데<div class="indented"><p id="1a53df34-9135-46dd-85e5-429ddef00951" class="">빌딩을 랜덤화 시켜서, 이미 짜놓은걸 쓰는데</p><p id="285c71e0-5b24-49f8-ad90-14535fa8b818" class="">그걸 챗지피티한테 물어보면 코드를 짜줌</p><p id="96a07a61-ba61-40e6-a49c-c8ad27032dc7" class="">그런거를 활용하는 편</p></div></p><p id="05a28bbb-3dd6-4fb2-8f1f-88ae36efafd3" class="">
+</p><p id="ef44e00b-4c49-4a33-bcab-e442f105a4d8" class="">캐릭터는 좀 멀고, 배경쪽이 제일 먼저 오고, 캐릭터가 올거고<div class="indented"><p id="1b62d404-7ae5-4417-a16b-74ecdd4f27bf" class="">영상에 먼저 오고, 그 다음에 게임에 오고</p><p id="d7139550-9f4e-4e86-aae5-b36d4307b17c" class="">영상은 좀만 있으면, 어느 정도 퀄리티는 왠만해서는 치면 알아서 나올 것 같음</p></div></p><p id="17e8c0d3-a33d-403d-8dd2-48f209d4520b" class="">
+</p><p id="385254ad-30bc-4a5e-bfb2-301baaabfc70" class="">영상은 이미지의 연속인데<div class="indented"><p id="43832669-68de-48ee-8874-9c1cfd201fda" class="">이미지는 대량으로 만들어지고 있는데</p><p id="149129f0-9179-42af-8dde-d8689cdb2fca" class="">, 비디오 생성 자동화에 대해서 기대를 걸고 있는데</p><p id="fc27cb32-cc8a-4afd-acc3-be0f6fd7e406" class="">, 그런 것들이 빨리 오면 좋을 것 같음</p></div></p><p id="49252dfd-3ea8-4c2b-bf2f-0f133df70507" class="">
+</p><p id="ec9d4f37-5588-4a19-b729-6b50d85ba667" class="">프로토타입을 만들기만 해도 도움이 될까 ?<div class="indented"><p id="7d928422-9f7e-4b7b-8f30-793c86c64af6" class="">도움이 많이 될 것</p><p id="ec420afb-2f6c-4f92-9033-df46ba5aad06" class="">이게 그냥 구에서 시작하는거랑, 기본 뼈대가 있는 것에서 시대하는거랑 속도 차이가 많이 남</p><p id="f5fdff3e-9d4a-4dc8-a48b-5e9bfdbc9116" class="">뼈대랑 비율까지 맞아지면 더 좋기는 함</p><p id="ee2c7d21-b04c-4cb3-bf2c-7b858007166b" class="">
+</p><p id="32d69e56-5eb4-4ca5-afed-9776c0f23317" class="">졸라맨처럼, 진짜 뼈 기본 비율만 나와도 거기 위에다가 칠하면서 근육을 덮으면 금방 만들 수 있음</p><p id="4d5157ba-ac49-4548-9c62-f632e286ed13" class="">근데 잔머리 있는 사람들은 0에서 절대 시작안함</p><p id="5c85bf19-a551-43c7-a5b0-21db4e6476c6" class="">단한번도 0에서 시작해본적은 없음. 다 일단 있는거에서 시작은함</p><p id="f5951487-c189-415c-9d5b-6192bd711b59" class="">어디서 가져오던, 사서 하든, </p><p id="c481040f-93b2-46e0-b3c4-910ac4536ac1" class="">AI가 그거를 만들어주면, 훨씬 빨라질 수 있음</p><p id="0b7edcfe-ded1-46f7-874f-721f2ed41f87" class="">
+</p></div></p><p id="ca93cbab-93c7-42f4-81ff-09ff4ce83748" class="">sculpting이 50~60% 나머지는 거의 10%씩 (retopology, uv-map, etc)<div class="indented"><p id="7899b8db-8146-43a4-a299-08831feb56dd" class="">sculpting이 끝나면, 나머지는 콜업 마무리 작업 시간에 많이 쓰는 것</p><p id="9923d80c-098f-499f-9f61-eff287947911" class="">뼈대랑 prototype은 chatgpt + 3ds max로 지원해주고 있기는 함</p><p id="1fbd1d17-0ede-475f-95f5-7b11ce43b16e" class="">아예 nvidia, microsoft에서 모델을 만들어주는 AI를 구현하고 있음</p><p id="a890c250-66a5-4585-880e-f736e8474d81" class="">간단한 hypol작업은 다 해줄 것 같음</p><p id="bc6586ca-5032-4ed5-8c03-7821b8d60a5f" class="">시간 또 지나면, TA가 말한 것 처럼, 아예 하이폴 작업들도 정리해볼 수 있을 것 같음</p><p id="4087e1c4-0c3f-4e03-aebe-63c0ab808153" class="">
+</p></div></p><p id="cf592d04-fe14-4074-9de0-4b01a6303a9c" class="">3D capture가 이미지 한장으로 만드는데<div class="indented"><p id="8092477d-a259-47f4-be91-0b06fa9960c4" class="">그거를 기반으로 여러 방면으로 생성을 해서</p><p id="12217eac-210b-48c0-be6e-dba48dbd9c3f" class="">캡쳐 툴을 </p><p id="5911454e-1bea-4b22-998c-edf16cf0469e" class="">
+</p><p id="acdd143e-63b8-4ac7-ae81-94a501731246" class="">결과물 자체는 고퀄리티 결과물 자체까지는 바라지 않음</p><p id="388d4682-acd7-45d0-9905-37ea54e76040" class="">, 뼈대만 있어도, 상당히 작업 프로세스가 도움이 되기 때문에</p><p id="97499da3-672c-40e2-94ab-0d280eae1d26" class="">, 어느 정도 형태감만 있어도, 그정도만 되도 출시를 해도 되지 않을까 싶기도 함</p><p id="f2865eac-66c0-4e5c-93b6-80d89d4d3ecb" class="">
+</p><p id="c3807538-ca1c-42fa-aecb-850a6069ba97" class="">이미지 예시나, 데모 예시 정도는 추후에 보내드리는 것으로</p></div></p><p id="6a5ddd44-f218-4cc4-9edd-f010ddeac9a2" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">인터뷰 정리 by 영중</summary><div class="indented"><p id="cffe2d2c-768a-461f-8a8c-b3dcbd889eff" class=""><a href="https://www.notion.so/23-04-18-3D-9f2f9fb73aa6492b91d2372e47008877?pvs=21">23.04.18. 3D 인하우스 모델러 인터뷰</a> </p><hr id="9c80ddb8-e180-476c-80e4-ac6b582955da"/><p id="b2e645dd-cb8b-4e7e-a2b9-42ff12c97b05" class="">작성자: 김영중</p><p id="3a00fe5e-969e-4253-9d95-a9b4b9401bde" class="">작성일: 23.04.19.</p><p id="6dc737bb-d0eb-4197-b35d-3e04c35ee82a" class="">정리본</p><hr id="1fb5285d-a126-4b3c-ab40-23f59d7ab5e0"/><h2 id="4267e138-5684-44b6-8bf4-27b60cec5cb3" class="block-color-yellow_background">인터뷰 대상</h2><p id="0d993b19-c5b4-431c-842c-6d4b67907fc8" class="">
+</p><p id="d5ca82b4-b50f-4873-97a7-bfb471b066c5" class="">[성함]: 3D 모델러, 33세, 경력 5년차<div class="indented"><ul id="12d931f8-4ce1-4aba-b004-cffd84f31034" class="bulleted-list"><li style="list-style-type:disc">3D 기반 영상 제작 학원 강사</li></ul><ul id="7772394c-777c-42ef-8af8-72d85e538da6" class="bulleted-list"><li style="list-style-type:disc">현 넷마블 3D 게임 캐릭터 모델러 (Sculpt + Texture)<p id="17524479-1d7a-4880-b2a1-437faaacb48c" class="">: 아스달 연대기(드라마 IP 기반 MMORPG) 프로젝트 참여 중</p></li></ul><p id="4b1e69b4-e560-478a-a69e-3a3ca6525acc" class="">
+</p></div></p><p id="3fa610e1-286e-4d11-9886-b84f768d3627" class="">하주호: Technical Artist, 31세, 경력 7년차<div class="indented"><ul id="594d621d-dc1b-4c2f-ae08-5cb1ef01f2b9" class="bulleted-list"><li style="list-style-type:disc">Post Production 3D Modeling 업무 수행, 광고 CG 제작 부서</li></ul><ul id="6b76301c-27ba-4eac-86f5-9843c13db19b" class="bulleted-list"><li style="list-style-type:disc">(주)룩댓[<a href="https://www.nicebizinfo.com/ep/EP0100M002GE.nice?kiscode=OT6907">page</a>]에서 텍스처, 라이팅 작업 수행</li></ul><ul id="202a1279-2497-4b6e-8c4c-4402c11131ce" class="bulleted-list"><li style="list-style-type:disc">모 게임 회사에서 Unreal 기반 3D Effect 제작 (게임 사업 철수로 퇴사)</li></ul><ul id="9e7f2f62-fb1a-43e5-b55a-0ce7cb65c644" class="bulleted-list"><li style="list-style-type:disc">현 넷마블 TA (3년차)<p id="e30d3ed6-9f9d-4510-b712-86f85c470cdc" class="">(TA: 예술과 기술을 접목하는 역할, 모델링 관련 자동화 플러그인 제작 등 업무 수행)</p></li></ul></div></p><p id="c70268aa-4183-4f4b-b34f-22e2eff762bb" class="">
+</p><hr id="94723666-5422-443d-ba1e-2e045942496c"/><h2 id="76434927-95fa-47bf-8976-8641e9fffe02" class="block-color-yellow_background">업무 프로세스</h2><p id="3b22138b-2fa1-4def-bb79-e3edbcca2f0e" class="">
+</p><p id="154a2c0c-b7e9-4b2a-be18-067b9c0abd1d" class="">Redmine[<a href="https://www.redmine.org/">page</a>] 프로젝트 관리 도구를 통해 팀장에게 업무를 전달 받아 수행하는 방식<div class="indented"><p id="8f528d42-5a24-4a5d-9fa5-9c36f3ffecd8" class="">: 모델러는 맡은 업무 위주로 수행하기에, 이슈가 없을 경우 다른 일거리가 있지는 않음</p><p id="10384692-0152-4de3-a9a8-49edfb95c252" class=""><mark class="highlight-red">⇒ 개인주의적 업무 성향을 가질 가능성이 존재</mark></p></div></p><p id="9f35d85b-2acc-456e-8ebd-5d429d364315" class="">
+</p><p id="79bd374a-327e-4cb6-82cc-1956ac489f91" class="">넷마블의 모델러는 <mark class="highlight-red">모형 주물, 텍스처 작업, 렌더링을 1인이 모두 커버</mark><div class="indented"><p id="98eb7f53-e5f1-442b-9947-51219660e15a" class="">: 렌더링의 경우 정해진 게임 환경에 업로드한 장면을 보고하는 정도</p><p id="d4edf0af-060d-4c24-b5fc-c3ba1e1ae5f3" class="">, 대부분의 시간을 모형 주물과 텍스처 작업에 활용</p><p id="f647f56c-52b0-47f1-8d16-2da0012791dd" class="">(Shifter라는 회사는 각 프로세스를 나눠 담당하기도 한다고)</p></div></p><p id="2034d317-d6bb-4a57-9179-c3cd6d5bef83" class="">
+</p><p id="b830b102-a2a4-4217-a4b1-8e456f08fab2" class="">영상은 업계는 Maya[<a href="https://www.autodesk.co.kr/products/maya/overview">page</a>], <mark class="highlight-red">게임은 3ds Max[</mark><mark class="highlight-red"><a href="https://www.autodesk.co.kr/products/3ds-max/overview">page</a></mark><mark class="highlight-red">]를 주로 사용</mark><div class="indented"><p id="22c25ea0-2eb1-4158-be0c-f6a4e9731b34" class="">폴리곤의 수를 제외하고는 큰 차이는 없음</p></div></p><p id="480431fd-b897-4eda-bc6e-57662b761abb" class="">
+</p><p id="4b7ad9b1-fcf5-48ab-9a9d-f2aad05ae16f" class="">가장 기본적인 프로세스<div class="indented"><p id="24c9ca32-ac45-4d2b-829c-4aa143a53302" class="">아래 프로세스에서 다른 툴을 더 쓰기도 하고, 여러 방향을 가지기도</p></div></p><ol type="1" id="a515a53e-d5fa-4036-b560-f89e71afa11e" class="numbered-list" start="1"><li><mark class="highlight-red">[50%~60%] </mark>ZBrush[<a href="https://pixologic.com/">page</a>]로 모형 주물(Sculpting) 수행</li></ol><ol type="1" id="6c4ef13c-1569-4e74-a638-17010c245e86" class="numbered-list" start="2"><li>[10~15%] 3ds Max[<a href="https://www.autodesk.co.kr/products/3ds-max/overview">page</a>]로 모델을 가져와 Retopology, UV map 작성</li></ol><ol type="1" id="0d562c23-50fd-4e1b-afe7-6f8460f40687" class="numbered-list" start="3"><li>[10~15%] Adobe Substance 3D Painter[<a href="https://www.adobe.com/products/substance3d-painter.html">page</a>]을 통해 텍스처 제작</li></ol><ol type="1" id="8d0aec0f-257c-4cd2-8eb1-fee51d3e68db" class="numbered-list" start="4"><li>[10%] 게임 엔진으로 업로드 하여 렌더링 테스트</li></ol><p id="579cec1e-6949-44e5-a9d7-74078563b93e" class="">
+</p><hr id="3528c5fb-b3fa-47a2-905d-09c27e0f0991"/><h2 id="eb2efee5-b759-4c59-a5d0-70d47f7df7fe" class="block-color-yellow_background">고충</h2><p id="5ace2e60-6a27-40d3-9ef7-f8dbe2399600" class="">
+</p><ol type="1" id="9cbbb359-7e3b-4a52-ad7c-84b438918f75" class="numbered-list" start="1"><li>Sculpting 후 애니메이션이 들어갈 수 있도록, <mark class="highlight-red">retopology 작업을 수행, 이 작업에 피로감이 발생</mark><p id="de75ef89-a637-4c15-8c2f-beb55d28bf7c" class="">(retopology: rigged mesh로 폴리곤을 다시 짜맞추는 작업)</p><p id="8d42c623-5aee-4d1f-8754-a3f9e0900b20" class="">게임 캐릭터의 경우 <mark class="highlight-red">관절에 따라 메쉬가 맞아 떨어져야 하는데, 자동화 도구는 아직 관절의 엣지 라인을 잘 못 맞춤</mark><div class="indented"><p id="385ccb18-af68-4925-9210-7dfcca933d70" class="">관절의 움직임을 이해하고 retopology하는 자동화 도구는 아직 존재하지 않는다고</p></div></p><hr id="d8ae5527-79cb-45fd-a2f6-cff3c8d174c9"/><p id="ce91ab68-fcbf-47ee-921e-4afe269c5381" class="">현황<div class="indented"><ol type="a" id="75412ed4-6276-4683-9d0a-a42ebf7b0420" class="numbered-list" start="1"><li>움직이지 않는 파츠에 대해서는 자동화하지만, 그 외 부분은 여전히 수작업</li></ol><ol type="a" id="23c4d67e-0320-4fdc-99d9-12c5c538d5ef" class="numbered-list" start="2"><li>ZBrush의 ZRemesher 빌트인을 통해 Retopology 초벌 작업을 하고, 이후에 리터칭을 수작업으로 하는 경우도 있음<p id="e29871d1-775a-4cd2-8a04-6a1e3fa0027b" class="">: 외부 툴로도 많이 나왔으나, <mark class="highlight-red">빌트인의 성능이 점점 좋아지면서, 대부분 빌트인 retopology 도구로 넘어가는 추세</mark></p></li></ol></div></p></li></ol><p id="cfb0a00f-61bb-401d-9606-4497e793f3c7" class="">
+</p><ol type="1" id="8b6718d4-d4e5-49ea-9f24-b3dded432904" class="numbered-list" start="2"><li>UV Map 작성<p id="9c59ab68-980b-45f5-a49f-2ce5944e68db" class="">게임의 경우 유저 컴퓨터의 스펙이 다양하기에, 최대한 용량을 최적화 해야 함</p><p id="ebce6961-c8fd-4865-aeee-0f9561acc28e" class=""><mark class="highlight-red">자동화 도구를 통해 UV Map을 최적화할 경우 미감이 떨어지거나, 정확도가 떨어지는</mark> 문제가 발생</p><hr id="5ced1bcb-9ceb-4249-9d20-38dc3d1ebda4"/><p id="95b9c8e9-7635-44e3-a144-f79b15e40679" class="">현황<div class="indented"><ol type="a" id="88d34fee-db29-4ecc-96da-c24203c6f3c4" class="numbered-list" start="1"><li>초창기에는 ZBrush의 UV Master나 Topogun[<a href="http://www.topogun.com/">page</a>]의 자동화 도구를 사용<p id="d5a21192-a284-4cd4-9202-d36469b27a1e" class="">현재는 <mark class="highlight-red">3ds Max의 builtin을 사용하는 추세</mark></p></li></ol></div></p></li></ol><p id="bc5003e2-11af-4ea3-aacf-4f678d8e3cdf" class="">
+</p><ol type="1" id="69a12e02-e181-4174-b06f-a67b56c560f4" class="numbered-list" start="3"><li>머리카락 폴리곤<p id="34ea82c3-3fa2-4d2e-96ab-824fad8acab3" class=""><mark class="highlight-red">머리카락의 경우 하나 하나 폴리곤을 작성하고</mark>, 움직임을 루프로 구성하여 입력, <mark class="highlight-red">이 모든 작업이 수작업</mark></p><p id="4f566eaf-dc7e-436f-bd41-2b4aa9619893" class="">Spline 방식으로 머리카락을 구성하는 경우, 머리카락의 움직임을 랜덤으로 생성할 수 있는데<div class="indented"><p id="04e224a5-ac23-4e04-8a8b-d3a626c95ca9" class="">폴리곤 방식의 경우 텍스처까지 하나 하나 뽑아야 하기에 리소스가 많이 투입됨</p><p id="427f7d73-6ced-4666-b3f4-888484d393d5" class=""><mark class="highlight-red">가장 자동화 되었으면 좋겠다고 언급한 부분, 하지만 가장 나중에 자동화 될 것이라고 추측하는 부분</mark></p></div></p><hr id="bdf42c91-3c9a-4db5-890f-83d9cf93714e"/><p id="6be19bc8-3f95-4ae9-982b-e57d87585a5d" class="">현황<div class="indented"><ol type="a" id="dda55286-9826-4695-91d8-7f2fd8548b16" class="numbered-list" start="1"><li>Maya의 XGen[<a href="https://www.autodesk.co.kr/products/maya/features/dynamics-and-effects/faster-easier-to-use-xgen">page</a>]를 써서 머리카락의 초안을 뽑더라도, 게임에서의 <mark class="highlight-red">UV Map 최적화 문제로, 결국 사람 손이 타게됨</mark></li></ol></div></p></li></ol><p id="2401a81d-8a1b-4be1-8b85-91c6e912481c" class="">
+</p><ol type="1" id="ef516855-120c-4aaa-9dd6-b7119bd1c880" class="numbered-list" start="4"><li>패턴화되거나, <mark class="highlight-red">반복적인 모델링을 수작업할 때 피로감 발생</mark><p id="124227c1-8725-431a-a233-c486c95ea429" class="">대체로 모델러들은 <mark class="highlight-red">인터넷에서 유사한 모델을 찾아, 거기서부터 수정을 시작하곤 함</mark><div class="indented"><p id="62a4bb69-9f47-4977-b010-a88bdc7509c4" class="">그렇지 않으면 인체 비율을 맞추는 것에도 시간이 많이 소요되기 때문</p><p id="e2580245-4393-49ea-9bba-387d7914b18d" class="">데이터베이스가 있어 검색이 가능하거나, <mark class="highlight-red">프로토타입만 자동화되어도 충분한 상황</mark></p><ul id="0431bd56-1fdd-4fca-b5d2-0917b66f3ec3" class="toggle"><li><details open=""><summary>프로토타입 예시</summary><figure id="da4e2752-fce3-49cd-b198-225c97ca0c5d" class="image"><a href="20230417%20%E1%84%80%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%AE%E1%84%89%E1%85%A5%E1%86%A8%20%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%20833ab7ac9e7143ec96886dbdfdc2e9b2/Untitled.png"><img style="width:384px" src="20230417%20%E1%84%80%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%AE%E1%84%89%E1%85%A5%E1%86%A8%20%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%20833ab7ac9e7143ec96886dbdfdc2e9b2/Untitled.png"/></a></figure><figure id="6471b1bd-903e-4335-9f8f-1693757f2c10" class="image"><a href="20230417%20%E1%84%80%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%AE%E1%84%89%E1%85%A5%E1%86%A8%20%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%20833ab7ac9e7143ec96886dbdfdc2e9b2/Untitled%201.png"><img style="width:384px" src="20230417%20%E1%84%80%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%AE%E1%84%89%E1%85%A5%E1%86%A8%20%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%20833ab7ac9e7143ec96886dbdfdc2e9b2/Untitled%201.png"/></a></figure></details></li></ul></div></p><hr id="1836bc33-d6e1-4a5d-8dc0-3532396bb4dd"/><p id="02cc985e-828e-468f-b4bc-fc27a4d522e8" class="">현황<div class="indented"><ol type="a" id="79e96776-13d8-45f4-95ef-282e9d08be4a" class="numbered-list" start="1"><li>3ds Max에 ChatGPT 플러그인을 붙여 자동으로 Sculpting하는 기능이 베타로 공개되어 점검 중</li></ol></div></p></li></ol><p id="f4a65b4e-1ceb-4d3c-9561-f64e782b14e4" class="">
+</p><ol type="1" id="60fb06ce-0ca9-416c-b743-4b49364be88a" class="numbered-list" start="5"><li>매니저와 모델러의 아트 스타일이 다를 경우,<mark class="highlight-red"> 니즈와 결과물이 매칭되지 않는 경우가 발생</mark><p id="f5c34d6d-61ac-48fe-bbe1-9bd49dc83a59" class="">가장 이상적인 것은 <mark class="highlight-red">원화팀에서 명확한 컨셉을 제시</mark>하고, 중간 컨펌을 자주 받는 것<div class="indented"><p id="0d0bf851-b5bf-4407-a0ff-f211ca9f4d08" class="">하지만 업무가 많다 보면, 소통이 충분히 이뤄지지 않아 매칭되지 않는 경우가 종종 발생함</p></div></p><hr id="821a290b-067c-4b9a-842d-5bf318daad06"/><p id="5ca53693-a07a-4399-8f4e-468ad6acb84c" class="">현황<div class="indented"><ol type="a" id="7a66b44f-8b2c-491c-84f7-64c8cc267d8a" class="numbered-list" start="1"><li>요즘은 디렉터들이 Midjourney를 통해 컨셉 이미지를 제작하여 공유하는 편<p id="153ab8e4-c71c-49fc-b215-8537100afdeb" class="">실제로 도움이 많이 되고 있고, 레퍼런스를 참조하니 니즈의 전달이 명확해짐</p></li></ol></div></p></li></ol><p id="29cdf8fc-e2af-4b8d-b9ed-3654167e903a" class="">
+</p><hr id="808d87bf-f26f-4ed0-8343-08081a5a9b34"/><h2 id="38033f53-7e67-472a-ab07-ba5a6feeef49" class="block-color-yellow_background">그들이 보는 AI의 미래</h2><p id="adc8af5b-abbf-44aa-9c51-188a5b934013" class="">
+</p><p id="85d47603-2721-4a67-ad90-9ba87ea0d7ce" class="">완벽한 End-to-End 모델링 자동화 보다는, <mark class="highlight-red">프리셋이 많이 출현할 것으로 예상</mark><div class="indented"><p id="f566cea4-44df-46c8-a6d9-16f73d1c3d8f" class="">프리셋 조합, 변형 및 조작을 통해 아트 스타일을 반영, 완성하는 방식이 될 것</p><p id="57bfbc6c-2bdb-4f89-bc4f-6417c85ab5fb" class="">이는 AI가 아니더라도, 데이터가 쌓이고 나면 충분히 가능한 미래일 것이라고</p><p id="411fe9eb-0a60-41de-b51e-d875dc85a95b" class="">Ex. 언리얼의 메타 휴먼</p><p id="730032c4-6779-4488-8401-2798fa051daf" class="">이미 <mark class="highlight-red">프리셋으로 모두 존재한다면, 더 이상 Retopology에 대한 니즈도 사라질 것 (이미 완성형이니)</mark></p></div></p><p id="54a3963f-b4e0-486b-8c3c-e866e3697a2d" class="">
+</p><p id="ac3834fd-026f-4987-8143-33ef6209bab9" class=""><mark class="highlight-red">배경 및 기타 에셋이 가장 먼저 자동화 될 것</mark>이고, 이후 캐릭터가 모델링 될 것<div class="indented"><p id="0f4f92fb-5cb7-4f06-af96-7e7364c5242b" class="">영상이 먼저 자동화 되고, 게임이 자동화 될 것</p><p id="e19bb4ea-b0f2-4759-bcea-e6776b796003" class="">영상은 조금만 더 있으면 어느 정도 퀄리티는 자동으로 보장될 것으로 예상 중</p><p id="836c62b3-ef94-467a-84ee-f1ca530f5c28" class="">영상은 이미지의 연속이고, 현재 이미지는 대량으로 합성되어 지고 있기에, 영상 자동화가 더 먼저 올 것</p></div></p><p id="31ca3654-ac70-4bb0-84d9-5756f13e0fc3" class="">
+</p><p id="9adca838-7785-475d-9d87-fc350faefc76" class="">Sculpting에 절반 이상의 업무 시간을 활용 중<div class="indented"><p id="286a8a65-bc9c-449e-a8ad-2fb805b48fc2" class="">현재도 <mark class="highlight-red">기본적인 뼈대는 ChatGPT + 3ds Max를 통해 제작 중</mark></p><p id="2cac04b9-79ac-4ea2-957e-796090763a76" class="">NVIDIA와 Microsoft에서도 모델링 관련 AI를 구현하고 있고, 머지 않은 미래에 High polygon 작업을 다 해줄 것 같음</p></div></p><p id="ac6822a0-a96c-432c-a8d4-fab4283bd169" class="">
+</p><p id="20ce7a95-b42f-4c4d-a563-f6ea6a32e541" class="">
+</p></div></details></div></article></body></html>

@@ -1,0 +1,679 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>20230411 KPR X LionRocket</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="0e059b5c-7070-4e07-92d7-f5a8e00f4036" class="page sans"><header><h1 class="page-title">20230411 KPR X LionRocket</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-brown">인터뷰/외부미팅</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><h1 id="bea711be-72e1-476d-96fc-a8d24ca1021d" class="">KPR, 생성 AI를 활용한 브랜딩 캠페인 기획</h1><p id="5100e5c2-6d05-4ba4-abbc-df942f962073" class="">‘삼성 화재 다이렉트 착’은 생활 밀착 초개인화 보험 플랫폼 서비스로서 포지셔닝하고자 한다. <a href="http://www.kpr.co.kr">KPR</a> 측에서는 이러한 착 서비스의 개인화 이미지를 강화하기 위한 브랜딩 캠페인을 구상 중이다. </p><div id="b8dd4c9e-fe0e-477f-99c2-66bedb06936c" class="column-list"><div id="fbca8968-6836-4644-a3cb-a624227a7af3" style="width:56.25%" class="column"><h3 id="330b6c1f-5fb3-4864-a117-735451c0c029" class=""><strong>캠페인 기획 내용</strong></h3><ul id="8ffa6ad3-38e7-4d1d-a81c-a1b13d527f08" class="bulleted-list"><li style="list-style-type:disc">고객의 삶을 정의해주는 <a href="https://www.cj.net/cj_now/view.asp?bs_seq=13040&amp;schPgSize=10&amp;hash=0">포토티켓</a>을 만들기<ul id="6a43daad-df7f-46e9-8775-1dddb231cfb8" class="bulleted-list"><li style="list-style-type:circle">사진과 문구가 들어간 영화 티켓 이미지</li></ul><ul id="3bcc66bd-69f4-40e6-b93e-1719654851ad" class="bulleted-list"><li style="list-style-type:circle">실제 영화가 아닌 고객의 라이프스타일을 반영한 이미지와 문구 출력</li></ul></li></ul><ul id="ee48590f-7173-4ee6-8622-2c542df71f3f" class="bulleted-list"><li style="list-style-type:disc">포토티켓을 온라인 공간에서 회자되도록 하기</li></ul><h3 id="8182f2ad-fb21-4d44-88a8-f5e3c5a66a70" class=""><strong>캠페인 실행 계획</strong></h3></div><div id="b9c22aac-ed49-496d-a73a-fc355ce05b91" style="width:43.75%" class="column"><figure id="f5f28be6-7410-4ff9-ab1c-9c0e329348a2" class="image"><a href="20230411%20KPR%20X%20LionRocket%200e059b5c70704e0792d7f5a8e00f4036/Untitled.png"><img style="width:640px" src="20230411%20KPR%20X%20LionRocket%200e059b5c70704e0792d7f5a8e00f4036/Untitled.png"/></a><figcaption><a href="https://www.cj.net/cj_now/view.asp?bs_seq=13040&amp;schPgSize=10&amp;hash=0">CGV 포토티켓</a></figcaption></figure></div></div><ul id="5194f05c-ba4f-48fe-bf3a-73cf98d4801a" class="bulleted-list"><li style="list-style-type:disc">론칭 시점은 7~8월부터 시작</li></ul><ul id="3b931c05-59aa-42ab-aefd-b91dc86c7f48" class="bulleted-list"><li style="list-style-type:disc">캠페인 기간은 1달 정도</li></ul><ul id="9f4ac80a-5be7-4626-8ec6-ec4c91f172e2" class="bulleted-list"><li style="list-style-type:disc">협업 및 준비 기간은 론칭 전 2개월 정도</li></ul><ul id="2e08bcc1-d118-4e22-a937-0da5e9c2b701" class="bulleted-list"><li style="list-style-type:disc">포토티켓 생성 및 공유를 위한 웹사이트 제작은 라이언로켓이 담당하지 않음</li></ul><h1 id="1532f621-75a5-4efe-9c2f-05fc601a9794" class="">Q&amp;A</h1><h3 id="9de82828-54e3-4975-ad12-6b76a11bc28b" class="">Quality Control</h3><p id="79385470-0152-4e02-868d-e9d554ae80ca" class="">라이언로켓에서 제공할 수 있는 기술적 솔루션의 범위에 대한 질문이 오갔다. 실제 제품 및 가치를 브랜딩할 때 적용될 수 있는지, 고객사 이미지에 부정적 영향을 끼칠 수 있는 결과물 생성은 막을 수 있는지, 사용성은 충분히 편리할지에 대한 질문이 오갔으며 이에 대해 긍정적인 답변을 드릴 수 있었다. 다만 결과물 퀄리티나 선정성과 같이 기준이 명확하지 않은 부분과 실제 커스터마이지잉 가능한 범위에 대한 지점은 추후 양사 간 논의를 통해 맞춰가야 하는 부분으로 남겨두었다.</p><ul id="1b12cea5-2153-4db8-9263-5334be281985" class="bulleted-list"><li style="list-style-type:disc">실물 제품이 들어간 이미지 말고도 기업이 추구하는 이미지나 가치를 반영한 이미지도 생성할 수 있나요?<p id="9ad182ae-4528-4460-8a93-821782573c12" class="">추구하는 이미지나 가치를 구체적으로 서술할 수 있다면 가능합니다.</p></li></ul><ul id="0057cbc5-90d9-4cfc-b5ac-3271605bd640" class="bulleted-list"><li style="list-style-type:disc">한글 지원이 가능할까요?<p id="4489268b-c7a9-48ee-8ebb-b507ab0c9aa7" class="">한글 지원도 진행 중입니다. 한글화 대응은 실제 캠페인 진행 시 크게 무리 없을 것으로 보고 있습니다.</p></li></ul><ul id="39207191-50d4-4d0c-9378-b15272b19e37" class="bulleted-list"><li style="list-style-type:disc">키워드 및 결과 이미지의 선정성 필터링할 수 있나요?<p id="93c17f9a-6183-48bf-a6ce-73ca398e3618" class="">이미 Sporky에서는 필터링을 진행하고 있습니다. 지금 진행 중인 필터링의 정도 그 이상으로도 가능합니다. 다만 이미지 선정성의 기준과 같은 부분은 추후 서로 맞춰가는 과정이 필요합니다.</p></li></ul><ul id="6d0fdbad-2037-438c-94ae-1866f7961f6a" class="bulleted-list"><li style="list-style-type:disc">결과물 퀄리티는 어느 정도로 생각하면 될까요?<p id="61612ded-eacf-4a38-88ea-2a93839c64e0" class="">퀄리티와 같이 주관적인 기준은 추후 서로 맞춰가는 과정이 필요합니다.</p></li></ul><ul id="580a8555-943f-42ee-bae0-478f38be3ad9" class="bulleted-list"><li style="list-style-type:disc">이미지 생성 기술을 적용하고 커스터마이징할 때 어느 범위까지 가능할까요? 이를 테면 맥락에 맞게 글씨체를 만들어 줄 수 있을까요? 문구와 이미지의 레이아웃도 AI가 자동으로 맞춰줄 수 있나요? 레이아웃의 경우 만약 어렵다면 프리셋을 정해두고 AI가 선택하도록 방법도 생각해볼 수 있을 것 같습니다.<p id="d9754662-3a7f-450a-9f59-b9138b8e1193" class="">기술적인 범위의 경우 구체적으로 확인을 해봐야 할 듯합니다.</p></li></ul><h3 id="ad35f6d0-018b-4af0-a94c-89414bce4468" class="">추가적인 크리에이티브 가능성</h3><p id="55fedb2f-4431-49e6-bef3-f45e9795b7ce" class="">앞서 언급한 포토티켓 캠페인은 잠정적인 기획안으로서 라이언로켓에서 제공 가능한 다양한 기술 솔루션에 맞춰서 유연하게 대응할 여지가 있다고 밝혔다. 금일 라이언로켓 측에서 주된 협업 모델로 제안한 Sporky 말고도 베리미, 미버스 등 다른 솔루션에 대한 관심을 보였다. 이외에도 비디오, 움짤 생성 등 다양한 솔루션 및 public에 오픈되지 않은 모델까지도 협업에 사용하려는 의지를 보였다. 이를 통해 빠르게 변화하는 AI 환경에서 경쟁사보다 크리에이티브 소재를 먼저 차지하고자 하는 의지를 엿볼 수 있었다. </p><ul id="edeb764b-5067-4ffd-a1bd-4c23ad18d6f4" class="bulleted-list"><li style="list-style-type:disc">혹시 비디오도 생성할 수 있나요? <p id="7516d286-c52a-4d14-aea0-52719e869fd9" class="">비디오는 아직 개발 중입니다만 이미지의 연속을 통해 비디오가 만들어지듯, 비디오 생성 모델로의 전환은 필연적입니다. 현재는 움짤 생성까지는 디벨롭 중입니다.</p></li></ul><div id="27ac39d9-cb45-4c5b-8572-8fa360019619" class="column-list"><div id="3721e2c2-25c3-42a5-bd34-644121350b7b" style="width:68.75%" class="column"><ul id="88a53725-35b1-4c86-b8e9-d813f8819b18" class="bulleted-list"><li style="list-style-type:disc">라이언로켓에서 다양한 제품을 보유한 만큼 KPR 측에서도 다양한 가능성을 고려해볼 수 있을 것 같습니다. 다른 제품도 소개해주실 수 있을까요?<p id="fd7e75a8-7a1b-489c-b48a-aca269d4d3d0" class="">베리미의 경우 여러 장이 필요한 딥페이크와 달리 단 한 장의 사진으로 실시간 얼굴 swap이 가능한 버추얼 인플루언서를 생성해줍니다.</p><ul id="1605c0de-aa99-43ca-bb21-644c5bdb1710" class="bulleted-list"><li style="list-style-type:circle">혹시 인간형 말고 캐릭터 얼굴도 가능할까요?<p id="9391a18e-93a5-495c-9721-a47a4e7fdee9" class="">캐릭터도 가능해지는 중입니다.</p></li></ul></li></ul></div><div id="a9089370-3e09-451b-9899-6f5c4d93e96e" style="width:31.25%" class="column"><figure id="ebb62178-8540-485d-bb2a-492e3033c72f" class="image"><a href="20230411%20KPR%20X%20LionRocket%200e059b5c70704e0792d7f5a8e00f4036/Screenshot_2023-04-11_at_4.15.42_PM.png"><img style="width:792px" src="20230411%20KPR%20X%20LionRocket%200e059b5c70704e0792d7f5a8e00f4036/Screenshot_2023-04-11_at_4.15.42_PM.png"/></a></figure></div></div><h3 id="3dd2d5bb-df46-440c-91c5-d52c6f0bc085" class="">Technological/Business info</h3><p id="b2e4bd68-5f67-40c2-b3a2-a93ce57f1ee2" class="">라이언로켓의 기술 및 비즈니스 방향에 대한 질문이 오갔다. 기술의 기본적인 작동 원리나 생성 AI 산업 지형에서 어떤 포지션을 차지하고 있는지에 대한 기본적인 정보를 드렸다.</p><ul id="cbf4b992-2c27-40cd-872b-4508707126e7" class="bulleted-list"><li style="list-style-type:disc">스타일(= 화풍) 학습이 어떤 식으로 가능한가요? 일정한 프롬프트를 통해서 스타일을 정의하는 건가요?<p id="20fd3181-0d99-4bfc-a79d-bd61e37f84b1" class="">기존에 생성된 이미지 예시를 가지고 모델을 학습을 시킵니다. 이로써 일정한 스타일을 내재화한 특정 모델을 만들어낼 수 있습니다. 현재 공개된 Sporky를 통해서는 이런 학습이 불가능하고 B2B 협업을 통해 스포키를 작동시키는 AI 모델을 커스터마이징해드리고 있습니다.</p></li></ul><ul id="58e376c7-3159-47d0-aa26-3677f6a64541" class="bulleted-list"><li style="list-style-type:disc">원천 기술은 라이언로켓의 것이 아닌가요?<p id="9a1021cc-3045-4f87-8425-e126415c9bdc" class="">라이언로켓은 stability AI에서 오픈소스로 발표한 stable diffusion을 Fine-tuning하여 제공합니다.</p></li></ul><ul id="062953aa-df2f-4f72-8012-9db32e9f234a" class="bulleted-list"><li style="list-style-type:disc">원천 기술을 갖추지 못한 라로는 해자를 만들기 어려울 것 같습니다.<p id="20c05cdc-d0a0-4a3f-bd38-42aea00fb95f" class="">오히려 반대로 원천 기술을 제공하는 player들이 해자를 만들기 어렵습니다. 이들은 개별적인 비즈니스적인 케이스에 일일이 맞춰나가고 대응하기 어렵습니다. 따라서 라이언로켓과 같은 3rd party에서 잘 활용할 수 있도록 도와주는 데에 초점을 맞추고 있습니다.</p><p id="d3fb03f1-887a-4b62-8e96-5d2583663fea" class="">저희도 원천 기술(=foundation model) 즉 초거대 AI를 만드는 비용을 계산해봤고 그 결과 최소 300억이 소요된다는 결론을 내렸습니다. 우리나라에서도 유플러스와 같은 주요 통신사를 포함한 대기업에서 초거대 AI를 만들고 있으나 GPT와 같은 선두 AI 모델 대비 그 미래가 밝지 않고 개발에 참여한 대기업에서도 오히려 발을 빼려는 추세입니다.</p></li></ul><h3 id="a8ac769d-4049-40a2-a14d-714693575333" class="">예산/일정/Policy</h3><div><ul id="0c887d78-ea89-4752-991a-813d0d0fb11a" class="bulleted-list"><li style="list-style-type:disc">일정과 예산은 어떻게 될까요?<p id="39d59feb-d32b-49f0-ada3-3a1bc293848d" class="">일정과 예산은 추후 양사가 서로 맞춰가는 작업이 필요합니다. </p><p id="2f3d818f-43fc-445e-87f6-27648866c9b0" class="">구체적인 협업 내용에 따라 다르겠지만 예산은 대략 3천만원 정도입니다.</p></li></ul></div><ul id="b0cf033b-b32a-47d7-b27c-e5455db0ff55" class="bulleted-list"><li style="list-style-type:disc">저작권 관련된 정책은 어떻게 되나요?<p id="d3b11af2-8352-407b-bd83-51b578188b16" class="">기본적으로 Sporky를 통해 생성한 이미지는 생성한 사람들의 소유로 간주하고 있습니다. </p><div><p id="21fff9fe-b456-4616-bbb4-7861cf30ccad" class="">AI를 통해 생성된 이미지에 대해 저작권을 인정하는 판례는 아직 없습니다. </p></div><div><p id="eb68b14a-135a-4f0a-8a77-bb937fb133df" class="">최근 <span style="border-bottom:0.05em solid">AI로 생성된 그림에 리터칭을 거친 경우 등을 통해 소유권을 인정받는 사례</span>들이 나오고 있습니다.</p></div></li></ul><ul id="f1cfe98f-ec7a-42ec-b2b8-9be013803dfb" class="bulleted-list"><li style="list-style-type:disc">B2B 협업의 경우 라이언로켓 정책 상 Sporky 상호 노출이 필수인가요? Sporky 상호가 노출되는 경우 브랜드 캠페인 본연의 목적을 저해하지는 않을까 우려가 있습니다.<p id="108187b3-67b3-4eb5-8661-8dd6d400aa1d" class="">B2B 협업 시 Sporky 상호를 필수적으로 노출해야 하는 정책은 없습니다. 다만 상호 노출을 통해 양사가 만족할 수 있는 접점을 찾을 수 있다면 가능할 것으로 보입니다. 이에 대해서는 추후 협의를 해보는 게 좋을 것 같습니다.</p></li></ul><p id="1543321e-aaea-4eec-beb9-72ca156527a9" class="">
+</p><ul id="188d864b-51a9-4a14-b39b-8c2fe62b03f2" class="toggle"><li><details open=""><summary>etc</summary><h3 id="66b6bb7c-dfbc-4fa7-b638-301d2c0ed6e4" class="">Network</h3><p id="c8665e3f-01ad-4263-9b73-87ce9ca8c764" class="">라이언로켓이 보유한 네트워크를 파악하고 KPR의 기획에 덧붙일 지점이 있을지 파악하기 위한 질문들이 있었습니다.</p><ul id="0934d43c-71f8-4803-856b-8c81259db2d1" class="bulleted-list"><li style="list-style-type:disc">비슷한 제안을 많이 받아보셨을 것으로 보이는데 혹시 저희 말고 다른 기획이나 아이디어들이 있었을까요?<p id="05638184-ee11-447e-9009-75b7860549f9" class="">B2B에서는 원하는 이미지를 잘 뱉어낼 수 있냐, 사용성이 중요하다. </p></li></ul><ul id="0822daf0-c13f-444f-9a47-1132d1ac0df7" class="bulleted-list"><li style="list-style-type:disc">아까 장표에 보니까 삼성화재가 있던데 삼성화재와 지금 커넥션이 있는가?<p id="444713c3-4ec7-4bdc-9257-b46b4e789896" class="">과거에는 있었음. 지금은 없음</p></li></ul><ul id="2170297d-c860-4ead-9f14-006d035b80e9" class="bulleted-list"><li style="list-style-type:disc">또다른 고객 참여 캠페인 아이디어 같은 거 있으시면 말씀 좀</li></ul><p id="273af166-3a83-4b09-af8b-a45af512b03e" class="">
+</p><p id="a45861c8-d31e-485d-a73b-5902b200cb42" class="">
+</p></details></li></ul></div></article></body></html>

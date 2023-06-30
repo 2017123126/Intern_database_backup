@@ -1,0 +1,678 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>주간보고서</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="fb06febb-9d7e-4182-9c4b-2034dbb8a033" class="page sans"><header><h1 class="page-title">주간보고서</h1><p class="page-description"></p></header><div class="page-body"><ul id="c2fdbe47-21f6-4502-9963-e426747d0f0b" class="bulleted-list"><li style="list-style-type:disc">매일 반복되는 업무<ul id="3b44412a-2034-4ee9-9a61-da035b6bf130" class="bulleted-list"><li style="list-style-type:circle">메일 확인<ul id="d5c71316-8c16-4827-b4b8-6e12c426c387" class="bulleted-list"><li style="list-style-type:square">shj05230@lionrocket → 협력사 등 컨택 체크</li></ul><ul id="dd8fc68c-77da-41ee-94f5-63f591aa6ffb" class="bulleted-list"><li style="list-style-type:square">contact@lionrocket → 인바운드 협력 문의 여부 체크</li></ul></li></ul><ul id="356754d0-014b-481c-9cee-3b3c1642d913" class="bulleted-list"><li style="list-style-type:circle">전사메일 뉴스레터 체크<ul id="4e47e990-7988-42ff-88a0-92eccd902432" class="bulleted-list"><li style="list-style-type:square">경쟁자 체크</li></ul><ul id="652cc832-289b-4f3f-beff-360bbc1c1b3a" class="bulleted-list"><li style="list-style-type:square">시장 동향 체크</li></ul></li></ul><ul id="73c5fa0a-d687-4675-8773-69065884fccc" class="bulleted-list"><li style="list-style-type:circle">인바운드 대응<ul id="3c1c1fb3-4c6c-4fd6-876e-003c16f86b01" class="bulleted-list"><li style="list-style-type:square"><a href="https://docs.google.com/spreadsheets/d/17YiOajlbh3GoihPnfKmVmHVxMtUOaRw03qzSZtW2E94/edit">Contact US 구글 스프레드시트</a> 인바운드 협력 문의 대응</li></ul></li></ul></li></ul><ul id="8ea444e0-2f61-4ab6-b270-d517b5c433e5" class="bulleted-list"><li style="list-style-type:disc">금주 현안 업무<ul id="d809f692-0e61-4e20-8891-493bd23d2f98" class="bulleted-list"><li style="list-style-type:circle">고객리스트<ul id="2daa2135-fd5c-469e-bc76-7833db839c76" class="bulleted-list"><li style="list-style-type:square">타겟 고객 리스트 확보 방식 파악</li></ul><ul id="165a1599-34c1-4560-b435-38e9ec149398" class="bulleted-list"><li style="list-style-type:square">최근 연매출 10억 이상 고객사(CP사) 리스트 만들기<ul id="dbd5902c-774c-4e35-ba05-18b5b72ffcca" class="bulleted-list"><li style="list-style-type:disc">CP사 리스트 파악</li></ul><ul id="179102d8-3679-4493-bc98-0d7b592d1ee7" class="bulleted-list"><li style="list-style-type:disc">SMINFO를 통한 고객사별 매출 정보 확인</li></ul></li></ul></li></ul><ul id="73d72351-535b-43fd-9811-f83cd2cce29c" class="bulleted-list"><li style="list-style-type:circle">플랫폼(크몽)을 통해 수요층을 직접 공략 위한 AI 작가 기획<ul id="2a4d001f-0079-49b3-a298-69dfba6139e7" class="bulleted-list"><li style="list-style-type:square">웹소설 및 웹툰 운영 및 방향성 정립<ul id="535a76c4-def8-4ff0-9287-5f5149d6edff" class="bulleted-list"><li style="list-style-type:disc">4P 가설 정립<ul id="f2c1f788-8f8c-42d6-9cc8-e797d9d8c549" class="bulleted-list"><li style="list-style-type:circle">웹툰 Place 가설 정립<ul id="1d6be405-b678-4e6d-b790-0498566ba9a9" class="bulleted-list"><li style="list-style-type:square">웹툰 PD들이 어시를 찾는 방식 탐색</li></ul><ul id="338f6d69-25c7-4045-acde-2db7a69ae968" class="bulleted-list"><li style="list-style-type:square">일단 실제 웹툰 PD들이 사용하는 곳 외에 웹툰 어시를 구하는 채널 탐색</li></ul><ul id="b3e07869-119b-4dd6-8823-71ddac82a326" class="bulleted-list"><li style="list-style-type:square">과거 인터뷰 진행한 웹툰 작가 캔디스 대상으로 웹툰 어시 구하는 곳 질문</li></ul></li></ul><ul id="447fcbfd-79c8-4789-9786-076145ebce85" class="bulleted-list"><li style="list-style-type:circle">웹소설 홍보 채널의 적합성 확인<ul id="e6595853-51e0-4206-9cd2-67b4b3dc0c68" class="bulleted-list"><li style="list-style-type:square">직접 예시 게시물을 올려보아 이에 대한 커뮤니티 측의 반응 체크</li></ul></li></ul><ul id="68cf7ead-4fc3-4315-a08c-29df77040b51" class="bulleted-list"><li style="list-style-type:circle">웹툰 price 가설 정립<ul id="c967d203-84e5-4426-8848-e43ed1a89c6b" class="bulleted-list"><li style="list-style-type:square">실제 외주 작가에게 작가에게 견적 물어보기</li></ul></li></ul><ul id="ed40538c-512e-453a-ad11-03f821ff442f" class="bulleted-list"><li style="list-style-type:circle">웹소설 price 가설 정립<ul id="b1426729-b408-4aa2-a537-655f84c0cd79" class="bulleted-list"><li style="list-style-type:square">크몽 ai를 이용한 일러스트레이터들로 헤도닉 프라이싱 진행</li></ul></li></ul><ul id="521da75c-7c7d-4936-9da0-409dac927423" class="bulleted-list"><li style="list-style-type:circle">웹소설 포지셔닝 가설 정립</li></ul></li></ul></li></ul><ul id="80671a6d-f115-41c3-9ca9-f7afb1e693c1" class="bulleted-list"><li style="list-style-type:square">구체적 운영 방식 구상<ul id="c6ad45b3-4b81-45eb-a492-be6f0ecc0757" class="bulleted-list"><li style="list-style-type:disc">웹툰 스케줄 구상</li></ul><ul id="a9ba7a10-ab44-49d2-9cec-1a76d36f2db0" class="bulleted-list"><li style="list-style-type:disc">웹소설 스케줄 구상</li></ul><ul id="bf20e8c5-acc8-4a70-a2dc-f8bf5851d52a" class="bulleted-list"><li style="list-style-type:disc">웹소설 및 웹툰 운영을 위한 자원 리스트업<ul id="a5bbe552-02a7-46b9-80eb-3004ba19307f" class="bulleted-list"><li style="list-style-type:circle">기존 진행 중인 채용 건의 JD 체크 </li></ul><ul id="1a7823b7-0311-4a6d-a1d2-c8710af2a080" class="bulleted-list"><li style="list-style-type:circle">웹소설 운영을 위한 새로운 포지션의 JD 마련</li></ul></li></ul></li></ul></li></ul></li></ul><ul id="3dba4442-2cb0-44d0-9c47-a0f8f4136e06" class="bulleted-list"><li style="list-style-type:disc">정리 및 문서화 업무<ul id="85dfee3e-7377-41b5-8fa9-cf238e7e6c73" class="bulleted-list"><li style="list-style-type:circle">회의 정리<ul id="f1151db5-e1fe-48aa-b784-57a8630ee8ef" class="bulleted-list"><li style="list-style-type:square">morning/afternoon scrum, evening scrum 정리</li></ul></li></ul><ul id="ccf0ce1b-5aec-45bd-9724-4ecff6a93ddd" class="bulleted-list"><li style="list-style-type:circle">기타 정보 정리<ul id="2f35faba-21fe-4298-a148-62a7497f7d28" class="bulleted-list"><li style="list-style-type:square">전사 뉴스레터 체크</li></ul><ul id="0dcbc329-cdfe-4d90-96af-6e378fecad88" class="bulleted-list"><li style="list-style-type:square">슬랙체크</li></ul></li></ul></li></ul><p id="01f11f5d-cb63-467b-809d-8a407991dd6c" class="">
+</p><p id="a74ff5c4-f5e7-457a-a30c-c0dd047554cb" class="">
+</p><p id="1e17f4ca-4acb-4592-b02e-f953b3fe7ed8" class="">업무 현황 체크</p><p id="03b0ba7a-6f5d-4d9b-b333-66c2e3b9c9d3" class="">매일 아침 shj05230@lionrocket 메일함을 통해 협력사와 컨택을 체크를 하고, contact@lionrocket 메일함을 통해 인바운드 협력 문의 여부 체크를 하였습니다. 또한 전사 메일 뉴스레터를 확인하여 경쟁자와 시장 동향에 대한 정보를 수집했습니다. 또한 <a href="https://docs.google.com/spreadsheets/d/17YiOajlbh3GoihPnfKmVmHVxMtUOaRw03qzSZtW2E94/edit">Contact US 구글 스프레드시트</a>를 통해 인바운드 협력 문의에 대응했습니다.</p><p id="d512aadc-a95d-4566-bc3e-e1d2d406bc20" class="">타겟 고객사 리스트 파악</p><p id="424fb641-9e14-429e-aabc-0e7e2c5d0244" class="">고객 리스트를 확보하는 방식을 파악하여 최근 연매출 10억 이상 고객사 리스트를 만들었습니다. 이를 위해 타겟 세그먼트에 속한 고객사 리스트를 파악하고, SMINFO를 통해 고객사별 매출 정보를 확인했습니다. </p><p id="0080e08a-2ff7-4135-a3cb-61b8a52ab485" class="">AI 작가 기획</p><p id="9c0e9bfd-ac52-4aea-a29f-6eebb141feb3" class="">플랫폼(크몽)을 통해 수요층을 직접 공략하기 위한 AI 작가 기획을 진행했습니다. 이를 위해 플랫폼을 통한 웹소설 표지 및 웹툰 제작 서비스 운영 목적 및 방향성을 정립하였습니다. 신제품 전략을 위해 필수적인 STP, 4P 가설을 세우고 이를 입증하기 위한 방법론으로서 AI 작가의 구체적인 운영 방안을 기획했습니다. 운영 스케줄을 구상하고, 웹소설 및 웹툰 운영을 위한 자원 리스트를 업데이트했습니다. 이와 관련하여 기존 진행 중인 채용 건의 JD를 체크하였으며, 웹소설 운영을 위한 새로운 포지션의 JD를 마련하였습니다.</p><p id="86b494f5-2239-4d92-91f5-ad1f35b22c79" class="">정리 및 문서화 업무</p><p id="ecd7e8c0-619b-420b-a504-9803096ccba3" class="">회의 및 기타 정보 정리를 진행하였습니다. morning/afternoon scrum, evening scrum을 정리하였으며, 전사 뉴스레터 및 슬랙 메시지를 통해 유용한 정보를 체크하여 수집하였습니다.</p></div></article></body></html>

@@ -1,0 +1,692 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>크레노 인터뷰</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="31d88ff4-fe2b-49ba-97e3-48e28e8989a4" class="page sans"><header><h1 class="page-title">크레노 인터뷰</h1><p class="page-description"></p></header><div class="page-body"><h3 id="25f55e4e-1913-4b9b-b023-df577e67ca33" class="">Background</h3><table id="19eeec20-0006-4603-8f5f-1e233c811cec" class="simple-table"><tbody><tr id="8f61764f-12de-4543-a364-1f58c6bd8398"><td id="MUMk" class="" style="width:99.99432373046875px"><mark class="highlight-teal">크레노</mark></td><td id="^dqa" class="" style="width:360.99999237060547px">안녕하세요, 일러스트레이터 크레노입니다.
+
+의뢰인이 좋아하시는 캐릭터, 애정담아 키운 게임 속 캐릭터, 머릿속에 그려진 창작 캐릭터 등 개인용부터 방송용, 웹소설, 게임에 쓸 주인공이나 NPC 등 상업용까지 모든 캐릭터를 정성껏 그려드립니다.
+
+스카이피플·아트2팀·사원·1년 11개월
+
+총 경력 2년</td><td id="K@BS" class="">게임 원화가/일러스트레이터</td><td id="m~`b" class="" style="width:59.99999237060547px"><a href="https://kmong.com/gig/290382">크몽</a></td><td id="apOn" class="" style="width:543.9942932128906px">안녕하세요 크레노 작가님, 연세대학교 경영학과 4학년 재학 중인 김현식이라고 합니다. 저희는 chatGPT, Stable Diffusion과 같은 생성형 인공지능을 이용해 작가님들의 업무를 도와드릴 수 있는 가능성을 탐구하기 위한 프로젝트를 수행 중입니다. 이와 관련하여 현업에 계신 작가님들의 어려움을 먼저 파악하고 도와드릴 수 있는 방법을 마련하기 위해 소정의 사례와 함께 작가님들과의 간략한 미팅을 진행하고 있습니다. 편하신 날짜 및 시간대를 알려주시면 최대한 맞춰서 진행하도록 하겠습니다. 전화, 줌 등 모두 편하신 방법에 맞추도록 하겠습니다. 
+인터뷰가 가능하시다면 본 채팅에 회신해주시거나 김현식(010-2922-3016)으로 연락 부탁드립니다. 오늘도 좋은 하루 되시길 바랍니다. 감사합니다.</td><td id="HMvm" class="">종로3가 커피집, 
+시급으로 달라고 말씀하심
+2년차, 월 209시간 기준, 시급 13,500원</td></tr></tbody></table><hr id="31d84c89-fd75-42c5-80a3-88c9ba1a5471"/><h3 id="1f9e0ace-00b9-4878-a185-0d70c8c18d26" class="">Questions</h3><div id="d04dd098-2abd-49e6-a03c-abb8e547b41c" class="column-list"><div id="ba44de9f-f487-4ef1-ae7d-6a464bb17f88" style="width:50%" class="column"><div><p id="bbb0dd6e-1316-43f1-a8fb-9298c9e8caaf" class="">일러스트레이터 이거 질문해야 함</p><ul id="3f609f6e-8300-4864-8717-e911d8409a6e" class="bulleted-list"><li style="list-style-type:disc">게임 개발 프로세스와 병행?</li></ul><ul id="913d8721-3da7-4f4f-ab78-e256b4075335" class="bulleted-list"><li style="list-style-type:disc">주로 외주?<p id="7e6488ac-70bd-467e-b077-aa77a18da0e0" class="">외주일 때는 별의 별 거를 다 그려달라</p><p id="a0d0c3f1-a828-4b1e-970a-9f6b660650ff" class="">회사에서 있을 때는 정해진 역할</p></li></ul></div><p id="cdce0d4e-75fc-4a10-9650-edfabae99f75" class="">
+</p></div><div id="bddf9acb-22b7-41fa-a4d4-12a5a0342fc8" style="width:50%" class="column"><div><p id="a3422e1e-0b42-4233-91e8-0629fe45d4a2" class="">일러스트레이터 이거 질문하면 괜찮겠다.</p><ul id="6abbb182-7aae-47f5-a309-9e3c1f6509e5" class="bulleted-list"><li style="list-style-type:disc">업계 사람들이 무심코 자주 하는 말?</li></ul><ul id="b57357c6-fda0-41fd-bb4c-27edb7eacdba" class="bulleted-list"><li style="list-style-type:disc">평소 여가시간에 뭐하며 보내는지?</li></ul></div><p id="d6e6f7e8-92cf-434f-92aa-51f2a685311d" class="">
+</p></div></div><h3 id="5b99e3f3-47a6-4216-8376-22650821ddf8" class="">Interview</h3><ol type="1" id="5b2edcf6-4c4a-46de-9c0f-174188996dff" class="numbered-list" start="1"><li>인구 통계학적 정보<p id="cfc4bbf3-46ac-4645-b4c2-65d1656fcf7f" class="">나이 / 성별 / 경력연수 / (주관적)상위 __퍼센트</p></li></ol><ol type="1" id="7f830b17-ab0e-493f-839b-540e9b8decb2" class="numbered-list" start="2"><li>Painpoint 끄집어내기<p id="a93585bd-0057-4f35-a196-e58229777f5d" class="">일상에 대한 이야기로 시작 <div class="indented"><p id="54e786bc-dafb-4182-8cb3-290e7897a1b9" class="">보통 하루에 5시간, </p></div></p><p id="326248d7-d0f4-4080-890e-ea1f45041a85" class="">/ 어떻게 게임 일러스트레이터가 되었는지 <div class="indented"><p id="7d87b49b-05c0-4fcf-81c5-c233a762681e" class="">게임 원래 좋아함, 걸음마보다 게임, 내내 게임</p></div></p><p id="b5e3084a-60af-4fd0-8115-c09b51c22268" class="">/ 기억나는 작업물 <div class="indented"><p id="1c6c9bbe-56f7-4f1d-a4fc-31d220a1c786" class="">LCK, 크몽</p></div></p><p id="d89ebfa1-e4fe-4943-9048-d7f6bc46cd84" class="">업무 프로세스 </p><p id="5460a5ea-8920-4cdb-bdd2-0a60af114d24" class="">스케치 → 펜터치 → 채색 → 배경<div class="indented"><p id="de3431fe-bee2-4e77-b0b1-520fa22e09f9" class="">기획 (설정들 다른 캐릭터 그림도 있지만, 보통 뻔함, 비슷하게 해서 바꿔감) </p><p id="ba919d49-5fbd-49c0-975e-4313be6c35d9" class="">시안 3종 (완성했을 때 어떤 느낌인지 알아볼 수 있는 상태, 스케치), 반나절에서 하루면 끝남, 반나절에서 하루면 끝남<div class="indented"><p id="9e0922b7-7daf-414e-8908-bf27ee331d06" class=""><span style="border-bottom:0.05em solid"><strong>포즈</strong></span>를 전체적으로 잡기 (칼, 머리, 몸매, 의상까지)</p><p id="38ecc453-4921-4c32-8e73-a1e71415d308" class="">인체, 의상, 갑옷, 기타 오브제(까다로운 오브제), 색깔 그냥</p><p id="e2ec8eea-b6ca-4fcf-afb5-225b900a73b9" class="">레이어는 사실 하나인거고</p><p id="b126f784-7161-4a24-8ef3-406a44001620" class="">대한민국은 패턴화되어있기 때문에 대체할 수 있을 것</p></div></p><p id="4775b31d-9c51-4fdf-a361-801f0a24366f" class="">2차 시안 또 만듦<div class="indented"><p id="a7a5f52e-b33d-443c-aa5e-abad633c3057" class="">수정 계속 수정</p><p id="02603ee6-5318-4419-892e-0ba9981dce69" class="">얼굴이 삐뚫어져 있거나</p><p id="ded6f554-256f-45e1-a470-7e866b0ac0ec" class="">(명암은 그때그때)</p></div></p><p id="fc86a510-5d95-4dbc-b41f-44e12fe48574" class="">완성(오류 컨펌) <div class="indented"><p id="937fa9ac-62c2-41a6-a63f-12e46133ae21" class="">구체화 (2~3일)</p><p id="4dd9c502-38ec-45d0-a17d-77373b23cc61" class="">선화 (반나절 ~ 하루)</p><p id="08f483e4-b1f7-4ca0-867f-432ffffe82d3" class="">밑색 (반나절)<div class="indented"><p id="5bb357e4-79c3-436f-a063-7f13521fea8d" class="">마스킹</p><p id="aa36690b-9268-46ce-9257-2322fa546cdb" class="">노가다임</p></div></p><p id="2b9c898d-ad7b-47a1-b876-dea9c9829d9e" class=""><span style="border-bottom:0.05em solid"><strong>빛설계</strong></span><div class="indented"><p id="9d3e556f-d318-4ef7-ae11-927925a184e3" class="">빛설계 매우 탁월</p></div></p><p id="455c74cb-4553-42c5-9262-ff428d2d8331" class="">질감처리</p><p id="67ec535e-7165-4bf6-b05c-fa328332ca34" class="">원근처리</p><p id="c8be4f69-35a6-4e67-8b5d-dadc43a14a37" class="">주제/부주제 설정 시선 유도</p><p id="c740e97e-ea20-4b1b-93a2-91d8cb8c6512" class="">1~2주 걸림</p><p id="66f41f96-8f4a-42fa-b8c4-1655fb01eaae" class=""><span style="border-bottom:0.05em solid">배경</span></p><p id="b406492a-6e2c-4791-965f-e0721e6951b8" class="">
+</p></div></p><p id="031dfb01-9b1f-4037-adcd-9256cf9accdf" class="">복수의 인물이 등장하는 장면을 자주 그리는지?</p><ul id="ed66c06f-bba5-4d6a-b8c5-982182bb955c" class="bulleted-list"><li style="list-style-type:disc">몇 명이나?<p id="2bb5cf5a-1061-44f7-8cb2-ae5fd17db510" class="">원화는 주로 1명, 일러스트는 그때그때 다름</p></li></ul><ul id="2190bafe-b646-4bd1-a8a4-11f8cc9e4035" class="bulleted-list"><li style="list-style-type:disc">명 수 별로 얼마나 원하는지?<p id="2923d45f-3817-439d-aed6-6fe32e8bc1b6" class="">2명 그림은 별로 없음</p></li></ul><ul id="f8565ecb-898d-4073-8619-53944830937b" class="bulleted-list"><li style="list-style-type:disc">명 수 별로 얼마나 걸리는지?</li></ul><ul id="dd5e47e2-c462-4163-80cd-bc1b3bb5fc0a" class="bulleted-list"><li style="list-style-type:disc">명 수 별로 왜 AI로 대체를 원하는지?</li></ul><p id="3441e393-91c8-4556-af3b-198ba8503dbf" class="">화풍을 입히는 게 스케치에서만?<div class="indented"><ul id="4505a6b3-7a67-401b-b8b8-f6ba9869fe47" class="bulleted-list"><li style="list-style-type:disc">얼마나 원하는지?<p id="76ee77a8-66ad-40f3-80d2-7e0e4d9d4f2a" class="">갑자기 그림체를 바꿔달라고 하는 경우는 별로 없음</p><p id="4db7e5b5-f2dc-4d13-bdcf-355cc9f06c02" class="">작가들이 겁나 싫어함</p><p id="cf9e41a1-3025-4159-aa85-2a569f18511c" class="">그림체는 작가의 소유물이기 때문에 그 자체가 나인 건데 그림체들이 원하지는 않을 거임</p><p id="b3fab74c-9dcc-4e21-b4a8-1d361e7e4279" class="">거의 대체수준</p></li></ul><ul id="ac1ab13d-facc-4579-8f44-e00cf69a42cf" class="bulleted-list"><li style="list-style-type:disc">얼마나 걸리는지?</li></ul><ul id="552fa4f7-6a63-42fb-bc90-50d826d7bb6b" class="bulleted-list"><li style="list-style-type:disc">왜 AI로 대체를 원하는지?</li></ul></div></p><p id="90576683-bf73-4d39-9d17-27869a39be6c" class="">
+</p><p id="d15f915d-b4bc-4841-b51f-0d9d7a3bf416" class="">아웃페인팅 → 배경 어디에서 원할까?<div class="indented"><ul id="1dcf3be5-2e17-41d3-8e7e-31031a73a98b" class="bulleted-list"><li style="list-style-type:disc">예시 이미지?</li></ul><ul id="88e2249e-069c-4a44-b67c-448c653eb734" class="bulleted-list"><li style="list-style-type:disc">얼마나 원하는지?<p id="4d4b20bb-70e9-46a9-8be8-8536d92ce02e" class="">연간 5만 10만</p></li></ul><ul id="fb95fa15-dfd0-4be3-8707-a20ae7e32de9" class="bulleted-list"><li style="list-style-type:disc">얼마나 걸리는지?</li></ul><ul id="2545e31d-7469-4b7b-b28f-c23a3e2d0754" class="bulleted-list"><li style="list-style-type:disc">왜 AI로 대체를 원하는지?</li></ul></div></p><p id="eedcad7c-64f6-45df-96f9-1efab1da18ff" class="">
+</p><p id="ff709ae5-bb37-4213-bdc0-de0e31ee9008" class="">의상 생성은 어느 단계에서?<div class="indented"><ul id="f84163e3-5831-40e4-b889-e321da833436" class="bulleted-list"><li style="list-style-type:disc">예시 이미지?</li></ul><ul id="50de56d1-9a6d-4299-8c9b-59e5e865f9d0" class="bulleted-list"><li style="list-style-type:disc">얼마나 원하는지?<p id="43ca7a33-806a-4eef-8d91-65e010759100" class="">기본형(부품 조합), 변형</p><p id="11491fe2-0612-40fa-a7ae-85ef38542239" class="">주로 근데 한 번에 그려서 많지는 않음</p></li></ul><ul id="08aa470f-715e-43dd-a190-a7fcd2386096" class="bulleted-list"><li style="list-style-type:disc">얼마나 걸리는지?</li></ul><ul id="854ebdac-4a99-45e8-bcca-70150368f4e0" class="bulleted-list"><li style="list-style-type:disc">왜 AI로 대체를 원하는지?</li></ul><p id="556e80e0-a63a-4d07-8b22-927ccdbd9239" class="">
+</p></div></p><p id="13a3bbcc-57a3-4e91-aca1-7ab3081f2f72" class="">레이어 분리는 어느 단계에서?<div class="indented"><ul id="0a725104-66be-417b-bd02-899cdb5cb517" class="bulleted-list"><li style="list-style-type:disc">예시 이미지?</li></ul><ul id="2208ae6a-a1df-4406-8255-e8ea748c1485" class="bulleted-list"><li style="list-style-type:disc">얼마나 원하는지?<p id="5a6f77fd-576c-41f2-9cc2-75777dc65f6f" class="">노가다</p><p id="442cdc8a-9835-478d-aee3-660406769750" class="">영구 구매로 2만원</p></li></ul><ul id="e54426c3-2c93-4edf-88e1-e1edc347cf9d" class="bulleted-list"><li style="list-style-type:disc">얼마나 걸리는지?</li></ul><p id="6a11091e-99ea-480e-aac6-d55f3534854e" class="">
+</p></div></p></div></p><p id="5268094d-cb23-4431-a0fe-6b524f687c5b" class="">[가능하면 업무 프로세스 별로 매칭] 자신의 경험 얘기하면서 힘든 점은 없었는지 / 근무하시면서 가장 불만을 가졌거나 억울하게 피해를 입은 경험 / 그 문제에 대한 일반적 해결방안 </p><p id="7b5cc417-3c9c-46d5-a6e3-d459ed0afa73" class="">얼마나 반복적으로 나타나는지 / 문제들을 마주쳤을 때의 기분, 감정, 상태 / 문제를 해결하고자 하는 간절함의 크기 / 문제 이면의 욕구</p></li></ol><ol type="1" id="e81c3007-6365-4c3f-9907-14ae1ef67807" class="numbered-list" start="4"><li>hooking point 끄집어내기<p id="730e1f32-036c-4b46-a36f-1961c69a2966" class="">근무하시면서 어떤 점이 가장 스스로 부족하다고 느끼는지</p><p id="69df9a1f-7eef-4842-bd6a-a70e3b02b051" class="">근무하시면서 어떤 점이 가장 어렵거나 시간이 많이 걸리는 때는?</p><p id="e2661835-d003-4576-87a0-4973461dac0e" class="">평소에 가장 관심을 갖고 찾아보는 주제가 어떻게 되는지</p><p id="d81a97e4-0de9-497d-984a-aba0db95bd89" class="">최근 작가들의 업계에 대한 문제의식</p></li></ol><ol type="1" id="c12def23-9eea-44b9-abe9-cce75ff9f7fd" class="numbered-list" start="4"><li>생성 AI에 대한 이야기<p id="9b7cc949-73ef-4410-be6c-a79aa95cf8ee" class="">생성 AI에 대한 사용 경험</p><p id="266480f5-568c-4513-877f-62f66df09bf1" class="">생성 AI의 가능성과 한계 </p><p id="a914c910-e13f-48d7-ba94-7c91a4856e40" class="">작가님 풍의 그림을 손쉽게 만들어낼 수 있다면 작가님의 니즈가 있을지</p></li></ol><ol type="1" id="2a41e129-46ec-42c7-94dc-224074e5df3a" class="numbered-list" start="5"><li>구매 의지<p id="e2e434f4-b7b3-450c-977e-af3ecbd02737" class="">과금을 한다면 사용할 예정? / one-time payment이면 얼마나 낼 생각 / 구독한다면 얼마나 낼 생각?</p><p id="1a7b9c73-2631-4373-99f0-7ec73e311e40" class="">기타 다른 문제들이나 다른 해결방안들은 없었는지</p></li></ol><ol type="1" id="5bffe39c-b77f-4cad-9876-9397da38a6d0" class="numbered-list" start="7"><li>마지막 인사<p id="2cbc92cb-643f-4e83-900b-613fe437582f" class="">연락 적극적으로 해주시고 시간도 내주셔서 감사</p><p id="b44610b8-ac1d-47d1-834d-6a54fc8f48e1" class="">인터뷰 감사금은 어떻게 전달? 현금이면 계좌는? </p><p id="422b146a-6387-49a4-a4be-cdf5d3992a4e" class="">혹시 다른 분들 소개 가능?</p></li></ol></div></article></body></html>

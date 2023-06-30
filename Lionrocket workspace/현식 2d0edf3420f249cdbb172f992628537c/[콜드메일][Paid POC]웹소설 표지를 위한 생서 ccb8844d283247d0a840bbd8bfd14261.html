@@ -1,0 +1,730 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>[콜드메일][Paid POC]웹소설 표지를 위한 생성 AI 제안 </title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ccb8844d-2832-47d0-a840-bbd8bfd14261" class="page sans"><header><h1 class="page-title">[콜드메일][Paid POC]웹소설 표지를 위한 생성 AI 제안 </h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-green">COLABORATION</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><nav id="f890f612-1992-4ef1-be6b-a2be0d167ffd" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6460353e-0249-4635-9589-206c00c114a0">우리가 Paid POC라고 내부적으로 부르는 것의 목적</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#83a1852f-356e-4ae6-ab83-92baa8a2f940">웹소설 표지 제작 Paid POC 콜드메일</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#4adb818e-12e4-43fd-bdde-b384732c034f">문제점</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9363a539-796e-4ab2-94ea-621f3560730e">퀄리티</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ce7652e2-a70b-4bed-8406-b4ad32d49ef7">지금 웹소설 표지 솔루션을 사용해야 하는 이유</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8003dea1-dad6-41bc-9874-9e906357130a">웹소설 표지 제작 Paid POC 콜드 콜</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#25928d04-41e3-4545-bee4-f6c10ed7c010">웹소설 표지 제작 Paid POC 2차 콜드 메일</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#6d627804-774c-4faa-a848-dc5205235d57">레퍼런스 퀄리티 체크</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e3cb9ba7-d3e8-47ee-856f-8a68b9fda513">내용 구성</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d58121ef-c7fb-46e6-8b47-b703bd87f126">follow-up 전화</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#a024fa4a-c0d5-4631-9061-f5de0813b05d">통화 대상</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#f7f76d2c-63df-47ff-8d46-1cefd659b388">통화 배경</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#7f464b8f-d0b7-48a7-bf37-d6c29559524c">통화내용</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#47439bc6-0538-4539-a69b-5720cc90a249">웹소설 표지 제작 Paid POC 콜드 콜</a></div></nav><hr id="c3adbe11-5b31-4755-9cdd-7ec068f7eaee"/><h1 id="6460353e-0249-4635-9589-206c00c114a0" class="">우리가 Paid POC라고 내부적으로 부르는 것의 목적</h1><p id="9a42eeb2-0804-46d2-a004-4783b1f229a2" class=""> </p><p id="3c8a5d91-cf38-4ace-b270-286d76d34552" class="">돈 벌 기회를 잡음과 동시에 IR도 해결, 그리고 제품 고도화까지<div class="indented"><p id="4786954b-c63f-4396-a4e3-6dea26eb6c41" class="">승환님이 미음이 급하다는 것도 이거인건지? → 맞음 IR 때문임</p><p id="5e40a19f-edb7-4324-82b0-85141a280ac1" class="">근데 IR에 들어갈 수치로는 너무 빈약하지 않나?  → 일단 있느냐 없느냐가 중요함</p><p id="9785034e-fd31-4042-8746-b83fcdda6d36" class="">근데, 결국 매출 창출 할라다 보니 지금 진짜 필요한 제품 고도화를 계속 못하게 되는 듯 → 둘 다 가능함 → 근데 아닌 거 같음 → 제품고도화는 전혀 이뤄지지 않고 있는 상태 / 들이는 시간과 노력에 비해 리드는 안나오고 → 어차피 하기는 해야 한다</p></div></p><p id="4aa988b6-d617-442c-939e-b670e994fb24" class="">같은 목적을 해결할 대안으로 크몽이 있음<div class="indented"><p id="fdc9ab39-ef6c-42d6-bc64-88453f824cbd" class="">크몽은 제품 고도화, 매출 창출과 동시에 IR 설득력 제고, 그리고 <a href="20230510%20bac18444d256470488dabd4a9d17e95d.html">소비자의 반감</a> 해결이 가능</p><div><ul id="6e923ab5-913b-4430-a688-0c12e3c952d9" class="toggle"><li><details open=""><summary><strong>B2C 매출과 B2B 매출의 상호 연관성</strong></summary><p id="5b710fcd-344f-4a1f-9544-58fb3a4f0572" class="">ex) 코파일럿. 1차적으로 기업용 제품이지만 copilot이라는 같은 브랜드 아래 bing copilot, github copilot 등 B2C를 대상으로 선호도를 먼저 구축</p><figure id="96683373-5f6e-41a2-87b0-657874f1761a"><a href="https://www.bloter.net/news/articleView.html?idxno=601470" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">워드·엑셀에 AI &#x27;코파일럿&#x27; 넣는 MS…한글은 아직</div><div class="bookmark-description">생성형 인공지능(AI) 챗봇 &#x27;챗GPT&#x27;를 개발한 미국 오픈AI에 대규모 투자를 한 마이크로소프트(MS)가 자사의 오피스 프로그램에 적용하는 AI &#x27;코파일럿&#x27;을 고도화하고 있다. 코파일럿은 MS가 오픈AI의 초거대AI GPT4를 바탕으로 개발한 클라우드 기반의 기업용 AI다. MS는</div></div><div class="bookmark-href"><img src="https://cdn.bloter.net/image/logo/favicon.ico" class="icon bookmark-icon"/>https://www.bloter.net/news/articleView.html?idxno=601470</div></div><img src="https://cdn.bloter.net/news/thumbnail/202305/601470_202883_3456_v150.jpg" class="bookmark-image"/></a></figure></details></li></ul></div></div></p><hr id="3b8a7da3-d8e9-4c4d-acba-49a6e83111ab"/><h1 id="83a1852f-356e-4ae6-ab83-92baa8a2f940" class="">웹소설 표지 제작 Paid POC 콜드메일</h1><h3 id="4adb818e-12e4-43fd-bdde-b384732c034f" class="">문제점</h3><ul id="3e141af4-a21a-425f-bda8-337308cc4cac" class="toggle"><li><details open=""><summary>홍보의 어려움</summary><div><ol type="1" id="8d4abdfa-98bc-43e3-ba59-f4db7a72199b" class="numbered-list" start="1"><li>홍보의 어려움 (1순위)<p id="679bc6d8-be36-45f9-b4ac-e695b9fd6c18" class="">표지도 예쁘게 그려줬으면 좋겠고, variation도 됐으면 좋겠는데 조아라같은 오픈플랫폼에서는 그냥 완전 무방비 상태이기 때문에 작가들이 알아서 홍보를 해야 함. 보통 그래서 트위터나 블로그 또는 돌파구로서 공모전을 노림. 근데 트위터는 분위기가 너무 비난적이고 항상 비난할 거리를 찾는 느낌이라서 다가가기 쉽지 않음. 또 공모전은 하늘의 별 따기고…</p><p id="e1302b35-2e54-4ad2-b0dd-e91451b258f4" class="">웹소설 시장의 홍보 방식의 특징은 대부분 첫인상이 좌우한다는 점이다. 주로 해쉬 태그, 제목, 표지를 통해 독자들이 읽을지 말지를 결정하기 때문에 이들을 매우 혹하게 해야 한다. 근데 표지같은 경우 최소 200만원 많을 땐 1000만원도 넘게 (작가나 회사에서) 써야 하기 때문에 부담스러움. 게다가 잘 난가는 일러스트레이터들은 진짜 비싸고 바쁘고…</p><p id="04897678-0bf8-4ccf-b08a-26351572e1f5" class="">일부 플랫폼에서는 표지 템플릿을 주기도 함. 근데 템플릿이 몇 개 되지도 않아서 템플릿 없는 웹소설 작품들도 많음</p><p id="6e04f44e-1b71-4556-b710-7049b7c2fa18" class=""><span style="border-bottom:0.05em solid">만약 이런 문제를 생성 AI로 해결해주는 솔루션이 있다면 돈을 낼 거 같다.*</span> 만약 확실하게 내가 완성된 결과를 보고 사용할 수 있다면 장당 99000원. 그렇지 않고 돈을 내야 시도를 해볼 수 있다면 월 26000원. 하지만 채은님이 구독 서비스에 후하다는 점을 염두에 둘 필요가 있는 것으로 보임.</p><blockquote id="f7e827c0-be2a-499d-9c49-f18151187426" class="">*우리의 기술 수준으로 가능함. 웹툰 테마마다 원하는 표지의 그림체가 매우 뚜렷함. 때문에 테마마다 정해진 그림체대로 이미지를 매우 잘 만들어줘야 하는데 스포키 결과물들을 보면 이미 그게 가능함. 다만 사람이 두 명 이상 나오는 경우에는 가능할지 확인이 필요해 보인다. </blockquote></li></ol></div></details></li></ul><div><p id="10c97872-b605-47d4-93c1-1990e963ed35" class="">부담되는 <span style="border-bottom:0.05em solid">비용</span>: <div class="indented"><div><ul id="212ad438-9aac-4861-a7a4-95f1269794ef" class="toggle"><li><details open=""><summary>details</summary><ul id="5c278dba-190d-4a25-a3a7-7f502decb66e" class="bulleted-list"><li style="list-style-type:disc">초기 표지비용이 부담된다.</li></ul><div><ul id="a4dc84f1-8d50-4b99-a92a-6ddfe6a5c980" class="bulleted-list"><li style="list-style-type:disc">웹소설 표지 제작의 <strong>비용이 크다</strong><ul id="9e8849bb-c7d5-4292-9bd5-e6edfe0822f3" class="bulleted-list"><li style="list-style-type:circle">1 장 만드는 데<span style="border-bottom:0.05em solid"> 200 만원 </span>정도 소요</li></ul></li></ul></div><div><ul id="bb4b7835-97ce-40fe-abd7-4b9acdeca33e" class="bulleted-list"><li style="list-style-type:disc">일러 비용 계속 증가한다.<ul id="0f9c7d12-d4ba-48bc-abfe-a8ba44e21d3d" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">A급: 300 ~ 400만원 </span>      <span style="border-bottom:0.05em solid">B급: 60 → 100만원</span></li></ul></li></ul></div></details></li></ul></div><div></div><div></div></div></p><p id="4d1e2737-61ea-4277-8d30-23cd6f171f2d" class="">부담되는 시간<div class="indented"><ul id="76a966fa-ed24-4204-bfec-ca341f50565d" class="toggle"><li><details open=""><summary>details</summary><div><ol type="1" id="65837928-c5c5-434d-875d-7b92c817d08e" class="numbered-list" start="1"><li>웹소설 표지 제작 시간이 <strong>오래 걸린다</strong><ol type="a" id="ac44f114-ec92-4028-a0e3-315581f623b3" class="numbered-list" start="1"><li>보통 1 달 정도 소요( 1 캐릭터 기준 )<ol type="i" id="144e4d03-9db8-41ed-b4c4-2d813581d7f2" class="numbered-list" start="1"><li>대략적인 그림은 2 주 만에 나온다</li></ol><ol type="i" id="30a8cb36-4198-4b72-b42d-65edcb379632" class="numbered-list" start="2"><li>나머지 시간은, 디테일을 채우는 데 사용한다. </li></ol><ol type="i" id="df13d3dd-cbd9-4b04-aaf6-aac002b4b4be" class="numbered-list" start="3"><li>인기있는 그림작가는 2 ~ 3 달 걸린다</li></ol></li></ol><ol type="a" id="41541c40-1238-4979-be25-8b04068b908d" class="numbered-list" start="2"><li>표지 안에 캐릭터가 많아지면 더 오래 걸린다<ol type="i" id="37fcdf48-577c-49e2-b593-b09598ddd982" class="numbered-list" start="1"><li>2 명의 캐릭터가 나오는 표지는 1달 반에서 2달 까지 거린다.</li></ol></li></ol></li></ol></div></details></li></ul></div></p></div><hr id="53a42586-3665-428b-ba74-05b6e1c68a42"/><p id="6b5466e7-b3d7-4964-8198-4f2504a43bcf" class="">
+</p><h3 id="9363a539-796e-4ab2-94ea-621f3560730e" class="">퀄리티</h3><p id="df86bdce-8fde-4a8d-9d76-0dc0d9378699" class="">실제 예시들을 통해 제시</p><p id="c4306884-c6ff-4661-9115-5abc229cd318" class="">
+</p><h3 id="ce7652e2-a70b-4bed-8406-b4ad32d49ef7" class="">지금 웹소설 표지 솔루션을 사용해야 하는 이유</h3><p id="11c53d16-f1ff-411d-ba98-703fc75a759a" class="">(40만원에서 가격 할인을 제시하지 않는 대신 제시할 만한 셀링 포인트)<div class="indented"><p id="d2356401-13af-4f1a-aa55-78877cbea8a1" class="">품질 대비 낮은 <span style="border-bottom:0.05em solid">가격 </span>→ 40만원이라고 제시</p><p id="3e2c7b30-0273-4547-b4c4-80dbc90dc869" class="">의사소통 비용 절감 = 수정의 폭과 시점 증대: 다양한 시안과 수정반복에 따른 가격 상승 압력이 없음 </p><p id="f88b5066-69e0-4372-8a1a-716a43a1ff34" class="">(품질의 일관성: 아무리 시간이 지나도 변하지 않는 그림체)</p><p id="1488dfb3-f6ff-44b9-be74-03d6b860f2ec" class="">웹소설 표지 뿐만 아니라 삽화까지 제공</p></div></p><p id="3ab6215c-9184-400c-8bca-8b3e0de12bc7" class="">
+</p><p id="96f9bbc7-b15e-4fdc-bb61-9fac98c970c2" class="">자세한 건 상담을 해보시죠 → contact</p><p id="b3604dc9-80ab-488f-b876-6c53ba88cf80" class="">
+</p><hr id="4c3ccbc1-06ed-4756-8045-006945ad42b4"/><h1 id="8003dea1-dad6-41bc-9874-9e906357130a" class="">웹소설 표지 제작 Paid POC 콜드 콜</h1><p id="eade1efc-743b-4ac9-b8ad-56d8613c3371" class="">19번부터 아래로 내가 진행</p><figure id="aebf8f76-f9c8-4461-a63f-31810a64c1ba"><div class="source"><a href="%5B%E1%84%8F%E1%85%A9%E1%86%AF%E1%84%83%E1%85%B3%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%5D%5BPaid%20POC%5D%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%20ccb8844d283247d0a840bbd8bfd14261/%25E1%2584%258B%25E1%2585%25B0%25E1%2586%25B8%25E1%2584%2589%25E1%2585%25A9%25E1%2584%2589%25E1%2585%25A5%25E1%2586%25AF%25E1%2584%258B%25E1%2585%25A5%25E1%2586%25B8%25E1%2584%258E%25E1%2585%25A6%25E1%2584%2585%25E1%2585%25B5%25E1%2584%2589%25E1%2585%25B3%25E1%2584%2590%25E1%2585%25B3.xlsx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/230a2df0-2de9-43e8-9775-a4cd7792bed8/%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%8E%E1%85%A6%E1%84%85%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B3.xlsx</a></div></figure><figure id="3f067ca2-d14c-4518-83ff-55c28d24d9f3"><a href="https://www.canva.com/design/DAFifVgg954/oaAiiW4kwfKbo8Uhgs7cXw/edit?utm_content=DAFifVgg954&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">LionRocket_웹툰/웹소설수정bySjay_20230504의 사본</div><div class="bookmark-description">Check out this Presentation designed by 김현식.</div></div><div class="bookmark-href"><img src="https://static.canva.com/static/images/android-192x192-2.png" class="icon bookmark-icon"/>https://www.canva.com/design/DAFifVgg954/oaAiiW4kwfKbo8Uhgs7cXw/edit?utm_content=DAFifVgg954&amp;utm_campaign=designshare&amp;utm_medium=link2&amp;utm_source=sharebutton</div></div><img src="https://www.canva.com/design/DAFifVgg954/oaAiiW4kwfKbo8Uhgs7cXw/screen" class="bookmark-image"/></a></figure><figure id="ad1ac922-2374-48c1-8b33-7454e1fe5912"><a href="https://mail.google.com/mail/u/1/#inbox/FMfcgzGsmWsMvQQBnCsNVfGDcwmHnFdK" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://mail.google.com/mail/u/1/#inbox/FMfcgzGsmWsMvQQBnCsNVfGDcwmHnFdK</div></div></a></figure><figure id="c070a5ef-9ab1-48cd-9095-b40e0fee6f0f"><div class="source">https://lionrocket.slack.com/archives/C05457W2KJN/p1683096428550879</div></figure><figure id="4725b6f5-8e43-4627-964e-87ffa15cd703" class="image"><a href="%5B%E1%84%8F%E1%85%A9%E1%86%AF%E1%84%83%E1%85%B3%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%5D%5BPaid%20POC%5D%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%20ccb8844d283247d0a840bbd8bfd14261/Frame_1.png"><img style="width:1920px" src="%5B%E1%84%8F%E1%85%A9%E1%86%AF%E1%84%83%E1%85%B3%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%5D%5BPaid%20POC%5D%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%20ccb8844d283247d0a840bbd8bfd14261/Frame_1.png"/></a><figcaption><a href="https://lionrocket.slack.com/files/U03EK8EUXC2/F0569J3FCCC/frame_1.png">https://lionrocket.slack.com/files/U03EK8EUXC2/F0569J3FCCC/frame_1.png</a></figcaption></figure><p id="cb6cabe6-86d1-42fc-b48b-8fbebfb33614" class="">
+</p><p id="c83ff686-16fd-4d78-a083-83012d5527cb" class="">웹소설/라이트노벨 표지 제작 솔루션 협력 차</p><p id="906fbd1f-cb60-4ad7-b284-a3e360d011a0" class="">웹소설/라이트노벨 담당자님</p><p id="61b2ed70-ebc8-46dc-bcba-65792d1ffb1f" class="">
+</p><p id="dad52bd5-83e5-4f68-9d6a-d3fdba94a651" class="">무엇</p><p id="975af686-4883-4fe9-a3b6-a9f35121b82c" class="">자체개발한 표지제작솔루션으로 독자들이 선호하는 다양한 장르의 고퀄리티 표지를 제작해드리고 있습니다.</p><p id="4874191f-ef01-4f06-8f07-c04d828c0d1a" class="">
+</p><p id="e555e415-fe04-42a9-93b5-a5848e6ac382" class="">필요성</p><p id="ba410169-5614-4b46-8393-a807d72e5a0f" class="">웹소설 시장에서 독자들이 클릭할때 가장먼저 보는건 매력적인 표지입니다.</p><p id="1b8495ea-3e3d-4028-a9d4-5fe33ee94cca" class="">예산문제로 많은 작품을 홍보하지 못함</p><p id="94101152-25bd-4716-966c-e9e7367cdec3" class="">
+</p><p id="aea87333-6042-467b-b19b-cdd929baa8ad" class="">장점</p><ul id="0c35de0f-a04c-4a0d-b70d-eaf43992d49b" class="bulleted-list"><li style="list-style-type:disc">다양한 장르<ul id="7876ae9d-b7f1-4bd3-bee9-20370c31c18e" class="bulleted-list"><li style="list-style-type:circle">무협지, BL, 공포</li></ul></li></ul><ul id="af68e05c-21c8-4201-b459-b8b7177b932f" class="bulleted-list"><li style="list-style-type:disc">원하는 컨셉과 퀄리티의 표지를 만들기 위한 다양한 시안과 반복적인 수정작업에 따른 추가 비용 없이 부담 없는 합리적인 가격으로 제안드립니다.</li></ul><ul id="b9a77b6c-3122-40b1-b970-c702af7c9b27" class="bulleted-list"><li style="list-style-type:disc">수익화가 불확실한 신규 작품에도 가능</li></ul><p id="e55f5a6b-9a1a-4657-87f6-aaadb5a5db56" class="">
+</p><div><ul id="3c73d765-e1ab-449c-8c00-f9d5d1706511" class="bulleted-list"><li style="list-style-type:disc">가격정책 (근데 이거는 관심을 보였을 때 제시)<ul id="4f7acae3-9518-44f3-882d-3f65165b6968" class="bulleted-list"><li style="list-style-type:circle">이원화정책으로 타겟별 프라이싱<ul id="38a26d3d-274e-44e7-8841-ee6139fd9389" class="bulleted-list"><li style="list-style-type:square"><span style="border-bottom:0.05em solid">웹툰/웹소설업체(35개사) : 40만원</span></li></ul><ul id="4dbfed8f-05a3-4312-bcab-2d9e0f0508e9" class="bulleted-list"><li style="list-style-type:square"><span style="border-bottom:0.05em solid">라이트노벨 레이블(4개사) : 30만원</span></li></ul><ul id="bb8c7206-b009-4e6a-8db0-2bd63fe212a9" class="toggle"><li><details open=""><summary>정책수립배경</summary><ul id="f753ac91-f147-413c-92d3-81e9dfb5d026" class="bulleted-list"><li style="list-style-type:disc">웝툰/웹소설 업체는 <span style="border-bottom:0.05em solid">할인 없이</span> ListPrice(40만원)로 제공하되 <span style="border-bottom:0.05em solid">AI가 강점인 부가서비스로 메리트를 주는 방식 채택 (넉넉한 시안, 수정횟수, 삽화 제공 등)</span></li></ul><ul id="4f89f4b2-3161-4a15-8d18-e6aa375fc639" class="bulleted-list"><li style="list-style-type:disc">라이트노벨은 R/S방식도 검토했으나<ul id="8190a93e-c739-4ea4-844c-f99a7c93d482" class="bulleted-list"><li style="list-style-type:circle">업계에서 <span style="border-bottom:0.05em solid">R/S방식을 지양</span>하는 점</li></ul><ul id="96a05c7c-8a69-4c47-bed0-3e83c919a79f" class="bulleted-list"><li style="list-style-type:circle">과다 제작 의뢰 및 흥행 가능성이 낮은 작품에만 활용 우려로 정가로 책정</li></ul></li></ul></details></li></ul></li></ul></li></ul><ul id="bb6725b0-204f-43d3-97c3-24ceae7b017c" class="bulleted-list"><li style="list-style-type:disc">초기 프로모션도 있음 (근데 이거는 관심을 보였을 때 제시)<ul id="e4b7c45a-0539-4800-9020-45cbbd3dc18c" class="bulleted-list"><li style="list-style-type:circle">최초 5개사에게 최초 1회 표지 제작 무상 지원 </li></ul><ul id="9cc6f9b6-2a9b-48c4-978a-d850b1dc7cf1" class="bulleted-list"><li style="list-style-type:circle">최초 5개사 한정 1년간 표지제작비 20% 지원 → 기간을 줄이고 할인폭을 늘리는 게 좋을 듯</li></ul></li></ul></div><hr id="635733f7-90cf-4c9e-a8df-032f675fd93c"/><h1 id="25928d04-41e3-4545-bee4-f6c10ed7c010" class="">웹소설 표지 제작 Paid POC 2차 콜드 메일</h1><div><ul id="af25431a-7795-4bab-ad23-ed86ab190bfb" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">연락처 다시 확인하기 <a href="https://docs.google.com/spreadsheets/d/1rRaaK--FjarUdnYrnBSgcwmRqrTj1cCJkQtMk0uK7c0/edit#gid=1589756489">https://docs.google.com/spreadsheets/d/1rRaaK--FjarUdnYrnBSgcwmRqrTj1cCJkQtMk0uK7c0/edit#gid=1589756489</a></span><div class="indented"></div></li></ul><ul id="6d9b8153-a00a-4226-8e71-bace720fc83d" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">관계자 이름이나 내부 메일 주소를 따로 받은 경우는 이름이나 회사 이름을 넣기</span><div class="indented"></div></li></ul><ul id="60c01de4-6546-4ba5-b630-2de12becaddc" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">리디는 빼기</span><div class="indented"></div></li></ul><ul id="ca35cadd-8ee7-4ce8-9577-1de57ce384bd" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">(~6/2 9:00) 2차 콜드메일 발송  </span><div class="indented"></div></li></ul><ul id="17bec449-d474-4242-bb51-cf5fed972009" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">매력적인 콜드메일 문구…? 구상하기</span><div class="indented"></div></li></ul><ul id="4ad75194-2f8b-480a-b662-f5f69a0e4b8b" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">학산문화사 관련 표지 새로 만들어서 레퍼런스로 만들기</span><div class="indented"></div></li></ul><ul id="9a639acb-4fc6-43b5-b8c7-322771624dad" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">레퍼런스 퀄리티 체크</span><div class="indented"></div></li></ul></div><p id="2350f1cb-a096-4bed-80e1-f53a6a3c515b" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">레퍼런스 퀄리티 체크</summary><div class="indented"><p id="3ead7193-8ad6-406c-97c2-706da843a671" class="">우리가 만든 이 표지들을 </p><div><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://lionrocket.slack.com/archives/C050R41UPGD/p1685524625875729?thread_ts=1683709732.699599&amp;cid=C050R41UPGD">웹소설 표지</a> 2차</summary><div class="indented"><div id="9f94c024-03a9-48cb-bd88-7c2d96230aa2" class="column-list"><div id="5950ac71-5b0f-463c-8bb6-39c0fa5ca1dd" style="width:50%" class="column"><figure id="68f069a1-c32f-48f4-bfcf-50f23f48577a" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%2580%25E1%2585%25A9%25E1%2586%25BC%25E1%2584%2591%25E1%2585%25A9%25E1%2584%2581%25E1%2585%25B3%25E1%2587%2580.png"><img style="width:1024px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%2580%25E1%2585%25A9%25E1%2586%25BC%25E1%2584%2591%25E1%2585%25A9%25E1%2584%2581%25E1%2585%25B3%25E1%2587%2580.png"/></a></figure></div><div id="21339b43-ec2b-46ad-8b04-be1fc97114bc" style="width:50%" class="column"><figure id="0dc11422-64fb-4a25-b74c-880a5d764c7b" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%2586%25E1%2585%25AE%25E1%2584%2592%25E1%2585%25A7%25E1%2586%25B8%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2591%25E1%2585%25A6.png"><img style="width:1024px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%2586%25E1%2585%25AE%25E1%2584%2592%25E1%2585%25A7%25E1%2586%25B8%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2591%25E1%2585%25A6.png"/></a></figure></div></div><div id="50e6a763-6cc0-4fc0-86a4-f0b854a39acd" class="column-list"><div id="a0da8f9e-fd5c-4ae0-9af5-41e310895391" style="width:50%" class="column"><figure id="31058c26-f6be-4718-84da-70ffae54ede6" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25AF%25E1%2584%2589%25E1%2585%25A1%25E1%2586%25BC222222.png"><img style="width:1024px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25AF%25E1%2584%2589%25E1%2585%25A1%25E1%2586%25BC222222.png"/></a></figure></div><div id="864f9ad2-1338-4d33-903c-91e20b0a1ce4" style="width:50%" class="column"><figure id="b95af253-8352-4b77-9569-c610d326dfed" class="image"><a href="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%258B%25E1%2585%25A7%25E1%2586%25AB%25E1%2584%258B%25E1%2585%25A2dd.png"><img style="width:1024px" src="%5Bimages%5D%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%206df0007d14a94752adf9e5c5e0328968/%25E1%2584%258B%25E1%2585%25A7%25E1%2586%25AB%25E1%2584%258B%25E1%2585%25A2dd.png"/></a></figure></div></div></div></details></div><p id="172f1246-8f32-4db9-8373-d7a4d0da9d4f" class="">여기다가 올려봄 → 반응 개좋음</p><figure id="85b92827-7e05-4622-9b48-e8b9aa5096a6"><a href="https://gall.dcinside.com/mgallery/board/view/?id=tgijjdd&amp;no=807106&amp;page=1" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">오늘 만든 ai 표지임... - 웹소설 연재 마이너 갤러리</div><div class="bookmark-description">장르별로 이것저것 만들어봤음</div></div><div class="bookmark-href"><img src="https://www.notion.so//nstatic.dcinside.com/dc/m/img/dcinside_icon.png" class="icon bookmark-icon"/>https://gall.dcinside.com/mgallery/board/view/?id=tgijjdd&amp;no=807106&amp;page=1</div></div><img src="https://dcimg2.dcinside.co.kr/viewimage.php?id=39bad92cefd63c&amp;no=12ae82" class="bookmark-image"/></a></figure><figure id="cb34d63a-0d32-4b97-aaf9-a242257ae490" class="link-to-page"><a href="%5B%E1%84%8F%E1%85%A9%E1%86%AF%E1%84%83%E1%85%B3%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%5D%5BPaid%20POC%5D%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%20ccb8844d283247d0a840bbd8bfd14261/%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%202%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A5%E1%86%B7%20%E1%84%80%E1%85%A7%E1%86%AF%E1%84%80%E1%85%AA%20cb34d63a0d324b97aaf9a242257ae490.html">웹소설 표지 제작 2차 실험 결과</a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">내용 구성</summary><div class="indented"><p id="03503716-0ef2-4f76-a066-47d27c857fa0" class="">수신 : 웹소설 제작PD님 및 관리자님</p><p id="ee743278-edb3-49cf-9bc9-38cfd65f2fe1" class="">
+</p><p id="3198e0b2-63bf-4450-bf95-9e87954621c6" class="">안녕하세요. 이미지생성AI전문기업 라이언로켓에서</p><p id="b46e2693-c074-4ac6-b0a7-a59cab002def" class="">B2B를 담당하는 김현식입니다.</p><p id="6d0f21b8-414a-444e-ace1-2faee6375372" class="">
+</p><p id="573a2a34-c9ff-4d26-b57d-380cce9f1269" class="">당사는 2019년도에 설립되어 이미지생성AI 기술을 필두로 누적 75억원의 투자를 유치하였으며,</p><p id="f098fe7a-25c8-4d5d-b84b-5337a7ebdf8c" class="">최근 화제가 되고있는 이미지생성 AI플랫폼 포킷(<a href="http://pokeit.ai/">pokeit</a>)의 운영사 입니다.</p><p id="ac420fb7-1637-4a4d-ae7d-1998a2eff483" class="">
+</p><p id="fb9d0196-b610-43c2-a0db-fb09599b566d" class="">다름이 아니옵고 귀사에 당사의 AI 표지제작 솔루션을 제안 드리고자 연락드립니다.</p><p id="0e5c4599-a46c-4f1c-b54d-0cabed6e0860" class="">
+</p><p id="06bce950-3a21-499e-a66b-8bb55d6da770" class="">하루에도 수많은 신작이 쏟아져 나오는 웹소설 시장에서</p><p id="3d15caea-b457-4d3a-bb93-fd2ac0c472ab" class="">독자들의 흥미를 유도하기 위해서는 작품을 어필할 수 있는 매력적인 표지가 필수 요소입니다.</p><p id="9ae098fb-8828-4c01-bb98-7c8f9768810b" class="">라이언로켓은 이미지생성AI기술을 활용하여 자체개발한 표지제작솔루션으로</p><p id="d165b5be-6143-446f-b3d8-3c6667c8cce7" class="">독자들이 선호하는 다양한 장르의 고퀄리티 표지를 제작해드리고 있습니다.</p><p id="b1d13979-19a2-4817-b72d-a00922c109d9" class="">
+</p><p id="302f4c12-120b-4fb1-a376-96e57040c476" class="">원하는 컨셉과 퀄리티의 표지를 만들기 위한 다양한 시안과 반복적인 수정작업을</p><p id="f038e880-ec0d-49b3-bbd1-0e87ca3cc827" class="">부담 없는 합리적인 가격으로 제안드리고자 합니다.</p><p id="f2f05ca4-8ca9-4136-8d0c-86f8d13cfd6f" class="">
+</p><p id="4aef957b-ba50-436b-bb03-0a3884b6234d" class="">오직 표지의 완성도에만 신경쓰시면 됩니다.</p><p id="8882a69a-d373-4179-a68d-55f95d808e8e" class="">
+</p><p id="cb569c43-e7a3-4e6b-9458-5875c413be17" class="">궁금하신점 있으실 경우 언제든 편하게 연락 주십시오.</p><p id="7730f472-95e0-4507-859f-88875fd87043" class="">
+</p><figure id="630a1fb9-caf7-4e89-b187-7946285d2010" class="image"><a href="%5B%E1%84%8F%E1%85%A9%E1%86%AF%E1%84%83%E1%85%B3%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%5D%5BPaid%20POC%5D%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%20ccb8844d283247d0a840bbd8bfd14261/2.png"><img style="width:3840px" src="%5B%E1%84%8F%E1%85%A9%E1%86%AF%E1%84%83%E1%85%B3%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%5D%5BPaid%20POC%5D%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%20ccb8844d283247d0a840bbd8bfd14261/2.png"/></a></figure><ul id="73b1cdbb-f6e2-484f-aa97-95d9720d67a3" class="toggle"><li><details open=""><summary>초안 1</summary><p id="66a8e3dc-05e4-4d3a-a628-7f7213ce80d9" class="">안녕하세요. 이미지 생성 AI전문기업 라이언로켓에서</p><p id="21a57faa-c8ac-43c8-b648-98ccc23bec13" class="">B2B를 담당하는 김현식입니다.</p><p id="88e978a4-5ac6-4195-9feb-74df9bd452b3" class="">하루에도 수많은 신작이 쏟아져 나오는 웹소설 시장에서</p><p id="e385cfde-a697-49d6-b8e5-d7c8edc7512b" class="">독자들의 흥미를 유도하기 위해서는 작품을 어필할 수 있는 매력적인 표지가 필수 요소 입니다.</p><p id="07991af1-d699-4bfb-809e-8667c8065a83" class="">
+</p><p id="927721bb-513a-479a-a470-97e07bb53ad2" class="">라이언로켓은 생성AI기술을 활용하여 자체개발한 표지제작솔루션으로</p><p id="1a488530-0f26-4466-8aa4-2183b2fd9a07" class=""><code>커스텀 주문사항(화풍, 구도, 포즈)을 반영해</code>다양한 장르의 고퀄리티 표지를 제작해드리고 있습니다.</p><p id="ce37ca94-5d65-4380-b7c5-bf3996ceb150" class=""><code>시안 5회, 수정 횟수 무제한, 최고 5일에 걸친 전문 작가의 섬세한 리터칭까지 10만 4500원에 제공해드립니다.</code></p><figure id="b22a77ab-4a77-49dd-bc00-3a20c7b38c62" class="image"><a href="%5B%E1%84%8F%E1%85%A9%E1%86%AF%E1%84%83%E1%85%B3%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%5D%5BPaid%20POC%5D%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%20ccb8844d283247d0a840bbd8bfd14261/2.png"><img style="width:3840px" src="%5B%E1%84%8F%E1%85%A9%E1%86%AF%E1%84%83%E1%85%B3%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%5D%5BPaid%20POC%5D%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%20ccb8844d283247d0a840bbd8bfd14261/2.png"/></a></figure></details></li></ul><ul id="7253d764-27fa-40ec-8d6e-55f9162356d9" class="toggle"><li><details open=""><summary>초안 2</summary><p id="82c00438-70da-4c61-bb62-f3ee6f1e6f0f" class="">&lt;제목&gt;</p><p id="fff588cf-39ab-400a-b058-a60cad2949fe" class="">최단 시간 4시간 만에 웹소설 표지 받아보는 법</p><p id="96924a6d-f4e5-4a91-b4b9-47ff64a657a5" class="">&lt;본문&gt;</p><p id="04504bb9-c003-4d7d-ab90-b457656cce7f" class="">안녕하세요. 생성 AI 전문 스타트업 라이언로켓에서 웹소설 비즈니스 서비스를 담당하고 있는 김현식입니다.</p><p id="a6814b1b-9cee-41a5-a9d9-df0bf8b23cbe" class="">
+</p><p id="f903dac8-d5b8-400f-b93e-154ee01a38d9" class="">저희가 최근 진행한 프로젝트에서 <strong>최단 시간 4시간 만에</strong> <strong>일러스트레이터도 아닌 저희 내부 개발자 분의 손으로</strong> 완성도 높은 웹소설 표지 시안을 만들었는데요,</p><p id="5cd91e35-dae6-4450-a37b-26aca95eb729" class="">이 표지를 직접 보신 웹소설 작가님들의 반응도 매우 좋았습니다 :) <strong>[</strong><a href="%5B%E1%84%8F%E1%85%A9%E1%86%AF%E1%84%83%E1%85%B3%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%5D%5BPaid%20POC%5D%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%20ccb8844d283247d0a840bbd8bfd14261/%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%202%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A5%E1%86%B7%20%E1%84%80%E1%85%A7%E1%86%AF%E1%84%80%E1%85%AA%20cb34d63a0d324b97aaf9a242257ae490.html"><strong>작가님 반응 보러 가기</strong></a><strong>]</strong></p><p id="a291a390-28c5-48ea-9654-1fe43e32784a" class=""><strong>(아래 이미지를 통해 확인해보실 수 있습니다!)</strong></p><p id="7ace0e1e-4d7e-46b2-9354-b271e9a1765b" class="">
+</p><p id="20522032-3fba-43ee-894b-94c0faa3e509" class="">짧게 요약하면,</p><p id="e063116c-4ba1-440f-bd71-f2eb35827534" class="">저희 라이언로켓에서 자체적으로 개발한 이미지 생성 엔진을 활용한 것이 가장 큰 비결이었습니다.</p><p id="edbc0541-86b4-4623-8691-fefe8bfa2517" class="">
+</p><p id="38136fee-62ae-4d68-b308-4b6707781cf9" class="">현재 프로모션 기간동안 저희 자체 이미지 생성 엔진을 통해</p><p id="36541a66-cf65-4d13-876c-cfad32cd7ffb" class="">기존 공급가 대비 최대 50%정도 저렴한 가격으로 상업적 퀄리티의 웹소설 표지를 만들어 드리고 있습니다.</p><p id="d86c0d02-3ee5-4cac-acd2-e315fb4499ea" class="">그림 작가와의 원활한 협업이 어려운 요즘, 저희 서비스를 통해 단시간 내에 고품질 웹소설 표지를 받아보실 수 있도록 도와드리고자 합니다.</p><p id="e3d8b93f-e5ae-488a-913e-c0e45fe3998d" class="">다른 무엇보다 [고객사 이름]에서 하고 계시는 가장 큰 고민을 먼저 듣고 저희가 가진 노하우를 공유드리고 싶습니다.</p><p id="fb1d9d79-e1bc-4761-9d83-6f88f3fef5b2" class="">
+</p><p id="c0113437-680a-45f3-b0fe-eff6d73ad890" class="">아래 링크에서 편하신 때로 일정을 잡아주시면, 무료 컨설팅 기회를 준비하도록 하겠습니다.</p><p id="0a79584d-7d54-4ea0-8086-3d83339ff296" class="">감사합니다.</p><p id="4cf7f14d-9988-4044-9433-1fc06680b18d" class=""><strong>[CTA </strong><strong>버튼</strong><strong>]</strong></p><figure id="b2644a08-73da-4174-9a28-850afce79c61" class="image"><a href="%5B%E1%84%8F%E1%85%A9%E1%86%AF%E1%84%83%E1%85%B3%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%5D%5BPaid%20POC%5D%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%20ccb8844d283247d0a840bbd8bfd14261/2.png"><img style="width:3840px" src="%5B%E1%84%8F%E1%85%A9%E1%86%AF%E1%84%83%E1%85%B3%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%5D%5BPaid%20POC%5D%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%20ccb8844d283247d0a840bbd8bfd14261/2.png"/></a></figure></details></li></ul><ul id="dfafa3b1-5fa2-4cdb-bea3-89c8eb219c7d" class="toggle"><li><details open=""><summary>초안 2 수정본</summary><p id="32a26cae-0528-42b8-a7b8-dbe2707626cd" class="">&lt;제목&gt;</p><p id="3873bbda-015f-4e48-b87d-9e2c37086476" class="">웹소설 표지 50% 프로모션 기간을 놓치지 마세요</p><p id="f50562d3-33bb-40ef-b368-a9beb299ebb2" class="">&lt;본문&gt;</p><p id="232b6fa9-c441-47a9-8261-32b5fd795b95" class="">안녕하세요. 생성 AI 전문 스타트업 라이언로켓에서 웹소설 비즈니스 서비스를 담당하고 있는 김현식입니다.</p><p id="eac42950-2b0f-4ec5-887c-4b39f09e31d3" class="">
+</p><p id="866255ad-22ab-4ba6-b3c7-45c3a84b362f" class="">저희는 완성도 높은 웹소설 표지 시안을 최단 시간 하루 안에 완성해 드리고 있습니다.</p><p id="430d0fd5-3f0e-434e-a825-fcc50e563568" class="">저희가 제작한 표지를 받아보신 웹소설 작가님들의 반응도 매우 좋았습니다! <strong>[</strong><a href="%5B%E1%84%8F%E1%85%A9%E1%86%AF%E1%84%83%E1%85%B3%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%5D%5BPaid%20POC%5D%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%20ccb8844d283247d0a840bbd8bfd14261/%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%202%E1%84%8E%E1%85%A1%20%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A5%E1%86%B7%20%E1%84%80%E1%85%A7%E1%86%AF%E1%84%80%E1%85%AA%20cb34d63a0d324b97aaf9a242257ae490.html"><strong>작가님 반응 보러 가기</strong></a><strong>]</strong></p><p id="c8b5d1e7-2f19-4876-a344-4cd9e13dd5fd" class=""><strong>(아래 이미지를 통해 확인해보실 수 있습니다!)</strong></p><p id="697286f7-6efb-4617-98a6-6de26d0a2a2b" class="">
+</p><p id="89f8a588-c602-43fd-9896-7285668f9395" class="">현재 프로모션 기간동안 기존 공급가 대비 최대 50%정도 저렴한 가격으로 상업적 퀄리티의 웹소설 표지를 만들어 드리고 있습니다.</p><p id="124460f0-2538-4a15-9df7-e82362198ae8" class="">
+</p><p id="cbbc6822-0652-4d56-9f72-9a4492a2def8" class="">그림 작가와의 원활한 협업이 어려운 요즘, 단시간 내에 고품질 웹소설 표지를 받아보실 수 있도록 도와드리고자 합니다.</p><p id="7def639f-d20c-437c-a37b-52a1dbfc4944" class="">다른 무엇보다 [고객사 이름]에서 하고 계시는 가장 큰 고민을 먼저 듣고</p><p id="921206c1-3b89-440a-b1cd-c4fe508cd80b" class="">저희가 가진 노하우를 공유드리고 싶습니다.</p><p id="fd2e45db-14a6-4678-b878-ab6528090490" class="">
+</p><p id="80ae1103-3440-42d1-994d-819b0ed1b298" class="">아래 링크에서 편하신 때로 일정을 잡아주시면, 무료 컨설팅 기회를 준비하도록 하겠습니다.</p><p id="a50e3e00-7433-4afb-8c12-b3e4e4ee8baf" class="">감사합니다.</p><p id="00d53d1e-0cb4-44f0-b8c0-0575a4817b02" class=""><strong>[CTA 버튼]</strong></p><figure id="bb897b7c-228e-4ce3-8f33-bb700f09353c" class="image"><a href="%5B%E1%84%8F%E1%85%A9%E1%86%AF%E1%84%83%E1%85%B3%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%5D%5BPaid%20POC%5D%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%20ccb8844d283247d0a840bbd8bfd14261/2.png"><img style="width:3840px" src="%5B%E1%84%8F%E1%85%A9%E1%86%AF%E1%84%83%E1%85%B3%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%5D%5BPaid%20POC%5D%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%20ccb8844d283247d0a840bbd8bfd14261/2.png"/></a></figure></details></li></ul><p id="2308dccc-69d8-424f-b1d1-bf9b894b80f9" class="">
+</p></div></details><hr id="ef8aa383-440f-4c3e-8b2e-bbfc670fc047"/><h2 id="d58121ef-c7fb-46e6-8b47-b703bd87f126" class="">follow-up 전화</h2><p id="21d50f6c-8c5d-4c80-9593-ed8b68d0cafb" class="">웹소설/라이트노벨 표지 제작 솔루션 협력 차</p><div><h3 id="a024fa4a-c0d5-4631-9061-f5de0813b05d" class="">통화 대상</h3><p id="225fe658-f0e4-4d03-97be-73d50035bb91" class="">대원씨아이 김민재 PD님</p><p id="0aa8082d-0775-4718-a7fc-a208d0a659d5" class="">
+</p><h3 id="f7f76d2c-63df-47ff-8d46-1cefd659b388" class="">통화 배경</h3><p id="0f2eb6cb-7862-4680-a151-05bad7be93b7" class=""> 에 따른 콜드메일 전달</p><p id="d432027e-8d5f-45de-9f1a-62dc649d73f7" class="">
+</p><h3 id="7f464b8f-d0b7-48a7-bf37-d6c29559524c" class="">통화내용</h3><p id="e9e4aafd-b179-4697-8a6a-6c055c5655ce" class="">계약 방식에 대한 안내</p><ul id="a51925f9-a08a-4dce-b33a-7eee6a9078bf" class="bulleted-list"><li style="list-style-type:disc">현재는 장당 요금으로 진행</li></ul><ul id="1a864bd2-86dd-4d96-a20c-0a2c3ea93806" class="bulleted-list"><li style="list-style-type:disc">사용하시면서 사측에서도 유용성을 입증되면 <ul id="38afe9d6-52d4-4d30-84f9-b0296d4a78f2" class="bulleted-list"><li style="list-style-type:circle">구독 요금제 / 종량제는 추후 협의 가능</li></ul></li></ul><p id="6475e371-e490-4ff8-b785-b3c36f3a3659" class="">
+</p><p id="0f284f6a-00f5-4465-8c17-b9dd8633db66" class="">가격에 대한 가이드</p><ul id="22e47a5b-7e51-442b-ba38-ce8d665054db" class="bulleted-list"><li style="list-style-type:disc">기존 공급가 대비 경제적인 가격으로 장당 20만원으로 진행</li></ul><ul id="92b003a6-ee0c-43d0-98d5-0fe49b2d7595" class="bulleted-list"><li style="list-style-type:disc">현재 50% 할인 프로모션 진행하여 현재 장당 10만원으로 진행</li></ul><p id="d7409e21-3cda-427e-b72c-21fbd44f4b4f" class="">
+</p><p id="89a13148-015b-42ea-b128-6606e045e854" class="">작업 진행 방식에 대한 안내</p><ul id="eecc93fd-f736-4d11-a7da-ad7058e42ea5" class="bulleted-list"><li style="list-style-type:disc">기존 외주 작업 진행하듯이 진행하시면 됩니다</li></ul><ul id="0f004981-7733-4781-8183-2c9809c97340" class="bulleted-list"><li style="list-style-type:disc">다만 그림 작가 관리에 대한 걱정 없이 믿을 수 있는 파트너와 안정적으로 진행할 수 있다는 점에서 차이가 있습니다</li></ul><ul id="e5d27077-97b6-405c-a745-53e9e413585f" class="bulleted-list"><li style="list-style-type:disc">웹소설 표지에 대한 IP는 고객사에 귀속</li></ul><p id="59dc93ba-237a-45c4-b624-2bc63f009eb3" class="">
+</p><p id="c02f18ab-ddbc-4409-bbf5-41ac4b33453d" class="">원하시는 바가 있으면 말씀해주시면 조율 모두 가능하다는 점 안내</p><ul id="1c9fc79b-d8a4-448f-bbae-3b17f640c2bd" class="bulleted-list"><li style="list-style-type:disc">안내해드린 계약 방식, 가격에 대한 가이드, 작업 진행 방식 모두 대원씨아이의 요구사항에 따라 맞출 수 있는 부분</li></ul><ul id="bf8fc035-927b-4a54-b98c-f724907e9bd3" class="bulleted-list"><li style="list-style-type:disc">요구사항이나 질문이 있으시다면 언제든지 연락해달라 전달드림</li></ul><ul id="5cef7734-9329-4e88-a0ad-dc16c5ab3a71" class="bulleted-list"><li style="list-style-type:disc">필요하다면 미팅 잡아보겠다고 전달 드림</li></ul><p id="03d2b5d6-cd9b-4902-9811-d95f6312f8d3" class="">
+</p><p id="16344efa-1094-4dde-8e37-0ae72878c252" class="">고객사측 추가 질문 및 전달사항</p><p id="21aaa446-bb99-417f-8f73-a41341d87672" class="">[김민재님 질문]다른 사에서는 10장 이상 제한, 이런 거는 없나?</p><ul id="ec3e09af-0672-4c77-9d01-97b57d3f6e17" class="bulleted-list"><li style="list-style-type:disc">그런 거는 없음</li></ul><p id="63380c35-0ef0-47b9-b582-9df625d3c9e2" class="">[김민재님 질문]혹시 너무 AI가 티가 나지는 않는가</p><ul id="ec154ab7-bce5-421f-babf-6a09dcae1ebe" class="bulleted-list"><li style="list-style-type:disc">우리는 내부 작가가 검수하고 리터칭한다</li></ul><p id="b3191fe1-215f-4ee8-950f-1704931c9ea4" class="">[김민재님 전달] 대원씨아이측 상황</p><ul id="f0dddc4e-6d41-4a0b-9cbb-4dbdb7ff923c" class="bulleted-list"><li style="list-style-type:disc">여러 업체를 검토하는 상황. 내부적으로 검토한 다음 연락드리겠다</li></ul></div><p id="443580cd-e0c5-4781-a706-3d29b3be734b" class="">
+</p><p id="c50fde11-fb0e-4a6e-b5e3-9c8830aa1eb1" class="">무엇</p><p id="1309a492-0a16-4371-8743-a54bc832a981" class="">자체개발한 표지제작솔루션으로 독자들이 선호하는 다양한 장르의 고퀄리티 표지를 제작해드리고 있습니다.</p><p id="c153f627-ff77-4f4e-b3e2-536a78dc4981" class="">
+</p><p id="62e91600-901f-419f-9add-ef1290030754" class="">필요성</p><p id="db07e9cf-d86c-48b5-a27e-a1d2072f024a" class="">웹소설 시장에서 독자들이 클릭할때 가장먼저 보는건 매력적인 표지입니다.</p><p id="a2b3fc8a-cb80-46d5-8ec6-9f17e275f769" class="">예산문제로 많은 작품을 홍보하지 못함</p><p id="657064b1-4a4e-44e9-bba4-91fa1a53008c" class="">
+</p><p id="266ad70f-a5a9-43b8-82fe-3ab74316a1d0" class="">장점</p><ul id="ebe4416d-883e-46d8-80aa-43c0a8a591b1" class="bulleted-list"><li style="list-style-type:disc">다양한 장르<ul id="6b5a3025-4b9f-4de7-b833-dbb63bb011df" class="bulleted-list"><li style="list-style-type:circle">무협지, BL, 공포</li></ul></li></ul><ul id="7c8a8a54-c8f6-4157-a581-dd97af61076e" class="bulleted-list"><li style="list-style-type:disc">원하는 컨셉과 퀄리티의 표지를 만들기 위한 다양한 시안과 반복적인 수정작업에 따른 추가 비용 없이 부담 없는 합리적인 가격으로 제안드립니다.</li></ul><ul id="8b542699-e5f1-4561-ac7d-18c94bb3143a" class="bulleted-list"><li style="list-style-type:disc">수익화가 불확실한 신규 작품에도 가능</li></ul><p id="5cc07c3f-ec56-45e5-b795-ec3a30be0b41" class="">
+</p><p id="a2a20086-1e80-454f-a117-b59d23cdf257" class="">
+</p><h1 id="47439bc6-0538-4539-a69b-5720cc90a249" class="">웹소설 표지 제작 Paid POC 콜드 콜</h1><ul id="d5465eb6-53de-4a10-b7fa-5946914c2fa7" class="toggle"><li><details open=""><summary>메일 내용</summary><p id="d17df146-b3e0-4658-b56d-f67a281d4b55" class="">수신 : 웹소설 제작PD님 및 관리자님</p><p id="44e2b0e2-1900-4b66-aad6-cced35505bac" class="">
+</p><p id="fafdab5a-d3f5-4ecc-9d1c-4a516ba41d5e" class="">안녕하세요. 이미지생성AI전문기업 라이언로켓에서</p><p id="48a445c3-e148-45bc-87b4-124131446a6f" class="">B2B를 담당하는 김현식입니다.</p><p id="370c0b9f-269c-4f05-9990-7cf1bd995195" class="">
+</p><p id="98236aab-db18-42e4-b201-ac66e4e06ffb" class="">당사는 2019년도에 설립되어 이미지생성AI 기술을 필두로 누적 75억원의 투자를 유치하였으며,</p><p id="c715c52a-27e3-4b2c-b144-745c3258b65a" class="">최근 화제가 되고있는 이미지생성 AI플랫폼 포킷(<a href="https://lionrocket-ai-dot-canvas-spark-374913.uc.r.appspot.com/?c=17bhqT2tMSvZhFEV9G-x9Kxty68g1qL-TJ68C6B2P-v4&amp;q=0&amp;r=18888ea21a2dbec6&amp;z=1685924225368&amp;o=http%3A%2F%2Fpokeit.ai%2F">pokeit</a>)의 운영사 입니다.</p><p id="d38edd20-57c5-46e2-b1fd-169bf0713835" class="">
+</p><p id="d2cbe6a1-946e-4baa-861e-370fb6c92e9e" class="">다름이 아니옵고 귀사에 당사의 AI 표지제작 솔루션을 제안 드리고자 연락드립니다.</p><p id="4cafc425-d6d8-4255-92d6-3d496a6c84a0" class="">
+</p><p id="c2ee80ef-1e5b-47fc-920e-ecfdf4b5151d" class="">하루에도 수많은 신작이 쏟아져 나오는 웹소설 시장에서</p><p id="310fc7d6-a654-44c8-8098-a8fb114e6c34" class="">독자들의 흥미를 유도하기 위해서는 작품을 어필할 수 있는 매력적인 표지가 필수 요소입니다.</p><p id="c6b3e9b7-0eb4-40ed-872e-3c8507308251" class="">라이언로켓은 이미지생성AI기술을 활용하여 자체개발한 표지제작솔루션으로</p><p id="56fe7eb2-6ded-4f83-a37f-c6f869e8ffd5" class="">독자들이 선호하는 다양한 장르의 고퀄리티 표지를 제작해드리고 있습니다.</p><p id="6f6751c9-c278-46b8-ad5f-4a42b1d25b76" class="">
+</p><p id="69dedbfd-c529-4b6d-a473-7ed50b2985a3" class="">원하는 컨셉과 퀄리티의 표지를 만들기 위한 다양한 시안과 반복적인 수정작업을</p><p id="9daf3b88-6b57-40a5-ad54-5d8c3300a613" class="">부담 없는 합리적인 가격으로 제안드리고자 합니다.</p><p id="376be106-e74d-445b-a7a7-9b2913b96a30" class="">
+</p><p id="d7ced6e7-c06f-48ef-b720-87bfe4c3d066" class="">오직 표지의 완성도에만 신경쓰시면 됩니다.</p><p id="d70c26b4-02e8-4828-ac66-eed4fb9f5d4a" class="">
+</p><p id="b7a3352d-d19d-45a3-81d0-9904330cd334" class="">궁금하신점 있으실 경우 언제든 편하게 연락 주십시오.</p><figure id="a140ac2b-698b-430e-bb6e-eca067fc19e9" class="image"><a href="%5B%E1%84%8F%E1%85%A9%E1%86%AF%E1%84%83%E1%85%B3%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%5D%5BPaid%20POC%5D%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%20ccb8844d283247d0a840bbd8bfd14261/Frame_1.png"><img style="width:1920px" src="%5B%E1%84%8F%E1%85%A9%E1%86%AF%E1%84%83%E1%85%B3%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%5D%5BPaid%20POC%5D%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%8B%E1%85%B1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%89%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A5%20ccb8844d283247d0a840bbd8bfd14261/Frame_1.png"/></a><figcaption><a href="https://lionrocket.slack.com/files/U03EK8EUXC2/F0569J3FCCC/frame_1.png">https://lionrocket.slack.com/files/U03EK8EUXC2/F0569J3FCCC/frame_1.png</a></figcaption></figure></details></li></ul><ul id="0c156c69-c5ce-43ca-a9ef-1af98dc4df5c" class="toggle"><li><details open=""><summary><a href="https://docs.google.com/spreadsheets/d/1rRaaK--FjarUdnYrnBSgcwmRqrTj1cCJkQtMk0uK7c0/edit#gid=48554121">일정</a></summary><div><figure id="eb5bbb64-f43d-402e-a6e6-43fb64305fcc" class="image"><a href="../2023%20B2B%E1%84%80%E1%85%B5%E1%86%AF%E1%84%83%E1%85%B3%20%E1%84%83%E1%85%A2%E1%84%89%E1%85%B5%E1%84%87%E1%85%A9%E1%84%83%E1%85%B3%202c62bf66f24543c8b215a93862de81bb/%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%86%E1%85%AE%20%E1%84%92%E1%85%A7%E1%86%AB%E1%84%92%E1%85%AA%E1%86%BC%2014a0c4bafebd456f8f216a8aed705e59/%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20Paid%20POC%20%E1%84%8F%E1%85%A9%E1%86%AF%E1%84%83%E1%85%B3%E1%84%8F%E1%85%A9%E1%86%AF%209ebea012cb434b5b8b80d163749a6ac0/Screenshot_2023-06-07_at_1.42.25_PM.png"><img style="width:1008px" src="../2023%20B2B%E1%84%80%E1%85%B5%E1%86%AF%E1%84%83%E1%85%B3%20%E1%84%83%E1%85%A2%E1%84%89%E1%85%B5%E1%84%87%E1%85%A9%E1%84%83%E1%85%B3%202c62bf66f24543c8b215a93862de81bb/%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%86%E1%85%AE%20%E1%84%92%E1%85%A7%E1%86%AB%E1%84%92%E1%85%AA%E1%86%BC%2014a0c4bafebd456f8f216a8aed705e59/%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%89%E1%85%A9%E1%84%89%E1%85%A5%E1%86%AF%20%E1%84%91%E1%85%AD%E1%84%8C%E1%85%B5%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20Paid%20POC%20%E1%84%8F%E1%85%A9%E1%86%AF%E1%84%83%E1%85%B3%E1%84%8F%E1%85%A9%E1%86%AF%209ebea012cb434b5b8b80d163749a6ac0/Screenshot_2023-06-07_at_1.42.25_PM.png"/></a></figure><ul id="0314d50b-d580-4a00-ba1e-da45a557ceb9" class="bulleted-list"><li style="list-style-type:disc">메일 발송후 기본적으로 2일이내 콜드콜 진행</li></ul><ul id="463fb48e-26b3-4e20-ae0d-b2a8e08cd9e2" class="bulleted-list"><li style="list-style-type:disc">담당자가 아닐 경우 담당자 연결 요청</li></ul><ul id="a61d48e4-3ab8-43c9-8df1-8d713a19aec5" class="bulleted-list"><li style="list-style-type:disc">검토 결과 확인<ul id="a85a1ee9-a6ce-446d-96f3-597b6693afad" class="bulleted-list"><li style="list-style-type:circle">검토하지 않았을 경우 검토 요청후 2-3일이내 재컨텍 할것을 알림</li></ul><ul id="682c4ede-6ff7-4385-bf57-b72a3fb4377e" class="bulleted-list"><li style="list-style-type:circle">메일검토 늦어질 경우 최대 3번까지 콜</li></ul><ul id="a1f5aa92-d071-4843-b8f1-6272fabe7bfb" class="bulleted-list"><li style="list-style-type:circle">검토 결과 부정, 거절인 경우 그 사유 명확히 확인</li></ul></li></ul><ul id="6e5a7a72-bfd0-4f97-9d8c-c145571ba839" class="bulleted-list"><li style="list-style-type:disc">담당자 연결될 경우 담당자에게 간단한 유선 설명후 메일 발송 -&gt; 2-3일내 재컨텍 할 것 알림</li></ul><ul id="23e90534-6bcd-46ec-bbc7-1ef068e6cfa4" class="bulleted-list"><li style="list-style-type:disc">검토결과 긍정/관심이 있을 경우 미팅어렌지<ul id="bab64dd3-8d59-4700-92df-5136580a58aa" class="bulleted-list"><li style="list-style-type:circle">최대한 미팅 어렌지 까지 하는 것을 목표로 함</li></ul></li></ul></div></details></li></ul><ul id="df9f7fd2-2ccb-4c32-bb50-20e024771857" class="toggle"><li><details open=""><summary>전화 예상 내용</summary><p id="b87499e9-2d20-4479-b942-0f323d5c14cf" class="">웹소설/라이트노벨 표지 제작 솔루션 협력 차</p><p id="97db8fc8-1d7c-411c-9a2d-02bc21b36039" class="">웹소설/라이트노벨 담당자님</p><p id="8df7393e-23b3-4a8a-b454-f51a3d331fed" class="">
+</p><p id="097a55ac-537d-403f-b766-b5bc9943f28b" class="">무엇</p><p id="328b9936-9b27-498c-8cbe-1653468f8119" class="">자체개발한 표지제작솔루션으로 독자들이 선호하는 다양한 장르의 고퀄리티 표지를 제작해드리고 있습니다.</p><p id="9720c1cd-7423-473d-a97e-5320f5b16885" class="">
+</p><p id="43238aa8-578b-45ec-b17b-36e66b35e9c5" class="">필요성</p><p id="7d48fc52-0a09-4aec-9902-53dab9984263" class="">웹소설 시장에서 독자들이 클릭할때 가장먼저 보는건 매력적인 표지입니다.</p><p id="d262c171-a257-4bd0-96a4-f65942b6ccfe" class="">예산문제로 많은 작품을 홍보하지 못함</p><p id="126fc3a1-c3d3-4c1e-90c2-baa1a36181d4" class="">
+</p><p id="ed8ce590-41dd-4e4f-a2bd-b13e8843e915" class="">장점</p><ul id="4ca3b2e9-b937-4f6c-886b-3ff403c02f93" class="bulleted-list"><li style="list-style-type:disc">다양한 장르<ul id="f7dfbcf8-44a9-4575-a743-442961ec551a" class="bulleted-list"><li style="list-style-type:circle">무협지, BL, 공포</li></ul></li></ul><ul id="6e095c8d-e290-4836-a79f-7e02502ecbc3" class="bulleted-list"><li style="list-style-type:disc">원하는 컨셉과 퀄리티의 표지를 만들기 위한 다양한 시안과 반복적인 수정작업에 따른 추가 비용 없이 부담 없는 합리적인 가격으로 제안드립니다.</li></ul><ul id="03438093-9bec-4d27-a1d4-bf8e82cd9727" class="bulleted-list"><li style="list-style-type:disc">수익화가 불확실한 신규 작품에도 가능</li></ul><p id="0e3d2f66-b759-45f0-a880-558ddb0b8394" class="">
+</p><ul id="f6eba13f-8810-4f81-9948-355d3dccc7da" class="toggle"><li><details open=""><summary>관심을 보일 경우</summary><div></div><p id="61421f9c-13d4-49d4-8cba-0c01c34549cb" class="">
+</p><p id="f9a13ad1-2091-4134-a54c-4a4b393a4b19" class="">계약 방식에 대한 안내</p><ul id="8bb65f29-e537-4856-ae6b-83e38e8a3956" class="bulleted-list"><li style="list-style-type:disc">현재는 장당 요금으로 진행</li></ul><ul id="987529b9-d45c-4485-b4e7-2f802f862048" class="bulleted-list"><li style="list-style-type:disc">사용하시면서 사측에서도 유용성을 입증되면 <ul id="90d75bae-aa1f-4b3a-9234-bec4b206533d" class="bulleted-list"><li style="list-style-type:circle">구독 요금제 / 종량제는 추후 협의 가능</li></ul></li></ul><p id="7ff81b55-0409-474f-9c89-ea087363ea8e" class="">
+</p><p id="399cf7ac-5b0e-45b9-a4be-545d99e7e276" class="">가격에 대한 가이드</p><ul id="5cb1e0ab-e6c0-4b3d-b7ac-0de38a14fded" class="bulleted-list"><li style="list-style-type:disc">기존 공급가 대비 경제적인 가격으로 장당 20만원으로 진행</li></ul><ul id="688bbe16-585e-43fd-b064-f94545fd35d8" class="bulleted-list"><li style="list-style-type:disc">현재 50% 할인 프로모션 진행하여 현재 장당 10만원으로 진행</li></ul><p id="a88d90a3-b26d-440b-946b-a26102cbb928" class="">
+</p><p id="dc5d8dba-49a4-424c-ba8c-55135cf4e0bb" class="">작업 진행 방식에 대한 안내</p><ul id="551bca9f-600e-4c18-bdff-5a64647ef4b8" class="bulleted-list"><li style="list-style-type:disc">기존 외주 작업 진행하듯이 진행하시면 됩니다</li></ul><ul id="735f07fa-ee3b-4f5b-9fb8-6700950e6d09" class="bulleted-list"><li style="list-style-type:disc">다만 그림 작가 관리에 대한 걱정 없이 믿을 수 있는 파트너와 안정적으로 진행할 수 있다는 점에서 차이가 있습니다</li></ul><ul id="658371a9-981d-4c64-8f1f-14fd1c87c0ec" class="bulleted-list"><li style="list-style-type:disc">웹소설 표지에 대한 IP는 고객사에 귀속</li></ul><p id="37d82608-1f3d-4844-a589-4ae76f362073" class="">
+</p><p id="75f702a0-a368-4868-8591-7005f4969710" class="">원하시는 바가 있으면 말씀해주시면 조율 모두 가능하다는 점 안내</p><ul id="adf43728-c596-4a98-8396-467bb2a52e85" class="bulleted-list"><li style="list-style-type:disc">안내해드린 계약 방식, 가격에 대한 가이드, 작업 진행 방식 모두 대원씨아이의 요구사항에 따라 맞출 수 있는 부분</li></ul><ul id="19f24964-015e-4a0b-9fcf-f0fd0acf9a13" class="bulleted-list"><li style="list-style-type:disc">요구사항이나 질문이 있으시다면 언제든지 연락해달라 전달드림</li></ul><ul id="51e2d842-bbfa-47fe-8c49-4895eed1da40" class="bulleted-list"><li style="list-style-type:disc">필요하다면 미팅 잡아보겠다고 전달 드림</li></ul></details></li></ul></details></li></ul></div></article></body></html>

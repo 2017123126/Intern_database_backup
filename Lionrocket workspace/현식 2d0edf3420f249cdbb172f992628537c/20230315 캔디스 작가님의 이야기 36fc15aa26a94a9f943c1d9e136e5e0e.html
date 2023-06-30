@@ -1,0 +1,686 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>20230315 캔디스 작가님의 이야기</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="36fc15aa-26a9-4a9f-943c-1d9e136e5e0e" class="page sans"><header><h1 class="page-title">20230315 캔디스 작가님의 이야기</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-brown">인터뷰/외부미팅</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><h3 id="2c60454e-4ece-48e7-83d9-8845eeb54d92" class="">insight</h3><p id="b80a5cd5-f8b0-4bed-ab3d-67916d59010d" class="">그림을 직업으로 삼으시는 분들, 특히 일러스트레이터들의 경우 애초에 사용하는 툴 자체에 많은 돈을 소비하기 때문에 생산성을 위해서라면 돈을 아끼지 않는 경향이 있다. 한편 작가들이 가장 많은 시간과 노력을 들이는 과정이 바로 채색인데, 스케치를 입력했을 때 <code>괜찮은 색 배합으로 채색을 해주는 서비스</code>에 대한 니즈가 있었다. 또한 디자인을 위해 레퍼런스를 참고하는 경우가 많은데 특히 로멘스 판타지의 경우 의상 디자인에 들이는 시간과 노력을 줄이기 위해서 <code>인터넷 의상을 저작권 걱정 없이 사용할 수 있도록 하는 이미지 재생성 서비스</code>에 대한 니즈가 꽤 있었다. 여기에 <code>완성 단계의 작업물을 큰 노력 없이 수정할 수 있는 </code>툴, 그리고 <code>작가의 그림체를 학습하여 완성도 있게 만들어줄 수 있는 툴</code>에 대한 니즈도 확인할 수 있었다.</p><hr id="5ddd78b9-eaaf-4993-a4a7-a3b2bb444e42"/><h3 id="c7d73fcf-8d1a-478c-b804-6e877977db98" class="">interview</h3><p id="1fe54ed2-140c-4152-9a32-648d582851ea" class=""><mark class="highlight-yellow_background">**모든 주장과 정보는 인터뷰 당사자로부터 나온 것임을 밝힙니다**</mark></p><ol type="1" id="aab56e11-b9de-4e35-aac3-fded30e36641" class="numbered-list" start="1"><li>캔디스 님에 대하여<ul id="be3a3fe2-6c43-4682-99a2-8f7a25ab8313" class="bulleted-list"><li style="list-style-type:disc">나이: 29살</li></ul><ul id="f06b74fc-8b9e-4e48-b852-6cbb8cafd601" class="bulleted-list"><li style="list-style-type:disc">성별: 여성</li></ul><ul id="66f047a8-132d-4379-8a00-c1e0cfbdd4aa" class="bulleted-list"><li style="list-style-type:disc">살아온 스토리:<p id="6208b4b7-eb6b-411f-b681-ea6e3a40667a" class="">24살부터 프리랜서로 외주를 받아서 잠깐잠깐 용돈 벌이 식으로 작업을 했다. 광고 쪽에 들어갈 웹툰을 그리기도 하고 학습 만화를 그리기도 했다. 광고용 웹드라마에 들어가는 만화책 소품 표지, 영상 인트로에 들어가는 일러스트, 웹소설 표지 등 이것저것 많은 일을 해봤다. 그렇기에 일찍이 어떤 작품은 돈이 얼마나 되는지에 대한 감각을 체득할 수 있었다. </p><p id="8b1347fc-61da-4450-a9e9-48a7a5940476" class="">사실 그림을 그리기 시작한 것은 어렸을 때부터이다. 원래부터 그림 그리는 걸 좋아했는데 학창 시절에는 주변에서 그림 참 잘 그린다고 두루 칭찬을 들었다. 그러다보니 자연스레 고등학교와 대학교를 관련 학교와 관련 학과로 진학했다. </p><div id="f80f92f0-3108-411d-a2fb-ada3885eada1" class="column-list"><div id="4ab7c8bc-2148-4ab3-ae23-ca5750aed3d4" style="width:50%" class="column"><figure id="636c9ca8-fd34-4997-8841-b92287e391de" class="image"><a href="20230315%20%E1%84%8F%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B5%E1%84%89%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2036fc15aa26a94a9f943c1d9e136e5e0e/Screenshot_2023-03-16_at_3.22.08_PM.png"><img style="width:403px" src="20230315%20%E1%84%8F%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B5%E1%84%89%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2036fc15aa26a94a9f943c1d9e136e5e0e/Screenshot_2023-03-16_at_3.22.08_PM.png"/></a><figcaption>캔디스님의 작업물 #1</figcaption></figure></div><div id="a9edfbb6-4a89-448b-831c-ab134a0e130f" style="width:50%" class="column"><figure id="6dc66bec-f1a3-46b2-8a4a-6b0767f575f6" class="image"><a href="20230315%20%E1%84%8F%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B5%E1%84%89%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2036fc15aa26a94a9f943c1d9e136e5e0e/Screenshot_2023-03-16_at_3.21.01_PM.png"><img style="width:393px" src="20230315%20%E1%84%8F%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B5%E1%84%89%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2036fc15aa26a94a9f943c1d9e136e5e0e/Screenshot_2023-03-16_at_3.21.01_PM.png"/></a><figcaption>캔디스님의 작업물 #2</figcaption></figure></div></div><p id="4e23681b-af24-45d5-bdae-5102859385c3" class="">이것저것 일을 하며 포트폴리오도 쌓던 와중에 카카오스토리에서 웹툰 작가를 해달라고 연락이 왔다. 포트폴리오를 사측에서 미리 확인하고 연락을 준 것이었다. 당시 나이가 26살이었다. 그렇게 연재를 시작하고 3년이 지났다. 오랜 연재로 지친 몸을 쉬고자 6개월 간 휴재를 했다. 휴재하는 동안에는 이전처럼 프리랜서로서 웹소설 일러스트를 6개월 간 그렸다. </p><p id="ef249ea0-7fd3-49c2-958f-afd10cd1fe48" class="">그리고 바로 오늘 (2023.03.15) 3년동안 이어왔던 웹툰의 연재를 다시 시작했다. </p><p id="18786185-288c-47f2-82c1-c048e6198fa0" class="">연재하는 작품의 이름은 “피폐물 주인공의 부인이 되었습니다”이다. 이름에서 알 수 있듯 피폐물 성격의 로멘스 판타지이다. 카카오페이지로부터 웹툰 요청을 받았을 때 세 개의 원작을 가지고 선택할 수 있었다. 사실 캔디스 님은 미리 웹소설 작가님 작품들을 살펴보면서 로멘틱 판타지 작품이 잘 될 것이라는 것을 예측하고 있었다고 한다. 그렇게 선택한 작품이 정말 운이 좋게도 잘되어서 지금 카카오페이지 조회수가 현재 632만에 달한다. 로멘틱 판타지 중에서는 중위권, 웹툰 계 전체에서는 평균 이상 될 것이라고 캔디스 님은 생각한다. 이렇다보니 캔디스 님 연봉은 자연스레 ‘억’소리가 난다. (실제로 억대 연봉이라고 밝힘)</p><p id="bf8e7459-8868-4c68-869d-ceb153d69541" class="">지금 보니 상황이 괜찮아보이지만 연재 초반에는 엄청난 과로에 시달렸다. 특히 연재 초반 3개월은 밥먹고 일만 했다. 어떻게든 마감일자를 맞추기 위해서 어쩔 수 없었다. 이렇다보니 작업실에서 제일 빨리 퇴근한 친구의 퇴근 시각이 새벽 2시일 지경에 이르렀다.</p><p id="18a73ade-a5fb-4c18-8f99-30266d9add50" class="">연재 시작 3개월 이후부터는 상황이 조금 나아졌다. 처음과 달리 일에 서서히 적응이 되니까 요령도 생기고 같은 일도 더 빠르고 효율적으로 끝낼 수 있었다. 그래서인지 캔디스님은 일의 효율화를 위해서는 돈을 아끼지 않는 타입이다. 요즘은 선화(밑그림을 그리는 작업)와 밑색(색깔을 대강 채우는 역할. 밑그림↔밑색)은 작업자를 구해서 맡기고 있다. <span style="border-bottom:0.05em solid">앞으로도 생산성을 위해서라면 돈을 아끼지 않을 예정이라고.</span></p></li></ul></li></ol><ol type="1" id="878ede1e-d3f3-4119-94c7-8e8f40581a4c" class="numbered-list" start="2"><li> Painpoint<ol type="a" id="1f22d8e5-bd06-4969-be4e-88fa5d7304c7" class="numbered-list" start="1"><li>웹툰 및 웹소설 표지 작업 시 색깔 배치<p id="658e53d9-28e7-4d80-9056-610a890bbe3f" class="">웹툰 작업할 때 장면의 조명과 분위기 연출이 생각보다 중요하다. 웹툰의 경우 시각적 자극으로 대사를 비롯해 인물의 감정, 장면의 분위기 등 모든 것을 전달해야 하기 때문에 맥락에 어울리는 색깔을 가지고 분위기를 넣는 것이 중요하다. 하지만 많은 경우 웹툰 작가가 처음 생각한 색깔이 어울리지 않거나 다음 컷과 자연스럽게 연결되지 않는다. 이는 캔디스 님 뿐만 아니라 많은 웹툰 작가들이 으레 겪는 문제라고 한다. </p><p id="d9dbb31b-6799-413f-97f1-993033e0adec" class="">이런 문제를 해결하는 대표적인 방법은 스케치 단계에서부터 모든 색깔 조합을 다 칠해보는 것이다. 밑그림을 완성한 다음에 채색하는 것이 아니라 밑그림 단계에서부터 다양한 색깔 조합으로 한 번씩 채색해보면서 눈으로 확인한다. 이렇게 하면 완성된 그림에서 색깔 조합이 이상한 나머지 다시 그려야 하는 문제를 예방할 수 있다.</p><p id="1f9fc6c7-a891-4a64-b82a-468193d3f702" class="">문제는 색깔 조합을 스케치 단계에서부터 다 칠해보는 방법이 품이 많이 든다는 것이다. 웹소설처럼 그려야 하는 컷의 양이 적은 경우 이런 방식으로 문제를 해결할 수 있다. 하지만 웹툰처럼 그려야 할 컷이 많은 경우 이런 방법이 통하지 않는다. </p><p id="fc51e2a1-a246-4f60-8ae3-ab93aabc4161" class="">연재 3년을 채운 웹툰 작가이지만 캔디스 님은 아직까지 뾰족한 수를 찾지 못했다. 그는 <a href="http://Novelai.net">Novelai.net</a> 을 이용해 이미지를 생성해보고 있기는 하지만 아무리 프롬프트를 잘 넣어봐도 원하는대로 나오지 않았다고 한다. </p><p id="4ec09748-eaff-439b-a312-6407d6e8aa06" class="">만약 <span style="border-bottom:0.05em solid">스케치를 넣어서 채색만 해주는 툴이 있다면 좋겠다</span>고 한다. 스케치를 넣어보고 채색이 잘 어울리면 정말이지 “고마울” 것 같다고 한다. 스케치로부터 채색이 명확하게 나와주기만 한다면 50만원, 월 구독으로는 5천 원에서 만 원까지 지불할 의사가 있다고 밝혔다.</p><p id="e944f68c-df35-4fae-ac0c-53d2e8a3ebb9" class="">
+</p></li></ol><ol type="a" id="1e67c5e5-a30c-4773-8c3b-5c7e20d6afa3" class="numbered-list" start="2"><li>일러스트 작업 시 자잘한 컨펌 과정<p id="9258ac09-3707-4235-8292-b1dd67f4393f" class="">일러스트 외주의 업무 프로세스는 기획서 수령부터 시작한다. 기획서에는 의뢰인이 필요한 작업물을 명시하게 되는데, 캔디스님의 경우 기획서 단계에서부터 협업의 효율성을 위해 특정 부분을 구체적으로 적어달라고 부탁한다. 이후 밑그림 작업이 완료되면 의뢰인으로부터 컨펌을 받아 시안 작업으로 넘어간다. 마찬가지로 시안 작업이 완료되면 컨펌을 받은 후 수정이 필요한 부분을 다듬는다. 이렇게 의뢰인과 일러스트레이터 사이에 작업물이 오가면서 최종 완성본에 이르게 된다.</p><p id="ac467fd8-866f-4ce4-8e4f-68b6e7d74328" class="">그런데 간혹 까다로운 글 작가님들의 경우에는 세부적이고 자잘한 부분들을 걸고 넘어지며 계속 재작업을 요구하는 경우가 있다. 이러한 경우는 컨펌 비용을 더 받거나 작업량이 많이 필요하지 않다면 그냥 해드리는 경우도 있다. 외주를 받아 작업하는 일러스트레이터 작가들이 알아서 잘 해주는 경우가 대부분이지만 가끔 지나치게 많은 컨펌 과정이 발생하는 경우가 있다.***  </p><p id="afc477f9-3e33-4590-bfec-4a29071febd5" class="">이런 문제를 방지하기 위해서 보통 컨펌 횟수를 사전에 정해놓고 진행한다. 또 캔디스 님의 경우 완성본 단계에서는 수정을 요구하지 못하도록 하는데, <span style="border-bottom:0.05em solid">만약 완성된 단계에서 수정할 수 있는 툴이 있다면 100만원, 월 구독으로는 2만 원가지 지불할 의사가 있다고 밝혔다.</span> </p><p id="c54896a5-a6cb-4358-8d2c-872ce4836686" class="">
+</p><p id="3929ebfe-d900-45bf-b725-2a5a1dfd6eae" class="">*** 주변에서 이런 경우를 들은 경험이 있고 캔디스님도 가끔 겪는 일이라고 하십니다.</p><p id="faf4a9a8-8098-4be8-95a0-22ffc226cfda" class="">
+</p><div id="c76c9971-49df-46ea-9a15-5b352aa16c47" class="column-list"><div id="5e6e64d7-0a3a-463e-8265-9954dc05e59f" style="width:53.333333333333336%" class="column"><figure id="a0c3b66f-147e-4e01-9230-986cdc280a75" class="image"><a href="20230315%20%E1%84%8F%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B5%E1%84%89%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2036fc15aa26a94a9f943c1d9e136e5e0e/Screenshot_2023-03-16_at_3.22.39_PM.png"><img style="width:531px" src="20230315%20%E1%84%8F%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B5%E1%84%89%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2036fc15aa26a94a9f943c1d9e136e5e0e/Screenshot_2023-03-16_at_3.22.39_PM.png"/></a><figcaption>시안</figcaption></figure></div><div id="e475e2ac-96e7-475c-a012-6c545997b4ef" style="width:46.666666666666664%" class="column"><figure id="ffd8feab-8726-4893-a6cf-2d48d3efd02d" class="image"><a href="20230315%20%E1%84%8F%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B5%E1%84%89%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2036fc15aa26a94a9f943c1d9e136e5e0e/Screenshot_2023-03-16_at_3.23.00_PM.png"><img style="width:375px" src="20230315%20%E1%84%8F%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B5%E1%84%89%E1%85%B3%20%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A1%E1%84%82%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B4%20%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A3%E1%84%80%E1%85%B5%2036fc15aa26a94a9f943c1d9e136e5e0e/Screenshot_2023-03-16_at_3.23.00_PM.png"/></a><figcaption>완성본</figcaption></figure></div></div><p id="9b75d2ab-cc2a-486d-be7a-6d9fcc1102b1" class="">
+</p></li></ol><ol type="a" id="22830d3c-d6c4-44cf-8b16-3343edacfbb1" class="numbered-list" start="3"><li>웹툰** 작가들의 과로 문제와 불공정 계약<p id="e041226e-cc7e-4ac6-9bd4-6392cfc97d79" class="">웹툰 작가들의 과로 문제가 심각한 상황이다. 심각한 나머지 유산하거나 과로로 돌아가시는 경우도 종종 있다. 거의 모든 웹툰 작가들이 고질적인 건강 문제를 달고 산다. 캔디스님은 만성적으로 손목이 아프다고 한다. </p><p id="1f5284bd-df90-482e-befc-80f1dcced8fe" class="">원인은 여러 가지이다. <span style="border-bottom:0.05em solid">우선 우리나라 웹툰 특성상 흑백인 컨텐츠가 거의 없기 때문에 채색에 품이 많이 들어간다.</span> 또 플랫폼이 성장하면서 웹툰 한 화당 요구하는 컷의 개수가 점점 늘어나는 상황이다. 본인 스스로의 작품에 대한 책임감도 원인이 될 수 있다. 작가들은 본인의 작품이기 때문에 한 컷이라도 대충 넘기려 하지 않기 때문이다.</p><p id="823e31a9-c2ad-42ee-80b1-c37628fd9ee9" class="">여기에 담당자들의 몰이해와 웹툰 시장의 미성숙도 한 몫 한다. 우리나라 사람들이 돈 내고 웹툰을 보기 시작한지 얼마 되지 않았다. 아직 웹툰 업계가 성숙하지 못해서 불공정한 계약서가 나오는 경우가 많다. 여기에 매여 소위 “젊음을 낭비하는” 신인 작가들이 많다고 캔디스님은 말했다. 부족한 작가 복지, 플랫폼의 과중한 수수료 문제*도 바로 여기에서 비롯된다. 이렇게 작가들의 이익이 충분히 반영되지 못하는 시장 상황에 대항하여 작가들끼리의 연대가 막 시작됐고 점차 목소리를 높여가는 중이라고 한다.</p><p id="dfb76102-afb7-4069-b696-4d290d70fd32" class="">
+</p><p id="a8d3ded2-9b9b-4328-b445-c13d4bbf2a1f" class="">* 작가:회사 = 5:5면 작가에 좋은 편. 캔디스님은 작가7:회사3</p><p id="81616711-09b3-4eb4-a97d-d33fd32e216f" class="">** 웹소설 일러스트 작가들의 경우는 다르다. 대체적으로 작가님들이 작업량과 보수에 대해서 만족하시는 편이라고 한다. </p></li></ol></li></ol><p id="aafe7d37-6ea6-44a6-805a-814078386537" class="">
+</p><ol type="1" id="551899f7-4e9f-4cad-b611-d7f89b177a8f" class="numbered-list" start="4"><li>hooking point <ol type="a" id="97f87a42-d71c-442e-a695-33a6d46d215c" class="numbered-list" start="1"><li>래퍼런스 작업의 애로사항<p id="0b9ea70d-1ce2-438f-ac9f-a6ef9b0b1b39" class="">로맨스 판타지물 표지의 경우 매회 의상을 교체해야 하는데 의상 디자인 과정이 어렵다고 한다. 심지어 로맨스 판타지 일러스트레이터의 경우 의상 디자이너라고 불릴 정도로 의상 작업이 많은 비중을 차지한다. 인터넷에서 다양한 의상을 찾아볼 수는 있지만 저작권 문제에 연루되면 큰 문제가 발생하므로 결국 참고만 할 뿐 작가 스스로가 의상을 다시 디자인해야 한다. </p><p id="9576d24e-9b64-4ea7-8e51-68ba4bee06b9" class="">비슷한 문제는 평소에 그리지 않던 형태의 캐릭터를 그릴 때에도 발생한다. 늘 아름다운 미형의 캐릭터만 그리다가 그렇지 않은 외모의 형태를 그릴 경우 힘들다는 것이다. 캔디스님은 때문에 <span style="border-bottom:0.05em solid">저작권 문제를 해결해줄 수 있는 이미지 재생성 툴에 많은 관심을 보였다****</span>. 특히 UI가 불편하지 않다면 50만 원, 월 구독으로는 만 원까지 지불할 의사가 있다고 밝혔다. </p><p id="8ae6359e-3d97-459f-a048-a0aec767671d" class="">
+</p><p id="6953612e-4c0c-4711-833f-c37489579227" class="">****”진짜 이런 거 만들어주시면 꼭 연락주세요”라고 말씀하셨습니다.</p><p id="453f2967-0f9c-4a2a-a377-03fc9add5c7b" class="">
+</p></li></ol></li></ol><ol type="1" id="bef83032-6e5b-43e9-ba81-405eb796b55e" class="numbered-list" start="4"><li>생성 AI의 경험 및 인식<p id="47dc37f1-0a12-4ecf-b552-93c47677091e" class="">캔디스님은 <a href="http://novelai.net">novelai.net</a> 이라는 서비스를 구독하는 중이다. 월 만 원에 프롬프트를 통해 완성된 그림을 생성해 낼 수 있는데 오류가 많아서 결국 원하는 그림을 정확하게 만들지 못했다고 한다. 손가락이 6개가 나오는 경우 같은 문제는 수정에 큰 품이 들지 않아서 괜찮다. 문제는 머리카락, 악세서리처럼 디테일한 형태가 중요한 경우 완성도가 떨어진다는 것이다. 때문에 결국에는 작가 본인이 그리는 것이 더 낫겠다고 판단했다. </p><p id="dcd9e70c-a1d9-4697-b9f7-550d66c3b19f" class="">AI가 생성한 그림은 그 자체로도 허들이 된다. 업계에서는 작가가 그림을 스스로 그리지 않고 AI를 이용한 경우 바람직하게 보지 않는 풍토가 있다고 한다. 이러한 문제들 때문에 캔디스님은 AI가 생성한 그림을 참고용으로만 사용하고 있을 뿐이다.</p><p id="49cd2a22-1dc0-4415-92f5-48e5a8d10c29" class="">만약 AI가 생성한 그림을 수정하는 데에 큰 수고가 들지 않는다면 자신의 그림체를 학습해서 만들어주는 서비스가 있다면 매우 좋을 것이며 이는 다른 작가들도 마찬가지라고 한다. 특히 <span style="border-bottom:0.05em solid">작가들은  SketchUp과 같은 툴에 몇백 만원씩 사용하기 때문에 생산성을 위한 툴에 돈을 아끼지 않는 편이라고 한다</span>. 캔디스 님은 퀄리티가 괜찮다싶으면 200~300만 원까지 지불할 의사가 있다고 한다. 월 구독제의 경우 Adobe Photoshop과 같은 툴과 비교해 지불하겠다고 했다.</p><p id="5273b9c4-4256-4b6d-aab6-7ddc9beb578d" class="">
+</p></li></ol><hr id="363f45a2-485f-4ba3-8d6e-7c76276d6eba"/><p id="65daced9-146b-4064-aae6-3ce588a9b272" class="">기타</p><p id="df83319a-783d-4667-8ea2-84fbdb001451" class="">다른 분들 소개도 해주신다고 합니다!</p><p id="605ca1d9-1a60-4a7d-926c-ca22470054a9" class="">평소에 유키즈, 보기에 아름다운 k팝 무대 여돌 영상을 보신다고 합니다</p><p id="f2ec4624-4e48-42da-a2a7-88bd4b07a28d" class="">
+</p></div></article></body></html>

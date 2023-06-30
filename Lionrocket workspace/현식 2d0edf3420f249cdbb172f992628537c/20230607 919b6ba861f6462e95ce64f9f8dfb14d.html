@@ -1,0 +1,709 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>20230607</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="919b6ba8-61f6-462e-95ce-64f9f8dfb14d" class="page sans"><header><h1 class="page-title">20230607</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-red">todo</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><ul id="7337d038-c929-4456-837c-cd8e22ad6a7e" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">업무일지 공유 → 개인적인 목록 용도  </span><div class="indented"></div></li></ul><ul id="3bd98685-2844-47dc-bc3b-5b3ed1d63d81" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">  → 모두가 공유하는 목록 용도 / 업무 일지 중 금주 현안 정리  </span><div class="indented"></div></li></ul><hr id="a01dbcda-871f-4ded-87ed-0d789da74831"/><h3 id="bd485db3-6c3c-4540-8af6-6c65611bbd49" class="">Must</h3><div><ul id="8e357412-9d38-455e-b9aa-cab940abe4da" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">기리님 오늘 생일!!!!</span><div class="indented"></div></li></ul><ul id="037e2f8d-9d17-4dd7-870e-9676eed1edc9" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">다음주에도 드랍이면 계약 연장 힘들다는 부분 전달하기</span><div class="indented"></div></li></ul><ul id="118ecafc-d310-4031-ae45-06d6bdcebd95" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">이게 무슨 소리이신지 <a href="https://lionrocket.slack.com/archives/C05457W2KJN/p1686099994835459">https://lionrocket.slack.com/archives/C05457W2KJN/p1686099994835459</a></span><div class="indented"></div></li></ul><ul id="ab9d642b-50dc-42b5-bf53-2adf442af1f5" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">이상한 사무실 제안 내용</span><div class="indented"></div></li></ul><ul id="868095f0-b0f2-4dfb-97ee-aa95450cbbcf" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">sales account 준비 여부  </span><div class="indented"></div></li></ul><ul id="44d3ac7f-616c-436f-9db5-2e735e9f1bcf" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">왜 웹소설 콜드콜 콜드 메일 답변이 없었는지 원인 분석하기   </span><div class="indented"><ul id="9c51ab1b-cb41-496a-9694-6917d3dc4314" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">해결방안 → AI 반감 해결 방안  </span><div class="indented"></div></li></ul><ul id="f858f4ab-a35a-4bf2-b19a-b210b8036884" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">만약 B2B로 하고 싶으면 관리기능이 들어가야 ← 다시 정리해서 얘기하기  </span><div class="indented"><p id="e465a83a-fdec-4f8f-8a01-c024c0d1f507" class=""><a href="notion://www.notion.so/906555993ba34e2e9bbd12c720a49a04#5004de12378642b1bb9cdbffd92cadc9"><strong>웹소설 작가 커뮤니케이션을 위한 콘티 기능</strong></a> ← 이게 바로 관리기능</p></div></li></ul></div></li></ul></div><p id="75c59b29-108d-46bf-9108-73e1d6d66918" class="">
+</p><p id="8926a0dc-e2ce-40b4-9b99-026e70953721" class="">[production x b2b]</p><div><ul id="46816efc-1ab1-4cad-bf66-d6af3e73758f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"> 에서 배경 조절 가능여부 체크하기 → 준형님</span><div class="indented"></div></li></ul><ul id="929edacd-d612-4ddc-b7b8-52ad969993ca" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">배경 생성  → 어떻게 할지 미정임. 단독으로 할 수 있을 거 같은데 병렬적으로 할 수 있을 거 같다.    </span><div class="indented"></div></li></ul><ul id="ed9bfa58-8f19-411a-bec5-44b9f06ff5d7" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">월/목 미팅이면 목요일 언제 미팅하는 걸로? </span><div class="indented"><p id="8648d0f6-9846-4c4a-b2cc-833569451f41" class="">→ 3시 → 필요시에만 하는 걸로 바뀜</p></div></li></ul><ul id="ab90342d-450c-4c2c-bc54-338f6dc3a1ca" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">들으면서 정리할 수 있는 방법이 뭐가 있을까</span><div class="indented"><p id="0b741e71-d35b-4426-a372-4426099c2670" class="">– 회의가 끝나면 모든 정리가 끝나있어야 함 </p><p id="7261aa76-7909-4304-b6d2-e74c2109080d" class="">– 필요한 곳에 정리가 완료 </p><p id="8361f147-052d-4eba-9380-37439907ab36" class="">– 필요한 곳에 정리 내용이 sync block으로 되어 있어야</p><p id="2220bf25-f514-4212-9ad2-555a42fe0bcc" class="">
+</p><p id="51e35728-3300-4017-8ca1-a1602b54c0c3" class="">– 앞으로 할 일의 목적을 명확히 하기 위해 OKR 보드에 죄다 적는다 </p><p id="0b7ab428-e035-4c09-a9a5-e5bbfdbaedfb" class="">– OKR보드는 할 일을 담는 보드 하나, 한 일을 담는 보드 이렇게 두 개로 구성 </p><p id="2ec34f03-1c81-4c79-a26c-7e113bd466b7" class="">– 틈틈이 한 일 OKR 보드에 하고 있는 일을 추가한다 </p><p id="294f9bee-3ce5-48e8-8b09-e8ca081b6236" class="">– 회의는 할 일 OKR 보드에 한다 </p><p id="63136753-03a1-4948-b2af-f6ad955e6504" class="">– 할 일 OKR 보드는 회의때만 건든다 </p><p id="91ffed4f-e90a-4ce7-b6fa-e0b94e85893e" class="">
+</p></div></li></ul><ul id="0c664ee0-cdfa-4470-be58-5b1b777dab77" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">All-hands 프로덕션 길드  </span><div class="indented"><div><ul id="d574c5b6-b59c-485b-a861-052a355f450f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">이미 완성형인 게 아님?</span><div class="indented"></div></li></ul></div></div></li></ul><ul id="252b516c-5b2c-4671-be22-ee8877982c00" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">All-hands 프로덕션 길드  </span><div class="indented"><div><ul id="c6225154-e5f6-43e9-b7a7-d584ab520ec9" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">그럼 프로덕션 길드랑 테크 길드랑 하는 일이 뭐가 다른 거지?</span><div class="indented"></div></li></ul></div></div></li></ul><ul id="a0ec7db2-0a30-4ea3-a8c4-cc23d7c68d5f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">UI가 중요하다고 생각하신다면 그리고 결국 포토샵같은 툴로 가야한다고 동의하신다면 그럼 일단 프리토타이핑을 하는 게 중요할 거 같은데</span><div class="indented"><figure id="a14910d5-55b8-4ef4-9d0b-4f4c8da10772"><div class="source">https://lionrocket.slack.com/archives/C05457W2KJN/p1684139032325159</div></figure></div></li></ul></div><p id="4327fa72-e292-441c-aea1-366b366dc352" class="">
+</p><p id="7f4deda7-449a-477c-9fef-9aa57ac3b261" class="">[승제님께 천천히 확인]</p><ul id="52da7224-ec0f-46f4-9681-1800ad2b6858" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">업무 범위 명확히  <a href="my%20R&amp;R%202eba89a178594108a30d214de6753fe6.html">my R&amp;R</a> </span><div class="indented"></div></li></ul><ul id="25b24228-1ca6-4473-971b-90a99a9314bc" class="bulleted-list"><li style="list-style-type:disc">무조건 웹소설만 (두번째 OKR 업무만)</li></ul><ul id="57adafa9-49dd-4170-ae2d-32cd673de344" class="bulleted-list"><li style="list-style-type:disc">웹소설(두번째 OKR 업무) 1순위 나머지 2순위</li></ul><p id="f9524ae2-6a04-440f-9170-30eba0be1a5c" class="">
+</p><hr id="187e5126-19c4-46e6-bcfc-acef412fc50c"/><ul id="89e15643-ff9b-47bf-8597-20b7511cde85" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">슬랙체크</span><div class="indented"></div></li></ul><ul id="c07c11a6-27b0-405f-b63f-b86d960c6f0b" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">메일 체크</span><div class="indented"></div></li></ul><ul id="d790c3fa-9c76-4e64-90c6-758f05463324" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">인바운드 대응</span><div class="indented"></div></li></ul><ul id="0d3b0048-9048-4416-a461-357de7c718e0" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">뉴스레터 체크</span><div class="indented"><ul id="66186361-061b-449c-9585-3983df757b3b" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">전사메일</span><div class="indented"></div></li></ul><ul id="53ab8fed-88bb-4bd0-8123-b38eccebb52b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">카톡</span><div class="indented"></div></li></ul><ul id="2a2b1f6e-9150-4e82-8efd-5054887677d9" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">메일</span><div class="indented"></div></li></ul><ul id="a9a9bc37-27dd-4d86-bc44-b1aa0ac02044" class="toggle"><li><details open=""><summary>읽을 것들</summary><figure id="693c66ce-b400-401b-8a03-77f84c0d8a6b"><a href="https://brunch.co.kr/@rightbrain/191" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">6.신뢰할 수 있는 정보로 연결하는 Finder(1)</div><div class="bookmark-description">15. 모바일 서비스 트렌드 : 성공적인 서비스가 갖는 15가지 특징 | 서비스 트렌드는 최근 3년 이내 출시된 모바일 서비스들이 기술 발전, 생활환경 변화, 세대 전환 등 트렌드에 발맞춰 사람들의 삶에 밀접하게 관여하고 능동적인 관계를 형성해 나가며 사용자들의 생활과 능력을 심화시키는 모습을 15가지의 역할로 분석하여 소개합니다. 모바일 서비스 트렌드 &gt; 소셜 네트워크 서비스의 심화 &gt; 6. 사용자들이 신뢰할 수 있는 정보로</div></div><div class="bookmark-href"><img src="https://t1.daumcdn.net/brunch/static/icon/ios/brunchstory/ico_bi_180.png" class="icon bookmark-icon"/>https://brunch.co.kr/@rightbrain/191</div></div><img src="https://img1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/aD5m/image/f-XtqciKPlmU7pFu_TSI8UMIpBs.jpg" class="bookmark-image"/></a></figure><figure id="ea8fcb4f-cb5e-4f7b-9c22-2dca4a243a5f"><a href="https://brunch.co.kr/@roysday/479" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">일머리는 보통 10가지를 아냐모르냐에 달려있는데.</div><div class="bookmark-description">그것은 아래와 같다. | 일머리란게 있어요. 이게 공부머리, 눈칫밥 뭐 이런 것과는 약간 달라요. 일을 시키는 입장이기도 하고 직접 일을 하기도 하고, 또 남이 일하는 걸 보는 입장이기도 한데 이 과정에서 보통 일머리란 게 뭘 의미하냐에 대해 고민해보게 되죠. 어떤 사람하고 일할 땐 뭔가 상쾌한데, 어떤 사람하고 일하면 눈물이 차올라고 고갤 들기도 하고.  뭐 꼭 협업이 아니더라도</div></div><div class="bookmark-href"><img src="https://t1.daumcdn.net/brunch/static/icon/ios/brunchstory/ico_bi_180.png" class="icon bookmark-icon"/>https://brunch.co.kr/@roysday/479</div></div><img src="https://img1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/A1Z/image/yHQjhlZNDcU9It9CT7LJuxHkbyA.jpg" class="bookmark-image"/></a></figure><figure id="4833bcdb-9ffc-4479-9b17-d065c47ec93f"><a href="https://www.youtube.com/watch?v=dOdKwrIQkDs" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">달라진 PM 직무 트렌드 따라잡기 | 스킬과 기술로는 부족한 이유</div><div class="bookmark-description">안녕하세요, 똥곰입니다🐻
+올해로 4년차를 맞이하며 이전과는 다른 관점에서 커리어 고민을 시작했는데요. 오늘은 그 이야기를 나누어 보았습니다 🙂
+여러분은 요즘 어떤 커리어 고민을 하고 계신가요?
+
+#프로덕트매니저 #프로덕트오너 #PM #PO #서비스기획
+#데이터분석 #UIUX #커리어 #자기계발 #이직 #취업 
+
+Song : danmoo - hope you&#x27;re happy
+Video link : https://www.youtube.com/watch?v=22sWYHLWq-M&amp;t=0s</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/f0a2d141/img/favicon_144x144.png" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=dOdKwrIQkDs</div></div><img src="https://i.ytimg.com/vi/dOdKwrIQkDs/maxresdefault.jpg" class="bookmark-image"/></a></figure><figure id="46fa05c5-2d4f-4cfc-9c1f-1179185788ae"><a href="https://brunch.co.kr/@sparkplus/563" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">일 잘하는 마케터의 트렌드 조사 방법</div><div class="bookmark-description">[스플X와이즈앱·리테일·굿즈] | INDEX1. 마케터의 숙명 &#x27;트렌드 조사&#x27;2. 일 잘하는 마케터의 트렌드 조사 방법    - 모니터링으로 트렌드 발견하기    - 데이터로 트렌드 검증하기      (1) 트렌드 분석 서비스      (2) 데이터 분석 서비스   마케터의 숙명 &#x27;트렌드 조사&#x27;  현업에 종사하고 있는 마케터라면 &#x27;트렌드 조사&#x27;는 빼놓을 수 없는 필수 업무입니다. 팬데믹 이</div></div><div class="bookmark-href"><img src="https://t1.daumcdn.net/brunch/static/icon/ios/brunchstory/ico_bi_180.png" class="icon bookmark-icon"/>https://brunch.co.kr/@sparkplus/563</div></div><img src="https://img1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/5KoQ/image/wRJpXCK-VkfApz4ZyrZIqLtY2qo.jpg" class="bookmark-image"/></a></figure></details></li></ul></div></li></ul><p id="357374ef-501e-411e-9f2f-2021a6c528c1" class="">
+</p><p id="6a3050b7-b5ba-4320-97f9-ba6ead90c829" class="">
+</p><p id="726ef628-74ac-499a-951e-d696c1eefddf" class="">[오늘 당장 급한 거]</p><ul id="71d5770d-a2e6-48f5-ba06-2bf56fc12ac1" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">트래픽 확인하는 그 사이트가 어디있더라</span><div class="indented"></div></li></ul><ul id="fb850004-7693-4b74-bf95-cd5b189560b0" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">이지아트 컨택 “추후 의뢰 내역, 가격 책정 내역과 작업 시 중간과정을 공유하실 수 있는 공유 파일과 양식을 만들어서 공유해드리겠습니다!”</span><div class="indented"><ul id="77722135-a3c5-48b2-956a-42309d37979b" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">질문</span><div class="indented"><ul id="8539d5f0-1bf6-4c1c-9e8d-06deaca563f5" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">에러는 없었는지?</span><div class="indented"><ul id="f4e8b880-8d27-4b72-b4c6-fd340162fb03" class="bulleted-list"><li style="list-style-type:disc">흐리게 나오는 문제 → VAE<ul id="25f4eb74-54c9-435e-a724-aa237c0d8daf" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid">또 다른 원인은 없는지?</span></li></ul></li></ul><ul id="9d6d3924-b85d-48a6-8668-96e9a0c4b9c4" class="bulleted-list"><li style="list-style-type:disc">실사 그림체가 가능할지<ul id="13ee8bed-be9b-4f4a-8eb2-5906f099b1f8" class="bulleted-list"><li style="list-style-type:circle">일반인, 기업체, 홈쇼핑, 광고 이미지 등 다양하게 많이 들어오는 중</li></ul><ul id="f2e1d422-5340-43b4-84e0-1ab03c8e8439" class="bulleted-list"><li style="list-style-type:circle">지금은 미드저니로 실사 이미지 작업하는 중<ul id="ba825bc0-2112-40b8-bcf9-6e521f0f8d17" class="bulleted-list"><li style="list-style-type:square">그러나 미드저니에서 한계가 있는 부분이 있음<ul id="ef7e7c2e-2507-4f68-8587-ab452130a1b7" class="bulleted-list"><li style="list-style-type:disc">구도 조절 등</li></ul></li></ul><ul id="3a68f471-4af3-4824-b18a-7d9d8f645dde" class="bulleted-list"><li style="list-style-type:square">스테이블 디퓨젼 류 실사 의뢰가 들어옴<ul id="b967d416-d32b-48a2-ae81-4e3debf68dc5" class="bulleted-list"><li style="list-style-type:disc">이런 그림체로 해달라 → 알고보니 스테이블 디퓨전이더라</li></ul><ul id="5b1b57ae-ae75-42c3-97d0-5435783d43fe" class="bulleted-list"><li style="list-style-type:disc">거의 모든 civitai 에서 찾아서 사용</li></ul><ul id="4eccd1e4-efd7-49d1-9057-89f27bb946fe" class="bulleted-list"><li style="list-style-type:disc">로라 올리는 방법 다시 알려주시면 civitai 로라 올리는 방법 좀 더 쉽게 연구해보겠다 <span style="border-bottom:0.05em solid"><a href="https://www.notion.so/ver-1-0-6840199bff364f91bbbff2a9e0aee5ac?pvs=21"><img class="icon" src="https://www.notion.so/icons/cherries_red.svg"/>웹소설 표지 제작 키트 ver 1.0</a></span></li></ul></li></ul></li></ul></li></ul></div></li></ul><ul id="c58f2f06-be09-4377-8a96-af2d860668e2" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">더 필요한 기능은?</span><div class="indented"><ul id="e55e407d-c2cb-4165-a846-dedd0c22ed99" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">포킷 그림체라든가</span><div class="indented"><p id="65f02b51-c7e5-4653-81c2-315db3e62435" class="">→ 애니 잘 뽑음. 만화체 그림체 잘 뽑음</p><p id="de6f2769-6a0f-43b1-b958-c29421b0dfe4" class="">→ <span style="border-bottom:0.05em solid">근데 실사는 한계가 있어서 지금은 필요가 없음</span>. 사진처럼 보여야 하는데</p><p id="95a3afa5-cdfc-402f-b457-21bccf67115b" class="">→ 지금은 없음</p></div></li></ul><ul id="e2c30b27-1008-415e-8f46-dbe0b2656519" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">다른 그림체라든가</span><div class="indented"><p id="77804c6e-10c5-4864-bc5c-bd8f1bae7374" class="">→ 실사 그림체 → <span style="border-bottom:0.05em solid">업로드 편하게</span></p></div></li></ul><ul id="13d16bf3-bffd-4014-b916-c6d9904865c5" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">한글화라든가</span><div class="indented"><p id="999eb29f-9669-4756-b1a1-2fa6268c8ade" class="">→ <span style="border-bottom:0.05em solid">한글화 필요</span></p></div></li></ul><ul id="62c4aec8-2f94-4b17-912b-5216ae3f8aa0" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">NSFW 필터 스위치라든가</span><div class="indented"><p id="91f84980-1378-4aa3-93b2-c8666c910d83" class="">→ <span style="border-bottom:0.05em solid">따로 언급 없으셨음</span></p></div></li></ul></div></li></ul><ul id="40cef856-a0d4-43c3-a00c-b8cc8fcd5b5b" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">의뢰자 아이디와 작품 아이디를 따로 받으심?</span><div class="indented"></div></li></ul><ul id="84995ef2-a216-4dc2-b213-1bba7ffafefc" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">작업 중간 과정이 어떻게 되심?</span><div class="indented"></div></li></ul></div></li></ul><ul id="5937f917-fdb6-461f-9042-e8fc32946408" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">공유 페이지 구성 및 전달</span><div class="indented"><ul id="4ea66742-fd77-4dd3-96bd-c29dc75a5738" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">의뢰자 ID, 작품 ID, 의뢰내역(홍보 목적 공표 동의 여부 포함), 가격 책정내역, 옵션내역 공유 시트</span><div class="indented"></div></li></ul><ul id="99a0b3fd-cd37-46ad-9a1b-bb8ffe6eba66" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">작품 ID, 중간 진행 과정 담는 폴더</span><div class="indented"></div></li></ul><ul id="adc5046c-97c8-4882-9df3-49fab826505d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">목적체크</span><div class="indented"><ul id="974abc47-99c8-4409-ae14-9cae40df5acb" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">가설 검증을 위한 옵션 내용</span><div class="indented"></div></li></ul><ul id="de15608e-a229-4b7c-ac3d-8e2a20235325" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">레퍼런스</span><div class="indented"></div></li></ul><ul id="b8d438b5-bc0e-49e5-86df-fa015da808fc" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">스킬업</span><div class="indented"></div></li></ul></div></li></ul><ul id="27e5a511-10ab-40ec-a741-eb12bdb4e6a6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">이 과정이 귀찮으시다면 실례지만 계정을 빌려주세용</span><div class="indented"></div></li></ul></div></li></ul><ul id="ec71d8e7-9fc5-4d04-946b-58c73063517b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">슬랙 채널 개설</span><div class="indented"></div></li></ul></div></li></ul><ul id="ae7b7726-f3f6-4293-aa35-61cb958cbe82" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">웹라이터스</span><div class="indented"><ul id="ea6f60bd-5109-4d44-a693-5e048abde6b8" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">웹라이터스에서 보낸 <a href="https://docs.google.com/document/d/1bEhbEn1dlEpOK8rX_yniKziE_5q5Xfx29WV3PnUB-gU/edit">이 파일</a> 다시 확인해보기</span><div class="indented"></div></li></ul><ul id="b88d8928-f7ae-4a4c-b8e2-a23f114e478c" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">웹소설 미팅 오늘 안에 언제 가능?   </span><div class="indented"></div></li></ul><ul id="310773ec-e353-4398-9e83-6273ab848bb7" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">줌미팅 링크 전달</span><div class="indented"></div></li></ul></div></li></ul><ul id="a01d386c-2d50-4fc3-896a-260aa0d41e15" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">BIMM  </span><div class="indented"><ul id="2bbc6d44-0359-4827-a63c-354f9fe7e4f4" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">미팅 요청</span><div class="indented"></div></li></ul><ul id="401f567d-a3f3-411e-9cfa-1b3598109e49" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">비용이 얼마나 들까? 리소스는 충분할꺼? @정진님 @B2C 길드</span><div class="indented"></div></li></ul><ul id="d0bf51cb-ac38-4812-b0c4-6f3ca22d983d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">논의 결과 Bimm에r게 전달</span><div class="indented"></div></li></ul></div></li></ul><ul id="c02453a9-d7c5-409f-b537-7613cdfa2464" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">승제님 면접에 초대 → 내가 할 수가 없네?</span><div class="indented"></div></li></ul><ul id="120acce9-9ee3-41dc-baef-14ebf1016cec" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">대원씨아이 논의내용 정리해서 슬랙에 공유  </span><div class="indented"></div></li></ul><ul id="e509f644-8cf9-4d6c-b92b-86a9e333b4fa" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">저저번주 주간보고서</span><div class="indented"></div></li></ul><ul id="c3f1ad64-1ba4-4a45-a05b-8833c4e4a7fe" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">저번주 주간보고서</span><div class="indented"></div></li></ul><ul id="e4761197-4292-4954-88a2-0d0f7d772b73" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">웹소설 표지 제작 키트 deadline check @윤서</span><div class="indented"></div></li></ul><ul id="aafd3fa2-afa4-4143-a013-1388b97857e0" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">배경 생성  → 어떻게 할지 미정임. 단독으로 할 수 있을 거 같은데 병렬적으로 할 수 있을 거 같다.    </span><div class="indented"></div></li></ul><ul id="b921a625-5d7d-4023-865f-2dc90cd8f44f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">반감에 대한 근본적 해결 방안 </span><div class="indented"><ul id="ecf8266d-d902-4d90-9265-9425c2df3b44" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">읽을 자료 </span><div class="indented"></div></li></ul><figure id="ec5db56c-72f6-4946-841c-f587b22ca0e1"><a href="https://www.nocutnews.co.kr/news/5954774" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">&quot;작가도 독자도 반대하는 AI 웹툰, 돈 버는 건 누구?&quot;</div><div class="bookmark-description">■ 방송 : CBS 라디오 &lt;오뜨밀 라이브&gt; FM 98.1 (20:05~21:00) ■ 진행 : 채선아 아나운서 ■ 대담 : 조석영 PD, 신혜림 PD ◇ 채선아&gt; 더 밀도 있게 알아볼 이슈 짚어보는 뉴스 탐구생활 시간입니다. 인공지능과 웹툰에..</div></div><div class="bookmark-href"><img src="https://www.nocutnews.co.kr/favicon.ico" class="icon bookmark-icon"/>https://www.nocutnews.co.kr/news/5954774</div></div><img src="https://file2.nocutnews.co.kr/newsroom/image/2023/06/06/202306061034275392_0.jpg" class="bookmark-image"/></a></figure><p id="e148beb1-47e4-4e92-ae98-163a3d562dbc" class="">  </p><ul id="e0844020-b1cf-48c9-a805-f7f4dfa58126" class="bulleted-list"><li style="list-style-type:disc">[근본적인 문제] 데이터 소스의 주체와 인공지능으로 인해 부정적으로 영향 받는 주체가 같고 일정 집단으로 특정이 된다는 점</li></ul><ul id="511a4392-4a96-49bc-8bec-dbc7d5050af7" class="bulleted-list"><li style="list-style-type:disc">[근본적인 문제] 데이터 소스의 주체와 인공지능으로 인해 부정적으로 영향 받는 주체가 같은데 이로 인해서 이익을 보는 집단과는 다르다는 점<ul id="3a998856-c968-4be5-a3a6-744e943e0295" class="bulleted-list"><li style="list-style-type:circle">고객을 작가로 돌려야 하지 않나</li></ul></li></ul><ul id="6a5227f9-6f8d-44a9-be2b-85f3f6a56217" class="bulleted-list"><li style="list-style-type:disc">Black box → 누구의 그림이 어떻게 영향을 줘서 새로운 그림을 만들게 해줬는지 불명확<ul id="209624fa-dcbe-4017-82c2-2f0ebfe0fa0a" class="bulleted-list"><li style="list-style-type:circle">그림체 추적 기술  </li></ul><ul id="eafaac02-95dc-4845-8397-ca88069ae5a0" class="bulleted-list"><li style="list-style-type:circle">모든 조건이 동일하고 다만 이 그림이 학습 데이터에 없었을 때 출력물이 얼마나 달라질 것인가<ul id="bfddb73e-8178-4174-af17-c9504646cd47" class="bulleted-list"><li style="list-style-type:square">학습 데이터 변화에 따른 그림 생성 결과물 차이 시뮬레이션이 가능해야</li></ul><ul id="d37f993f-8f25-4114-a630-d5ecb975c255" class="bulleted-list"><li style="list-style-type:square">특정 그림들 사이의 유사도를 수치적으로 판단할 수 있어야 (같다 다르다 판별 모델로 Logitech을 만들도록 하면 될 듯)</li></ul></li></ul></li></ul></div></li></ul><ul id="33b330c1-8439-437c-a6e6-408b66e81bf0" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">얼마만큼 리소스를 쏟는 것이 적절한지 미리 계산하기</span><div class="indented"><p id="b4bc00fc-54fc-4375-aa1b-3a3d1568540c" class="">개발할 것인가 말 것인가</p><p id="c20c9e92-250a-4f4b-a216-a62e4b5f88b3" class="">이거는 적절한 BM이 아님</p><ul id="03747937-fb11-4651-89d5-8cea8506402d" class="bulleted-list"><li style="list-style-type:disc">내부 작가에게 돈을 줘서 만든 표지로 돈을 번다?<ul id="88f681ab-939e-42a7-939c-518b495dfa22" class="bulleted-list"><li style="list-style-type:circle"> 작가에게 준 돈보다 표지 팔아서 번 돈이 더 많지 않는 한 가치가 더해지지 않은 거임</li></ul><ul id="0122d175-2cfb-4d64-bb98-55edd8679ee7" class="bulleted-list"><li style="list-style-type:circle">그리고 이런 식으로 가치가 더해지지 않는다면 고객이 웹소설 작가가 됐든 웹소설 표지 작가가 됐든 수익을 만들지 못함</li></ul><ul id="18544394-4f8f-40ab-afa6-0b3e58f7c951" class="bulleted-list"><li style="list-style-type:circle">이런 식으로 가치가 더해지지 않는다면 지금 이 상태에서 더 개발발이 이뤄져야 한다는 뜻임</li></ul></li></ul><ul id="71bec14b-b33c-4834-8486-3c89caf719aa" class="bulleted-list"><li style="list-style-type:disc">근데 아마 시장 규모라든지 개발 공수를 들어서 개발하지 말자고 할 것임<ul id="28a9e840-4128-400d-a8f0-08ee588573af" class="bulleted-list"><li style="list-style-type:circle">그렇기 때문에 확실하게 수치화된 정보를 가지고 결정하자</li></ul><ul id="d2438237-89b8-43fa-be04-a02786a8fd28" class="bulleted-list"><li style="list-style-type:circle">더 개발할지 말지를 판단하기 위한 추가 조사 여부를 결정하기 위한 자료를 만들겠다 (decision tree)</li></ul></li></ul></div></li></ul><ul id="caa80369-8093-48e8-af4d-d466d5146485" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">(다음주까지) AI작가 운영계획 스케줄링 (김현식) </span><div class="indented"><figure id="6d45aa8d-3dd9-4fa4-8509-202494a9cbc5"><div class="source">https://lionrocket.slack.com/archives/C058N600H3R/p1684988733050399</div></figure></div></li></ul><ul id="5eb304f7-828d-452d-81d0-8bc61266fc47" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Ai 작가 구인 다른 곳에 내가 직접 올리기  </span><div class="indented"></div></li></ul><ul id="85a8e6e1-8a84-4735-a101-ac8797850773" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">경쟁사 리서치</span><div class="indented"></div></li></ul><ul id="6d6a639f-468c-470a-8a09-085ffd5c0956" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">공유 폴더에 올리기</span><div class="indented"><ul id="5809a346-81fa-4a5e-bd5c-f6d7c119907f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">지금까지 체결된 MOU, NDA 문서 모두 모아서 구글 드라이브에 올리기</span><div class="indented"></div></li></ul><ul id="606538c9-477f-4f7c-80a6-bcf6f00444fb" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">이외 공유 폴더 들어갈 만한 거 폴더 만들어서 올리기</span><div class="indented"></div></li></ul></div></li></ul><p id="ab3e65e2-9bd2-4e3c-8cbc-f1aff260c352" class="">
+</p><p id="af7f6d95-fca1-45a4-b7a8-feb7b3096ede" class="">[이번주 내로 해결]</p><ul id="4a5925c9-2c04-41ef-bf07-2380f6ee65c4" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">대원씨아이 진행 결정 여부 확인 위해 전화드리기</span><div class="indented"></div></li></ul><div><ul id="775880e0-7d89-4e97-bef2-5fe2f13ab2f7" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">포킷 쓰는 사람들 중에 작가로 추정되는 사람들?</span><div class="indented"></div></li></ul><ul id="876fa1af-9cfc-4310-a76e-5148b53a979f" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">작가님 오는대로 웹소설 슬쩍 맡기기  <a href="https://lionrocket.slack.com/archives/C058N600H3R/p1684918390104299">https://lionrocket.slack.com/archives/C058N600H3R/p1684918390104299</a></span><div class="indented"></div></li></ul><p id="ee4a023d-3cbc-4f7d-8c05-6809f38c1430" class="">→ 인턴 선정된 분에게 웹소설 슬찍 여쭤보기.<a href="%5BMOU%20NDA%20%E1%84%92%E1%85%A7%E1%86%B8%E1%84%8B%E1%85%B4%E1%84%8C%E1%85%AE%E1%86%BC%5D%E1%84%8E%E1%85%A5%E1%86%BC%E1%84%80%E1%85%A1%E1%86%BC%E1%84%83%E1%85%A2%20AI%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%A9%E1%86%BC%E1%84%83%E1%85%A9%E1%86%BC%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%209007aeeda3da4940b9d373875d93de72.html"> 웹소설 표지 제작 지원 역할도 있으니까</a></p></div><ul id="8473a1bc-dc18-4508-bbd5-bb2a969c4b8f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">제발 노션 정리좀 하자 </span><div class="indented"></div></li></ul><p id="efd93a00-1199-48a8-a762-7d7b037a6fbb" class="">
+</p><ul id="d9d26b6c-ea05-49fa-9782-64de2687df20" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">신제품 전략을 위해서 필요한 가설의 필요충분조건 집합</span><div class="indented"><p id="b5acf1a8-3da7-4873-adba-a0f884e4268b" class="">– 디마에서는 STP, 4P는 안보는 거임? </p><p id="3eb86ed0-21ec-41ac-bf0f-4d97957f905d" class="">– 관련해서 마이너 때 작성한 문서들 다시 리뷰하며 찾아보기</p></div></li></ul><div><ul id="691c0a86-71aa-4c58-bd74-d4d5f29cc722" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">어떤 정성적/정량적 자료가 필요하고 부족한지  </span><div class="indented"><ul id="025672bf-8901-4723-95b1-796e6230128c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="https://docs.google.com/spreadsheets/d/1ktgucwh1pM4THvj_1381Ai0Po_zhvsRmEJlWd49L6Eg/edit#gid=130748610">https://docs.google.com/spreadsheets/d/1ktgucwh1pM4THvj_1381Ai0Po_zhvsRmEJlWd49L6Eg/edit#gid=130748610</a></span><div class="indented"></div></li></ul><ul id="e0410724-5899-4a0a-b3f8-64122f0159f4" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">pmf를 빠르게 검증할 수 있는 방법들 </span><div class="indented"><p id="2874cf6e-0849-40c4-bbaf-1512285cdbea" class="">file:///Users/kimhyunsik/Downloads/MiNER%20respository/html/KHS%203f3ea59205fb40ab869f4cf00fec9751/pmf를%20빠르게%20검증할%20수%20있는%20방법들%2007c14c586064488eafeb2a74b448ebf2.html</p></div></li></ul><ul id="605550f2-be2d-4365-906f-64ce92c13b2a" class="toggle"><li><details open=""><summary>details</summary><p id="f2a8bb9a-ff7b-46a6-a053-a6babd53bd89" class="">2/3분기 OKR을 달성하기 위해서 필요한 정성적/정량적 데이터</p><p id="bba559f3-f62f-481f-9f31-fffac381854c" class="">O : AI웹툰제작 솔루션 시장의 1위 기업 이미지를 획득한다.</p><p id="84485321-bdfa-48ce-9f5d-df9d478d014e" class="">KR1 : 30곳 이상의 고객사에 AI웹툰제작 솔루션을 경험( = initial demo + paidPoC)하게 한다.</p><ul id="6c3b39f0-04ac-43ac-99b9-e99aabcff6f0" class="bulleted-list"><li style="list-style-type:disc">B2B 세일즈 인프라(회사/솔루션 소개서, 잠재 고객사 리스트, <span style="border-bottom:0.05em solid">영업 전략</span>, 고객사 가이드( = 사용 매뉴얼), 운영 전략/프로세스, <span style="border-bottom:0.05em solid">가격 전략(공정별 패키징)</span>, 표준 계약서)를 구축</li></ul><ul id="036770a1-b6d7-467b-96fa-4f85ef120a8c" class="toggle"><li><details open=""><summary>backlog</summary><p id="52f8bbf2-481d-4574-a66b-565e7d2b9cbf" class="">요청사항- 제품 튜토리얼을 마련하고 end user인 작가를 대상으로 PMF를 테스트한다</p></details></li></ul><p id="b02302f6-d739-4025-a678-1f546c5b1bf3" class="">KR2 : 5곳 이상의 고객사와 솔루션에 대한 Co-Marketing 진행한다</p><ul id="9e2b36f4-f954-4995-87be-ba83d9c52715" class="bulleted-list"><li style="list-style-type:disc">고객사 측 내재화된 작가들의 Word-of-mouth에 기반한 마케팅 전략/실행 방안 수립</li></ul><ul id="82acf478-0cbc-44e8-842c-d602af6e0b10" class="bulleted-list"><li style="list-style-type:disc">인바운드 컨설팅 매뉴얼 수립</li></ul><p id="257374ca-710e-40c7-9fca-d901c64c1ddb" class="">
+</p><p id="f03dcedc-5a4f-4276-a393-71cdfb12af05" class="">O2 : 웹소설 AI표지제작 시장의 BM을 구체화하고 검증한다</p><p id="53219203-d6f7-41b0-a01c-54d17aabac67" class="">KR1 : AI작가를 운영하며 50명 이상의 인터뷰 및 설문조사로 BM을 검증한다</p><ul id="2607769a-e15b-472f-a7a8-d2f2369a07aa" class="bulleted-list"><li style="list-style-type:disc">Segmentation, Target, Positioning 및 4P 가설 구체화</li></ul><ul id="9b2693ed-1b19-45f7-8f70-e9e5e3cac7a0" class="bulleted-list"><li style="list-style-type:disc">3명 이상의 인터뷰로 Factor Analysis (또는 MDS), Conjoint Analysis 설문 설계</li></ul><ul id="ce1aeaff-826c-4145-be01-8a9d6d0c1135" class="bulleted-list"><li style="list-style-type:disc">50명 이상의 설문 응답 데이터를 바탕으로 STP, 4P 검증<ul id="dce338aa-92a5-4bc4-ac1c-4efb31c70039" class="toggle"><li><details open=""><summary>근거</summary><figure id="21c2a5b7-c643-4def-a817-2013fc22a010" class="image"><a href="20230525,%2020230526%20dba015d1f81545908143e785b0a77855/Screenshot_2023-05-24_at_5.05.55_PM.png"><img style="width:880px" src="20230525,%2020230526%20dba015d1f81545908143e785b0a77855/Screenshot_2023-05-24_at_5.05.55_PM.png"/></a></figure><p id="6217ddac-fa58-442a-9534-6f246df6a216" class="">웹소설 작가 지망생 20만명 (<a href="http://www.sisajournal-e.com/news/articleView.html?idxno=229954">출처</a>)</p></details></li></ul></li></ul><p id="df35c0cb-e48b-4629-bfee-6b2a85c6db36" class="">KR2 : 구체화된 타겟을 대상으로 50건 이상의 거래 성사</p><ul id="29c3224a-33ce-4714-8dea-58e70b9b2aec" class="bulleted-list"><li style="list-style-type:disc">크몽에서 AI 카테고리에서 “웹소설 표지”로 검색 시 노출되는 모든 작가에게 웹소설 솔루션을 제공하고 의뢰 내역, 가격 책정 내역, 옵션 내역 데이터 수집</li></ul><ul id="339b4fc5-e16c-41bc-9dc1-e958fca48546" class="bulleted-list"><li style="list-style-type:disc">크몽에서 AI 카테고리에서 “웹소설 표지”로 검색 시 노출되는 모든 작가에게 웹소설 솔루션을 제공하고 고객 대상 설문조사 요청</li></ul></details></li></ul></div></li></ul></div><ul id="3b88b4c5-b621-4276-930d-1721a78ce2f5" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">지금 테크 길드에서 만든 프로세스 판단 시 정말 고객의 니즈가 들어갔는지 확인하고 아래의 질문들 답해보기</span><div class="indented"><ul id="9022681d-17f5-446a-ba48-d451788ab4c8" class="toggle"><li><details open=""><summary>배경</summary><p id="c22b1031-35bc-41b3-ac3b-a654076b17fb" class="">고객 중심의 의사결정이 내려지지 않고 있는 듯</p><p id="b1f79263-4ca1-4b0f-b98f-06cc1a3b76f1" class="">고객과 가까운 컨택포인트 중심으로 의사결정이 내려져야 함</p><p id="8f7ad43a-06b6-47db-b4ea-1565682917ff" class="">일단 스토리작이랑 크릭앤리버는 우리가 진행하고 있고</p><p id="d1587d86-5467-4a95-956c-83f33e1c9a8c" class="">와이랩은 그럼 누가 컨택하고 있는거야?</p></details></li></ul><ul id="b950c7d8-1a27-4055-bd78-24a33c03e5c4" class="toggle"><li><details open=""><summary>질문</summary><p id="5366c776-ece1-4c57-89ca-9e8875a609ea" class="">우리 팀에서 내가 맡을 수 있는 건 둘 중 무엇일까..</p><p id="55a63d08-8329-498d-a5ec-67f7e53c0b35" class="">혹시 이미 고도화를 테크길드에서 이미 하고 있는 것인가…</p><p id="c18526da-b1a7-4528-93e4-45a18e4ee0af" class="">만약 관리기능이 필요하다면 또 다르지 않을까</p></details></li></ul></div></li></ul><ul id="7d59b152-04ee-4373-90b3-0dc1912bae13" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">이거랑 이거랑 똑같은 거 같은데?  <a href="%E1%84%8C%E1%85%B5%E1%84%80%E1%85%B3%E1%86%B7%E1%84%81%E1%85%A1%E1%84%8C%E1%85%B5%20%E1%84%83%E1%85%A9%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%83%E1%85%AC%E1%86%AB%20%E1%84%89%E1%85%A1%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%92%E1%85%AA%20%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%83%E1%85%B5%E1%84%8B%E1%85%A5%206be4d8cf0a384d7f9b6f50c73a5c9b0e/%E1%84%89%E1%85%AE%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%80%E1%85%AA%20%E1%84%8F%E1%85%A5%E1%84%86%E1%85%B2%E1%84%82%E1%85%B5%E1%84%8F%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B3%E1%86%AF%20%E1%84%89%E1%85%B1%E1%86%B8%E1%84%80%E1%85%A6%20%E1%84%92%E1%85%A2%E1%84%8C%E1%85%AE%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%89%E1%85%A9%E1%86%AF%E1%84%85%E1%85%AE%E1%84%89%E1%85%A7%E1%86%AB%20a920d2a00ad746c3ba84a45bea8dcf1d.html">수정과 커뮤니케이션을 쉽게 해주는 솔루션</a>  </span><div class="indented"><p id="5d67c66e-4c56-41b5-9904-e8ddf8d1ee7e" class="">근데 다만 패키징은 포킷 그대로 가져가기로 함</p></div></li></ul><p id="75886933-0aa9-4641-959b-8042802753c5" class="">
+</p><p id="5dd01816-e664-4c66-afb6-1e41c1545c75" class="">
+</p><ul id="e44f98f9-a8c7-4cc2-98e2-8b7c3c8e21e8" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">우리 고객사로 캐스퍼 같은 곳도 괜찮지 않을까? <a href="https://jihyuk0895.postype.com/series/1040764/죽음이그대를속일지라도">캐스퍼, 웹툰 자유 연재 사이트</a></span><div class="indented"></div></li></ul><ul id="e0c1d768-e719-4de2-9014-50de2130c594" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">시장의 룰을 바꾸는 방법에는 뭐가 있을까? (feat. 박경민 블루오션전략)</span><div class="indented"></div></li></ul><ul id="c529e98e-41c2-44cc-b575-8f8143b63158" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">노이즈 마케팅이 성공하기 위한 전제조건에는 뭐가 있을까?</span><div class="indented"></div></li></ul><p id="dec5eda9-b3ec-4d9e-a1bd-80924aecb063" class="">
+</p><p id="ab8778eb-827d-4ea4-b3d3-bcaff5397828" class="">[내가 볼 때 중요한 거]</p><ul id="8003e986-53ca-4b15-a442-7636f24b3769" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">@정탁 혹시 데이터베이스 정리 어떻게 하고 있음?</span><div class="indented"></div></li></ul><ul id="f22d901e-f51d-4a55-862e-0bb8caa1f816" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">product development 준비</span><div class="indented"><ul id="e5913822-7df4-47c5-bde4-fb24ba432370" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="Genvas%20development%2050a68f47f22943b18610901d9d11055b.html">Genvas development</a> </span><div class="indented"><ul id="8509b628-dd37-479e-ba48-decebd40145d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="Genvas%20development%2050a68f47f22943b18610901d9d11055b.html">AI workflow </a></span><div class="indented"></div></li></ul><ul id="f9e280c5-440d-4d70-86ba-fcee763a1f5d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="Genvas%20development%2050a68f47f22943b18610901d9d11055b.html">괜찮은 가설들</a></span><div class="indented"></div></li></ul><ul id="6c41f419-ce87-46b4-9595-590036564cda" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="Genvas%20development%2050a68f47f22943b18610901d9d11055b.html">고객 가설들</a></span><div class="indented"></div></li></ul></div></li></ul><ul id="f7c3527e-0b83-45cd-882d-e8e6a0f76c30" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">직접 들어가보는 건 어때 → 동의함  </span><div class="indented"></div></li></ul><ul id="2f5284bf-9bbb-499e-aaa0-c61c99ed443c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">웹툰 애셋 마켓들 </span><div class="indented"></div></li></ul><figure id="870f52e6-a536-4218-94aa-d77863a3190c"><div class="source">https://lionrocket.slack.com/archives/C02GN0KUW6N/p1683101863026139</div></figure><figure id="ef9b337d-5a29-498c-9932-c43e130380ff"><div class="source">https://lionrocket.slack.com/archives/C02GN0KUW6N/p1683102173790349?thread_ts=1683101863.026139&amp;cid=C02GN0KUW6N</div></figure><ul id="3a7aafe0-f8bc-4b58-995b-90bf3606c3f8" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">밑색 및 채색 </span><div class="indented"><ul id="da824334-7ae0-42bd-bddc-e70f7a8857d4" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">프로세스 <a href="https://www.notion.so/b7824369ebd84198823d1d458f9f5a42?pvs=21"><span class="icon">🎨</span>채색 관련 정리</a> </span><div class="indented"></div></li></ul><ul id="443042f9-2b6e-46aa-bdf1-8165de5ffdda" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">밑색 논의 <a href="https://lionrocket.slack.com/archives/C02GN0KUW6N/p1683524458606559">https://lionrocket.slack.com/archives/C02GN0KUW6N/p1683524458606559</a></span><div class="indented"><p id="671b0584-6a49-4d7f-9ac6-99a68ef87247" class=""><a href="https://lionrocket.slack.com/archives/C02GN0KUW6N/p1683524726183369">https://lionrocket.slack.com/archives/C02GN0KUW6N/p1683524726183369</a></p></div></li></ul><ul id="d243fbcd-7029-4c85-93d7-ba957985abc9" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">방향성 <a href="https://lionrocket.slack.com/archives/CNC6V20P6/p1683521470923819">https://lionrocket.slack.com/archives/CNC6V20P6/p1683521470923819</a></span><div class="indented"></div></li></ul><ul id="1712378a-ab53-494b-9d86-3c4af3c2b062" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">UI를 짜고 있네? <a href="https://lionrocket.slack.com/archives/CNC6V20P6/p1683597671114889">https://lionrocket.slack.com/archives/CNC6V20P6/p1683597671114889</a></span><div class="indented"></div></li></ul><ul id="a6568e11-0040-49bf-b04b-e32303b85a51" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">이거 근거가 뭐지…</span><div class="indented"><ul id="8a700d0f-ca67-4058-9404-2df57e90e43e" class="toggle"><li><details open=""><summary><a href="https://lionrocket.slack.com/archives/D04TKJ2EQ79/p1684149739907449">메시지 링크</a></summary><p id="604c75e2-cf3b-40f0-9596-345f47ba4f03" class="">저희는 기존의 방향성처럼 1) 첫번째 컷 기반으로 나머지 컷을 자동으로 밑색을 칠해주는 것과 2) 기초적으로 전체 펜터치를 수행하고, 작가에 맞게 두께감이나 질감을 조절하는 방식으로 가야 할 듯 합니다.</p></details></li></ul></div></li></ul><ul id="036c9256-c52b-44cb-b105-afa926a3462f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">영중님의 스케치to펜터치 구상 <a href="https://lionrocket.slack.com/archives/C02GN0KUW6N/p1684233868931699">https://lionrocket.slack.com/archives/C02GN0KUW6N/p1684233868931699</a> <a href="https://lionrocket.slack.com/archives/C02GN0KUW6N/p1684284070639859">https://lionrocket.slack.com/archives/C02GN0KUW6N/p1684284070639859</a></span><div class="indented"></div></li></ul></div></li></ul></div></li></ul><ul id="85b65f84-f385-465e-8451-461e1ebb5fce" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">웹툰 제작 시 자주 사용하는 프로그램 정리하기  </span><div class="indented"><ul id="fa024b93-2a12-4f63-8e08-5c09da081312" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">클립스튜디오 <a href="https://lionrocket.slack.com/archives/C05457W2KJN/p1683645765267369?thread_ts=1683450582.520489&amp;cid=C05457W2KJN">https://lionrocket.slack.com/archives/C05457W2KJN/p1683645765267369?thread_ts=1683450582.520489&amp;cid=C05457W2KJN</a></span><div class="indented"></div></li></ul><ul id="9e041869-6415-4844-8393-e66fd992645e" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">스케치업 ← 아마 배경 작업하는 경우 꼭 필요한 프로그램일 거임</span><div class="indented"></div></li></ul><div><p id="1eb78a24-32d4-4276-9f0b-6e3f6f1a36f1" class="">클립스튜디오랑 협력을 해보는 건 어떨까</p><p id="b0e89aa4-25df-49f5-ab7f-3c1ea2c36a7f" class="">스케치업이랑 협력을 해보는 건 어떨까</p><p id="f314ae1d-6e11-4807-80fb-f027e66facfa" class="">아니면 저 툴이 하지 못하는 것을 담은 툴로 만들거나</p></div><ul id="02d7e481-94c4-4f04-a669-86a488da982e" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="https://m.blog.naver.com/kwoon/221727135199">이 사이트</a> 내용 정리하기</span><div class="indented"></div></li></ul></div></li></ul><ul id="afeff898-bcdd-4e94-8e26-51810a5ccfc9" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">승제님 구글스프레드시트 “윈윈” 시트</span><div class="indented"></div></li></ul><p id="326f98db-7131-40cb-820d-86fefc4b0b09" class="">
+</p><div><ul id="7ef98071-7634-437f-91bc-36158f843e6b" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><a href="http://160.202.162.195:19100/">http://160.202.162.195:19100</a> 써보기</span><div class="indented"></div></li></ul><ul id="d8f04e74-8962-4186-9ce7-eb21bc11003a" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">구글에서 연락처를 찾아주는 게 있다고 함</span><div class="indented"></div></li></ul></div><ul id="e0e7acf9-087b-476b-b3c2-6e5049e09dc8" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">회사들</span><div class="indented"><ul id="1ade76cb-5103-4d53-b273-47b29f5373f3" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">렌사</span><div class="indented"></div></li></ul><ul id="e87031e1-a798-407c-b445-3fea2966bfa1" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">런웨이</span><div class="indented"></div></li></ul><ul id="00961438-46db-47a9-8506-21707b045c83" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">뤼튼</span><div class="indented"></div></li></ul><ul id="562aa0d3-fddb-4c03-a145-1a1bed5fc822" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">NOVELAI</span><div class="indented"></div></li></ul></div></li></ul><p id="1daa2b84-94de-46ed-821b-d2d1cb9b8bff" class="">
+</p><p id="d4b17a04-5143-4b86-9641-9b74b65fde36" class="">[miscellaneous]</p><ul id="4001fd43-b770-4379-b910-6e734e23a699" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">내가 마지막이라면 에어컨 OFF</span><div class="indented"></div></li></ul><ul id="6adacef4-3568-4abd-9c83-5fbcb2ec5587" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">퇴근 전 내일 캘린더 체크</span><div class="indented"><ul id="57dbe2d3-257f-4c18-9c76-a4c65e12284b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">앞으로 밥 먹을 사람</span><div class="indented"></div></li></ul></div></li></ul><ul id="5ad663d4-d7d6-4b10-9621-018e17d48764" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">캔바에서 미리 캔버스로 옮기고도 편집이 가능할까</span><div class="indented"></div></li></ul><p id="eff4e274-6a9f-4a43-8d1d-b46054e34223" class="">
+</p><hr id="34de1086-2295-4757-bbf6-6506e6f22d32"/><p id="81153f05-098e-4e65-b725-b20f9a3bb6c5" class="">[반복되는 일]</p><ul id="739dfd7e-59ad-497e-a1b9-c1d500a9ed30" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">매일 메일 체크</span><div class="indented"></div></li></ul><ul id="cac0bca1-21f1-4daf-8983-93b401cf3b7d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">뉴스레터 다시 보기</span><div class="indented"><ul id="8023d778-a65a-452f-a6aa-0dc90ca97d9c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">카톡</span><div class="indented"></div></li></ul><ul id="54b95997-cc7c-4145-a536-bdbd88dfe6e3" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">전사메일</span><div class="indented"></div></li></ul><ul id="a7d74899-ea41-4c21-bf9c-0e8c9510d83d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">메일</span><div class="indented"></div></li></ul></div></li></ul><ul id="58eab875-4f9e-4c54-8aac-3e9d9148e91b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">인바운드 대응</span><div class="indented"></div></li></ul><ul id="8a071fe9-7953-420a-bf8f-225b7cd70b14" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">경쟁사 리서치 일주일에 1번 목</span><div class="indented"></div></li></ul><ul id="f7641d3b-ffe7-48a6-b90b-4ffc73826a50" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">노션 정리</span><div class="indented"><ul id="178298eb-5cba-443c-89b8-db988b73a7b8" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">니즈만 따로 모아놓기</span><div class="indented"></div></li></ul><ul id="23e6981f-b520-4692-8b14-096a2d2e9dbd" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">price 따로 모아놓기</span><div class="indented"></div></li></ul><ul id="2ad40325-29ee-48dc-ad1a-4ef8502e6284" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">우리 아이템 모두 정리하기</span><div class="indented"></div></li></ul></div></li></ul><p id="de2d49d7-4ccc-42ce-a7cc-e6725eba0eaf" class="">
+</p><hr id="f6c8a669-6576-408f-835e-b01451131166"/><p id="5dd937c3-977d-4195-9d4b-97eb5dc4d31e" class="">
+</p><p id="9a738b47-b31b-41cf-940d-96bd17ae224f" class="">[나와 회사의 이익을 위해서]</p><ul id="f5aa6f07-6957-4297-a87b-d1e5daa1ee10" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">크몽 그 기획이 실제 작가가 걱정하는 문제를 해결해주는가?</span><div class="indented"></div></li></ul><ul id="25323df6-caa7-48f3-b827-243a0b003df1" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">프리토타이핑에서 어느정도의 기획상의 디테일이 필요한가?</span><div class="indented"></div></li></ul><ul id="48ef621c-3905-4942-bf39-fd3d30b20623" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">what is B2B2C?</span><div class="indented"></div></li></ul><ul id="e1c70142-8e2b-4325-9ccd-70b89fe76ac6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">라우드소싱의 UI를 살펴보자</span><div class="indented"></div></li></ul><ul id="3ac3c057-c53f-492d-9839-e2c0449e95f2" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">스토리작이 플랫폼인가??</span><div class="indented"></div></li></ul><ul id="5af87aa0-f82e-4ebc-9689-c4ae78f8b706" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">BD가 뭐하는 사람이지?</span><div class="indented"></div></li></ul><ul id="12c40c69-d565-4214-98d8-24e72b556055" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">메신저의 내용을 한 눈에 문서화하는 UI</span><div class="indented"></div></li></ul><ul id="8fb674eb-82e1-4d18-845e-53abb53fe320" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">명분 만들기</span><div class="indented"><ul id="122f6f15-407a-4ada-b10d-a8a58c94acfd" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">회사의 목표로부터 시작해서 마인드맵 그리기</span><div class="indented"></div></li></ul><ul id="6244c0e0-398d-44d9-bf70-52fb2661756d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">제품중심적 사고방식이란?</span><div class="indented"></div></li></ul></div></li></ul><ul id="380a75c2-5bb0-4e4c-a840-7d693e292577" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">@승제 </span><div class="indented"><ul id="b4f3c418-a096-49c8-b36f-05b711e92159" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">법적, 규범적 문제 회피를 위한 최상의 방안</span><div class="indented"></div></li></ul><ul id="3482a5e2-73eb-4be8-8cec-488d71c6ba9f" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">스토리작과 라로 플러그인 긍정적 반응</span><div class="indented"></div></li></ul><ul id="7451f43b-bc62-499e-adb5-4d9faab7764a" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">라로 플러그인 관련 B2B2C 본격적 진행 어떨지?</span><div class="indented"></div></li></ul><ul id="12c8fd58-8a07-4bbd-a044-0fd68b6897e7" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">다른 기획들까지 모두 적용하여 포괄할 수 있음? → 아니 앞단만</span><div class="indented"></div></li></ul><ul id="a59c0952-3f75-4405-86fe-ddf1f7d76d5b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">고객 반응이 필수적 근데 돈이 없음</span><div class="indented"></div></li></ul><ul id="600ef8e1-bd3a-4786-a87a-384bde570c0a" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">내가 나머지는 다 해놨음</span><div class="indented"></div></li></ul></div></li></ul><ul id="0491dc8c-1bc8-4de0-ab28-072dd157f433" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">@승환</span><div class="indented"><ul id="8d860894-cdf4-4aa9-9c8b-905849ea17de" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">위기는 곧 기회</span><div class="indented"></div></li></ul><ul id="ca01ca71-71d6-444a-b94a-b05c292b3ecb" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">법적, 규범적 문제 회피를 위한 최상의 방안</span><div class="indented"></div></li></ul><ul id="a74de4b1-0672-49ea-ae0d-1ded9ea5c7cd" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">우리는 저작권 이슈 없는 서비스로 성장중</span><div class="indented"></div></li></ul><ul id="abd3c764-34a6-41d8-a797-04011fd470bf" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">근데 이거 누가 채가지 않도록 우리가 빨리 액션해야 함</span><div class="indented"></div></li></ul><ul id="40aa65ac-2598-453a-835c-5f90cde174e3" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">기술적 해자는 GPT와 SD를 연결하는 새로운 임베딩 어떻소?</span><div class="indented"></div></li></ul><ul id="2a8fbc66-756d-407a-89d4-0a09fa4cc9e7" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">고객 반응이 필수적 근데 돈이 없음</span><div class="indented"></div></li></ul><ul id="ac885356-8d5b-4a8c-86dc-9cba83834e73" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">내가 나머지는 다 해놨음</span><div class="indented"></div></li></ul><ul id="24d9583a-4c6c-4b96-a71f-01c6d49d5663" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">문제점</span><div class="indented"></div></li></ul><div><ul id="74b2ef2a-3d19-4473-ab06-9f91e9156383" class="bulleted-list"><li style="list-style-type:disc">라로, B, C 사이에서 오고 가는 것이 명확하지 않음</li></ul><ul id="763310a4-dadf-4ee7-a407-4b56c9366fbd" class="bulleted-list"><li style="list-style-type:disc">private 데이터는 해자가 아니다. 다른 곳으로 옮겨가면 그만</li></ul><ul id="c1f2609d-8489-447c-af44-40aa2197e99e" class="bulleted-list"><li style="list-style-type:disc">private 데이터만으로 만들 수 있는 서비스가 있다고 치자. 그래도 작가들을 대상으로 하는 AI 시장은 작다.</li></ul></div></div></li></ul><ul id="9579a035-6a41-4cb9-aea5-12c7fab90516" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">어떤 숫자를 원하는 거? @석현</span><div class="indented"><ul id="bc6bdd2e-003d-4528-8d80-d1ab679caf20" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked"><a href="https://unbounce.com/product/smart-traffic/">그 숫자 내가 만들어줄 수 있을까?</a> 현재 숫자여야 의미가 있다고 함</span><div class="indented"></div></li></ul><ul id="053ebec5-2fa8-452a-a88f-cef37b796a0c" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">직무 이동 주장하기 전에 내가 직접 실험해볼까?</span><div class="indented"><ul id="e75edc3d-1c3b-40fe-b29a-191fed5ff22a" class="to-do-list"><li><div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">GA연동</span><div class="indented"></div></li></ul></div></li></ul></div></li></ul><ul id="4de6dc0e-7e85-48b9-8457-c1673665a346" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">어느정도 앵간치 나왔으면 Bass 모형으로 추정해보기 </span><div class="indented"></div></li></ul><ul id="4f21edca-58c2-4e4d-8ab5-d507d35d819b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">끝나면 바로 waveon 요금제 취소하거나 회사 법인계정으로 돌리기</span><div class="indented"></div></li></ul><div><p id="f2018933-346c-4c6e-b774-328b0900a0b7" class="">의사결정자에게 의사결정을 촉구하거나 설득하려면 그 결정에 필요한 모든 근거(수치 포함)가 준비된 상태에서 마주해야 함</p><ul id="b0d253f8-08a2-4fdd-ad72-526bff94058f" class="bulleted-list"><li style="list-style-type:disc">내가 무슨 얘기를 하는지 알고 하기<ul id="d1a6fa13-77e1-4007-9851-9cf047eb64c2" class="bulleted-list"><li style="list-style-type:circle">대충 전략이라고 얼버무리지 말고 프로덕트 전략인지, business development 전략인지 등등</li></ul><ul id="fa88c692-d558-4be2-ae2f-ee4a443e287c" class="bulleted-list"><li style="list-style-type:circle">프로덕트 전략의 경우 lean canvas를 참고하기</li></ul></li></ul><ul id="b7b0c507-4e53-4e9c-905b-0824a29a1835" class="bulleted-list"><li style="list-style-type:disc">그 자리에서 설득할 자신이 없다면 서류로 정리해서 서면으로 전달하기</li></ul></div><hr id="aa789e46-8653-4aac-910c-0920dce84997"/><h3 id="12224f74-09a5-4ce0-b6a5-e6a44b5e243a" class="">Can</h3><ul id="ea174055-20b1-4ec3-bd2e-0cb7f4a31117" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">밥 얻어먹을 사람</span><div class="indented"><ul id="2c699440-ace2-476c-919a-22fb984ea981" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">준수님</span><div class="indented"></div></li></ul></div></li></ul><ul id="3be34d3e-19d2-44b0-9517-fa396338d885" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">피드백 달라</span><div class="indented"></div></li></ul><ul id="8315e3b8-035d-487b-9371-ccecbad7750c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">DAILY ISSUES</span><div class="indented"><ul id="9fa2c15c-d8c4-4739-a719-29bbfac61ba9" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">공유된 노션 파악하기</span><div class="indented"><p id="688b08a8-4f7b-4d7f-84a9-a0175b5dd606" class=""><a href="https://www.notion.so/8a6a7896ca5042f787d069de3a407f72?pvs=21"><span class="icon">💵</span>B2B_Dashboard</a> </p><p id="fbfa1de6-0204-4ebd-8e6e-fce663ed98b4" class=""><a href="https://www.notion.so/8997bcc1a7764b5f9231a2c1f446d84b?pvs=21"><span class="icon">💵</span>세일즈팀/제품팀 기술 지원하기(소통 체계)</a> </p></div></li></ul></div></li></ul><ul id="c6068daa-bcd0-485b-b9fc-58d6a26108b2" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">승호님 등과 밥먹기</span><div class="indented"><p id="4b6593ea-e0d9-4260-830a-a59a65d9fbd0" class="">What’s it like to work with him?</p></div></li></ul><ul id="bd37b16b-bd07-46ed-b515-4ed61478d298" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">hyeon 속편히 터놓고 얘기해도 됨?</span><div class="indented"></div></li></ul><p id="01c2abe5-53f1-4847-98a4-67393389ded8" class="">
+</p><p id="1b8b399b-e5f0-4217-9534-9e7dce36f0f6" class="">[다음 KPR 미팅 전까지] (~다음주 내로)</p><ul id="02864aaa-9602-4591-a8ee-7cb9a050f4b8" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">KPR 기업 조사 </span><div class="indented"></div></li></ul><ul id="849e9d27-070d-4011-b2d2-1b12bc5fade1" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><span style="border-bottom:0.05em solid">제공 가능한 아이디어?</span></span><div class="indented"><ul id="9f7ff84a-4481-44c3-ab36-3d28969e505b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">이모티콘 전략 recap</span><div class="indented"></div></li></ul><ul id="e125ee6f-829f-41bc-86d2-6eafdb942a90" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><span style="border-bottom:0.05em solid">이모티콘: 특정 캐릭터를 유지한 일관된 커뮤니케이션 전략</span></span><div class="indented"></div></li></ul><ul id="bd127255-07a2-4549-94b0-bbbf87af75be" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><span style="border-bottom:0.05em solid">고객 페르소나 데이터화: 데이터를 통한 고객 행동 패턴 파악</span></span><div class="indented"></div></li></ul></div></li></ul><p id="2b8d8e26-3db2-4599-bf04-6c88d32f304a" class="">
+</p><ul id="9641f01c-3249-46a9-aa25-6e08dd8a4619" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">take a look at Generative AI cases</span><div class="indented"><ul id="87b5a496-65ed-40e0-8b08-9a42c996946d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="https://www.notion.so/AI-fc66f14a19f3421a8564c616513692ac?pvs=21">해외 생성 AI 적용사례</a> </span><div class="indented"></div></li></ul><ul id="5204ddac-f485-4016-9e69-f41a08a35e97" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">gpt powered micro products</span><div class="indented"><figure id="1ce1c33b-6976-4b4e-b05d-7e4c1a379be8"><a href="https://gpt-apps.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GPT-3 Apps • GPT-3 Apps</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/pory/image/upload/v1674517928/production/public/63c6d34ce5f8f00008707ac4/gpt-micro-product-faviconUrl.png" class="icon bookmark-icon"/>https://gpt-apps.com/</div></div></a></figure></div></li></ul><ul id="75ad2797-b57d-41d2-adb6-b92a025a892c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="https://www.notion.so/SaaS-B2B-by-bf26e8c9605744aa9c710a62cdc36b41?pvs=21">B2B apps</a></span><div class="indented"></div></li></ul><ul id="f8c620d6-cce5-43b8-850a-ab21e7bfd4e6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="https://lionrocket.slack.com/archives/C022N3PU5EG/p1680161822427429">check this out</a></span><div class="indented"></div></li></ul><ul id="0a9ef01f-ed15-4c9c-a69e-b61c77ad0a55" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="https://lionrocket.slack.com/archives/C01F2SRJXLK/p1680222703532449">check this out 222</a></span><div class="indented"></div></li></ul></div></li></ul><ul id="14982bfd-c633-4510-b855-204590a66c90" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">새로 도착한 newsletters</span><div class="indented"><ul id="f13ca60a-7578-4c8b-8658-d41ff07e04b2" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">email</span><div class="indented"></div></li></ul><ul id="d6942838-4a20-475e-b8c7-6886e0711251" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">reader app</span><div class="indented"></div></li></ul><ul id="321a05e0-e9e9-4fab-b626-11a5ca71d00c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">카톡 newsletter</span><div class="indented"></div></li></ul></div></li></ul><ul id="d2614a2f-90e4-4a18-b2ef-d6cdf91b5d9d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked"><a href="https://lionrocket.slack.com/archives/C01F2SRJXLK/p1680139963657019">stable diffusion으로 만든 영상과 그 워크플로우</a></span><div class="indented"></div></li></ul><ul id="a53a16fd-ae79-4212-a69d-ddf25a347c57" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">노션 비투비 영업팀 대시보드 정리하기</span><div class="indented"></div></li></ul><hr id="6fbb3bc4-424c-4ecd-b829-8bfbd5bbeab4"/><h3 id="4c65937f-d3e9-4d0f-b443-f903aa8defe5" class="">Later</h3><p id="2b577f62-770b-4324-a0d3-53029cb151d5" class="">[금요일 이후]</p><ul id="fb73ef2d-5f43-4938-b9f3-adb93e6e6eca" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">게임 업체 대상 제안 내용 정리</span><div class="indented"></div></li></ul><ul id="f1cf19c2-9d67-4a60-abdd-d90ff2305cbb" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">게임제작사/게임스튜디오 컨택 리스트</span><div class="indented"></div></li></ul><p id="93d603c5-3e25-4c60-8103-325028bedeeb" class="">
+</p><p id="8c1b0aad-96a3-4fa6-8341-e4754dfa9bbe" class="">[지금 하고 있는 게임 쪽 끝나면]</p><ul id="1f13e650-d1e2-45c5-b90d-395293e27cc1" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">(광고 콘티 제작자 → CD 인터뷰)</span><div class="indented"><ul id="4501398a-b3ab-4082-921b-26661e87dee5" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">인터뷰 준비 - 배경 조사</span><div class="indented"></div></li></ul><ul id="c1e53674-b226-497e-8ff1-b8c70534d08b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">인터뷰 대상 컨택</span><div class="indented"></div></li></ul><ul id="26837f4e-dc04-443b-bb56-9738b7f653ba" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">인터뷰 대본 준비</span><div class="indented"></div></li></ul></div></li></ul><p id="4e25f97f-d9ff-43ab-8573-a36dfae0817c" class="">
+</p><ul id="cc3a3123-4f71-4f84-83d0-724b8bc5d50d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">혹시 야근한 거 휴가로 가능?</span><div class="indented"></div></li></ul><p id="34536e91-8d17-4f12-b4a4-1f0a0b0a80c6" class="">
+</p><p id="1b1e9746-3fff-4d19-bfc9-99a4151fb2d9" class="">
+</p><p id="5f8e689b-e3b7-42ae-ae8c-9876a44b277b" class="">
+</p></div></article></body></html>

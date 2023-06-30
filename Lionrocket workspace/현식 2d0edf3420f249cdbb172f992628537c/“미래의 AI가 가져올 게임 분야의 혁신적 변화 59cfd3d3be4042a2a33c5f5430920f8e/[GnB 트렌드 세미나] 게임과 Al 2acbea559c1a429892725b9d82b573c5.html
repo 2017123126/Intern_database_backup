@@ -1,0 +1,775 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>[GnB 트렌드 세미나] 게임과 Al</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2acbea55-9c1a-4298-9272-5b9d82b573c5" class="page sans"><header><h1 class="page-title">[GnB 트렌드 세미나] 게임과 Al</h1><p class="page-description"></p></header><div class="page-body"><p id="7d4cd28d-1595-4b80-86cb-38ce78596cff" class="">
+</p><h2 id="791efdf0-77f0-4e6b-81f5-b38801702a0b" class=""><span style="border-bottom:0.05em solid">What happend in AI in 2022?</span></h2><p id="ec2665a4-a208-4662-b4bf-e061428a6185" class="">
+</p><div><ul id="1504247f-b5e9-4ec9-a982-f0807e11db42" class="toggle"><li><details open=""><summary><a href="https://twitter.com/DrJimFan/status/1607746957753057280">Jim Fan on Twitter: &quot;TOP 10 AI spotlights, from a breathtaking 2022&quot; / Twitter</a></summary><ul id="4279dbe3-5603-4233-bec2-d2c575010587" class="toggle"><li><details open=""><summary>Text → Image</summary><ul id="43d83462-31a6-4f09-a4b5-587c8b43fead" class="bulleted-list"><li style="list-style-type:disc">DALL-E 2: first large-scale Diffusion Model. OpenAI proprietary</li></ul><ul id="319fac72-85c4-4768-bb6f-a8438e95399f" class="bulleted-list"><li style="list-style-type:disc">Stable Diffusion: open-source. Stability AI + RunwayML. V.2.1 on single GPU</li></ul><ul id="11ddf403-5d03-4966-8fb2-31dc09792367" class="bulleted-list"><li style="list-style-type:disc">Imagen: Google proprietary</li></ul></details></li></ul><ul id="8a8af264-eab2-4226-93dd-8eb27aeb7faf" class="toggle"><li><details open=""><summary>Text → Text</summary><ul id="faf462d4-486b-4d67-87db-ee9bd2dc6449" class="toggle"><li><details open=""><summary>ChatGPT: GPT-3.5 + RLHF</summary></details></li></ul></details></li></ul><ul id="1a90ceba-f862-4aab-99a8-8939adbcea18" class="toggle"><li><details open=""><summary>Text → Robot</summary><ul id="735639ce-8587-42f5-8ff0-711abf4a3203" class="toggle"><li><details open=""><summary>Google RT-1</summary><figure id="aa6a569b-4233-4778-9a0b-27c461fa0382"><div class="source"><a href="https://twitter.com/DrJimFan/status/1602776866380578816">https://twitter.com/DrJimFan/status/1602776866380578816</a></div></figure></details></li></ul></details></li></ul><ul id="7c5e12f9-93a6-4021-9a28-2c45106b7e38" class="toggle"><li><details open=""><summary>Text → Video</summary><ul id="ccc01ac5-74d9-4d9d-b709-50bb82fcba90" class="toggle"><li><details open=""><summary>Meta Make-A-Video</summary><figure id="3ad53e3d-6111-4f8c-8acd-edbfcdac7524"><div class="source"><a href="https://twitter.com/deviparikh/status/1575506287009226752">https://twitter.com/deviparikh/status/1575506287009226752</a></div></figure></details></li></ul><ul id="7960e54f-f455-4735-83f4-0f1508d24b3f" class="bulleted-list"><li style="list-style-type:disc">Google Imagen Video</li></ul><ul id="74a70712-f8bf-401b-83d5-2a877a4948ad" class="bulleted-list"><li style="list-style-type:disc">Google Phenaki</li></ul></details></li></ul><ul id="74560d27-a91a-48ae-9c62-5bd089910c68" class="toggle"><li><details open=""><summary>Text → 3D</summary><ul id="1fabce07-8d9e-43bf-aed7-fb49322069b4" class="bulleted-list"><li style="list-style-type:disc"><a href="https://dreamfusion3d.github.io/">DreamFusion (Google)</a></li></ul><ul id="3e65ca74-163d-4e68-90fd-f45698bafd1b" class="bulleted-list"><li style="list-style-type:disc">Get3D, Magic3D (NVidia)</li></ul><ul id="2961ea07-d6f4-4671-b471-443d3ed0a54e" class="toggle"><li><details open=""><summary>Point-E (OpenAI)</summary><figure id="8b69faa1-a6c5-4d23-a490-9f645318d2cc"><div class="source"><a href="https://twitter.com/DrJimFan/status/1605175485897625602">https://twitter.com/DrJimFan/status/1605175485897625602</a></div></figure></details></li></ul></details></li></ul><div><ul id="25f40027-361e-4614-969a-17c4a585d3f7" class="toggle"><li><details open=""><summary>AI playing games</summary><ul id="289750b7-0bbe-44b6-8277-46f8952b5bef" class="toggle"><li><details open=""><summary>MineDojo (NVidia): AI playing Minecraft (’22.11)</summary><figure id="1e6192fc-a0e9-4faf-8d05-510839301830"><div class="source"><a href="https://twitter.com/DrJimFan/status/1595459499732926464">https://twitter.com/DrJimFan/status/1595459499732926464</a></div></figure></details></li></ul><ul id="4a8bf66d-2e12-49c6-9ef2-81ad10074117" class="toggle"><li><details open=""><summary><a href="https://openai.com/research/vpt">Learning to play Minecraft with Video PreTraining - OpenAI</a> (’22.6)</summary></details></li></ul><ul id="ba46be50-6124-4d0e-b3fd-bf8bdd6ee6d7" class="toggle"><li><details open=""><summary>CICERO playing Diplomacy (Meta) (’22.11)</summary><figure id="9df8f9be-6153-4f92-ac08-7f2c2d321b0f"><div class="source"><a href="https://twitter.com/MetaAI/status/1595075884502855680">https://twitter.com/MetaAI/status/1595075884502855680</a></div></figure></details></li></ul><ul id="a35ff319-5749-45ec-bdb0-88145ce59e33" class="toggle"><li><details open=""><summary>Agent to play Diplomacy (DeepMind) (’22.12)</summary><figure id="ed5c98a9-16dc-42da-919c-1d7a52d43cd0"><div class="source"><a href="https://twitter.com/DeepMind/status/1600160847518584832">https://twitter.com/DeepMind/status/1600160847518584832</a></div></figure></details></li></ul><ul id="bfbb5529-e1fc-4173-affc-cb097d64bdf3" class="toggle"><li><details open=""><summary>DeepMind DreamerV3 to collect diamonds in Minecraft (’23.1)</summary><figure id="36427bf8-da01-48ca-8598-25f4662977fa"><div class="source"><a href="https://twitter.com/deepmind/status/1613159943040811010">https://twitter.com/deepmind/status/1613159943040811010</a></div></figure></details></li></ul><ul id="6fbe1876-8fe1-4cbe-8585-3528a1c762b5" class="toggle"><li><details open=""><summary>Nexto RL agent (’23.1)</summary><figure id="33016b35-eb02-4a62-a24e-048611509e6b"><div class="source"><a href="https://twitter.com/xiao_ted/status/1613657870918381568">https://twitter.com/xiao_ted/status/1613657870918381568</a></div></figure></details></li></ul></details></li></ul></div><div></div><ul id="7d07ecc0-003b-4d2d-8361-3c5c2ccb6289" class="toggle"><li><details open=""><summary>Audio → Text</summary><ul id="45b12ace-2dc3-4181-bcfe-5c0ac31bd616" class="bulleted-list"><li style="list-style-type:disc"><a href="https://openai.com/blog/whisper/">Whisper (OpenAI)</a></li></ul></details></li></ul><ul id="db5dc48a-b4e9-4715-875e-9596c82c5b09" class="toggle"><li><details open=""><summary>Text → Audio</summary><ul id="3ddb16c3-a776-4223-9287-1e54c142e45d" class="toggle"><li><details open=""><summary>VALL-E (Microsoft) (’23.1)</summary><figure id="f09340ab-6345-4f26-b994-ed0b4df4e373"><div class="source"><a href="https://twitter.com/DrJimFan/status/1611397525541617665">https://twitter.com/DrJimFan/status/1611397525541617665</a></div></figure></details></li></ul></details></li></ul><ul id="87f9e2dc-a748-4f23-b345-542bab0e6fa9" class="toggle"><li><details open=""><summary>Bio</summary><ul id="6ff5a754-abbf-4240-996b-250ae1955415" class="bulleted-list"><li style="list-style-type:disc">AlphaFold ‘protein universe’ (DeepMind)</li></ul></details></li></ul><ul id="4ce07001-f64f-437f-baff-c4890b397bf3" class="toggle"><li><details open=""><summary>Animation</summary><figure id="55261232-c15c-4a03-bcfa-207b190bb6f3"><div class="source"><a href="https://twitter.com/angrypenguinPNG/status/1613594169334980608">https://twitter.com/angrypenguinPNG/status/1613594169334980608</a></div></figure></details></li></ul></details></li></ul></div><p id="fc46fc86-91f7-4986-9e81-242b1d76268b" class="">
+</p><div><ul id="56f1563d-1a9f-48da-96a2-d1e94a050b56" class="toggle"><li><details open=""><summary>What is happening in 2023?  Already. (as of ‘23.6)</summary><ul id="561649cc-e6b6-43c8-8110-1e34971b73f5" class="bulleted-list"><li style="list-style-type:disc">Search war: Bing+ChatGPT4, Google Bard+PaLM2, … <del>NeevaAI</del>, You.com</li></ul><ul id="91ea0125-4351-4061-a79a-e71fd2de7340" class="bulleted-list"><li style="list-style-type:disc">Chat agents: ChatGPT, Bard, <a href="https://scale.com/blog/chatgpt-vs-claude">Anthropic Claude</a>, LAION Open Assistant</li></ul><p id="19cabc8f-a535-42e0-91f2-c2dbc000bb26" class="">
+</p><ul id="73fd04fc-41e1-4ac6-8fcd-7fa65526d2e8" class="toggle"><li><details open=""><summary>Multi-modal LLM</summary><p id="cedd0974-bf91-4438-a8ae-59dce4f319f1" class=""><a href="https://twitter.com/omarsar0/status/1630392643602599937">Microsoft Kosmos-1</a> (2.28)</p><p id="d49ea01f-61d0-4cd6-9bfd-ace7339e88ea" class=""><a href="https://ai.facebook.com/blog/segment-anything-foundation-model-image-segmentation/">Meta Segment Anything Model (SAM)</a> (4.5)</p><p id="0fa39474-6910-48d0-b57b-30375b29804f" class=""><a href="https://ai.facebook.com/blog/imagebind-six-modalities-binding-ai/">Meta ImageBind</a> (5.9)</p></details></li></ul><ul id="054d8bd4-b2e8-4230-b8ff-789c960b7062" class="toggle"><li><details open=""><summary>Audio</summary><ul id="cc905a75-7cb6-4f61-8852-42c675cfddc3" class="bulleted-list"><li style="list-style-type:disc">OpenAI Whisper</li></ul><ul id="510d4329-ddaf-433a-8f9d-de1ea7ea88bb" class="bulleted-list"><li style="list-style-type:disc">Google MusicLM (text-to-audio) (’23.5)</li></ul><ul id="ef62816d-e959-4515-88ba-89a4bf669ac0" class="bulleted-list"><li style="list-style-type:disc">Meta MusicGen (text-to-music) (’23.6)</li></ul><ul id="53777403-2b4d-49a4-9da7-d88deb514cfa" class="bulleted-list"><li style="list-style-type:disc">Meta MMS (TTS+STT for 1,000+ languages) (’23.5)</li></ul><ul id="6ca12c35-b87b-414d-a3d6-f8412ca9003c" class="bulleted-list"><li style="list-style-type:disc">Eleven Labs (text-to-speech)</li></ul></details></li></ul><ul id="8fd03581-c3f8-4fec-8f8f-f03d4fdd9552" class="toggle"><li><details open=""><summary>3D</summary><ul id="73247276-9620-458a-b817-3a9d4e4a517a" class="toggle"><li><details open=""><summary>Objaverse: open dataset of 1 million text-paired 3D objects (3.23)</summary><figure id="db5f8a85-0e6b-4a73-a585-32d151c17949"><div class="source"><a href="https://twitter.com/mattdeitke/status/1638608472525897728">https://twitter.com/mattdeitke/status/1638608472525897728</a></div></figure></details></li></ul><ul id="cc1b4601-6255-4f4d-af8c-c150f4cd3abd" class="toggle"><li><details open=""><summary>Zero-1-to-3 (image-to-3D object) (3.21)</summary><figure id="74fc4244-7c02-46d8-8963-c2b687397cca"><div class="source"><a href="https://twitter.com/_akhaliq/status/1637989614349606913">https://twitter.com/_akhaliq/status/1637989614349606913</a></div></figure></details></li></ul><ul id="fe2ccc3b-7704-4da3-8569-f34d50a5c5ea" class="toggle"><li><details open=""><summary>Versy (text-to-3D space) (3.14)</summary><figure id="211907a8-7ad1-47b1-b864-1c45a7b67bea"><div class="source"><a href="https://twitter.com/therundownai/status/1635299221870919681">https://twitter.com/therundownai/status/1635299221870919681</a></div></figure></details></li></ul><ul id="b0cc04ec-831f-4e9a-be18-bf106abb1902" class="toggle"><li><details open=""><summary>Text2Tex (text-to-texture synthesis) (3.22)</summary><figure id="99c54fff-540f-4fa2-b4d5-373833979358"><div class="source"><a href="https://twitter.com/_akhaliq/status/1638338037636538368">https://twitter.com/_akhaliq/status/1638338037636538368</a></div></figure></details></li></ul><ul id="9bc1237e-6585-4c62-910c-f9136fbaed57" class="toggle"><li><details open=""><summary>NVidia Neuralangelo (text-to-3D) (6.1)</summary></details></li></ul></details></li></ul><ul id="201f8929-a270-4fb2-97a7-1e0939ccbb6d" class="toggle"><li><details open=""><summary>Robotics &amp; gameplay</summary><ul id="e8f5b2c1-844c-44d7-a3c5-740083f19c84" class="toggle"><li><details open=""><summary><a href="https://ai.googleblog.com/2023/03/palm-e-embodied-multimodal-language.html">Google PaLM-E</a> (3.10)</summary><p id="d7730f52-a850-4ec2-bbfa-ff67f810fdd2" class=""><a href="https://twitter.com/DannyDriess/status/1632904675124035585">Danny Driess on Twitter: &quot;What happens when we train the largest vision-language model and add in robot experiences? PaLM-E, a 562-billion parameter, general-purpose, embodied visual-language generalist - across robotics, vision, and language&quot; / Twitter</a></p><p id="b25e0fa0-2ea8-4e06-a1df-3a5ceb4fe4d2" class=""><a href="https://twitter.com/peteflorence/status/1634256566907211776">Pete Florence on Twitter: &quot;PaLM-E can do things across robotics, vision, and language… let’s look at a few capabilities in detail&quot; / Twitter</a></p><ul id="1edb0518-c486-441b-a7a8-eb231fbe3c6c" class="bulleted-list"><li style="list-style-type:disc">zero-shot visual chain-of-thoughts (CoT), Multimodal CoT, many-step zero-shot CoT, multimodal reasoning with CoT, multi-image reasoning</li></ul></details></li></ul><p id="480740c8-3659-43f1-af46-64a72bfdfc51" class=""><a href="https://github.com/MineDojo/Voyager">MVidia Voyager</a> (6.2)</p></details></li></ul><ul id="8862b9e0-c187-4b89-bad3-65c1a4295434" class="toggle"><li><details open=""><summary>Game dev</summary><ul id="a961f7d5-8827-4f16-901e-31fac86c86db" class="toggle"><li><details open=""><summary><a href="http://Scenario.gg">Scenario.gg</a> (game asset gen)</summary></details></li></ul><ul id="98f2bbe6-d810-427d-8752-fa9ec76ab16c" class="toggle"><li><details open=""><summary><a href="https://twitter.com/bilawalsidhu/status/1663555530688978945">Minecraft-to-reality</a>, <a href="https://twitter.com/bilawalsidhu/status/1656106435124797441">Reality-to-Minecraft</a></summary></details></li></ul><ul id="d3c33756-60c0-49b1-b28b-f5bc5da4da7b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.theverge.com/2023/2/17/23604241/roblox-generative-ai-tools-assets-complete-code">Roblox announcing generative AI tools</a></li></ul><ul id="2aac6688-2cc5-4b9b-9227-b4f58545f290" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.semafor.com/article/02/16/2023/what-microsofts-new-ai-demo-for-minecraft-means-for-gaming">Microsoft has an internal &quot;Text to Minecraft&quot; demo</a></li></ul></details></li></ul><p id="2037d6a8-4772-4b6a-a147-ae0bf0ef08da" class="">
+</p><ul id="b6f64e4a-2451-43cf-b31a-b2d7b23344aa" class="toggle"><li><details open=""><summary><a href="https://research.facebook.com/publications/llama-open-and-efficient-foundation-language-models/">Meta LLaMA</a> (2.24)</summary><figure id="c8ef6cf4-41cb-41f7-83a8-a92fed14605c"><div class="source"><a href="https://twitter.com/AiBreakfast/status/1629349156388245507">https://twitter.com/AiBreakfast/status/1629349156388245507</a></div></figure><p id="352f32a1-27bb-483c-89dc-313ef38921b4" class="">
+</p><figure id="adbca463-5c7e-465d-9316-595ae55a9b79"><div class="source"><a href="https://twitter.com/diegofiori_/status/1630198791100923904">https://twitter.com/diegofiori_/status/1630198791100923904</a></div></figure></details></li></ul><ul id="ea321828-f27b-4e96-8192-18098522b4b5" class="toggle"><li><details open=""><summary>LLaMA → LLM’s “Stable Diffusion moment” → “LLaMA Moment”</summary><ul id="3007e37c-269f-4fcf-b1fe-3915f20a17ac" class="toggle"><li><details open=""><summary>LLaMA leak (3.8) → explosion of open-source LLM’s</summary><ul id="70726b7d-17cd-4894-b521-9d380e4fc77d" class="toggle"><li><details open=""><summary>Alpaca (3.15) → Vicuna (3.30) → Koala (4.5)</summary><p id="5682eba3-29b5-4ec5-8ce1-0bf6e3f9bca6" class=""><a href="https://twitter.com/abacaj/status/1635355642289618944">anton on Twitter: &quot;LLaMA has been fine-tuned by stanford, &quot;We performed a blind pairwise comparison between text-davinci-003 and Alpaca 7B, and found that these two models have very similar performance: Alpaca wins 90 versus 89 comparisons against text-davinci-003&quot;&quot; / Twitter</a> (3.14)</p><p id="2d8ad1d7-0db1-4f8f-bb12-8071d85c2bf2" class=""><a href="https://twitter.com/raphaelmilliere/status/1635373586818166786">Raphaël Millière on Twitter: &quot;The pace of development with LLaMA is vertiginous. If the finetuned 7B model is remotely in the same league as GPT-3.5 (text-davinci-003), can be reproduced for $100 and run on consumer laptops, this is really a turning point for LLMs (including implications for responsible use).&quot; / Twitter</a> (3.14)</p></details></li></ul><ul id="74aaa00d-ae70-49ac-9ad6-430ece4acaf4" class="toggle"><li><details open=""><summary>OpenLLaMA, OpenVicuna, OpenAlpaca, Lit-LLaMA: open-sourve impl of LLaMA</summary></details></li></ul><ul id="a3a4b440-ca5e-45aa-9bc8-41cedc922cca" class="toggle"><li><details open=""><summary>Databricks <a href="https://www.databricks.com/blog/2023/04/12/dolly-first-open-commercially-viable-instruction-tuned-llm">Dolly</a> (4.12)</summary></details></li></ul><ul id="cc586ce6-0dbd-43ce-8314-893e389b5bcc" class="toggle"><li><details open=""><summary>StabilityAI <a href="https://stability.ai/blog/stability-ai-launches-the-first-of-its-stablelm-suite-of-language-models">StableLM-65B</a> (4.19)</summary></details></li></ul><ul id="c14879e9-4e77-4fde-86d3-ce6f60d2e791" class="toggle"><li><details open=""><summary>MosaicML <a href="https://www.mosaicml.com/blog/mpt-7b">MPT-7B</a> (5.5)</summary></details></li></ul><ul id="762469bd-e890-4722-be1b-02db3105f7d4" class="toggle"><li><details open=""><summary>Together <a href="https://www.together.xyz/blog/redpajama-7b">RedPajama-7B</a> (6.6)</summary></details></li></ul><ul id="a25c7f4d-801a-46d9-beb4-9e83939b40ea" class="toggle"><li><details open=""><summary>TII <a href="https://falconllm.tii.ae/">Falcon-40B</a> (6.9)</summary></details></li></ul><ul id="15d80b3c-ba79-4b1a-bc04-b3ac13944e5f" class="toggle"><li><details open=""><summary>WisdomLM-30B (6.10)</summary></details></li></ul></details></li></ul><ul id="d8ef4004-d613-4fd1-b040-3590faa16d41" class="toggle"><li><details open=""><summary>Open-source dataset</summary><ul id="4a51c07e-49aa-4f1f-a716-8e03c8715b87" class="bulleted-list"><li style="list-style-type:disc">Together <a href="https://github.com/togethercomputer/RedPajama-Data">RedPajama</a></li></ul><ul id="f11d9a4e-01fa-47a5-be6f-85c7d911130a" class="bulleted-list"><li style="list-style-type:disc"><a href="https://laion.ai/blog/oig-dataset/">LAION OIG Dataset</a></li></ul></details></li></ul><ul id="d5f8d0ea-6976-4d68-8c25-24d6196dbfb2" class="toggle"><li><details open=""><summary>Personal LLM</summary><ul id="870d8382-b6fb-4744-91ae-008ca2a1715e" class="toggle"><li><details open=""><summary><a href="https://github.com/ggerganov/llama.cpp">llama.cpp</a> (3.8): Macbook M1/M2 → Pixel 6 → Raspberry Pi</summary><p id="80558547-e19e-49f7-9430-a3d559e6e18c" class=""><a href="https://twitter.com/zhansheng/status/1633622177336418304">Jason Phang on Twitter: &quot;Code for fine-tuning LLaMA. One version using PEFT+8bit, and another using (simple) pipeline parallelism for full fine-tuning&quot; / Twitter</a> (3.9)</p><p id="54f66a05-d09f-40c7-8c44-e5ce1edad972" class="">
+</p><p id="4123176c-60cb-4048-951c-575021a8f5ed" class=""><a href="https://twitter.com/ggerganov/status/1632422491682484230">Georgi Gerganov on Twitter: &quot;I think I can make 4-bit LLaMA-65B inference run on a 64 GB M1 Pro. Speed should be somewhere around 2 tokens/sec&quot; / Twitter</a> (3.6)</p><p id="5f372862-0dbf-4cfa-bdf3-f32095722172" class=""><a href="https://twitter.com/ggerganov/status/1634282694208114690">Georgi Gerganov on Twitter: &quot;4-bit inference of LLaMA-7B using ggml: Pure C/C++, runs on the CPU at 20 tokens/sec (M1 Pro) Generated text looks coherent, but quickly degrades&quot; / Twitter</a> (3.11)</p><p id="5846e28b-fba9-4169-a814-2208bdcbef3a" class=""><a href="https://twitter.com/ggerganov/status/1634488664150487041">Georgi Gerganov on Twitter: &quot;Just added support for all LLaMA models. LLaMA-13B at ~10 tokens/s&quot; / Twitter</a> (3.11)</p><p id="f950060e-395f-4088-86a5-1df206408de8" class=""><a href="https://twitter.com/ggerganov/status/1634320862722551809">Georgi Gerganov on Twitter: &quot;Simultaneously running LLaMA-7B (left) + Whisper Small (right) on M1 Pro&quot; / Twitter</a> (3.11)</p><p id="034226ae-ae66-4951-affe-dc534fcb3881" class=""><a href="https://til.simonwillison.net/llms/llama-7b-m2">Running LLaMA 7B and 13B on a 64GB M2 MacBook Pro with llama.cpp | Simon Willison</a> (3.11)</p><p id="f5d17daa-b863-42ff-82d8-9e2ad9ce0384" class="">
+</p><p id="b1f79e29-2012-4f0b-a2ab-104cf2d183e0" class=""><a href="https://twitter.com/lawrencecchen/status/1634507648824676353">Lawrence Chen on Twitter: &quot;LLaMA 65B running on m1 max/64gb&quot; / Twitter</a> (3.11)</p><p id="5edb5792-d0b1-4bf0-9f8d-484c751a2f2d" class="">
+</p><p id="478cb198-af9f-4ecd-b23f-2633293bb68b" class=""><a href="https://twitter.com/miolini/status/1634982361757790209">Artem Andreenko on Twitter: &quot;LLaMA 7B model on my 4GB RAM Raspberry Pi 4&quot; / Twitter</a> (3.13)</p><p id="ab028f0e-6798-4f10-b5b4-435e0e358bc0" class="">
+</p><p id="b4650137-cd3b-4f51-a79c-2b755c55f477" class="">
+</p></details></li></ul><ul id="7c064d2a-9b58-4d63-a61f-78f00a7643a0" class="toggle"><li><details open=""><summary>QLoRA, SpQR quantization techniques</summary></details></li></ul></details></li></ul></details></li></ul><ul id="59afe301-bf20-454e-9dce-f60928799e0b" class="toggle"><li><details open=""><summary>Autonomous Agents</summary><ul id="c75406ae-0a86-4703-9756-41a0736f1acb" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/Significant-Gravitas/Auto-GPT">AutoGPT</a> (’23.3)</li></ul><ul id="3d8a737f-abbd-47bc-8ebb-8a96f75d6c84" class="bulleted-list"><li style="list-style-type:disc"><a href="https://github.com/yoheinakajima/babyagi">BabyAGI</a> (’23.3)</li></ul><ul id="aec116f4-b67e-40d9-ba2e-ab922e596bbb" class="bulleted-list"><li style="list-style-type:disc"><a href="https://arxiv.org/abs/2304.03442">Stanford Generative Agents</a> (’23.4)</li></ul><ul id="53d880ff-f94d-4fdf-8afb-56dc27d0e437" class="bulleted-list"><li style="list-style-type:disc"><a href="https://arxiv.org/abs/2306.06070">Mind2Web</a> (’23.6)</li></ul></details></li></ul><ul id="8d964c87-0faa-4ece-ba24-af59b8a0afea" class="toggle"><li><details open=""><summary><a href="https://openai.com/blog/chatgpt-plugins">ChatGPT plgins</a> (5.23)</summary></details></li></ul><ul id="8650dbaa-f0a4-45b0-8093-6594dd2a82bf" class="toggle"><li><details open=""><summary>Tools</summary><ul id="8dd72d30-b4fe-4647-8e0a-64114fb95b71" class="bulleted-list"><li style="list-style-type:disc">Langchain, vector store (Pinecone), fine-tuning tools</li></ul><ul id="07505dbb-55ab-4e48-939d-ddd6a3118947" class="toggle"><li><details open=""><summary><a href="https://www.anthropic.com/index/100k-context-windows">Anthropic Claude (100k token windows)</a> (5.11)</summary></details></li></ul><ul id="9b47d0e5-73f7-4cec-b579-ed973574d2ec" class="toggle"><li><details open=""><summary>Adobe Firefly, Generative Fill</summary></details></li></ul><ul id="a00bdf19-3907-4dda-aed9-b01ae3b0f711" class="toggle"><li><details open=""><summary><a href="https://gorilla.cs.berkeley.edu/">Gorilla (LLM for API calls)</a> (6.6)</summary></details></li></ul></details></li></ul></details></li></ul></div><p id="deff5861-b4f4-476f-af12-138f6e18c009" class="">
+</p><hr id="bf3a7d26-f732-4ef2-94d7-8d1c217d7d6e"/><p id="94e81bc9-ab74-42c6-b8f0-7be2460ceceb" class="">
+</p><h2 id="ebb28e45-1bb0-4893-8a38-cf484a75dcd2" class=""><span style="border-bottom:0.05em solid">2023년 현재 일어나고 있는 일들</span></h2><p id="d5d30d6d-736f-40e8-b924-a70b27983b7d" class="">
+</p><h2 id="18d6f332-3e01-442e-86a2-4e015b18b6b6" class="">지금 당장 무엇이 가능한가?</h2><p id="b0418921-db45-4d0c-afba-43f27a9b9646" class="">
+</p><p id="fd86c8df-70db-4a41-8fc6-9eab18d25489" class=""><span style="border-bottom:0.05em solid"><strong><strong>CAN CHATGPT AND AI REALLY CREATE A GAME?</strong></strong></span></p><p id="d5334d76-53d0-4ea8-9016-82bd5475867c" class="">
+</p><ul id="f96a8cd2-f90c-4638-bf98-28f6e4deb236" class="toggle"><li><details open=""><summary>play text adventures within the ChatGPT interface by entering a starting prompt that lays out the world and its rules (’22.12)</summary><p id="0245990c-dcc4-41c1-86fe-f53ff471df0e" class=""><a href="https://medium.com/building-the-metaverse/creating-a-text-adventure-game-with-chatg-cffeff4d7cfd">Creating a Text Adventure Game with ChatGPT | by Jon Radoff | Building the Metaverse | Medium</a></p></details></li></ul><p id="a840be62-34e8-4b51-b84a-ced67abeb14c" class="">
+</p><ul id="798133a6-121e-42cb-bbbb-2449c5496590" class="toggle"><li><details open=""><summary>I recreated a Snake game that runs in your browser using Chat GPT-4 and Replit, with ZERO knowledge of Javascript all in less than 20 mins (’23.3.15)</summary><figure id="16b05b60-d92d-4eb3-afd3-e13a7572e071"><div class="source"><a href="https://twitter.com/ammaar/status/1635754631228952576">https://twitter.com/ammaar/status/1635754631228952576</a></div></figure></details></li></ul><ul id="3daa2092-e942-4a2b-8783-03b01d9d8e42" class="toggle"><li><details open=""><summary>GPT-4 built a working flappy bird with different difficulty levels from scratch with one single prompt in less than 60 seconds (’23.3.16)</summary><figure id="9b6c5fb4-7d50-4e4d-81ce-5cc20a54922c"><div class="source"><a href="https://twitter.com/krishnerkar/status/1636359163805847552">https://twitter.com/krishnerkar/status/1636359163805847552</a></div></figure></details></li></ul><ul id="0ee2fbc3-1017-498f-bc2c-34d055adc521" class="toggle"><li><details open=""><summary>Create a basic 3D game prototype like Doom using GPT-4. Let GPT do all the maths, raycasting and hard work (’23.3.16)</summary><figure id="61a47ac0-fcac-4aab-a870-6ec85f194177"><div class="source"><a href="https://twitter.com/javilopen/status/1636085116400451584">https://twitter.com/javilopen/status/1636085116400451584</a></div></figure></details></li></ul><ul id="5b314c68-6901-4077-8a97-538efae793cc" class="toggle"><li><details open=""><summary>I used GPT-4, Replit, MidJourney and Claude to create a 3D space runner from scratch with ZERO knowledge of Javascript or game programming (’23.3.20)</summary><figure id="92aa327d-b6c2-41f0-b7eb-dcb6a6647c83"><div class="source"><a href="https://twitter.com/ammaar/status/1637830530216390658">https://twitter.com/ammaar/status/1637830530216390658</a></div></figure></details></li></ul><ul id="056aa881-62d6-449c-8b8a-8987801b3ed4" class="toggle"><li><details open=""><summary>How to make Tetris with GPT-4. Tetris is a bit more complicated project than my previous game Asteroids, so you&#x27;ll need to be a bit persistent in asking GPT-4 and making it piece by piece. But worry not! It&#x27;s not hard (’23.4.2)</summary><figure id="eef8250d-0f35-49f7-ab10-db6949b5c146"><div class="source"><a href="https://twitter.com/icreatelife/status/1642346286476144640">https://twitter.com/icreatelife/status/1642346286476144640</a></div></figure></details></li></ul><ul id="f2b9190b-16b3-436b-bbea-998975779118" class="toggle"><li><details open=""><summary>I made a website that uses GPT-4 to code any arcade game you can think of and let you play it instantly. Here&#x27;s a demo of The Infinite Arcade (’23.3.17)</summary><figure id="9aa583dd-29dc-4c6c-8a38-f7a5c7217288"><div class="source"><a href="https://twitter.com/thegarrettscott/status/1636477569565335553">https://twitter.com/thegarrettscott/status/1636477569565335553</a></div></figure></details></li></ul><p id="6c850b91-c2c3-4a7d-8b37-3cfe1c379368" class="">
+</p><p id="9289acd7-30d8-4784-ad39-d55b2dd91dce" class="">
+</p><ul id="ec160a40-0f20-4e03-a927-5035302863e3" class="toggle"><li><details open=""><summary>ChatGPT was integrated (as NPC) into a dating sim called <em>Love in the Classroom</em></summary><p id="120be550-164e-4d05-9a16-c7b77291001f" class=""><a href="https://www.inverse.com/tech/chatgpt-video-game-dialogue-generation">ChatGPT’s Next Act: Generating Infinite Video Game Dialogue - Inverse</a></p></details></li></ul><ul id="920556f1-37eb-45a4-8311-93d3fa55c100" class="toggle"><li><details open=""><summary>GPT AI to make it feel more realistic and iterative to <a href="https://www.nexusmods.com/mountandblade2bannerlord/mods/5273">speak to NPCs in </a><a href="https://www.nexusmods.com/mountandblade2bannerlord/mods/5273"><em>Mount &amp; Blade 2: Bannerlord</em></a></summary><figure id="60b45bc7-17e3-4046-a969-90b3ecd74328"><div class="source"><a href="https://www.youtube.com/watch?v=X2WVXe5LvTs&amp;t=180s">https://www.youtube.com/watch?v=X2WVXe5LvTs&amp;t=180s</a></div></figure></details></li></ul><p id="6d3e2255-e69e-4c53-a19e-e6c7b233ec17" class="">
+</p><p id="c145c8f6-33c2-4b52-96ca-54a3e6b49d8e" class="">
+</p><p id="5a8a20c3-2b48-49d9-837c-fa31c637081c" class=""><span style="border-bottom:0.05em solid"><strong><strong>ARE ANY BIG STUDIOS ACTUALLY USING IT?</strong></strong></span></p><p id="5041b586-020d-4817-858f-f385048ecbdf" class="">
+</p><ul id="492606de-15e9-40bb-a6ff-504bae34598a" class="toggle"><li><details open=""><summary><strong>Roblox AI Tools</strong> (’23.3.22)</summary><figure id="10eb42ae-f533-4ecd-9cf1-d3c6c3c330b0"><div class="source"><a href="https://twitter.com/arstechnica/status/1638352076064403459">https://twitter.com/arstechnica/status/1638352076064403459</a></div></figure></details></li></ul><p id="e7046e18-ff92-4158-be39-767f7d49e2d4" class="">
+</p><ul id="84262141-8eeb-4b43-b6fd-932faf21ea08" class="toggle"><li><details open=""><summary><strong>Ubisoft is Developing an AI Ghostwriter to Save Scriptwriters Time</strong> (’23.3.22)</summary><figure id="5f0755fb-edf5-4aac-a89b-ec8d1b9e57f5"><div class="source"><a href="https://www.youtube.com/watch?v=XxQoN3PFiKA">https://www.youtube.com/watch?v=XxQoN3PFiKA</a></div></figure></details></li></ul><p id="be0dc0c7-9aea-4fe5-8a8f-65c7084811ad" class="">
+</p><p id="9db0607a-4e09-4110-8176-fefbdbea6f0e" class="">and more to come…. of course</p><p id="4e34b92f-6d5b-4d93-802b-17aae3ce5391" class="">
+</p><p id="c3dacf78-3271-4fc6-9f67-10f76bdafa04" class="">
+</p><p id="4a276e08-aeeb-4bf5-b68a-09c71e4d2c3b" class=""><span style="border-bottom:0.05em solid"><strong><strong>WILL AI EVER REPLACE GAME DEVELOPERS?</strong></strong></span></p><p id="cf9f70c7-f3e1-4662-b72c-e3699636fdc7" class="">
+</p><p id="ca5115b7-52b2-4f41-b5a1-f1caa23a846b" class=""><strong><a href="https://www.polygon.com/ai-artificial-intelligence/23650693/chatgpt-generative-ai-video-game-development">Can AI really make a video game? - Polygon</a></strong></p><p id="429e6c9a-9899-4a2c-bff8-1994ba4b47d1" class="">
+</p><p id="4a087da4-4a36-4d16-8b39-91cf9baa3f71" class="">Not yet, but ….. <a href="https://www.polygon.com/23465326/artificial-intelligence-prompt-video-games-and-movies">In 10 years, gamers will use AI prompts to build what they play - Polygon</a></p><p id="55151e15-0463-4a36-bb73-30f2e614b03a" class="">
+</p><p id="6eb8c57f-7307-433b-96f1-2adfd9e9f57d" class="">
+</p><p id="f82be45b-0429-453f-bf24-6a5671d3023f" class="">
+</p><p id="9c4aa6a1-8d9b-4d02-b138-84ad72707e8c" class=""><span style="border-bottom:0.05em solid"><strong>(게임은 아니지만) 이제 동영상 제작도 온전히 AI가….</strong></span></p><p id="546726e2-a157-4932-a931-4b5cc4c30193" class="">
+</p><ul id="bef5f3da-122d-4ede-8554-09aab494796c" class="toggle"><li><details open=""><summary>Generate videos with nothing but words. Introducing Text to Video. With Runway Gen-2 (’23.3.20)</summary><figure id="151b31b2-bde3-48c4-b162-c46178850a68"><div class="source"><a href="https://twitter.com/runwayml/status/1637800500459458562">https://twitter.com/runwayml/status/1637800500459458562</a></div></figure><p id="4f258df0-fac7-493f-827f-41775fea9344" class="">
+</p></details></li></ul><ul id="2160cae8-355c-4a2f-9d4a-4afee9047487" class="toggle"><li><details open=""><summary>How to create an &quot;Aging Effect” video using Midjourney v5 &amp; RunwayML (’23.3.19)</summary><figure id="1c28d9cf-3010-4cca-8040-bbb8a4c3e8c0"><div class="source"><a href="https://twitter.com/nickfloats/status/1637438460297629697">https://twitter.com/nickfloats/status/1637438460297629697</a></div></figure></details></li></ul><ul id="7887e09c-d83b-480f-990a-116e5856ef1e" class="toggle"><li><details open=""><summary>This video was made almost entirely by AI. ChatGPT for the script, Midjourney for the reference images, Runway Gen-1 to apply the image style to my source video, and Boomy AI for the music. (’23.3.15)</summary><figure id="538b3238-7ddb-4a7d-9a38-a63337b3fb81"><div class="source"><a href="https://twitter.com/nickfloats/status/1635749064091267098">https://twitter.com/nickfloats/status/1635749064091267098</a></div></figure></details></li></ul><ul id="25a7309e-182b-4da9-9698-ba53dd422e88" class="toggle"><li><details open=""><summary>This video was made entirely by AI. Luma AI to NeRF my coffee table into a virtual movie set, Midjourney to create reference images for my video clips, Runway Gen-1 to apply the style of the images to those clips (’23.3.21)</summary><figure id="61c9ddbc-7351-40b3-b08b-0ea055ab05a0"><div class="source"><a href="https://twitter.com/nickfloats/status/1638185937753587713">https://twitter.com/nickfloats/status/1638185937753587713</a></div></figure></details></li></ul><ul id="2f54fd52-2667-4cba-92a4-eb02b45b6235" class="toggle"><li><details open=""><summary>A short Superman teaser created using a mix of generative AI and real footage. MidJourney v5, D-ID, and GPT-4 for ideation (3.29)</summary><figure id="8698c909-3607-4a91-bbd3-efba184b589f"><div class="source"><a href="https://twitter.com/ammaar/status/1640896018052165635">https://twitter.com/ammaar/status/1640896018052165635</a></div></figure></details></li></ul><p id="b079c759-f54f-4cba-affb-b92b74450463" class="">
+</p><h2 id="100113c6-3f86-4ebb-8674-514080d67d76" class="">AI는 게임 제작 분야에서 가장 먼저…</h2><p id="7a80fc21-b683-44b5-83a4-3b87d555e1cc" class="">
+</p><h3 id="75f3bffb-b0ab-4f4c-9b24-ac19e306a45c" class="">게임 asset 플랫폼</h3><p id="78c4c8b0-bee3-4b80-994b-87e2341e80c0" class=""><a href="https://www.scenario.com/"><strong>Scenario</strong></a><strong>, </strong><strong><a href="https://leonardo.ai/">Leonardo.ai</a></strong><strong>, </strong><strong><a href="https://layer.ai/">Layer.ai</a></strong></p><ul id="9d002338-e255-4291-8c98-8070d75426ca" class="toggle"><li><details open=""><summary><a href="http://Scenario.gg"><strong>Scenario.gg</strong></a></summary><figure id="7a3d9fc4-a6e5-49d9-9e87-cfe15b923726"><div class="source"><a href="https://twitter.com/emmanuel_2m/status/1593356241283125251">https://twitter.com/emmanuel_2m/status/1593356241283125251</a></div></figure><figure id="4eacb518-9451-41d7-bf83-0deba5f69050"><div class="source"><a href="https://twitter.com/emmanuel_2m/status/1616107119199268864">https://twitter.com/emmanuel_2m/status/1616107119199268864</a></div></figure></details></li></ul><h3 id="0488a9bf-a8b4-4351-a7a9-dc024b135e52" class="">NPC with AI</h3><ul id="cc77c0aa-44b4-4dd6-84e7-5739fdb54865" class="toggle"><li><details open=""><summary><a href="https://convai.com/">Convai</a></summary><figure id="92fc1ea3-e6cd-46d5-90f7-2334bd9c0866"><div class="source"><a href="https://www.youtube.com/watch?v=q3Th60XdhSs&amp;t=144s">https://www.youtube.com/watch?v=q3Th60XdhSs&amp;t=144s</a></div></figure></details></li></ul><h3 id="52cd03dd-049c-44b1-a103-2b1de96e1fcf" class="">AI-generated voice</h3><ul id="c1cec276-7b21-4f83-bdb5-400f237ab672" class="toggle"><li><details open=""><summary><a href="https://beta.elevenlabs.io/">Eleven Labs</a></summary><figure id="9011204a-e501-46fd-ae16-57e7715bbf1e"><div class="source"><a href="https://twitter.com/CoffeeVectors/status/1620807387073642496">https://twitter.com/CoffeeVectors/status/1620807387073642496</a></div></figure></details></li></ul><p id="49d44af7-6c24-4a63-b338-61485e9afebd" class="">
+</p><p id="146bb064-d69c-4ad4-94aa-2c9904852ef7" class="">
+</p><hr id="bbe66f54-deb4-40d9-b563-3df8e84fcc82"/><p id="28f2825a-d7fb-4e44-9182-bc7de5b4c7f8" class="">
+</p><h2 id="c7b05199-6f51-43c7-83f6-e21419e0e96c" class=""><span style="border-bottom:0.05em solid">앞으로 어떤 일들이 일어날까</span></h2><p id="2d5efaf6-8ce7-48fc-baa2-5c36f9d1f748" class="">
+</p><h3 id="0ba3812c-70d4-4914-a468-5badb31ead79" class="">1. 게임 제작</h3><ul id="3af1c4a4-79b4-4b75-a81b-51f458073e20" class="toggle"><li><details open=""><summary><a href="https://a16z.com/2022/11/17/the-generative-ai-revolution-in-games/">The Generative AI Revolution in Games | a16z</a> (’22.11)</summary><ul id="24c17ae2-374b-48f1-bdf5-e774be324369" class="toggle"><li><details open=""><summary>요약</summary><figure id="d07f3448-5646-42eb-9086-ad2540f84ff7"><div class="source"><a href="https://twitter.com/gwertz/status/1593268718506692609">https://twitter.com/gwertz/status/1593268718506692609</a></div></figure></details></li></ul><p id="382a1807-6f72-403a-8eae-0e5eb2494919" class="">코딩과 함께, Generative AI가 생산성 향상에 아주 큰 역할을 할 분야가 게임 아이템 디자인 분야. 향후 2-3년 사이 가장 먼저 대규모로 Gen AI가 활용될 분야.</p><p id="fe7c383b-8406-493b-80ab-57b36022fef0" class=""><strong>Observations</strong>:</p><ul id="2a46eef1-9879-4d28-839f-0ead4b56ff85" class="toggle"><li><details open=""><summary>(컨텐츠 분야 중) 게임 분야가 Gen AI의 영향을 가장 많이 받을 것</summary><figure id="30837ca8-b490-49cd-afed-0fcb9a31ae8c" class="image"><a href="%5BGnB%20%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%86%AB%E1%84%83%E1%85%B3%20%E1%84%89%E1%85%A6%E1%84%86%E1%85%B5%E1%84%82%E1%85%A1%5D%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%80%E1%85%AA%20Al%202acbea559c1a429892725b9d82b573c5/Untitled.png"><img style="width:2560px" src="%5BGnB%20%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%86%AB%E1%84%83%E1%85%B3%20%E1%84%89%E1%85%A6%E1%84%86%E1%85%B5%E1%84%82%E1%85%A1%5D%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%80%E1%85%AA%20Al%202acbea559c1a429892725b9d82b573c5/Untitled.png"/></a></figure></details></li></ul><ul id="b227e231-72f3-471b-98d7-e47b8b9e4ae8" class="bulleted-list"><li style="list-style-type:disc">게임 제작에 필요한 모든 asset에 대한 Gen AI 모델이 개발될 것: 3D 모델, 애니메이션, 대화, 음악</li></ul><ul id="0a523e22-f0c9-4ee4-b0af-2d25e72edc5b" class="bulleted-list"><li style="list-style-type:disc">게임 제작 비용은 급격하게 낮아질 것: 100:1 규모</li></ul><p id="86939c67-8141-4127-aeae-ef64d68c2905" class=""><strong>Predictions</strong>:</p><ul id="049d7592-e43c-4776-828e-e972dd4cc5c5" class="bulleted-list"><li style="list-style-type:disc">Gen AI 사용법이 중요한 자산이 될 것 (개발자, 아티스트와 함께): 스타일, 일관성을 위하여</li></ul><ul id="c39b85b4-c305-41f4-acbc-d61ed42ae453" class="bulleted-list"><li style="list-style-type:disc">(제작비가 낮아지면서) 많은 새로운 방식이 시도될 것: risk-taking, creative</li></ul><ul id="655b356e-23c8-46e5-97ac-cc01ff9dcc86" class="bulleted-list"><li style="list-style-type:disc">(제작비가 낮아지면서) 인디 규모의 ‘미니 게임 스튜디오’가 많아질 것</li></ul><ul id="f24bf179-a72d-4df8-bd98-667c872300d2" class="bulleted-list"><li style="list-style-type:disc">(제작비가 낮아지면서) 게임 제작이 급증할 것</li></ul><ul id="80d040a9-69f9-4769-8b26-ddffcf1d71ed" class="bulleted-list"><li style="list-style-type:disc">AI 이전에 가능하지 않던 ‘새로운 게임’이 등장할 것: 예: <a href="https://www.arrowmancer.com/">Arrowmancer</a>, 게이머마다 새로운 아바타 생성</li></ul><ul id="7283c757-c24f-4b4d-bad5-6fd7375f0b0f" class="bulleted-list"><li style="list-style-type:disc">게임 특화된 AI 모델에 value-accrual 집중될 것</li></ul><ul id="eccd0e2d-b9aa-4f87-8a0c-bf0257ee1dec" class="bulleted-list"><li style="list-style-type:disc">저작권 등의 법적 이슈 → proprietary 자산 구축이 점차 늘어날 것</li></ul><ul id="7e5a6868-883b-4657-b14e-9ee4829cb6d4" class="bulleted-list"><li style="list-style-type:disc">당분간은 (개발보다는) 게임 자산 제작에 더 큰 변화가 올 것</li></ul><ul id="4e0f2989-ebb7-4f98-8334-47178a2f6526" class="toggle"><li><details open=""><summary><strong>Generative AI for Games Market Map (updated ‘23.3)</strong></summary><figure id="86047ac4-92e4-4d4e-9a2f-7c1efb75ac59" class="image"><a href="../%5BGnB%20%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%86%AB%E1%84%83%E1%85%B3%20%E1%84%89%E1%85%A6%E1%84%86%E1%85%B5%E1%84%82%E1%85%A1%5D%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%80%E1%85%AA%20Al%20f921eefd9d6d482fa3a1bfbb0c18a929/Untitled%202.png"><img style="width:1200px" src="../%5BGnB%20%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%86%AB%E1%84%83%E1%85%B3%20%E1%84%89%E1%85%A6%E1%84%86%E1%85%B5%E1%84%82%E1%85%A1%5D%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%80%E1%85%AA%20Al%20f921eefd9d6d482fa3a1bfbb0c18a929/Untitled%202.png"/></a></figure><ul id="5ec9c6c0-bc9b-4c42-9601-3f40f0282986" class="bulleted-list"><li style="list-style-type:disc">2D: Concept Art, production art</li></ul><ul id="3c170729-edba-425c-a58b-ba8151b3791f" class="bulleted-list"><li style="list-style-type:disc">3D: assets, textures, motion capture/filter from video, level design, world building</li></ul><ul id="5ed88735-296d-42b4-9b3f-3ea46455c6f5" class="bulleted-list"><li style="list-style-type:disc">Audio: 음향 효과, 음악, 음성, 대화</li></ul><ul id="1298fc6d-f689-4d85-900a-47ede148e0ca" class="bulleted-list"><li style="list-style-type:disc">NPC, 게임 캐릭터</li></ul></details></li></ul></details></li></ul><p id="063d63b2-e608-4fcc-92b0-93a16e5d8851" class="">
+</p><p id="9f697fe0-466d-43b3-a479-c5d7c4b7b6a6" class=""><strong>특히 AIGC 분야에서는…</strong></p><ul id="1b35d5c2-ed00-40c7-ae6c-7abbd02868ed" class="toggle"><li><details open=""><summary><a href="https://a16z.com/2023/03/17/the-generative-ai-revolution/">The Generative AI Revolution will Enable Anyone to Create Games | a16z</a> (’23.3.17)</summary><p id="73b835fa-69b2-4c28-9c1d-76ed00eee175" class="">From UGC games (Roblox, Minecraft) to AIGC (AI-generated contents)</p><ul id="4eb6bf62-884e-481a-b38b-0b901571f27b" class="toggle"><li><details open=""><summary>AIGC 적용 2단계:</summary><ul id="fdef7b2d-a883-41c2-b175-09fd2596f05f" class="bulleted-list"><li style="list-style-type:disc">AI-powered tools: UGC workflow (생산성) 개선</li></ul><ul id="f151f802-b228-4c92-8f97-990366b32b95" class="bulleted-list"><li style="list-style-type:disc">새로운 패러다임 (AI-native engine): to re-imagine the creation workflows from the ground-up</li></ul><figure id="682f78c7-9ce9-4581-9e05-2c3343e1c4a8"><div class="source"><a href="https://twitter.com/JoshLu/status/1636751574155526145">https://twitter.com/JoshLu/status/1636751574155526145</a></div></figure></details></li></ul><ul id="662e7417-ad0b-461f-9b7f-65bc55e2cdbf" class="toggle"><li><details open=""><summary>AI-powered tooling</summary><ul id="09271f93-973c-463f-aef8-3f7575dde8c6" class="bulleted-list"><li style="list-style-type:disc">AI + 인간의 공동 제작: <ul id="747d6e9b-ac5c-4062-bfe5-fed0970126a3" class="bulleted-list"><li style="list-style-type:circle">co-authoring (게임 아이템)</li></ul><ul id="a0864cef-9d8d-4fb0-a033-7feac828261a" class="bulleted-list"><li style="list-style-type:circle">co-writing (스토리, 세계관. <a href="https://play.aidungeon.io/">AI Dungeon</a>, <a href="https://www.electricnoirstudios.com/">Electric Noir</a>)</li></ul><ul id="9b6894c9-e154-4ec2-8906-bc6723aa1fd9" class="toggle"><li><details open=""><summary>co-pilot (코딩. auto-generating games (e.g. <a href="https://twitter.com/ammaar/status/1635754631228952576?s=20">Snake</a>, <a href="https://twitter.com/icreatelife/status/1642346286476144640">Tetris</a>) on GPT-4)</summary><figure id="9e7eb99e-92c8-496c-aa9f-060988636213"><div class="source"><a href="https://www.youtube.com/watch?v=XMpguNJOs1U">https://www.youtube.com/watch?v=XMpguNJOs1U</a></div></figure></details></li></ul></li></ul><ul id="17058a61-0bb3-4dd9-b9c2-663986452b51" class="bulleted-list"><li style="list-style-type:disc">프롬프트 마켓: like Roblox Creator Marketplace, Unreal Asset Store, or <a href="https://www.promptbase.com/">PromptBase</a></li></ul><ul id="af2a88a7-5652-4fb2-8d07-49178b1e783b" class="bulleted-list"><li style="list-style-type:disc">새로운 게임 플레이: <ul id="69d16a67-a03b-49aa-b9aa-1b81276bbaf8" class="bulleted-list"><li style="list-style-type:circle">new mechanics or genres. </li></ul><ul id="b53cb430-4771-497e-8e43-a9ce3207e805" class="bulleted-list"><li style="list-style-type:circle">실시간 custom 게임 아이템 생성 (<a href="https://www.playrole.com/">Role</a>, <a href="https://www.riftweaver.com/">Riftweaver</a>)</li></ul></li></ul><ul id="4478e548-4a73-4b20-9041-aa1d306f2b25" class="bulleted-list"><li style="list-style-type:disc">Contents discovery: <ul id="c32b5a4a-8ef5-46a6-a2d1-4f8c2d3a2405" class="bulleted-list"><li style="list-style-type:circle">게임 아이템의 semantic 검색 (<a href="https://www.loci.ai/">Loci.ai</a>)</li></ul></li></ul><ul id="aedc616e-a91f-4628-acb0-7e91d51149e5" class="bulleted-list"><li style="list-style-type:disc">크리에이터들을 위한 유료화 모델</li></ul><ul id="38b86d86-b7e0-4122-94bb-944a279e0edd" class="bulleted-list"><li style="list-style-type:disc">UGC 모니터링 &amp; moderation: <a href="https://www.ggwp.com/">GGWP</a></li></ul></details></li></ul><ul id="7acfa36b-6685-4a50-810b-a806d36826ee" class="toggle"><li><details open=""><summary>새로운 패러다임 (AI-native engine)</summary><ul id="01e898f0-3f43-441e-9f22-7c8254cc159e" class="bulleted-list"><li style="list-style-type:disc">Vertical로 시작 (예: 특정 장르 게임용 툴) → (Minecraft 비슷한 방식으로) 확장.성장<ul id="d258eb21-efb1-4071-9d97-832a4a839d52" class="bulleted-list"><li style="list-style-type:circle"><a href="https://www.hiddendoor.co/">Hidden Door</a> for storytelling games</li></ul><ul id="867db994-a7a7-41a0-aa20-691adfc767fc" class="bulleted-list"><li style="list-style-type:circle"><a href="https://www.roleverse.com/">Roleverse</a> for tabletop RPG</li></ul><ul id="a1bf27d8-f325-4548-886a-1c980f7a2253" class="bulleted-list"><li style="list-style-type:circle"><a href="https://www.regression.gg/">Regression Games</a> for battlebot games) </li></ul></li></ul><ul id="f8cbf906-967e-4dc3-b54b-417f1d6acb30" class="bulleted-list"><li style="list-style-type:disc">새로운 방식의 AI-enabled engine: <ul id="3a92322b-6e7d-424d-b84a-5d52371ebd1c" class="bulleted-list"><li style="list-style-type:circle">예: 실시간 생성 (배경, 캐릭터, rendering)</li></ul><ul id="25145b2d-2cd0-4413-8966-5e5ab5536f9c" class="bulleted-list"><li style="list-style-type:circle">예: 동영상 → 게임내 배경 실시간 생성</li></ul><ul id="3ae9b3f8-598b-45ec-8ba4-af068f69109d" class="bulleted-list"><li style="list-style-type:circle"><a href="https://lumalabs.ai/">Luma Labs</a> (3D scanning and asset generation)</li></ul></li></ul></details></li></ul><p id="e8f6d6c1-7cf1-40c8-ad8d-cf8696e82d43" class="">
+</p></details></li></ul><p id="0c1a95a4-66c3-49b1-af0a-a07ab8c6e8ce" class="">
+</p><h3 id="2824cfc8-5c0c-4117-b008-8979c303b0bc" class="">2. AI playing games</h3><div></div><p id="9d93aaa5-d8d4-49f1-8519-3ee202b07709" class="">
+</p><p id="e924c35a-2e44-40ec-b897-fcb4e5283126" class="">
+</p><h3 id="dd1dc4e0-b6db-4c05-967e-db83e1d6af43" class="">3. 상상 속의 AI + 게임 플레이</h3><ul id="17448bda-b02a-472a-aaed-bf8849e30c3e" class="toggle"><li><details open=""><summary>AI + 게임 플레이</summary><ul id="d5d187ff-7a48-4fbc-a872-8957cac43034" class="bulleted-list"><li style="list-style-type:disc">각 게이머에 특화, 학습된 NPC </li></ul><ul id="52769a7f-26a9-45e8-b5d1-28819f0e8233" class="bulleted-list"><li style="list-style-type:disc">게임이 모든 게이머 대상 개인화</li></ul><ul id="57ca578f-38f2-4e36-8d06-90e340a13299" class="bulleted-list"><li style="list-style-type:disc">사용자마다 개인화된 게임 시나리오, 아이템 &amp; 플레이 실시간 생성<p id="0cffd6e1-ac25-40ed-91fa-a3006034c9ae" class=""><a href="https://javilopen.substack.com/p/in-20-years-there-will-be-no-web">In 20 years there will be no web pages. You do not believe me? - Latent Space</a></p></li></ul><ul id="2022a75c-9eff-4ebd-9708-357a10849c9e" class="bulleted-list"><li style="list-style-type:disc">….</li></ul></details></li></ul><p id="423633d4-39ab-4c18-bf30-72b83f54ed55" class="">
+</p><p id="e42cf641-5836-42e6-82e3-3fcfaeef66b2" class="">
+</p><hr id="887e0866-4c4e-4689-8833-04ffc6092459"/><p id="30e1f574-19a2-436f-add5-0dfae381b745" class="">
+</p><h2 id="27bb2060-c1f7-40b4-a1a6-a3f84e54cf6c" class=""><span style="border-bottom:0.05em solid">앞으로 무엇이 가능해질까? 상상의 나래를 펼쳐 보면…</span></h2><p id="7ce8b899-fc59-4796-9c60-08d35b3cb616" class="">
+</p><p id="b994774f-c0f3-4c3c-a589-da9f4aa239f3" class="">(이제 스스로에게 질문을 던져 봅시다. 무엇이 가능하게 될 것이고, 무엇이 가능하면 좋을지, 또 …)</p><p id="1715df40-311b-4c90-9dd9-f428ebfdb00e" class="">
+</p><h3 id="6134c1f5-49e8-42a4-b6c8-7feb3d8a6915" class=""><strong>“구루에게 묻는다” - 송재경 대표와의 Fireside Chat</strong></h3><p id="79cc2a84-3301-4a66-8b65-333efb427fbf" class="">
+</p><ul id="8a3b6f9a-b3f2-42d3-8fdd-f0410a2f1bfa" class="toggle"><li><details open=""><summary>먼저, 처음에 바람의나라, 그리고 리니지를 처음 만들 때, 어떤 생각을 하면서 어떤 기대를 하면서 시작하였는지? 
+그 이전에 어떤 환경에서 어떤 게임을 플레이하면서 어떤 느낌을 받았고 무엇을 만들어 보고 싶었는지에 대한 이야기부터 시작해도 좋을 듯 합니다.</summary><p id="19135c88-be92-4ae2-836f-7a5ab9c176dd" class="">→ 당시 텍스트 머드 쥬라기 공원이 월 5천만원의 매출 → 그것 보다는 잘 될거라 믿음(그래픽이 있으니까)</p><p id="fe61dbe6-8d40-4a29-80b3-656a6ba5576a" class="">→ 멀티플레이어: 텍스트 머드, 쿼터뷰 RPG (울티마 6), RPG (넷핵)</p><p id="4d7d3999-07eb-4494-afdd-e71e97e51d1d" class="">→ “넷핵인데 울티마 6 그래픽인 게임을 멀티 플레이어로 할 수 있으면 정말 재밌을텐데”가 시작점</p></details></li></ul><p id="21537d8a-6e91-42df-b964-9bd21bbc7413" class="">
+</p><ul id="02efd65b-1b67-404b-9fb0-376a7ab1ba82" class="toggle"><li><details open=""><summary>리니지를 발표하고 막상 그 게임이 당초에 상상했던 것보다 더 빠르게, 더 크게 성공을 거두었다고 보는데, 그 과정에서 어떤 것을 느꼈고, 어떤 것을 새로 깨닳았고, 어떤 것은 ‘이렇게 하면 더 좋았을 걸’하는 생각이 들었는지?</summary><p id="07573c36-b3d9-45f4-985c-360221287013" class="">→ 적절한 타이밍과 운이 중요하다(초고속 인터넷, IMF, PC방, 디아블로, 스타크래프트, …)</p><p id="83319ba9-33e6-4790-810d-d15d6e647336" class="">→ 게임(또는 컨텐츠)를 받쳐줄 기술력이 중요하다(Windows Server, IO Completion Port, DB Server, 동접 1000명 돌파)</p></details></li></ul><p id="8cb69ed6-5be7-43fa-bcff-0fe7daa73858" class="">
+</p><ul id="b049f3f4-09dc-4bab-b896-d880e075a1e9" class="toggle"><li><details open=""><summary>이번 AI 기술이 등장하고 대중이 이에 환호하는 모습을 보면서, 90년대 경험하였던 것과 어떤 유사함을 느끼는지? 그렇다면, 그떄와 다른 점은 어떤 것을 느끼는지?
+기존에 없던 새로운 무엇을 (장르를) 창조해내고 이 것이 대중에서 보편화되는 과정을 경험한 ‘구루’ 입장에서 어떤 비슷한 패턴을 느낄 수 있는지?</summary><p id="4cdbb9d6-810c-45ab-b8bc-4b9bf61f1f5d" class="">→ 인터넷이 보급되던 90년대 말과 비슷</p><p id="79750b91-725c-4f5b-9e6f-f6a2db980372" class="">→ 90년대 초에는 극히 소수(일부 학교, 연구소, 기업)에서만 인터넷 사용</p><p id="47fcda65-0f17-4e4d-9532-918dc9c38540" class="">→ 90년대 말에 초고속 인터넷 보급(Windows 95, Netscape, Internet Explorer)</p><p id="dd9344be-77ae-4a75-9594-1be3c5599ba8" class="">→ 게임이 보급에 중요한 역할을 함(Battle.net, 리니지, …)</p><p id="255c9072-dfca-45a3-8c3e-6b02908c96d1" class="">→ AI도 일부 실험실과 회사에서만 있다가 ChatGPT로 폭발적으로 대중적 관심을 얻게 됨</p><p id="c9520eba-64d0-4dff-84ea-cdf4dda3ed8c" class="">→ ChatGPT가 인터넷, 웹브라우저 같은 플랫폼 역할을 하게 되고, 그 위에 인터넷 보급 시절 게임 역할과 비슷한 어떤 어플리케이션이 나올까?</p></details></li></ul><p id="3da9b732-a9c7-4063-b182-46c92b7d1559" class="">
+</p><ul id="b8de525f-f2d4-4fb4-8bbd-b81ddfd748fb" class="bulleted-list"><li style="list-style-type:disc">만일 그렇다면 앞으로 게임 분야에 AI 기술로 인한 어떤 변화가 생겨날까 에 대하여 어떤 생각을 가지고 있는지? 
+(지금 당장 가능한 구체적인 기술적인 기능 등에 구애 받지 않고, 앞으로 10년의 기간을 두고 어떤 변화가 올거라 예상하는지)<p id="a45d5224-ce66-43a2-8fa1-e24a34ac2bb7" class="">
+</p></li></ul><p id="2ba2bcc9-ef50-41d3-9117-ca4a6f1b4cb6" class="">
+</p><ul id="f8a26a82-1534-48b4-bce9-640b1b9b4a5c" class="bulleted-list"><li style="list-style-type:disc">다르게 이야기하면 무언가 새로운 장르를 만들 기회가 인생에서 한번 더 주어졌다고 볼 수도 있는데, 어떻게 생각하고 어떻게 하려고 하는지에 대한 이야기를 듣고 싶음.<p id="3e3219e9-a27c-4d0f-aedd-f4066143d6e9" class="">
+</p></li></ul><p id="1c2816f1-3eb8-404b-a0bc-2c7cca745836" class="">
+</p><ul id="f3f8c31e-ad38-46e7-88dd-044c09f0aedb" class="bulleted-list"><li style="list-style-type:disc">이를 위하여 지금 어떤 실험 들을 해 보고 있는지? 있다면 어떤 것들인지 소개해 줄 수 있을까요?<p id="4e35c4d9-f7fc-4a34-a259-a3828a8430f4" class="">
+</p></li></ul><p id="09062f2e-989e-4d97-8582-24dae4343885" class="">
+</p><p id="3025f847-1ef3-4877-9341-0d4b93888232" class="">
+</p><h3 id="5e63d9de-1786-43ad-b8b0-92d13c91f3bc" class="">청중 질문들</h3><p id="9bbba3d0-099c-45cd-9afb-352e4cb4b815" class="">
+</p><p id="3dca3dac-25b8-4aec-b805-a3900c979866" class="">(김기정)</p><ul id="d45c5e52-ffa4-4e88-9ebe-b1645b83f76d" class="toggle"><li><details open=""><summary>저도 생성형 인공지능을 게임과 결합한다면 각각의 유저가 게임 속에서 개인화된 경험을 즐길 수 있을 것으로 기대하고 있습니다.
+하지만 게임을 지속적으로 발전시키기 위해서는 유저가 게임 안에서 어떤 경험을 하고 있는지 분석하는 것이 필수적으로 보입니다.
+그러나 개인화된 경험을 일일이 분석하는 것이 가능할까요? 불가능하다면, 어떤 방법으로 개인화된 경험을 분석하여 게임을 발전시킬 수 있을까요?</summary><p id="579d6777-8531-4ee4-8da7-142786e8ba93" class="">⇒ 유저의 로그를 쌓고 이걸 학습(혹은 프롬프트 엔지니어링)하면 충분히 가능할 것 같습니다.
+게임이 제공하고 있는 컨텐츠 중에 유저가 안해본 것이 있다면, 적절한 퀘스트 등을 AI가 맞춤 생성해서 유저에게 제공할 수 있지 않을까.
+⇒ 유저의 로그 분석 등을 통해서 유저가 매력을 느낄 만한 NPC를 AI가 생성해서 역할극을 하게
+</p></details></li></ul><p id="85ad6a8c-439c-4c98-af6f-23ee8ec69786" class="">
+</p><ul id="9747f378-591d-4d0e-8e3a-ba750e24d472" class="toggle"><li><details open=""><summary>현재 ChatGPT와 같은 생성형 인공지능을 API로 사용하는 것이 일반적입니다.
+그러나 게임과 같이 인공지능과 유저의 상호작용이 매우 많은 경우, 콜당 비용을 내는 API 비용이 감당 가능할까요? 감당하지 못한다면 어떤 옵션이 있을까요?</summary><p id="0503f630-b194-4281-aff8-23931526760e" class="">⇒ 모바일 게임에 유저들이 사용하는 액수를 보면 가능할 것 같은데 😊
+앞으로 API 비용이 낮아질 것이라고 기대합니다. 인터넷 보급에 따라 관련 플랫폼 비용이 매우 낮아진 것처럼.
+</p><p id="f199bf55-97e5-4fbf-8e18-1527e2579bda" class="">
+</p></details></li></ul><p id="0403c102-3622-40fd-afec-ebe9bd45fd9f" class="">
+</p><ul id="49136929-78c8-44dc-9b0e-15e9596b387a" class="toggle"><li><details open=""><summary>게임 업계에서는 유저 데이터 보안 문제가 매우 중요하다는 것을 들었습니다. 하지만 현재 나오는 대부분의 최첨단 생성형 인공지능을 사용하기 위해서는 API를 사용해야 하기 때문에, 데이터를 외부로 노출시키는 문제가 발생할 수 있다고 생각합니다. 만약 자체 모델을 가지고 있지 않다면, 이러한 문제가 있음에도 타 기업의 인공지능을 사용하면서까지 인공지능을 게임에 접목시키려고 할까요?</summary><p id="c1b875b4-1a60-4bf8-8213-0d64b5f25627" class="">⇒ 다른 유저가 공개적으로 인지할 수 있는 행동과 대화만을 AI에게 보내는 것으로 가능하지 않을까. 
+AI가 저렴해져서 게임 회사들이 내부에서 동작시키는 것이 가능해지지 않을까.</p><p id="c1145e73-eb3c-47b2-8d17-e2eb64fada6f" class="">
+</p></details></li></ul><p id="02e40c55-748f-4754-b0ee-0ce6a5cc69a4" class="">
+</p><p id="62665b65-3379-4d09-93a2-7d105750bf2e" class="">(박병은)</p><ul id="fefe0d4d-cf8a-440e-bcd1-cb42ee167ade" class="toggle"><li><details open=""><summary>Generative AI가 게임산업에서 적용될 수 있는 사례로 NPC 적용이나 제작단계에서의 리소스 절감 등이 있을텐데요, 거대 게임사에게 유리할까요? 혹은 새로 시작하는 기업들이 빠르게 여러 게임제작과 출시를 실험해볼수 있어서 더 유리할까요?</summary><p id="d5684b7f-71b6-449b-86fb-3ce3132be21c" class="">⇒ 두군데 다 영향을 미칠 것.
+→ 아이디어만 있다면 그림을 못그리거나 프로그램을 못짜도 게임을 만들 수 있게 될 듯
+→ 수많은 인디게임 폭발
+→ 큰 기업에서도 AI 사용을 통해 생산성이 향상 될 것이므로 제작기간이 단축되거나, 적은 인원으로 같은 게임을 만들수 있게 되거나, 같은 인원으로 더 많은 게임을 만들 수 있게 될 듯.</p></details></li></ul><p id="eda3b2bd-ebdc-48d5-b1cb-810544819e54" class="">
+</p><p id="d20a22c2-bef2-431b-a05e-f2cb3f856a32" class="">(김상균)</p><ul id="d256cd4e-a0ae-4c33-b793-be7e20e12f83" class="toggle"><li><details open=""><summary>반대로 게임산업이 AI의 적용 및 활용에 큰 영향을 주는 요소가 있을지도 생각해 보게 되는데요. 게임에서 일어나는 수많은 아이템과 배경 들의 변화 업데이트, 유저에 대한 Customizing 등 어떤 부분이 AI의 필요를 더 하게 되는 것일까요?</summary><p id="0f1a71eb-d5c1-45bb-b677-d695fb6585e1" class="">⇒ 필요한 건 아니지만, AI의 도움으로 생산성 향상으로 과거에는 불가능했지만 가능해지는 일들이 있을 거 같습니다. </p><p id="5f37c586-e6aa-4ebd-a3ba-bbc884f615f7" class="">예를 들어 개인화된 NPC AI가 도우미로 따라 다닌다거나. 매번 할 때마다 달라지는 스토리를 가진 게임이라던가.</p><p id="17305620-a40b-41ba-ac2d-50280c70580f" class="">
+</p></details></li></ul><p id="b0c6b841-d173-456f-aaac-c1e2e85b8044" class="">
+</p><p id="72f1827f-5343-47d0-be91-341378bd1d90" class="">(곽현일)</p><ul id="4618a03d-feab-4f1f-a22e-a9bcc64e23ff" class="toggle"><li><details open=""><summary>본격적으로 초기 생성 AI 킬러앱/게임은 시간 싸움에 접어든 느낌인데 구루님들이라면 어떤 게임 혹은 장르에 어떤 방식으로 접목시켜보고 싶으신가요? </summary><p id="7ec22dd7-d326-43e9-8a9f-29df3b01753f" class="">⇒ 매우 뻔한 것은 사람처럼 말하는 NPC
+⇒ 매번 달라지는 스토리, 퀘스트</p></details></li></ul><p id="34089347-223c-44d3-b5c2-3404ccf51ca3" class="">
+</p><ul id="4a3b4dcc-5926-4913-ab02-fd8eb1cb310c" class="toggle"><li><details open=""><summary>현재는 AI 기술이 완전하지 않다보니 만약 당장 프로젝트를 시작한다면 어느 강점을 강조하고 어느 약점을 최대한 숨겨야 할 것 같은지도 궁금합니다.</summary><p id="bf6f1613-7e50-4382-b857-2aaf1a6b4522" class="">⇒ 지금 당장이라면 게임의 중요 메카니즘에는 영향을 미치지 않는 대화 같은데 바로 적용 가능할 듯
+⇒ 밸러스/보상 같은 중요 메카니즘에 영향을 미치는 곳에 도입하는 것은 조심 </p></details></li></ul><p id="27609a97-6efb-416a-98c9-c92f04e5694f" class="">
+</p><p id="21b5f0f5-b79b-400e-908e-947c41584f41" class="">(Kenneth Hong)</p><ul id="342c74e9-d029-49f3-a748-8a32bd5328de" class="toggle"><li><details open=""><summary>게임 스토리라인 제작단계에서 GPT적용범위가 다양하고 효과적이겠지만 인간의 창의적 스토리와의 차별성을 유지하기위한 작가, 인력  매니지먼트가 기존과 달리지는부분을 알고싶습니다.</summary><p id="dd2aaeff-6c8f-4960-ad8f-59d2fef535b0" class="">⇒ “중요 스토리 → 인간 기획자, 내용을 채우기 위한 단순 스토리 → AI” 같이 역할 분담할 수 있을 듯 
+혹은 인간 기획자가 일주일에 1개 스토리를 쓸 수 있었다면, 이제는 AI의 도움을 받아 하루에 1개 쓸 수 있을 듯</p></details></li></ul><p id="a51acdb1-686d-4c52-abbd-fd3c109a3a27" class="">
+</p><p id="871415bc-ce5d-4c03-8d9f-50aee5105c8a" class="">(류인태)</p><ul id="1d400f38-1e11-4187-a80d-3a158333d80a" class="toggle"><li><details open=""><summary>게임 분야에서 AI 를 적용한 사례중 가장 임팩트가 있었던 케이스는 무엇이었나요?</summary><p id="687d98c6-1045-45e6-ba80-b652d244f005" class="">⇒ 지금 나오는 ChatGPT 수준의 AI를 말하는 것이라면 아직은 없는 듯
+⇒ 클래식한 AI (트리 탐색, A* 알고리즘, Behavior Tree, …)는 모든 게임이 다 사용중</p></details></li></ul><p id="b0f00ddc-016c-4928-aba9-4e1b88362883" class="">
+</p><p id="2d1c23a8-8b90-41a8-8f2c-8ecf586b4851" class="">(이성규)</p><ul id="e0e91b30-1742-43de-9945-06d0776e76c9" class="toggle"><li><details open=""><summary>현재 게임업계에서 적용된 인공지능 부터 짚어주세요. </summary><p id="c196eef5-ecc9-4042-baeb-d933b6c9151f" class="">⇒ 대규모 NN을 사용한 게임은 아직 없는 듯
+⇒ 클래식한 AI는 모든 게임 사용중 (길찾기 ⇒ A*, BT, …)
+⇒ 컴퓨터가 하게 되면 인공지능이라고 하지 않는다 😃  (문자 인식, 필기체 인식, 음성 인식, 번역, …)</p></details></li></ul><p id="bc39b2ee-423b-46a8-a3b3-18a01ab35b4d" class="">
+</p><ul id="185b8ac7-4dec-419e-a5ae-3a036bf479e2" class="toggle"><li><details open=""><summary>오픈월드류의 게임에서 NPC  행동 들은 대부분 스크립트 기반에서 발전될 수 있을지 등 실제 게임플레이와 연관된 부분이 제일 궁금합니다.</summary><p id="6f7e2c3a-8ff6-477c-b02c-7dba84ce74f8" class="">⇒ 일단 대화 부분은 쉽게 적용 가능할 듯
+⇒ 유저를 따라 다니면서 도와주는 NPC도 쉽게 가능할 듯
+⇒ </p><figure id="ef92b9a8-11f6-4026-a764-4275e1dd878e" class="image"><a href="../%5BGnB%20%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%86%AB%E1%84%83%E1%85%B3%20%E1%84%89%E1%85%A6%E1%84%86%E1%85%B5%E1%84%82%E1%85%A1%5D%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%80%E1%85%AA%20Al%20f921eefd9d6d482fa3a1bfbb0c18a929/Untitled%203.png"><img style="width:1229px" src="../%5BGnB%20%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%86%AB%E1%84%83%E1%85%B3%20%E1%84%89%E1%85%A6%E1%84%86%E1%85%B5%E1%84%82%E1%85%A1%5D%20%E1%84%80%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%80%E1%85%AA%20Al%20f921eefd9d6d482fa3a1bfbb0c18a929/Untitled%203.png"/></a></figure></details></li></ul><p id="22856cb3-636c-49b4-b2ac-f30976af0288" class="">
+</p><p id="f2aca8a5-4bd5-4279-9f15-47901d8d5de9" class="">
+</p></div></article></body></html>

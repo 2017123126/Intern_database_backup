@@ -1,0 +1,679 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>[MOU/NDA 협의중]청강대 AI 웹툰 공동 제작 등</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="9007aeed-a3da-4940-b9d3-73875d93de72" class="page sans"><header><h1 class="page-title">[MOU/NDA 협의중]청강대 AI 웹툰 공동 제작 등</h1><p class="page-description"></p><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>status</th><td><span class="selected-value select-value-color-green">completed</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-green">COLABORATION</span></td></tr><tr class="property-row property-row-url"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>URL</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr><tr class="property-row property-row-last_edited_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Last edited by</th><td><span class="user"><img src="https://lh3.googleusercontent.com/a/AGNmyxbWaqijYyPqj2OG-BWdhB4-fle_soxr42p420fX=s100" class="icon user-icon"/>현식 김</span></td></tr></tbody></table></header><div class="page-body"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230420 <a href="https://www.notion.so/230421_-24c22f22c7714f4e8a3b5e2b2e0dd995?pvs=21">230421_청강대 미팅</a> </summary><div class="indented"><ol type="1" id="0b23a38f-0f93-48ab-9638-ccfb00d5721c" class="numbered-list" start="1"><li>게임<ol type="a" id="5147dab4-ae51-45d2-8af1-e69d0455e2c7" class="numbered-list" start="1"><li>(니즈) 어떤 게 가장 큰 니즈인가?<ul id="e60c4f4d-4781-497e-9699-1f23b1660c46" class="bulleted-list"><li style="list-style-type:disc"><span style="border-bottom:0.05em solid">NPC 를 다양한 스타일</span>로 양산하고 싶다</li></ul><ul id="3ccc9009-c5ae-476a-aa74-8fd7e4909cba" class="bulleted-list"><li style="list-style-type:disc">우리는 돈보다 <span style="border-bottom:0.05em solid">교육과정</span>에 들어갈 수 있는 것을 원한다<ul id="85b27f9d-b166-4b26-a74f-3c9dc11c0d23" class="bulleted-list"><li style="list-style-type:circle">생성 AI 로 NPC 제작하기 같은 것들</li></ul></li></ul></li></ol><ol type="a" id="fe698957-0aec-4f20-9e94-84479e55045d" class="numbered-list" start="2"><li>(퀄리티) 게임 업계 관점에서, 라이언로켓의 3D 샘플 및 방향성은 어떠한가?<ol type="a" id="173ff9f4-2399-4596-9c78-acd054eafffe" class="numbered-list" start="1"><li>메쉬 to 텍스쳐<ol type="a" id="dccabd14-2f39-44cf-aec5-f654008bbb0b" class="numbered-list" start="1"><li>현재 샘플로도 유의미해 보이니다. 생산성이 크게 올라갈 것 같다</li></ol></li></ol><ol type="a" id="a6647650-f755-4844-8e3d-a53641dfc64b" class="numbered-list" start="2"><li>텍스트 to 메쉬<ol type="a" id="4d2185f0-00f9-4bc9-9c93-4885286f670c" class="numbered-list" start="1"><li>이 부분이 더 중요할 것 같고 난이도가 있을 것 같다. </li></ol></li></ol></li></ol></li></ol><ol type="1" id="2f0eeafc-808c-4619-b929-02dca1d4d179" class="numbered-list" start="2"><li>웹툰<ol type="a" id="0a236aae-fa78-4ad9-bf87-691e55793135" class="numbered-list" start="1"><li>(니즈) <span style="border-bottom:0.05em solid">웹툰 프로세스를 고려해서 툴</span>이 만들어 졌으면 좋겠다<ol type="a" id="65d31347-5ae7-485a-aef9-737d449ff15d" class="numbered-list" start="1"><li>(답변) 실제로 <span style="border-bottom:0.05em solid">스케치업</span>이나, <span style="border-bottom:0.05em solid">클립스튜디오</span>를 사용하는 작가분들의 니즈를 기반해서 만들 예정이다. 과정에서 많은 도움 주시면 감사하겠습니다.</li></ol></li></ol><ol type="a" id="30f1ff87-a702-4ac1-8a2d-0ec9de858c35" class="numbered-list" start="2"><li>(니즈) 우리는 돈보다 <span style="border-bottom:0.05em solid">학생들에게 도움이 되는 것</span>을 원한다. <ol type="a" id="5747525a-5894-4d5a-8e9e-fa4835f4dcab" class="numbered-list" start="1"><li>생성 AI 로 우리 교육과정에 넣을 수 있는 게 있다면 내년에도 바로 도입할 생각이 있다</li></ol></li></ol><ol type="a" id="3274f395-a90d-492d-9ae6-3912e63e29e7" class="numbered-list" start="3"><li>(인사이트) 기술의 성숙도보다 사용자의 관점을 듣는 게 정말 중요함<ol type="a" id="2435982f-2311-41a4-9697-21a3839b5b01" class="numbered-list" start="1"><li>스케치2펜터치 결과물을 보면, 저걸 바로 활용하는 것은 어려워 보이지만, 그림작가들 입장에서 트레이싱 용(대고 그리기)으로는 충분히 쓸수 있을 것 같다</li></ol></li></ol><ol type="a" id="c0b55c79-fda5-4931-a2bb-3e866257d625" class="numbered-list" start="4"><li>(인사이트) 매직 포저로 사람에 대한 연출(구도, 배치, 카메라 시점)을 넘어서, 사물, 배경 등과 같은 것들도 한 번에 잡아준 다면 강력한 툴이 될 것이다. <ol type="a" id="51d2a934-4864-4daa-9a2e-9f77cb6fa628" class="numbered-list" start="1"><li> 한 컷의 구성 요소에 배치/카메라 시점/구도 등이 핵심이고, 우리는 이를 연출이라고 부른다. 그리고 이 연출이 작품의 퀄리티를 결정한다. <ol type="a" id="8bb90e67-cdcc-48d1-9763-8f318d385787" class="numbered-list" start="1"><li>(생각) 작가들이 해당 연출에 많이 쓰는 <span style="border-bottom:0.05em solid">스케치업</span> 툴과 연동하는 방향성 체크 </li></ol></li></ol></li></ol><ol type="a" id="3e056df5-4a80-4938-8653-6f03ff377991" class="numbered-list" start="5"><li>(퀄리티) 웹소설 표지의 퀄리티는 아직 부족해 보인다<ol type="a" id="080a7012-331e-4956-8283-f05dab5780b2" class="numbered-list" start="1"><li>무기의 디테일이나 배경의 디테일이 부족하다<ol type="a" id="aa1d759e-d030-4b63-a3d4-ca81d66cc543" class="numbered-list" start="1"><li>(대응) 디테일에 관한 문제 정의 및 해당 장표에 들어가 있는 샘플 고퀄리티로 변경하기</li></ol></li></ol></li></ol><ol type="a" id="c909cbd8-3d21-4785-bf50-e8859e6271a9" class="numbered-list" start="6"><li>협업의 방향성<ol type="a" id="167db6d6-d6c6-4972-8cbc-e53b93f7e679" class="numbered-list" start="1"><li><span style="border-bottom:0.05em solid">AI 웹툰 공동 제작으로 진행해 보자</span><ol type="a" id="009ec252-7238-439f-b27e-1655cea6f547" class="numbered-list" start="1"><li>우선 시나리오가 있는 단막극 위주로 진행해 보면 좋을 것 같다</li></ol><ol type="a" id="ea29fe1b-bc9e-492e-9bc0-6aebed7509cf" class="numbered-list" start="2"><li>지식 만화/위인전 등도 쉽게 접근해볼 수 있는 방향성 같다(이미 시나리오가 있으니) </li></ol></li></ol></li></ol></li></ol><p id="610323c5-f2e0-4605-a5ae-37c547422959" class="">3. 후속액션<div class="indented"><p id="b8962b10-2b91-4340-b25f-cee0a67c18f4" class="">웹툰 쪽 교수님들이랑 어떻게 협업할지 방향성에 대해서 후속논의하기</p><p id="8683d2bb-d00c-4b28-b99d-98bc9e0bb24b" class="">
+</p></div></p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230424 박준형</summary><div class="indented"><ol type="1" id="3d90a8b7-e952-45a7-ad81-a32dda922dde" class="numbered-list" start="1"><li>미팅 때 이야기 나누었던 &#x27;AI 웹툰 공동 제작 건&#x27; 관련해서, 말씀 주신 1차 기획안 기다리고 있겠습니다.</li></ol><p id="3ea6412a-e8cf-486b-b3e1-7386eb20a3ce" class="">(이야기 주신 단막극이나, 위인전 등 쉽게 접근할 수 있는 방향성을 생각하고 있겠습니다)</p><ol type="1" id="c08b30d2-fe30-45fc-83d0-5aeb1a6f5541" class="numbered-list" start="2"><li>미팅 때 이야기 나온 인턴쉽 진행은 어떻게 진행하면 좋을까요?</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230502 전혜정 차장</summary><div class="indented"><ol type="1" id="04c61cb7-ef00-4af0-b68f-cdfdb82cf5b8" class="numbered-list" start="1"><li>이번 주까지 대략적인 기획안은 전달해드릴 수 있을 것 같습니다.</li></ol><ol type="1" id="7de73e58-7c5c-46de-8616-ddc59d5244fd" class="numbered-list" start="2"><li>인턴의 경우, 추천 학생들을 찾을 때, 업무 정의 (어떤 일을 하게 될 것인가) 업무 방법 (온/오프라인 등 출근형태, 일하는 시간)보상 (페이)요구(우대)되는 능력이 정도의 내용은 정리되어야 학생들에게 권유할 수가 있어서요!혹시 간단하게라도 알려주시면 감사하겠습니다!</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230502 양승제</summary><div class="indented"><ol type="1" id="ddc39b70-ddf0-4f35-96b8-9958aa7bdb75" class="numbered-list" start="1"><li>금주중 단막극 1편, 지식만화 1편을 선정해주시면 최종 1편을 픽하여 진행준비를 하겠습니다.</li></ol><ol type="1" id="f4cbe6a7-a66f-4e39-9afd-01fde90da15b" class="numbered-list" start="2"><li>인턴의 경우 우대자격 및 기간, 처우 등 정리하여 보내드리겠습니다. ← 스토리작에 얘기한 웹툰 아는 사람 채용하겠다는 그거임</li></ol><ol type="1" id="7b6b6cff-da06-4a00-8bcc-25e0f7c4b457" class="numbered-list" start="3"><li>본 프로젝트를 수행함에 있어 학교와 저희 회사간 &quot;생성AI를 활용한 웹툰 공동제작 업무협약&quot; 을 체결하여 향후 학생들의 창작지원활동을 함께할 발판을 마련하는 계기가 되었으면 합니다.</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://lionrocket.slack.com/archives/C05457W2KJN/p1683033195903679">20230502 청강대 인턴 진행 사항 정리</a></summary><div class="indented"><p id="09a8ed96-3e16-4633-9ba8-86bab3d3bda7" class="">[청강대 인턴 자격요건 정리내용]</p><ul id="b69d5ca2-3791-4f48-b6f7-cac68c68b659" class="bulleted-list"><li style="list-style-type:disc">청강대 협업 목적<ul id="b5a0242c-f489-4ac4-ae12-7b2198e4f169" class="bulleted-list"><li style="list-style-type:circle">AI웹툰 공동 제작 PR</li></ul><ul id="5f96c30a-9f05-49f9-bdd2-b716e5a43d93" class="bulleted-list"><li style="list-style-type:circle">웹툰 제작 관련 도메인 지식 레버리지</li></ul></li></ul><ul id="51a9a72c-aa00-4784-bf85-a7dadde67222" class="bulleted-list"><li style="list-style-type:disc">인턴역할<ul id="baf070b2-bfe7-45f8-aa77-e58f84585874" class="bulleted-list"><li style="list-style-type:circle">업무정의<ul id="500404ad-342d-4f27-9f65-71e1a8a3927c" class="bulleted-list"><li style="list-style-type:square">웹툰제작 공정별 서포트,</li></ul><ul id="32e7aee5-1679-4006-a43f-e82c0f6b0461" class="bulleted-list"><li style="list-style-type:square">전체 프로세스 상세 분류 및 AI가 접목 가능한 부분 확인, 검증</li></ul><ul id="fc4dd1ec-3e00-491b-9b09-84714ea6b24e" class="bulleted-list"><li style="list-style-type:square">AI 웹툰 제작 지원 (실제 고객사 프로젝트)</li></ul><ul id="ce4652d3-1510-4467-b5f3-8b4eb49690c1" class="bulleted-list"><li style="list-style-type:square">웹소설 표지 제작 지원</li></ul><ul id="37526d78-acfb-4d97-8d89-360f56e67340" class="bulleted-list"><li style="list-style-type:square">데이터 수집 및 정제 (필요시)</li></ul></li></ul><ul id="89ebf1f2-f321-41e9-a3d6-59a8cbf5c34d" class="bulleted-list"><li style="list-style-type:circle">업무방법<ul id="83126710-4580-4b76-8ab4-47d80330ba93" class="bulleted-list"><li style="list-style-type:square">오프라인 출근 주 3일, 10시~19시(근무시간 8시간 + 점심시간 1시간)</li></ul><ul id="922920ac-67b7-4263-89e9-80158ae3742e" class="bulleted-list"><li style="list-style-type:square">근무기간 및 시작일 : 2개월, 5월중(ASAP)</li></ul></li></ul><ul id="c2741844-6913-43a9-881b-aa8e83a8f0a3" class="bulleted-list"><li style="list-style-type:circle">요구되는 능력 (우대사항)<ul id="959074c1-1950-4bd1-98fa-0dae88489240" class="bulleted-list"><li style="list-style-type:square">웹툰 제작경험이 있으신 분</li></ul><ul id="fe0a63ca-f795-4f30-860f-98c4b57f152d" class="bulleted-list"><li style="list-style-type:square">클립스튜디오 및 스케치업을 다뤄본 경험이 있으신 분</li></ul><ul id="cf7a7126-d2ae-43be-9483-3e65f311c306" class="bulleted-list"><li style="list-style-type:square">자신만의 그림체가 있으신 분</li></ul><ul id="970699d1-c0fb-4a68-acf4-22a1f9a8af85" class="bulleted-list"><li style="list-style-type:square">도메인 지식이 풍부하여 관련 질의응답이 가능하신 분</li></ul><ul id="d2c3c344-5176-422a-b991-ab67460fc3c8" class="bulleted-list"><li style="list-style-type:square">AI를 활용한 작업 효율화를 원하시는 분</li></ul><ul id="942504c7-5a01-4985-8eb7-67c6b1e38b07" class="bulleted-list"><li style="list-style-type:square">아이데이션 활동에 적극적인 분</li></ul><ul id="132409d3-0d46-4b41-8d86-d8da03e86708" class="bulleted-list"><li style="list-style-type:square">착실하고 꼼꼼하신 분</li></ul></li></ul><ul id="200be5f7-caa1-4195-b3bf-0b83f6c53fa9" class="bulleted-list"><li style="list-style-type:circle">페이<ul id="d7499b5d-13ac-492c-a871-879a9a736890" class="bulleted-list"><li style="list-style-type:square">기리님께 확인 예정</li></ul></li></ul></li></ul></div></details><p id="99e2e82a-a60e-45e1-9a2c-9e81a9217fbd" class="">
+</p><h3 id="a426f0c6-0b4d-4dc2-a4ce-d201aa33fe9b" class="">인공지능 학습용 데이터 구축 (웹툰제작과는 별개)</h3><figure id="944d841e-be1e-4c0e-81f7-2a33124766af"><div class="source"><a href="%5BMOU%20NDA%20%E1%84%92%E1%85%A7%E1%86%B8%E1%84%8B%E1%85%B4%E1%84%8C%E1%85%AE%E1%86%BC%5D%E1%84%8E%E1%85%A5%E1%86%BC%E1%84%80%E1%85%A1%E1%86%BC%E1%84%83%E1%85%A2%20AI%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%A9%E1%86%BC%E1%84%83%E1%85%A9%E1%86%BC%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%209007aeeda3da4940b9d373875d93de72/230504_%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2580%25E1%2585%25A9%25E1%2586%25BC%25E1%2584%258C%25E1%2585%25B5%25E1%2584%2582%25E1%2585%25B3%25E1%2586%25BC_%25E1%2584%2592%25E1%2585%25A1%25E1%2586%25A8%25E1%2584%2589%25E1%2585%25B3%25E1%2586%25B8%25E1%2584%258B%25E1%2585%25AD%25E1%2586%25BC_%25E1%2584%2583%25E1%2585%25A6%25E1%2584%258B%25E1%2585%25B5%25E1%2584%2590%25E1%2585%25A5_%25E1%2584%2580%25E1%2585%25AE%25E1%2584%258E%25E1%2585%25AE%25E1%2586%25A8_%25E1%2584%258C%25E1%2585%25B5%25E1%2584%258B%25E1%2585%25AF%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A1%25E1%2584%258B%25E1%2585%25A5%25E1%2586%25B8_NDA_(%25E1%2584%258E%25E1%2585%25A5%25E1%2586%25BC%25E1%2584%2580%25E1%2585%25A1%25E1%2586%25BC%25E1%2584%2583%25E1%2585%25A2-%25E1%2584%2585%25E1%2585%25A1%25E1%2584%258B%25E1%2585%25B5%25E1%2584%258B%25E1%2585%25A5%25E1%2586%25AB%25E1%2584%2585%25E1%2585%25A9%25E1%2584%258F%25E1%2585%25A6%25E1%2586%25BA).docx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d29c121f-f140-4f77-b86b-e35e0d82c813/230504_%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8C%E1%85%B5%E1%84%82%E1%85%B3%E1%86%BC_%E1%84%92%E1%85%A1%E1%86%A8%E1%84%89%E1%85%B3%E1%86%B8%E1%84%8B%E1%85%AD%E1%86%BC_%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5_%E1%84%80%E1%85%AE%E1%84%8E%E1%85%AE%E1%86%A8_%E1%84%8C%E1%85%B5%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8B%E1%85%A5%E1%86%B8_NDA_(%E1%84%8E%E1%85%A5%E1%86%BC%E1%84%80%E1%85%A1%E1%86%BC%E1%84%83%E1%85%A2-%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5%E1%86%AB%E1%84%85%E1%85%A9%E1%84%8F%E1%85%A6%E1%86%BA).docx</a></div></figure><p id="589eb076-9132-4eed-84e3-a240d6fe7313" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230515 박준형 청강대 AI 웹툰 공동 제작 구체적 방향성</summary><div class="indented"><ul id="b3512a1a-2e12-4313-bc85-8e16f3aa093e" class="bulleted-list"><li style="list-style-type:disc">목적 2 가지<ul id="b6db3301-9b83-473d-8f50-67939c278a5c" class="bulleted-list"><li style="list-style-type:circle">‘AI 웹툰 공동 제작’ 에 기반한 PR 용</li></ul><ul id="a0aad664-3ddc-48f8-b1b2-9d2d14726a09" class="bulleted-list"><li style="list-style-type:circle">현재 AI 기술들 상용화 수준 파악</li></ul></li></ul><ul id="f4566740-7cf0-4ce8-bc33-299f7b2005be" class="bulleted-list"><li style="list-style-type:disc">방향성<ul id="655f223a-9934-4d02-8bc0-11551339ebde" class="bulleted-list"><li style="list-style-type:circle">우선 현재 기술 성숙도를 고려해, 인간이 최대한 많이 관여하는 방향성으로 진행 예정(웹툰 인턴이랑 제작하는 것을 1차 고려)<p id="1320b392-2310-48e4-9454-bd10afc299af" class="">ex) 배경 생성 먼저 지원</p></li></ul></li></ul><ul id="6cb0bef9-8cf0-4538-8f10-51c952144a35" class="bulleted-list"><li style="list-style-type:disc">옵션은 크게 4가지<ul id="f69f0ada-b762-472d-9fab-beb2230609dd" class="bulleted-list"><li style="list-style-type:circle">1 순위 단막극<ul id="6d30531e-8726-42ed-943d-2a92ad8c2758" class="bulleted-list"><li style="list-style-type:square">특별히 고정할 캐릭터는 존재X, 자체 창조 측면에서 굳</li></ul><ul id="5073a331-75d2-4114-baad-0f902ea220a1" class="bulleted-list"><li style="list-style-type:square">PR 측면에서는 매력낮다 생각</li></ul></li></ul><ul id="a14197ce-6dd8-42a6-b85d-4dc275820bb3" class="bulleted-list"><li style="list-style-type:circle">2순위: 지식 만화<ul id="f971a112-6d3b-4a0c-ae31-30ffda0e05fb" class="bulleted-list"><li style="list-style-type:square">컷 자체는 단순해서 좋아 보임</li></ul><ul id="d20fd75e-8674-460d-91f2-34a5e05d004b" class="bulleted-list"><li style="list-style-type:square">다만, ‘칼 융‘에 대한 캐릭터 제작 및 고정 기술이 필요해 보임</li></ul></li></ul><ul id="273873b0-bf3e-400c-8b89-3997c3a5aade" class="bulleted-list"><li style="list-style-type:circle">3순위 : 동화풍 그래픽노블<ul id="9edba8ce-da57-4c9f-9526-f48acb2c319e" class="bulleted-list"><li style="list-style-type:square">비인간형 캐릭터 일관성 유지로 난이도 ‘상’으로 파악</li></ul></li></ul><ul id="608094b3-91bb-4bc9-8316-c6750bf02e41" class="bulleted-list"><li style="list-style-type:circle">4순위: 완성된 지식 만화<ul id="66187766-11fc-40e8-a1e3-b29f9744ce4f" class="bulleted-list"><li style="list-style-type:square">데포르메가 강해 난이도 ‘상’ 으로 파악되어 후순위</li></ul></li></ul></li></ul><ul id="d91bd05f-4812-43a6-9791-3323298daed7" class="bulleted-list"><li style="list-style-type:disc">결론<ul id="dd106630-dfe7-4fd6-96f1-35ef8153bbe2" class="bulleted-list"><li style="list-style-type:circle">위에 1,2 순위를 기반으로 청강대랑 소통하는 게 좋아 보입니다.</li></ul><ul id="4dbbf3b1-d62a-4c12-b2df-4452753aab82" class="bulleted-list"><li style="list-style-type:circle">관련해서 이야기 나누기 위해 청강대 교수님이랑 줌미팅이 진행이 필요합니다. 제가 진행 할게요!</li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a href="https://lionrocket.slack.com/archives/C05457W2KJN/p1684476829864969">20230519 박준형 청강대와 AI 웹툰 공동 제작 방향성</a></summary><div class="indented"><ul id="b4beae7e-1c4d-4078-a425-d13e70f540ea" class="bulleted-list"><li style="list-style-type:disc">인간의 관여 정도’에 따라 크게 4가지 방향성 기반으로 논의 예정</li></ul><ul id="103f6048-e53e-4596-90ac-4779152184a4" class="bulleted-list"><li style="list-style-type:disc">실 제작 시 인공지능의 한계를 최대한 고려하면서 진행<ul id="bd6f0a2c-9e2b-4530-9e24-23420196464a" class="bulleted-list"><li style="list-style-type:circle">예를 들어 단순한 그림체 위주로 진행</li></ul></li></ul><ul id="70d3b2ec-86dc-4a9c-9435-6fb71e870db0" class="bulleted-list"><li style="list-style-type:disc">방향성 결정 기준<ul id="28e2750a-3446-48c2-908a-b4a516a9be23" class="bulleted-list"><li style="list-style-type:circle">결과물 품질 정도</li></ul><ul id="775404ba-1d6d-4f5d-9fcc-768d81ccc994" class="bulleted-list"><li style="list-style-type:circle">사람 관여 정도</li></ul><ul id="7a1fbb8e-fe25-4e44-bdb1-371bfa5b998d" class="bulleted-list"><li style="list-style-type:circle">일정</li></ul></li></ul><figure id="c32b5922-5962-4c89-9df2-29fca5e509cb" class="image"><a href="%5BMOU%20NDA%20%E1%84%92%E1%85%A7%E1%86%B8%E1%84%8B%E1%85%B4%E1%84%8C%E1%85%AE%E1%86%BC%5D%E1%84%8E%E1%85%A5%E1%86%BC%E1%84%80%E1%85%A1%E1%86%BC%E1%84%83%E1%85%A2%20AI%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%A9%E1%86%BC%E1%84%83%E1%85%A9%E1%86%BC%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%209007aeeda3da4940b9d373875d93de72/Untitled.jpg"><img style="width:4585px" src="%5BMOU%20NDA%20%E1%84%92%E1%85%A7%E1%86%B8%E1%84%8B%E1%85%B4%E1%84%8C%E1%85%AE%E1%86%BC%5D%E1%84%8E%E1%85%A5%E1%86%BC%E1%84%80%E1%85%A1%E1%86%BC%E1%84%83%E1%85%A2%20AI%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%A9%E1%86%BC%E1%84%83%E1%85%A9%E1%86%BC%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%209007aeeda3da4940b9d373875d93de72/Untitled.jpg"/></a></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">20230530 박준형 청강대와 AI 웹툰 공동 제작, 청강대 졸업생 작가 합류</summary><div class="indented"><p id="0f63b603-d9ef-4acd-a0e7-9cdc5192512f" class="">[청강대, AI 웹툰 공동 제작 건] <strong>@here</strong></p><ul id="de0abafd-df76-4353-902b-acbe7959c410" class="bulleted-list"><li style="list-style-type:disc">어제 청강대 졸업생 박경주 웹툰 작가님이랑 미팅 진행 완료</li></ul><ul id="c4687a67-17f0-4ccb-abdf-15dbb8143efd" class="bulleted-list"><li style="list-style-type:disc">금주부터 콘티 제작 시작 예정</li></ul><p id="e47a165a-2165-45c2-bd64-a77c63680fc9" class="">&lt;상세&gt;</p><ul id="29fd4705-651b-4d95-aaae-0b7f05d6376c" class="bulleted-list"><li style="list-style-type:disc">작품 : 단막극 &#x27;결산&#x27; 으로 진행(PR 목적 고려)</li></ul><ul id="662e6a31-b155-4485-b5ee-92c442522c4d" class="bulleted-list"><li style="list-style-type:disc">기간 : 한 달</li></ul><ul id="df3b7c8e-bcd9-43e5-af3f-78aa75b82e09" class="bulleted-list"><li style="list-style-type:disc">분량 : 50 ~ 80 컷</li></ul><ul id="357e7294-6e04-4862-9b1d-686aed37a612" class="bulleted-list"><li style="list-style-type:disc">상세<ul id="675df295-087a-4637-b0a8-74a7e5c403fa" class="bulleted-list"><li style="list-style-type:circle">웹툰 제작의 각 공정마다 AI 도입 유무 검증하면서 진행<ul id="71c5f393-485a-407a-8ea4-1bf3b712d04b" class="bulleted-list"><li style="list-style-type:square">경우의 수는 크게 4 가지 (첨부 사진 1)</li></ul><ul id="9237e787-d3a3-4968-b3c7-577f9cb0cc4e" class="bulleted-list"><li style="list-style-type:square">주차 별 업무 진행 예상 프로세스 (첨부 사진 2)</li></ul></li></ul><ul id="36c4f9b9-4660-43ad-92b8-eb44243de2b0" class="bulleted-list"><li style="list-style-type:circle">기술에 대한 QA 및 웹툰 도메인 쪽 Q&amp;A 도 병렬 진행</li></ul></li></ul><ul id="9443d488-2f4d-4442-9bf5-2ff36b6f8989" class="bulleted-list"><li style="list-style-type:disc">업무 방식<ul id="0d9dd628-0999-494a-a17c-9d81fb0fb01e" class="bulleted-list"><li style="list-style-type:circle">주로 비대면 협업 방식으로 진행하되, 1주일에 한 번 와서 미팅 및 제작 과정 공유 예정</li></ul></li></ul><figure id="e6684936-e763-4896-b102-bfd5f7ff3e97" class="image"><a href="%5BMOU%20NDA%20%E1%84%92%E1%85%A7%E1%86%B8%E1%84%8B%E1%85%B4%E1%84%8C%E1%85%AE%E1%86%BC%5D%E1%84%8E%E1%85%A5%E1%86%BC%E1%84%80%E1%85%A1%E1%86%BC%E1%84%83%E1%85%A2%20AI%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%A9%E1%86%BC%E1%84%83%E1%85%A9%E1%86%BC%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%209007aeeda3da4940b9d373875d93de72/Deans_view.jpg"><img style="width:4995px" src="%5BMOU%20NDA%20%E1%84%92%E1%85%A7%E1%86%B8%E1%84%8B%E1%85%B4%E1%84%8C%E1%85%AE%E1%86%BC%5D%E1%84%8E%E1%85%A5%E1%86%BC%E1%84%80%E1%85%A1%E1%86%BC%E1%84%83%E1%85%A2%20AI%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%A9%E1%86%BC%E1%84%83%E1%85%A9%E1%86%BC%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%209007aeeda3da4940b9d373875d93de72/Deans_view.jpg"/></a></figure><figure id="2e344281-8481-427d-8a6b-4b93c6ab522f" class="image"><a href="%5BMOU%20NDA%20%E1%84%92%E1%85%A7%E1%86%B8%E1%84%8B%E1%85%B4%E1%84%8C%E1%85%AE%E1%86%BC%5D%E1%84%8E%E1%85%A5%E1%86%BC%E1%84%80%E1%85%A1%E1%86%BC%E1%84%83%E1%85%A2%20AI%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%A9%E1%86%BC%E1%84%83%E1%85%A9%E1%86%BC%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%209007aeeda3da4940b9d373875d93de72/Deans_view_(1).jpg"><img style="width:4186px" src="%5BMOU%20NDA%20%E1%84%92%E1%85%A7%E1%86%B8%E1%84%8B%E1%85%B4%E1%84%8C%E1%85%AE%E1%86%BC%5D%E1%84%8E%E1%85%A5%E1%86%BC%E1%84%80%E1%85%A1%E1%86%BC%E1%84%83%E1%85%A2%20AI%20%E1%84%8B%E1%85%B0%E1%86%B8%E1%84%90%E1%85%AE%E1%86%AB%20%E1%84%80%E1%85%A9%E1%86%BC%E1%84%83%E1%85%A9%E1%86%BC%20%E1%84%8C%E1%85%A6%E1%84%8C%E1%85%A1%E1%86%A8%20%209007aeeda3da4940b9d373875d93de72/Deans_view_(1).jpg"/></a></figure></div></details></div></article></body></html>
